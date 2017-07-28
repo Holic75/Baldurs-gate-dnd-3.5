@@ -1,0 +1,25 @@
+IF
+	PartyRested()
+	OR(4)
+		Class(Player%player_id%,PALADIN)
+		Class(Player%player_id%,CLERIC)
+		Class(Player%player_id%,CLERIC_THIEF)
+		Class(Player%player_id%,FIGHTER_CLERIC)
+		
+	!Kit(Player%player_id%,INQUISITOR)
+	
+	OR(2)
+		!Class(Player%player_id%,PALADIN)
+		LevelGT(Player%player_id%,2)
+	OR(2)
+		!Class(Player%player_id%,FIGHTER_CLERIC)
+		LevelGT(Player%player_id%,1)
+	OR(2)
+		!Class(Player%player_id%,CLERIC_THIEF)
+		LevelGT(Player%player_id%,1)
+THEN
+	RESPONSE #100
+		ApplySpellRES("CE_0",Player%player_id%) 
+		ApplySpellRES("CE_GV",Player%player_id%) 
+		Continue()
+END

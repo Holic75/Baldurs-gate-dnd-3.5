@@ -1,0 +1,27 @@
+2DA              V1.0
+0
+                 DAMAGE_RIGHT     DAMAGE_LEFT      THAC0_RIGHT      THAC0_LEFT       AC_BASE          AC_MISSILE       SPEED            CRITICALROLL
+TWOHANDED-0      0                0                0                0                0                0                0                0
+SINGLEWEAPON-0   0                0                0                0                0                0                0                0
+SWORDANDSHIELD-0 0                0                0                0                0                0                0                0
+TWOWEAPON-0      0                0                4                4                0                0                0                0
+TWOHANDED-1      1                0                0                0                0                0                -1               0
+SINGLEWEAPON-1   0                0                0                0                -1               0                0                2
+SWORDANDSHIELD-1 0                0                0                0                -1               0                0                0
+TWOWEAPON-1      0                0                2                2                0                0                0                0
+TWOHANDED-2      2                0                0                0                0                0                -2               0
+SINGLEWEAPON-2   0                0                0                0                -2               0                0                4
+SWORDANDSHIELD-2 0                0                0                0                -2               0                0                0
+TWOWEAPON-2      0                0                0                2                0                0                0                0
+TWOHANDED-3      3                0                0                0                0                0                -3               0
+SINGLEWEAPON-3   0                0                0                0                -2               0                0                5
+SWORDANDSHIELD-3 0                0                0                0                -3               0                0                0
+TWOWEAPON-3      0                0                0                0                0                0                0                0
+TWOHANDED-4      4                0                0                0                0                0                -4               0
+SINGLEWEAPON-4   0                0                0                0                -2               0                0                6
+SWORDANDSHIELD-4 0                0                0                0                -4               0                0                0
+TWOWEAPON-4      0                0                0                0                -1               0                0                0
+TWOHANDED-5      5                0                0                0                0                0                -5               0
+SINGLEWEAPON-5   0                0                0                0                -3               0                0                7
+SWORDANDSHIELD-5 0                0                0                0                -5               0                0                0
+TWOWEAPON-5      0                0                0                0                -2               0                0                0

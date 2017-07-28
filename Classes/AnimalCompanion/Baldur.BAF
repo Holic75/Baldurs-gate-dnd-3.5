@@ -1,0 +1,15 @@
+IF
+	!CheckStat(Player%player_id%,%player_id%,EXTRAPROFICIENCY20)
+	OR(3)
+		Class(Player%player_id%,RANGER)
+		Class(Player%player_id%,FIGHTER_DRUID)
+		Class(Player%player_id%,DRUID)
+
+	!Kit(Player%player_id%,SHAPESHIFTER)
+	!Kit(Player%player_id%,BEASTFRIEND) //avenger
+THEN
+	RESPONSE #100
+		ActionOverride("%script_name%",DestroySelf()) //kill existing wolf if it exists
+		ApplySpellRES("%spell_name%", Player%player_id%) //give ability
+		Continue()
+END

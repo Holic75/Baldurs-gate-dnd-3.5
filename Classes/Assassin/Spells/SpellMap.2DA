@@ -1,0 +1,16 @@
+ChillTouch          ASN11       SPWI117
+Sleep               ASN12       SPWI116
+Blindness           ASN13       SPWI106
+ReflectedImage      ASN14       SPWI120
+GhoulTouch          ASN21       SPWI218
+Invisibility        ASN22       SPWI206
+Blur                ASN23       SPWI201
+PowerWordSleep      ASN24       SPWI220
+VampyricTouch       ASN31       SPWI314
+HoldPerson          ASN32       SPWI306
+NonDetection        ASN33       SPWI310
+DetectIllusion      ASN34       SPWI322
+ImprovedInvis       ASN41       SPWI405
+CloakFear           ASN42       SPPR416
+Poison              ASN43       SPPR411
+FreeAction          ASN44       SPPR403

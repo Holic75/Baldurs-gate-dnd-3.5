@@ -1,0 +1,11 @@
+IF
+	!Global("MRK_AREA","GLOBAL",%ar_id%)
+	AreaCheckObject("%AreaName%",Player1)
+THEN 
+	RESPONSE #100
+		%move_string%
+		SetGlobal("MRK_AREA","GLOBAL",%ar_id%)
+		Continue()
+END
+
+	

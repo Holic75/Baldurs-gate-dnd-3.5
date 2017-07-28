@@ -1,0 +1,75 @@
+DEFINE_ACTION_FUNCTION ~ADD_BONUS_FEATS~
+	INT_VAR
+		min_level=2
+		max_level=20
+		d_level=2
+		add_at_level1=0
+		mask=0
+	STR_VAR
+		clab=~~
+		mask_file=~~
+		feat_type_file=~~
+		caption=~~
+	BEGIN
+		ACTION_IF NOT (~%mask_file%~ STRING_EQUAL ~~) BEGIN
+			COPY ~%mask_file%~ ~override/%caption%.SPL~ //mask 
+				SPRINT resource EVALUATE_BUFFER ~%feat_type_file%~
+				LPF  ALTER_SPELL_EFFECT STR_VAR resource END
+				SPRINT resource EVALUATE_BUFFER ~%caption%~ 
+				LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=206 STR_VAR resource END //if mask protects from itself it should be changed to  caption.SPL 
+		END 
+		
+
+	
+COPY_EXISTING_REGEXP GLOB ~%clab%~ ~override~
+		COUNT_2DA_ROWS 20 "nrows"
+		COUNT_2DA_COLS "ncols"
+		SPRINT clab_line EVALUATE_BUFFER ~%caption%~
+
+		PATCH_IF (mask=0) BEGIN //defined by min_level, max_level, add_at_level1, d_level
+			PATCH_IF (add_at_level1) BEGIN
+				SPRINT clab_line EVALUATE_BUFFER ~%clab_line% AP_%caption%~
+			END ELSE BEGIN
+				SPRINT clab_line EVALUATE_BUFFER ~%clab_line% ****     ~
+			END
+		
+			FOR (i=2;i<min_level;i=i+1) BEGIN
+				SPRINT clab_line EVALUATE_BUFFER ~%clab_line% ****     ~
+			END
+		
+			PATCH_IF (min_level=1) BEGIN
+				SET min_level=max_level+1
+			END
+		
+			FOR (i=min_level;i<=max_level;i=i+1) BEGIN
+				PATCH_IF (d_level*((i - min_level)/d_level) = (i - min_level)) BEGIN
+					SPRINT clab_line EVALUATE_BUFFER ~%clab_line% AP_%caption%~
+				
+				END 
+				ELSE BEGIN
+					SPRINT clab_line EVALUATE_BUFFER ~%clab_line% ****     ~
+				END
+			END
+		
+			FOR (i=max_level+1;i<=ncols;i=i+1) BEGIN	
+				SPRINT clab_line EVALUATE_BUFFER ~%clab_line% ****     ~
+			END
+		END
+		ELSE BEGIN //define by mask
+			SET k=1
+			FOR (i=1;i<=ncols;i=i+1) BEGIN
+				
+				PATCH_IF (k BAND mask) BEGIN
+					SPRINT clab_line EVALUATE_BUFFER ~%clab_line% AP_%caption%~				
+				END
+				ELSE BEGIN
+				    SPRINT clab_line EVALUATE_BUFFER ~%clab_line% ****     ~
+				END
+							
+				SET k=k*2
+			END
+			
+		END
+		
+		INSERT_2DA_ROW nrows 20 ~%clab_line%~	
+	END

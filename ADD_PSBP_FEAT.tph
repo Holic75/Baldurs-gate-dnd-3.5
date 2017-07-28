@@ -1,0 +1,41 @@
+
+DEFINE_ACTION_FUNCTION ~ADD_PSBP_FEAT~ //ability bonus/penalty feat
+	INT_VAR
+		min_val=1
+		bdr_val=11
+		max_val=25
+		step=2
+		par1=122 //ability code for ability >=, for ability< it is par1+1
+	STR_VAR
+		ability_name=~dummy~
+
+	BEGIN
+		
+		COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/%ability_name%/%ability_name%BO.SPL~  ~override\%ability_name%BO.spl~
+		
+		COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/%ability_name%/%ability_name%PE.SPL~  ~override\%ability_name%PE.spl~
+
+		
+		COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/Template/PSBPBN.SPL~ ~override\%ability_name%BN.spl~
+
+		SPRINT resource EVALUATE_BUFFER ~%ability_name%BO~
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 STR_VAR resource END //remove bonus effect
+		FOR (i=bdr_val;i<=max_val;i=i+step) BEGIN			
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 duration=1  parameter1=i parameter2=par1 STR_VAR resource END 	 //DEX>=i	
+		END
+
+		
+		SPRINT resource EVALUATE_BUFFER ~%ability_name%PE~
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource END //remove penalty effect
+		FOR (i=min_val;i<bdr_val;i=i+step) BEGIN			
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 duration=1  parameter1=i parameter2=par1+1 STR_VAR resource END 	 //DEX>=i	
+		END
+
+		SPRINT resource EVALUATE_BUFFER ~%ability_name%BN~
+		COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/Template/PSBPBN.EFF~ ~override\%ability_name%BN.EFF~
+		WRITE_EVALUATED_ASCII 0x0030 ~%resource%~ #8
+		COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/Template/PSBPFT.SPL~ ~override\%ability_name%FT.SPL~
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326  STR_VAR resource END // initial effect application
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=272  STR_VAR resource END //apply every n seconds
+		
+	END

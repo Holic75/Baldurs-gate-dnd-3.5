@@ -1,0 +1,9 @@
+IF
+	PartyRested()		
+	Kit(Player%player_id%,BOUNTYHUNTER)
+	
+THEN
+	RESPONSE #100
+		ApplySpellRES("GV_KIPW",Player%player_id%) 
+		Continue()
+END

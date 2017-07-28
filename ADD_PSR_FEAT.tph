@@ -1,0 +1,36 @@
+
+DEFINE_ACTION_FUNCTION ~ADD_PSR_FEAT~ // persisten ability
+	INT_VAR
+		min_val=1
+		max_val=25
+		step=2
+		par1=125 //code for ability to be replaced - > ex str<value
+		par2=122 //code for ability which will replace -> ex dex>=value
+	STR_VAR
+		ability_name=~dummy~
+
+	BEGIN
+		//creating bonus for every ability value
+		OUTER_FOR (i=min_val;i<=max_val;i=i+step) BEGIN
+			COPY ~3ed/Feats/PersistentAbilities/StatReplacement/%ability_name%/%ability_name%.SPL~  ~override\%ability_name%%i%.spl~
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%%i%~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource END 	 
+		
+			COPY ~3ed/Feats/PersistentAbilities/StatReplacement/Template/PSRRS.SPL~ ~override\%ability_name%R%i%.spl~
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 parameter1=i parameter2=par1  STR_VAR resource END //STR<i
+		END
+
+		COPY ~3ed/Feats/PersistentAbilities/StatReplacement/Template/PSRBN.SPL~ ~override\%ability_name%BN.spl~
+		FOR (i=min_val;i<=max_val;i=i+step) BEGIN
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%R%i%~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 duration=1  parameter1=i parameter2=par2 STR_VAR resource END 	 //DEX>=i
+		
+		END
+		SPRINT resource EVALUATE_BUFFER ~%ability_name%BN~
+		COPY ~3ed/Feats/PersistentAbilities/StatReplacement/Template/PSRBN.EFF~ ~override\%ability_name%BN.EFF~
+		WRITE_EVALUATED_ASCII 0x0030 ~%resource%~ #8
+		COPY ~3ed/Feats/PersistentAbilities/StatReplacement/Template/PSRFT.SPL~ ~override\%ability_name%FT.SPL~
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326  STR_VAR resource END // initial effect application
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=272  STR_VAR resource END //apply every n seconds
+		
+	END

@@ -1,0 +1,12 @@
+IF
+	Global("DBL_XP","GLOBAL",1)
+	CheckStat(Player%player_id%,0,LEVEL2)
+	CheckStatGT(Player%player_id%,161000,XP)
+THEN 
+	RESPONSE #100
+		ApplySpellRES("SETXPMAX",Player%player_id%)
+		Continue()
+END
+
+
+	

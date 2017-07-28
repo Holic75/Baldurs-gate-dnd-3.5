@@ -1,0 +1,10 @@
+2DA V1.0
+0
+            PICK_POCKETS    OPEN_LOCKS      FIND_TRAPS      MOVE_SILENTLY   HIDE_IN_SHADOWS   DETECT_ILLUSION   SET_TRAPS
+HUMAN       5              5                5               5               5                 5                 5
+DWARF       0               10              15              0               0                 5                 10
+ELF         5               -5              0               5               10                0                 0
+GNOME       0               0               10              5               5                 10                5
+HALF_ELF    10              0               0               0               5                 0                 0
+HALFLING    5               5               5               10              15                0                 0
+HALFORC     0               0               0               0               0                 0                 0

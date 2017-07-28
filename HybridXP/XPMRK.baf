@@ -1,0 +1,11 @@
+IF
+	Global("DBL_XP","GLOBAL",0)
+	AreaCheckObject("AR2600",Player1)
+THEN 
+	RESPONSE #100
+		SetGlobal("DBL_XP","GLOBAL",1)
+		Continue()
+END
+
+
+	

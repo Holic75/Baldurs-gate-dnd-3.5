@@ -1,0 +1,158 @@
+@1=~Guarigione Spontanea~
+
+@2=~Guarigione Spontanea
+
+Durata: 6 ore 
+Tempo di lancio: Istantaneo
+
+Quando questa abilità viene attivata, tutti gli incantesimi divini memorizzati vengono trasformati in incantesimi di guarigione del corrispondente livello. Dura 6 ore o finché il primo incantesimo divino non viene lanciato.~
+
+@3=~Ferimento Spontaneo~
+
+@4=~Ferimento Spontaneo
+
+Durata: 6 ore 
+Tempo di lancio: Istantaneo
+
+Quando questa abilità viene attivata, tutti gli incantesimi divini memorizzati vengono trasformati in incantesimi di ferimento del corrispondente livello. Dura 6 ore o finché il primo incantesimo divino non viene lanciato.~
+
+@5=~Causa Ferite Leggere~
+
+@6=~Causa Ferite Leggere
+(Necromanzia)
+Livello: 1
+Sfera: Guarigione 
+Raggio d'azione: Tocco 
+Durata: Permanente
+Tempo di lancio: 5 
+Area d'effetto: 1 creatura 
+Tiro-salvezza: Nessuno 
+
+Questo incantesimo è la forma inversa di Cura Ferite Leggere. Anziché guarire la creatura toccata, le infligge danno. Se il lanciatore tocca con successo il bersaglio, l'incantesimo infliggerà 8 punti di danno. Questo effetto avrà luogo se il personaggio effettua con successo un attacco contro la creatura. Tuttavia, ha soltanto 2 round per compiere l'attacco prima che la magia si dissolva. Se il personaggio manca il colpo, l'incantesimo è sprecato. Non c'è alcun tiro-salvezza.~
+
+@7=~Causa Ferite Moderate~
+
+@8=~Causa Ferite Moderate
+(Necromanzia)
+Livello: 2
+Sfera: Guarigione 
+Raggio d'azione: Tocco 
+Durata: Permanente
+Tempo di lancio: 5 
+Area d'effetto: 1 creatura 
+Tiro-salvezza: Nessuno 
+
+Questo incantesimo è la forma inversa di Cura Ferite Moderate. Anziché guarire la creatura toccata, le infligge danno. Se il lanciatore tocca con successo il bersaglio, l'incantesimo infliggerà 11 punti di danno. Questo effetto avrà luogo se il personaggio effettua con successo un attacco contro la creatura. Tuttavia, ha soltanto 2 round per compiere l'attacco prima che la magia si dissolva. Se il personaggio manca il colpo, l'incantesimo è sprecato. Non c'è alcun tiro-salvezza.~
+
+@9=~Causa Ferite Medie~
+
+@10=~Causa Ferite Medie
+(Necromanzia)
+Livello: 3
+Sfera: Guarigione 
+Raggio d'azione: Tocco 
+Durata: Permanente
+Tempo di lancio: 5 
+Area d'effetto: 1 creatura 
+Tiro-salvezza: Nessuno 
+
+Questo incantesimo è la forma inversa di Cura Ferite Medie. Anziché guarire la creatura toccata, le infligge danno. Se il lanciatore tocca con successo il bersaglio, l'incantesimo infliggerà 14 punti di danno. Questo effetto avrà luogo se il personaggio effettua con successo un attacco contro la creatura. Tuttavia, ha soltanto 2 round per compiere l'attacco prima che la magia si dissolva. Se il personaggio manca il colpo, l'incantesimo è sprecato. Non c'è alcun tiro-salvezza.~
+
+@11=~Cura Ferite Moderate~
+
+@12=~Cura Ferite Moderate
+(Necromanzia)
+Livello: 2
+Sfera: Guarigione
+Raggio d'azione: Tocco
+Durata: Permanente
+Tempo di lancio: 5
+Area d'effetto: 1 creatura
+Tiro-salvezza: Nessuno
+
+Lanciando questo incantesimo e ponendo la sua mano su una creatura, il personaggio fa sì che 11 Punti Ferita o altre eventuali lesioni del destinatario siano curate. L'incantesimo non ha effetto su creature incorporee, extraplanari o non viventi. La guarigione è permanente solo finché il destinatario non subisce un ulteriore danno. Le ferite inflitte guariranno o potranno essere curate come qualsiasi normale lesione.~
+
+@13=~Evocazione Spontanea~
+
+@14=~Evocazione Spontanea
+
+Durata: 6 ore 
+Tempo di lancio: Istantaneo
+
+Quando questa abilità viene attivata, tutti gli incantesimi divini memorizzati vengono trasformati in incantesimi di evocazione del corrispondente livello. Dura 6 ore o finché il primo incantesimo divino non viene lanciato.~
+
+@15=~Attirare Animale Minore I~
+
+@16=~Attirare Animale Minore I 
+(Evocazione/Attrazione)
+Livello: 1
+Sfera: Animale, Evocazione 
+Raggio d'azione: 9 metri
+Durata: 3 turni
+Tempo di lancio: 4 
+Area d'effetto: Speciale 
+Tiro-salvezza: Nessuno 
+
+Mediante questo incantesimo, il lanciatore richiama un cane da combattimento affinché combatta al suo fianco. Rimarrà sotto il controllo del personaggio finché non viene ucciso o finché la durata dell'incantesimo non giunge a termine.~
+
+@17=~Attirare Animale Minore II~
+
+@18=~Attirare Animale Minore II 
+(Evocazione/Attrazione)
+Livello: 2
+Sfera: Animale, Evocazione 
+Raggio d'azione: 9 metri
+Duration: 3 turni
+Tempo di lancio: 5 
+Area d'effetto: Speciale 
+Tiro-salvezza: Nessuno 
+
+Mediante questo incantesimo, il lanciatore richiama un lupo affinché combatta al suo fianco. Rimarrà sotto il controllo del personaggio finché non viene ucciso o finché la durata dell'incantesimo non giunge a termine.~
+
+@19=~Attirare Animale Minore III~
+
+@20=~Attirare Animale Minore III 
+(Evocazione/Attrazione)
+Livello: 3
+Sfera: Animale, Evocazione 
+Raggio d'azione: 9 metri
+Durata: 3 turni
+Tempo di lancio: 6 
+Area d'effetto: Speciale 
+Tiro-salvezza: Nessuno 
+
+Mediante questo incantesimo, il lanciatore richiama due o tre animali con 4 Dadi-vita o meno. Gli animali che risponderanno alla chiamata sono casuali. Rimarranno sotto il controllo del personaggio finché non vengono uccisi o finché la durata dell'incantesimo non giunge a termine.~
+
+@31=~Zanna Magica~
+
+@32=~Zanna Magica
+Livello: 1
+Sfera: Combattimento
+Raggio d'azione: Tocco
+Durata: Permanente
+Tempo di lancio: 2 
+Area d'effetto: 1 creatura
+Tiro-salvezza: Nessuno 
+
+Questo incantesimo conferisce ad un animale un bonus d'incantamento pari a +1 ai tiri per colpire e al danno. Sono influenzati solo gli animali evocati da un incantesimo druidico.~
+
+@33=~Zanna Magica Maggiore~
+
+@34=~Zanna Magica Maggiore
+Livello: 3
+Sfera: Combattimento
+Raggio d'azione: Tocco
+Durata: Permanente
+Tempo di lancio: 2 
+Area d'effetto: 1 creatura
+Tiro-salvezza: Nessuno 
+
+Questo incantesimo conferisce ad un animale un bonus d'incantamento pari a +1 ai tiri per colpire e al danno ogni 4 livelli del lanciatore (sino ad un massimo di +5). Sono influenzati solo gli animali evocati da un incantesimo druidico.~
+
+@99=~~
+
+@100=~Salta contenuti per EE~
+
+@101=~Aggiungi Lancio Spontaneo per chierici e druidi~
+
+@102=~Aggiungi l'incantesimo Zanna Magica~

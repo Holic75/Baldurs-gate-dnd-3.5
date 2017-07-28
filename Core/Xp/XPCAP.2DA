@@ -1,0 +1,24 @@
+2DA V1.0
+89000
+                        VALUE
+SORCERER                600000
+MONK                    600000
+SHAMAN                  600000
+MAGE                    600000
+FIGHTER                 600000
+CLERIC                  600000
+THIEF                   600000
+BARD                    600000
+PALADIN                 600000
+DRUID                   600000
+RANGER                  600000
+FIGHTER_MAGE            1200000
+FIGHTER_CLERIC          1200000
+FIGHTER_THIEF           1200000
+FIGHTER_MAGE_THIEF      1200000
+MAGE_THIEF              1200000
+CLERIC_MAGE             1200000
+CLERIC_THIEF            1200000
+FIGHTER_DRUID           1200000
+FIGHTER_MAGE_CLERIC     1200000
+CLERIC_RANGER           1200000

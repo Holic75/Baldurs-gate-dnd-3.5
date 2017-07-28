@@ -1,0 +1,10 @@
+2DA      V1.0
+0
+         MOD_STR  MOD_DEX  MOD_CON  MOD_INT  MOD_WIS  MOD_CHR
+HUMAN    0        0        0        0        0        0
+DWARF    0        0        2        0        0        -2
+ELF      0        2        -2       0        0        0
+GNOME    -2        0       2        0        0       0
+HALF_ELF 0        0        0        0        0        0
+HALFLING -2       2        0        0        0        0
+HALFORC  2        0        0        -2       0        0

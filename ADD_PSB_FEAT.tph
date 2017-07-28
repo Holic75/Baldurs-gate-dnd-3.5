@@ -1,0 +1,25 @@
+
+DEFINE_ACTION_FUNCTION ~ADD_PSB_FEAT~ //ability bonus feat
+	INT_VAR
+		min_val=1
+		max_val=25
+		step=2
+		par1=122 //ability code 
+	STR_VAR
+		ability_name=~dummy~
+
+	BEGIN
+		COPY ~3ed/Feats/PersistentAbilities/StatBonus/%ability_name%/%ability_name%.SPL~  ~override\%ability_name%.spl~
+		COPY ~3ed/Feats/PersistentAbilities/StatBonus/Template/PSBBN.SPL~ ~override\%ability_name%BN.spl~
+		SPRINT resource EVALUATE_BUFFER ~%ability_name%~
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 STR_VAR resource END //remove effect
+		FOR (i=min_val;i<=max_val;i=i+step) BEGIN			
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 duration=1  parameter1=i parameter2=par1 STR_VAR resource END 	 //DEX>=i	
+		END
+		SPRINT resource EVALUATE_BUFFER ~%ability_name%BN~
+		COPY ~3ed/Feats/PersistentAbilities/StatBonus/Template/PSBBN.EFF~ ~override\%ability_name%BN.EFF~
+		WRITE_EVALUATED_ASCII 0x0030 ~%resource%~ #8
+		COPY ~3ed/Feats/PersistentAbilities/StatBonus/Template/PSBFT.SPL~ ~override\%ability_name%FT.SPL~
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326  STR_VAR resource END // initial effect application
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=272  STR_VAR resource END //apply every n seconds		
+	END

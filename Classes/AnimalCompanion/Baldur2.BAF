@@ -1,0 +1,7 @@
+IF
+	PartyRested()
+THEN
+	RESPONSE #100
+		%kill_string%
+		Continue()
+END

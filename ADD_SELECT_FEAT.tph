@@ -1,0 +1,33 @@
+
+DEFINE_ACTION_FUNCTION ~ADD_SELECT_FEAT~ //activated ability bonus feat
+	INT_VAR
+		proficiency_id = 0
+		n_stars = 0
+	STR_VAR
+		new_name=~dummy~
+		feat = ~~
+		game_name = ~~
+		game_description = ~~
+	BEGIN
+		COPY ~3ed/Feats/GiveFeat/SELECFTB.BAM~  ~override~
+		COPY ~3ed/Feats/GiveFeat/SELECFTC.BAM~  ~override~
+		
+		COPY ~3ed/Feats/GiveFeat/SELECFT.SPL~  ~override/S%new_name%.SPL~
+		
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=233  parameter1=n_stars parameter2=proficiency_id END // proficiency stars
+		
+		PATCH_IF NOT (~%feat%~ STRING_EQUAL ~~) BEGIN
+			SPRINT resource EVALUATE_BUFFER ~%feat%~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource END
+		END
+		//LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~RMVGVFT~ END
+		
+		SAY_EVALUATED NAME1 ~%game_name%~
+		SAY_EVALUATED UNIDENTIFIED_DESC ~%game_name%
+		
+%game_description%~
+		
+		//apply protection from subsequent feat application
+		SPRINT resource EVALUATE_BUFFER ~S%new_name%~
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource END
+	END

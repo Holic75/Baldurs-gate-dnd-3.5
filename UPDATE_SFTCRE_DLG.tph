@@ -1,0 +1,45 @@
+DEFINE_ACTION_FUNCTION ~UPDATE_SFTCRE_DLG~
+	INT_VAR
+		n_stars_old=0
+		n_stars=0
+		proficiency_id=0
+		lvl=0
+	STR_VAR
+		sftcre_name=~~  //dialog file name
+		new_name=~~     //new feat name
+		conditions_str=~~	//condition to add	
+	BEGIN
+		//create full tree description string
+		COPY_EXISTING ~S%new_name%.SPL~ ~override~
+		READ_LONG 0x0008 ~str_game_name~
+		READ_LONG 0x0050 ~str_game_description~
+			
+		LAF GET_FEAT_CLASSKIT_CONDITION INT_VAR proficiency_id n_stars RET condition_str END
+			
+		OUTER_SPRINT condition_str EVALUATE_BUFFER  
+			
+"IF ~CheckStat(LastSummonerOf(Myself),%n_stars_old%,%proficiency_id%)
+LevelGT(LastSummonerOf(Myself),%lvl%)	
+%condition_str%~ THEN REPLY #%str_game_name% GOTO %proficiency_id%%n_stars%
+
+|condition_str|" 
+
+
+
+			OUTER_SPRINT give_feat_str EVALUATE_BUFFER
+			
+~~~~~IF ~~ THEN BEGIN %proficiency_id%%n_stars%
+	SAY #%str_game_description%
+	IF ~True()~ REPLY #%yes_response% DO ~ApplySpellRES("SFT%proficiency_id%_%n_stars%",LastSummonerOf(Myself))~ EXIT
+	IF ~True()~ REPLY #%no_response% GOTO 1
+END	
+
+|give_feat_str|~~~~~
+	
+			COPY ~3ed/Feats/FeatAttribution/%sftcre_name%.d~  ~3ed/Feats/FeatAttribution/%sftcre_name%.d~  									
+				EVALUATE_BUFFER	
+			REPLACE_TEXTUALLY ~|~ ~%~
+	
+    END		
+	
+

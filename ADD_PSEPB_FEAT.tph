@@ -1,0 +1,55 @@
+
+DEFINE_ACTION_FUNCTION ~ADD_PSEPB_FEAT~ // persistent exclusive progressive bonus feat
+	INT_VAR
+		min_val=1
+		max_val=25
+		step=2
+		abi_g=122 //ability>= code 
+		abi_l=0    //ability< code
+		min_bonus_val=0
+		bonus_step=100
+	STR_VAR
+		ability_name=~dummy~
+		target_name=~~
+	BEGIN
+	
+		ACTION_IF (~%target_name%~ STRING_EQUAL ~~) BEGIN
+			OUTER_SPRINT target_name EVALUATE_BUFFER ~%ability_name%~		
+		END
+		
+		ACTION_IF (abi_l=0) BEGIN
+			OUTER_SET abi_l = abi_g + 1
+		END
+		
+		OUTER_SET bonus_val=min_bonus_val
+		OUTER_FOR (i=min_val;i<=max_val;i=i+step) BEGIN
+			OUTER_SPRINT resource EVALUATE_BUFFER ~%target_name%%i%~		
+			COPY ~3ed/Feats/PersistentAbilities/StatExclusiveProgressiveBonus/%ability_name%/%ability_name%.SPL~  ~override\%target_name%%i%.spl~
+				//LPF ALTER_SPELL_EFFECT parameter1=bonus_val END
+				READ_LONG 0x6a effects_block_offset //beginning of effects table
+				WRITE_LONG effects_block_offset+0x004 bonus_val
+				SET bonus_val=bonus_val+bonus_step
+				LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 STR_VAR resource END //remove effect
+				
+			COPY ~3ed/Feats/PersistentAbilities/StatExclusiveProgressiveBonus/Template/PSEPBBN.SPL~ ~override\%target_name%%i%L.spl~					
+				SET next_i=i+step
+				LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 duration=1  parameter1=next_i parameter2=abi_l STR_VAR resource END //DEX<i				
+		END
+		
+		COPY ~3ed/Feats/PersistentAbilities/StatExclusiveProgressiveBonus/Template/PSEPBBN.SPL~ ~override\%target_name%BN.spl~
+			
+			FOR (i=min_val;i<=max_val;i=i+step) BEGIN	
+				SPRINT resource EVALUATE_BUFFER ~%target_name%%i%L~			
+				LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 duration=1  parameter1=i parameter2=abi_g STR_VAR resource END 	 //DEX>=i	
+			END
+		
+			
+		OUTER_SPRINT resource EVALUATE_BUFFER ~%target_name%BN~
+		COPY ~3ed/Feats/PersistentAbilities/StatExclusiveProgressiveBonus/Template/PSEPBBN.EFF~ ~override\%target_name%BN.EFF~
+			WRITE_EVALUATED_ASCII 0x0030 ~%resource%~ #8
+			
+		COPY ~3ed/Feats/PersistentAbilities/StatExclusiveProgressiveBonus/Template/PSEPBFT.SPL~ ~override\%target_name%FT.SPL~
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326  STR_VAR resource END //initial effect application
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=272  STR_VAR resource END //apply every n seconds
+		
+	END

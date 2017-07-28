@@ -1,0 +1,8 @@
+IF
+	CheckStat(LastSummonerOf(Myself),%n_stars_old%,%proficiency_id%)
+	%condition_str%
+THEN
+	RESPONSE #100
+		ApplySpellRES("GFT%proficiency_id%_%n_stars%",LastSummonerOf(Myself)) 
+		Continue()
+END

@@ -1,0 +1,23 @@
+DEFINE_PATCH_FUNCTION ~REPLACE_SUBSTRING~
+	INT_VAR
+		strref_offset=0x0050
+		always_replace=0
+	STR_VAR
+		substring_to_replace=~dummy~
+		new_substring=~dummy~
+	BEGIN
+		READ_LONG  strref_offset erg_strref
+		READ_STRREF strref_offset "string_to_modify"
+		PATCH_IF (((~%string_to_modify%~ STRING_CONTAINS_REGEXP ~%substring_to_replace%~) == 0) 
+				AND ((~%string_to_modify%~ STRING_CONTAINS_REGEXP ~%new_substring%~) OR always_replace) AND erg_strref>0) BEGIN
+			INNER_PATCH_SAVE new_string ~%string_to_modify%~ BEGIN
+				REPLACE_TEXTUALLY ~%substring_to_replace%~ ~%new_substring%~
+			END	
+			INNER_ACTION BEGIN
+				ACTION_IF ((~%string_to_modify%~ STRING_CONTAINS_REGEXP ~%new_substring%~)) BEGIN
+					STRING_SET_EVALUATE %erg_strref% ~%new_string%~
+				END
+			END
+		END
+	END
+//end of REPLACE_SUBSTRING

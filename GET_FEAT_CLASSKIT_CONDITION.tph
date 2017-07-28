@@ -1,0 +1,95 @@
+DEFINE_ACTION_FUNCTION ~GET_FEAT_CLASSKIT_CONDITION~
+	INT_VAR
+		proficiency_id=0
+		n_stars=0
+	RET
+		condition_str
+	BEGIN
+	
+		OUTER_SET not_all=0
+		OUTER_SET no_illusionist=1
+		OUTER_SPRINT condition_str ~~
+		OUTER_SPRINT condition_class ~!Kit(LastSummonerOf(Myself),TRUECLASS)~
+		OUTER_SPRINT condition_kit ~Kit(LastSummonerOf(Myself),TRUECLASS)
+Kit(LastSummonerOf(Myself),MAGESCHOOL_ILLUSIONIST)~
+		OUTER_SPRINT condition_illusionist ~!Kit(LastSummonerOf(Myself),MAGESCHOOL_ILLUSIONIST)~
+		
+		OUTER_SET n_class=1
+		OUTER_SET n_kit=2
+		COPY_EXISTING ~kitlist.2DA~ ~override~ 
+		COUNT_2DA_ROWS 9 n_rows
+		FOR (i=2;i<n_rows;i=i+1) BEGIN
+			READ_2DA_ENTRY %i% 8 9 class_id
+		    READ_2DA_ENTRY %i% 9 9 kit_id
+			READ_2DA_ENTRY %i% 1 9 name
+			TO_UPPER %name%
+			DEFINE_ASSOCIATIVE_ARRAY class_kit_id BEGIN "%class_id%","%kit_id%" => "%name%" END
+		END
+		
+		COPY_EXISTING ~WEAPPROF.2DA~ ~override~ 
+		COUNT_2DA_ROWS 10 n_rows
+		COUNT_2DA_COLS n_cols //classes start from column 4, proficiency id in col 1
+		
+		SET i0 = 0
+		FOR (i=1;i<n_rows;i=i+1) BEGIN
+			READ_2DA_ENTRY %i% 1 10 prof_id
+			PATCH_IF (~%prof_id%~ STRING_EQUAL ~%proficiency_id%~) BEGIN
+				SET	i0=i
+				SET i=n_rows
+			END
+		END
+		
+		FOR (i=4;i<n_cols;i=i+1) BEGIN
+			SET im = i - 1
+			READ_2DA_ENTRY 0 %im% 10 class_name
+			READ_2DA_ENTRY %i0% %i% 10 max_prof_string
+			SET max_prof=max_prof_string
+			PATCH_IF (max_prof>=n_stars) BEGIN
+				SET found=0
+				PHP_EACH class_kit_id AS class_kit=>name BEGIN
+					PATCH_IF (~%name%~ STRING_EQUAL ~%class_name%~) BEGIN
+						PATCH_IF  NOT (~ILLUSIONIST~ STRING_EQUAL ~%class_name%~) BEGIN
+							SET kit_id = class_kit_1
+							SPRINT condition_kit ~%condition_kit%
+Kit(LastSummonerOf(Myself),%kit_id%)~
+							SET n_kit=n_kit+1
+						END
+						ELSE BEGIN
+							SET no_illusionist=0
+						END
+						SET found=1
+					END
+				END
+				PATCH_IF (!found) BEGIN
+					SPRINT condition_class ~%condition_class%
+Class(LastSummonerOf(Myself),%class_name%)~
+					SPRINT condition_illusionist ~%condition_illusionist%
+Class(LastSummonerOf(Myself),%class_name%)~
+					SET n_class=n_class+1
+				END
+			END
+			ELSE BEGIN
+				SET not_all=1
+			END
+
+			
+		END
+		
+		ACTION_IF (not_all) BEGIN
+			OUTER_SPRINT condition_str ~OR(%n_class%)
+%condition_class%
+OR(%n_kit%)
+%condition_kit%~
+			ACTION_IF (no_illusionist) BEGIN
+				OUTER_SPRINT condition_str ~%condition_str%
+OR(%n_class%)
+%condition_illusionist%~
+			END
+		END
+
+		
+
+		
+    END		
+	
+

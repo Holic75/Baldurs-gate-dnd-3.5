@@ -1,0 +1,169 @@
+﻿@1=~Spontánní léčení~
+
+@2=~Spontánní léčení
+
+Trvání: 6 hodin 
+Doba sesílání: 0
+
+Po aktivování této vlastnosti se všechna kněžská kouzla při sesílání změní na léčící kouzla stejné úrovně. Tento efekt trvá šest hodin, nebo do seslání kněžského kouzla.~
+
+@3=~Spontánní zranění~
+
+@4=~Spontánní zranění
+
+Trvání: 6 hodin 
+Doba sesílání: 0
+
+Po aktivování této vlastnosti se všechna kněžská kouzla při sesílání změní na zraňující kouzla stejné úrovně. Tento efekt trvá šest hodin, nebo do seslání kněžského kouzla.~
+
+@5=~Způsob lehká zranění~
+
+@6=~Způsob lehká zranění
+(Nekromancie)
+
+Úroveň: 1
+Sféra: Léčení 
+Dosah: dotyk 
+Trvání: trvalé 
+Doba sesílání: 5 
+Oblast působení: dotknutá bytost
+Záchranný hod: žádný 
+
+Toto kouzlo je opakem Vyleč lehká zranění. Namísto vyléčení dotknuté bytosti ji zraní. Po úspěšném dotyku je oběť zraněna za 8 životů. Kněz má provedení útoku 2 kola. Pokud kněz mine, kouzlo je promarněno. Není žádný záchranný hod.~
+
+@7=~Způsob mírná zranění~
+
+@8=~Způsob mírná zranění
+(Nekromancie)
+
+Úroveň: 2
+Sféra: Léčení 
+Dosah: dotyk 
+Trvání: trvalé 
+Doba sesílání: 5 
+Oblast působení: dotknutá bytost
+Záchranný hod: žádný 
+
+Toto kouzlo je opakem Vyleč mírná zranění. Namísto vyléčení dotknuté bytosti ji zraní. Po úspěšném dotyku je oběť zraněna za 11 životů. Kněz má provedení útoku 2 kola. Pokud kněz mine, kouzlo je promarněno. Není žádný záchranný hod.~
+
+@9=~Způsob střední zranění~
+
+@10=~Způsob střední zranění
+(Nekromancie)
+
+Úroveň: 3
+Sféra: Léčení 
+Dosah: dotyk 
+Trvání: trvalé 
+Doba sesílání: 5 
+Oblast působení: dotknutá bytost
+Záchranný hod: žádný 
+
+Toto kouzlo je opakem Vyleč střední zranění. Namísto vyléčení dotknuté bytosti ji zraní. Po úspěšném dotyku je oběť zraněna za 14 životů. Kněz má provedení útoku 2 kola. Pokud kněz mine, kouzlo je promarněno. Není žádný záchranný hod.~
+
+@11=~Vyleč mírná zranění~
+
+@12=~Vyleč mírná zranění
+(Nekromancie)
+
+Úroveň: 2
+Sféra: Léčení 
+Dosah: dotyk 
+Trvání: trvalé 
+Doba sesílání: 5 
+Oblast působení: dotknutá bytost
+Záchranný hod: žádný 
+
+Sesláním kouzla a přiložením rukou na bytost vyléčí kněz bytosti 11 životů. Toto léčení neovlivňuje bytost bez hmotného těla, ani bytosti nežijící či z jiné sféry.
+ 
+Léčení je trvalé (až do doby, kdy je bytost opět zraněna); způsobená zranění mohou být vyléčena stejně jako obyčejná zranění.~
+
+@13=~Spontánní povolávání~
+
+@14=~Spontánní povolávání
+
+Trvání: 6 hodin 
+Doba sesílání: 0
+
+Po aktivování této vlastnosti se všechna kněžská kouzla při sesílání změní na povolávací kouzla stejné úrovně. Tento efekt trvá šest hodin, nebo do seslání kněžského kouzla.~
+
+@15=~Nižší povolávání zvířat I~
+
+@16=~Nižší povolávání zvířat I
+(Stvoření, Povolávání) 
+
+Úroveň: 1
+Sféra: Zvířata, Povolávání 
+Dosah: jedna venkovní oblast
+Trvání: 24 minut
+Doba sesílání: 4 
+Oblast působení: zvláštní
+Záchranný hod: Žádný 
+
+Tímto kouzlem sesílatel přivolá na pomoc válečného psa. Ten bude bojovat po jeho boku po dobu trvání kouzla, nebo dokud nezemře.~
+
+@17=~Nižší povolávání zvířat II~
+
+@18=~Nižší povolávání zvířat II 
+(Stvoření, Povolávání) 
+
+Úroveň: 2
+Sféra: Zvířata, Povolávání 
+Dosah: jedna venkovní oblast
+Trvání: 24 minut
+Doba sesílání: 5 
+Oblast působení: zvláštní
+Záchranný hod: Žádný 
+
+Tímto kouzlem sesílatel přivolá na pomoc vlka. Ten bude bojovat po jeho boku po dobu trvání kouzla, nebo dokud nezemře.~
+
+@19=~Nižší povolávání zvířat III~
+
+@20=~Nižší povolávání zvířat III 
+(Stvoření, Povolávání) 
+
+Úroveň: 2
+Sféra: Zvířata, Povolávání 
+Dosah: jedna venkovní oblast
+Trvání: 24 minut
+Doba sesílání: 6 
+Oblast působení: zvláštní
+Záchranný hod: Žádný
+
+Tímto kouzlem sesílatel přivolá na pomoc jedno až dvě zvířata, která mají životaschopnost 4 nebo méně. Jaká zvířata se objeví záleží na náhodě. Ty budou bojovat po jeho boku po dobu trvání kouzla, nebo dokud nebudou zabita.~
+
+@31=~Magický Tesák~
+
+@32=~Magický Tesák
+
+Úroveň: 1
+Sféra: Souboj
+Dosah: Dotek
+Trvání: Stálé
+Doba sesílání: 2 
+Oblast působení: 1 bytost
+Záchranný hod: Žádný 
+
+Toto kouzlo poskytne zvířeti bonus +1 na hody na útok a zranění. Účinek platí pouze na zvířata, která byla vyvolána druidským kouzlem.~
+
+@33=~Větší Magický Tesák~
+
+@34=~Větší Magický Tesák
+
+Úroveň: 3
+Sféra: Souboj
+Dosah: Dotek
+Trvání: Stálé
+Doba sesílání: 2 
+Oblast působení: 1 bytost
+Záchranný hod: Žádný 
+
+Toto kouzlo poskytne zvířeti bonus +1 na hody na útok a zranění za každé 4 úrovně sesilatele (do maxima +5). Účinek platí pouze na zvířata, která byla vyvolána druidským kouzlem.~
+
+@99=~~
+
+@100=~Vynechavam obsah z EE~
+
+@101=~Nainstalovat Spontanni kouzleni~
+
+@102=~Nainstalovat Kouzlo Magicky Tesak~

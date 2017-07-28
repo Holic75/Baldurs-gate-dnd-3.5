@@ -1,0 +1,169 @@
+﻿@1=~Spontaniczne leczenie~
+
+@2=~Spontaniczne leczenie
+
+Czas działania: 6 godzin 
+Czas rzucania: natychmiastowy
+
+Gdy zdolność ta jest aktywna, wszystkie zapamiętane przez kapłana czary zostają zamienione na czary leczące odpowiedniego poziomu. Zdolność ta trwa 6 godzin lub do pierwszego rzucenia czaru przez kapłana.~
+
+@3=~Spontaniczne krzywdzenie~
+
+@4=~Spontaniczne krzywdzenie
+
+Czas działania: 6 godzin
+Czas rzucania: natychmiastowy
+
+Gdy zdolność ta jest aktywna, wszystkie zapamiętane przez kapłana czary zostają zamienione na czary krzywdzące odpowiedniego poziomu. Zdolność ta trwa 6 godzin lub do pierwszego rzucenia czaru przez kapłana.~
+
+@5=~Zadawanie lekkich ran~
+
+@6=~Zadawanie lekkich ran
+(Nekromancja)
+
+Poziom: 1
+Sfera: Leczenie  
+Zasięg: dotyk 
+Czas działania: stały 
+Czas rzucania: 5 
+Obszar działania: dotknięta istota
+Rzut obronny: brak
+
+Jest to odwrotność zaklęcia Leczenie lekkich ran. Zamiast leczyć dotkniętą istotę - zadaje obrażenia. Dotknięta przez kapłana istota otrzyma 8 obrażeń. Aby czar zadziałał, należy po jego rzuceniu wykonać udany atak wręcz. Kapłan ma tylko 2 rundy na wykonanie ataku; po tym czasie czar wygasa. Poza tym, jeśli kapłan nie trafi danej istoty, czar zostaje zmarnowany. Przed zaklęciem tym nie chroni żaden rzut obronny.~
+
+@7=~Zadawanie umiarkowanych ran~
+
+@8=~Zadawanie umiarkowanych ran
+(Nekromancja)
+
+Poziom: 2
+Sfera: Leczenie  
+Zasięg: dotyk 
+Czas działania: stały 
+Czas rzucania: 5 
+Obszar działania: dotknięta istota
+Rzut obronny: brak
+
+Jest to odwrotność zaklęcia Leczenie umiarkowanych ran. Zamiast leczyć dotkniętą istotę - zadaje obrażenia. Dotknięta przez kapłana istota otrzyma 11 obrażeń. Aby czar zadziałał, należy po jego rzuceniu wykonać udany atak wręcz. Kapłan ma tylko 2 rundy na wykonanie ataku; po tym czasie czar wygasa. Poza tym, jeśli kapłan nie trafi danej istoty, czar zostaje zmarnowany. Przed zaklęciem tym nie chroni żaden rzut obronny.~
+
+@9=~Zadawanie średnich ran~
+
+@10=~Zadawanie średnich ran
+(Nekromancja)
+
+Poziom: 3
+Sfera: Leczenie  
+Zasięg: dotyk 
+Czas działania: stały 
+Czas rzucania: 5 
+Obszar działania: dotknięta istota
+Rzut obronny: brak
+
+Jest to odwrotność zaklęcia Leczenie średnich ran. Zamiast leczyć dotkniętą istotę - zadaje obrażenia. Dotknięta przez kapłana istota otrzyma 14 obrażeń. Aby czar zadziałał, należy po jego rzuceniu wykonać udany atak wręcz. Kapłan ma tylko 2 rundy na wykonanie ataku; po tym czasie czar wygasa. Poza tym, jeśli kapłan nie trafi danej istoty, czar zostaje zmarnowany. Przed zaklęciem tym nie chroni żaden rzut obronny.~
+
+@11=~Leczenie umiarkowanych ran~
+
+@12=~Leczenie umiarkowanych ran
+(Nekromancja)
+
+Poziom: 2
+Sfera: Leczenie  
+Zasięg: dotyk 
+Czas działania: stały 
+Czas rzucania: 5 
+Obszar działania: 1 istota
+Rzut obronny: brak
+
+Rzucając ten czar i kładąc ręce na istocie, kapłan przywraca jej 11 punktów życia straconych w wyniku odniesionych ran lub innych uszkodzeń cielesnych. Leczenie to nie działa na stworzenia nieżywe, pochodzące z innych wymiarów egzystencji lub pozbawione materialnego ciała. 
+
+Leczenie jest stałe, pod warunkiem jednak, że istota nie otrzyma kolejnych obrażeń. Rany spowodowane odwróconą wersją tego zaklęcia można leczyć tak jak zwykłe obrażenia.~
+
+@13=~Spontaniczne przwoływanie~
+
+@14=~Spontaniczne przywoływanie
+
+Czas działania: 6 godzin
+Czas rzucania: natychmiastowy
+
+When this ability is activated, all memorized priest spells are transformed into summoning spells of respective spell level. It lasts for 6 hours, or until the first priest spell is cast.~
+
+@15=~Pomniejsze przywołanie zwierząt I~
+
+@16=~Pomniejsze przywołanie zwierząt I 
+(Sprowadzanie/Przywoływanie)
+
+Poziom: 1
+Sfera: Zwierzęta, Przywoływanie  
+Zasięg: 10 m 
+Czas działania: 3 tury 
+Czas rzucania: 4 
+Obszar działania: specjalny 
+Rzut obronny: brak 
+
+Mocą tego czaru kapłan przywołuje psa bojowego, który będzie walczył u jego boku. Pozostanie on pod kontrolą rzucającego aż do swojej śmierci lub do zakończenia działania czaru.~
+
+@17=~Pomniejsze przywołanie zwierząt II~
+
+@18=~Pomniejsze przywołanie zwierząt II 
+(Sprowadzanie/Przywoływanie)
+
+Poziom: 2
+Sfera: Zwierzęta, Przywoływanie  
+Zasięg: 10 m 
+Czas działania: 3 tury 
+Czas rzucania: 5 
+Obszar działania: specjalny 
+Rzut obronny: brak 
+
+Mocą tego czaru kapłan przywołuje wilka, który będzie walczył u jego boku. Pozostanie on pod kontrolą rzucającego aż do swojej śmierci lub do zakończenia działania czaru.~
+
+@19=~Pomniejsze przywołanie zwierząt III~
+
+@20=~Pomniejsze przywołanie zwierząt III 
+(Sprowadzanie/Przywoływanie)
+
+Poziom: 3
+Sfera: Zwierzęta, Przywoływanie  
+Zasięg: 10 m 
+Czas działania: 3 tury 
+Czas rzucania: 6 
+Obszar działania: specjalny 
+Rzut obronny: brak 
+
+Mocą tego czaru kapłan przywołuje 1-2 zwierzęta o liczbie kostek 4 lub mniej. Czar można rzucać na wolnym powietrzu lub wewnątrz budynków, a rodzaj przywołanych zwierząt zależy od miejsca, w którym rzucany jest czar.~
+
+@31=~Magiczny kieł~
+
+@32=~Magiczny kieł
+
+Poziom: 1
+Sfera: Walka
+Zasięg: dotyk
+Czas działania: stały
+Czas rzucania: 2
+Obszar działania: 1 istota
+Rzut obronny: brak
+
+Czar ten zapewnia zwierzęciu premię +1 do testów ataku i obrażeń. Działa on tylko na zwierzęta przyzwane za pomocą druidycznego zaklęcia.~
+
+@33=~Większy magiczny kieł~
+
+@34=~Większy magiczny kieł
+
+Poziom: 3
+Sfera: Walka
+Zasięg: dotyk
+Czas działania: stały
+Czas rzucania: 2
+Obszar działania: 1 istota
+Rzut obronny: brak
+
+Czar ten zapewnia zwierzęciu premię do testów ataku i obrażeń w wysokości +1 na każde cztery poziomy czarującego (maksimum +5). Działa on tylko na zwierzęta przyzwane za pomocą druidycznego zaklęcia.~
+
+@99=~~
+
+@100=~Pomijanie zawartosci EE~
+
+@101=~Spontaniczne rzucanie zaklec przez kaplanow i druidow~
+
+@102=~Dodaj czar Magiczny kiel~

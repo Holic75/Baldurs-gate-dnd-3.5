@@ -1,0 +1,89 @@
+DEFINE_ACTION_FUNCTION ~DIMINISH_SPELL_CASTING~
+	INT_VAR
+		is_wizard=0
+	    levels_to_remove=0
+	STR_VAR
+		clab=~~
+		mask_file=~~
+		caption=~~
+		2DAfile=~~
+	BEGIN
+		INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
+			
+		OUTER_SET spell_opcode=62
+		OUTER_SET max_spell_level=7
+		OUTER_SPRINT spl_file ~3ed/SpellProgression/REMSPLP.SPL~
+		OUTER_SPRINT lvl_file ~3ed/SpellProgression/REMLVLP.SPL~
+		
+		ACTION_IF (is_wizard) BEGIN
+			OUTER_SET spell_opcode=42
+			OUTER_SET max_spell_level=9
+			OUTER_SPRINT spl_file ~3ed/SpellProgression/REMSPLW.SPL~
+			OUTER_SPRINT lvl_file ~3ed/SpellProgression/REMLVLW.SPL~
+		END
+		
+		OUTER_SET row_size=1+max_spell_level
+		
+		COPY ~%2DAfile%~ ~override~ 
+			COUNT_2DA_ROWS row_size n_rows			
+			FOR (i=1;i<n_rows;i=i+1) BEGIN
+				SET spells_to_remove=0
+				READ_2DA_ENTRY %i% 0 row_size lvl //lvl at which to modify spells
+				FOR (j=1;j<row_size;j=j+1) BEGIN
+					READ_2DA_ENTRY %i% j row_size remove_spell	
+					SET spells_to_remove=spells_to_remove + (1 << (j - 1))*remove_spell //bit mask for spells to remove
+				END
+				DEFINE_ASSOCIATIVE_ARRAY diminished_spellcasting BEGIN "%lvl%" => "%spells_to_remove%" END
+			END
+		
+		
+		//create necessary spells
+		COPY ~%mask_file%~ ~override/%caption%.SPL~ //mask
+		
+		OUTER_SPRINT clab_line EVALUATE_BUFFER ~%caption%~
+		
+		
+		OUTER_SET k=1
+		OUTER_SET lvl_last=1
+		ACTION_PHP_EACH diminished_spellcasting AS lvl=>spells_to_remove BEGIN
+			COPY ~%spl_file%~ ~override/%caption%%lvl%.SPL~
+				LPF ALTER_SPELL_EFFECT INT_VAR parameter2=spells_to_remove END														
+			COPY_EXISTING ~%caption%.SPL~ ~override~ 
+				READ_SHORT 0x0068 "Nheaders" //number of headers
+				PATCH_IF (k!=1) BEGIN
+					LPF ADD_SPELL_HEADER INT_VAR  copy_header=1 END	
+					SET Nheaders=Nheaders+1
+				END
+				LPF ALTER_SPELL_HEADER INT_VAR  header=Nheaders min_level=lvl END
+				SPRINT resource EVALUATE_BUFFER ~%caption%%lvl%~
+				LPF ALTER_SPELL_EFFECT INT_VAR header=Nheaders STR_VAR resource END
+			
+				ACTION_IF (k=1 AND levels_to_remove) BEGIN //remove complete spell levels
+					COPY ~%lvl_file%~ ~override/%caption%0.SPL~
+						LPF ALTER_SPELL_EFFECT INT_VAR parameter2=levels_to_remove END
+					COPY_EXISTING ~%caption%.SPL~ ~override~ 
+						SPRINT resource EVALUATE_BUFFER ~%caption%0~
+						LPF CLONE_EFFECT INT_VAR check_globals=0 header=0 STR_VAR resource END						
+				END
+								
+			OUTER_FOR (i=lvl_last;i<lvl;i=i+1) BEGIN //filling string with empty lines entries
+				OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line% ****~ 
+			END
+			OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line% AP_%caption%~
+			OUTER_SET k=k+1	
+			OUTER_SET lvl_last=lvl+1
+		END
+		
+		
+		COPY_EXISTING_REGEXP GLOB ~%clab%~ ~override~
+			COUNT_2DA_ROWS 20 "nrows"
+			COUNT_2DA_COLS "n_cols"
+			
+			FOR (i=lvl_last;i<n_cols;i=i+1) BEGIN //filling clab with empty lines
+				SPRINT clab_line EVALUATE_BUFFER ~%clab_line% ****~ 
+			END
+			
+			INSERT_2DA_ROW nrows 20 ~%clab_line%~
+    END		
+	
+

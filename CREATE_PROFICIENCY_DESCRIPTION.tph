@@ -1,0 +1,48 @@
+DEFINE_ACTION_FUNCTION ~CREATE_PROFICIENCY_DESCRIPTION~
+	INT_VAR
+		strref_name=0
+		strref_desc=0
+		label_name=0
+		label_desc=0
+		label_featname=0
+		label_featdesc=0
+		n_stars=0
+		label_slot=0
+		label_slots=0
+	BEGIN
+		//create full tree description string
+		OUTER_SPRINT tree_desc_string (AT "label_name")
+		STRING_SET_EVALUATE %strref_name% ~%tree_desc_string%~
+		OUTER_SPRINT desc_string (AT "label_desc")
+		OUTER_SPRINT slot_string (AT "label_slot")
+		OUTER_SPRINT slots_string (AT "label_slots")
+		
+		
+		ACTION_TO_UPPER tree_desc_string	
+		OUTER_SPRINT tree_desc_string EVALUATE_BUFFER ~%tree_desc_string%: %desc_string%~
+		
+		
+      	OUTER_FOR (i=1;i<=n_stars;i=i+1) BEGIN
+			OUTER_SET featname_id=label_featname+i - 1
+			OUTER_SET featdesc_id=label_featdesc+i - 1
+			
+			OUTER_SPRINT featname_i (AT "featname_id")
+			OUTER_SPRINT featdesc_i (AT "featdesc_id")
+			
+			ACTION_IF (i=1) BEGIN
+				OUTER_SPRINT tree_desc_string EVALUATE_BUFFER ~%tree_desc_string%
+			
+%featname_i% (%i% %slot_string%): %featdesc_i%~
+			END
+			ELSE BEGIN
+				OUTER_SPRINT tree_desc_string EVALUATE_BUFFER ~%tree_desc_string%
+			
+%featname_i% (%i% %slots_string%): %featdesc_i%~			
+			END			
+		END
+		
+			STRING_SET_EVALUATE %strref_desc% ~%tree_desc_string%~
+	
+    END		
+	
+

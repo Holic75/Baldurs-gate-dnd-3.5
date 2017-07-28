@@ -1,0 +1,55 @@
+
+DEFINE_ACTION_FUNCTION ~ADD_ACT_FEAT~ //activated ability bonus feat
+
+	STR_VAR
+		ability_name=~dummy~
+		game_name=~~
+		game_description=~~
+	BEGIN
+		COPY ~3ed/Feats/ActivatedAbilities/%ability_name%~  ~override~
+		
+		COPY_EXISTING ~%ability_name%.SPL~  ~override/%ability_name%BN.SPL~
+		SPRINT resource EVALUATE_BUFFER ~%ability_name%BN~
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource END //remove bonuses before next application
+		DELETE  ~override/%ability_name%.SPL~
+		//updating resource file
+		COPY ~3ed/Feats/ActivatedAbilities/Template/ACTMODBN.EFF~ ~override\%ability_name%BN.EFF~
+		SPRINT resource EVALUATE_BUFFER ~%ability_name%BN~
+		WRITE_EVALUATED_ASCII 0x0030 ~%resource%~ #8
+		//activate ability
+		COPY ~3ed/Feats/ActivatedAbilities/Template/ACTMOD.SPL~ ~override\%ability_name%1.SPL~
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326  STR_VAR resource END // initial application
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=272  STR_VAR resource END // use eff every n seconds
+		SPRINT resource EVALUATE_BUFFER ~%ability_name%1~
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=172  STR_VAR resource END // remove activation button
+		SPRINT resource EVALUATE_BUFFER ~%ability_name%0~
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=171  STR_VAR resource END // add stop button
+		SPRINT icon EVALUATE_BUFFER ~%ability_name%1B~
+		LPF ALTER_SPELL_HEADER STR_VAR icon END //spell header icon
+		WRITE_EVALUATED_ASCII 0x003a ~%ability_name%1C~ #8 //spell icon
+		SAY_EVALUATED NAME1 ~%game_name%~
+		SAY_EVALUATED UNIDENTIFIED_DESC ~%game_description%~
+		
+		
+		//stop ability
+		COPY ~3ed/Feats/ActivatedAbilities/Template/ACTSTP.SPL~ ~override\%ability_name%0.SPL~
+		SPRINT resource EVALUATE_BUFFER ~%ability_name%BN~
+		LPF ALTER_SPELL_EFFECT INT_VAR header=1  STR_VAR resource END // remove bonus effect
+		SPRINT resource EVALUATE_BUFFER ~%ability_name%1~
+		LPF ALTER_SPELL_EFFECT INT_VAR header=4  STR_VAR resource END // remove continuous application
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=171  STR_VAR resource END // add activate button
+		SPRINT resource EVALUATE_BUFFER ~%ability_name%0~
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=172  STR_VAR resource END // remove stop button
+		SPRINT icon EVALUATE_BUFFER ~%ability_name%0B~
+		LPF ALTER_SPELL_HEADER STR_VAR icon END //spell header icon
+		WRITE_EVALUATED_ASCII 0x003a ~%ability_name%0C~ #8 //spell icon
+		
+		SAY_EVALUATED NAME1 ~Deactivate %game_name%~
+		SAY_EVALUATED UNIDENTIFIED_DESC ~Deactivate %game_name%~
+		
+		//feat
+		COPY ~3ed/Feats/ActivatedAbilities/Template/ACTMODFT.SPL~ ~override\%ability_name%FT.SPL~
+		SPRINT resource EVALUATE_BUFFER ~%ability_name%1~
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=171  STR_VAR resource END //add activation button
+		
+	END

@@ -1,0 +1,64 @@
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself,CONTROLLED)
+		MakeGlobalOverride()
+		Continue()
+END
+
+IF
+	OnCreation()
+	Kit(LastSummonerOf(Myself),BEASTMASTER)
+THEN
+	RESPONSE #100
+		ApplySpellRES("RNGSQRS",Myself) // summon squirel giving bonuses
+		Continue()
+END
+
+IF
+	OR(3)
+		HitBy(Player%player_id%,CRUSHING)
+		Die()
+		PartyRested()
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	OR(2) //check if summoner is not properly marked or not exists at all
+		!CheckStat(Player%player_id%,%player_id%,EXTRAPROFICIENCY20)  
+		NumInPartyLT(%player_id%)                                   
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+
+IF
+	!Detect(Player1)           //jump to summoner companion does not see any party members
+	OR(2)
+		NumInPartyLT(2)
+		!Detect(Player2) 
+	OR(2)
+		NumInPartyLT(3)
+		!Detect(Player3) 
+	OR(2)
+		NumInPartyLT(4)
+		!Detect(Player4) 
+	OR(2)
+		NumInPartyLT(5)
+		!Detect(Player5) 
+	OR(2)
+		NumInPartyLT(1)
+		!Detect(Player6) 		 
+THEN
+	RESPONSE #100
+		JumpToObject(Player%player_id%)
+END
+
+
+
+
+

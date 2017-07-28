@@ -1,0 +1,10 @@
+2DA      V1.0
+0
+         MIN_STR  MAX_STR  MIN_DEX  MAX_DEX  MIN_CON  MAX_CON  MIN_INT  MAX_INT  MIN_WIS  MAX_WIS  MIN_CHR  MAX_CHR
+HUMAN    7        18       7        18       7        18       7        18       7        18       7        18
+DWARF    7        18       7        18       7       18       7        18       7        18       7        18
+ELF      7        18       7        18       7        18       7        18       7        18       7        18
+GNOME    7        18       7        18       7        18       7        18       7        18       7        18
+HALF_ELF 7        18       7        18       7        18       7        18       7        18       7        18
+HALFLING 7        18       7        18       7       18       7        18       7        18       7        18
+HALFORC  7        18       7        18       7        18       7        18       7        18       7        18

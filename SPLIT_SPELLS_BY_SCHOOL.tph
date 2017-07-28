@@ -1,0 +1,56 @@
+DEFINE_ACTION_FUNCTION ~SPLIT_SPELLS_BY_SCHOOL~
+
+	BEGIN
+		//spells to exclude
+		OUTER_SET k=0
+		COPY_EXISTING ~hidespl.2DA~ ~override~
+			COUNT_2DA_ROWS 4 n_rows
+			FOR (i=0;i<n_rows;i=i+1) BEGIN				
+				READ_2DA_ENTRY %i% 0 4 spl_file //spell name without spl extension
+				PATCH_IF NOT (	~%spl_file%~ STRING_MATCHES_REGEXP ~SPWI[1-7].+~) BEGIN
+					DEFINE_ASSOCIATIVE_ARRAY exclude_spells BEGIN  "%k%" => "%spl_file%" END
+					k=k+1
+					//PATCH_PRINT ~%spl_file%~
+				END
+			END
+		
+		COPY ~3ed/Feats/SpellfusedWarden/exclude.2DA~ ~3ed/Feats/SpellfusedWarden/exclude.2DA~
+			COUNT_2DA_ROWS 2 n_rows
+			FOR (i=0;i<n_rows;i=i+1) BEGIN				
+				READ_2DA_ENTRY %i% 0 2 spl_file //spell name without spl extension
+				DEFINE_ASSOCIATIVE_ARRAY exclude_spells BEGIN  "%k%" => "%spl_file%" END
+				k=k+1
+			END
+			
+		
+		COPY_EXISTING_REGEXP GLOB ~SPWI[1-7][0-9]+\.spl~ ~override~
+			READ_SHORT 0x1c "spell_type"
+			READ_SHORT 0x34 "spell_level"
+			READ_BYTE  0x001f "castable"
+			READ_BYTE  0x0025 "school"
+			SET castable = NOT (castable BAND 0b01000000)
+			SPRINT spell_name EVALUATE_BUFFER ~%SOURCE_RES%~
+			PATCH_IF (castable AND school>0 AND school<9 AND spell_level<8 AND spell_level>0 AND spell_type=1) BEGIN
+				SET exclude=0
+				PHP_EACH exclude_spells AS spell_id=>spell_file_name BEGIN
+					PATCH_IF (NOT exclude) AND (~%spell_name%~ STRING_EQUAL ~%spell_file_name%~) BEGIN
+						SET exclude=1
+					END
+				END
+				
+				PATCH_IF (NOT exclude) BEGIN
+					INNER_ACTION BEGIN
+					
+						COPY ~3ed/Feats/SpellfusedWarden/Schools2DA/Schl%school%.2DA~ ~3ed/Feats/SpellfusedWarden/Schools2DA/Schl%school%.2DA~  //get list of spells 
+							COUNT_2DA_ROWS 1 n_rows
+							INSERT_2DA_ROW %n_rows% 1 ~%spell_name%~
+					END
+				END
+			
+			
+			END
+			
+			
+	END
+	
+

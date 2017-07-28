@@ -1,0 +1,19 @@
+
+DEFINE_ACTION_FUNCTION ~ADD_PSL_FEAT~ //simple persistent feat
+
+	STR_VAR
+		ability_name=~dummy~
+
+	BEGIN
+		OUTER_SPRINT resource EVALUATE_BUFFER ~%ability_name%BN~
+		COPY ~3ed/Feats/PersistentAbilities/Simple/%ability_name%/%ability_name%.SPL~  ~override\%ability_name%BN.spl~
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource END 	//remove effects of previous ability application
+		
+		
+		COPY ~3ed/Feats/PersistentAbilities/Simple/Template/PSLBN.EFF~ ~override\%ability_name%BN.EFF~
+		WRITE_EVALUATED_ASCII 0x0030 ~%resource%~ #8
+		COPY ~3ed/Feats/PersistentAbilities/Simple/Template/PSLFT.SPL~ ~override\%ability_name%FT.SPL~
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326  STR_VAR resource END // initial effect application
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=272  STR_VAR resource END //apply every n seconds
+		
+	END

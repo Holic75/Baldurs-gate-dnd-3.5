@@ -1,0 +1,76 @@
+DEFINE_ACTION_FUNCTION ~ADD_CHANNEL_ENERGY~
+	INT_VAR
+		level_offset=1
+		divisor=2
+		pos_name_ref=0
+		pos_descr_ref=0
+		neg_name_ref=0
+		neg_descr_ref=0
+	STR_VAR
+		id=~C~
+	BEGIN
+	INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
+	
+	COPY ~3ed/Classes/TurnUndead/CH_POS.SPL~ ~override/CE_P_%id%.SPL~
+		 WRITE_LONG 0x0008 pos_name_ref
+		 WRITE_LONG 0x0050 pos_descr_ref
+		 FOR (i=1;i<=20;i=i+1) BEGIN
+			SET savebonus = 0 - (i/4)
+			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=3 projectile=251 STR_VAR icon=~CHANPOSB~ END
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=141 target=2 parameter1 = 0 parameter2 =2 duration=1 timing=1 END
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=215 target=2 parameter1 = 0 parameter2 =1 duration=3 timing=0 STR_VAR resource=~SPHOLY~ END
+			SET dmg=((i+level_offset)/divisor)
+			PATCH_IF (dmg<1) BEGIN
+				dmg=1
+			END
+			SPRINT resource EVALUATE_BUFFER ~EN_DMG%dmg%~
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 4 parameter2 =3 duration=1 timing=0 STR_VAR resource END
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 4 parameter2 =3 duration=1 timing=0 savingthrow=1 savebonus STR_VAR resource END
+			SPRINT resource EVALUATE_BUFFER ~EN_HL%dmg%~
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 30 parameter2 =2 duration=1 timing=0 STR_VAR resource END
+		END 
+	
+	COPY ~3ed/Classes/TurnUndead/GV_CE.SPL~ ~override/CE_P_G%id%.SPL~
+		SPRINT resource EVALUATE_BUFFER ~CE_P_%id%~
+		LPF ALTER_SPELL_EFFECT STR_VAR resource END
+	COPY ~3ed/Classes/TurnUndead/CE_1.EFF~ ~override/CE_P%id%1.EFF~
+		WRITE_LONG 0x0020 38 //not evil
+		WRITE_EVALUATED_ASCII 0x30 ~CE_P_G%id%~ #8
+	
+	
+	COPY ~3ed/Classes/TurnUndead/CH_NEG.SPL~ ~override/CE_N_%id%.SPL~
+		 WRITE_LONG 0x0008 neg_name_ref
+		 WRITE_LONG 0x0050 neg_descr_ref
+		 FOR (i=1;i<=20;i=i+1) BEGIN
+			SET savebonus = 0 - (i/4)
+			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=3 projectile=251 STR_VAR icon=~CHANNEGB~ END
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=141 target=2 parameter1 = 0 parameter2 =2 duration=1 timing=1 END
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=215 target=2 parameter1 = 0 parameter2 =1 duration=3 timing=0 STR_VAR resource=~SPUNHOLY~ END
+			SET dmg=((i+level_offset)/divisor)
+			PATCH_IF (dmg<1) BEGIN
+				dmg=1
+			END			
+			SPRINT resource EVALUATE_BUFFER ~EN_DMG%dmg%~
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 200 parameter2 =2 duration=1 timing=0 STR_VAR resource END
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 200 parameter2 =2 duration=1 timing=0 savingthrow=1 savebonus STR_VAR resource END
+			SPRINT resource EVALUATE_BUFFER ~EN_HL%dmg%~
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 4 parameter2 =3 duration=1 timing=0 STR_VAR resource END
+		END
+
+	
+	COPY ~3ed/Classes/TurnUndead/GV_CE.SPL~ ~override/CE_N_G%id%.SPL~
+		SPRINT resource EVALUATE_BUFFER ~CE_N_%id%~
+		LPF ALTER_SPELL_EFFECT STR_VAR resource END
+	COPY ~3ed/Classes/TurnUndead/CE_1.EFF~ ~override/CE_N%id%1.EFF~
+		WRITE_LONG 0x0020 37 //evil
+		WRITE_EVALUATED_ASCII 0x30 ~CE_N_G%id%~ #8
+		
+		
+	//give channel energy depending on charisma 
+	//remove channel energy
+	COPY_EXISTING ~CE_0.SPL~ ~override~
+		SPRINT resource EVALUATE_BUFFER ~CE_P_%id%~
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=172 target=2 parameter1 = 0 parameter2 =0 duration=1 timing=0 STR_VAR resource END
+		SPRINT resource EVALUATE_BUFFER ~CE_N_%id%~
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=172 target=2 parameter1 = 0 parameter2 =0 duration=1 timing=0 STR_VAR resource END
+	END

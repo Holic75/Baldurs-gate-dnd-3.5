@@ -1,0 +1,24 @@
+2DA V1.0
+0
+                    FIRST_LEVEL OTHER_LEVELS     2          3          4        5       6       7     8    9       10     11      12     13       14       15              
+MAGE                1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+FIGHTER             1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+CLERIC              1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+THIEF               1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+BARD                1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+PALADIN             1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+FIGHTER_MAGE        1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+FIGHTER_CLERIC      1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+FIGHTER_THIEF       1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+FIGHTER_MAGE_THIEF  1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+DRUID               1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+RANGER              1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+MAGE_THIEF          1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+CLERIC_MAGE         1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+CLERIC_THIEF        1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+FIGHTER_DRUID       1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+FIGHTER_MAGE_CLERIC 1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+CLERIC_RANGER       1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+SORCERER            1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+MONK                1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4
+SHAMAN              1          5                 1          1          2        2       2       2     3    3       3       3       4      4        4        4

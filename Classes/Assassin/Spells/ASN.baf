@@ -1,0 +1,13 @@
+IF
+	PartyRested()
+
+	Kit(Player%player_id%,ASSASIN)
+	LevelGT(Player%player_id%,3)
+
+THEN
+	RESPONSE #100
+		ApplySpellRES("RMASN",Player%player_id%) 
+		ActionOverride(Player%player_id%,ReallyForceSpellRes("BNASN",Player%player_id%))
+		ActionOverride(Player%player_id%,ReallyForceSpellRes("GVASN",Player%player_id%))
+		Continue()
+END

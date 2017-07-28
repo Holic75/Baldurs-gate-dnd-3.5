@@ -1,0 +1,75 @@
+DEFINE_ACTION_FUNCTION ~UPDATE_SPELLFUSED_WARDEN_SCHOOLS~
+	INT_VAR
+		school_id=1
+		yes_response=0 //strref to 'Choose this school.' response
+		no_response=0 //stref to 'Choose another school.' response		
+	STR_VAR
+		school_file_2DA=~~  //file name (.2da is added as extension)	
+	BEGIN
+
+				
+		COPY_EXISTING ~%school_file_2DA%.2DA~ ~override~ //get list of spells 
+			COUNT_2DA_ROWS 1 n_rows
+			READ_2DA_ENTRY 0 0 1 school_name //school name 
+			READ_2DA_ENTRY 1 0 1 school_descr_read //school description 
+			
+			INNER_PATCH_SAVE school_descr ~%school_descr_read%~ BEGIN
+				REPLACE_TEXTUALLY ~_~  ~ ~
+			END
+			
+			FOR (i=2;i<n_rows;i=i+1) BEGIN				
+				READ_2DA_ENTRY %i% 0 1 spl_file //spell name without spl extension
+				INNER_ACTION BEGIN
+										
+					OUTER_SPRINT spl_to_add EVALUATE_BUFFER ~%school_file_2DA%%i%~
+					COPY_EXISTING  ~%spl_file%.SPL~ ~override/%spl_to_add%.SPL~
+						READ_STRREF 0x0008 spell_name
+						READ_LONG 0x0034 spl_level
+						LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_type=2 END 
+																							
+				END
+				DEFINE_ASSOCIATIVE_ARRAY spell_list BEGIN "%spl_to_add%", "%spl_level%" => "%spell_name%" END			
+			END
+			
+		OUTER_SPRINT DescriptionString EVALUATE_BUFFER ~%school_name%. %school_descr% This school gives spellfused warden access to the following spells:~	
+		//creating ability that would give spellfused warden a list of spells read previously and also filling description string	
+		COPY ~3ed/Feats/LimitedUseAbilities/Template/LUAFT.SPL~  ~override/%school_file_2DA%S.SPL~
+			SET first_spell=1
+			PHP_EACH spell_list AS spl_to_add => spl_name BEGIN
+				SPRINT resource EVALUATE_BUFFER ~%spl_to_add_0%~
+				LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=2 timing=9 duration=1 STR_VAR resource END			
+				
+				PATCH_IF (first_spell)	BEGIN
+					first_spell=0
+				END 
+				ELSE BEGIN
+					SPRINT DescriptionString EVALUATE_BUFFER ~%DescriptionString%,~
+				END
+				SPRINT DescriptionString EVALUATE_BUFFER ~%DescriptionString% %spl_name% (%spl_to_add_1%)~
+			END
+		
+		SPRINT DescriptionString EVALUATE_BUFFER ~%DescriptionString%.~
+					
+		OUTER_SPRINT school_str EVALUATE_BUFFER  
+			
+~~~~~IF ~True()~ THEN REPLY ~%school_name%~ GOTO %school_id%
+
+|school_str|~~~~~ 
+
+		OUTER_SPRINT school_description_str EVALUATE_BUFFER
+			
+~~~~~IF ~~ THEN BEGIN %school_id%
+	SAY ~%DescriptionString%~
+	IF ~True()~ REPLY #%yes_response% DO ~ApplySpellRES("%school_file_2DA%S",LastSummonerOf(Myself))~ EXIT
+	IF ~True()~ REPLY #%no_response% GOTO 0
+END	
+
+|school_description_str|~~~~~
+	
+		COPY ~3ed/Feats/SpellfusedWarden/school.d~ ~3ed/Feats/SpellfusedWarden/school.d~									
+			EVALUATE_BUFFER	
+			REPLACE_TEXTUALLY ~|~ ~%~
+	
+    END		
+	
+

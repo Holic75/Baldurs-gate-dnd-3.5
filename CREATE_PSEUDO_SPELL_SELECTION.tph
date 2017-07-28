@@ -1,0 +1,62 @@
+DEFINE_PATCH_FUNCTION ~CREATE_PSEUDO_SPELL_SELECTION~
+	INT_VAR
+		min_val=10
+		max_val=25
+		step=2
+		par1=122 //ability code >=
+		header_lvl=1
+	STR_VAR
+		spell_list_2DA=~~
+		icon=~~
+	BEGIN
+		
+		//creating corresponding spell header
+		LPF ADD_SPELL_HEADER  INT_VAR  type=1 location=4 target=7 target_count=0 range=1 required_level=header_lvl speed=1 projectile=1  STR_VAR icon END
+		READ_SHORT 0x68 n_headers //number of extended_headers
+			FOR (i=min_val;i<=max_val;i=i+step) BEGIN
+				SPRINT resource EVALUATE_BUFFER ~%DEST_RES%~
+				LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 header=n_headers opcode=318 power=10 target=1 timing=0 duration=1 parameter2=par1 parameter1=i STR_VAR resource END //protection from the rest
+				SPRINT resource EVALUATE_BUFFER ~%spell_list_2DA%%i%~
+				LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 header=n_headers opcode=326 power=10 target=1 timing=0 duration=1 parameter2=par1 parameter1=i STR_VAR resource END //apply effect
+			END
+			
+			
+			
+		
+		INNER_ACTION BEGIN
+			COPY_EXISTING ~%spell_list_2DA%.2DA~ ~override~ //get list of spells 
+				COUNT_2DA_ROWS 3 n_rows
+				FOR (i=0;i<n_rows;i=i+1) BEGIN
+					READ_2DA_ENTRY i 1 3 spell_name 
+					DEFINE_ASSOCIATIVE_ARRAY spell_list BEGIN "%i%"=>"%spell_name%" END
+				END
+			
+			
+			OUTER_FOR (i=min_val;i<=max_val;i=i+step) BEGIN 
+				OUTER_SET saves_mod = (i - min_val) / step
+				//updating spells
+				ACTION_PHP_EACH spell_list AS id=>spell_name BEGIN		
+					COPY_EXISTING ~%spell_name%.spl~ ~override\%spell_name%%i%.spl~						
+						LPF INCREMENT_SPELL_DC INT_VAR saves_mod END
+
+				END
+				//updating 2da
+				COPY_EXISTING ~%spell_list_2DA%.2DA~ ~override\%spell_list_2DA%%i%.2DA~
+					COUNT_2DA_ROWS 3 n_rows
+					FOR (j=0;j<n_rows;j=j+1) BEGIN
+						READ_2DA_ENTRY j 1 3 spell_name 
+						SET_2DA_ENTRY j 1 3 ~%spell_name%%i%~
+					END
+					
+				COPY ~3ed/Feats/SelectSpell/Template/SELTMP.SPL~ ~override/%spell_list_2DA%%i%.SPL~
+					SPRINT resource EVALUATE_BUFFER ~%spell_list_2DA%%i%~
+					LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=214 STR_VAR resource END
+			END
+			
+		END
+		
+
+				
+    END		
+	
+

@@ -1,0 +1,10 @@
+IF
+	CheckStatGT(%object%,0,XP)
+	CheckStat(%object%,0,LEVEL)
+THEN
+	RESPONSE #100
+		ApplySpellRES("SETXP0",%object%)
+		Continue()
+END
+
+%lvlup_block%
