@@ -1235,6 +1235,7 @@ COPY ~3ed/Classes/Kensai/KENSCRE.BCS~ ~override~
 
 INCLUDE ~3ed/REPLACE_SUBSTRING.tph~
 INCLUDE ~3ed/PTCH_WPN.tph~
+INCLUDE ~3ed/UPDATE_WEAPON_DMG.tph~
 	//proficincy descriptions
 	//weapons
 	OUTER_FOR (k=0;k<9;k=k+1) BEGIN
@@ -1268,6 +1269,9 @@ INCLUDE ~3ed/PTCH_WPN.tph~
 
 		
 		PATCH_IF (proficiency = 89 ) BEGIN //bastard swords ->straight swords
+			LPF UPDATE_WEAPON_DMG INT_VAR match_dice_number = 2 match_dice_size = 4 target_dice_number = 1 target_dice_size = 10 END
+			LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace=~2d4~  new_substring=~1d10~ END
+			LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace=~2d4~  new_substring=~1d10~ END
 			LPF PTCH_WPN INT_VAR replace_label=2031 wpn_class_label=131 caption_label=2030 is_melee=1 END				
 		END 
 		ELSE PATCH_IF (proficiency = 90) BEGIN//longsword ->straight swords
@@ -1275,6 +1279,10 @@ INCLUDE ~3ed/PTCH_WPN.tph~
 			LPF PTCH_WPN INT_VAR replace_label=2032 wpn_class_label=131 caption_label=2030 is_melee=1 is_light=1 END			
 		END   
 		ELSE PATCH_IF (proficiency = 93) BEGIN //2h sword ->straight swords
+			LPF UPDATE_WEAPON_DMG INT_VAR match_dice_number = 1 match_dice_size = 10 target_dice_number = 2 target_dice_size = 6 END
+			LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace=~1d10~  new_substring=~2d6~ END
+			LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace=~1d10~  new_substring=~2d6~ END
+			
 			WRITE_BYTE 0x0031 89
 			LPF PTCH_WPN INT_VAR replace_label=2033 wpn_class_label=131 caption_label=2030 is_melee=1 is_2h=1 END			
 		END   
@@ -1324,10 +1332,17 @@ INCLUDE ~3ed/PTCH_WPN.tph~
 			LPF PTCH_WPN INT_VAR replace_label=2043 wpn_class_label=136 caption_label=2030 is_melee=1 END			
 		END   
 		ELSE PATCH_IF (proficiency = 98) BEGIN //spear -> polearms
+			LPF UPDATE_WEAPON_DMG INT_VAR match_dice_number = 1 match_dice_size = 6 target_dice_number = 1 target_dice_size = 8 END
+			LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace=~1d6~  new_substring=~1d8~ END
+			LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace=~1d6~  new_substring=~1d8~ END
+			
 			WRITE_BYTE 0x0031 95
 			LPF PTCH_WPN INT_VAR replace_label=2044 wpn_class_label=137 caption_label=2030 is_light=1 is_melee=1 is_2h=1 END					
 		END 
 		ELSE PATCH_IF (proficiency = 99) BEGIN //halberd -> polearms
+			LPF UPDATE_WEAPON_DMG INT_VAR match_dice_number = 1 match_dice_size = 10 target_dice_number = 1 target_dice_size = 12 END
+			LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace=~1d10~  new_substring=~1d12~ END
+			LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace=~1d10~  new_substring=~1d12~ END
 			WRITE_BYTE 0x0031 95
 			LPF PTCH_WPN INT_VAR replace_label=2045 wpn_class_label=137 caption_label=2030 is_melee=1 is_2h=1 END			
 		END    
@@ -2482,6 +2497,13 @@ INCLUDE ~3ed/MODIFY_DISPEL_MAGIC.tph~
 BEGIN @600
 	INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
 	
+	
+	OUTER_SET cure_level=241
+	OUTER_SET summ_level=242
+	OUTER_SET bcst_level=243
+	OUTER_SET cstk_level=244
+	OUTER_SET harm_level=245
+	
 	//application of heal/harm depeding on alignement or spell burning (ftr/cleric) or spell channeling (ftr/thf)
 	COPY ~3ed/SpontaneousCasting/HealHarm/GSPCAST.spl~ ~override~
 	COPY ~3ed/SpontaneousCasting/HealHarm/rgspcast.spl~ ~override~
@@ -2654,11 +2676,7 @@ BEGIN @600
 		~SPPR702~ ~SPPR702B~ //summon earth elemental
 	END
 	
-	OUTER_SET cure_level=241
-	OUTER_SET summ_level=242
-	OUTER_SET bcst_level=243
-	OUTER_SET cstk_level=244
-	OUTER_SET harm_level=245
+
 	//Now we will loop over all spells and add spontaneous effects
 	COPY_EXISTING_REGEXP GLOB ~.+\.spl~ ~override~
 		READ_SHORT 0x1c "spell_type"

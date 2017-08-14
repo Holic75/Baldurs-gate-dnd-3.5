@@ -5,14 +5,14 @@ DEFINE_ACTION_FUNCTION ~UPDATE_SP_CASTING_LEVEL~
 	STR_VAR
 		ability_name=~~
 	BEGIN
-	
+		//compenstes level difference between actual character level and target caster level for spontatneous casting
 		//INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
-		
+		OUTER_SET SPONT_DURATION = 6
 		
 		COPY_EXISTING ~%ability_name%.SPL~ ~override~
 			SET caster_level_bonus=target_caster_level - 1
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=191 parameter1=caster_level_bonus END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=101 target=1 parameter2=191 duration=18 END //add protection from further caster level changes
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=101 target=1 parameter2=191 duration=SPONT_DURATION  END //add protection from further caster level changes
 			
 			FOR (i=1;i<max_levels;i=i+1) BEGIN
 				LPF ADD_SPELL_HEADER INT_VAR copy_header=i END
@@ -20,6 +20,8 @@ DEFINE_ACTION_FUNCTION ~UPDATE_SP_CASTING_LEVEL~
 				SET caster_level_bonus=target_caster_level - (i+1)
 				LPF ALTER_SPELL_EFFECT INT_VAR header=i+1 match_opcode=191 parameter1=caster_level_bonus END				
 			END
+			
+			LPF ALTER_SPELL_EFFECT INT_VAR check_globals = 1 duration_high = SPONT_DURATION END
 					
     END		
 	

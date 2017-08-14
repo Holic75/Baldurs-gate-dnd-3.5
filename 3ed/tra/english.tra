@@ -2638,10 +2638,10 @@ Note: While this spell dispels the individual effects of Grease, Web, Stinking C
 	@601=~Spontaneous Healing~
 	@602=~Spontaneous Healing
 
-Duration: 3 rounds 
+Duration: 1 round
 Casting Time: Instant
 
-When this ability is activated, all memorized priest spells are transformed into healing spells of respective spell level. This lasts for 3 rounds, or until the first priest spell is cast.
+When this ability is activated, all memorized priest spells are transformed into healing spells of respective spell level. This lasts for 1 round, or until the first priest spell is cast.
 
 Depending on spell level spells are transformed as follows:
 
@@ -2657,10 +2657,10 @@ Depending on spell level spells are transformed as follows:
 	@603=~Spontaneous Harming~
 	@604=~Spontaneous Harming
 
-Duration: 3 rounds
+Duration: 1 round
 Casting Time: Instant
 
-When this ability is activated, all memorized priest spells are transformed into harming spells of respective spell level. This effect lasts for 3 rounds, or until the first priest spell is cast.
+When this ability is activated, all memorized priest spells are transformed into harming spells of respective spell level. This effect lasts for 1 round, or until the first priest spell is cast.
 
 Depending on spell level spells are transformed as follows:
 
@@ -2734,10 +2734,10 @@ Curing is permanent only insofar as the creature does not sustain further damage
 	@613=~Spontaneous Summoning~
 	@614=~Spontaneous Summoning
 
-Duration: 3 rounds 
+Duration: 1 round
 Casting Time: Instant
 
-When this ability is activated, all memorized priest spells are transformed into summoning spells of respective spell level. It lasts for 3 rounds, or until the first priest spell is cast.
+When this ability is activated, all memorized priest spells are transformed into summoning spells of respective spell level. It lasts for 1 round, or until the first priest spell is cast.
 
 Depending on spell level spells are transformed as follows:
 
@@ -2795,10 +2795,10 @@ By means of this spell, the caster calls between 1 and 2 animals that have 4 Hit
 @621=~Spontaneous Battle Casting~
 @622=~Spontaneous Battle Casting
 
-Duration: 3 rounds 
+Duration: 1 round
 Casting Time: Instant
 
-When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds. Ability lasts for 3 rounds, or until the first spell is sacrificed.~
+When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds. Ability lasts for 1 round, or until the first spell is sacrificed.~
 
 @623=~Spontaneous Battle Casting I~
 @624=~Spontaneous Battle Casting II~
@@ -2811,10 +2811,10 @@ When this ability is activated caster can sacrifice any  memorized spell and cha
 @631=~Spontaneous Spell Channeling~
 @632=~Spontaneous Spell Channeling
 
-Duration: 3 rounds 
+Duration: 1 round 
 Casting Time: Instant
 
-When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds. Ability lasts for 3 rounds, or until the first spell is sacrificed.~
+When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds. Ability lasts for 1 round, or until the first spell is sacrificed.~
 
 @633=~Spontaneous Spell Channeling I~
 @634=~Spontaneous Spell Channeling II~
