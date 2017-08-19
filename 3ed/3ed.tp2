@@ -1430,6 +1430,24 @@ INCLUDE ~3ed/REPLACE_SUBSTRING.tph~
 
 COPY ~3ed/Armor~ ~override~
 
+//making dex penalty depending on dex value and armor dex limit
+OUTER_FOR (i=10;i<=20;i+=2) BEGIN
+	
+	COPY_EXISTING ~ARMDEX.EFF~ ~override\ARMDEX%i%.EFF~
+	WRITE_LONG 0x001c i+1	
+	WRITE_EVALUATED_ASCII 0x0030 ~ARMDEX%i%~
+	
+	COPY_EXISTING ~ARMDEX.SPL~ ~override\ARMDEX%i%.SPL~
+	
+	LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 duration = 1 STR_VAR resource = ~ARMDEXPE~ END
+	
+	FOR (j=i+1;j<=25;j+=1) BEGIN
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = j parameter2 = 122 duration = 1 STR_VAR resource = ~ARMDEXPE~ END
+	END
+	
+END
+
+
 COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   READ_STRREF 0x0008 "unid_name"
   READ_STRREF 0x000c "id_name"
@@ -1721,6 +1739,16 @@ INCLUDE ~3ed/MODIFY_DISPEL_MAGIC.tph~
 	COPY ~3ed/Spells/FingerOfDeath/SPPR708.SPL~ ~override~
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @584	
+	//reduce horror duration to 3 rounds
+	COPY_EXISTING ~SPWI205.SPL~ ~override~
+		LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 18 END
+		READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @586
+	//remove level dependent saving throws penalty for spook
+	COPY_EXISTING ~SPWI125.SPL~ ~override~
+		LPF ALTER_SPELL_EFFECT INT_VAR savebonus = 0 END
+		READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @587
 	
 	//update cure spells
 	COPY ~3ed/Spells/CureSpells/SPPR315.SPL~ ~override~ 
@@ -3204,7 +3232,7 @@ BEGIN @900
 		 SAY_EVALUATED 0x0008 ~Racial Enemy: %FavoredEnemy%~
 		 SAY_EVALUATED 0x0050 ~Racial Enemy: %FavoredEnemy%
 		 
-Ranger gains +4 bonus on damage rolls against %FavoredEnemy%.~
+Character gains +4 bonus on damage rolls against %FavoredEnemy%.~
 
 		 SPRINT resource EVALUATE_BUFFER ~FE_DM%i%~
 	     LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 272  STR_VAR resource END  //apply damage bonus to racial enemy effects
@@ -3252,7 +3280,7 @@ DO ~ApplySpellRES("FE_%i%",LastSummonerOf(Myself))~  EXIT
 		 SAY_EVALUATED 0x0008 ~Improved Racial Enemy: %FavoredEnemy%~
 		 SAY_EVALUATED 0x0050 ~Improved Racial Enemy: %FavoredEnemy%
 		 
-Stalker gains +4 bonus on to hit and damage rolls and +2 AC and savingthrows against %FavoredEnemy%.~
+Character gains +4 bonus on to hit and damage rolls as well +2 bonus to AC and saving throws against %FavoredEnemy%.~
 
 		 SPRINT resource EVALUATE_BUFFER ~FE_DM%i%~
 	     LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 272 header=1 STR_VAR resource END  //apply damage bonus bonus to racial enemy effects

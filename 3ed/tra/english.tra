@@ -2212,7 +2212,7 @@ Casting Time: 5
 Area of Effect: 1 creature 
 Saving Throw: None 
 
-The recipient of this spell gains +1 to attack rolls and Saving Throws and a special bonus of 5 +1/caster level bonus to maximum Hit Points (up to 15) for the duration of the spell. The Aid spell enables the recipient to actually have more Hit Points than <PRO_HISHER> current maximum. The bonus Hit Points are lost first when the recipient takes damage and may not be regained by curative magic.~
+The recipient of this spell gains +1 to attack rolls and Saving Throws and a special bonus of 5 +1/caster level to maximum Hit Points (up to 15) for the duration of the spell. The Aid spell enables the recipient to actually have more Hit Points than <PRO_HISHER> current maximum. The bonus Hit Points are lost first when the recipient takes damage and may not be regained by curative magic.~
 //--------------------------------------
 	@527=~Aid, 10' Radius~
 //------------------------------------------------
@@ -2228,7 +2228,7 @@ Area of Effect: 30-ft. radius
 Saving Throw: None 
 
 When this spell is cast, all creatures within a 30-ft. radius are affected individually by Aid spell.
-The recipients gain +1 to attack rolls and Saving Throws and a special bonus of 5 +1/caster level bonus to maximum Hit Points (up to 20) for the duration of the spell.~	
+The recipients gain +1 to attack rolls and Saving Throws and a special bonus of 5 +1/caster level to maximum Hit Points (up to 20) for the duration of the spell.~	
 //---------------------------------------------
 	@529=~Animate Dead
 (Necromancy)
@@ -2585,6 +2585,31 @@ Area of Effect: 30-ft. radius
 Saving Throw: Neg.
 
 When a druid casts a Sleep spell, <PRO_HESHE> causes a comatose slumber to come upon one or more enemies (other than undead and certain other creatures specifically excluded from the spell's effects). All creatures to be affected by the Sleep spell must be within a 30-ft. radius. Creatures in the area of effect must make a Saving Throw vs. Death with a -3 penalty or fall asleep. Monsters with 5 Hit Dice or more are unaffected. Attacks against sleeping opponents never miss.~
+//---------------------------------------------------------------------------------------------------------------------------------------------------------
+	@586=~Horror
+(Necromancy)
+
+Level: 2
+Range: 40 ft.
+Duration: 3 rounds
+Casting Time: 2
+Area of Effect: 30-ft. radius
+Saving Throw: Neg.
+
+All enemies within the area of effect when this spell is cast must save vs. Spell or flee in terror. Certain creatures are immune to the effects of fear, including all undead.~
+//--------------------------------------------------------------------------------------------------
+	@587=~Spook
+(Illusion/Phantasm)
+
+Level: 1
+Range: 30 ft.
+Duration: 3 rounds
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+A Spook spell enables the wizard to play upon natural fears to cause the target creature to perceive the caster as someone or something inimical, which then appears to advance upon it in a threatening manner. If the creature does not make a successful Saving Throw vs. Spell, it turns and flees at maximum speed as far from the wizard as possible. Although the caster does not actually pursue the fleeing creature, a phantasm from its own mind does. Undead are completely unaffected.~
+
 //--------------------------------------------------------------------------------------------------
 	@591=~Flame Strike
 (Evocation)
