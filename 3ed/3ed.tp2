@@ -1430,21 +1430,21 @@ INCLUDE ~3ed/REPLACE_SUBSTRING.tph~
 
 COPY ~3ed/Armor~ ~override~
 
+
 //making dex penalty depending on dex value and armor dex limit
 OUTER_FOR (i=10;i<=20;i+=2) BEGIN
 	
 	COPY_EXISTING ~ARMDEX.EFF~ ~override\ARMDEX%i%.EFF~
-	WRITE_LONG 0x001c i+1	
-	WRITE_EVALUATED_ASCII 0x0030 ~ARMDEX%i%~
-	
-	COPY_EXISTING ~ARMDEX.SPL~ ~override\ARMDEX%i%.SPL~
-	
-	LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 duration = 1 STR_VAR resource = ~ARMDEXPE~ END
-	
-	FOR (j=i+1;j<=25;j+=1) BEGIN
-		LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 parameter1 = j parameter2 = 122 duration = 1 STR_VAR resource = ~ARMDEXPE~ END
-	END
-	
+		WRITE_LONG 0x001c 0
+		WRITE_LONG 0x0020 0
+		WRITE_EVALUATED_ASCII 0x0030 ~ARMDEX%i%~
+		
+		
+		COPY_EXISTING ~ARMDEX.SPL~ ~override\ARMDEX%i%.SPL~	
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 duration = 1 STR_VAR resource=~ARMACPE~ END //ac penalty
+			FOR (j=i+2;j<=25;j=j+2) BEGIN								
+				LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 duration = 1 parameter1 = j parameter2 = 122 STR_VAR resource=~ARMACPE~  END //ac penalty
+			END				
 END
 
 
@@ -1467,7 +1467,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   END  ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~Studded Leather Armor~) BEGIN //Studded Leather Armor
   	PATCH_PRINT ~%SOURCE_FILE%~
 	LPF DELETE_EFFECT INT_VAR match_opcode = 145 END //restores spell casting
-	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMDEX18~  END
+	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0   duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMDEX18~  END
 	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMSKL18~  END
 	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMSPF15~  END
 	
@@ -1484,7 +1484,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	LPF DELETE_EFFECT INT_VAR match_opcode = 90  END//Open Locks
 	LPF DELETE_EFFECT INT_VAR match_opcode = 91  END//Find Traps
 	LPF DELETE_EFFECT INT_VAR match_opcode = 92  END//PickPockets
-	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMDEX16~  END
+	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0   duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMDEX16~  END
 	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMSKL16~  END
 	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMSPF20~  END
 	
@@ -1497,7 +1497,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   END  ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~Chain Mail~ OR ~%unid_name%~ STRING_EQUAL ~Ankheg Plate Mail~) AND NOT ((~%id_name%~ STRING_EQUAL ~Elven Chain Mail~) OR (~%id_name%~ STRING_EQUAL ~Mithral Chain Mail +4~)) BEGIN //Chain Mail or Ankheg armor
   	PATCH_PRINT ~%SOURCE_FILE%~
 
-	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMDEX16~  END
+	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0   duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMDEX16~  END
 	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMSKL16~  END
 	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMSPF20~  END
 	
@@ -1518,7 +1518,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	LPF DELETE_EFFECT INT_VAR match_opcode = 90  END//Open Locks
 	LPF DELETE_EFFECT INT_VAR match_opcode = 91  END//Find Traps
 	LPF DELETE_EFFECT INT_VAR match_opcode = 92  END//PickPockets
-	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMDEX18~  END
+	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0   duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMDEX18~  END
 	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMSKL18~  END
 		
 	SPRINT ref3041 @3041
@@ -1532,7 +1532,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   	PATCH_PRINT ~%SOURCE_FILE%~
 	LPF DELETE_EFFECT INT_VAR match_opcode = 145 END //restores spell casting
 	LPF DELETE_EFFECT INT_VAR match_opcode = 144 END //restore thieving skills
-	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMDEX18~  END
+	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter1 = 0   parameter2 = 2 duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMDEX18~  END
 	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMSKL18~  END
 
 
@@ -1547,7 +1547,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   	PATCH_PRINT ~%SOURCE_FILE%~
 	LPF DELETE_EFFECT INT_VAR match_opcode = 145 END //restores spell casting
 	LPF DELETE_EFFECT INT_VAR match_opcode = 144 END //restore thieving skills
-	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMDEX14~  END
+	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0   duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMDEX14~  END
 	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMSKL14~  END
 	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMSPF30~  END
 
@@ -1564,7 +1564,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   	PATCH_PRINT ~%SOURCE_FILE%~
 	LPF DELETE_EFFECT INT_VAR match_opcode = 145 END //restores spell casting
 	LPF DELETE_EFFECT INT_VAR match_opcode = 144 END //restore thieving skills
-	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMDEX12~  END
+	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0   duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMDEX12~  END
 	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMSKL12~  END
 	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMSPF40~  END
 	
@@ -1581,7 +1581,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   	PATCH_PRINT ~%SOURCE_FILE%~
 	LPF DELETE_EFFECT INT_VAR match_opcode = 145 END //restores spell casting
 	LPF DELETE_EFFECT INT_VAR match_opcode = 144 END //restore thieving skills
-	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMDEX10~  END
+	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0   duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMDEX10~  END
 	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMSKL10~  END
 	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~ARMSPF50~  END
 
@@ -1946,7 +1946,7 @@ INCLUDE ~3ed/MODIFY_DISPEL_MAGIC.tph~
 		FOR (i=1;i<=12;i+=1) BEGIN   
 			SET cstr_lvl=i+8 
 			LPF ALTER_SPELL_EFFECT INT_VAR  header = i match_opcode = 54 parameter1 = (20 - cstr_lvl) parameter2 = 1 END // set thac0 to fighters
-			LPF ALTER_SPELL_EFFECT INT_VAR  header = i match_opcode = 44 parameter1 = 6 parameter2 = 0 END //STR bonus	
+			LPF ALTER_SPELL_EFFECT INT_VAR  header = i match_opcode = 44 parameter1 = 4 parameter2 = 0 END //STR bonus	
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 1 target = 2 power = 5 parameter1 = 6 parameter2 = 0 duration = 18*(cstr_lvl) resist_dispel = 3 END //+ 0.5 APR
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 145 target = 2 power = 5 parameter1 = 0 parameter2 = 0 duration = 18*(cstr_lvl) resist_dispel = 3 END // forbid casting wizard spells
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 145 target = 2 power = 5 parameter1 = 0 parameter2 = 1 duration = 18*(cstr_lvl) resist_dispel = 3 END // forbid casting cleric spells

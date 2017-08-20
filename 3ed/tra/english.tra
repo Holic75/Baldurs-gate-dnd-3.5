@@ -23,7 +23,7 @@ CLASS FEATURES:
 – May distribute 16 skill points per level among thieving skills (24 points at level 1).
 – Gets one bonus feat at level 1 and every 3 levels thereafter.
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.
-– At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill penalties and maximum dexterity values. Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.
+– At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill and AC penalties. Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.
 – Hit Die: d8~
 //---------------------------------------------------------------------------------------------------//
 	@003=~FIGHTER/CLERIC: This is a hybrid class that can use the abilities of a Fighter and a Cleric.
@@ -1798,8 +1798,8 @@ Can benifit from Weapon Finesse and Insightfull Strike~ */
 @300=~Armor System Overhaul (Casting Failure, Thieving skills penalties, Max Dexterity Limit)~
     //leather armor
 	@301=~Equipped abilities:
-- Max Dexterity Bonus: 20
-- Arcane Spell Casting Failure: 10%
+– Max Dexterity AC Bonus: 5
+– Arcane Spell Casting Failure: 10%
 
 ~
 	
@@ -1809,15 +1809,15 @@ Can benifit from Weapon Finesse and Insightfull Strike~ */
 – Find Traps: -5%
 – Pick Pockets: -5% 
 – Move Silently: -10%
-- Hide In Shadows: -10%
-- Max Dexterity Bonus: 18
-- Arcane Spell Casting Failure: 15%
+– Hide In Shadows: -10%
+– Max Dexterity AC Bonus: 4
+– Arcane Spell Casting Failure: 15%
 
 ~
 //hide armor
-	@303=~- Hide In Shadows: -20%
-- Max Dexterity Bonus: 16
-- Arcane Spell Casting Failure: 20%
+	@303=~– Hide In Shadows: -20%
+– Max Dexterity AC Bonus: 3
+– Arcane Spell Casting Failure: 20%
 
 ~
 //chainmail
@@ -1826,9 +1826,9 @@ Can benifit from Weapon Finesse and Insightfull Strike~ */
 – Find Traps: -20%
 – Pick Pockets: -20% 
 – Move Silently: -30%
-- Hide In Shadows: -30%
-- Max Dexterity Bonus: 16
-- Arcane Spell Casting Failure: 20%
+– Hide In Shadows: -30%
+– Max Dexterity AC Bonus: 3
+– Arcane Spell Casting Failure: 20%
 
 ~
 //elven chain armor
@@ -1841,8 +1841,8 @@ Can benifit from Weapon Finesse and Insightfull Strike~ */
 – Find Traps: -5%
 – Pick Pockets: -5% 
 – Move Silently: -10%
-- Hide In Shadows: -10%
-- Max Dexterity Bonus: 18
+– Hide In Shadows: -10%
+– Max Dexterity AC Bonus: 4
 
 ~
 //split mail
@@ -1851,9 +1851,9 @@ Can benifit from Weapon Finesse and Insightfull Strike~ */
 – Find Traps: -30%
 – Pick Pockets: -30% 
 – Move Silently: -40%
-- Hide In Shadows: -40%
-- Max Dexterity Bonus: 14
-- Arcane Spell Casting Failure: 30%
+– Hide In Shadows: -40%
+– Max Dexterity AC Bonus: 2
+– Arcane Spell Casting Failure: 30%
 
 ~
 //plate mail
@@ -1862,9 +1862,9 @@ Can benifit from Weapon Finesse and Insightfull Strike~ */
 – Find Traps: -40%
 – Pick Pockets: -40% 
 – Move Silently: -50%
-- Hide In Shadows: -50%
-- Max Dexterity Bonus: 12
-- Arcane Spell Casting Failure: 40%
+– Hide In Shadows: -50%
+– Max Dexterity AC Bonus: 1
+– Arcane Spell Casting Failure: 40%
 
 ~
 //full plate
@@ -1873,9 +1873,9 @@ Can benifit from Weapon Finesse and Insightfull Strike~ */
 – Find Traps: -50%
 – Pick Pockets: -50% 
 – Move Silently: -60%
-- Hide In Shadows: -60%
-- Max Dexterity Bonus: 10
-- Arcane Spell Casting Failure: 50%
+– Hide In Shadows: -60%
+– Max Dexterity AC Bonus: 0
+– Arcane Spell Casting Failure: 50%
 
 ~
 //Ankheg plate mail behaves like chain mail
@@ -1950,7 +1950,7 @@ Casting Time: 2
 Area of Effect: Caster
 Saving Throw: None 
 
-When this spells is cast, the priest effectively draws on the strength of <PRO_HISHER> god through himself becoming an ultimate fighting machine. Caster's base THAC0 becomes equal to that of a fighter of the same level and <PRO_HESHE> receive +1/2 addiitional attack per round. Also <PRO_HESHE> gets a +6 Strength bonus for the duration of the spell and receives all the bonuses to hit and damage rolls that this Strength confers.
+When this spells is cast, the priest effectively draws on the strength of <PRO_HISHER> god through himself becoming an ultimate fighting machine. Caster's base THAC0 becomes equal to that of a fighter of the same level and <PRO_HESHE> receive +1/2 additional attack per round. Also <PRO_HESHE> gets a +4 Strength bonus for the duration of the spell and receives all the bonuses to hit and damage rolls that this Strength confers.
 
 The drawback to this is that the priest must concentrate on the connection with <PRO_HISHER> god for the duration of the spell, hence losing the ability to cast any spells during this time. The effect lasts for 3 rounds for every level of the caster or until dispelled.~
 //--------------------------------------------------------------------------------------------------------------------//
@@ -2053,7 +2053,7 @@ Casting Time: 9
 Area of Effect: The caster 
 Saving Throw: None 
 
-This is a powerful combat spell that enhances the priest's physical prowess, transforming <PRO_HIMHER> into a juggernaut of destruction. The effect adds 1 temporary Hit Point per level of the caster, +2 bonus to AC, adds 1 point of Strength and 5% physical damage resistance for every 3 levels of the caster (to a maximum of 25), and causes every successful hit to inflict maximum damage. The effects last for the duration of the spell or until dispelled.~
+This is a powerful combat spell that enhances the priest's physical prowess, transforming <PRO_HIMHER> into a juggernaut of destruction. The effect adds 1 temporary Hit Point per level of the caster, +2 bonus to AC, adds 1 point of Strength and 5% physical damage resistance for every 3 levels of the caster, and causes every successful hit to inflict maximum damage. The effects last for the duration of the spell or until dispelled.~
 //----------------------------------------------------------------------------------//
 	@512=~Flame Strike
 (Evocation)
