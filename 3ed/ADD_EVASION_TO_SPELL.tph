@@ -1,6 +1,7 @@
 DEFINE_PATCH_FUNCTION ~ADD_EVASION_TO_SPELL~
 	INT_VAR
 		evasion=1 //if set to 0 will not add protection but simply make spell ignore mirror image instead
+		target_save_type = 2 // 2 for breath, 8 for wands  , 10  for both
 	BEGIN
 
 		READ_LONG 0x64 header_block_offset //beginning of extended_headers table
@@ -9,7 +10,13 @@ DEFINE_PATCH_FUNCTION ~ADD_EVASION_TO_SPELL~
 
 		
 		SET effect_size=0x30 //size of effect block
-		SET header_size=0x28 //size of header block
+		
+		PATCH_IF (~%SOURCE_EXT%~ STRING_EQUAL ~SPL~) BEGIN
+			SET header_size=0x28 //size of header block
+		END
+		ELSE BEGIN
+			SET header_size=0x38 //size of header block for items
+		END
 		
 		SET relative_effects_offset=0x0020
 		SET relative_n_effects_offset=0x001e
@@ -34,7 +41,7 @@ DEFINE_PATCH_FUNCTION ~ADD_EVASION_TO_SPELL~
 				
 				READ_BYTE saves_offset saves		//first byte of saves (actually only first 5 bits containing saves data)
 				
-				PATCH_IF (saves BAND 2) BEGIN	//found save vs breath weapon 				
+				PATCH_IF (saves BAND target_save_type) BEGIN	//found save vs breath weapon 				
 					READ_LONG saves_offset saves_value
 					READ_BYTE current_effect_offset+0x0003  power_value
 					READ_BYTE current_effect_offset+0x000d  resist_value

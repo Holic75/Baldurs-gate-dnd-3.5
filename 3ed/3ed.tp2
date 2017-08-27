@@ -384,7 +384,7 @@ BEGIN @0
 	 STRING_SET 32249 @096 //seeking sword
 	 STRING_SET 10303 @097 //moonblade descritption
 	 STRING_SET 9990  @100007
-	 STRING_SET 7371  @100011
+	// STRING_SET 7371  @100011
 	// STRING_SET 7383  @098 //gauntlets of dexterity
 	// STRING_SET 17859 @099 //potion of agility
 		
@@ -1899,8 +1899,26 @@ INCLUDE ~3ed/MODIFY_DISPEL_MAGIC.tph~
 				END
 		END
 		
+		
+		
+	COPY ~3ed/Spells/Savingthrows/WandItems.2DA~ ~override~ 
+		COUNT_2DA_ROWS 2 n_rows			
+		FOR (i=0;i<n_rows;i=i+1) BEGIN
+			READ_2DA_ENTRY %i% 0 3 item_name 
+			
+				INNER_ACTION BEGIN
+					COPY_EXISTING ~%item_name%.ITM~ ~override~
+						LPF UPDATE_SPELL_SAVES INT_VAR original_save=0b00001 target_save=0b1000 END
+						LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace=~vs. Spell~  new_substring=~vs. Wand~ END
+						LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace=~vs. Spell~  new_substring=~vs. Wand~ END							
+				END
+		END
+		
 	COPY_EXISTING_REGEXP GLOB ~.+\.spl~ ~override~
 		LPF ADD_EVASION_TO_SPELL INT_VAR END
+		
+	COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~  //add evasion to items
+		LPF ADD_EVASION_TO_SPELL INT_VAR target_save_type = 10 END //breath and wand saves 
 
 	//change description of specific spells 
 	COPY_EXISTING ~SPWI714.SPL~ ~override~ //prismatic spray

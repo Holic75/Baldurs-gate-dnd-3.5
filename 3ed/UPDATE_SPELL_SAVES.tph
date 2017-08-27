@@ -11,7 +11,14 @@ DEFINE_PATCH_FUNCTION ~UPDATE_SPELL_SAVES~
 
 		
 		SET effect_size=0x30 //size of effect block
-		SET header_size=0x28 //size of header block
+		
+		PATCH_IF (~%SOURCE_EXT%~ STRING_EQUAL ~SPL~) BEGIN
+			SET header_size=0x28 //size of header block
+		END
+		ELSE BEGIN
+			SET header_size=0x38 //size of header block for items
+		END
+		
 		
 		SET relative_effects_offset=0x0020
 		SET relative_n_effects_offset=0x001e
