@@ -342,7 +342,7 @@ Combat Intuition (5 stars) - While wearing light or no armor the character recei
 (5 stars) - The character ignores spell casting failure chance of Full Plate Mail and lighter armors.
 
 
-Generally character cun put up to 5 stars in any proficiency unless stated otherwise and as long as it makes sense (for example since Paladins can not cast spells of maximum 4th level, they can only put up to 3 stars in Bonus Priest Spell feat).
+Generally character cun put up to 5 stars in any proficiency unless stated otherwise and as long as it makes sense (for example since Paladins can cast spells of maximum 4th level, they can only put up to 3 stars in Bonus Priest Spell feat).
 
 
 # To be continued
