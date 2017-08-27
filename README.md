@@ -275,9 +275,9 @@ Iron Will (3 stars) - The character receives +2 bonus on Saving Throws vs. Spell
 Study Opponent (4 stars) - The character receives Study Opponent innate ability which can be used 3 times per day.
 ```
 Study Opponent:
-Character can spend one round studying enemy and getting insight about its weakneses and share it the party. The target receives a -3 penalty to AC, saving throws and THAC0. 
-```
+Character can spend one round studying enemy and getting insight about its weakneses and share them to the party. The target receives a -3 penalty to AC, saving throws and THAC0. 
 This is an extraordinary ability and thus is not subject to magic resistance or savingthrows, neither can be dispelled.
+```
 Combat Intuition (5 stars) - While wearing light or no armor the character receives +1 bonus to AC for every 2 points of Intelligence above 10.
 ###### Bonus Priest Spell
 (1 star) - The character can cast one more 1st level priest spell per day.
@@ -345,4 +345,4 @@ Combat Intuition (5 stars) - While wearing light or no armor the character recei
 Generally character cun put up to 5 stars in any proficiency unless stated otherwise and as long as it makes sense (for example since Paladins can not cast spells of maximum 4th level, they can only put up to 3 stars in Bonus Priest Spell feat).
 
 
-# To be condinued
+# To be continued
