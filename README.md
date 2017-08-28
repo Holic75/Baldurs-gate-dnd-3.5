@@ -345,4 +345,327 @@ Combat Intuition (5 stars) - While wearing light or no armor the character recei
 Generally character cun put up to 5 stars in any proficiency unless stated otherwise and as long as it makes sense (for example since Paladins can cast spells of maximum 4th level, they can only put up to 3 stars in Bonus Priest Spell feat).
 
 
-# To be continued
+## Races
+### HUMANS
+Humans have the following traits:
+
+– Receive one bonus feat at level 1.
+
+– +5% to all thieving skills.
+
+### ELVES
+Elves have the following traits:
+
+– 90% resistance against charm and sleep magics.
+
+– Infravision.
+
+– +1 THAC0 bonus with bows, blades and straight swords weapon categories.
+
+– -5% Open Locks, +5% Pick Pockets, +5% Move Silently, +10% Hide in Shadows.
+
+– +2 Dexterity, -2 Constitution.
+
+### DWARVES
+Dwarves have the following traits:
+
+– +2 bonus to Saving Throws vs. Paralysis/Poison/Death, vs. Rod/Staff/Wand, and vs. Spell.
+
+– Infravision.
+
+– +10% Open Locks, +15% Find Traps, +5% Detect Illusion, +10% Set Traps.
+
+– +2 Constitution, -2 Charisma.
+
+### GNOMES
+Gnomes have the following traits:
+
+– +2 bonus to Saving Throws vs. Rod/Staff/Wand and vs. Spell.
+
+– Infravision.
+
+– +5% Open Locks, +10% Find Traps, +5% Move Silently, +5% Hide in Shadows, +10% Detect Illusion, +5% Set Traps.
+
+– +2 Constitution, -2 Strength.
+
+– Being a small race they receive -1 to weapon damage rolls, +1 to AC and +1 to THAC0.
+
+### HALFLINGS
+Halflings have the following traits:
+
+– +2 bonus to Saving Throws vs. Paralysis/Poison/Death, vs. Rod/Staff/Wand, and vs. Spell.
+
+– +1 THAC0 bonus with missile weapons category.
+
+– +5% Open Locks, +5% Find Traps, +5% Pick Pockets, +10% Move Silently, +15% Hide in Shadows.
+
+– +2 Dexterity, -2 Strength.
+
+– Being a small race they receive -1 to weapon damage rolls, +1 to AC and +1 to THAC0.
+
+### HALF-ORCS
+Half-orcs have the following traits:
+
+– Infravision.
+
+– +2 Strength, -2 Intelligence.
+
+
+## Classes
+
+### FIGHTER
+CLASS FEATURES:
+
+– May wear helmets.
+
+– May wear any armor and use any weapon.
+
+– May get five stars in any weapon category.
+
+– Gets one bonus feat at level 1 and at every even level.
+
+– At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill penalties and maximum dexterity AC bonus values. Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.
+
+– Hit Die: d10
+
+### FIGHTER/THIEF
+CLASS FEATURES:
+
+– May wear helmets.
+
+– May wear any armor and use any weapon.
+
+– May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
+
+– Have THAC0 and APR progression of a thief.
+
+– May distribute 16 skill points per level among thieving skills (24 points at level 1).
+
+– Gets one bonus feat at level 1 and every 3 levels thereafter.
+
+– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.
+
+– At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill and AC penalties. 
+
+Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.
+
+– Hit Die: d8
+
+### FIGHTER/CLERIC
+CLASS FEATURES:
+
+– May wear helmets.
+
+– May wear any armor and use any weapon.
+
+– May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
+
+– Have THAC0 and APR progression of a cleric.
+
+– Can cast two spell per day less than trueclass cleric.
+
+– Gets one bonus feat at level 1 and at every 4th level.
+
+– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels up to 10d4).
+
+– Can use Spontaneous Battlecasting.
+
+```
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds. 
+```
+
+– At 1st level chooses a domain that grants <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
+– Hit Die: d9
+	
+### FIGHTER/MAGE
+
+CLASS FEATURES:
+
+– May wear helmets.
+
+– May wear any armor and use any weapon.
+
+– May get up to Greater Weapon Focus (3 stars) in any weapon they can use.
+
+– Have THAC0 and APR progression of a cleric.
+
+– Can cast one spell less per day than trueclass mage.
+
+– Cannot cast spells of 8th and 9th levels.
+
+– Gets one bonus feat at level 5 and at every 5 levels thereafter.
+
+– At 1st level receives for free Armored Arcana(1): Light Armor Casting. At level 4 receives Armored Arcana(2): Chain Mail Casting, at level 8 Armored Arcana(3): Splint Mail Casting, at level 12 Armored Arcana(4): Plate Mail Casting and finally at level 16 Armored Arcana(5): Full Plate Mail Casting.
+
+– Can use Spontaneous Battlecasting.
+
+```
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
+```
+– Hit Die: d7
+
+NOTE: Gnomes can choose this class, but become Fighter/Illusionists by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class. 
+
+### FIGHTER/DRUID
+CLASS FEATURES:
+
+– May wear helmets.
+
+– May wear light and medium armor and use any weapon.
+
+– May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
+
+– Have THAC0 and APR progression of a druid.
+
+– Can cast two spell per day less than trueclass druid.
+
+– Bonus Feats: Fighter/Druid gets Style Focus in Archery for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialziation at level 12 and Style Mastery at level 16.
+
+– May spontaneously convert memorized spells to summoning ones.
+
+– May select one racial enemy at levels 1, 5, 10, 15, 20, which grants a +4 bonus on damage rolls against the selected enemy race.
+
+– May call for an animal companion who fights for her side.
+
+– Hit Die: d9		
+
+### BERSERKER
+Advantages:
+
+– Hit Die: d12
+
+– Bonus Feats: at level 1 Berserker receives Warfare (1):Power Attack, at level 3 she receives Warfare (2):Cleave.
+
+– May use Rage ability once per day. Gains one use at level 1, additional uses at levels 4, 8, 12 and 16.
+
+```
+RAGE: The enraged state lasts for 6 rounds. While enraged, a Berserker gains a bonus of +2 to <PRO_HISHER> attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
+At 8th the attack and damage rolls bonus increases to +3 and physical damage resistance bonus to 20%.
+At 16th level the attack and damage rolls bonus increases to +5 and physical damage resistance bonus to 30%.
+```
+
+– 8th level: Endless Berserk: Berserker can prolong her rage if the combat lasts too long, while enraged she can spend an extra use of her Rage to prolong it for a new full duration, she does not feel the tiring effects until the end of this new Rage, she can continue to prolong the Rage as long as she has Rages.
+
+– 12th level: Improved Power Attack: Power attack damage bonus is increased to +5.
+
+– 16th level: Supreme Power Attack:  Power attack damage bonus is further increased to +6.
+
+– 18th level: Immortal Berserker: The hit points of enraged Berserker can not be reduced below 1, but at the end of Rage Berserker receives 1 point of damage which can kill her if she has only 1 hit point. 
+Note: although her hit points can not be reduced below 1, Berserker can still be killed by spells like Slay Living, Desintegrate and others.
+
+– 20th level: Last Berserk: Berserker gains one use per day of special form of Rage called Last Berserk. It has the same effect as normal Rage and Berserker also receives +10 damage bonus on damage rolls (to a total of +15). However it can not be prolonged and after it ends Berserker can no longer use Rage for next 8 hours.
+
+Disadvantages:
+
+– Becomes winded after berserking: -2 penalty to Armor Class, to-hit rolls, and damage rolls.
+
+– Can not use ranged weapons.
+
+– Does not get bonus feats like trueclass fighters do.
+
+– May only put one star in any weapon she can use.
+
+– May not wear armor heavier than splint mail.
+
+– Alignment restricted to any non-lawful.
+
+### WIZARD SLAYER
+Advantages:
+
+– Each successful hit bestows a 25% cumulative chance of spell failure on the target.
+
+– Each successful hit has a 30% chance to remove spell protections from a mage (like Breach spell).
+
+– Magic Resistance: 25% +2% per level to a maximum of 85% at level 30.
+
+Disadvantages:
+
+– Does not get bonus feats like trueclass fighters do.
+
+– May only put one star in any weapon category she can use.
+– May use only light armor.
+
+### KENSAI
+
+Advantages:
+
+– Gains +1 bonus to AC for every 2 points of Wisdom above 10.
+
+– +1 to hit and damage rolls every 4 levels.
+
+– -1 bonus to Speed Factor every 4 levels.
+
+– Signature Weapon Category: At level 1 Kensai chooses one weapon category which becomes his Signature Weapon Category. At level 1 Kensai gets for free Weapon Focus with this category, at level 4 - Weapon Specialization, at level 8 - Improved Weapon Focus, at level 12 - Improved Weapon Specialization.
+
+– May use the Kai ability once per day. Gains one use at level 1 then at level 5 and an additional use every 5 levels thereafter.
+
+```
+KAI: All successful attacks within the next 10 seconds deal maximum damage.
+```
+
+Disadvantages:
+
+– May only wear light armor.
+
+– May not use missile weapons.
+
+– May not use shields.
+
+– Does not get bonus feats like trueclass fighters do.
+
+– May only put one star in any weapon category she can use.
+– Alignment restricted to any non-chaotic.
+
+### BARBARIAN
+CLASS FEATURES:
+
+– May not wear armor heavier than splint mail.
+
+– May only get 1 star with any weapon class.
+
+– Moves 2 points faster than other characters.
+
+– Immune to sneak attack.
+
+– Gets one bonus feat at level 5 and every 5 levels thereafter.
+
+– May use the Rage ability once per day. Gains one use at level 1, then at level 4 and an additional use every 4 levels thereafter.
+
+```
+RAGE: The enraged status lasts for 10 rounds and provides a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
+```
+
+– 7th level: Gains 5% resistance to crushing, slashing, piercing, and missile damage. An additional 5% is gained every 3 levels thereafter.
+
+– 11th level: Greater Rage: Barbarian’s Rage bonuses to Strength and Constitution during his rage each increase to +6, and his morale bonus on saves  vs. Spell increases to +6. The penalty to AC remains at -2.
+
+– 17th level: Tireless Rage: Barbarian is no longer fatigued after the rage ends.
+
+– 20th level: Mighty Rage: Barbarian’s Rage bonuses to Strength and Constitution during his rage each increase to +8, and his morale bonus on saves  vs. Spell increases to +4. The penalty to AC remains at -2. 
+
+– Hit Die: d12
+
+### DWARVEN DEFENDER
+Advantages:
+
+– May use Defensive Stance once per day. Gains one use at level 1, one use at level 4, and an additional use every 4 levels thereafter.
+
+```
+DEFENSIVE STANCE: For 1 turn, the Dwarven Defender gains +50% resistance to all forms of physical damage, a +2 bonus to Saving Throws, and a 50% movement rate penalty.
+```
+
+– Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 3 and every 5 levels thereafter to a maximum of 20% at level 18.
+
+– Gets one bonus feat at level 5 and every 5 levels thereafter.
+
+– Hit Die: d12
+
+Disadvantages:
+
+– Race restricted to dwarf.
+
+– Does not get bonus feats like trueclass fighters do.
+
+– May only put one star in any weapon she can use.
+
