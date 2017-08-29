@@ -6,6 +6,11 @@ IF ~True()~ THEN BEGIN 0
 	%domain_str%
 END
 
+IF ~True()~ THEN BEGIN 1000
+	SAY ~Now choose another domain.~
+	IF ~True()~ THEN GOTO 0
+END
+
 
 %domain_description_str%
 

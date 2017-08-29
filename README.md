@@ -89,7 +89,7 @@ Note: wearing heavy armor may restrict maximum dexterity bonus to AC a character
 
 – Increases all thieving skills (+5% of base value for every point above 10, i.e. if the base value of your skill is 50 and you have 18 INT the effective base value will become 50*(100%+8 x 5%) = 50 x 140% = 70).
 
-– Increases number of spells per day that can be cast by Mages.
+– Increases number of spells per day that can be cast by Mages and Assasins.
 
 INT\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 --- | --- | --- | --- |--- |--- |--- |--- |--- |---

@@ -50,10 +50,11 @@ Range:~
 		//creating ability that would give priest a list of spells read previously and also filling description string	
 		COPY ~3ed/Feats/LimitedUseAbilities/Template/LUAFT.SPL~  ~override/%domain_file_2DA%S.SPL~
 			SET first_spell=1
+			
 			PHP_EACH spell_list AS spl_to_add => spl_name BEGIN
 				SPRINT resource EVALUATE_BUFFER ~%spl_to_add_0%~
 				LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=2 timing=9 duration=1 STR_VAR resource END			
-				
+								
 				PATCH_IF (first_spell)	BEGIN
 					first_spell=0
 				END 
@@ -67,7 +68,8 @@ Range:~
 					
 		OUTER_SPRINT domain_str EVALUATE_BUFFER  
 			
-~~~~~IF ~True()~ THEN REPLY ~%domain_name%~ GOTO %domain_id%
+~~~~~IF 
+~!Global("DOM%domain_id%","LOCALS",1)~ THEN REPLY ~%domain_name%~ GOTO %domain_id%
 
 |domain_str|~~~~~ 
 
@@ -75,8 +77,13 @@ Range:~
 			
 ~~~~~IF ~~ THEN BEGIN %domain_id%
 	SAY ~%DescriptionString%~
-	IF ~True()~ REPLY #%yes_response% DO ~ApplySpellRES("%domain_file_2DA%S",LastSummonerOf(Myself))~ EXIT
-	IF ~True()~ REPLY #%no_response% GOTO 0
+	IF ~!Global("CHOSEN","LOCALS",1)~ THEN REPLY #%yes_response% DO 
+	~ApplySpellRES("%domain_file_2DA%S",LastSummonerOf(Myself))
+	 SetGlobal("CHOSEN","LOCALS",1)
+	 SetGlobal("DOM%domain_id%","LOCALS",1)~ GOTO 1000
+	IF ~Global("CHOSEN","LOCALS",1)~ THEN REPLY #%yes_response% DO
+	~ApplySpellRES("%domain_file_2DA%S",LastSummonerOf(Myself))~ EXIT
+	IF ~True()~ THEN REPLY #%no_response% GOTO 0
 END	
 
 |domain_description_str|~~~~~

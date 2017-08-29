@@ -6,10 +6,10 @@ CLASS FEATURES:
 
 – May wear helmets.
 – May wear any armor and use any weapon.
-– May get five stars in any weapon class.
+– May get five stars in any weapon category.
 – Gets one bonus feat at level 1 and at every even level.
-– At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill penalties and maximum dexterity values. Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.
-– Hit Die: d10
+– At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill and AC penalties. Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.
+– Hit Die: d10 
 ~
 //---------------------------------------------------------------------------------------------------//
 	@002=~FIGHTER/THIEF: This is a hybrid class that can use the abilities of a Fighter and a Thief.
@@ -39,9 +39,9 @@ CLASS FEATURES:
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels up to 10d4).
 – Can use Spontaneous Battlecasting.
 
-SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds. Ability lasts for 3 rounds, or until the first spell is sacrificed.
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
 
-– At 1st level chooses a domain that grants <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
+– At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
 – Hit Die: d9~	
 	
 	
@@ -60,7 +60,7 @@ CLASS FEATURES:
 – At 1st level receives for free Armored Arcana(1): Light Armor Casting. At level 4 receives Armored Arcana(2): Chain Mail Casting, at level 8 Armored Arcana(3): Splint Mail Casting, at level 12 Armored Arcana(4): Plate Mail Casting and finally at level 16 Armored Arcana(5): Full Plate Mail Casting.
 – Can use Spontaneous Battlecasting.
 
-SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds. Ability lasts for 3 rounds, or until the first spell is sacrificed.
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
 
 – Hit Die: d7
 
@@ -320,7 +320,7 @@ CLASS FEATURES:
 – Can cast two spells per day less than trueclass clerics.
 – Can spontaneously convert memorized spells into healing ones.
 – Eventually can cast low level druidic spells (same as trueclass ranger).
-– At 1st level chooses a domain that grants <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
+– At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
 – Alignment restricted to good.
 – Hit Die: d9~		
 //---------------------------------------------------------------------------------------------------//	
@@ -338,7 +338,7 @@ CALLED SHOT: All successful ranged attacks within the next 10 seconds have the f
  16th level: +4 bonus to damage roll.
 
 Disadvantages:
-– Do not gain Bonus Feats in Two Weapon Fighting Style.
+– Does not gain Bonus Feats in Two Weapon Fighting Style.
 – May only wear light armor.
 – May not use the Charm Animal ability.~
 //---------------------------------------------------------------------------------------------------//
@@ -350,7 +350,7 @@ Advantages:
 – Hit Die: d12.
 
 Disadvantages:
-– Do not gain Bonus Feats in Two Weapon Fighting Style.
+– Does not gain Bonus Feats in Two Weapon Fighting Style.
 – May use only weapons available to druids as well as axes, longbows and shortbows.
 – May only wear armor a druid can.~
 //---------------------------------------------------------------------------------------------------//
@@ -363,7 +363,7 @@ Advantages:
 – May be of any alignment.
 
 Disadvantages:
-– Do not gain Bonus Feats in Two Weapon Fighting Style.
+– Does not gain Bonus Feats in Two Weapon Fighting Style.
 – May only wear light armor.
 – May not use the Charm Animal ability.~
 //---------------------------------------------------------------------------------------------------//
@@ -387,7 +387,7 @@ All hostile living creatures suffer 2d4 points of magical damage per Channel Ene
 
 – May cast priest spells.
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).
-– At 1st level chooses a domain that grants <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
+– At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
 – Hit Die: d8~
 //---------------------------------------------------------------------------------------------------//
 	@024=~CLERIC/MAGE: This is a hybrid class that can use the abilities of a Cleric and a Mage.
@@ -399,7 +399,7 @@ CLASS FEATURES:
 – May cast both arcane and divine cleric spells.	
 – Can cast two arcane spells per day less than trueclass mage.
 – Can cast three divine spells per day less than trueclass cleric.
-– At 1st level chooses a domain that grants <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
+– At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
 – Hit Die: d6
 
 NOTE: Gnomes can choose this hybrid class, but become Cleric/Illusionists by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.~
@@ -421,7 +421,7 @@ CLASS FEATURES:
 
 SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds. Ability lasts for 3 rounds, or until the first spell is sacrificed.
 
-– At 1st level chooses a domain that grants <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
+– At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
 – Hit Die: d7~
 //-------------------------------------------------------------------------------------------------------------------
 	@026=~PRIEST OF LATHANDER: Lathander is the good god of renewal, creativity, and youth, and is celebrated nearly everywhere. His followers are very popular throughout the realms, and there are numerous wealthy temples devoted to him.
@@ -1639,11 +1639,11 @@ Character receives +6 on damage rolls and -3 penalty to THAC0 while fighting wit
 	@219=~5th and 6th Level Spells~
 	@220=~7th and 8th Level Spells~
 	//Empower Magic
-	@221=~5%~
-	@222=~11%~
-	@223=~18%~
-	@224=~26%~
-	@225=~35%~
+	@221=~6%~
+	@222=~14%~
+	@223=~24%~
+	@224=~36%~
+	@225=~50%~
 	//Extend Magic
 	@226=~10%~
 	@227=~22%~
@@ -1686,7 +1686,7 @@ Character receives +6 on damage rolls and -3 penalty to THAC0 while fighting wit
 	
 Study Opponent:
 
-Character can spend one round studying enemy and getting insight about its weakneses and share it the party. The target receives a -3 penalty to AC, saving throws and THAC0. 
+Character can spend one round studying enemy and getting insight about its weakneses and share them to the party. The target receives a -3 penalty to AC, saving throws and THAC0. 
 This is an extraordinary ability and thus is not subject to magic resistance or savingthrows, neither can be dispelled.~
 	@255=~While wearing light or no armor the character receives +1 bonus to AC for every 2 points of Intelligence above 10.~
 	//Bonus priest spells
@@ -1702,11 +1702,11 @@ This is an extraordinary ability and thus is not subject to magic resistance or 
 	@264=~The character can cast one more 5th and 6th level wizard spells per day.~
 	@265=~The character can cast one more 7th and 8th level wizard spells per day.~		
 	//Empower Magic
-	@266=~Character's spells deal 5 % more damage.~
-	@267=~Character's spells deal 11 % more damage.~
-	@268=~Character's spells deal 18 % more damage.~
-	@269=~Character's spells deal 26 % more damage.~
-	@270=~Character's spells deal 35 % more damage.~			
+	@266=~Character's spells deal 6 % more damage.~
+	@267=~Character's spells deal 14 % more damage.~
+	@268=~Character's spells deal 24 % more damage.~
+	@269=~Character's spells deal 36 % more damage.~
+	@270=~Character's spells deal 50 % more damage.~			
 	//Extend Magic
 	@271=~Character's spells last 10% longer.~
 	@272=~Character's spells last 22% longer.~
