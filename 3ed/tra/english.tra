@@ -603,7 +603,7 @@ Each successful hit within the next 5 rounds will inject poison into the target.
 8th - Target suffers 1 poison damage per second for 18 seconds (Save vs. Death at -1 negates), and also immediately suffers 4 poison damage (no save)
 12th - Target suffers 1 poison damage per second for 24 seconds (Save vs. Death at -2 negates), and also immediately suffers 6 poison damage (no save)
 
-Starting from level 4 can cast a limited number of Spells (through Innate Abilities menu). Assassin does not need to memorize <PRO_HISHER> spells in advance and can spontaneously cast anyone <PRO_HESHE> knows.
+– Starting from level 4 can cast a limited number of Spells (through Innate Abilities menu). Assassin does not need to memorize <PRO_HISHER> spells in advance and can spontaneously cast anyone <PRO_HESHE> knows.
 Assassin Spellbook:
 
 First level spells: starting from level 4 Assassin gets access to the following spells: Sleep, Blindness, Reflected Image, Chill Touch.
@@ -832,7 +832,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – Gains Flurry of Blows modal ability.
 
 FLURRY OF BLOWS: A monk may strike with a flurry of blows at the expense of accuracy. When doing so, <PRO_HESHE> may make one extra attack per round, but all attacks take a -2 penalty. When a monk reaches 5th level, the penalty lessens to -1, and at 9th level it disappears, thus ability becomes permanently activated.
-When a monk reaches 11th level, her flurry of blows ability improves. In addition to the standard single extra attack <PRO_HESHE> gets from flurry of blows, <PRO_HESHE> without any penalties.
+When a monk reaches 11th level, her flurry of blows ability improves. In addition to the standard single extra attack <PRO_HESHE> gets from flurry of blows, <PRO_HESHE> gets another one without any penalties.
 When using flurry of blows, a monk may attack only with unarmed strikes, with dagger(s) or quarterstaff.
 
 – Damage dealt by unarmed attacks increases with level as follows:

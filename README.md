@@ -330,7 +330,7 @@ Advantages:
 – Bonus Feats: at level 1 Berserker receives Warfare (1):Power Attack, at level 3 she receives Warfare (2):Cleave.  
 – May use Rage ability once per day. Gains one use at level 1, additional uses at levels 4, 8, 12 and 16.  
 ```
-RAGE: The enraged state lasts for 6 rounds. While enraged, a Berserker gains a bonus of +2 to <PRO_HISHER> attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
+RAGE: The enraged state lasts for 6 rounds. While enraged, a Berserker gains a bonus of +2 to her attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
 At 8th the attack and damage rolls bonus increases to +3 and physical damage resistance bonus to 20%.
 At 16th level the attack and damage rolls bonus increases to +5 and physical damage resistance bonus to 30%.
 ```
@@ -529,7 +529,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 
 
 ### ARCHER
-Advantages:
+Advantages:  
 – Bonus Feats: Archer gets Style Focus in Archery for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialziation at level 12 and Style Mastery at level 16.  
 – Once per day can create 40 arrows (starts with normal arrows at level 1, which become +1 at lvl 4, +2 at lvl 8, +3 at lvl 12, +4 at lvl 16 and +5 at lvl 20).  
 – May use the Called Shot ability once per day. Gains one use at level 4 and an additional use every 2 levels thereafter.  
@@ -546,7 +546,7 @@ Disadvantages:
 – May not use the Charm Animal ability.  
 
 ### BEAST MASTER
-Advantages:
+Advantages:  
 – +15% to Move Silently and Hide In Shadows.  
 – Has a telepathic link with his animal companion which allows them to fight as one. When fighting close to each other Beast master and his animal companion get +1 To Hit, Damage, AC and Saving Throws. This bonuses increase to +2 at level 7,  +3 at level 14 and +4 at level 20.  
 – Hit Die: d12.  
@@ -563,7 +563,7 @@ Advantages:
 – Racial Enemy is replaced with Improved Racial Enemy which gives Stalkers +4 bonus on to hit and damage rolls and +2 bonus to AC and savingthrows vs selected races.  
 – May be of any alignment.  
 
-Disadvantages:
+Disadvantages:  
 – Do not gain Bonus Feats in Two Weapon Fighting Style.
 – May only wear light armor.
 – May not use the Charm Animal ability.
@@ -588,6 +588,433 @@ All hostile living creatures suffer 2d4 points of magical damage per Channel Ene
 – May cast priest spells.  
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).  
 – At 1st level chooses a domain that grants <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
+– Hit Die: d8  
+
+
+### DRUID
+CLASS FEATURES:  
+– May only wear non-metallic armor.  
+– May only equip bucklers and non-metallic shields.  
+– May only use the following weapons: scimitar, dagger, club, spear, quarterstaff, dart, sling.  
+– May cast druidic spells.  
+– May use the Charm Animal ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.  
+– May spontaneously convert memorized spells to summoning ones.  
+– May call for an animal companion who fights for her side.  
+– 5th level: Gains Shapeshift ability which allows to transfrom  into a wolf, black bear, or brown bear once per day, gains additional uses at levels 6, 7, 10, 14 and 18.  
+– 8th level: While using Shapeshift ability a Druid can alternatively transform into fire salamander, sword spider or baby wyvern.  
+– 15th level: Becomes immune to poison.  
+– 18th level: Gains 10% resistance to cold, fire, electricity, and acid; gains a further 10% resistance at levels 21 and 24.  
+– Alignment restricted to true neutral.  
+– Hit Die: d8
+
+### AVENGER
+Advantages:  
+– Moves 2 points faster than other characters.  
+– Can use Rage ability (starts with one use at level 1 then get another one at level 5 and every 5 levels thereafter), though Avenger never gets benifits of Greater or Mighty Rage.  
+```
+RAGE: The enraged status lasts for 10 rounds and provides a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
+```
+– 17th level: Tireless Rage: Avenger is no longer fatigued after the rage ends.  
+
+Disadvantages:  
+– May not call for an animal companion.  
+– May not use the Charm Animal ability.  
+– May not spontaneously convert memorized spells to summoning ones.  
+
+### SHAPESHIFTER
+Advantages:  
+– May shapeshift into the form of a werewolf once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.  
+– 13th level: shapeshifts into greater werewolf instead.  
+
+Disadvantages:  
+– May not call for an animal companion.  
+– No other shapeshifting abilities due to the effort required in maintaining balance in her primary forms.  
+
+### SPELLFUSED WARDEN (replaces TOTEMIC DRUID)
+Advantages:  
+– At 1st level spellfused warden chooses an arcane school and get access to all its 1st to 7th level spells. These spells are cast as druidic ones and do not suffer from arcane spellcasting failure which may be induced by armor spellfused warden wears.   
+
+Disadvantages:  
+– Cannot use shapeshift.
+
+### MAGE
+CLASS FEATURES:  
+– May not wear any armor.  
+– May only use the following weapons: dagger, quarterstaff, dart, sling, crossbow.  
+– Have THAC0 and APR progression of a mage.  
+– Receives one bonus Feat at level 5 and every 5 levels thereafter.  
+– May cast arcane spells.  
+– Hit Die: d4  
+
+
+### THIEF
+CLASS FEATURES:  
+– May not wear armor heavier than studded leather.  
+– May not equip shields larger than bucklers.  
+– May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.  
+– Has Evasion passive ability.  
+```
+EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save. 
+```
+– Receives Bonus Feats at levels 10, 13, 16 and 19.  
+– May distribute 20 points per level (30 at level 1) in thieving abilities: Open Locks, Pick Pockets, Find Traps, Move Silently, Hide In Shadows, Detect Illusion, Set Traps.  
+– Starts with base scores of 10% in Open Locks, 5% in Find Traps, 15% in Pick Pockets, 10% in Move Silently, and 5% in Hide in Shadows.  
+– May Sneak attack for increased damage: 1d6 at level 1 + 1d6 every 3 levels thereafter.  
+– May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
+```
+SET SNARE: Set a trap in the chosen location when no hostile creatures are in sight. Traps grow more powerful with the Thief's level and can only be triggered by enemies.
+  1st level: Deals 2d8+5 missile damage.
+  10th level: Deals 2d8+5 missile damage and additionally deals 2d6 poison damage per round for the next 3 rounds.
+  15th level: Deals 3d8+5 missile damage and 4d8+2 fire damage.
+  20st level: Deals 3d8+5 missile damage and 20 poison damage with no save; slays target if a Save vs. Death with a +4 bonus is failed.
+```
+– Alignment restricted to any except lawful good.  
+– Hit Die: d6  
+
+### ASSASSIN
+Advantages:  
+– Better Sneak attack progression: 1d6 at level 1 + 1d6 every 2 levels thereafter.  
+– May use the Poison Weapon ability. Gains one use at level 1, then at level 4 and an additional use every 4 levels thereafter.  
+```
+POISON WEAPON:
+Each successful hit within the next 5 rounds will inject poison into the target. Each target can only be affected once per round. The amount of poison damage depends on the character's level:
+
+1st - Target suffers 1 poison damage per second for 6 seconds (Save vs. Death at +1 negates)
+4th - Target suffers 1 poison damage per second for 12 seconds (Save vs. Death negates), and also immediately suffers 2 poison damage (no save)
+8th - Target suffers 1 poison damage per second for 18 seconds (Save vs. Death at -1 negates), and also immediately suffers 4 poison damage (no save)
+12th - Target suffers 1 poison damage per second for 24 seconds (Save vs. Death at -2 negates), and also immediately suffers 6 poison damage (no save)
+```
+– Starting from level 4 can cast a limited number of Spells (through Innate Abilities menu). Assassin does not need to memorize <PRO_HISHER> spells in advance and can spontaneously cast anyone she knows.  
+
+Assassin Spellbook:  
+First level spells: starting from level 4 Assassin gets access to the following spells: Sleep, Blindness, Reflected Image, Chill Touch.  
+Second level spells: starting from level 7 Assassin gets access to the following spells: Ghoul Touch, Power Word: Sleep, Blur, Invisibility.  
+Third level spells: starting from level 10 Assassin gets access to the following spells: Vampyric Touch, Non-Detection, Hold Person, Detect Illusions.	  
+Fourth level spells: starting from level 13 Assassin gets access to the following spells: Improved Invisibility, Free Action, Poison, Cloak of Fear.  
+  
+Disadvantages:  
+– Do not receive Bonus Feats as trueclass thiefs do.  
+– May only distribute 12 skill points per level among thieving skills (20 points at level 1)  
+
+### SWASHBUCKLER
+Advantages:  
+– +1 bonus to Armor Class at 1st level, plus an additional +1 bonus every 5 levels.  
+– THAC0 and APR progression of a FIGHTER.  
+– At first level receives for free Combat Prowess(1):Weapon Finesse and Tactics(1):Insightfull Strike feats.  
+– At 11th level Swashbuckler receives +1 bonus to all savingthrows.  
+– At 14th each critical hit of Swashbuckler reduces target's Strength by 2 points for 10 rounds (cumulatively).  
+– At 19th each critical hit of Swashbuckler additionally reduces target's Constitution by 2 points for 10 rounds (cumulatively).  
+
+Disadvantages:  
+– May not use Sneak attack.  
+– May only distribute 16 skill points per level among thieving skills (24 points at level 1)  
+
+### NINJA  (replaces BOUNTY HUNTER)
+Advantages:  
+– May use the Poison Weapon ability. Gains one use at level 1, then at level 5 and an additional use every 5 levels thereafter.  
+– Gains +1 AC bonus at level 5 and every five levels thereafter.  
+– Gains +1 AC bonus per 2 points of Wisdom above 10.  
+– Ninja gains a pool of  ki points equal to 1/2 of her level +1 per 2 points of Wisdom above 10. These points can be spent to use different ki powers and are replenished after rest.  
+	Starting from level 1 ninja can spend one point from ki pool to become invisible for 10 seconds.  
+	Starting from level 3 ninja can alternatively spend one point from ki pool to create 1d4 mirror images of herself or become blurred (+3 AC, +1 Saving throw bonus) for 10 seconds or detect invisible creatures.  
+	Starting from level 5 ninja can alternatively spend one point from ki pool to become hasted for 10 seconds.  
+	
+Disadvantages:  
+– May not wear any armor or use shields.   
+– May only distribute 16 skill points per level among thieving skills (24 points at level 1).  
+– Do not gain bonus feats as trueclass thiefs do.  
+
+### SHADOWDANCER
+Advantages:  
+– +10% bonus to Hide In Shadows and Move Silently.  
+– Hide In Plain Sight: A Shadowdancer may hide in shadows even while being observed.  
+– May cast Shadowstep once per day. Gains one use at level 1, then at level 5 and an additional use every 5 levels thereafter.  
+```
+SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The Shadowdancer cannot attack or cast spells while in the Shadow Plane.
+```
+– May cast Mislead once per day starting from level 7. Gains an additional use at levels 13 and 19.  
+– Slippery Mind: +1 bonus to Saving Throws.  
+
+Disadvantages:  
+– Alignment restricted to any non-lawful.  
+– Worse Sneak attack progression: 1d6 at level 1 + 1d6 every 4 levels thereafter.  
+– May only distribute 16 skill points per level (24 at level 1) among thieving skills.  
+– May not use the Set Snare ability.  
+
+### BARD
+CLASS FEATURES:  
+– May not wear armor heavier than chain mail. (Bardic spells being simpler than those of mages are not subject to casting failure when bard wears light armor.)  
+– May not equip shields larger than bucklers.  
+– Receives one bonus Feat at level 5 and every 5 levels thereafter.  
+– Thieving abilities: Pick Pockets.  
+– Increased Lore score.  
+– May cast arcane spells up to level 6.  
+– Bardic Performance: a bard is trained to perform to create magical effects on those around <PRO_HIMHER>. Bard can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each even level a bard can use bardic performance one more time per day.  
+
+List of Bardic Performances:  
+```
+Inspire Courage  	
+A 1st level bard can use her performance to inspire courage in her allies (including herself), bolstering them against fear and improving their combat abilities. To be affected, an ally must be able to perceive the bard’s performance. An affected ally receives a +1 bonus on attack and weapon damage rolls as well and becomes immune to fear and panic effects for 4 rounds. At 6th level, and every six levels thereafter, this bonus increases by +1, to a maximum of +4 at 18th level.  
+```
+```
+Countersong  
+At 1st level, a bard learns to counter magic effects that depend on sound. Any creature within 30 feet of the bard becomes Immune to the following spells: Silence 15', Command, Greater Command, Wail of Banshee.
+```
+```
+Inspire Competence 
+A bard of 3rd level or higher can use her performance to help her ally succeed at a task. The allies must be within 30 feet and able to see and hear the bard. They get a +5% bonus to all their thieving skills for 4 rounds. This bonus increases by +5% at level 6 and every 6 levels thereafter to a maximum of 20% at level 18.
+```
+```
+Fascinate
+At 1st level, a bard can use her performance to cause one creature to become fascinated with her. Creature must be able to see and hear the bard, and capable of paying attention to him. The bard must also be able to see the creatures affected. If creatures fails saving throw vs. Spell the creature sits quietly and observes the performance for next 4 rounds. Any obvious threat, such as someone drawing a weapon, casting a spell, or aiming a weapon at the target, automatically breaks the effect.
+Target creatures receives -1 penalty to Saving throws to resist Fascinate per 5 levels of the bard to a maximum of -4 at level 20.
+At 8th level bard fascinates all creatures around her in 30ft radius instead.
+```
+```
+Dirge of Doom	
+A bard of 8th level or higher can use her performance to foster a sense of growing dread in her enemies, causing them to take become shaken and receive -2 penalty to their attack rolls, Armor Class and Saving throws. To be affected, an enemy must be within 30 feet and able to see and hear the bard’s performance. The effect persists for 4 rounds. There is no Saving throw against this ability.
+```
+```
+Inspire Greatness
+A bard of 9th level or higher can use her performance to inspire greatness in all her allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the bard. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Thorws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12 and finally to +20 Hit Points and +4 to THAC0 and Saving Throws vs. Death at level 18.
+```	
+```
+Soothing Performance
+A bard of 12th level or higher can use her performance to create an effect equivalent to the mass cure light wounds, using the bard’s level as the caster level.
+```
+```
+Frightening Tune
+A bard of 14th level or higher can use her performance to cause fear in her enemies. To be affected, an enemy must be able to hear the bard perform and be within 30 feet. Each enemy within range can make a Saving Throw vs. Spell with -4 penalty to negate the effect. If the Saving Throw fails, the target becomes panicked for next 4 rounds.
+```
+```
+Inspire Heroics
+A bard of 15th level or higher can inspire tremendous heroism in all her allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the bard. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds.
+```
+```
+Deadly Performance	
+A bard of 20th level or higher can use her performance to cause one enemy to die from joy or sorrow. To be affected, the target must be able to see and hear the bard perform and be within 30 feet. The target can make a Saving Throw vs. Spell to negate the effect. If a creature’s Saving Throw succeeds, the target is paralyzed for 2 rounds. If a creature’s Saving Throw fails, it dies.
+```
+– Alignment restricted to any neutral.  
+– Hit Die: d6
+
+### BLADE
+Advantages:  
+– May use the Offensive Spin and Defensive Spin abilities once per day. Gains one use each at level 2  and an additional use every 4 levels thereafter.  
+```
+OFFENSIVE SPIN: During the next 4 rounds, the Blade's movement rate doubles and <PRO_HESHE> gains a +2 bonus to hit and damage rolls as well as an extra attack per round. All attacks deal maximum damage for the duration. Offensive Spin may not be used in conjunction with the Haste or Improved Haste spells.
+```
+```
+DEFENSIVE SPIN: During the next 4 rounds, the Blade is rooted to the spot and gains a +1 bonus to Armor Class per level, up to a maximum of +10.
+```
+– Bardic Performance: a blade is trained to perform to create magical effects on those around <PRO_HIMHER>. Blade can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each fourth level a blade can use bardic performance one more time per day.  
+List of Bardic Performances:  
+```
+Inspire Courage	
+A 1st level blade can use <PRO_HISHER> performance to inspire courage in <PRO_HISHER> allies (including <PRO_HISHER>self), bolstering them against fear and improving their combat abilities. To be affected, an ally must be able to perceive the blade’s performance. An affected ally receives a +1 bonus on attack and weapon damage rolls as well and becomes immune to fear and panic effects for 4 rounds. At 6th level, and every six levels thereafter, this bonus increases by +1, to a maximum of +4 at 18th level.
+```
+```
+Inspire Greatness
+A blade of 9th level or higher can use <PRO_HISHER> performance to inspire greatness in all <PRO_HISHER> allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the blade. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Thorws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12 and finally to +20 Hit Points and +4 to THAC0 and Saving Throws vs. Death at level 18.
+```
+```
+Inspire Heroics
+A blade of 15th level or higher can inspire tremendous heroism in all <PRO_HISHER> allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the blade. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds.
+```
+Disadvantages:  
+– Smaller variaty of available Bardic performance types and less uses per day.  
+– Receives only half of Lore bonus per level.  
+
+### SKALD
+Advantages:  
+– +1 bonus to hit and damage rolls.  
+– Can use Rage (starts with one use at level 2 then gets another every 4 levels thereafter), though Skald never gets benifits of Greater or Mighty Rage.  
+```
+RAGE: The enraged status lasts for 10 rounds and provides a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
+```
+– 17th level: Tireless Rage: Skald is no longer fatigued after the rage ends.  
+– Bardic Performance: a skald is trained to perform to create magical effects on those around her. Skald can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each fourth level a skald can use bardic performance one more time per day.  
+
+List of Bardic Performances:
+```
+Inspire Courage	
+A 1st level skald can use her performance to inspire courage in her allies (including herself), bolstering them against fear and improving their combat abilities. To be affected, an ally must be able to perceive the skald’s performance. An affected ally receives a +1 bonus on attack and weapon damage rolls as well and becomes immune to fear and panic effects for 4 rounds. At 6th level, and every six levels thereafter, this bonus increases by +1, to a maximum of +4 at 18th level.
+```
+```
+Inspire Greatness
+A skald of 9th level or higher can use <PRO_HISHER> performance to inspire greatness in all <PRO_HISHER> allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the skald. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Thorws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12 and finally to +20 Hit Points and +4 to THAC0 and Saving Throws vs. Death at level 18.
+```
+```
+Inspire Heroics
+A skald of 15th level or higher can inspire tremendous heroism in all her allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the skald. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds.
+```
+– Hit Die: d8  
+Disadvantages:
+– Smaller variaty of available Bardic performance types and less uses per day.
+
+### JESTER
+Advantages:  
+– May use the Poison Weapon ability. Gains one use at level 2, and an additional use every 4 levels thereafter.  
+– Laugh It Off: Fate protects fools and little children, and Jesters certainly adopt the role of fools. Jester receives a bonus to all her saves per 2 points of CHARISMA above 9 (but also suffers a penalty per 2 points below 10).  
+– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.  
+– Bardic Performance: a jester is trained to perform to create magical effects on those around her. Jester can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each fourth level a jester can use bardic performance one more time per day.  
+
+List of Bardic Performances:
+```
+Jester's Song
+The jester is the master of the verbal put down, the hilarious joke, or the savage verbal lashing. Starting from level 1 her words can inspire dread and outrage in <PRO_HISHER> enemies making them confused for next 4 rounds. The target creatures receive a Saving Throw vs. Spell with +2 bonus to avoid this effect.
+At level 5 the enemies no longer receive a bonus to their Saving Throws.
+At level 10 they receive a -2 penalty instead, which increases further to -4 at level 15 and -6 at levele 20.
+```
+```
+Dirge of Doom	
+A jester of 8th level or higher can use her performance to foster a sense of growing dread in <PRO_HISHER> enemies, causing them to take become shaken and receive -2 penalty to their attack rolls, Armor Class and Saving throws. To be affected, an enemy must be within 30 feet and able to see and hear the jester’s performance. The effect persists for 4 rounds. There is no Saving throw against this ability.
+```
+```
+Frightening Tune
+A jester of 14th level or higher can use her performance to cause fear in her enemies. To be affected, an enemy must be able to hear the jester perform and be within 30 feet. Each enemy within range can make a Saving Throw vs. Spell with -4 penalty to negate the effect. If the Saving Throw fails, the target becomes panicked for next 4 rounds.
+```
+
+Disadvantages:  
+– Smaller variaty of available Bardic performance types and less uses per day.  
+– May only use weapons a wizard can (daggers, quarterstaves, darts, slings).  
+
+### SORCERER
+CLASS FEATURES:  
+– May not wear any armor.  
+– May only use the following weapons: dagger, quarterstaff, dart, sling, crossbow.  
+– May cast arcane spells.  
+– Receives one bonus Feat at level 5 and every 5 levels thereafter.  
+– May not scribe spells into their spellbooks as Mages do. Instead, Sorcerers learn a small number of spells at each level, which they can cast daily without memorization.  
+– At 1st level chooses a bloodline which grants access to 9 spells (1 per spell level) in addition to those gained normally.  
+– Hit Die: d4  
+
+### BATTLE CASTER (replaces DRAGON DISCIPLE)
+Advantages:  
+– May wear light armor.  
+– May equip bucklers.  
+– May use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.  
+– Have THAC0 and APR progression of a cleric.  
+– At first level receives for free Armored Arcana(1): Light Armor Casting.  
+– Hit Die: d6  
+
+Disadvantages:  
+– May not choose bloodline and thus may not receive bonus bloodline spells.   
+– May cast one fewer spell per level per day.  
+
+
+### MONK
+CLASS FEATURES:  
+– May not wear any armor or use shields.  
+– May only use weapons available to the Thief class.  
+– Has Evasion passive ability.  
+```
+EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save. 
+```
+– May put stars in any fighting style except sword and shield and archery.  
+– Moves 2 points faster than other characters. Movement rate further improves by 1 every 5 levels.  
+– Gains Flurry of Blows modal ability.  
+```
+FLURRY OF BLOWS: A monk may strike with a flurry of blows at the expense of accuracy. When doing so, <PRO_HESHE> may make one extra attack per round, but all attacks take a -2 penalty. When a monk reaches 5th level, the penalty lessens to -1, and at 9th level it disappears, thus ability becomes permanently activated.
+When a monk reaches 11th level, her flurry of blows ability improves. In addition to the standard single extra attack she gets from flurry of blows, she gets anoter one without any penalties.
+When using flurry of blows, a monk may attack only with unarmed strikes, with dagger(s) or quarterstaff.  
+```
+– Damage dealt by unarmed attacks increases with level as follows:  
+  Level 1-3: 1d6  
+  Level 4-7: 1d8  
+  Level 8-11: 1d10  
+  Level 12-15: 2d6  
+  Level 16-19: 2d8  
+  Level 20+: 2d10  
+– At level 4, unarmed attacks are treated as a +1 magical weapon, monk also reveives +1 bonus on unarmed to hit rolls. The enchantment and to hit bonus improve to +2 at level 8, +3 at level 12, +4 at level 16 and +5 at level 20.   
+– High savingthrows.  
+– Gains +1 AC bonus at level 5 and every five levels thereafter.  
+– Gains +1 AC bonus per 2 points of Wisdom above 10.  
+– May use the Stunning Blow ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.  
+```
+STUNNING BLOW: All successful attacks within the next round force the victim to save vs. Spell or be stunned. This special ability automatically modifies normal attacks; no targeting needs to be done.
+```
+– 5th level: Becomes immune to all diseases and cannot be slowed or hasted.  
+– 7th level: May use the Lay On Hands ability on <PRO_HIMHER>self to heal 2 Hit Points per level.  
+– 8th level: Gains a -1 bonus to Speed Factor.  
+– 9th level: Becomes immune to charm.  
+– 11th level: Becomes immune to poison.  
+– 12th level: Gains another -1 bonus to Speed Factor.  
+– 13th level: May use the Quivering Palm ability once per day.  
+```
+QUIVERING PALM: The next successful attack forces the opponent to save vs. Spell or die. This special ability automatically modifies normal attacks; no targeting needs to be done.
+```
+– 14th level: Gains 3% Magic Resistance per level (starting with 42% at 14th level).  
+– 20th level: Becomes immune to non-magical weapons.  
+– Thieving abilities: Move Silently, Hide In Shadows, Find Traps (but not disarm) and Detect Illusion. Monks can distribute 10 skill points per level.  
+– Alignment restricted to lawful.  
+– Hit Die: d8  
+
+### DARK MOON MONK
+Advantages:  
+– +10% to Detect Illusion.  
+– May use the Frozen Fist ability once per day. Gains one use at level 1, then at level 4 and an additional use every 4 levels thereafter.  
+```
+FROZEN FIST: When this ability is activated, the Dark Moon Monk's fists are wreathed in a frosty shell. For 1 turn, the Dark Moon Monk's unarmed attacks deal an additional 2 points of cold damage on each successful hit.
+```
+– 1st level: May cast Blindness once per day.  
+– 3rd level: May cast Blur once per day.  
+– 7th level: May cast Vampiric Touch once per day.  
+– 11th level: May cast Mirror Image once per day.  
+
+Disadvantages:  
+– Alignment restricted to lawful evil.  
+– May not use the Lay On Hands ability.  
+– May not use the Stunning Blow ability.  
+
+### SUN SOUL MONK
+Advantages:  
+– 2nd level: May cast Sun Soulray once per day.  
+```
+SUN SOULRAY: The Sun Soul Monk projects a blast of light from her open palm, dealing 1d8 fire damage for every 2 caster levels (up to a maximum of 5d8 damage) to a single target. Undead creature receive 1d8 damage per monk level instead.
+```
+– 5th level: May cast Flaming Fists once per day.  
+```
+FLAMING FISTS: The Sun Soul Monk channels <PRO_HISHER> inner light into <PRO_HISHER> unarmed attacks, turning <PRO_HISHER> fists into flaming weapons that deal an additional 2d6 fire damage per hit for the next round. The duration increases to 2 rounds at level 9, 3 rounds at level 12, 4 rounds at level 15, and 5 rounds at level 25. This special ability automatically modifies normal attacks; no weapon-switching needs to be done.
+```
+– 6th level: Gains an additional use of Sun Soulray.  
+– 8th level: May cast Greater Sun once per day.  
+```
+GREATER SUN: The Sun Soul Monk wreathes herself in flames that act as a Fireshield (Red), granting the Monk 50% Fire Resistance and protecting <PRO_HIMHER> from attacks made within a 5-ft. radius. An opponent that hits the Monk with any weapons or spells within this radius suffers 1d8+2 points of fire damage.
+```
+– 10th level: Gains an additional use of Sun Soulray.  
+– 13th level: May cast Soul Sunbeam once per day.  
+```
+SUN SOULBEAM: The Sun Soul Monk emits a dazzling burst of light that strikes at all other creatures within a 30-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the Monk's current THAC0 (+3 to hit vs. undead). Struck creatures suffer 9d6 points of fire damage (9d6+3 if undead), unless they save vs. Spell for half. In addition, all creatures except the Monk must save vs. Spell or be blinded for 2 hours.
+```
+– 15th level: Gains an additional use of Sun Soulray.  
+
+Disadvantages:  
+– Alignment restricted to lawful good.  
+– May not use Stunning Blow ability.  
+– May not use Quivering Palm ability.  
+
+### SHAMAN
+CLASS FEATURES:  
+– May only wear leather, studded leather, and hide armor.  
+– May not equip shields larger than bucklers.  
+– May only use the following weapons: dagger, club, spear, axe, quarterstaff, dart, sling, and shortbow.  
+– May cast druidic spells.  
+– Does not automatically learn all spells of a given level as Druids do. Instead, Shamans select new spells to learn at each level, which they can cast daily without memorization.  
+– Gains immediate access to a number of Shaman-specific spells, which can be cast like any other: Spirit Ward, Writhing Fog, Spiritual Clarity, Spirit Fire, Recall Spirit, Spiritual Lock, and Ether Gate.  
+– Gains use of the Detect Illusion skill with 20% points as a base and an 4 points per level, up to a maximum of 100% at level 20.  
+– May use Shamanic Dance at will.  
+```
+SHAMANIC DANCE: Shamans can summon spirit allies by performing a ritualistic dance. While dancing, the Shaman takes a -4 penalty to Armor Class and cannot move, attack, cast spells, use items and special abilities, or perform any other activity. Each round while the Shaman dances, there is a 35% base chance plus 2% for each level of the Shaman that a spirit will answer the call, up to a maximum of 75% at level 20. Summoned spirits stay while Shaman is dancing + 1 round /6 levels after Shaman stops dancing (1 round at level 1). The spirits grow in power as the Shaman gains additional levels:  
+  Level 1: Minor animal spirits (snake, fox, hound), up to 2 spirits at the same time.  
+  Level 6: Major animal spirits (bear, panther, boar), up to 3 spirits at the same time.  
+  Level 12: Minor nature spirits (lesser air spirit, lesser earth spirit, lesser fire spirit), up to 4 spirits at the same time.  
+  Level 18: Major nature spirits (air spirit, earth spirit, fire spirit), up to 5 spirits at the same time.  
+The type of the summoned spirit is randomly determined from all the spirits available at the Shaman's level. For example, a level 12 Shaman will summon either a minor nature spirit, a major animal spirit, or a minor animal spirit, but cannot choose which one appears. Spirits will do their best to protect the Shaman but are not controlled directly.  
+```
+– Alignment restricted to neutral good, true neutral, and neutral evil.  
+– Ineligible for any stronghold. (This affects only the Shadows of Amn campaign in Baldur's Gate II: Enhanced Edition.)  
 – Hit Die: d8  
 
 ### FIGHTER/THIEF
@@ -666,7 +1093,7 @@ CLASS FEATURES:
 – Alignment restricted to good.  
 – Hit Die: d9  
 
-### CLERIC/MAGE: This is a hybrid class that can use the abilities of a Cleric and a Mage.	
+### CLERIC/MAGE
 CLASS FEATURES:  
 – May not wear any armor.  
 – May only use the following weapons: dagger, quarterstaff, dart, sling, crossbow, mace, flail, morning star, war hammer.  
@@ -677,7 +1104,7 @@ CLASS FEATURES:
 – Hit Die: d6  
 NOTE: Gnomes can choose this hybrid class, but become Cleric/Illusionists by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.  
 
-### CLERIC/THIEF: This is a hybrid class that can use the abilities of a Cleric and a Thief.	
+### CLERIC/THIEF
 CLASS FEATURES:  
 – May not wear armor heavier than studded leather.  
 – May not equip shields larger than bucklers.  
@@ -695,4 +1122,19 @@ SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrific
 ```
 – At 1st level chooses a domain that grants <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.  
 – Hit Die: d7  
+
+### MAGE/THIEF
+CLASS FEATURES:  
+– May not wear armor heavier than studded leather.  
+– May not equip shields larger than bucklers.  
+– May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.  
+– Have THAC0 and APR progression of a mage.	  
+– Can cast one arcane spell per day less than trueclass mage.  
+– Receives Bonus Feats at level 5 and every 5 levels thereafter.  
+– May distribute 12 skill points per level among thieving skills (20 points at level 1).  
+– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.  
+– May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
+– Hit Die: d5  
+NOTE: Gnomes can choose this hybrid class, but become Illusionist/Thieves by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.~
+
 
