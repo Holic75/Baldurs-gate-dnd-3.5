@@ -168,6 +168,8 @@ BEGIN @0
 	//paladin update (Lay On Hands and Smite evil, saves, + bonus for undead hunter)
 	//COPY ~3ed/Classes/Paladin/TULVLUH.SPL~ ~override~
 	COPY ~3ed/Classes/Paladin/PDNSVCR.SPL~ ~override~//correction for paladin saves
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~CLABPA+.*\.2DA~ mask_file=~~
+						feat_type_file=~~ caption=~PDNSVCR~ END	
 	COPY ~3ed/Classes/Paladin/LayOnHands~ ~override~
 		EXTEND_TOP ~baldur.bcs~ ~3ed/Classes/Paladin/PALADIN.bcs~	//script to update number of lay on hands uses depending on charisma
 	
@@ -612,7 +614,35 @@ COPY_EXISTING_REGEXP GLOB ~\(CLABPA01\)\|\(CLABPA02\)\|\(CLABPA04\)\|\(CLABPA06\
 	LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=20 d_level=7 add_at_level1=0 
 						STR_VAR clab=~CLABSO01\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~APRBON~ END	
-						
+		
+	
+	//saving throws regularization
+	COPY ~3ed/Core/THAC0/THAC0H.SPL~ ~override/SAVESDH.SPL~ //high thaco for swashbucklers
+		FOR (i=1;i<=20;i=i+1) BEGIN
+			LPF ALTER_SPELL_EFFECT INT_VAR header=i parameter1=(16 - i/2) new_opcode = 33  END //saving throw vs death value
+		END
+	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESWH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 34  END //saving throw vs wand
+	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESPH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 35  END //saving throw vs polymorph
+	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESBH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 36  END //saving throw vs  breath
+	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESSH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 37  END //saving throw vs spell
+		
+	//reflex saves to barbarian and rangers
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(CLABRN+.*\)\|\(CLABFI05\)\.2DA~ mask_file=~~
+						feat_type_file=~~ caption=~SAVESWH~ END
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(CLABRN+.*\)\|\(CLABFI05\)\.2DA~ mask_file=~~
+						feat_type_file=~~ caption=~SAVESBH~ END
+	
+	//spell saves for bard and paladin
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(CLABBA+.*\)\|\(CLABPA+.*\)\.2DA~ mask_file=~~
+						feat_type_file=~~ caption=~SAVESSH~ END	
+	//fort saves for battle caster	
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~CLABSO01\.2DA~ mask_file=~~
+						feat_type_file=~~ caption=~SAVESDH~ END	
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~CLABSO01\.2DA~ mask_file=~~
+						feat_type_file=~~ caption=~SAVESPH~ END	
+		
+		
+		
 	INCLUDE ~3ed/DIMINISH_SPELL_CASTING.tph~
 	
 	//ftr/cleric spells

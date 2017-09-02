@@ -10,6 +10,7 @@ CLASS FEATURES:
 – Gets one bonus feat at level 1 and at every even level.
 – At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill and AC penalties. Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.
 – Hit Die: d10 
+– High THAC0/APR progression, High Savingthrows vs. Death and vs. Polymorph
 ~
 //---------------------------------------------------------------------------------------------------//
 	@002=~FIGHTER/THIEF: This is a hybrid class that can use the abilities of a Fighter and a Thief.
@@ -19,12 +20,13 @@ CLASS FEATURES:
 – May wear helmets.
 – May wear any armor and use any weapon.
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
-– Have THAC0 and APR progression of a thief.
 – May distribute 16 skill points per level among thieving skills (24 points at level 1).
 – Gets one bonus feat at level 1 and every 3 levels thereafter.
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.
 – At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill and AC penalties. Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.
-– Hit Die: d8~
+– Hit Die: d8
+– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon and vs. Wand
+~
 //---------------------------------------------------------------------------------------------------//
 	@003=~FIGHTER/CLERIC: This is a hybrid class that can use the abilities of a Fighter and a Cleric.
 
@@ -33,7 +35,6 @@ CLASS FEATURES:
 – May wear helmets.
 – May wear any armor and use any weapon.
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
-– Have THAC0 and APR progression of a cleric.
 – Can cast two spell per day less than trueclass cleric.
 – Gets one bonus feat at level 1 and at every 4th level.
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels up to 10d4).
@@ -42,7 +43,9 @@ CLASS FEATURES:
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
 
 – At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
-– Hit Die: d9~	
+– Hit Die: d9
+– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
+~	
 	
 	
 //---------------------------------------------------------------------------------------------------//
@@ -53,7 +56,6 @@ CLASS FEATURES:
 – May wear helmets.
 – May wear any armor and use any weapon.
 – May get up to Greater Weapon Focus (3 stars) in any weapon they can use.
-– Have THAC0 and APR progression of a cleric.
 – Can cast one spell less per day than trueclass mage.
 – Cannot cast spells of 8th and 9th levels.
 – Gets one bonus feat at level 5 and at every 5 levels thereafter.
@@ -63,6 +65,7 @@ CLASS FEATURES:
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
 
 – Hit Die: d7
+– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
 NOTE: Gnomes can choose this class, but become Fighter/Illusionists by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class. ~
 //---------------------------------------------------------------------------------------------------//
@@ -75,13 +78,14 @@ CLASS FEATURES:
 – May wear helmets.
 – May wear light and medium armor and use any weapon.
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
-– Have THAC0 and APR progression of a druid.
 – Can cast two spell per day less than trueclass druid.
 – Bonus Feats: Fighter/Druid gets Style Focus in Archery for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialziation at level 12 and Style Mastery at level 16.
 – May spontaneously convert memorized spells to summoning ones.
 – May select one racial enemy at levels 1, 5, 10, 15, 20, which grants a +4 bonus on damage rolls against the selected enemy race.
 – May call for an animal companion who fights for <PRO_HISHER> side.
-– Hit Die: d9~		
+– Hit Die: d9
+– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
+~		
 	
 //---------------------------------------------------------------------------------------------------//
 	@007=~FIGHTER/MAGE/CLERIC: This character can use the abilities of a Fighter, Mage, and Cleric, though they get a chance of casting failure while wearing armor. They may only get up to Greater Weapon Focus (3 stars) in any weapon they can use.
@@ -163,7 +167,9 @@ At the end of the rage, the character loses the rage modifiers and becomes fatig
 – 17th level: Tireless Rage: Barbarian is no longer fatigued after the rage ends.
 – 20th level: Mighty Rage: Barbarian’s Rage bonuses to Strength and Constitution during his rage each increase to +8, and his morale bonus on saves  vs. Spell increases to +4. The penalty to AC remains at -2. 
 
-– Hit Die: d12~
+– Hit Die: d12
+– High THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon and vs. Wand
+~
 //-----------------------------------------------------------------------------------------------------------//
 	@012=~DWARVEN DEFENDER: The Dwarven Defender is a formidable warrior that is reputed to be worth two soldiers of any other race. Trained extensively in the art of dwarven warfare, a handful of these stout fighters can render a defensive line all but unbreakable. 
 
@@ -205,7 +211,9 @@ SMITE EVIL: For 10 seconds Paladin receives +1 bonus to <PRO_HISHER> attack roll
 
 – Receives a bonus to all saving throws for every 2 points of Charisma above 9 (i.e +1 at 11, +2 at 13, etc) and penalty for every 2 points below 10.
 – Alignment restricted to lawful good.
-– Hit Die: d10~
+– Hit Die: d10
+– High THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
+~
 //-----------------------------------------------------------------------------------------------------------------------//
 	@014=~CAVALIER: This class represents the most common picture of the knight: the chivalrous warrior who epitomizes honor, courage, and loyalty. The cavalier is specialized in battling "classical" evil monsters such as demons and dragons.
 
@@ -303,7 +311,9 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May call for an animal companion who fights for <PRO_HISHER> side.
 – May cast druidic spells starting at level 4.
 – Alignment restricted to good.
-– Hit Die: d10~
+– Hit Die: d10
+– High THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon and vs. Wand
+~
 //---------------------------------------------------------------------------------------------------//
 	@019=~CLERIC/RANGER: This is a hybrid class that can use the abilities of a Cleric and a Ranger.
 
@@ -312,7 +322,6 @@ CLASS FEATURES:
 – May wear helmets.
 – May use any weapon.
 – May not wear armor heavier than splint mail.
-– Have THAC0 and APR progression of a cleric.
 – Bonus Feats: Cleric/Ranger gets Style Focus in Two Weapon Fighting for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialziation at level 12 and Style Mastery at level 16.
 – May select one racial enemy at levels 1, 5, 10, 15, 20, which grants a +4 bonus on damage rolls against the selected enemy race.
 – May use the Charm Animal ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.
@@ -322,7 +331,9 @@ CLASS FEATURES:
 – Eventually can cast low level druidic spells (same as trueclass ranger).
 – At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
 – Alignment restricted to good.
-– Hit Die: d9~		
+– Hit Die: d9
+– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell
+~		
 //---------------------------------------------------------------------------------------------------//	
 	@020=~ARCHER: The Archer is the epitome of skill with the bow—the ultimate marks<PRO_MANWOMAN>, able to make almost any shot, no matter how difficult. To become so skilled with the bow, the Archer has had to sacrifice some of <PRO_HISHER> proficiency with melee weapons and armor.
 
@@ -388,7 +399,9 @@ All hostile living creatures suffer 2d4 points of magical damage per Channel Ene
 – May cast priest spells.
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).
 – At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
-– Hit Die: d8~
+– Hit Die: d8
+– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
+~
 //---------------------------------------------------------------------------------------------------//
 	@024=~CLERIC/MAGE: This is a hybrid class that can use the abilities of a Cleric and a Mage.
 	
@@ -401,6 +414,7 @@ CLASS FEATURES:
 – Can cast three divine spells per day less than trueclass cleric.
 – At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
 – Hit Die: d6
+– Low THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
 NOTE: Gnomes can choose this hybrid class, but become Cleric/Illusionists by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.~
 //---------------------------------------------------------------------------------------------------//
@@ -410,8 +424,7 @@ CLASS FEATURES:
 
 – May not wear armor heavier than studded leather.
 – May not equip shields larger than bucklers.
-– May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling, mace, flail, morning star, war hammer.
-– Have THAC0 and APR progression of a cleric.	
+– May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling, mace, flail, morning star, war hammer.	
 – Can cast two spell per day less than trueclass clerics.
 – May distribute 16 skill points per level among thieving skills (24 points at level 1).
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.
@@ -422,7 +435,9 @@ CLASS FEATURES:
 SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds. Ability lasts for 3 rounds, or until the first spell is sacrificed.
 
 – At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
-– Hit Die: d7~
+– Hit Die: d7
+– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell
+~
 //-------------------------------------------------------------------------------------------------------------------
 	@026=~PRIEST OF LATHANDER: Lathander is the good god of renewal, creativity, and youth, and is celebrated nearly everywhere. His followers are very popular throughout the realms, and there are numerous wealthy temples devoted to him.
 
@@ -493,7 +508,9 @@ CLASS FEATURES:
 – 15th level: Becomes immune to poison.
 – 18th level: Gains 10% resistance to cold, fire, electricity, and acid; gains a further 10% resistance at levels 21 and 24.
 – Alignment restricted to true neutral.
-– Hit Die: d8~
+– Hit Die: d8
+– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
+~
 //---------------------------------------------------------------------------------------------------//
 	@031=~AVENGER: The druidic avenger channels her inner fury to wreak vengeance upon those who injure the natural world. This comes at a price, however, since the avenger must give up some of her own sensitivity to nature. 
 
@@ -537,10 +554,11 @@ CLASS FEATURES:
 
 – May not wear any armor.
 – May only use the following weapons: dagger, quarterstaff, dart, sling, crossbow.
-– Have THAC0 and APR progression of a mage.
 – Receives one bonus Feat at level 5 and every 5 levels thereafter.
 – May cast arcane spells.
-– Hit Die: d4~
+– Hit Die: d4
+– Low THAC0/APR progression, High Savingthrows vs. Spell
+~
 //---------------------------------------------------------------------------------------------------//
 	@035=~MAGE: The wizard strives to be a master of magical energies, shaping them and casting them as spells. To do so, <PRO_HESHE> studies strange tongues and obscure facts and devotes much of <PRO_HISHER> time to magical research. A wizard must rely on knowledge and wit to survive.~
 //---------------------------------------------------------------------------------------------------//
@@ -551,13 +569,13 @@ CLASS FEATURES:
 – May not wear armor heavier than studded leather.
 – May not equip shields larger than bucklers.
 – May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.
-– Have THAC0 and APR progression of a mage.	
 – Can cast one arcane spell per day less than trueclass mage.
 – Receives Bonus Feats at level 5 and every 5 levels thereafter.
 – May distribute 12 skill points per level among thieving skills (20 points at level 1).
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.
 – Hit Die: d5
+– Low THAC0/APR progression, High Savingthrows vs. Breath Weapon, vs. Wand and vs. Spell
 	
 NOTE: Gnomes can choose this hybrid class, but become Illusionist/Thieves by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.~
 //---------------------------------------------------------------------------------------------------//
@@ -585,7 +603,9 @@ SET SNARE: Set a trap in the chosen location when no hostile creatures are in si
   20st level: Deals 3d8+5 missile damage and 20 poison damage with no save; slays target if a Save vs. Death with a +4 bonus is failed.
 
 – Alignment restricted to any except lawful good.
-– Hit Die: d6~
+– Hit Die: d6
+– Medium THAC0/APR progression, High Savingthrows vs. Breath Weapon and vs. Wand
+~
 //---------------------------------------------------------------------------------------------------//
 	@038=~THIEF: To accomplish <PRO_HISHER> goals, for good or ill, the Thief is a skilled pilferer. Cunning, nimbleness, and stealth are <PRO_HISHER> hallmarks.~
 //---------------------------------------------------------------------------------------------------//
@@ -712,7 +732,9 @@ Deadly Performance
 A bard of 20th level or higher can use <PRO_HISHER> performance to cause one enemy to die from joy or sorrow. To be affected, the target must be able to see and hear the bard perform and be within 30 feet. The target can make a Saving Throw vs. Spell to negate the effect. If a creature’s Saving Throw succeeds, the target is paralyzed for 2 rounds. If a creature’s Saving Throw fails, it dies.
 
 – Alignment restricted to any neutral.
-– Hit Die: d6~
+– Hit Die: d6
+– Medium THAC0/APR progression, High Savingthrows vs. Breath Weapon, vs. Wand and vs. Spell
+~
 //---------------------------------------------------------------------------------------------------//
 	@044=~BLADE: The Blade is an expert fighter and adventurer whose bardic acting abilities make <PRO_HIMHER> appear more intimidating and fearsome. This Bard's fighting style is flashy and entertaining, but is also lethally dangerous.
 
@@ -799,7 +821,9 @@ CLASS FEATURES:
 – Receives one bonus Feat at level 5 and every 5 levels thereafter.
 – May not scribe spells into their spellbooks as Mages do. Instead, Sorcerers learn a small number of spells at each level, which they can cast daily without memorization.
 – At 1st level chooses a bloodline which grants access to 9 spells (1 per spell level) in addition to those gained normally.
-– Hit Die: d4~
+– Hit Die: d4
+– Low THAC0/APR progression, High Savingthrows vs. Spell
+~
 //----------------------------------------------------------------------------------------------------//
 	@0480001=~battle caster~
 	@0480002=~Battle Caster~
@@ -812,6 +836,7 @@ Advantages:
 – Have THAC0 and APR progression of a cleric.
 – At first level receives for free Armored Arcana(1): Light Armor Casting.
 – Hit Die: d6
+– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
 Disadvantages:
 – May not choose bloodline and thus may not receive bonus bloodline spells. 
@@ -843,7 +868,6 @@ When using flurry of blows, a monk may attack only with unarmed strikes, with da
   Level 16-19: 2d8
   Level 20+: 2d10
 – At level 4, unarmed attacks are treated as a +1 magical weapon, monk also reveives +1 bonus on unarmed to hit rolls. The enchantment and to hit bonus improve to +2 at level 8, +3 at level 12, +4 at level 16 and +5 at level 20. 
-– High savingthrows.
 – Gains +1 AC bonus at level 5 and every five levels thereafter.
 – Gains +1 AC bonus per 2 points of Wisdom above 10.
 – May use the Stunning Blow ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
@@ -864,7 +888,9 @@ QUIVERING PALM: The next successful attack forces the opponent to save vs. Spell
 – 20th level: Becomes immune to non-magical weapons.
 – Thieving abilities: Move Silently, Hide In Shadows, Find Traps (but not disarm) and Detect Illusion. Monks can distribute 10 skill points per level.
 – Alignment restricted to lawful.
-– Hit Die: d8~
+– Hit Die: d8
+– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell
+~
 //---------------------------------------------------------------------------------------------------//
     @050=~DARK MOON MONK: The Order of the Dark Moon is a secretive monastic order that follows the teachings of the dark goddess Shar. Monks of the Dark Moon use physical prowess, dark magic, and many different forms of deception to mask their activities and strike with deadly precision.
 
@@ -934,7 +960,9 @@ The type of the summoned spirit is randomly determined from all the spirits avai
 
 – Alignment restricted to neutral good, true neutral, and neutral evil.
 – Ineligible for any stronghold. (This affects only the Shadows of Amn campaign in Baldur's Gate II: Enhanced Edition.)
-– Hit Die: d8~
+– Hit Die: d8
+– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
+~
 //---------------------------------------------------------------------------------------------------//
 	@053=~CHARISMA: Charisma measures a character's persuasiveness, personal magnetism, and ability to lead. This ability has the following effects:
 
