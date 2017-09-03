@@ -1307,7 +1307,7 @@ Sword Spider:
 	Constitution: 10
 	Base Armor Class: 3
 	Number of Attacks: 4
-	Attack Damage: 1d4 (piercing), strikes as a +1 weapon
+	Attack Damage: 1d4 (piercing), strikes as +1 weapon
 	Special Abilities:
 		– Immunity to web~
 		
@@ -1334,7 +1334,7 @@ Greater Werewolf:
 	Constitution: 25
 	Base Armor Class: -6
 	Number of Attacks: 3 
-	Attack Damage: 2d8 (slashing)
+	Attack Damage: 2d8 (slashing), strikes as +4 weapon
 	Special Abilities:
 		– Immune to all non magical weapons
 		– Fire Resistance: 50%

@@ -1194,27 +1194,27 @@ Lvl| High | Low |
 
 ## THACO/APR progression per level
 Lvl| High | Medium | Low |
---- | --- | ---
-1| 19/1  | 20/1  | 20/1
-2| 18/1  | 19/1  | 19/1
-3| 17/1  | 18/1  | 19/1
-4| 16/1  | 17/1  | 18/1
-5| 15/1  | 17/1  | 18/1
-6| 14/1.5| 16/1  | 17/1
-7| 13/1.5| 15/1  | 17/1
-8| 12/1.5| 14/1.5| 16/1
-9| 11/1.5| 14/1.5| 16/1
-10|10/1.5| 13/1.5| 15/1
-11| 9/2  | 12/1.5| 15/1
-12| 8/2  | 11/1.5| 14/1.5
-13| 7/2  | 11/1.5| 14/1.5
-14| 6/2  | 10/1.5| 13/1.5 
-15| 5/2  |  9/2  | 13/1.5
-16| 4/2.5|  8/2  | 12/1.5
-17| 3/2.5|  8/2  | 12/1.5
-18| 2/2.5|  7/2  | 11/1.5
-19| 1/2.5|  6/2  | 11/1.5
-20| 0/2.5|  5/2  | 10/1.5
+--- | --- | --- | ---
+1| 19 / 1  | 20 / 1  | 20 / 1
+2| 18 / 1  | 19 / 1  | 19 / 1
+3| 17 / 1  | 18 / 1  | 19 / 1
+4| 16 / 1  | 17 / 1  | 18 / 1
+5| 15 / 1  | 17 / 1  | 18 / 1
+6| 14 / 1.5| 16 / 1  | 17 / 1
+7| 13 / 1.5| 15 / 1  | 17 / 1
+8| 12 / 1.5| 14 / 1.5| 16 / 1
+9| 11 / 1.5| 14 / 1.5| 16 / 1
+10|10 / 1.5| 13 / 1.5| 15 / 1
+11| 9 / 2  | 12 / 1.5| 15 / 1
+12| 8 / 2  | 11 / 1.5| 14 / 1.5
+13| 7 / 2  | 11 / 1.5| 14 / 1.5
+14| 6 / 2  | 10 / 1.5| 13 / 1.5 
+15| 5 / 2  |  9 / 2  | 13 / 1.5
+16| 4 / 2.5|  8 / 2  | 12 / 1.5
+17| 3 / 2.5|  8 / 2  | 12 / 1.5
+18| 2 / 2.5|  7 / 2  | 11 / 1.5
+19| 1 / 2.5|  6 / 2  | 11 / 1.5
+20| 0 / 2.5|  5 / 2  | 10 / 1.5
 
 ## Paladin, Ranger and Assassin spell slots per day
 
@@ -1527,3 +1527,50 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 18|6|6|5|5|5|4|3
 19|6|6|5|5|5|4|4
 20|6|6|5|5|5|4|4
+
+
+## Cleric domain spells
+
+Domain           | Granted Spells
+--- | --- 
+Elemental (Air)  | Shocking Grasp (1), Lightning Bolt (3), Storm Shield (6)
+Animal           | Animal Summoning I (4), Animal Summoning II (5), Animal Summoning III (6)
+Elemental (Cold) | Chill Touch (1), Fireshield (Blue) (4), Cone of Cold (5)
+Death            | Horror (2), Hold Undead (3), Control Undead (7)
+Destruction      | Melf's Acid Arrow (2), Cloudkill (5), Disintegrate (6)
+Elemental (Earth)| Conjure Lesser Earth Elemental (5), Stoneskin (6), Protection From The Elements (7)
+Elemental (Fire) | Burning Hands (1), Fireball (3), Fireshield (Red) (4)
+Glory            | Exaltation (3), Boon of Diety (6), Mordenkainen's Sword (7)
+Moon             | Blindness (1), Blur (2), Vampiric Touch (3)
+Protection       | Shield (1), Minor Globe of Invulnerability (4), Globe of Invulnerability (6)
+Sun              | Fireshield (Red) (4), Sunfire (5), Prismatic Spray (7)
+Time             | Slow (3), Haste (4), Hold Monster (5)
+Trickery         | Grease (1), Invisibility (2), Confusion (4)
+War              | Seeking Sword (3), Divine Favor (5), Tenser's Transformation (6)
+
+
+## Sorceror bloodline spells
+
+Bloodline       | Granted Spells
+--- | --- 
+Arcane   | Identify (1), Invisibility (2), Dispel Magic (3), Secret Word (4), Breach (5), True Sight (6), Power Word, Stun (7), Simulacrum (8), Wish (9)
+Celestial| Protection From Evil (1), Resist Fear (2), Hold Undead (3), Minor Globe of Invulnerability (4), Sunfire (5), Protection From Magic Energy (6), Mordenkainen's Sword (7), Power Word, Blind (8), Absolute Immunity (9)
+Demon    | Spook (1), Strength (2), Protection From Fire (3), Stoneskin (4), Protection From Acid (5), Tenser's Transformation (6), Cacofiend (7), Summon Fiend (8), Gate (9)
+Draconic | Armor (1), Resist Fear (2), Fireball (3), Fireshield (Red) (4), Lower Resistance (5), Protection From Magical Weapons (6), Protection From The Elements (7), Protection From Energy (8), Power Word, Kill (9)
+Fey      | Sleep (1), Glitterdust (2), Dire Charm (3), Confusion (4), Domination (5), Mislead (6), Prismatic Spray (7), Maze (8), Shapechange (9)
+Undead   | Larloch's Minor Drain (1), Ray of Enfeeblement (2), Vampiric Touch (3), Contagion (4), Cloudkill (5), Death Fog (6), Protection From The Elements (7), Abi-Dalzim's Horrid Wilting (8), Wail of the Banshee (9)
+
+
+## Druid shape stats
+
+Shape | STR | DEX | CON | Base AC| APR |Damage | Special Abilities |
+---   | --- | --- | --- | ---    | --- |---    | ---   
+Black Bear       | 16  | 12  | 18  |  7 | 3      |1d4 + 1 (piercing)| strikes as +1 weapon
+Brown Bear       | 18  | 12  | 16  |  7 | 3      |1d6 (piercing)    | strikes as +1 weapon
+Wolf             | 15  | 18  | 14  |  6 | 2      |1d8 (piercing)    | strikes as +1 weapon, Cold Resistance 100%, Electrical Resistance 50%
+Fire Salamander  | 18  | 19  | 15  |  2 |As Druid|1d6+1d8 (piercing)| strikes as +3 weapon, +1 THAC0, Fire Resistance 50%, Breathe Fireball three times per day (2d6 fire damage to target)
+Baby Wyvern      | 16  | 17  | 16  |  3 | 1      |2d8 (crushing) + 1d6 (piercing)| strikes as +2 weapon,  on hit causes 1 poison damage/second for 6 seconds (Save vs. Poison to avoid), Immunity to hold, paralysis, slow, level drain, web, entangle, and grease            
+Sword Spider     | 16  | 16  | 10  |  3 | 4      |1d4 (piercing)    | strikes as +1 weapon, Immunity to web
+Werewolf         | 19  | 16  | 15  |  1 | 2      |1d6 (piercing)    | strikes as +2 weapon, Magic Resistance: 20%
+Greater Werewolf | 21  | 20  | 25  |  -6| 3      |2d8 (slashing)    | strikes as +4 weapon, Immune to all non magical weapons, Fire Resistance 50%, Cold Resistance 50%, Electricity Resistance 50%, Acid Resistance 50%, Magic Resistance 40%, Regenerates 1 Hit Point per second
+
