@@ -1860,7 +1860,7 @@ Can benifit from Weapon Finesse and Insightfull Strike~ */
 
 ~
 //elven chain armor
-	@3041=~- Max Dexterity Bonus: 18
+	@3041=~- Max Dexterity AC Bonus: 4
 	
 ~
 //drizzt mithril armor

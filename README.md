@@ -1168,7 +1168,7 @@ CLASS FEATURES:
 NOTE: Gnomes can choose this hybrid class, but become Illusionist/Thieves by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.
 
 
-## Saving throw progression per level
+### Saving throw progression per level
 Lvl| High | Low | 
 --- | --- | ---
 1| 16 | 18
@@ -1192,7 +1192,7 @@ Lvl| High | Low |
 19| 7 | 12
 20| 6 | 12
 
-## THACO/APR progression per level
+### THACO/APR progression per level
 Lvl| High | Medium | Low |
 --- | --- | --- | ---
 1| 19 / 1  | 20 / 1  | 20 / 1
@@ -1216,7 +1216,7 @@ Lvl| High | Medium | Low |
 19| 1 / 2.5|  6 / 2  | 11 / 1.5
 20| 0 / 2.5|  5 / 2  | 10 / 1.5
 
-## Paladin, Ranger and Assassin spell slots per day
+### Paladin, Ranger and Assassin spell slots per day
 
 Lvl\Spell level | 1 | 2 | 3 | 4 |
 --- | --- | --- | --- |--- 
@@ -1238,7 +1238,7 @@ Lvl\Spell level | 1 | 2 | 3 | 4 |
 19|4|4|3|2
 20|4|4|3|3
 
-## Bard spell slots per day
+### Bard spell slots per day
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 |
 --- | --- | --- | --- |--- |--- |--- 
@@ -1265,7 +1265,7 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 |
 
 
 
-## Cleric and Druid spell slots per day
+### Cleric and Druid spell slots per day
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 --- | --- | --- | --- |--- |--- |--- |--- 
@@ -1290,7 +1290,7 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 19|6|6|6|6|6|5|5
 20|6|6|6|6|6|6|6
 
-## Mage spell slots per day
+### Mage spell slots per day
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 --- | --- | --- | --- |--- |--- |--- |--- |--- |---
@@ -1317,7 +1317,7 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 
 Note: Specialist MAges may cast one spell per level per day
 
-## Fighter/Cleric, Fighter/Druid, Cleric/Ranger and Cleric/Thief spell slots per day
+### Fighter/Cleric, Fighter/Druid, Cleric/Ranger and Cleric/Thief spell slots per day
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 --- | --- | --- | --- |--- |--- |--- |--- 
@@ -1343,7 +1343,7 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 20|4|4|4|4|4|4|4
 
 
-## Fighter/Mage and Mage/Thief spell slots per day
+### Fighter/Mage and Mage/Thief spell slots per day
 
 Lvl\Spell level | 1| 2 | 3 | 4 | 5 | 6 | 7 | 8 (M/T only) | 9 (M/T only)|
 --- | --- | --- | --- |--- |--- |--- |--- |--- |---
@@ -1370,7 +1370,7 @@ Lvl\Spell level | 1| 2 | 3 | 4 | 5 | 6 | 7 | 8 (M/T only) | 9 (M/T only)|
 
 Note: Fighter/Mages can not cast spells higher than of 7th level, Specialist Mages can cast one spell more per level per day.
 
-## Cleric/Mage arcane spell slots per day
+### Cleric/Mage arcane spell slots per day
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 --- | --- | --- | --- |--- |--- |--- |--- |--- |---
@@ -1397,7 +1397,7 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 
 Note: Specialist Mages can cast one spell more per level per day.
 
-## Cleric/Mage divine spell slots per day
+### Cleric/Mage divine spell slots per day
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 --- | --- | --- | --- |--- |--- |--- |--- 
@@ -1424,7 +1424,7 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 
 
 
-## Sorceror spell slots per day
+### Sorceror spell slots per day
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 --- | --- | --- | --- |--- |--- |--- |--- |--- |---
@@ -1452,7 +1452,7 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 Note: Battle Casters can cast one spell per day per level less.
 
 
-## Sorceror and Battle Caster spells known
+### Sorceror and Battle Caster spells known
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 --- | --- | --- | --- |--- |--- |--- |--- |--- |---
@@ -1478,7 +1478,7 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 20|5|5|4|4|4|3|3|3|3
 
 
-## Shaman spell slots per day
+### Shaman spell slots per day
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 --- | --- | --- | --- |--- |--- |--- |--- 
@@ -1504,7 +1504,7 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 20|9|9|9|9|9|9|9
 
 
-## Shaman spells known
+### Shaman spells known
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 --- | --- | --- | --- |--- |--- |--- |--- 
 1| 2|0|0|0|0|0|0
@@ -1529,7 +1529,7 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 20|6|6|5|5|5|4|4
 
 
-## Cleric domain spells
+### Cleric domain spells
 
 Domain           | Granted Spells
 --- | --- 
@@ -1549,7 +1549,7 @@ Trickery         | Grease (1), Invisibility (2), Confusion (4)
 War              | Seeking Sword (3), Divine Favor (5), Tenser's Transformation (6)
 
 
-## Sorceror bloodline spells
+### Sorceror bloodline spells
 
 Bloodline       | Granted Spells
 --- | --- 
@@ -1561,7 +1561,7 @@ Fey      | Sleep (1), Glitterdust (2), Dire Charm (3), Confusion (4), Domination
 Undead   | Larloch's Minor Drain (1), Ray of Enfeeblement (2), Vampiric Touch (3), Contagion (4), Cloudkill (5), Death Fog (6), Protection From The Elements (7), Abi-Dalzim's Horrid Wilting (8), Wail of the Banshee (9)
 
 
-## Druid shape stats
+### Druid shape stats
 
 Shape | STR | DEX | CON | Base AC| APR |Damage | Special Abilities |
 ---   | --- | --- | --- | ---    | --- |---    | ---   
@@ -1574,3 +1574,82 @@ Sword Spider     | 16  | 16  | 10  |  3 | 4      |1d4 (piercing)    | strikes as
 Werewolf         | 19  | 16  | 15  |  1 | 2      |1d6 (piercing)    | strikes as +2 weapon, Magic Resistance: 20%
 Greater Werewolf | 21  | 20  | 25  |  -6| 3      |2d8 (slashing)    | strikes as +4 weapon, Immune to all non magical weapons, Fire Resistance 50%, Cold Resistance 50%, Electricity Resistance 50%, Acid Resistance 50%, Magic Resistance 40%, Regenerates 1 Hit Point per second
 
+## 5. Equipment
+
+
+### Armors
+
+Like in DnD 3.5 it is now possible to cast arcane spells and use thieving skills in any armor, although depending on the armor characters may receive a penalty
+ to their thieving abilities and/or suffer a chance of spell casting failure. All armors also restrict a maximum dexterity bonus to AC.
+ 
+Armor Type| Spell Casting Failure | Max Dex AC Bonus | Hide in Shadows| Move Silently | Pick Pockets |Open Locks |Find Traps|
+---   | --- | --- | --- | ---    | --- |---    | ---   
+Leather Armor          | 10% | +5 | -   |  - | - |  - | - 
+Studded Leather Armor  | 15% | +4 | -10%|-10%|-5% | -5%| -5%
+Hide Armor             | 20% | +3 | -20%|-20%|-10%|-10%|-10%
+Chanin Mail            | 20% | +3 | -30%|-30%|-20%|-20%|-20%
+Splint Mail            | 30% | +2 | -40%|-40%|-30%|-30%|-30%
+Plate Mail             | 40% | +1 | -50%|-50%|-40%|-40%|-40%
+Full Plate Armor       | 50% | +0 | -60%|-60%|-50%|-50%|-50%
+Elven Chain Mail       | 0%  | +4 | -10%|-10%|-5% |-5% |-5%
+Mithral Chain Mail     | 0%  | +4 | -10%|-10%|-5% |-5% |-5%
+Ankheg Plate Mail      | 20% | +3 | -30%|-30%|-20%|-20%|-20%
+ 
+ 
+### Other Changes
+ - Robes (except Robes of Archmagi) can now be worn by any class, even monks  
+ - Strength requirement for Full Plate Mail was reduced to 14   
+ - Strength requirement for Composite Longbows were reduced to 14  
+ - Damage of Bastard Swords was changed to 1d10  
+ - Damage of Two-Handed Swords was changed to 2d6  
+ - Damage of Halberds was changed to 1d12  
+ - Damage of Spears was changed to 1d8  
+ - Moonblade type was changed to longsword (do not worry, Xan can still use it) 
+ 
+## 6. Spells
+
+The saving throws type for most of the spells were changed, now area effect spells are generally checked agains Breath Weapon saving throws, 
+spells changing characters physical condition (death, poison, disease, blindness, polymorph etc) are checked against Death/Poison/Paralyze or Petrification/Polymorph saving throws, all the rest - agains Spell saving throws.
+For item abilities, area effect ones are generally checked agains Breath Weapon saving throws, all the rest - against Rod/Staff/Wand saving throws.
+
+### Modified Spells
+
+- Shield now gives +4 AC bonus which is cumulative with armor, but does not work with shields equiped  
+- Chill Touch now acts as close range spell (instead of weapon) and deals 1d8 points of cold damage and bestows -2 penalty to THAC0  
+- Burning hands is now and area effect spell (15 ft cone)  
+- The saving throw penalties against Spook now no longer increase with caster level  
+- If creatures under effect of Sleep are being attacked, they wake up  
+- Shoking Grasp now acts as clsoe range spell (instead of weapon) dealing 1d6 electrical damage per level 
+- Ghoul touch now acts as clsoe range spell (instead of weapon)  
+- Horror duration was reduced to 3 rounds  
+- Dispel Magic and Remove Magic spells now  dispel with probability equal to 30% + 1% per level (twice for Inquisitors)  
+- Animate Dead now summons two skeletons instead of one  
+- Tenser's transformation now sets THAC0 to that of a fighter of equal level gives +1 APR, +2 To Hit and Damage bonus and doubles caster's HP  
+
+- Magical Stone now creates one magical sling bullet per priest level (+1 THAC0, 1d6+1 damage or 2d6+2 against undead)  
+- Bless is now a cleric only spell
+- Barkskin now gives +3 bonus to AC (+4 at level 7, +5 at level 13) which is cumulative with everything else and +1 bonus to saving throws (except vs. Spell)    
+- Flame Blade spell was removed, it is now repalced with druid only Flame Weapon spell which makes target deal +1d6 fire damage bonus on every attack for the duration of the spell  
+- Goodberries now heal 3 HP each when eaten  
+- Spiritual Hammer is now a throwing weapon with +1 ench, THAC0 and Damage bonus per 3 caster levels (up to +5 at lvl 15)  
+- Draw Upon Holy Might now gives 1+1/per 5 caster level bonus to STE, DEX and CON (up to +5 at level 20)  
+- Aid's +1 THACO bonus is now cumulative with bless ,also bonus HP are increased to +5 +1/caster level (up to 15)  
+- Seeking sword now gives only +1 APR (instead of 2) and is now 3rd levle War Domain Spell  
+- Cure Medium Wounds now heals 20 HP  
+- Call Lightning can be now cast indoors and deals 1d6 points of electrical damage per caster level up to 10d6  
+- Cloak of fear radius was increased to 5 ft  
+- Holy Power now sets caster's THAC0 to that of a fighter of the same level, gives +1/2 APR and +2 bonus to strength  
+- Cause Critical Wounds is now a close range spell dealing 26 points of damage  
+- Cure Critical wounds now heal 26 HP  
+- Slay Living now deals 2d6+9 damage to target if it succeeds on Save vs. Death  
+- Flame Strike is now and AOE spell with 5 ft radius 
+- Champion's Strength now is applied only to caster. It sets it THAC0 to that of a  fighter, gives + 1/2 APR and + 4 strength bonus, the duration is three times that of Holy Power  
+- Righteous Magic now gives + 1 HP per level, +2 AC, and +1 STR and 5% physical damage resistance per 3 caster levels  
+- Harm is now a close range spell instead of a weapon  
+- Boon of Lathander was renamed to Boon of Diety (it is now a 6th level Glory Domain Spell)  
+- Finger of Death now deals 6d8 points of damage to the target if it succeeds on a Saving Throw vs. Death  
+
+### New Spells
+
+
+	
