@@ -29,7 +29,7 @@ in C:\Users\UserName\Documents\Baldur's Gate - Enhanced Edition folder find file
 SetPrivateProfileString('Game Options','3E Thief Sneak Attack','1')
 ```
 if it is not already there (it replaces backstab with 3ed Sneak Attack).  
-This mod was only tested with clean BG:ENCHANCED EDITION 2.3 install and is not genrally compatible with any other mods.
+This mod was only tested with clean BG:ENCHANCED EDITION 2.3 install (Non Sod) and might not be compatible with any other mods.
 
 
 For any bugs, critics and suggestions please write to holic.denis@gmail.com
@@ -1681,7 +1681,7 @@ Saving Throw: None
  
 By means of this spell, the caster calls a war dog to fight along his side. It will remain under the caster's control until slain or the spell duration expires.
 
-####Camouflage (Druid)
+#### Camouflage (Druid)
 (Illusion/Phantasm)  
 
 Level: 1  
