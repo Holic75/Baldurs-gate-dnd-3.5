@@ -1820,7 +1820,7 @@ Additionally Druids gain access to the following spells: Burning Hands (as 1st l
 
 ## 7. Racial Enemies
 Now racial enemy can be chosen at level 1 and every 5th level.   
-Additional following races were added to the selection: Humans, Elves, Half-elves, Gnomes, Dwarves, Halflings, Half-orcs.
+Additionally following races were added to the selection: Humans, Elves, Half-elves, Gnomes, Dwarves, Halflings, Half-orcs.
  
 ## 8. NPC
 All joinable NPC now have 0th level when they join. Upon joining they get apropriate number of expirience points and thus you can level up them as you like.
@@ -1859,7 +1859,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 
 ## 9. Difficulty
 
-To compensate for new character abilities most of the enemies were made stronger, they got +50% HP and bonuses to AC, THACO and APR.   
+To compensate for new character abilities most of the enemies were made stronger, they got +50% HP and bonuses to AC, THAC0 and APR.   
 Certain scripts for spell casting enemies were also changed to make battles more challenging.  
 Also killing greater basiliscs now gives only 2800 experience points (instead of 7000).
 
