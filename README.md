@@ -20,6 +20,7 @@
 # Baldurs-gate-dnd-3.5
 This is a WeiDu mod for BG:Enchanced edition that changes 2ed ADnD rules to DnD 3.5 with some elements taken from Pathfinder.  
 It changes game mechanics (i.e classes, spells, abilities, etc...) to that of 3.5 edition (to the extent that game engine allows).
+
 # Installation
 
 Put all files to Game folder (the one which contains Baldur.exe) and run Setup-3ed.exe, choose to install ALL components.
@@ -29,6 +30,9 @@ SetPrivateProfileString('Game Options','3E Thief Sneak Attack','1')
 ```
 if it is not already there (it replaces backstab with 3ed Sneak Attack).  
 This mod was only tested with clean BG:ENCHANCED EDITION 2.3 install and is not genrally compatible with any other mods.
+
+
+For any bugs, critics and suggestions please write to holic.denis@gmail.com
 
 # Rule Changes
 ## 1. Abilities
@@ -1637,7 +1641,7 @@ For item abilities, area effect ones are generally checked agains Breath Weapon 
 - Seeking sword now gives only +1 APR (instead of 2) and is now 3rd levle War Domain Spell  
 - Cure Medium Wounds now heals 20 HP  
 - Call Lightning can be now cast indoors and deals 1d6 points of electrical damage per caster level up to 10d6  
-- Cloak of fear radius was increased to 5 ft  
+- Cloak of fear radius was increased to 5 ft, also enemies must save with -4 penalty  
 - Holy Power now sets caster's THAC0 to that of a fighter of the same level, gives +1/2 APR and +2 bonus to strength  
 - Cause Critical Wounds is now a close range spell dealing 26 points of damage  
 - Cure Critical wounds now heal 26 HP  
@@ -1651,5 +1655,229 @@ For item abilities, area effect ones are generally checked agains Breath Weapon 
 
 ### New Spells
 
+#### Magic Fang (Druid)
+(Alteration)  
 
-	
+Level: 1  
+Sphere: Combat  
+Range: Touch  
+Duration: 1 min/level  
+Casting Time: 6   
+Area of Effect: 1 creature  
+Saving Throw: None   
+
+This spell gives an animal a +1 enchantment bonus on attack and damage rolls.  
+
+#### Lesser Animal Summoning I  (Druid) 
+(Conjuration/Summoning)  
+
+Level: 1  
+Sphere: Animal, Summoning   
+Range: 30 ft.  
+Duration: 3 turns  
+Casting Time: 4   
+Area of Effect: Special   
+Saving Throw: None   
+ 
+By means of this spell, the caster calls a war dog to fight along his side. It will remain under the caster's control until slain or the spell duration expires.
+
+####Camouflage (Druid)
+(Illusion/Phantasm)  
+
+Level: 1  
+Sphere: Plant   
+Range: Touch   
+Duration: 1 Turn/level  
+Casting Time: 2   
+Area of Effect: 1 creature   
+Saving Throw: None   
+
+Target creature colouring changes to match the surrounding environment, granting it +20% bonus to Hide in Shadows and Move Silently Skills for the duration of the spell.
+
+#### Cause Light Wounds (Cleric)
+(Necromancy)  
+
+Level: 1  
+Sphere: Healing   
+Range: Touch   
+Duration: Permanent   
+Casting Time: 3   
+Area of Effect: 1 creature   
+Saving Throw: None   
+
+This spell is the reverse of Cure Light Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 8 points of damage upon the target.
+
+#### Lesser Animal Summoning II   (Druid)
+(Conjuration/Summoning)  
+
+Level: 2  
+Sphere: Animal, Summoning   
+Range: 30 ft.  
+Duration: 3 turns  
+Casting Time: 5   
+Area of Effect: Special   
+Saving Throw: None   
+
+By means of this spell, the caster calls a wolf to fight along his side. It will remain under the caster's control until slain or the spell duration expires.  
+
+#### Cure Moderate Wounds (Cleric, Druid)
+(Necromancy)  
+
+Level: 2  
+Sphere: Healing  
+Range: Touch  
+Duration: Permanent  
+Casting Time: 5  
+Area of Effect: 1 creature  
+Saving Throw: None  
+
+By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest causes 14 points of wound or other injury damage to the creature's body to be healed. This healing cannot affect creatures without corporeal bodies, nor can it cure wounds of creatures not living or of extraplanar origin.
+Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
+
+#### Cause Moderate Wounds (Cleric)
+(Necromancy)  
+
+Level: 2  
+Sphere: Healing   
+Range: Touch   
+Duration: Permanent   
+Casting Time: 3   
+Area of Effect: 1 creature   
+Saving Throw: None   
+
+This spell is the reverse of Cure Moderate Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 14 points of damage upon the target.
+
+#### Greater Magic Fang  (Druid)
+(Alteration)  
+
+Level: 3  
+Sphere: Combat  
+Range: Touch  
+Duration: 1 min/level  
+Casting Time: 6   
+Area of Effect: 1 creature  
+Saving Throw: None   
+
+This spell gives an animal a +1 enchantment bonus on attack and damage rolls on attack and damage rolls, which increases by +1 for every five caster levels.
+
+#### Searing Light (Cleric)
+(Evocation)  
+
+Level: 3  
+Sphere: Elemental (Fire)  
+Range: 50 ft.  
+Duration: instant  
+Casting Time: 3  
+Area of Effect: 1 creature   
+Saving Throw: None  
+
+Focusing divine power like a ray of the sun, priest projects a blast of light from open palm. A creature struck by this ray of light takes 1d8 points of fire damage per two caster levels (maximum 5d8). An undead creature takes 1d8 points of damage per caster level (maximum 10d8) instead.
+
+#### Aid, 10' Radius  (Cleric)
+(Necromancy, Conjuration)  
+
+Level: 3  
+Sphere: Necromantic   
+Range: 0   
+Duration: 3 rounds + 1 round/level   
+Casting Time: 5   
+Area of Effect: 30-ft. radius  
+Saving Throw: None   
+
+When this spell is cast, all creatures within a 30-ft. radius are affected individually by Aid spell.
+The recipients gain +1 to attack rolls and Saving Throws and a special bonus of 5 +1/caster level to maximum Hit Points (up to 20) for the duration of the spell.
+
+
+#### Lesser Animal Summoning III (Druid)  
+(Conjuration/Summoning)  
+
+Level: 3  
+Sphere: Animal, Summoning   
+Range: 30 ft.  
+Duration: 3 turns  
+Casting Time: 6   
+Area of Effect: Special   
+Saving Throw: None   
+
+By means of this spell, the caster calls between 1 and 2 animals that have 4 Hit Dice or less. The animals appearing are randomly determined. They will remain under the caster's control until slain or the spell duration expires.
+
+#### Cause Medium Wounds  (Cleric)
+(Necromancy)  
+
+Level: 3  
+Sphere: Healing   
+Range: Touch   
+Duration: Permanent   
+Casting Time: 3   
+Area of Effect: 1 creature   
+Saving Throw: None   
+
+This spell is the reverse of Cure Medium Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 20 points of damage upon the target.
+
+
+Additionally Druids gain access to the following spells: Burning Hands (as 1st level spell), Sleep (as 1st level spell),
+ Flame Strike (as 4th level spell), Hold Monster (as 4th level spell), Ice Storm (as 4th levels spell), Chain Lightning (as 6th level spell). 
+
+## 7. Racial Enemies
+Now racial enemy can be chosen at level 1 and every 5th level.   
+Additional following races were added to the selection: Humans, Elves, Half-elves, Gnomes, Dwarves, Halflings, Half-orcs.
+ 
+## 8. NPC
+All joinable NPC now have 0th level when they join. Upon joining they get apropriate number of expirience points and thus you can level up them as you like.
+Their classes and statistics were changed as follows (stats are given in the format STR/ DEX/ CON/ INT/ WIS/ CHA):
+
+#### Ajantis - Paladin (14/ 10/ 14/ 10/ 14/ 16)
+#### Alora - Thief (10 /20/ 10/ 14/ 9 / 9)
+#### Baeloth - Battle Caster (14/ 16/ 12/ 10/ 10/ 16)
+#### Branwen - Figter/Cleric (15/ 10/ 14/ 10/ 16/ 12)
+#### Coran - Archer (14/ 18/ 12/ 10/ 14/ 10)
+#### Dorn - Blackguard (18/ 10/ 12/ 8/ 14/ 15)
+#### Dynaheir - Sorceror (12/ 14/ 14/ 10/ 9/ 17)
+#### Edwin - Conjurer (10/ 12/ 14/ 18/ 9 / 10)
+#### Eldoth - Blade (14/ 14/ 14/ 14/ 10/ 14)
+#### Faldoen - Avenger (14/ 14/ 14/ 10/ 16/ 10)
+#### Garrick - Bard (10/ 16/ 14/ 14/ 9/ 14)
+#### Imoen - Jester (9/ 16/ 10/ 14/ 8/ 17)
+#### Jaheira - Fighter/Druid (14/ 14/ 14/ 10/ 16/ 10) - as half-elf will receive +2 bonus to any ability score at level 1
+#### Kagain - Dwarven Defender (16/ 10/ 19/ 10/ 11/ 8)
+#### Khalid - Fighter/Thief (14/ 16/ 14/ 15/ 9/ 9) - as half-elf will receive +2 bonus to any ability score at level 1
+#### Kivan - Cleric/Ranger (14/ 16/ 12/ 10/ 16/ 10)
+#### Minsc - Barbarian (18/ 14/ 16/ 8/ 8/ 8)
+#### Montaron - Assassin (10/ 18/ 14/ 16/ 9/ 9)
+#### Neera - Wild Mage (9/ 16/ 12/ 17/ 9/ 11)  - as half-elf will receive +2 bonus to any ability score at level 1
+#### Qualye - Illusionist/Thief (10/ 16/ 16/ 16/ 10/ 8)
+#### Rasaad - Sun Soul Monk (14/ 16/ 12/ 10/ 15/ 10)
+#### Safana - Swashbuckler (11/ 16/ 14/ 16/ 9/ 10)
+#### Shar-Teel - Stalker (16/ 16/ 10/ 10/ 14/ 10)
+#### Skie - Shadowdancer (10/ 18/ 10/ 16/ 8/ 10)
+#### Tiax - Cleric/Illusionists (10/ 10/ 16/ 16/ 16/ 8)
+#### Viconia - Cleric/Thief (10/ 18/ 10/ 14/ 14/ 12)
+#### Xan - Fighter/Mage (14/ 16/ 12/ 16/ 10/ 10)
+#### Xzar - Necromancer (10/ 14/ 12/ 18/ 9/ 9)
+#### Yeslick - Cleric (14/ 10/ 16/ 10/ 16/ 12)
+
+
+## 9. Difficulty
+
+To compensate for new character abilities most of the enemies were made stronger, they got +50% HP and bonuses to AC, THACO and APR.   
+Certain scripts for spell casting enemies were also changed to make battles more challenging.  
+Also killing greater basiliscs now gives only 2800 experience points (instead of 7000).
+
+
+## 10. Miscellaneous
+
+Since giving class dependent abilities to characters on level up involves running big number of scripts the way the characters level up was slightly changed.
+Now it is generally impossible to raise character level by more than one through level-up. 
+Once the character gets enough experience points for next level he kind of stops getting any more experience until he level ups (he still gains it, but it is not reflected on the character sheet),
+once you level up, the character will get back all missing experience points within limit of next level and so on.
+
+If you character suddenly receives alot of XP points (like through console) to raise for several levels the script might generally take few seconds to kick on and readjust XP points,
+so please wait till it runs, and level up only after, otherwise you risk not to receive certain abilities.
+
+ 
+
+
+
+
+
+
