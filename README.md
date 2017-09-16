@@ -41,7 +41,7 @@ Roll based Abilities generation was replaced with point-buy system (characters s
 
 The effects of abilities were also changed as follows:
 
-##### STRENGTH: 
+#### STRENGTH: 
 – Determines to hit bonus with melee weapons and throwing axes (+1 per 2 points above 9, -1 per 2 points below 8).  
 – Determines damage bonus with melee weapons and throwing axes and slings (+1 per 2 points above 10, -1 per 2 points below 9).  
 – Determines chance to force open the lock.  
@@ -54,7 +54,7 @@ Bash| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |13 | 16 | 20 | 25 | 30 | 35 | 40 |
 
 Note: two-handed weapons receive 1.5 damage bonus from STRENGTH.
 
-##### DEXTERITY:
+#### DEXTERITY:
 – Determines to hit bonus with ranged weapons (+1 per 2 points above 9, -1 per 2 points below 8).  
 – Determines AC bonus (+1 per 2 points above 10, -1 per 2 points below 9).  
 – Gives combat bonuses with certain feats, weapons and armors.  
@@ -62,12 +62,12 @@ Note: two-handed weapons receive 1.5 damage bonus from STRENGTH.
 – Improves Saving Throws vs. Rod/Staff/Wand and vs. Breath Weapon (+1 per 2 points above 9, -1 per 2 points below 10).  
 Note: wearing heavy armor may restrict maximum dexterity bonus to AC a character can have.  
 
-##### CONSTITUTION:
+#### CONSTITUTION:
 – Determines bonus HP that characters receives per level (+1 per 2 points above 10).  
 – For values greater than 19 gives slow HP regenearion over time.  
 – Improves Saving Throws vs. Paralysis/Poison/Death and vs. Petrification/Polymorph (+1 per 2 points above 9, -1 per 2 points below 10).  
 
-##### INTELLIGENCE
+#### INTELLIGENCE
 – Determines the maximum level of spell that can be cast by Bards and Mages.  
 – Determines number of spells per level that can be learned by Bards and Mages.  
 – Determines chance to learn a spell by Bards and Mages.  
@@ -90,7 +90,7 @@ INT\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 – Increases Saving Throw penalties for Mage and Assassin spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).  
 Note: A character with an Intelligence score of 8 or less is illiterate and cannot use scrolls or most wands regardless of her class.
 
-##### WISDOM
+#### WISDOM
 – Increases AC bonus of Monk and Kensai (+1 per 2 points above 10).  
 – Increases number of spells per day that can be cast by Clerics, Paladins, Druids and Rangers.  	 
 
@@ -107,7 +107,7 @@ WIS\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 – Improves Saving Throws vs. Spells (+1 per 2 points above 9, -1 per 2 points below 10).  
 – Increases Saving Throw penalties for Cleric, Druid, Paladin and Ranger spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).  
 
-##### CHARISMA
+#### CHARISMA
 – Increases number of Channel Energy uses per day for Paladins and Clerics (+1 per 2 points above 10).  
 – Improves all Paladin and Jester savingthrows (+1 per 2 points above 9 and -1 per 2 points below 10).  
 – Increases number of Lay On Hands uses per day for Paladin or Absorb Health uses per day for Blackguards (+1 per 2 points above 12).  
@@ -269,8 +269,8 @@ Combat Intuition (5 stars) - While wearing light or no armor the character recei
 (5 stars) - The character ignores spell casting failure chance of Full Plate Mail and lighter armors.  
 
 
-Generally character cun put up to 5 stars in any proficiency unless stated otherwise and as long as it makes sense (for example since Paladins can cast spells of maximum 4th level, they can only put up to 3 stars in Bonus Priest Spell feat).
-
+Generally character cun put up to 5 stars in any proficiency unless stated otherwise and as long as it makes sense (for example since Paladins can cast spells of maximum 4th level, they can only put up to 3 stars in Bonus Priest Spell feat).  
+Unless stated otherwise characters get a new Feat at level 1, level 3 and every 3 levels thereafter. The maximum number of stars that can be put in any feat tree is equal to 1 + 1/per 4 levels of the character.
 
 ## 3. Races
 ### HUMANS
@@ -346,7 +346,7 @@ CLASS FEATURES:
 – May get five stars in any weapon category.  
 – Gets one bonus feat at level 1 and at every even level.  
 – At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill penalties and maximum dexterity AC bonus values. Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.  
-– Hit Die: d10
+– Hit Die: d10  
 – High THAC0/APR progression, High Savingthrows vs. Death and vs. Polymorph
 
 ### BERSERKER
@@ -363,8 +363,8 @@ At 16th level the attack and damage rolls bonus increases to +5 and physical dam
 – 12th level: Improved Power Attack: Power attack damage bonus is increased to +5.  
 – 16th level: Supreme Power Attack:  Power attack damage bonus is further increased to +6.  
 – 18th level: Immortal Berserker: The hit points of enraged Berserker can not be reduced below 1, but at the end of Rage Berserker receives 1 point of damage which can kill her if she has only 1 hit point.   
-Note: although her hit points can not be reduced below 1, Berserker can still be killed by spells like Slay Living, Desintegrate and others.
-– 20th level: Last Berserk: Berserker gains one use per day of special form of Rage called Last Berserk. It has the same effect as normal Rage and Berserker also receives +10 damage bonus on damage rolls (to a total of +15). However it can not be prolonged and after it ends Berserker can no longer use Rage for next 8 hours.  
+Note: although her hit points can not be reduced below 1, Berserker can still be killed by spells like Slay Living, Desintegrate and others.  
+– 20th level: Last Berserk: Berserker gains one use per day of special form of Rage called Last Berserk. It has the same effect as normal Rage and Berserker also receives +10 damage bonus on damage rolls (to a total of +15). However it can not be prolonged and after it ends Berserker can no longer use Rage for next 8 hours.    
 
 Disadvantages:  
 – Becomes winded after berserking: -2 penalty to Armor Class, to-hit rolls, and damage rolls.  
@@ -545,9 +545,9 @@ CLASS FEATURES:
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save. 
 ```
 – Bonus Feats: Ranger gets Style Focus in Two Weapon Fighting for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialziation at level 12 and Style Mastery at level 16.  
-– May select one racial enemy at levels 1, 5, 10, 15, 20, which grants a +4 bonus on damage rolls against the selected enemy race.
-– May use the Charm Animal ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.
-– May use the Hide In Shadows ability.  
+– May select one racial enemy at levels 1, 5, 10, 15, 20, which grants a +4 bonus on damage rolls against the selected enemy race.  
+– May use the Charm Animal ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.  
+– May use the Hide In Shadows ability.   
 – May call for an animal companion who fights for her side.  
 – May cast druidic spells starting at level 4.  
 – Alignment restricted to good.  
@@ -575,7 +575,7 @@ Disadvantages:
 ### BEAST MASTER
 Advantages:  
 – +15% to Move Silently and Hide In Shadows.  
-– Has a telepathic link with his animal companion which allows them to fight as one. When fighting close to each other Beast master and his animal companion get +1 To Hit, Damage, AC and Saving Throws. This bonuses increase to +2 at level 7,  +3 at level 14 and +4 at level 20.  
+– Has a telepathic link with his animal companion which allows them to fight as one. When fighting close to each other Beast master and his animal companion get +1 To Hit, Damage, AC and Saving Throws. These bonuses increase to +2 at level 7,  +3 at level 14 and +4 at level 20.  
 – Hit Die: d12.  
 
 Disadvantages:
@@ -632,7 +632,7 @@ CLASS FEATURES:
 – 15th level: Becomes immune to poison.  
 – 18th level: Gains 10% resistance to cold, fire, electricity, and acid; gains a further 10% resistance at levels 21 and 24.  
 – Alignment restricted to true neutral.  
-– Hit Die: d8
+– Hit Die: d8  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
 ### AVENGER
@@ -713,7 +713,7 @@ Each successful hit within the next 5 rounds will inject poison into the target.
 8th - Target suffers 1 poison damage per second for 18 seconds (Save vs. Death at -1 negates), and also immediately suffers 4 poison damage (no save)
 12th - Target suffers 1 poison damage per second for 24 seconds (Save vs. Death at -2 negates), and also immediately suffers 6 poison damage (no save)
 ```
-– Starting from level 4 can cast a limited number of Spells (through Innate Abilities menu). Assassin does not need to memorize <PRO_HISHER> spells in advance and can spontaneously cast anyone she knows.  
+– Starting from level 4 can cast a limited number of Spells (through Innate Abilities menu). Assassin does not need to memorize her spells in advance and can spontaneously cast any spell she knows.  
 
 Assassin Spellbook:  
 First level spells: starting from level 4 Assassin gets access to the following spells: Sleep, Blindness, Reflected Image, Chill Touch.  
@@ -978,7 +978,7 @@ QUIVERING PALM: The next successful attack forces the opponent to save vs. Spell
 – 20th level: Becomes immune to non-magical weapons.  
 – Thieving abilities: Move Silently, Hide In Shadows, Find Traps (but not disarm) and Detect Illusion. Monks can distribute 10 skill points per level.  
 – Alignment restricted to lawful.  
-– Hit Die: d8 
+– Hit Die: d8   
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell 
 
 ### DARK MOON MONK
@@ -1091,7 +1091,7 @@ CLASS FEATURES:
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
 ```
 – Hit Die: d7  
-– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
+– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell  
 NOTE: Gnomes can choose this class, but become Fighter/Illusionists by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.  
 
 ### FIGHTER/DRUID
@@ -1104,7 +1104,7 @@ CLASS FEATURES:
 – May spontaneously convert memorized spells to summoning ones.  
 – May select one racial enemy at levels 1, 5, 10, 15, 20, which grants a +4 bonus on damage rolls against the selected enemy race.
 – May call for an animal companion who fights for her side.  
-– Hit Die: d9
+– Hit Die: d9  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 		 
 
@@ -1148,7 +1148,6 @@ CLASS FEATURES:
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.  
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels up to 10d4).  
-
 – May use Spontaneous Spell Channeling
 ```
 SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds. Ability lasts for 3 rounds, or until the first spell is sacrificed.
@@ -1168,7 +1167,7 @@ CLASS FEATURES:
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.  
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
 – Hit Die: d5  
-– Low THAC0/APR progression, High Savingthrows vs. Breath Weapon, vs. Wand and vs. Spell
+– Low THAC0/APR progression, High Savingthrows vs. Breath Weapon, vs. Wand and vs. Spell  
 NOTE: Gnomes can choose this hybrid class, but become Illusionist/Thieves by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.
 
 
@@ -1196,29 +1195,29 @@ Lvl| High | Low |
 19| 7 | 12
 20| 6 | 12
 
-### THACO/APR progression per level
+### THACO/bonus APR progression per level
 Lvl| High | Medium | Low |
 --- | --- | --- | ---
-1| 19 / 1  | 20 / 1  | 20 / 1
-2| 18 / 1  | 19 / 1  | 19 / 1
-3| 17 / 1  | 18 / 1  | 19 / 1
-4| 16 / 1  | 17 / 1  | 18 / 1
-5| 15 / 1  | 17 / 1  | 18 / 1
-6| 14 / 1.5| 16 / 1  | 17 / 1
-7| 13 / 1.5| 15 / 1  | 17 / 1
-8| 12 / 1.5| 14 / 1.5| 16 / 1
-9| 11 / 1.5| 14 / 1.5| 16 / 1
-10|10 / 1.5| 13 / 1.5| 15 / 1
-11| 9 / 2  | 12 / 1.5| 15 / 1
-12| 8 / 2  | 11 / 1.5| 14 / 1.5
-13| 7 / 2  | 11 / 1.5| 14 / 1.5
-14| 6 / 2  | 10 / 1.5| 13 / 1.5 
-15| 5 / 2  |  9 / 2  | 13 / 1.5
-16| 4 / 2.5|  8 / 2  | 12 / 1.5
-17| 3 / 2.5|  8 / 2  | 12 / 1.5
-18| 2 / 2.5|  7 / 2  | 11 / 1.5
-19| 1 / 2.5|  6 / 2  | 11 / 1.5
-20| 0 / 2.5|  5 / 2  | 10 / 1.5
+1| 19 /+0  | 20 /+0  | 20 /+0
+2| 18 /+0  | 19 /+0  | 19 /+0
+3| 17 /+0  | 18 /+0  | 19 /+0
+4| 16 /+0  | 17 /+0  | 18 /+0
+5| 15 /+0  | 17 /+0  | 18 /+0
+6| 14 /+0.5| 16 /+0  | 17 /+0
+7| 13 /+0.5| 15 /+0  | 17 /+0
+8| 12 /+0.5| 14 /+0.5| 16 /+0
+9| 11 /+0.5| 14 /+0.5| 16 /+0
+10|10 /+0.5| 13 /+0.5| 15 /+0
+11| 9 /+1  | 12 /+0.5| 15 /+0
+12| 8 /+1  | 11 /+0.5| 14 /+0.5
+13| 7 /+1  | 11 /+0.5| 14 /+0.5
+14| 6 /+1  | 10 /+0.5| 13 /+0.5 
+15| 5 /+1  |  9 /+1  | 13 /+0.5
+16| 4 /+1.5|  8 /+1  | 12 /+0.5
+17| 3 /+1.5|  8 /+1  | 12 /+0.5
+18| 2 /+1.5|  7 /+1  | 11 /+0.5
+19| 1 /+1.5|  6 /+1  | 11 /+0.5
+20| 0 /+1.5|  5 /+1  | 10 /+0.5
 
 ### Paladin, Ranger and Assassin spell slots per day
 
@@ -1608,6 +1607,7 @@ Ankheg Plate Mail      | 20% | +3 | -30%|-30%|-20%|-20%|-20%
  - Damage of Two-Handed Swords was changed to 2d6  
  - Damage of Halberds was changed to 1d12  
  - Damage of Spears was changed to 1d8  
+ - Initial number of attacks per rounds for all ranged weapons was set to 1, except for slings and crossbows for which it was set to 0.5; it increases at normal character APR progression and Rapid Shot feat also gives +1 APR with ranged weapons.  
  - Moonblade type was changed to longsword (do not worry, Xan can still use it) 
  
 ## 6. Spells
@@ -1638,17 +1638,19 @@ For item abilities, area effect ones are generally checked agains Breath Weapon 
 - Spiritual Hammer is now a throwing weapon with +1 ench, THAC0 and Damage bonus per 3 caster levels (up to +5 at lvl 15)  
 - Draw Upon Holy Might now gives 1+1/per 5 caster level bonus to STE, DEX and CON (up to +5 at level 20)  
 - Aid's +1 THACO bonus is now cumulative with bless ,also bonus HP are increased to +5 +1/caster level (up to 15)  
-- Seeking sword now gives only +1 APR (instead of 2) and is now 3rd levle War Domain Spell  
+- Seeking sword now gives only +1 APR (instead of 2) and is now 3rd level War Domain Spell  
 - Cure Medium Wounds now heals 20 HP  
 - Call Lightning can be now cast indoors and deals 1d6 points of electrical damage per caster level up to 10d6  
 - Cloak of fear radius was increased to 5 ft, also enemies must save with -4 penalty  
 - Holy Power now sets caster's THAC0 to that of a fighter of the same level, gives +1/2 APR and +2 bonus to strength  
-- Cause Critical Wounds is now a close range spell dealing 26 points of damage  
-- Cure Critical wounds now heal 26 HP  
+- Cause Serious Wounds is now a close range spell dealing 26 points of damage  
+- Cure Serious wounds now heal 26 HP  
 - Slay Living now deals 2d6+9 damage to target if it succeeds on Save vs. Death  
 - Flame Strike is now and AOE spell with 5 ft radius 
 - Champion's Strength now is applied only to caster. It sets it THAC0 to that of a  fighter, gives + 1/2 APR and + 4 strength bonus, the duration is three times that of Holy Power  
 - Righteous Magic now gives + 1 HP per level, +2 AC, and +1 STR and 5% physical damage resistance per 3 caster levels  
+- Cause Critical Wounds is now a close range spell dealing 32 points of damage  
+- Cure Critical wounds now heal 32 HP  
 - Harm is now a close range spell instead of a weapon  
 - Boon of Lathander was renamed to Boon of Diety (it is now a 6th level Glory Domain Spell)  
 - Finger of Death now deals 6d8 points of damage to the target if it succeeds on a Saving Throw vs. Death  
@@ -1731,7 +1733,7 @@ Casting Time: 5
 Area of Effect: 1 creature  
 Saving Throw: None  
 
-By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest causes 14 points of wound or other injury damage to the creature's body to be healed. This healing cannot affect creatures without corporeal bodies, nor can it cure wounds of creatures not living or of extraplanar origin.
+By casting this spell and laying her hand upon a creature, the priest causes 14 points of wound or other injury damage to the creature's body to be healed. This healing cannot affect creatures without corporeal bodies, nor can it cure wounds of creatures not living or of extraplanar origin.
 Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
 
 #### Cause Moderate Wounds (Cleric)
@@ -1835,7 +1837,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Dynaheir - Sorceror (12/ 14/ 14/ 10/ 9/ 17)
 #### Edwin - Conjurer (10/ 12/ 14/ 18/ 9 / 10)
 #### Eldoth - Blade (14/ 14/ 14/ 14/ 10/ 14)
-#### Faldoen - Avenger (14/ 14/ 14/ 10/ 16/ 10)
+#### Faldorn - Avenger (14/ 14/ 14/ 10/ 16/ 10)
 #### Garrick - Bard (10/ 16/ 14/ 14/ 9/ 14)
 #### Imoen - Jester (9/ 16/ 10/ 14/ 8/ 17)
 #### Jaheira - Fighter/Druid (14/ 14/ 14/ 10/ 16/ 10) - as half-elf will receive +2 bonus to any ability score at level 1
@@ -1850,7 +1852,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Safana - Swashbuckler (11/ 16/ 14/ 16/ 9/ 10)
 #### Shar-Teel - Stalker (16/ 16/ 10/ 10/ 14/ 10)
 #### Skie - Shadowdancer (10/ 18/ 10/ 16/ 8/ 10)
-#### Tiax - Cleric/Illusionists (10/ 10/ 16/ 16/ 16/ 8)
+#### Tiax - Cleric/Illusionist (10/ 10/ 16/ 16/ 16/ 8)
 #### Viconia - Cleric/Thief (10/ 18/ 10/ 14/ 14/ 12)
 #### Xan - Fighter/Mage (14/ 16/ 12/ 16/ 10/ 10)
 #### Xzar - Necromancer (10/ 14/ 12/ 18/ 9/ 9)
