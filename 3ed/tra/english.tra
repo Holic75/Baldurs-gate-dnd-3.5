@@ -3061,6 +3061,10 @@ Starting from level 13 Assassin gets access to the following spells: Improved In
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 @1300=~Level up by one level per pass~
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@1400=~Update creatures and npc stats~
+@1400=~More powerful enemies~
+////////////////////////////////////////////
+@1500=~Point buy system~
+///////////////////////////////////////////////////////////////
+@1600=~Update NPC stats~
 
-	@1401=~Well, I suppose I'll be on my way then you idi— You said YES! I mean, of course I'll come with you. My intellect and skill as a thief will undoubtedly make your group much better than it is. Onward.~
+	@1601=~Well, I suppose I'll be on my way then you idi— You said YES! I mean, of course I'll come with you. My intellect and skill as a thief will undoubtedly make your group much better than it is. Onward.~

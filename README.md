@@ -23,8 +23,8 @@ It changes game mechanics (i.e classes, spells, abilities, etc...) to that of 3.
 
 # Installation
 
-Put all files to Game folder (the one which contains Baldur.exe) and run Setup-3ed.exe, choose to install ALL components.
-in C:\Users\UserName\Documents\Baldur's Gate - Enhanced Edition folder find file Baldur.lua and add the string 
+Put all files to Game folder (the one which contains Baldur.exe) and run Setup-3ed.exe, choose to install ALL components (you can optionally skip Component #14 [More powerfull enemies] and Component #15 [Point buy system]).
+In C:\Users\UserName\Documents\Baldur's Gate - Enhanced Edition folder find file Baldur.lua and add the string 
 ```
 SetPrivateProfileString('Game Options','3E Thief Sneak Attack','1')
 ```
@@ -37,7 +37,7 @@ For any bugs, critics and suggestions please write to holic.denis@gmail.com
 # Rule Changes
 ## 1. Abilities
 
-Roll based Abilities generation was replaced with point-buy system (characters start with 10 points in every ability and can distribute 20 more points among them, increasing ability till 14 costs one point, from 14 to 16 - 2 points and finally from 16 to 18  - 3 points).
+If Component #15 [Point Buy System] is installed, roll based Abilities generation will be replaced with point-buy system (characters start with 10 points in every ability and can distribute 20 more points among them, increasing ability till 14 costs one point, from 14 to 16 - 2 points and finally from 16 to 18  - 3 points).
 
 The effects of abilities were also changed as follows:
 
@@ -1865,6 +1865,7 @@ To compensate for new character abilities most of the enemies were made stronger
 Certain scripts for spell casting enemies were also changed to make battles more challenging.  
 Also killing greater basiliscs now gives only 2800 experience points (instead of 7000).
 
+Note: this changes only apply if Component #14 [More powerful enemies] is installed.
 
 ## 10. Miscellaneous
 

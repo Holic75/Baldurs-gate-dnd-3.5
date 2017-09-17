@@ -391,11 +391,10 @@ BEGIN @0
 	// STRING_SET 17859 @099 //potion of agility
 		
 	
-	//copying lua files for interface and sneak attacks
-	COPY ~3ed/LUA~ ~override~
-		STRING_SET 3033 @087 //sneak attack description
-		STRING_SET 3034 @087 //sneak attack description
-		STRING_SET 3042 @087 //sneak attack description
+	//update sneak attack description
+	STRING_SET 3033 @087 //sneak attack description
+	STRING_SET 3034 @087 //sneak attack description
+	STRING_SET 3042 @087 //sneak attack description
 		
 	//allow everyone to use basic robes
 	//change descriptions
@@ -4013,12 +4012,12 @@ END
 			EVALUATE_BUFFER
 	END
 //////////////////////////////////////////////////////////////////////////////////////////////
-//	more powerfull monsters and better npcs
+//	more powerful monsters
 BEGIN @1400
 
 	COPY  ~3ed/EnemyScripts~ ~override~
 	
-	//make monsters more powerfull
+	//make monsters more powerful
 	//+2 thaco +1/5 levels, +2 ac +1/5 levels, 150% hp, +1/2 APR per 5 levels
 	
 	 COPY_EXISTING_REGEXP GLOB ~.+\.CRE~ ~override~
@@ -4077,12 +4076,18 @@ BEGIN @1400
 	COPY_EXISTING ~OGREMA03.CRE~ ~override~
 		WRITE_ASCII 0x0250 ~OGREMA03~ #8
 
+
+BEGIN @1500		//point buy system
+	
+	//copying lua files for interface 
+	COPY ~3ed/LUA/UI.menu~ ~override~
 		
+BEGIN @1600		
 	//update npc stats and set their lvl to 0
 	COPY  ~3ed/Npc~ ~override~
 	
 	//qualye dialog change
-	STRING_SET 126  @1401 
+	STRING_SET 126  @1601 
 
 
 
