@@ -1,0 +1,18 @@
+# Denote all files that are truly binary and should not be modified.
+*.exe binary
+*.spl binary
+*.bcs binary
+*.eff binary
+*.cre binary
+*.itm binary
+*.2da binary
+*.baf binary
+*.bam binary
+*.SPL binary
+*.BCS binary
+*.EFF binary
+*.CRE binary
+*.ITM binary
+*.2DA binary
+*.BAF binary
+*.BAM binary

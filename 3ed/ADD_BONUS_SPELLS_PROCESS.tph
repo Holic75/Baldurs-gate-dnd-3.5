@@ -1,0 +1,21 @@
+
+DEFINE_ACTION_FUNCTION ~ADD_BONUS_SPELLS_PROCESS~ //activated ability bonus feat
+
+	STR_VAR
+		folder_name=~dummy~
+		ability_name=~~
+
+	BEGIN
+	
+		OUTER_FOR (i=12;i<25;i=i+2) BEGIN
+			
+			COPY ~%folder_name%%ability_name%A%i%.SPL~  ~override~
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%A%i%~		
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 timing=9 duration=1 parameter1=0 parameter2=0 STR_VAR resource END //add protection from itself
+			
+			COPY ~%folder_name%%ability_name%A%i%.SPL~  ~override\%ability_name%R%i%.SPL~
+			LPF ALTER_SPELL_EFFECT INT_VAR new_opcode=321 target=2 timing=0 duration=1  parameter1=0  parameter2=0 STR_VAR resource END //add protection from itself
+						
+		END
+				
+	END

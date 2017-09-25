@@ -2,7 +2,7 @@
 
 BACKUP ~3ed/backup~
 AUTHOR ~denis.holic@gmail.com~
-VERSION ~v1.00~
+VERSION ~v1.01~
 
 
 LANGUAGE
@@ -13,6 +13,8 @@ LANGUAGE
 BEGIN @0
 	INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
 	INCLUDE ~3ed/ADD_BONUS_FEATS.tph~
+	INCLUDE ~3ed/ADD_BONUS_SPELLS_PROCESS.tph~
+	INCLUDE ~3ed/ADD_BONUS_SPELLS.tph~
 
 	
 	//common part
@@ -162,6 +164,21 @@ BEGIN @0
 		
 	COPY ~3ed/Core/SpellsPerLvl~ ~override~
 	COPY ~3ed/Core/Stats~ ~override~
+	
+	LAF ADD_BONUS_SPELLS_PROCESS STR_VAR folder_name=~3ed/Core/BonusSpells/~ ability_name=~SPLPR~ END
+	LAF ADD_BONUS_SPELLS_PROCESS STR_VAR folder_name=~3ed/Core/BonusSpells/~ ability_name=~SPLWI~ END
+	
+	LAF ADD_BONUS_SPELLS INT_VAR stat_greater_id=130 stat_less_id=131 STR_VAR folder_name=~3ed/Core/BonusSpells/~ ability_name=~SPLPR~ game_name=~SPLWIP~ END //priest spells wis
+	LAF ADD_BONUS_SPELLS INT_VAR stat_greater_id=128 stat_less_id=129 STR_VAR folder_name=~3ed/Core/BonusSpells/~ ability_name=~SPLWI~ game_name=~SPLINW~ END //wizard spells int
+	LAF ADD_BONUS_SPELLS INT_VAR stat_greater_id=132 stat_less_id=133 STR_VAR folder_name=~3ed/Core/BonusSpells/~ ability_name=~SPLPR~ game_name=~SPLCHP~ END //priest spells cha
+	LAF ADD_BONUS_SPELLS INT_VAR stat_greater_id=132 stat_less_id=133 STR_VAR folder_name=~3ed/Core/BonusSpells/~ ability_name=~SPLWI~ game_name=~SPLCHW~ END //wizard spells cha
+	
+	COPY ~3ed/Core/BonusSpells/SPLBON1.SPL~ ~override/SPLMAGMD.SPL~ //bonus wizard spells with mask
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target = 2 duration=1 parameter1=19 parameter2 =115 STR_VAR resource=~SPLINWMD~ END//for non sorcerors
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target = 2 duration=1 parameter1=19 parameter2 =105 STR_VAR resource=~SPLCHWMD~ END//for sorcerers
+		
+	
+	
 	COPY ~3ed/Core/ThiefSkill~ ~override~
 	COPY ~3ed/Core/Xp~ ~override~
 	//--------------------------------------------------------------------------------------------
@@ -476,6 +493,8 @@ BEGIN @0
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=15 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_NM1~  END //evil cleric thief
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=8 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_PM1~ END //good fighter cleric
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=8 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_NM1~  END //evil fighter cleric
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=14 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_PM1~ END //good cleric/mage
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=14 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_NM1~  END //evil cleric/mage
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=6 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_PC1~  END //good paladin
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=6 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_NC1~  END //evil paladin
 		
@@ -489,6 +508,8 @@ BEGIN @0
 	COPY ~3ed/Feats/FeatAttribution/SFTCREFC.SPL~ ~override/CE_FC1.SPL~
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //fighter cleric
 	COPY ~3ed/Feats/FeatAttribution/SFTCRECT.SPL~ ~override/CE_CT1.SPL~
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //cleric thief
+	COPY ~3ed/Feats/FeatAttribution/SFTCRECM.SPL~ ~override/CE_CM1.SPL~
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //cleric thief
 	//COPY ~3ed/Feats/FeatAttribution/SFTCREP.SPL~ ~override/CE_P1.SPL~
 	//	LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_1~ END//paladin
@@ -535,6 +556,7 @@ BEGIN @0
 			SPRINT resource EVALUATE_BUFFER ~CE_LVL%multi_class_level%~
 			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=8 parameter2=105 duration=1 timing=1 STR_VAR  resource END //fighter cleric 
 			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=15 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric thief
+			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=14 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric mage
 			
 			SPRINT clab_line EVALUATE_BUFFER ~%clab_line%   AP_CE_LVL~
 		END
@@ -722,7 +744,7 @@ COPY_EXISTING_REGEXP GLOB ~\(CLABPA01\)\|\(CLABPA02\)\|\(CLABPA04\)\|\(CLABPA06\
 //////////////////////////////////////////////////////////////
 
 BEGIN @100
-
+INCLUDE ~3ed/ADD_SPELL_HEADER.tph~//Persistent Stat Replacement Feats
 INCLUDE ~3ed/ADD_PSR_FEAT.tph~//Persistent Stat Replacement Feats
 INCLUDE ~3ed/ADD_PSB_FEAT.tph~//Persistent Stat Bonus Feats
 INCLUDE ~3ed/ADD_PSBP_FEAT.tph~//Persistent Stat Bonus/Penalty Feats
@@ -846,6 +868,9 @@ INCLUDE ~3ed/REPLACE_SUBSTRING.tph~
 		COPY ~3ed/Feats/PermanentAbilities/EmpowerMagic/EMPWR.SPL~  ~override/EMPWR%i%FT.SPL~
 		LPF ALTER_SPELL_EFFECT INT_VAR  parameter1=(4 + 2*i) END //spell damage bonus 
 	END
+	OUTER_FOR (i=1;i<=5;i=i+1) BEGIN
+		COPY ~3ed/Feats/PermanentAbilities/QuickenMagic/QUICKEN.SPL~  ~override/QUICK%i%FT.SPL~
+	END
 	//Extend magic
 	OUTER_FOR (i=1;i<=5;i=i+1) BEGIN
 		COPY ~3ed/Feats/PermanentAbilities/ExtendMagic/EXTND.SPL~  ~override/EXTND%i%FT.SPL~
@@ -950,7 +975,7 @@ INCLUDE ~3ed/REPLACE_SUBSTRING.tph~
 		~EMPWR1FT~ ~EMPWR2FT~ ~EMPWR3FT~ ~EMPWR4FT~ ~EMPWR5FT~ //empower magic		
 		~EXTND1FT~ ~EXTND2FT~ ~EXTND3FT~ ~EXTND4FT~ ~EXTND5FT~ //extend magic	
 		~MGPTN1FT~ ~MGPTN2FT~ ~MGPTN3FT~ ~MGPTN4FT~ ~MGPTN5FT~ //endure magic	
-		~ARCST1FT~ ~ARCST2FT~ ~ARCST3FT~ ~ARCST4FT~ ~ARCST5FT~ //armored arcana			
+		~QUICK1FT~ ~QUICK2FT~ ~QUICK3FT~ ~QUICK4FT~ ~QUICK5FT~ //quicken magic	
 	END
 	
 	
@@ -1049,6 +1074,11 @@ INCLUDE ~3ed/REPLACE_SUBSTRING.tph~
 //add bonus feats to ftr/cleric every 4 levels and at level 1
 	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=20 d_level=4 add_at_level1=1 
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFC.SPL~ feat_type_file=~SFTCRE~ caption=~F_CBONFT~ END
+						
+	//set delay to 1 second (to avoid hangup on 1st level character creation)
+	COPY_EXISTING ~F_CBONFT.SPL~ ~override~
+		LPF  ALTER_SPELL_EFFECT INT_VAR duration  =1 timing =3  END
+	
 //same for ftr/mage
 	LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=20 d_level=5 add_at_level1=0 
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFM.SPL~ feat_type_file=~SFTCRE~ caption=~F_MBONFT~ END
@@ -1121,7 +1151,7 @@ INCLUDE ~3ed/REPLACE_SUBSTRING.tph~
 				SET lvl=1
 			END
 			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=lvl speed=0 END
-				SPRINT resource EVALUATE_BUFFER ~SFT107_%i%~
+				SPRINT resource EVALUATE_BUFFER ~ARCST%i%FT~
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=7 parameter2=105 timing=0 duration=1 STR_VAR resource END // fighter/mage
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=5 parameter2=105 timing=0 duration=1 STR_VAR resource END // bard
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=13 parameter2=105 timing=0 duration=1 STR_VAR resource END // mage/thief
@@ -3410,7 +3440,11 @@ DO ~ApplySpellRES("FEI_%i%",LastSummonerOf(Myself))~  EXIT
 	INCLUDE ~3ed/ADD_BONUS_FEATS.tph~
 //racial enemies to rangers (except stlaker) and  cleric/rangers
 	LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=20 d_level=5 add_at_level1=1 
-						STR_VAR clab=~\(CLABRN01\)\|\(CLABRN02\)\|\(CLABRN04\)\.2DA~ mask_file=~~ feat_type_file=~~ caption=~FECRE~ END
+						STR_VAR clab=~\(CLABRN01\)\|\(CLABRN02\)\|\(CLABRN04\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_type_file=~FECRE~ caption=~FECREAL~ END
+						
+		//set delay to 1 second (to avoid hangup on 1st level character creation)
+	COPY_EXISTING ~FECREAL.SPL~ ~override~
+		LPF  ALTER_SPELL_EFFECT INT_VAR duration  =1 timing =3  END
 //improved racial enemies for stalkers
 	LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=20 d_level=5 add_at_level1=1 
 						STR_VAR clab=~CLABRN03\.2DA~ mask_file=~~ feat_type_file=~~ caption=~FEICRE~ END
@@ -4012,12 +4046,12 @@ END
 			EVALUATE_BUFFER
 	END
 //////////////////////////////////////////////////////////////////////////////////////////////
-//	more powerful monsters
+//	more powerfull monsters
 BEGIN @1400
 
 	COPY  ~3ed/EnemyScripts~ ~override~
 	
-	//make monsters more powerful
+	//make monsters more powerfull
 	//+2 thaco +1/5 levels, +2 ac +1/5 levels, 150% hp, +1/2 APR per 5 levels
 	
 	 COPY_EXISTING_REGEXP GLOB ~.+\.CRE~ ~override~

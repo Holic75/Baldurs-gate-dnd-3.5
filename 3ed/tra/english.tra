@@ -59,7 +59,7 @@ CLASS FEATURES:
 – Can cast one spell less per day than trueclass mage.
 – Cannot cast spells of 8th and 9th levels.
 – Gets one bonus feat at level 5 and at every 5 levels thereafter.
-– At 1st level receives for free Armored Arcana(1): Light Armor Casting. At level 4 receives Armored Arcana(2): Chain Mail Casting, at level 8 Armored Arcana(3): Splint Mail Casting, at level 12 Armored Arcana(4): Plate Mail Casting and finally at level 16 Armored Arcana(5): Full Plate Mail Casting.
+– At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.
 – Can use Spontaneous Battlecasting.
 
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
@@ -412,6 +412,17 @@ CLASS FEATURES:
 – May cast both arcane and divine cleric spells.	
 – Can cast two arcane spells per day less than trueclass mage.
 – Can cast three divine spells per day less than trueclass cleric.
+– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels up to 10d4).
+
+CHANNEL POSITIVE ENERGY:  Priest creates a burst of positive energy that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
+All allied living creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
+All hostile undead creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
+
+CHANNEL NEGATIVE ENERGY:  Priest creates a burst of negative energy that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
+All allied undead creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
+All hostile living creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
+
+– May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).
 – At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
 – Hit Die: d6
 – Low THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
@@ -834,7 +845,7 @@ Advantages:
 – May equip bucklers.
 – May use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.
 – Have THAC0 and APR progression of a cleric.
-– At first level receives for free Armored Arcana(1): Light Armor Casting.
+– At first level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.
 – Hit Die: d6
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -1634,7 +1645,7 @@ Character receives +6 on damage rolls and -3 penalty to THAC0 while fighting wit
 	@191=~Empower Magic~
 	@192=~Extend Magic~
 	@193=~Endure Magic~
-	@194=~Armored Arcana~
+	@194=~Quicken Magic~
 	//names
 	//combat prowess
 	@196=~Weapon Finesse~
@@ -1684,12 +1695,12 @@ Character receives +6 on damage rolls and -3 penalty to THAC0 while fighting wit
 	@233=~15%~
 	@234=~20%~
 	@235=~25%~
-	//Armored Caster
-	@236=~Light Armor Casting~
-	@237=~Chain Mail Casting~
-	@238=~Splint Mail Casting~
-	@239=~Plate Mail Casting~
-	@240=~Full Plate Mail Casting~
+	//Quicken magic
+	@236=~-1 Casting Time~
+	@237=~-2 Casting Time~
+	@238=~-3 Casting Time~
+	@239=~-4 Casting Time~
+	@240=~-5 Casting Time~
 	
 	//descriptions
 	//combat prowess 
@@ -1747,12 +1758,12 @@ This is an extraordinary ability and thus is not subject to magic resistance or 
 	@278=~The character gains another 5% resistance (to a total of 15%) against Fire, Lightning, Acid, Cold and Magical damage.~
 	@279=~The character gains another 5% resistance (to a total of 20%) against Fire, Lightning, Acid, Cold and Magical damage.~
 	@280=~The character gains another 5% resistance (to a total of 25%) against Fire, Lightning, Acid, Cold and Magical damage.~	
-	//Armored Caster
-	@281=~The character ignores spell casting failure chance of Leather, Studded Leather and Hide Armors.~
-	@282=~The character ignores spell casting failure chance of Chain Mail and lighter armors.~
-	@283=~The character ignores spell casting failure chance of Splint Mail and lighter armors.~
-	@284=~The character ignores spell casting failure chance of Plate Mail and lighter armors.~
-	@285=~The character ignores spell casting failure chance of Full Plate Mail and lighter armors.~	
+	//Quicken magic
+	@281=~Spell casting time for all spells is reduced by 1.~
+	@282=~Spell casting time for all spells is further reduced by 1.~
+	@283=~Spell casting time for all spells is further reduced by 1.~
+	@284=~Spell casting time for all spells is further reduced by 1.~
+	@285=~Spell casting time for all spells is further reduced by 1.~	
 	
 	@298=~Select Bonus Feat~
 	@299=~Select Bonus Feat
@@ -1783,7 +1794,7 @@ Character can select one bonus feat (from innate abilities menu).~
 	@2021=~Techniques used for increasing direct damage of spells.~//empower magic
 	@2022=~Techniques used for increasing duration of spells.~//extend magic
 	@2023=~Ability to withstand magical attacks.~ //endure magic
-	@2024=~Ability to cast arcane spells while wearing armor.~ //Armored arcana
+	@2024=~Techniques used to cast spells faster.~ //Quicken magic
 	@2025=~star~
 	@2026=~stars~
 	

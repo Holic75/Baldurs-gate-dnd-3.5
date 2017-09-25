@@ -1,0 +1,48 @@
+
+DEFINE_ACTION_FUNCTION ~ADD_BONUS_SPELLS~ 
+
+	INT_VAR
+		stat_less_id=0
+		stat_greater_id=0
+	STR_VAR
+		folder_name=~dummy~ //folder with template files
+		ability_name=~~ //name of ability SPLWI or SPLPR
+		game_name=~~ //game name
+
+	BEGIN
+	
+	COPY ~%folder_name%SPLBON1.SPL~  ~override\%game_name%1.SPL~
+		FOR (i=12;i<25;i=i+2) BEGIN
+						
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%A%i%~		
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 timing=1 duration=1 parameter2 = stat_greater_id parameter1 = i STR_VAR resource END //add bonus spells
+						
+		END
+		
+	COPY ~%folder_name%SPLBON1.EFF~  ~override\%game_name%1.EFF~
+		WRITE_EVALUATED_ASCII 0x0030 ~%game_name%1~ #8
+		
+	COPY ~%folder_name%SPLBON0.SPL~  ~override\%game_name%0.SPL~
+		FOR (i=12;i<25;i=i+2) BEGIN
+						
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%R%i%~		
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 timing=1 duration=1 parameter2 = stat_less_id parameter1 = i STR_VAR resource END //remove bonus spells
+						
+		END
+		
+	COPY ~%folder_name%SPLBON0.EFF~  ~override\%game_name%0.EFF~
+		WRITE_EVALUATED_ASCII 0x0030 ~%game_name%0~ #8
+		
+		
+	COPY ~%folder_name%SPLBONMD.SPL~  ~override\%game_name%MD.SPL~
+		SPRINT resource EVALUATE_BUFFER ~%game_name%1~		
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 timing=1 duration=1 STR_VAR resource END //initial apply			
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=272 target=2 timing=9 duration=1 parameter1=5 parameter2=3 STR_VAR resource END //subsequent applies		
+					
+		SPRINT resource EVALUATE_BUFFER ~%game_name%0~		
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=272 target=2 timing=9 duration=1 parameter1=5 parameter2=3 STR_VAR resource END //subsequent removes
+		
+		SPRINT resource EVALUATE_BUFFER ~%game_name%MD~	
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 timing=9 duration=1 parameter1=0 parameter2=0 STR_VAR resource END //add protection from itself
+		
+	END

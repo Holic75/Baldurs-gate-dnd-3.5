@@ -75,7 +75,6 @@ Note: wearing heavy armor may restrict maximum dexterity bonus to AC a character
 – Gives combat bonuses with certain feats, weapons and armors.  
 – Increases all thieving skills (+5% of base value for every point above 10, i.e. if the base value of your skill is 50 and you have 18 INT the effective base value will become 50*(100%+8 x 5%) = 50 x 140% = 70).    
 – Increases number of spells per day that can be cast by Mages and Assassins. 
->>>>>>> b9cb7fe077dc1c0651529119f3bc887f1b4a1bc7
 
 INT\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 --- | --- | --- | --- |--- |--- |--- |--- |--- |---
@@ -261,12 +260,12 @@ Combat Intuition (5 stars) - While wearing light or no armor the character recei
 (4 stars) - The character gains another 5% resistance (to a total of 20%) against Fire, Lightning, Acid, Cold and Magical damage.  
 (5 stars) - The character gains another 5% resistance (to a total of 25%) against Fire, Lightning, Acid, Cold and Magical damage.  
 
-###### Armored Arcana
-(1 star) - The character ignores spell casting failure chance of Leather, Studded Leather and Hide Armors.  
-(2 stars) - The character ignores spell casting failure chance of Chain Mail and lighter armors.  
-(3 stars) - The character ignores spell casting failure chance of Splint Mail and lighter armors.  
-(4 stars) - The character ignores spell casting failure chance of Plate Mail and lighter armors.  
-(5 stars) - The character ignores spell casting failure chance of Full Plate Mail and lighter armors.  
+###### Quicken magic
+(1 star) - Spell casting time for all spells is reduced by 1.   
+(2 stars) - Spell casting time for all spells is further reduced by 1.  
+(3 stars) - Spell casting time for all spells is further reduced by 1. 
+(4 stars) - Spell casting time for all spells is further reduced by 1.  
+(5 stars) - Spell casting time for all spells is further reduced by 1.  
 
 
 Generally character cun put up to 5 stars in any proficiency unless stated otherwise and as long as it makes sense (for example since Paladins can cast spells of maximum 4th level, they can only put up to 3 stars in Bonus Priest Spell feat).  
@@ -355,7 +354,7 @@ Advantages:
 – Bonus Feats: at level 1 Berserker receives Warfare (1):Power Attack, at level 3 she receives Warfare (2):Cleave.  
 – May use Rage ability once per day. Gains one use at level 1, additional uses at levels 4, 8, 12 and 16.  
 ```
-RAGE: The enraged state lasts for 6 rounds. While enraged, a Berserker gains a bonus of +2 to her attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
+RAGE: The enraged state lasts for 6 rounds. While enraged, a Berserker gains a bonus of +2 to her attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to her Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
 At 8th the attack and damage rolls bonus increases to +3 and physical damage resistance bonus to 20%.
 At 16th level the attack and damage rolls bonus increases to +5 and physical damage resistance bonus to 30%.
 ```
@@ -490,7 +489,7 @@ Advantages:
 – Immune to hold and level drain.  
 – May use Smite Undead ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.  
 ```
-SMITE UNDEAD: For 10 seconds Undead Hunter receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per paladin level against undead creatures.
+SMITE UNDEAD: For 10 seconds Undead Hunter receives +1 bonus to her attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per paladin level against undead creatures.
 ```
 Disadvantages:  
 – May not use Lay On Hands ability.  
@@ -578,7 +577,7 @@ Advantages:
 – Has a telepathic link with his animal companion which allows them to fight as one. When fighting close to each other Beast master and his animal companion get +1 To Hit, Damage, AC and Saving Throws. These bonuses increase to +2 at level 7,  +3 at level 14 and +4 at level 20.  
 – Hit Die: d12.  
 
-Disadvantages:
+Disadvantages:  
 – Does not gain Bonus Feats in Two Weapon Fighting Style.  
 – May use only weapons available to druids as well as axes, longbows and shortbows.  
 – May only wear armor a druid can.  
@@ -591,9 +590,9 @@ Advantages:
 – May be of any alignment.  
 
 Disadvantages:  
-– Do not gain Bonus Feats in Two Weapon Fighting Style.
-– May only wear light armor.
-– May not use the Charm Animal ability.
+– Do not gain Bonus Feats in Two Weapon Fighting Style.  
+– May only wear light armor.  
+– May not use the Charm Animal ability.  
 
 ### CLERIC
 CLASS FEATURES:  
@@ -614,7 +613,7 @@ All hostile living creatures suffer 2d4 points of magical damage per Channel Ene
 ```
 – May cast priest spells.  
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).  
-– At 1st level chooses a domain that grants <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
+– At 1st level chooses a domain that grants her access to additional spells, normally not available to Clerics of other domains.
 – Hit Die: d8  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -778,7 +777,7 @@ CLASS FEATURES:
 – Thieving abilities: Pick Pockets.  
 – Increased Lore score.  
 – May cast arcane spells up to level 6.  
-– Bardic Performance: a bard is trained to perform to create magical effects on those around <PRO_HIMHER>. Bard can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each even level a bard can use bardic performance one more time per day.  
+– Bardic Performance: a bard is trained to perform to create magical effects on those around her. Bard can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each even level a bard can use bardic performance one more time per day.  
 – Medium THAC0/APR progression, High Savingthrows vs. Breath Weapon vs. Wand, and vs. Spell
 
 List of Bardic Performances:  
@@ -831,24 +830,24 @@ A bard of 20th level or higher can use her performance to cause one enemy to die
 Advantages:  
 – May use the Offensive Spin and Defensive Spin abilities once per day. Gains one use each at level 2  and an additional use every 4 levels thereafter.  
 ```
-OFFENSIVE SPIN: During the next 4 rounds, the Blade's movement rate doubles and <PRO_HESHE> gains a +2 bonus to hit and damage rolls as well as an extra attack per round. All attacks deal maximum damage for the duration. Offensive Spin may not be used in conjunction with the Haste or Improved Haste spells.
+OFFENSIVE SPIN: During the next 4 rounds, the Blade's movement rate doubles and she gains a +2 bonus to hit and damage rolls as well as an extra attack per round. All attacks deal maximum damage for the duration. Offensive Spin may not be used in conjunction with the Haste or Improved Haste spells.
 ```
 ```
 DEFENSIVE SPIN: During the next 4 rounds, the Blade is rooted to the spot and gains a +1 bonus to Armor Class per level, up to a maximum of +10.
 ```
-– Bardic Performance: a blade is trained to perform to create magical effects on those around <PRO_HIMHER>. Blade can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each fourth level a blade can use bardic performance one more time per day.  
+– Bardic Performance: a blade is trained to perform to create magical effects on those around her. Blade can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each fourth level a blade can use bardic performance one more time per day.  
 List of Bardic Performances:  
 ```
 Inspire Courage	
-A 1st level blade can use <PRO_HISHER> performance to inspire courage in <PRO_HISHER> allies (including <PRO_HISHER>self), bolstering them against fear and improving their combat abilities. To be affected, an ally must be able to perceive the blade’s performance. An affected ally receives a +1 bonus on attack and weapon damage rolls as well and becomes immune to fear and panic effects for 4 rounds. At 6th level, and every six levels thereafter, this bonus increases by +1, to a maximum of +4 at 18th level.
+A 1st level blade can use her performance to inspire courage in her allies (including herself), bolstering them against fear and improving their combat abilities. To be affected, an ally must be able to perceive the blade’s performance. An affected ally receives a +1 bonus on attack and weapon damage rolls as well and becomes immune to fear and panic effects for 4 rounds. At 6th level, and every six levels thereafter, this bonus increases by +1, to a maximum of +4 at 18th level.
 ```
 ```
 Inspire Greatness
-A blade of 9th level or higher can use <PRO_HISHER> performance to inspire greatness in all <PRO_HISHER> allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the blade. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Thorws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12 and finally to +20 Hit Points and +4 to THAC0 and Saving Throws vs. Death at level 18.
+A blade of 9th level or higher can use her performance to inspire greatness in all her allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the blade. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Thorws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12 and finally to +20 Hit Points and +4 to THAC0 and Saving Throws vs. Death at level 18.
 ```
 ```
 Inspire Heroics
-A blade of 15th level or higher can inspire tremendous heroism in all <PRO_HISHER> allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the blade. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds.
+A blade of 15th level or higher can inspire tremendous heroism in all her allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the blade. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds.
 ```
 Disadvantages:  
 – Smaller variaty of available Bardic performance types and less uses per day.  
@@ -872,14 +871,14 @@ A 1st level skald can use her performance to inspire courage in her allies (incl
 ```
 ```
 Inspire Greatness
-A skald of 9th level or higher can use <PRO_HISHER> performance to inspire greatness in all <PRO_HISHER> allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the skald. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Thorws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12 and finally to +20 Hit Points and +4 to THAC0 and Saving Throws vs. Death at level 18.
+A skald of 9th level or higher can use her performance to inspire greatness in all her allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the skald. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Thorws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12 and finally to +20 Hit Points and +4 to THAC0 and Saving Throws vs. Death at level 18.
 ```
 ```
 Inspire Heroics
 A skald of 15th level or higher can inspire tremendous heroism in all her allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the skald. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds.
 ```
 – Hit Die: d8  
-Disadvantages:
+Disadvantages:  
 – Smaller variaty of available Bardic performance types and less uses per day.
 
 ### JESTER
@@ -892,13 +891,13 @@ Advantages:
 List of Bardic Performances:
 ```
 Jester's Song
-The jester is the master of the verbal put down, the hilarious joke, or the savage verbal lashing. Starting from level 1 her words can inspire dread and outrage in <PRO_HISHER> enemies making them confused for next 4 rounds. The target creatures receive a Saving Throw vs. Spell with +2 bonus to avoid this effect.
+The jester is the master of the verbal put down, the hilarious joke, or the savage verbal lashing. Starting from level 1 her words can inspire dread and outrage in her enemies making them confused for next 4 rounds. The target creatures receive a Saving Throw vs. Spell with +2 bonus to avoid this effect.
 At level 5 the enemies no longer receive a bonus to their Saving Throws.
 At level 10 they receive a -2 penalty instead, which increases further to -4 at level 15 and -6 at levele 20.
 ```
 ```
 Dirge of Doom	
-A jester of 8th level or higher can use her performance to foster a sense of growing dread in <PRO_HISHER> enemies, causing them to take become shaken and receive -2 penalty to their attack rolls, Armor Class and Saving throws. To be affected, an enemy must be within 30 feet and able to see and hear the jester’s performance. The effect persists for 4 rounds. There is no Saving throw against this ability.
+A jester of 8th level or higher can use her performance to foster a sense of growing dread in her enemies, causing them to take become shaken and receive -2 penalty to their attack rolls, Armor Class and Saving throws. To be affected, an enemy must be within 30 feet and able to see and hear the jester’s performance. The effect persists for 4 rounds. There is no Saving throw against this ability.
 ```
 ```
 Frightening Tune
@@ -925,7 +924,7 @@ Advantages:
 – May wear light armor.  
 – May equip bucklers.  
 – May use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.    
-– At first level receives for free Armored Arcana(1): Light Armor Casting.  
+– At first level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.  
 – Hit Die: d6  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -946,7 +945,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – Moves 2 points faster than other characters. Movement rate further improves by 1 every 5 levels.  
 – Gains Flurry of Blows modal ability.  
 ```
-FLURRY OF BLOWS: A monk may strike with a flurry of blows at the expense of accuracy. When doing so, <PRO_HESHE> may make one extra attack per round, but all attacks take a -2 penalty. When a monk reaches 5th level, the penalty lessens to -1, and at 9th level it disappears, thus ability becomes permanently activated.
+FLURRY OF BLOWS: A monk may strike with a flurry of blows at the expense of accuracy. When doing so, she may make one extra attack per round, but all attacks take a -2 penalty. When a monk reaches 5th level, the penalty lessens to -1, and at 9th level it disappears, thus ability becomes permanently activated.
 When a monk reaches 11th level, her flurry of blows ability improves. In addition to the standard single extra attack she gets from flurry of blows, she gets anoter one without any penalties.
 When using flurry of blows, a monk may attack only with unarmed strikes, with dagger(s) or quarterstaff.  
 ```
@@ -965,7 +964,7 @@ When using flurry of blows, a monk may attack only with unarmed strikes, with da
 STUNNING BLOW: All successful attacks within the next round force the victim to save vs. Spell or be stunned. This special ability automatically modifies normal attacks; no targeting needs to be done.
 ```
 – 5th level: Becomes immune to all diseases and cannot be slowed or hasted.  
-– 7th level: May use the Lay On Hands ability on <PRO_HIMHER>self to heal 2 Hit Points per level.  
+– 7th level: May use the Lay On Hands ability on herself to heal 2 Hit Points per level.  
 – 8th level: Gains a -1 bonus to Speed Factor.  
 – 9th level: Becomes immune to charm.  
 – 11th level: Becomes immune to poison.  
@@ -1006,12 +1005,12 @@ SUN SOULRAY: The Sun Soul Monk projects a blast of light from her open palm, dea
 ```
 – 5th level: May cast Flaming Fists once per day.  
 ```
-FLAMING FISTS: The Sun Soul Monk channels <PRO_HISHER> inner light into <PRO_HISHER> unarmed attacks, turning <PRO_HISHER> fists into flaming weapons that deal an additional 2d6 fire damage per hit for the next round. The duration increases to 2 rounds at level 9, 3 rounds at level 12, 4 rounds at level 15, and 5 rounds at level 25. This special ability automatically modifies normal attacks; no weapon-switching needs to be done.
+FLAMING FISTS: The Sun Soul Monk channels her inner light into her unarmed attacks, turning her fists into flaming weapons that deal an additional 2d6 fire damage per hit for the next round. The duration increases to 2 rounds at level 9, 3 rounds at level 12, 4 rounds at level 15, and 5 rounds at level 25. This special ability automatically modifies normal attacks; no weapon-switching needs to be done.
 ```
 – 6th level: Gains an additional use of Sun Soulray.  
 – 8th level: May cast Greater Sun once per day.  
 ```
-GREATER SUN: The Sun Soul Monk wreathes herself in flames that act as a Fireshield (Red), granting the Monk 50% Fire Resistance and protecting <PRO_HIMHER> from attacks made within a 5-ft. radius. An opponent that hits the Monk with any weapons or spells within this radius suffers 1d8+2 points of fire damage.
+GREATER SUN: The Sun Soul Monk wreathes herself in flames that act as a Fireshield (Red), granting the Monk 50% Fire Resistance and protecting her from attacks made within a 5-ft. radius. An opponent that hits the Monk with any weapons or spells within this radius suffers 1d8+2 points of fire damage.
 ```
 – 10th level: Gains an additional use of Sun Soulray.  
 – 13th level: May cast Soul Sunbeam once per day.  
@@ -1073,7 +1072,7 @@ CLASS FEATURES:
 ```
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds. 
 ```
-– At 1st level chooses a domain that grants <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.  
+– At 1st level chooses a domain that grants her access to additional spells, normally not available to Clerics of other domains.  
 – Hit Die: d9  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 	
@@ -1085,10 +1084,10 @@ CLASS FEATURES:
 – Can cast one spell less per day than trueclass mage.  
 – Cannot cast spells of 8th and 9th levels.  
 – Gets one bonus feat at level 5 and at every 5 levels thereafter.  
-– At 1st level receives for free Armored Arcana(1): Light Armor Casting. At level 4 receives Armored Arcana(2): Chain Mail Casting, at level 8 Armored Arcana(3): Splint Mail Casting, at level 12 Armored Arcana(4): Plate Mail Casting and finally at level 16 Armored Arcana(5): Full Plate Mail Casting.  
+– At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.  
 – Can use Spontaneous Battlecasting.  
 ```
-SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
 ```
 – Hit Die: d7  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell  
@@ -1133,6 +1132,8 @@ CLASS FEATURES:
 – Can cast two arcane spells per day less than trueclass mage.  
 – Can cast three divine spells per day less than trueclass cleric.  
 – At 1st level chooses a domain that grants her access to additional spells, normally not available to Clerics of other domains.  
+– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels up to 10d4).  
+– May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).  
 – Hit Die: d6  
 – Low THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -1150,9 +1151,9 @@ CLASS FEATURES:
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels up to 10d4).  
 – May use Spontaneous Spell Channeling
 ```
-SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds. Ability lasts for 3 rounds, or until the first spell is sacrificed.
+SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to her sneak attack damage for next 10 seconds. Ability lasts for 3 rounds, or until the first spell is sacrificed.
 ```
-– At 1st level chooses a domain that grants <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.  
+– At 1st level chooses a domain that grants her access to additional spells, normally not available to Clerics of other domains.  
 – Hit Die: d7  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell
 
