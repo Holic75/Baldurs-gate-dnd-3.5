@@ -23,7 +23,7 @@ It changes game mechanics (i.e classes, spells, abilities, etc...) to that of 3.
 
 # Installation
 
-Put all files to Game folder (the one which contains Baldur.exe) and run Setup-3ed.exe, choose to install ALL components (you can optionally skip Component #14 [More powerfull enemies] and Component #15 [Point buy system]).
+Put all files to Game folder (the one which contains Baldur.exe) and run Setup-3ed.exe, choose to install ALL components (you can optionally skip Component #14 [More powerful enemies] and Component #15 [Point buy system]).
 In C:\Users\UserName\Documents\Baldur's Gate - Enhanced Edition folder find file Baldur.lua and add the string 
 ```
 SetPrivateProfileString('Game Options','3E Thief Sneak Attack','1')
