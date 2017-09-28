@@ -23,7 +23,7 @@ It changes game mechanics (i.e classes, spells, abilities, etc...) to that of 3.
 
 # Installation
 
-Put all files to Game folder (the one which contains Baldur.exe) and run Setup-3ed.exe, choose to install ALL components (you can optionally skip Component #14 [More powerful enemies] and Component #15 [Point buy system]).
+Put all files to Game folder (the one which contains Baldur.exe) and run Setup-3ed.exe, choose to install ALL components (you can optionally skip Component #13 [More powerful enemies] and Component #14 [Point buy system]).
 In C:\Users\UserName\Documents\Baldur's Gate - Enhanced Edition folder find file Baldur.lua and add the string 
 ```
 SetPrivateProfileString('Game Options','3E Thief Sneak Attack','1')
@@ -37,7 +37,7 @@ For any bugs, critics and suggestions please write to holic.denis@gmail.com
 # Rule Changes
 ## 1. Abilities
 
-If Component #15 [Point Buy System] is installed, roll based Abilities generation will be replaced with point-buy system (characters start with 10 points in every ability and can distribute 20 more points among them, increasing ability till 14 costs one point, from 14 to 16 - 2 points and finally from 16 to 18  - 3 points).
+If Component #14 [Point Buy System] is installed, roll based Abilities generation will be replaced with point-buy system (characters start with 10 points in every ability and can distribute 20 more points among them, increasing ability till 14 costs one point, from 14 to 16 - 2 points and finally from 16 to 18  - 3 points).
 
 The effects of abilities were also changed as follows:
 
@@ -801,7 +801,7 @@ At 8th level bard fascinates all creatures around her in 30ft radius instead.
 ```
 ```
 Dirge of Doom	
-A bard of 8th level or higher can use her performance to foster a sense of growing dread in her enemies, causing them to take become shaken and receive -2 penalty to their attack rolls, Armor Class and Saving throws. To be affected, an enemy must be within 30 feet and able to see and hear the bard’s performance. The effect persists for 4 rounds. There is no Saving throw against this ability.
+A bard of 8th level or higher can use her performance to foster a sense of growing dread in her enemies, causing them to become shaken and receive -2 penalty to their attack rolls, Armor Class and Saving throws. To be affected, an enemy must be within 30 feet and able to see and hear the bard’s performance. The effect persists for 4 rounds. There is no Saving throw against this ability.
 ```
 ```
 Inspire Greatness
@@ -897,7 +897,7 @@ At level 10 they receive a -2 penalty instead, which increases further to -4 at 
 ```
 ```
 Dirge of Doom	
-A jester of 8th level or higher can use her performance to foster a sense of growing dread in her enemies, causing them to take become shaken and receive -2 penalty to their attack rolls, Armor Class and Saving throws. To be affected, an enemy must be within 30 feet and able to see and hear the jester’s performance. The effect persists for 4 rounds. There is no Saving throw against this ability.
+A jester of 8th level or higher can use her performance to foster a sense of growing dread in her enemies, causing them to become shaken and receive -2 penalty to their attack rolls, Armor Class and Saving throws. To be affected, an enemy must be within 30 feet and able to see and hear the jester’s performance. The effect persists for 4 rounds. There is no Saving throw against this ability.
 ```
 ```
 Frightening Tune
@@ -1866,7 +1866,7 @@ To compensate for new character abilities most of the enemies were made stronger
 Certain scripts for spell casting enemies were also changed to make battles more challenging.  
 Also killing greater basiliscs now gives only 2800 experience points (instead of 7000).
 
-Note: this changes only apply if Component #14 [More powerful enemies] is installed.
+Note: this changes only apply if Component #13 [More powerful enemies] is installed.
 
 ## 10. Miscellaneous
 

@@ -1,0 +1,35 @@
+DEFINE_ACTION_FUNCTION ~ADD_PROTECTION_REMOVALS~
+
+	STR_VAR
+		original_spell=~~
+		new_spell=~~
+	BEGIN
+
+				
+
+		OUTER_SPRINT resource EVALUATE_BUFFER ~%new_spell%~
+	    OUTER_SPRINT match_resource EVALUATE_BUFFER ~%original_spell%~
+						
+		COPY_EXISTING_REGEXP GLOB ~.*\.SPL~ ~override~ 							
+			LPF CLONE_EFFECT INT_VAR match_opcode=321 silent=1 STR_VAR match_resource resource END//remove spell
+			LPF CLONE_EFFECT INT_VAR match_opcode=206 silent=1 STR_VAR match_resource resource END//prot from spell
+			LPF CLONE_EFFECT INT_VAR match_opcode=318 silent=1 STR_VAR match_resource resource END//prot from spell					
+			LPF CLONE_EFFECT INT_VAR match_opcode=207 silent=1 STR_VAR match_resource resource END//reflect spell 		
+		BUT_ONLY				
+		COPY_EXISTING_REGEXP GLOB ~.*\.ITM~ ~override~ 						
+			LPF CLONE_EFFECT INT_VAR match_opcode=321 silent=1 STR_VAR match_resource resource END//remove spell
+			LPF CLONE_EFFECT INT_VAR match_opcode=206 silent=1 STR_VAR match_resource resource END//prot from spell
+			LPF CLONE_EFFECT INT_VAR match_opcode=318 silent=1 STR_VAR match_resource resource END//prot from spell					
+			LPF CLONE_EFFECT INT_VAR match_opcode=207 silent=1 STR_VAR match_resource resource END//reflect spell 
+		BUT_ONLY			
+		COPY_EXISTING_REGEXP GLOB ~.*\.CRE~ ~override~ 
+			LPF CLONE_EFFECT INT_VAR match_opcode=321 silent=1 STR_VAR match_resource resource END//remove spell
+			LPF CLONE_EFFECT INT_VAR match_opcode=206 silent=1 STR_VAR match_resource resource END//prot from spell
+			LPF CLONE_EFFECT INT_VAR match_opcode=318 silent=1 STR_VAR match_resource resource END//prot from spell					
+			LPF CLONE_EFFECT INT_VAR match_opcode=207 silent=1 STR_VAR match_resource resource END//reflect spell 
+		BUT_ONLY
+																				
+	
+    END		
+	
+

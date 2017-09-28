@@ -1773,6 +1773,22 @@ INCLUDE ~3ed/UPDATE_SPELL_SAVES.tph~
 INCLUDE ~3ed/ADD_EVASION_TO_SPELL.tph~
 INCLUDE ~3ed/CHANGE_SPELL_PROPERTIES.tph~
 INCLUDE ~3ed/MODIFY_DISPEL_MAGIC.tph~
+INCLUDE ~3ed/INCREMENT_SPELL_DC.tph~	
+INCLUDE ~3ed/CREATE_PSEUDO_SPELL_SELECTION.tph~
+INCLUDE ~3ed/CHANGE_SPELL_PROPERTIES.tph~
+INCLUDE ~3ed/ADD_BONUS_FEATS.tph~
+INCLUDE ~3ed/ADD_SPELL_PROGRESSIVE_SAVES.tph~
+INCLUDE ~3ed/ADD_PSEPB_FEAT.tph~
+INCLUDE ~3ed/UPDATE_PRIEST_DOMAIN.tph~
+INCLUDE ~3ed/UPDATE_SORC_BLOODLINE.tph~
+INCLUDE ~3ed/SPLIT_SPELLS_BY_SCHOOL.tph~
+INCLUDE ~3ed/UPDATE_SPELLFUSED_WARDEN_SCHOOLS.tph~
+INCLUDE ~3ed/ADD_ASSASIN_SPELLS.tph~
+INCLUDE ~3ed/ADD_PROTECTION_REMOVALS.tph~
+INCLUDE ~3ed/ADD_PROTECTION_REMOVALS_SPELLFUSED_WARDEN_SCHOOLS.tph~
+INCLUDE ~3ed/ADD_PROTECTION_REMOVALS_PRIEST_DOMAIN.tph~
+INCLUDE ~3ed/ADD_PROTECTION_REMOVALS_ASSASIN_SPELLS.tph~
+
 	
 	//change dispel and remove magic
 	LAF MODIFY_DISPEL_MAGIC INT_VAR start_chance=30 per_level_chance=1 start_inquisitor_chance=60 per_lvl_inquisitor_chance=2 END
@@ -1893,12 +1909,14 @@ INCLUDE ~3ed/MODIFY_DISPEL_MAGIC.tph~
 		LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_level=6 spell_type=2 END
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @577	
+		ACTION_DEFINE_ASSOCIATIVE_ARRAY extended_spell_list BEGIN  "SPWI408" => "PRSTNSK" END
 	
 	//add haste as lvl4 potential cleric spell
 	COPY_EXISTING ~SPWI305.SPL~ ~override/PRHASTE.SPL~
 		LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_level=4 spell_type=2 END
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @578		
+		ACTION_DEFINE_ASSOCIATIVE_ARRAY extended_spell_list BEGIN  "SPWI305" => "PRHASTE" END
 	
 	
 	//change earthquake to work through 3 separate effects
@@ -2098,6 +2116,8 @@ INCLUDE ~3ed/MODIFY_DISPEL_MAGIC.tph~
 			WRITE_BYTE 0x0021 0b01000000
 			WRITE_SHORT 0x001c 2
 		ADD_SPELL "override/DRSLEEP.spl" 1  1 DRUID_SLEEP
+			DEFINE_ASSOCIATIVE_ARRAY extended_spell_list BEGIN  "SPWI116" => "%DEST_RES%" END
+		
 //adding camoufalge do druid spellbook	
 	COPY ~3ed/Spells/Camouflage/DRCMFLGB.bam~ ~override~
 	COPY ~3ed/Spells/Camouflage/DRCMFLGC.bam~ ~override~
@@ -2202,6 +2222,7 @@ INCLUDE ~3ed/MODIFY_DISPEL_MAGIC.tph~
 		SAY UNIDENTIFIED_DESC @512
 		
 		ADD_SPELL "override/DRDFSTK.spl" 1  4 DRUID_FLAMESTRIKE
+			DEFINE_ASSOCIATIVE_ARRAY extended_spell_list BEGIN  "SPPR503" => "%DEST_RES%" END
 		
 	
 	//change magic stone to create magical bullets
@@ -2244,6 +2265,7 @@ INCLUDE ~3ed/MODIFY_DISPEL_MAGIC.tph~
 		READ_BYTE 0x0021 ~cleric_usability~
 		WRITE_BYTE 0x0021 ((cleric_usability BAND BNOT(0b10000000)) BOR (0b01000000))
 		ADD_SPELL "override/SPDR601.spl" 1  6 DRUID_CHAINLIGHTNING
+			DEFINE_ASSOCIATIVE_ARRAY extended_spell_list BEGIN  "SPDR601" => "%DEST_RES%" END
 	
 	//make burning hands area of effect spell
 	ADD_PROJECTILE      ~3ed/Spells/BurningHands/BRNHND.PRO~
@@ -2262,6 +2284,7 @@ INCLUDE ~3ed/MODIFY_DISPEL_MAGIC.tph~
 		WRITE_BYTE 0x0021 0b01000000
 		WRITE_SHORT 0x001c 2
 		ADD_SPELL "override/DRDBHDS.spl" 1  1 DRUID_BURN_HANDS
+			DEFINE_ASSOCIATIVE_ARRAY extended_spell_list BEGIN  "SPWI103" => "%DEST_RES%" END
 	
 	//remove bless from druid spell list
 	COPY_EXISTING ~SPPR101.SPL~ ~override~ 
@@ -2322,6 +2345,7 @@ INCLUDE ~3ed/MODIFY_DISPEL_MAGIC.tph~
 		SAY UNIDENTIFIED_DESC @522 //description
 		LPF ALTER_SPELL_EFFECT INT_VAR power=4 END //set power lvl to 4
 		ADD_SPELL "override/DRHLDMN.spl" 1  4 DRUID_HOLD_MONSTER
+			DEFINE_ASSOCIATIVE_ARRAY extended_spell_list BEGIN  "SPWI507" => "%DEST_RES%" END
 	//allow druid to cast ice storm as 4-th level spell
 	COPY_EXISTING ~SPWI404.SPL~ ~override/DRDIST.SPL~
 		WRITE_BYTE 0x0021 (0b01000000)	//dissalow cleric casting it 
@@ -2329,6 +2353,7 @@ INCLUDE ~3ed/MODIFY_DISPEL_MAGIC.tph~
 		WRITE_SHORT 0x001c 2// priest spell
 		SAY UNIDENTIFIED_DESC @592 //description
 		ADD_SPELL "override/DRDIST.spl" 1  4 DRUID_ICE_STORM	
+			DEFINE_ASSOCIATIVE_ARRAY extended_spell_list BEGIN  "SPWI404" => "%DEST_RES%" END
 		
 	//update sun soulray ability
 	OUTER_FOR (i=1;i<=5;i=i+1) BEGIN
@@ -2429,59 +2454,8 @@ INCLUDE ~3ed/MODIFY_DISPEL_MAGIC.tph~
 		END
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @530
-			
-	
+				
 
-		
-	//Spell DC regularization
-	INCLUDE ~3ed/ADD_SPELL_PROGRESSIVE_SAVES.tph~
-	COPY_EXISTING_REGEXP GLOB ~.+\.spl~ ~override~
-		READ_SHORT 0x1c "spell_type"
-		PATCH_IF spell_type = 1 OR spell_type = 2 BEGIN
-			LPF ADD_SPELL_PROGRESSIVE_SAVES INT_VAR n_copies1=7 caster_level_step=30 END
-		END
-	
-	INCLUDE ~3ed/ADD_PSEPB_FEAT.tph~
-	LAF ADD_PSEPB_FEAT INT_VAR min_val=12 max_val=25 step=2 abi_g=128 min_bonus_val=30 bonus_step=30 STR_VAR ability_name=~SPDCW~ target_name=~SPDCW~ END //wizard spells (int)
-	LAF ADD_PSEPB_FEAT INT_VAR min_val=12 max_val=25 step=2 abi_g=130 min_bonus_val=30 bonus_step=30 STR_VAR ability_name=~SPDCP~ target_name=~SPDCP~ END //priest spells (wis)
-	
-	LAF ADD_PSEPB_FEAT INT_VAR min_val=12 max_val=25 step=2 abi_g=132 min_bonus_val=30 bonus_step=30 STR_VAR ability_name=~SPDCW~ target_name=~SPDCS~ END //wizard spells (cha)
-	LAF ADD_PSEPB_FEAT INT_VAR min_val=12 max_val=25 step=2 abi_g=132 min_bonus_val=30 bonus_step=30 STR_VAR ability_name=~SPDCP~ target_name=~SPDCH~ END //priest spells (cha)
-	
-	LAF ADD_PSEPB_FEAT INT_VAR min_val=10 max_val=25 step=2 abi_g=130 min_bonus_val=8 bonus_step=30 STR_VAR ability_name=~SPDCP~ target_name=~SPDCL~ END //priest spells for paladin (wis)
-	LAF ADD_PSEPB_FEAT INT_VAR min_val=10 max_val=25 step=2 abi_g=130 min_bonus_val=7 bonus_step=30 STR_VAR ability_name=~SPDCP~ target_name=~SPDCR~ END //priest spells for ranger (wis)
-	
-	//adding dc and caster level adjustments
-	INCLUDE ~3ed/ADD_BONUS_FEATS.tph~
-	
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~\(CLABMA+.*\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRENS.SPL~
-						feat_type_file=~SPDCWFT~ caption=~SPDCWIZ~ END
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~\(CLABMA01\)\|\(CLABSO+.*\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRES.SPL~
-						feat_type_file=~SPDCSFT~ caption=~SPDCSOR~ END
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~\(CLABBA+.*\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~SPDCSFT~ END
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~clabshgs\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~SPDCH~ END
-						
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~\(CLABPR+.*\)\|\(CLABDR+.*\)\|\(OHTYR\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~SPDCPFT~ END			
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~\(CLABSH+.*\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~SPDCHFT~ END							
-	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=4 d_level=1 add_at_level1=0 
-						STR_VAR clab=~\(CLABPA+.*\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~SPDCLFT~ END	
-	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=4 d_level=1 add_at_level1=0 
-						STR_VAR clab=~\(CLABRN+.*\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRER.SPL~
-						feat_type_file=~SPDCRFT~ caption=~SPDCRNG~ END	
-
-	
-	INCLUDE ~3ed/UPDATE_PRIEST_DOMAIN.tph~
 	OUTER_SET   yes_response=RESOLVE_STR_REF (@500001)
 	OUTER_SET   no_response=RESOLVE_STR_REF (@500002)
 	
@@ -2518,7 +2492,6 @@ INCLUDE ~3ed/MODIFY_DISPEL_MAGIC.tph~
 	
 	//sorceror bloodlines
 	
-	INCLUDE ~3ed/UPDATE_SORC_BLOODLINE.tph~
 	OUTER_SET   yes_response=RESOLVE_STR_REF (@500003)
 	OUTER_SET   no_response=RESOLVE_STR_REF (@500004)
 	
@@ -2555,11 +2528,24 @@ INCLUDE ~3ed/MODIFY_DISPEL_MAGIC.tph~
 		STR_VAR clab=~CLABMA01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRES.SPL~
 		feat_type_file=~BDFTCRE~ caption=~SRBLDLN~ END
 		
-		
-	//spellfused warden 
-	INCLUDE ~3ed/SPLIT_SPELLS_BY_SCHOOL.tph~
-	INCLUDE ~3ed/UPDATE_SPELLFUSED_WARDEN_SCHOOLS.tph~
+			
+	//adding protection and removals to new spells
+	PRINT "Processing assasin spells..."
+	LAF ADD_PROTECTION_REMOVALS_ASSASIN_SPELLS END
 	
+	PRINT "Processing new spells..."
+	ACTION_PHP_EACH extended_spell_list AS original_spell =>new_spell BEGIN
+		LAF ADD_PROTECTION_REMOVALS STR_VAR original_spell new_spell END	
+	END
+	
+	PRINT "Processing domain spells..."
+	ACTION_PHP_EACH domain_list AS domain_i =>domain_file_name BEGIN
+		OUTER_SET domain_id=domain_i
+		OUTER_SPRINT domain_file_2DA EVALUATE_BUFFER ~%domain_file_name%~
+		LAF ADD_PROTECTION_REMOVALS_PRIEST_DOMAIN STR_VAR domain_file_2DA END	
+	END
+	
+	//spellfused warden 	
 	OUTER_SET   yes_response=RESOLVE_STR_REF (@500005)
 	OUTER_SET   no_response=RESOLVE_STR_REF (@500006)
 	
@@ -2568,13 +2554,22 @@ INCLUDE ~3ed/MODIFY_DISPEL_MAGIC.tph~
 	COPY ~3ed/Feats/SpellfusedWarden/Schools2DA~ ~override~
 		DEFINE_ASSOCIATIVE_ARRAY school_list BEGIN "%k%" => "%SOURCE_RES%" END
 		SET k=k+1
-		
+	
+	
+	ACTION_PHP_EACH school_list AS school_i =>school_file_name BEGIN
+		OUTER_SET school_id=school_i
+		OUTER_SPRINT school_file_2DA EVALUATE_BUFFER ~%school_file_name%~
+		PRINT "Processing spellfused warden spells... %school_id% / 8"
+		LAF ADD_PROTECTION_REMOVALS_SPELLFUSED_WARDEN_SCHOOLS STR_VAR school_file_2DA END	
+	END	
 		
 	ACTION_PHP_EACH school_list AS school_i =>school_file_name BEGIN
 		OUTER_SET school_id=school_i
 		OUTER_SPRINT school_file_2DA EVALUATE_BUFFER ~%school_file_name%~
 		LAF UPDATE_SPELLFUSED_WARDEN_SCHOOLS INT_VAR school_id yes_response no_response STR_VAR school_file_2DA END	
 	END	
+	
+
 	
 	COPY ~3ed/Feats/SpellfusedWarden/school.d~  ~3ed/Feats/SpellfusedWarden/school.d~  	
 		REPLACE_TEXTUALLY ~%~	~|~
@@ -2591,10 +2586,59 @@ INCLUDE ~3ed/MODIFY_DISPEL_MAGIC.tph~
 	COPY ~3ed/Feats/FeatAttribution/FEATCRE.SPL~ ~override/SWFTCRE.SPL~	
 		LPF  ALTER_SPELL_EFFECT INT_VAR match_opcode=177 STR_VAR resource=~SWFTCRE~ END
 		
-	//apply to sorceror
+	//apply 
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
 		STR_VAR clab=~CLABDR02\.2DA~ mask_file=~~
 		feat_type_file=~~ caption=~SWFTCRE~ END
+	
+	//Spell DC regularization
+
+	COPY_EXISTING_REGEXP GLOB ~.+\.spl~ ~override~
+		READ_SHORT 0x1c "spell_type"
+		PATCH_IF spell_type = 1 OR spell_type = 2 BEGIN
+			LPF ADD_SPELL_PROGRESSIVE_SAVES INT_VAR n_copies1=7 caster_level_step=30 END
+		END
+	
+
+	LAF ADD_PSEPB_FEAT INT_VAR min_val=12 max_val=25 step=2 abi_g=128 min_bonus_val=30 bonus_step=30 STR_VAR ability_name=~SPDCW~ target_name=~SPDCW~ END //wizard spells (int)
+	LAF ADD_PSEPB_FEAT INT_VAR min_val=12 max_val=25 step=2 abi_g=130 min_bonus_val=30 bonus_step=30 STR_VAR ability_name=~SPDCP~ target_name=~SPDCP~ END //priest spells (wis)
+	
+	LAF ADD_PSEPB_FEAT INT_VAR min_val=12 max_val=25 step=2 abi_g=132 min_bonus_val=30 bonus_step=30 STR_VAR ability_name=~SPDCW~ target_name=~SPDCS~ END //wizard spells (cha)
+	LAF ADD_PSEPB_FEAT INT_VAR min_val=12 max_val=25 step=2 abi_g=132 min_bonus_val=30 bonus_step=30 STR_VAR ability_name=~SPDCP~ target_name=~SPDCH~ END //priest spells (cha)
+	
+	LAF ADD_PSEPB_FEAT INT_VAR min_val=10 max_val=25 step=2 abi_g=130 min_bonus_val=8 bonus_step=30 STR_VAR ability_name=~SPDCP~ target_name=~SPDCL~ END //priest spells for paladin (wis)
+	LAF ADD_PSEPB_FEAT INT_VAR min_val=10 max_val=25 step=2 abi_g=130 min_bonus_val=7 bonus_step=30 STR_VAR ability_name=~SPDCP~ target_name=~SPDCR~ END //priest spells for ranger (wis)
+	
+	//create assasin spells
+	LAF ADD_ASSASIN_SPELLS END
+		
+	//adding dc and caster level adjustments
+	
+	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+						STR_VAR clab=~\(CLABMA+.*\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRENS.SPL~
+						feat_type_file=~SPDCWFT~ caption=~SPDCWIZ~ END
+	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+						STR_VAR clab=~\(CLABMA01\)\|\(CLABSO+.*\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRES.SPL~
+						feat_type_file=~SPDCSFT~ caption=~SPDCSOR~ END
+	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+						STR_VAR clab=~\(CLABBA+.*\)\.2DA~ mask_file=~~
+						feat_type_file=~~ caption=~SPDCSFT~ END
+	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+						STR_VAR clab=~clabshgs\.2DA~ mask_file=~~
+						feat_type_file=~~ caption=~SPDCH~ END
+						
+	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+						STR_VAR clab=~\(CLABPR+.*\)\|\(CLABDR+.*\)\|\(OHTYR\)\.2DA~ mask_file=~~
+						feat_type_file=~~ caption=~SPDCPFT~ END			
+	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+						STR_VAR clab=~\(CLABSH+.*\)\.2DA~ mask_file=~~
+						feat_type_file=~~ caption=~SPDCHFT~ END							
+	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=4 d_level=1 add_at_level1=0 
+						STR_VAR clab=~\(CLABPA+.*\)\.2DA~ mask_file=~~
+						feat_type_file=~~ caption=~SPDCLFT~ END	
+	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=4 d_level=1 add_at_level1=0 
+						STR_VAR clab=~\(CLABRN+.*\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRER.SPL~
+						feat_type_file=~SPDCRFT~ caption=~SPDCRNG~ END	
 	
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////Spontaneous casting
@@ -3654,149 +3698,7 @@ BEGIN @1100
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
 						STR_VAR clab=~CLABBA+.*\.2DA~ mask_file=~~ caption=~DSBLSNG~ END	
 ////////////////////////////////////////////////////////////////////////////////////////
-/////////// assassin spellcasting
-BEGIN @1200
 
-	INCLUDE ~3ed/INCREMENT_SPELL_DC.tph~
-	INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
-	INCLUDE ~3ed/CREATE_PSEUDO_SPELL_SELECTION.tph~
-	INCLUDE ~3ed/CHANGE_SPELL_PROPERTIES.tph~
-	INCLUDE ~3ed/ADD_BONUS_FEATS.tph~
-	
-	OUTER_SET min_val=10
-	OUTER_SET max_val=25
-	OUTER_SET step=2
-	OUTER_SET par1=128 //intelligence >=
-	
-	COPY ~3ed/Classes/Assassin/Spells/SPELLMAP.2DA~ ~override~
-		COUNT_2DA_ROWS 3 n_rows
-		FOR (i=0;i<n_rows;i=i+1) BEGIN
-			READ_2DA_ENTRY i 1 3 new_spell_name 
-			READ_2DA_ENTRY i 2 3 spell_name 
-			INNER_ACTION BEGIN //create innate copies of spells
-				COPY_EXISTING ~%spell_name%.SPL~ ~override/%new_spell_name%.SPL~
-					LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_type=4 END			
-			END
-		END
-		
-	COPY ~3ed/Classes/Assassin/Spells/Bam~ ~override~
-	COPY ~3ed/Classes/Assassin/Spells/SpellList~ ~override~
-	OUTER_FOR (i=1;i<=4;i=i+1) BEGIN
-		COPY ~3ed/Classes/Assassin/Spells/ASN.SPL~ ~override/ASNL%i%.SPL~
-			SPRINT spell_list_2DA EVALUATE_BUFFER ~ASN0%i%~
-			SPRINT icon EVALUATE_BUFFER ~ASN%i%~
-			LPF CREATE_PSEUDO_SPELL_SELECTION INT_VAR min_val max_val step par1 header_lvl=i STR_VAR spell_list_2DA icon END	
-			
-			SET SpellName=1200+2*(i - 1)+1
-			SET SpellDescription=1200+2*i
-			SAY NAME1 (AT "SpellName")
-			SAY UNIDENTIFIED_DESC (AT "SpellDescription")	
-	END
-	
-	
-	COPY ~3ed/Classes/Assassin/Spells/GVASN.SPL~ ~override/GVASN.SPL~
-		FOR (i=1;i<=20;i=i+1) BEGIN
-			LPF ADD_SPELL_HEADER  INT_VAR  type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=1 projectile=1 END
-			READ_SHORT 0x68 n_headers //number of extended_headers
-			
-			FOR (j=4;j<=i;j=j+4) BEGIN //1st lvl
-				LPF ADD_SPELL_EFFECT INT_VAR header=n_headers opcode=171 power=10 target=2 timing=0 duration=1 STR_VAR resource=~ASNL1~ END 				
-			END	
-			
-			FOR (j=7;j<=i;j=j+4) BEGIN //2nd lvl
-				LPF ADD_SPELL_EFFECT INT_VAR header=n_headers opcode=171 power=10 target=2 timing=0 duration=1 STR_VAR resource=~ASNL2~ END 				
-			END	
-			
-			FOR (j=10;j<=i;j=j+4) BEGIN //3rd lvl
-				LPF ADD_SPELL_EFFECT INT_VAR header=n_headers opcode=171 power=10 target=2 timing=0 duration=1 STR_VAR resource=~ASNL3~ END 				
-			END	
-			
-			FOR (j=13;j<=i;j=j+4) BEGIN //4th lvl
-				LPF ADD_SPELL_EFFECT INT_VAR header=n_headers opcode=171 power=10 target=2 timing=0 duration=1 STR_VAR resource=~ASNL4~ END 				
-			END	
-			
-			PATCH_IF (i=20) BEGIN
-				LPF ADD_SPELL_EFFECT INT_VAR header=n_headers opcode=171 power=10 target=2 timing=0 duration=1 STR_VAR resource=~ASNL4~ END
-			END
-			
-
-		END
-	
-		OUTER_FOR (i=1;i<=4;i=i+1) BEGIN
-			COPY ~3ed/Classes/Assassin/Spells/GVASN.SPL~ ~override/GVASN%i%.SPL~
-				LPF ADD_SPELL_HEADER  INT_VAR  type=1 location=4 target=5 target_count=0 range=1 speed=1 projectile=1 END
-				SPRINT resource EVALUATE_BUFFER ~ASNL%i%~
-			    LPF ADD_SPELL_EFFECT INT_VAR opcode=171 power=10 target=2 timing=0 duration=1  STR_VAR resource END 				
-		END		
-		
-		OUTER_SET id=1
-	OUTER_FOR (k=12;k<=18;k=k+2) BEGIN	
-		COPY ~3ed/Classes/Assassin/Spells/GVASN.SPL~ ~override/BNASN%id%.SPL~
-			SPRINT resource EVALUATE_BUFFER ~GVASN%id%~
-			LPF ADD_SPELL_HEADER  INT_VAR  required_level=1 type=1 location=4 target=5 target_count=0 range=1 speed=1 projectile=1 END
-			FOR (i=k;i<=max_val;i=i+8) BEGIN			
-				LPF ADD_SPELL_EFFECT INT_VAR opcode=326 power=10 target=2 timing=0 duration=1 parameter2=par1 parameter1=i STR_VAR resource END 
-			END
-		SET id=id+1
-	END
-		
-								
-	COPY ~3ed/Classes/Assassin/Spells/GVASN.SPL~ ~override/BNASN.SPL~
-		//1st lvl
-		LPF ADD_SPELL_HEADER  INT_VAR  required_level=1 type=1 location=4 target=5 target_count=0 range=1 speed=1 projectile=1 END
-		LPF ADD_SPELL_EFFECT INT_VAR opcode=326 power=10 target=2 timing=0 duration=1 STR_VAR resource=~BNASN1~ END
-		//2nd lvl
-		LPF ADD_SPELL_HEADER  INT_VAR  copy_header=1 END
-		LPF ALTER_SPELL_HEADER INT_VAR  header=2 min_level=7 END
-		LPF ADD_SPELL_EFFECT INT_VAR header=2 opcode=326 power=10 target=2 timing=0 duration=1 STR_VAR resource=~BNASN2~ END		
-		//3rd lvl
-		LPF ADD_SPELL_HEADER  INT_VAR  copy_header=2 END
-		LPF ALTER_SPELL_HEADER INT_VAR  header=3 min_level=10 END
-		LPF ADD_SPELL_EFFECT INT_VAR header=3 opcode=326 power=10 target=2 timing=0 duration=1 STR_VAR resource=~BNASN3~ END	
-		//4th lvl
-		LPF ADD_SPELL_HEADER  INT_VAR  copy_header=3 END
-		LPF ALTER_SPELL_HEADER INT_VAR  header=4 min_level=13 END
-		LPF ADD_SPELL_EFFECT INT_VAR header=4 opcode=326 power=10 target=2 timing=0 duration=1 STR_VAR resource=~BNASN4~ END	
-			
-	//remove song	
-	COPY ~3ed/Classes/Assassin/Spells/ASN.SPL~ ~override/RMASN.SPL~
-		LPF ADD_SPELL_HEADER  INT_VAR  type=1 location=4 target=5 target_count=0 range=1 speed=1 projectile=1 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=172 power=10 target=2 timing=0 duration=1 STR_VAR resource=~ASNL1~ END 
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=172 power=10 target=2 timing=0 duration=1 STR_VAR resource=~ASNL2~ END 
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=172 power=10 target=2 timing=0 duration=1 STR_VAR resource=~ASNL3~ END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=172 power=10 target=2 timing=0 duration=1 STR_VAR resource=~ASNL4~ END 			
-
-
-
-	//script for giving assasin spells
-	OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN
-		EXTEND_TOP ~BALDUR.BCS~ ~3ed/Classes/Assassin/Spells/ASN.baf~
-			EVALUATE_BUFFER			
-	END
-
-	//give spells at lvl ups
-	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=16 d_level=4 add_at_level1=0 
-						STR_VAR clab=~CLABTH02\.2DA~ mask_file=~~ caption=~GVASN1~ END	
-	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=4 d_level=4 add_at_level1=0 
-						STR_VAR clab=~CLABTH02\.2DA~ mask_file=~~ caption=~BNASN1~ END
-						
-	LAF ADD_BONUS_FEATS INT_VAR min_level=7 max_level=19 d_level=4 add_at_level1=0 
-						STR_VAR clab=~CLABTH02\.2DA~ mask_file=~~ caption=~GVASN2~ END	
-	LAF ADD_BONUS_FEATS INT_VAR min_level=7 max_level=7 d_level=4 add_at_level1=0 
-						STR_VAR clab=~CLABTH02\.2DA~ mask_file=~~ caption=~BNASN2~ END
-						
-	LAF ADD_BONUS_FEATS INT_VAR min_level=10 max_level=18 d_level=4 add_at_level1=0 
-						STR_VAR clab=~CLABTH02\.2DA~ mask_file=~~ caption=~GVASN3~ END	
-	LAF ADD_BONUS_FEATS INT_VAR min_level=10 max_level=10 d_level=4 add_at_level1=0 
-						STR_VAR clab=~CLABTH02\.2DA~ mask_file=~~ caption=~BNASN3~ END
-						
-	LAF ADD_BONUS_FEATS INT_VAR mask=0b10010001000000000000 
-						STR_VAR clab=~CLABTH02\.2DA~ mask_file=~~ caption=~GVASN4~ END
-	LAF ADD_BONUS_FEATS INT_VAR min_level=13 max_level=13 d_level=4 add_at_level1=0 
-						STR_VAR clab=~CLABTH02\.2DA~ mask_file=~~ caption=~BNASN4~ END					
-	
-////////////////////////////////////////////////////////////////////////////////////////
-//
 //	lvl up by one level
 BEGIN @1300
 

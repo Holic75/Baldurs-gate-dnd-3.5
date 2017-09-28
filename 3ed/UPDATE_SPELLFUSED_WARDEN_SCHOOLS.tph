@@ -70,6 +70,8 @@ END
 			EVALUATE_BUFFER	
 			REPLACE_TEXTUALLY ~|~ ~%~
 	
-    END		
+    	
+
+	END
 	
 
