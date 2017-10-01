@@ -514,10 +514,12 @@ CLASS FEATURES:
 – May use the Charm Animal ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.
 – May spontaneously convert memorized spells to summoning ones.
 – May call for an animal companion who fights for <PRO_HISHER> side.
-– 5th level: Gains Shapeshift ability which allows to transfrom  into a wolf, black bear, or brown bear once per day, gains additional uses at levels 6, 7, 10, 14 and 18.
+– 5th level: Gains Shapeshift ability which allows to transfrom  into a wolf, black bear, or brown bear once per day, gains additional uses at levels 6, 7, 10 and every 4 levels thereafter.
 – 8th level: While using Shapeshift ability a Druid can alternatively transform into fire salamander, sword spider or baby wyvern.
 – 15th level: Becomes immune to poison.
+– 16th level: While using Shapeshift ability a Druid can alternatively take form of large fire or earth elementals.
 – 18th level: Gains 10% resistance to cold, fire, electricity, and acid; gains a further 10% resistance at levels 21 and 24.
+– 20th level: While using Shapeshift ability a Druid can alternatively take form of greater fire or earth elementals.
 – Alignment restricted to true neutral.
 – Hit Die: d8
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
@@ -542,7 +544,7 @@ Disadvantages:
 
 Advantages:
 – May shapeshift into the form of a werewolf once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.
-– 13th level: shapeshifts into greater werewolf instead.
+– 15th level: shapeshifts into greater werewolf instead.
 
 Disadvantages:
 – May not call for an animal companion.
@@ -1320,7 +1322,67 @@ Sword Spider:
 	Number of Attacks: 4
 	Attack Damage: 1d4 (piercing), strikes as +1 weapon
 	Special Abilities:
-		– Immunity to web~
+		– Immunity to web
+		
+Starting from level 16 Druid can alternatively shapeshift into large elemental forms:
+
+Large Fire Elemental:
+	Strength: 14
+	Dexterity: 21
+	Constitution: 16
+	Base Armor Class: 6
+	Number of Attacks: 2
+	Attack Damage: 2d6 (crushing) + 2d6 fire, strikes as +4 weapon
+	Special Abilities:
+		– Immunity to weapons below +3
+		– Weapon Finesse
+		– Fire Resistance: 100%
+		– Cold Resistance: -50%
+		– Physical Resistance: 25%
+		
+Large Earth Elemental:
+	Strength: 21
+	Dexterity: 8
+	Constitution: 19
+	Base Armor Class: 0
+	Number of Attacks: 2
+	Attack Damage: 2d10 (crushing), strikes as +4 weapon
+	Special Abilities:
+		– Immunity to weapons below +3
+		– Physical Resistance: 50%
+		
+Finally, at level 20  <PRO_HESHE>	can take forms of greater elementals instead:
+
+Greater Fire Elemental:
+	Strength: 18
+	Dexterity: 25
+	Constitution: 18
+	Base Armor Class: 6
+	Number of Attacks: 2
+	Attack Damage: 2d8 (crushing) + 2d8 fire, strikes as +4 weapon
+	Special Abilities:
+		– Immunity to weapons below +3
+		– Weapon Finesse
+		– Fire Resistance: 100%
+		– Cold Resistance: -50%
+		– Physical Resistance: 25%
+		
+Greater Earth Elemental:
+	Strength: 25
+	Dexterity: 8
+	Constitution: 21
+	Base Armor Class: 0
+	Number of Attacks: 2
+	Attack Damage: 2d12 (crushing), strikes as +4 weapon
+	Special Abilities:
+		– Immunity to weapons below +3
+		– Physical Resistance: 50%~
+		
+	@100193 = ~Large Fire Elemental Form~
+	@100194 = ~Large Earth Elemental Form~
+	@100195 = ~Greater Fire Elemental Form~
+	@100196 = ~Greater Earth Elemental Form~
+	
 		
 //-------------------------------------------------------------------------------------------------------------------------------//
 	@094=~Shapeshift: Werewolf~
@@ -1355,6 +1417,7 @@ Greater Werewolf:
 		– Magic Resistance: 40%
 		– Regenerates 1 Hit Point per second~
 
+		
 //-------------------------------------------------------------------------------------------------------------------------------//
 	@096=~Seeking Sword
 This spell creates a sword in the Cleric's hand that cannot be dropped or unequipped. The sword is enchanted as a +4 weapon and provides a +4 THAC0 bonus, but no damage bonus. It deals 2d4 damage to any target it hits. The weapon increases the Cleric's number of attacks per round by 2 and lasts for 1 round per level. While it is equipped, the wielder cannot cast further spells.~

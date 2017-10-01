@@ -6,6 +6,7 @@ DEFINE_ACTION_FUNCTION ~ADD_CHANNEL_ENERGY~
 		pos_descr_ref=0
 		neg_name_ref=0
 		neg_descr_ref=0
+		max_char_level = 30
 	STR_VAR
 		id=~C~
 	BEGIN
@@ -14,7 +15,7 @@ DEFINE_ACTION_FUNCTION ~ADD_CHANNEL_ENERGY~
 	COPY ~3ed/Classes/TurnUndead/CH_POS.SPL~ ~override/CE_P_%id%.SPL~
 		 WRITE_LONG 0x0008 pos_name_ref
 		 WRITE_LONG 0x0050 pos_descr_ref
-		 FOR (i=1;i<=20;i=i+1) BEGIN
+		 FOR (i=1;i<=max_char_level;i=i+1) BEGIN
 			SET savebonus = 0 - (i/4)
 			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=3 projectile=251 STR_VAR icon=~CHANPOSB~ END
 			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=141 target=2 parameter1 = 0 parameter2 =2 duration=1 timing=1 END
@@ -41,7 +42,7 @@ DEFINE_ACTION_FUNCTION ~ADD_CHANNEL_ENERGY~
 	COPY ~3ed/Classes/TurnUndead/CH_NEG.SPL~ ~override/CE_N_%id%.SPL~
 		 WRITE_LONG 0x0008 neg_name_ref
 		 WRITE_LONG 0x0050 neg_descr_ref
-		 FOR (i=1;i<=20;i=i+1) BEGIN
+		 FOR (i=1;i<=max_char_level;i=i+1) BEGIN
 			SET savebonus = 0 - (i/4)
 			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=3 projectile=251 STR_VAR icon=~CHANNEGB~ END
 			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=141 target=2 parameter1 = 0 parameter2 =2 duration=1 timing=1 END

@@ -1,0 +1,52 @@
+DEFINE_ACTION_FUNCTION ~CHANNEL_ENERGY_LEVEL_REGULARIZATION~
+	INT_VAR
+		max_channel_lvl=15
+		
+	BEGIN
+	
+	//turn undead level regularisation
+	OUTER_SET max_multi_class_channel_lvl=(max_channel_lvl+1)/2
+	OUTER_SET max_lvl=40
+	OUTER_FOR (i=0;i<=max_lvl;i=i+1) BEGIN
+		COPY ~3ed/Classes/TurnUndead/TULVL1.SPL~ ~override/CE_LVL%i%.SPL~
+		SET bonus=1 - i
+		WRITE_LONG 0x009e bonus
+	END
+	
+	COPY ~3ed/Classes/TurnUndead/CE_LVL.SPL~ ~override~
+		SPRINT clab_line ~CE_LVL_SET~
+		FOR (i=1;i<=max_lvl;i=i+1) BEGIN
+			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=1 END
+		
+			SET cleric_level=i -  (i+1)/2 + 1
+		
+			SET paladin_level = i -  (i+1)/2 - 1
+			PATCH_IF (i<3) BEGIN
+				SET paladin_level=1
+			END
+            
+			SET multi_class_level = i - (i+2)/4 + 1
+			PATCH_IF (multi_class_level>max_multi_class_channel_lvl) BEGIN
+				SET multi_class_level=max_multi_class_channel_lvl
+			END
+			
+			SPRINT resource EVALUATE_BUFFER ~CE_LVL%cleric_level%~
+			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=3 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric 
+			
+			SPRINT resource EVALUATE_BUFFER ~CE_LVL%paladin_level%~
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=6 parameter2=105 duration=1 timing=1 STR_VAR  resource END //paladin
+			
+			SPRINT resource EVALUATE_BUFFER ~CE_LVL%multi_class_level%~
+			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=8 parameter2=105 duration=1 timing=1 STR_VAR  resource END //fighter cleric 
+			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=15 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric thief
+			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=14 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric mage
+			
+			SPRINT clab_line EVALUATE_BUFFER ~%clab_line%   AP_CE_LVL~
+		END
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=144 target=2 parameter1=0 parameter2=6 timing=1 duration=1 END //disable turn undead button
+	//creating  channel levels string in clabs
+	COPY_EXISTING_REGEXP GLOB ~\(CLABPA01\)\|\(CLABPA02\)\|\(CLABPA04\)\|\(CLABPA06\)\|\(CLABPR0+.*\)\|\(OHTYR\)\.2DA~ ~override~
+		COUNT_2DA_ROWS 20 "nrows"	
+		INSERT_2DA_ROW nrows 20 ~%clab_line%~
+		
+END	

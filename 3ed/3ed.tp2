@@ -15,6 +15,7 @@ BEGIN @0
 	INCLUDE ~3ed/ADD_BONUS_FEATS.tph~
 	INCLUDE ~3ed/ADD_BONUS_SPELLS_PROCESS.tph~
 	INCLUDE ~3ed/ADD_BONUS_SPELLS.tph~
+	INCLUDE ~3ed/CHANNEL_ENERGY_LEVEL_REGULARIZATION.tph~
 
 	
 	//common part
@@ -270,10 +271,7 @@ BEGIN @0
 			EVALUATE_BUFFER			
 	END
 	
-	
-/* 	//Priest of talos saving throw penalties for lightning bolt
-	COPY ~3ed/Classes/PriestOfTalos~ ~override~ */
-	
+		
 	//shapeshifts that can use items
 	COPY ~3ed/Classes/Druid~ ~override~
 	COPY_EXISTING ~DRDPOLY.SPL~ ~override~ //standard shapeshift
@@ -283,10 +281,17 @@ BEGIN @0
 	COPY_EXISTING ~PL_WRWF.SPL~ ~override~ //werewolf
 		SAY NAME1 @094
 		SAY UNIDENTIFIED_DESC @095
+		
+	COPY_EXISTING ~PL_FIRL.SPL~ ~override~ 
+		SAY NAME1 @100193
+	COPY_EXISTING ~PL_EARL.SPL~ ~override~ 
+		SAY NAME1 @100194
+	COPY_EXISTING ~PL_FIRH.SPL~ ~override~ 
+		SAY NAME1 @100195
+	COPY_EXISTING ~PL_EARH.SPL~ ~override~ 
+		SAY NAME1 @100196
 	
-	//----------------------------------------------------------//
-	//lingering song, + improved song bonuses, + rage for skald
-	//COPY ~3ed/Classes/Bard~ ~override~
+		
 	//----------------------------------------------------------//
 	//assasin poison weapon progression change
 	COPY ~3ed/Classes/Assassin/bdpweapn.spl~ ~override~
@@ -464,8 +469,8 @@ BEGIN @0
 	COPY ~3ed/Classes/TurnUndead/CHANPOSB.BAM~ ~override~
 	COPY ~3ed/Classes/TurnUndead/CHANPOSC.BAM~ ~override~
 	
-	OUTER_SET max_channel_lvl=10
-	OUTER_SET max_multi_class_channel_lvl=5	
+	OUTER_SET max_channel_lvl=15
+	OUTER_SET max_multi_class_channel_lvl=8	
 	
 	OUTER_FOR (i=1;i<=max_channel_lvl;i=i+1) BEGIN
 		COPY ~3ed/Classes/TurnUndead/DMUNDD.EFF~ ~override/EN_DMG%i%.EFF~
@@ -483,7 +488,7 @@ BEGIN @0
 	
 	//channel energy for clerics and paladins
  	LAF ADD_CHANNEL_ENERGY INT_VAR level_offset=1 divisor=2 pos_name_ref pos_descr_ref neg_name_ref neg_descr_ref STR_VAR id=~C~ END
-	//channel energy for cleric/thief and fighter/cleric
+	//channel energy for cleric/thief  fighter/cleric and cleric/mage
  	LAF ADD_CHANNEL_ENERGY INT_VAR level_offset=2 divisor=4 pos_name_ref pos_descr_ref neg_name_ref neg_descr_ref STR_VAR id=~M~ END
 	//give channel energy depending on kit and class
 	COPY ~3ed/Classes/TurnUndead/CHANEN1.SPL~ ~override/CE_1.SPL~
@@ -511,8 +516,7 @@ BEGIN @0
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //cleric thief
 	COPY ~3ed/Feats/FeatAttribution/SFTCRECM.SPL~ ~override/CE_CM1.SPL~
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //cleric thief
-	//COPY ~3ed/Feats/FeatAttribution/SFTCREP.SPL~ ~override/CE_P1.SPL~
-	//	LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_1~ END//paladin
+
 		
 	//script for giving channel abilities	
 	OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN
@@ -520,51 +524,7 @@ BEGIN @0
 			EVALUATE_BUFFER			
 	END
 	
-	//turn undead level regularisation
-	OUTER_SET max_channel_lvl=10
-	OUTER_SET max_multi_class_channel_lvl=5
-	OUTER_SET max_lvl=40
-	OUTER_FOR (i=0;i<=max_lvl;i=i+1) BEGIN
-		COPY ~3ed/Classes/TurnUndead/TULVL1.SPL~ ~override/CE_LVL%i%.SPL~
-		SET bonus=1 - i
-		WRITE_LONG 0x009e bonus
-	END
-	
-	COPY ~3ed/Classes/TurnUndead/CE_LVL.SPL~ ~override~
-		SPRINT clab_line ~CE_LVL_SET~
-		FOR (i=1;i<=max_lvl;i=i+1) BEGIN
-			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=1 END
-		
-			SET cleric_level=i -  (i+1)/2 + 1
-		
-			SET paladin_level = i -  (i+1)/2 - 1
-			PATCH_IF (i<3) BEGIN
-				SET paladin_level=1
-			END
-            
-			SET multi_class_level = i - (i+2)/4 + 1
-			PATCH_IF (multi_class_level>max_multi_class_channel_lvl) BEGIN
-				SET multi_class_level=max_multi_class_channel_lvl
-			END
-			
-			SPRINT resource EVALUATE_BUFFER ~CE_LVL%cleric_level%~
-			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=3 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric 
-			
-			SPRINT resource EVALUATE_BUFFER ~CE_LVL%paladin_level%~
-			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=6 parameter2=105 duration=1 timing=1 STR_VAR  resource END //paladin
-			
-			SPRINT resource EVALUATE_BUFFER ~CE_LVL%multi_class_level%~
-			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=8 parameter2=105 duration=1 timing=1 STR_VAR  resource END //fighter cleric 
-			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=15 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric thief
-			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=14 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric mage
-			
-			SPRINT clab_line EVALUATE_BUFFER ~%clab_line%   AP_CE_LVL~
-		END
-		LPF ADD_SPELL_EFFECT INT_VAR opcode=144 target=2 parameter1=0 parameter2=6 timing=1 duration=1 END //disable turn undead button
-	//creating  channel levels string in clabs
-COPY_EXISTING_REGEXP GLOB ~\(CLABPA01\)\|\(CLABPA02\)\|\(CLABPA04\)\|\(CLABPA06\)\|\(CLABPR0+.*\)\|\(OHTYR\)\.2DA~ ~override~
-		COUNT_2DA_ROWS 20 "nrows"	
-		INSERT_2DA_ROW nrows 20 ~%clab_line%~
+	LAF CHANNEL_ENERGY_LEVEL_REGULARIZATION INT_VAR max_channel_lvl END //regularize channel energy level visualization in spreadheet
 		
 		
 	COPY ~3ed/Core/THAC0/THAC0H.SPL~ ~override~ //high thaco for swashbucklers
