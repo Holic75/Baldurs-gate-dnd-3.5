@@ -1,0 +1,63 @@
+DEFINE_ACTION_FUNCTION ~FIND_SPELLS_WITH_PROTECTION_REMOVALS~
+
+	BEGIN
+	
+	COPY_EXISTING_REGEXP GLOB ~.*\.SPL~ ~override~
+		
+		
+		READ_LONG 0x64 header_block_offset //beginning of extended_headers table
+		READ_LONG 0x6a effects_block_offset //beginning of effects table
+		READ_SHORT 0x68 n_headers //number of extended_headers
+		
+		READ_SHORT 0x6e global_effects_block_offset //beginning of global_effects table
+		READ_SHORT 0x70 n_global_effect //number of global_effects
+
+		
+		SET effect_size=0x30 //size of effect block
+		SET header_size=0x28 //size of header block
+		
+		SET relative_effects_offset=0x0020
+		SET relative_n_effects_offset=0x001e
+
+		SET FOUND = 0
+		FOR (i=0;i<n_headers;i=i+1) BEGIN
+			SET current_header_offset = header_block_offset+i*header_size
+			READ_SHORT current_header_offset+relative_n_effects_offset   n_effects //number of effects in the header
+			READ_SHORT current_header_offset+relative_effects_offset     current_effects_offset //offset to effects of the header
+			
+			SET current_effects_offset=effects_block_offset + current_effects_offset*effect_size
+			
+		
+			FOR (j=0;j<n_effects;j=j+1) BEGIN
+								
+				READ_SHORT current_effects_offset opcode										
+				PATCH_IF (opcode = 321 OR opcode = 206 OR opcode = 318 OR opcode = 207) AND NOT FOUND BEGIN		
+					SET FOUND = 1	
+					INNER_ACTION BEGIN
+						OUTER_SPRINT FILE_NAME EVALUATE_BUFFER ~%SOURCE_FILE%~
+						COPY_EXISTING ~%FILE_NAME%~ ~Removals~
+					END
+				END
+									
+			END		
+		END
+		
+		
+		FOR (i=0;i<n_global_effect;i=i+1) BEGIN
+			SET current_effects_offset =  effects_block_offset + i*effect_size
+				READ_SHORT current_effects_offset opcode										
+				PATCH_IF (opcode = 321 OR opcode = 206 OR opcode = 318 OR opcode = 207) AND NOT FOUND BEGIN		
+					FOUND = 1	
+					INNER_ACTION BEGIN
+						OUTER_SPRINT FILE_NAME EVALUATE_BUFFER ~%SOURCE_FILE%~
+						COPY_EXISTING ~%FILE_NAME%~ ~Removals~
+					END
+				END			
+			
+		END
+	END
+		
+
+			
+	
+

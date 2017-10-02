@@ -1,0 +1,36 @@
+DEFINE_ACTION_FUNCTION ~FIND_CREAT_WITH_PROTECTION_REMOVALS~
+
+	BEGIN
+	
+	COPY_EXISTING_REGEXP GLOB ~.*\.CRE~ ~override~
+		
+		
+
+		
+		READ_LONG 0x02c4 effects_block_offset //beginning of global_effects table
+		READ_LONG 0x02c8 n_effect //number of global_effects
+
+		
+		SET effect_size=0xd4 + 0x3c //size of effect block
+		SET FileSize = SIZE_OF_FILE ~%SIZE_OF_FILE%~
+		
+		
+		SET FOUND = 0
+		FOR (i=0;i<n_effect*(FileSize>=effects_block_offset+effect_size*n_effect);i=i+1) BEGIN
+			SET current_effects_offset = effects_block_offset + i*effect_size
+				READ_SHORT current_effects_offset+0x10 opcode										
+				PATCH_IF (opcode = 321 OR opcode = 206 OR opcode = 318 OR opcode = 207) AND NOT FOUND BEGIN		
+					SET FOUND = 1	
+					INNER_ACTION BEGIN
+						OUTER_SPRINT FILE_NAME EVALUATE_BUFFER ~%SOURCE_FILE%~
+						COPY_EXISTING ~%FILE_NAME%~ ~Removals~
+					END
+				END			
+			
+		END
+	END
+		
+
+			
+	
+

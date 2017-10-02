@@ -188,6 +188,7 @@ BEGIN @0
 	COPY ~3ed/Classes/Paladin/PDNSVCR.SPL~ ~override~//correction for paladin saves
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~CLABPA+.*\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~PDNSVCR~ END	
+						
 	COPY ~3ed/Classes/Paladin/LayOnHands~ ~override~
 		EXTEND_TOP ~baldur.bcs~ ~3ed/Classes/Paladin/PALADIN.bcs~	//script to update number of lay on hands uses depending on charisma
 	
@@ -199,11 +200,11 @@ BEGIN @0
 		SAY UNIDENTIFIED_DESC @075
 		WRITE_ASCII 0x003a ~SMTEVL1C~ #8 //spell icon
 		LPF ALTER_SPELL_HEADER STR_VAR icon=~SMTEVL1B~ END //spell header icon
-		FOR (i=12;i<=25;i=i+2)	BEGIN //adding charisma dependent to hit bonus 
+		FOR (i=12;i<=25;i=i+2)	BEGIN //adding charisma dependent bonus to hit bonus 
 			LPF ADD_SPELL_EFFECT INT_VAR opcode=326 insert_point=0 target=1 parameter1=i parameter2=132 duration=1 STR_VAR resource=~SMTTH~ END
 		END
 			
-	OUTER_FOR (i=1;i<=20;i=i+1) BEGIN
+	OUTER_FOR (i=1;i<=30;i=i+1) BEGIN
 		COPY ~3ed/Classes/Paladin/SmiteEvil/SMTDM.SPL~ ~override/SMTDM%i%.SPL~//dmg
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=12  parameter1=i  END	
 	END
@@ -221,10 +222,40 @@ BEGIN @0
 		SAY NAME1 @0740001
 		SAY UNIDENTIFIED_DESC @0750001
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=248 STR_VAR resource=~SMTUNDH~ END
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=206 STR_VAR resource=~SMTUND~  END	
 	
 	COPY_EXISTING ~SMTEVLH.EFF~ ~override/SMTUNDH.EFF~//hit effect
+		WRITE_ASCII 0x0030 ~SMTUNDH~ #8
+		
 	COPY_EXISTING ~SMTEVLH.SPL~ ~override/SMTUNDH.SPL~//hit effect (spell)
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 parameter2=1 END //change evil to undead
+	//smite good
+	COPY_EXISTING ~SMTEVL.SPL~ ~override/SMTGUD.SPL~//main spell smite undead
+		SAY NAME1 @0740002
+		SAY UNIDENTIFIED_DESC @0750002
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=248 STR_VAR resource=~SMTGUDH~ END
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=206 STR_VAR resource=~SMTGUD~  END	
+	
+	COPY_EXISTING ~SMTEVLH.EFF~ ~override/SMTGUDH.EFF~//hit effect
+		WRITE_ASCII 0x0030 ~SMTGUDH~ #8
+		
+	COPY_EXISTING ~SMTEVLH.SPL~ ~override/SMTGUDH.SPL~//hit effect (spell)
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 parameter2=36 END //damage aginst good creatures
+		
+	//smite mage
+	COPY_EXISTING ~SMTEVL.SPL~ ~override/SMTMAG.SPL~//main spell smite undead
+		SAY NAME1 @0740003
+		SAY UNIDENTIFIED_DESC @0750003
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=248 STR_VAR resource=~SMTGUDH~ END
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=206 STR_VAR resource=~SMTMAG~  END	
+	
+	COPY_EXISTING ~SMTEVLH.EFF~ ~override/SMTMAGH.EFF~//hit effect
+		WRITE_ASCII 0x0030 ~SMTMAGH~ #8
+		
+	COPY_EXISTING ~SMTEVLH.SPL~ ~override/SMTMAGH.SPL~//hit effect (spell)
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 parameter2=105 parameter1=202 END //damage aginst magic users	
+		
+		
 		
 	//-----------------------------------------------------------		
 	//paladin cha_saves
@@ -258,7 +289,14 @@ BEGIN @0
 	COPY_EXISTING ~KIPWR.SPL~ ~override~
 			SAY NAME1 @100116
 			SAY UNIDENTIFIED_DESC @100117
-			
+	
+	COPY_EXISTING ~GV_KIPW.SPL~ ~override~
+		FOR (i=3;i<30;i=i+2) BEGIN
+			SET copy_header = (i - 1)/2
+			LPF ADD_SPELL_HEADER INT_VAR  insert_point=(i + 1)/2 copy_header END
+			LPF ALTER_SPELL_HEADER INT_VAR  header = (i + 1)/2 min_level = i END
+			LPF CLONE_EFFECT INT_VAR header = (i - 1)/2 match_opcode = 326 match_parameter2 = 0  multi_match = 1 END
+		END	
 			
     COPY_EXISTING_REGEXP GLOB ~CLABTH03\.2DA~ ~override~
 		COUNT_2DA_ROWS 20 "nrows"
@@ -281,7 +319,7 @@ BEGIN @0
 	COPY_EXISTING ~PL_WRWF.SPL~ ~override~ //werewolf
 		SAY NAME1 @094
 		SAY UNIDENTIFIED_DESC @095
-		
+	//elementals
 	COPY_EXISTING ~PL_FIRL.SPL~ ~override~ 
 		SAY NAME1 @100193
 	COPY_EXISTING ~PL_EARL.SPL~ ~override~ 
@@ -1745,6 +1783,9 @@ INCLUDE ~3ed/SPLIT_SPELLS_BY_SCHOOL.tph~
 INCLUDE ~3ed/UPDATE_SPELLFUSED_WARDEN_SCHOOLS.tph~
 INCLUDE ~3ed/ADD_ASSASIN_SPELLS.tph~
 INCLUDE ~3ed/ADD_PROTECTION_REMOVALS.tph~
+INCLUDE ~3ed/FIND_SPELLS_WITH_PROTECTION_REMOVALS.tph~
+INCLUDE ~3ed/FIND_ITEMS_WITH_PROTECTION_REMOVALS.tph~
+INCLUDE ~3ed/FIND_CREAT_WITH_PROTECTION_REMOVALS.tph~
 INCLUDE ~3ed/ADD_PROTECTION_REMOVALS_SPELLFUSED_WARDEN_SCHOOLS.tph~
 INCLUDE ~3ed/ADD_PROTECTION_REMOVALS_PRIEST_DOMAIN.tph~
 INCLUDE ~3ed/ADD_PROTECTION_REMOVALS_ASSASIN_SPELLS.tph~
@@ -2488,9 +2529,12 @@ INCLUDE ~3ed/ADD_PROTECTION_REMOVALS_ASSASIN_SPELLS.tph~
 		STR_VAR clab=~CLABMA01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRES.SPL~
 		feat_type_file=~BDFTCRE~ caption=~SRBLDLN~ END
 		
-			
+	MKDIR ~Removals~
+	LAF FIND_SPELLS_WITH_PROTECTION_REMOVALS END
+	LAF FIND_ITEMS_WITH_PROTECTION_REMOVALS END
+	LAF FIND_CREAT_WITH_PROTECTION_REMOVALS END
 	//adding protection and removals to new spells
-	PRINT "Processing assasin spells..."
+	PRINT "Processing assasin spells..."	
 	LAF ADD_PROTECTION_REMOVALS_ASSASIN_SPELLS END
 	
 	PRINT "Processing new spells..."
@@ -2515,14 +2559,16 @@ INCLUDE ~3ed/ADD_PROTECTION_REMOVALS_ASSASIN_SPELLS.tph~
 		DEFINE_ASSOCIATIVE_ARRAY school_list BEGIN "%k%" => "%SOURCE_RES%" END
 		SET k=k+1
 	
-	
 	ACTION_PHP_EACH school_list AS school_i =>school_file_name BEGIN
 		OUTER_SET school_id=school_i
 		OUTER_SPRINT school_file_2DA EVALUATE_BUFFER ~%school_file_name%~
 		PRINT "Processing spellfused warden spells... %school_id% / 8"
 		LAF ADD_PROTECTION_REMOVALS_SPELLFUSED_WARDEN_SCHOOLS STR_VAR school_file_2DA END	
 	END	
-		
+	
+	COPY ~Removals~ ~override~
+	DELETE ~Removals~ 
+	
 	ACTION_PHP_EACH school_list AS school_i =>school_file_name BEGIN
 		OUTER_SET school_id=school_i
 		OUTER_SPRINT school_file_2DA EVALUATE_BUFFER ~%school_file_name%~

@@ -233,6 +233,10 @@ Advantages:
 – May cast Dispel Magic once per day. Gains one use at level 1 and an additional use every 4 levels thereafter. The spell is cast at Speed Factor 1 and acts at twice the Inquisitor's character level. 
 – May cast True Sight once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
 – Immune to hold and charm.
+– May use Smite Mage ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.
+
+SMITE MAGE: For 10 seconds Inquisitor receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per inqusitor level against arcane magic users.
+
 
 Disadvantages:
 – May not channel positive energy.
@@ -286,6 +290,10 @@ When this ability is activated, all enemies within 30 feet of the Blackguard suf
   6th - All enemies suffer a -2 penalty to hit and damage rolls and a -2 penalty to Armor Class for 1 turn.
   15th - All enemies suffer a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class for 1 turn; enemies with 8 or fewer Hit Dice are panicked as well.
   20th - All enemies suffer a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class for 1 turn; enemies with 18 or fewer Hit Dice are panicked as well.
+
+ – May use Smite Good ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.
+
+SMITE GOOD: For 10 seconds Paladin receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per paladin level against good creatures.
 
 Disadvantages:
 – Alignment restricted to evil.
@@ -672,6 +680,7 @@ Advantages:
 	Starting from level 1 ninja can spend one point from ki pool to become invisible for 10 seconds.
 	Starting from level 3 ninja can alternatively spend one point from ki pool to create 1d4 mirror images of <PRO_HIMHER>self or become blurred (+3 AC, +1 Saving throw bonus) for 10 seconds or detect invisible creatures.
 	Starting from level 5 ninja can alternatively spend one point from ki pool to become hasted for 10 seconds.
+	Starting from level 7 ninja can alternatively spend one point from ki pool to make all <PRO_HISHER> attacks for next round stun oponnents unless they make a Saving throw vs. Death.
 	
 Disadvantages:
 – May not wear any armor or use shields. 
@@ -1166,6 +1175,19 @@ For 10 seconds Paladin receives +1 bonus to <PRO_HISHER> attack roll per 2 point
 	@0750001=~Smite Undead
 	
 For 10 seconds Undead Hunter receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per paladin level against undead creatures.~
+//---------------------------------------------------------------------------------------------------//
+	@0740002=~Smite Good~
+	@0750002=~Smite Good
+	
+For 10 seconds Blackguard receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per blackguard level against good creatures.~
+
+//------------------------------------------------------------------------------------------
+	@0740003=~Smite Mage~
+	@0750003=~Smite Mage
+	
+For 10 seconds Inquisitor receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per inquisitor level against arcane magic users.~
+
+
 //---------------------------------------------------------------------------------------------------//
 	@076=~Poison Weapon
 	
