@@ -12,7 +12,7 @@ IF
 	Kit(LastSummonerOf(Myself),BEASTMASTER)
 THEN
 	RESPONSE #100
-		ApplySpellRES("RNGSQRS",Myself) // summon squirel giving bonuses
+		ApplySpellRES("RNGSQS%player_id%",Myself) // summon squirel giving bonuses
 		Continue()
 END
 

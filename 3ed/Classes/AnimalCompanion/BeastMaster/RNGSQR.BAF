@@ -1,0 +1,91 @@
+IF
+	OnCreation()
+	Range(Player%player_id%,5)
+	LevelLT(LastSummonerOf(Myself),7)
+	CheckStat(Player%player_id%,%player_id%,EXTRAPROFICIENCY20)
+	
+THEN
+	RESPONSE #100
+		ApplySpellRES("RNGBON1",Player%player_id%)
+		ApplySpellRES("RNGBON1",LastSummonerOf(Myself))
+		DestroySelf()
+END
+
+IF
+	OnCreation()
+	Range(Player%player_id%,5)
+	LevelGT(LastSummonerOf(Myself),6)
+	LevelLT(LastSummonerOf(Myself),13)
+	CheckStat(Player%player_id%,%player_id%,EXTRAPROFICIENCY20)
+	
+THEN
+	RESPONSE #100
+		ApplySpellRES("RNGBON2",Player%player_id%)
+		ApplySpellRES("RNGBON2",LastSummonerOf(Myself))
+		DestroySelf()
+END
+
+
+IF
+	OnCreation()
+	Range(Player%player_id%,5)
+	LevelGT(LastSummonerOf(Myself),12)
+	LevelLT(LastSummonerOf(Myself),19)
+	CheckStat(Player%player_id%,%player_id%,EXTRAPROFICIENCY20)
+	
+THEN
+	RESPONSE #100
+		ApplySpellRES("RNGBON3",Player%player_id%)
+		ApplySpellRES("RNGBON3",LastSummonerOf(Myself))
+		DestroySelf()
+END
+
+
+IF
+	OnCreation()
+	Range(Player%player_id%,5)
+	LevelGT(LastSummonerOf(Myself),18)
+	LevelLT(LastSummonerOf(Myself),25)
+	CheckStat(Player%player_id%,%player_id%,EXTRAPROFICIENCY20)
+	
+THEN
+	RESPONSE #100
+		ApplySpellRES("RNGBON4",Player%player_id%)
+		ApplySpellRES("RNGBON4",LastSummonerOf(Myself))
+		DestroySelf()
+END
+
+IF
+	OnCreation()
+	Range(Player%player_id%,5)
+	LevelGT(LastSummonerOf(Myself),24)
+	LevelLT(LastSummonerOf(Myself),30)
+	CheckStat(Player%player_id%,%player_id%,EXTRAPROFICIENCY20)
+	
+THEN
+	RESPONSE #100
+		ApplySpellRES("RNGBON5",Player%player_id%)
+		ApplySpellRES("RNGBON5",LastSummonerOf(Myself))
+		DestroySelf()
+END
+
+IF
+	OnCreation()
+	Range(Player%player_id%,5)
+	LevelGT(LastSummonerOf(Myself),29)
+	CheckStat(Player%player_id%,%player_id%,EXTRAPROFICIENCY20)
+	
+THEN
+	RESPONSE #100
+		ApplySpellRES("RNGBON6",Player%player_id%)
+		ApplySpellRES("RNGBON6",LastSummonerOf(Myself))
+		DestroySelf()
+END
+
+IF
+	True()
+	
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
