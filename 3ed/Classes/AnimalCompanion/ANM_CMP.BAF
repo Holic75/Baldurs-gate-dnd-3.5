@@ -7,6 +7,16 @@ THEN
 		Continue()
 END
 
+
+IF
+	OnCreation()
+	LevelGT(LastSummonerOf(Myself),20)
+THEN
+	RESPONSE #100
+		ApplySpellRES("EP_ANM",Myself) // apply epic bonuses
+		Continue()
+END
+
 IF
 	OnCreation()
 	Kit(LastSummonerOf(Myself),BEASTMASTER)
