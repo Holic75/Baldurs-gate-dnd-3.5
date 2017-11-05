@@ -1,5 +1,5 @@
 
-DEFINE_ACTION_FUNCTION ~ADD_SELECT_FEAT~ //activated ability bonus feat
+DEFINE_ACTION_FUNCTION ~ADD_SELECT_FEAT~ 
 	INT_VAR
 		proficiency_id = 0
 		n_stars = 0
@@ -20,7 +20,7 @@ DEFINE_ACTION_FUNCTION ~ADD_SELECT_FEAT~ //activated ability bonus feat
 			SPRINT resource EVALUATE_BUFFER ~%feat%~
 			LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource END
 		END
-		//LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~RMVGVFT~ END
+		
 		
 		SAY_EVALUATED NAME1 ~%game_name%~
 		SAY_EVALUATED UNIDENTIFIED_DESC ~%game_name%

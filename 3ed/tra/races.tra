@@ -1,0 +1,56 @@
+
+@001=~HUMANS: Humans are the predominant race in Faerûn. Humans rule most of the significant empires and kingdoms in the realms. They are the most social and tolerant of races, excepting perhaps the halflings. Humans may advance as any class or multi-class.
+	
+Humans have the following traits:
+– Receive one bonus feat at level 1.
+– +5% to all thieving skills.~
+//---------------------------------------------------------------------------------------------------//
+@002=~ELVES: Elves tend to be shorter and slimmer than humans. Their features are finely chiseled and delicate, and they speak in melodic tones. Elves are looked upon as being frivolous and aloof. They concern themselves with natural beauty, dancing, frolicking, and other similar pursuits. Their humor is clever, as are their songs and poetry. There are six racial divisions of elves within the realms: gold elves, moon elves, wild elves, sea elves, dark elves (drow), and winged elves (avariel).
+
+Elves have the following traits:
+– 90% resistance against charm and sleep magics.
+– Infravision.
+– +1 THAC0 bonus with bows, blades and straight swords weapon categories.
+– -5% Open Locks, +5% Pick Pockets, +5% Move Silently, +10% Hide in Shadows.
+– +2 Dexterity, -2 Constitution.~
+//---------------------------------------------------------------------------------------------------//
+@003=~DWARVES: Dwarves are short and stocky, easily identifiable by their size and shape. They have ruddy cheeks, dark eyes, and dark hair. Dwarves tend to be dour and taciturn. They are given to hard work, and care little for most humor. They enjoy beer, ale, mead, but most of all, they love gold. There are four racial divisions of dwarves within the realms: shield dwarves, gold dwarves, wild dwarves, and duergar.
+
+Dwarves have the following traits:
+– +2 bonus to Saving Throws vs. Paralysis/Poison/Death, vs. Rod/Staff/Wand, and vs. Spell.
+– Infravision.
+– +10% Open Locks, +15% Find Traps, +5% Detect Illusion, +10% Set Traps.
+– +2 Constitution, -2 Charisma.~
+//---------------------------------------------------------------------------------------------------//
+@004=~GNOMES: Kin to dwarves, gnomes are noticeably smaller than their distant cousins. Gnomes, as they proudly maintain, are also less rotund than dwarves. Most have dark tan or brown skin, white hair, and rather large noses. Gnomes have lively and sly senses of humor, especially for practical jokes. They have a love for nature that is only matched by their love for gems and jewelry. There are two racial divisions of gnomes within the realms: rock gnomes and deep gnomes (svirfneblin).
+
+Gnomes have the following traits:
+– +2 bonus to Saving Throws vs. Rod/Staff/Wand and vs. Spell.
+– Infravision.
+– +5% Open Locks, +10% Find Traps, +5% Move Silently, +5% Hide in Shadows, +10% Detect Illusion, +5% Set Traps.
+– +2 Constitution, -2 Strength.
+– Being a small race they receive -1 to weapon damage rolls, +1 to AC and +1 to THAC0.~
+//---------------------------------------------------------------------------------------------------//
+@005=~HALFLINGS: Halflings are short, generally plump people, very much like small humans. Their faces are round and broad, and often quite florid. Their hair is typically curly, and the tops of their feet are covered with coarse hair. Overall they prefer the comforts of home to dangerous adventuring. They enjoy good living, rough humor, and homespun tales. There are three racial divisions of halflings within the realms: the hairfoot, tallfellow, and stout.
+
+Halflings have the following traits:
+– +2 bonus to Saving Throws vs. Paralysis/Poison/Death, vs. Rod/Staff/Wand, and vs. Spell.
+– +1 THAC0 bonus with missile weapons category.
+– +5% Open Locks, +5% Find Traps, +5% Pick Pockets, +10% Move Silently, +15% Hide in Shadows.
+– +2 Dexterity, -2 Strength.
+– Being a small race they receive -1 to weapon damage rolls, +1 to AC and +1 to THAC0.~
+//---------------------------------------------------------------------------------------------------//
+@006=~HALF-ORCS: Half-orcs are born from the union of human and orc parents. They are as tall as humans, but a little heavier due to their muscular builds. Their greenish pigmentation, sloping forehead, jutting jaw, prominent teeth, and coarse body hair make their lineage plain for all to see. In the Sword Coast, half-orcs are tolerated, as unlike in the north the local people haven't had centuries of warfare with orc kind. Half-orcs are known for their great strength.
+
+Half-orcs have the following traits:
+– Infravision.
+– +2 Strength, -2 Intelligence.~
+
+//------------------------------------------------------------------------------------------------
+@007=~HALF-ELVES: Half-elves are a mix of human and elven blood. They are handsome folk, with good features from each of their parent races. A half-elf has the curiosity, inventiveness, and ambition of their human ancestors and the refined senses, love of nature, and artistic tastes of their elven ancestors.
+
+Half-elves have the following traits:
+– 30% resistance against charm and sleep magics.
+– At first level receives +2 bonus to any chosen ability score.
+– Infravision.
+– +10% Pick Pockets, +5% Hide in Shadows.~

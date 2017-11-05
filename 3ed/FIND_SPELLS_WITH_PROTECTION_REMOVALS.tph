@@ -44,7 +44,7 @@ DEFINE_ACTION_FUNCTION ~FIND_SPELLS_WITH_PROTECTION_REMOVALS~
 		
 		
 		FOR (i=0;i<n_global_effect;i=i+1) BEGIN
-			SET current_effects_offset =  effects_block_offset + i*effect_size
+			SET current_effects_offset =  effects_block_offset + (i+global_effects_block_offset)*effect_size
 				READ_SHORT current_effects_offset opcode										
 				PATCH_IF (opcode = 321 OR opcode = 206 OR opcode = 318 OR opcode = 207) AND NOT FOUND BEGIN		
 					FOUND = 1	

@@ -73,7 +73,7 @@ Note: wearing heavy armor may restrict maximum dexterity bonus to AC a character
 – Determines chance to learn a spell by Bards and Mages.  
 – Determines bonus to Lore (+3 per point above 10, -3 per point below 8).  
 – Gives combat bonuses with certain feats, weapons and armors.  
-– Increases all thieving skills (+5% of base value for every point above 10, i.e. if the base value of your skill is 50 and you have 18 INT the effective base value will become 50*(100%+8 x 5%) = 50 x 140% = 70).    
+– Increases all thieving skills (+5% of base value for every point above 10 and -5% for every point below 10, i.e. if the base value of your skill is 50 and you have 18 INT the effective base value will become 50*(100%+8 x 5%) = 50 x 140% = 70).    
 – Increases number of spells per day that can be cast by Mages and Assassins. 
 
 INT\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
@@ -1083,7 +1083,7 @@ CLASS FEATURES:
 – May get up to Greater Weapon Focus (3 stars) in any weapon they can use.   
 – Can cast one spell less per day than trueclass mage.  
 – Cannot cast spells of 8th and 9th levels.  
-– Gets one bonus feat at level 5 and at every 5 levels thereafter.  
+– Gets one bonus feat at level 5 and every 5 levels thereafter.  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.  
 – Can use Spontaneous Battlecasting.  
 ```

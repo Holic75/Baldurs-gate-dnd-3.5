@@ -1,0 +1,96 @@
+
+	@001=~Seeking Sword
+This spell creates a sword in the Cleric's hand that cannot be dropped or unequipped. The sword is enchanted as a +4 weapon and provides a +4 THAC0 bonus, but no damage bonus. It deals 2d4 damage to any target it hits. The weapon increases the Cleric's number of attacks per round by 2 and lasts for 1 round per level. While it is equipped, the wielder cannot cast further spells.~
+//-------------------------------------------------------------------------------------------------------------------------------//
+	@002=~This potent weapon was created by the smiths of ancient Myth Drannor. Moonblades are used in the long process of selecting a ruler for the isle of Evermeet. A moonblade chooses its owner, and in the case of this sword it has chosen the elf, Xan. Only Xan can use this blade; anyone else who tries will find themselves unable to lift it. This particular moonblade gives resistance to fire and a bonus to the user's Armor Class.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Fire Resistance: +50%
+
+THAC0: +3
+Damage: 1d8+3 (slashing)
+Speed Factor: 2
+Proficiency Type: Longsword
+Type: One-handed
+
+Weight: 3~
+//-------------------------------------------------------------------------------------------------------------------------------//
+
+	@003=~Since the age of Netheril, mages have learned to bestow a wide variety of magical properties upon the everyday objects that surround them. A favorite item of such enchantment is the common robe. It is lightweight, affordable, and holds its enchantment well, thereby making it ideal equipment for a mage.
+
+STATISTICS:
+
+Weight: 3~
+
+	@004=~These are a common sight in the Sword Coast region, especially as one travels north toward Neverwinter and Icewind Dale. Many young mages receive it as a gift from their instructors upon successfully completing their first five years of study.
+
+STATISTICS:
+
+Equipped abilities:
+– Cold Resistance: +20%
+
+Weight: 3~
+
+	@005=~Due to the extremely volatile nature of most magics, Mage Robes of Fire Resistance are not uncommon among young acolytes and their wizardly tutors.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +20%
+
+Weight: 3~
+
+	@006=~While seen with less frequency than some other mage robes, those of electrical resistance can hardly be considered a rarity. Some are worn by paranoiacs seeking protection from a ragged mountain storm, but many more are worn by mages seeking to protect themselves from the intrigues of others of their kind.
+
+STATISTICS:
+
+Equipped abilities:
+– Electrical Resistance: +20%
+
+Weight: 3~
+
+	@007=~A favorite among mage/thieves, the Knave's Robe has been enchanted to shield its wearer from the blades and poisons of any darkened alley.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1 vs. slashing attacks
+– Save vs. Death: +1
+
+Weight: 4~
+
+	@08=~This mage robe has been perfected for use by any rambling, itinerant mage that travels from town to town. Its enchantments provide protection from the bandit's arrow and from the jealous mage/thief that lies in ambush with his Stinking Cloud. 
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1 vs. missile attacks
+– Save vs. Breath: +1
+
+Weight: 4~
+
+	@009=~This robe has been specially enchanted to meet the eclectic needs of the adventuring mage. Aside from shielding the wearer from various forms of crushing damage, it also provides protection from the basilisk's petrifying gaze and polymorphing powers of rival mages.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1 vs. crushing attacks
+– Save vs. Petrification/Polymorph: +1
+
+Weight: 4~
+//-------------------------------------------------------//
+	@010=~This amulet can be activated by a simple command word and a touch, with each use acting as one charge. The effect is a duplication of the 1st-level wizard spell Shield. For the duration of the spell, the wearer will receve +4 shield bonus to AC. The wearer also becomes immune to the spell Magic Missile for the duration. This is not cumulative with any modifiers due to shields.
+
+STATISTICS:
+
+Charge abilities:
+– Shield
+  Armor Class: +4 bonus
+  Immunity to Magic Missile
+  Area of Effect: The wearer
+  Duration: 1 hour
+
+Weight: 1~

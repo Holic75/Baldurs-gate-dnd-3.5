@@ -1,0 +1,34 @@
+DEFINE_ACTION_FUNCTION ~ADD_SMITE_EVIL_BASE~
+
+	INT_VAR
+		max_lvl = 30
+	BEGIN
+	
+	//smite evil
+	COPY ~3ed/Classes/Paladin/SmiteEvil/SMTEVL1B.BAM~ ~override~
+	COPY ~3ed/Classes/Paladin/SmiteEvil/SMTEVL1C.BAM~ ~override~
+	COPY ~3ed/Classes/Paladin/SmiteEvil/SMTTH.SPL~ ~override~//cha bonus to hit
+	COPY ~3ed/Classes/Paladin/SmiteEvil/SMTEVL.SPL~ ~override~//main spell smite evil
+
+		WRITE_ASCII 0x003a ~SMTEVL1C~ #8 //spell icon
+		LPF ALTER_SPELL_HEADER STR_VAR icon=~SMTEVL1B~ END //spell header icon
+		FOR (i=12;i<=25;i=i+2)	BEGIN //adding charisma dependent bonus to hit bonus 
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=326 insert_point=0 target=1 parameter1=i parameter2=132 duration=1 STR_VAR resource=~SMTTH~ END
+		END
+			
+	OUTER_FOR (i=1;i<=max_lvl;i=i+1) BEGIN
+		COPY ~3ed/Classes/Paladin/SmiteEvil/SMTDM.SPL~ ~override/SMTDM%i%.SPL~//dmg
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=12  parameter1=i  END	
+	END
+	
+	COPY ~3ed/Classes/Paladin/SmiteEvil/SMTEVLH.EFF~ ~override~//hit effect
+	COPY ~3ed/Classes/Paladin/SmiteEvil/SMTEVLH.SPL~ ~override~//hit effect (spell)
+		FOR (i=1;i<=20;i=i+1) BEGIN
+			LPF ADD_SPELL_HEADER  INT_VAR  type=1 location=4 target=1 target_count=0 range=1 required_level=i speed=0 projectile=0  END
+			SPRINT resource EVALUATE_BUFFER ~SMTDM%i%~
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter2=37 duration=1 STR_VAR resource END //dmg aginst evil creatures
+		END	
+
+	
+	
+	END

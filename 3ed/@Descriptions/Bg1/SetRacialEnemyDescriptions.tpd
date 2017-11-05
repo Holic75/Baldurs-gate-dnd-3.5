@@ -1,0 +1,11 @@
+
+
+
+ACTION_CLEAR_ARRAY descriptions_map
+
+ACTION_DEFINE_ASSOCIATIVE_ARRAY descriptions_map BEGIN
+
+	17256 =>11
+	24317 =>11
+	
+END

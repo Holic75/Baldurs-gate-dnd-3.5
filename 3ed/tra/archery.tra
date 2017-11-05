@@ -1,0 +1,20 @@
+	@001=~Rapid Shot~ 
+	@002=~Rapid Shot
+	
+Character receives one extra attack per round and -2 penalty to THAC0 with ranged weapons (except throwing axes).~
+
+	@003=~Deadly Aim~ 
+	@004=~Deadly Aim
+	
+Character receives +3 on damage rolls and -3 penalty to THAC0 with ranged weapons (except throwing axes).~
+
+	@005=~Hail of Arrows~
+	@006=~Hail of Arrows
+	
+Hail of arrows greatly speeds up archer's ability to strike at foes with ranged weapons. The ability sets archer's number of attacks per round to 10, but <PRO_HISHER> THAC0 and damage suffer a 4 point penalty. The Hail of Arrows lasts for one round. Can be used once every 2 minutes.~
+
+
+	@007=~Greater Hail of Arrows~
+	@008=~Greater Hail of Arrows
+	
+Greater Hail of arrows greatly speeds up archer's ability to strike at foes with ranged weapons. The ability sets archer's number of attacks per round to 10. The Greater Hail of Arrows lasts for one round. Can be used once every 2 minutes.~

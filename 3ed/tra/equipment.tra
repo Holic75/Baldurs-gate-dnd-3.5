@@ -1,0 +1,482 @@
+    //leather armor
+	
+	
+	@1 = ~Leather Armor~
+	@2 = ~Studded Leather Armor~
+	@3 = ~Hide Armor~
+	@4 = ~Chain Mail~
+	@5 = ~Splint Mail~
+	@6 = ~Plate Mail~
+	@7 = ~Full Plate Armor~
+	
+	@8  = ~– Open Locks: -5%
+– Find Traps: -5%
+– Pick Pockets: -20%
+– Move Silently: -10%
+– Hide In Shadows: -10%
+– Spellcasting is not disabled~
+
+	@9  = ~Equipped abilities:~
+	
+	@10 = ~STATISTICS:~
+	
+	@11=~Equipped abilities:
+– Max Dexterity AC Bonus: 5
+– Arcane Spell Casting Failure: 10%~
+	
+    //studded leather
+	@12=~Equipped abilities:
+– Max Dexterity AC Bonus: 4
+– Arcane Spell Casting Failure: 15%
+– Open Locks: -5%
+– Find Traps: -5%
+– Pick Pockets: -5% 
+– Move Silently: -10%
+– Hide In Shadows: -10%~
+
+//hide armor
+	@13=~Equipped abilities:
+– Max Dexterity AC Bonus: 3
+– Arcane Spell Casting Failure: 20%
+– Hide In Shadows: -20%~
+
+//hide armor_rep
+	@131=~– Open Locks: -10%
+– Find Traps: -10%
+– Pick Pockets: -10%
+– Move Silently: -20%
+– Hide In Shadows: -20%~
+
+	@133=~– Open Locks: -10%
+– Find Traps: -10%
+– Pick Pockets: -10%
+– Move Silently: -20%
+– Hide In Shadows: -20%~
+
+	@132=~– Max Dexterity AC Bonus: 3
+– Arcane Spell Casting Failure: 20%
+– Hide In Shadows: -20%
+– Open Locks: -10%
+– Find Traps: -10%
+– Pick Pockets: -10%
+– Move Silently: -20%~
+
+
+//chainmail
+	@14=~Equipped abilities:
+– Max Dexterity AC Bonus: 3
+– Arcane Spell Casting Failure: 20%
+– Open Locks: -20%
+– Find Traps: -20%
+– Pick Pockets: -20% 
+– Move Silently: -30%
+– Hide In Shadows: -30%~
+
+
+//elven chain armor
+	@141=~– Max Dexterity AC Bonus: 4
+– Open Locks: -5%
+– Find Traps: -5%
+– Pick Pockets: -5% 
+– Move Silently: -10%
+– Hide In Shadows: -10%~
+	
+//drizzt mithril armor
+	@142=~Equipped abilities:
+– Max Dexterity AC Bonus: 4
+– Open Locks: -5%
+– Find Traps: -5%
+– Pick Pockets: -5% 
+– Move Silently: -10%
+– Hide In Shadows: -10%~
+
+//split mail
+	@15=~Equipped abilities:
+– Max Dexterity AC Bonus: 2
+– Arcane Spell Casting Failure: 30%
+– Open Locks: -30%
+– Find Traps: -30%
+– Pick Pockets: -30% 
+– Move Silently: -40%
+– Hide In Shadows: -40%~
+
+//plate mail
+	@16=~Equipped abilities:
+– Max Dexterity AC Bonus: 1
+– Arcane Spell Casting Failure: 40%
+– Open Locks: -40%
+– Find Traps: -40%
+– Pick Pockets: -40% 
+– Move Silently: -50%
+– Hide In Shadows: -50%~
+
+//full plate
+	@17=~Equipped abilities:
+– Max Dexterity AC Bonus: 0
+– Arcane Spell Casting Failure: 50%
+– Open Locks: -50%
+– Find Traps: -50%
+– Pick Pockets: -50% 
+– Move Silently: -60%
+– Hide In Shadows: -60%~
+
+
+@18=~– Spellcasting, stealth, and thieving abilities disabled~
+@181=~– Max Dexterity AC Bonus: 0
+– Arcane Spell Casting Failure: 50%
+– Open Locks: -50%
+– Find Traps: -50%
+– Pick Pockets: -50% 
+– Move Silently: -60%
+– Hide In Shadows: -60%~
+
+	@101 = ~– 2 attacks per round~
+	@102 = ~– 3 attacks per round~
+	@103 = ~– Sets attacks per round to 5~
+	
+	@105 = ~– 1.5 attacks per round~
+	@106 = ~– 2.5 attacks per round~
+
+	@108 = ~– Sets attacks per round to 4~
+	
+	@201 =~– Wielder can throw up to five of Zilzanzer's darts in a single round regardless of class~
+	@202 =~– Wielder can throw up to four of Zilzanzer's darts in a single round regardless of class~
+	
+	@301 =~– 3 shots per round~
+	@302 =~– 2 shots per round~
+//-------------------------------------------------------//
+//-------------------------------------------------------//
+//-------------------------------------------------------//
+	@1001 = ~This armor, long in the Corthala bloodline, protects the user against all forms of attacks. The armor is enchanted so that it grants a +3 bonus to Valygar's Armor Class. It also adds a bonus to resisting acid, fire, and magical damage. The armor also makes Valygar immune to charm while he wears it. As it is specially fitted for Valygar, only he may wear it.
+
+STATISTICS:
+
+Equipped abilities:
+– Max Dexterity AC Bonus: 4
+– Arcane Spell Casting Failure: 15%
+– Open Locks: -5%
+– Find Traps: -5%
+– Pick Pockets: -5% 
+– Move Silently: -10%
+– Hide In Shadows: -10%
+– Immunity to charm
+– Fire Resistance: +25%
+– Acid Resistance: +25%
+– Magic Damage Resistance: +25%
+
+Armor Class: 2 (0 vs. slashing, 4 vs. crushing)
+
+Weight: 9~
+
+//-------------------------------------------------------//
+	@1002=~Jansen-Brand Metal-Repellant AdventureWear—(patent pending)
+This strange armor is made of a foreign material, very supple but strong to the touch. Designed by and for Jan Jansen, only he may wear it. The armor does not give any bonuses to the base Armor Class, but it does grant a +25% resistance to all physical damage and an additional +5 bonus to Jan's Armor Class against missile weapons. Jan may also cast spells while wearing this armor. In addition, the armor is stylish.
+
+Note: Dry clean only
+
+STATISTICS:
+
+Equipped abilities: 
+– Physical Damage Resistance: +25%
+
+Armor Class: 9 (4 vs. missile)
+Requires:
+ 4 Strength
+
+Weight: 3~
+
+
+//-------------------------------------------------------------------------------------------------------------------------------//
+	@1003=~Since the age of Netheril, mages have learned to bestow a wide variety of magical properties upon the everyday objects that surround them. A favorite item of such enchantment is the common robe. It is lightweight, affordable, and holds its enchantment well, thereby making it ideal equipment for a mage.
+
+STATISTICS:
+
+Weight: 3~
+//-------------------------------------------------------//
+	@1004=~These are a common sight in the Sword Coast region, especially as one travels north toward Neverwinter and Icewind Dale. Many young mages receive it as a gift from their instructors upon successfully completing their first five years of study.
+
+STATISTICS:
+
+Equipped abilities:
+– Cold Resistance: +20%
+
+Weight: 3~
+//-------------------------------------------------------//
+	@1005=~Due to the extremely volatile nature of most magics, Mage Robes of Fire Resistance are not uncommon among young acolytes and their wizardly tutors.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +20%
+
+Weight: 3~
+//-------------------------------------------------------//
+	@1006=~While seen with less frequency than some other mage robes, those of electrical resistance can hardly be considered a rarity. Some are worn by paranoiacs seeking protection from a ragged mountain storm, but many more are worn by mages seeking to protect themselves from the intrigues of others of their kind.
+
+STATISTICS:
+
+Equipped abilities:
+– Electrical Resistance: +20%
+
+Weight: 3~
+//-------------------------------------------------------//
+	@1007=~A favorite among mage/thieves, the Knave's Robe has been enchanted to shield its wearer from the blades and poisons of any darkened alley.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1 vs. slashing attacks
+– Save vs. Death: +1
+
+Weight: 4~
+//-------------------------------------------------------//
+	@1008=~This mage robe has been perfected for use by any rambling, itinerant mage that travels from town to town. Its enchantments provide protection from the bandit's arrow and from the jealous mage/thief that lies in ambush with his Stinking Cloud. 
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1 vs. missile attacks
+– Save vs. Breath: +1
+
+Weight: 4~
+//-------------------------------------------------------//
+	@1009=~This robe has been specially enchanted to meet the eclectic needs of the adventuring mage. Aside from shielding the wearer from various forms of crushing damage, it also provides protection from the basilisk's petrifying gaze and polymorphing powers of rival mages.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1 vs. crushing attacks
+– Save vs. Petrification/Polymorph: +1
+
+Weight: 4~
+//-------------------------------------------------------//
+	@1010=~This amulet can be activated by a simple command word and a touch, with each use acting as one charge. The effect is a duplication of the 1st-level wizard spell Shield. For the duration of the spell, the wearer will receve +4 shield bonus to AC. The wearer also becomes immune to the spell Magic Missile for the duration. This is not cumulative with any modifiers due to shields.
+
+STATISTICS:
+
+Charge abilities:
+– Shield
+  Armor Class: +4 bonus
+  Immunity to Magic Missile
+  Area of Effect: The wearer
+  Duration: 1 hour
+
+Weight: 1~
+
+//-------------------------------------------------------//
+	@1011=~This potent weapon was created by the smiths of ancient Myth Drannor. Moonblades are used in the long process of selecting a ruler for the isle of Evermeet. A moonblade chooses its owner, and in the case of this sword it has chosen the elf, Xan. Only Xan can use this blade; anyone else who tries will find themselves unable to lift it. This particular moonblade gives resistance to fire and a bonus to the user's Armor Class.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +1
+– Fire Resistance: +50%
+
+THAC0: +3
+Damage: 1d8+3 (slashing)
+Speed Factor: 2
+Proficiency Type: Long Sword
+Type: One-handed
+
+Weight: 3~
+
+
+
+
+
+	@2001=~Strength~
+	@2002=~Protects against critical hits~
+	@2003=~Does not protect against critical hits~
+	@2004=~Mage~
+	
+	@2011=~Dexterity~
+	
+	
+	
+@3001 = ~This burnished red ring is engraved with depictions of flames and lava coils. Mages and other planar travelers use these rings to protect themselves while visiting the Elemental Plane of Fire and to command fire elementals to do their bidding.
+
+STATISTICS:
+
+Equipped abilities:
+– Fire Resistance: +50%
+
+Charge abilities:
+– Charm Fire Elemental once per day (Save vs. Spell at +2 negates)
+  Range: Touch
+  Duration: 45 seconds
+  Area of Effect: 1 fire elemental
+
+– Burning Hands once per day
+  Damage: 1d3+2 fire
+  Range: 15 ft.
+  Area of Effect: 15 ft cone with 90-deg. arc (Save vs. Breath Weapon for half)
+
+– Flame Strike once per day
+  Damage: 6d8 fire (Save vs. Breath Weapon for half)
+  Range: Visual range of the user
+  Area of Effect: 5 ft radius
+
+Weight: 0~
+//-----------------------------------------------------------------
+@3002=~This ostentatious peacock-blue hat is festooned with green and purple feathers. Once the possession of an unfailingly chipper bard, the hat was stolen when the bard couldn't resist showing off the hat in a seedy tavern and bragging about its magical powers. In truth the hat has only moderate enchantments on it, but its stylish appearance makes it a coveted choice for many bards.
+
+STATISTICS:
+
+Equipped abilities:
+– Immunity to silence and deafness
+– +2 Charisma
+
+Weight: 0~
+//-----------------------------------------------------------------------
+@3003 =~Adventurers delving in a tomb centuries ago were set upon by ghosts and spectres when they entered the central crypt. The adventurers fought bravely but, one by one, they fell to the ghosts' attacks. Years later, the daughter of one of the adventurers hired a team to delve into the tomb and recover the bodies. The daughter told her group not to disturb anything but the dead adventurers they had come to collect, and the spirits of the tomb let them be. The woman kept her dead father's circlet as a memento of his bravery.
+
+STATISTICS:
+
+Equipped abilities:
+– Caster Level: +1
+– +2 Charisma
+
+Weight: 1~
+
+//----------------------------------------------------------------------------------------
+@3004=~A silver dragon with sapphire eyes curls around the hilt of this powerful two-handed sword. It is said that a legendary Rashemi warrior was given the sword for demonstrating exceptional valor in battle where he fought side by side with a silver dragon but the details of the tale have been lost to time. 
+
+STATISTICS:
+
+Equipped abilities:
+– While enraged, the chance to score a critical hit is increased by 10% (Berserkers, Barbarians, Skalds and Rashemi warriors only)
+
+Combat abilities:
+– Deals an extra 2d4 points of cold damage and slows the target for 1 round (no save) on a critical hit
+
+THAC0: +3
+Damage: 1d10+3, +1 cold
+Damage Type: Slashing
+Speed Factor: 7
+Proficiency Type: Two-handed Sword
+Type: Two-handed
+Requires:
+ 14 Strength
+
+Weight: 9~
+
+//--------------------------------------------
+@3005 = ~Though the Headband of the Devout had always been associated with Shar's worshippers, its creation remains shrouded in mystery. It appeared in the annals of history suddenly and violently, the distinguishing feature of a Sharran clergy member that had "purified" a temple dedicated to Selûne in Waterdeep. It appeared again several decades later in Purskul as Dark Moon monk usurpers terrorized the local nobles. The true origins of the artifact are unknown to this day.
+
+STATISTICS:
+
+Equipped abilities:
+– Bless
+– Immunity to confusion
+
+Charge abilities:
+– Righteous Magic once per day
+  User receives +10 Hit Points, +2 AC, +15% physical damage reduction, +3 Strength (up to 25), and inflicts maximum damage for each successful hit
+  Duration: 1 turn
+
+Weight: 1~
+
+//---------------------------------------------------
+@3006 =~A thick steel band set with quartz, this tough-looking ring was created and worn by the Cormyrean battle-mage Jasper Silverblood. Jasper was a stocky, gruff man who appeared more like a common laborer than a wizard, and he liked it that way. He used this particular weapon on rowdy, cocky soldiers when he was confident it wouldn't kill them. He went down in history as one of the strictest disciplinarians ever to have command over the Purple Dragons.
+
+STATISTICS:
+
+Charge abilities:
+– Shocking Grasp four times per day
+  Damage: 3d6 electrical
+  Range: Touch
+  Area of Effect: 1 creature
+
+Weight: 0~
+//----------------------------------------------------------
+@3007=~This dark brown cowl is meant to be worn on the head and over the shoulders as a broad hood. It was crafted by the gnomish thief and illusionist Brein Chestnut. Brein used the cowl on his own adventures for several years before his childhood sweetheart convinced him to settle down. He gave the cowl to his nephew, Chirchet, who in turn sold the item for a large stretch of farmland.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Move Silently: +10%
+– Hide In Shadows: +10%
+
+Charge abilities:
+– Blindness once per day (Save vs. Death negates)
+  Range: Visual range of the user
+  Duration: 8 hours
+  Area of Effect: 1 creature
+
+– Color Spray once per day (Save vs. Spell negates if creature has 6 or more HD)
+  Creatures with 10 or fewer HD: Knocked unconscious for 5 rounds
+  Creatures with 11-12 HD: Blinded for 3 rounds
+  Creatures with 13 or more HD: Stunned for 1 round
+  Range: 12 ft.
+  Area of Effect: 29-ft. cone with 90-deg. arc
+
+Weight: 2~
+//------------------------------------------------------------------------
+@3008=~This grim staff, of a most despicable repute, was originally carved from the wood of Dead Man's Tree: an ancient black willow that stood on the outskirts of a forgotten hamlet of the Moonshae's, from which criminals were hung. All manner of bandits, murderers, rapists, and other worthies were left dangling from its knotty limbs; and all to the delight of the gravedigger Mordigan. For Mordigan, a secret practitioner of the necromantic arts, saw ample opportunity in which to ply his trade. Interring the remains of the evil men within close proximity of the tree, Mordigan called upon the dark powers of the negative material to perform a baleful act upon the black willow. It was given a sort of semi-sentience, and the ability to feed upon the remains of those who had so recently swung from its branches. Black roots descended into rotting flesh; and alarmingly enough, the tortured visages of the slain began to appear in the twisted knots of the black willow's bole before its burning. But, to the surprise of the villagers, the potently ensorcelled staff carved by the hands of the evil Mordigan did indeed prove to be their undoing. And thus did the hanged men of Dead Man's Tree have their revenge.
+
+STATISTICS:
+
+Equipped abilities:
+– Charisma: -2
+
+Charge abilities:
+– Animate Dead three times per day
+  Summons 2 skeleton warriors
+  Range: 20 ft.
+  Duration: 8 hours
+
+THAC0: +1
+Damage: 1d6+1 (crushing)
+Speed Factor: 4
+Proficiency Type: Quarterstaff
+Type: Two-handed
+Requires:
+ 5 Strength
+
+Weight: 2~
+
+//----------------------------------------
+@3009=~Often confused with another wand of the same name, the Wand of Armory is used to cast protective spells on the user. Unfortunately for the creator of this Wand of Armory, trolls are persistent creatures.
+
+STATISTICS:
+
+Charge abilities:
+– Shield
+  +4 AC non cumulative with shield AC bonus; immunity to magical missiles
+  Duration: 15 rounds
+  Area of Effect: The user
+
+– Ghost Armor
+  Armor Class set to 3
+  Duration: 7 rounds
+  Area of Effect: The user
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~
+
+//-------------------------------
+@3010=~A trio of wizards worked on this wand using a number of material components they had available to them and more that were relatively easy to acquire. Otterly the Rotund, Mabdek of the Seventh Star, and Yrgon the Moron only crafted the wand so they could sell it. Their long-term goal was the construction of a vast magical research facility based on the designs of the Naturalist Guild in Myth Drannor. Their wand was a greater success than their research facility.
+
+STATISTICS:
+
+Charge abilities:
+– Death Fog
+  Damage: 4 acid in the 1st round, 8 acid in the 2nd round, 16 acid in the 3rd round
+  Special: Movement speed limited to 50% within fog; must save vs. Death or suffer -2 to Strength and Dexterity that round
+  Range: Visual range of the user
+  Duration: 15 rounds
+  Area of Effect: 24-ft. radius
+
+– Acid Storm
+  Damage: 1d4 acid for 3 rounds, 1d6 acid for the next 3 rounds, and 1d8 acid for the remaining rounds (Save vs. Breath for half)
+  Range: Visual range of the user
+  Duration: 30 rounds
+  Area of Effect: 24-ft. radius
+
+Requires:
+ 9 Intelligence
+
+Weight: 1~

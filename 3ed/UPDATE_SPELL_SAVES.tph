@@ -41,7 +41,7 @@ DEFINE_PATCH_FUNCTION ~UPDATE_SPELL_SAVES~
 				
 					READ_BYTE saves_offset saves		//first byte of saves (actually only first 5 bits containing saves data)
 				
-					PATCH_IF (saves BAND original_save) BEGIN					
+					PATCH_IF ((saves BAND original_save) OR (saves == original_save)) BEGIN					
 						WRITE_BYTE saves_offset target_save												
 					END
 					

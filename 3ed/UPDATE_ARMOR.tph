@@ -1,0 +1,116 @@
+DEFINE_PATCH_FUNCTION ~UPDATE_ARMOR~
+	INT_VAR
+		spell_failure = 0		
+		max_dex = 0
+		skill_penalty = 0
+		
+		is_light = 1
+			
+		clear_thief_penalty = 0
+		
+		string_to_replace_ref_match = 0
+		string_to_replace_ref = 0
+		
+	    new_string_to_add_ref = 0
+		keep_old_string = 1
+		
+		update_unid_string = 1
+	BEGIN
+
+		LPF DELETE_EFFECT INT_VAR match_opcode = 145 END //restores spell casting
+		LPF DELETE_EFFECT INT_VAR match_opcode = 144 END //restore thieving skills
+		
+		PATCH_IF (spell_failure) BEGIN
+			SPRINT resource EVALUATE_BUFFER ~ARMSPF%spell_failure%~
+			LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource  END		
+		END
+		
+		PATCH_IF (max_dex) BEGIN
+			SPRINT resource EVALUATE_BUFFER ~ARMDEX%max_dex%~
+			LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0   duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource END
+			
+		END
+		
+		PATCH_IF (skill_penalty) BEGIN
+			SPRINT resource EVALUATE_BUFFER ~ARMSKL%skill_penalty%~
+			LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0   duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource END			
+		END
+		
+		PATCH_IF (NOT is_light) BEGIN
+
+			//disallow combat intuition
+			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~CMBINTBN~ END
+			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~CMBINTBN~ END	
+			//disallow weapon finesse
+			FOR (i=1;i<=25;i=i+2) BEGIN
+				SPRINT resource EVALUATE_BUFFER ~WPFNS%i%~
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource END
+			END
+			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~WPFNSBN~ END
+			//disallow flurry of strikes
+			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~FLRSTKBN~ END
+			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~FLRSTKBN~ END	
+			//disallow elegant strike
+			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~ELTSTKBN~ END
+			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~ELTSTKBN~ END
+			
+			//disallow combat insight
+			FOR (i=2;i<=25;i=i+2) BEGIN
+				SPRINT resource EVALUATE_BUFFER ~INSTK%i%~
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource END
+			END
+			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~INSTKBN~ END	
+			
+		END
+		
+		//add substring with descriptions of properties
+		PATCH_IF (string_to_replace_ref_match) BEGIN
+			SPRINT substring_to_replace_match (AT "string_to_replace_ref_match")
+			
+			SPRINT new_string_to_add (AT "new_string_to_add_ref")
+			SPRINT new_substring EVALUATE_BUFFER ~%new_string_to_add%~
+			
+			READ_STRREF  0x0050 "target_string" 
+			
+			PATCH_IF ((~%target_string%~ STRING_CONTAINS_REGEXP ~%substring_to_replace_match%~) == 0) BEGIN	
+				SPRINT substring_to_replace (AT "string_to_replace_ref_match")	
+			END ELSE BEGIN 
+				SPRINT substring_to_replace (AT "string_to_replace_ref")		
+				SPRINT new_substring EVALUATE_BUFFER ~%substring_to_replace%
+				
+%new_substring%~	
+			END
+			
+			PATCH_IF (update_unid_string) BEGIN
+				LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
+			END
+	
+			SPRINT new_substring EVALUATE_BUFFER ~%new_string_to_add%~
+			READ_STRREF  0x0054 "target_string" 
+			
+			PATCH_IF ((~%target_string%~ STRING_CONTAINS_REGEXP ~%substring_to_replace_match%~) == 0) BEGIN	
+				SPRINT substring_to_replace (AT "string_to_replace_ref_match")		
+			END ELSE BEGIN 
+				SPRINT substring_to_replace (AT "string_to_replace_ref")		
+				SPRINT new_substring EVALUATE_BUFFER ~%substring_to_replace%
+				
+%new_substring%~	
+			END
+	
+			LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END	
+		
+		END
+		
+		
+		PATCH_IF (clear_thief_penalty) BEGIN
+			LPF DELETE_EFFECT INT_VAR match_opcode = 145 END //restores spell casting
+			LPF DELETE_EFFECT INT_VAR match_opcode = 275 END//hide in shadows
+			LPF DELETE_EFFECT INT_VAR match_opcode = 59  END//move silently
+			LPF DELETE_EFFECT INT_VAR match_opcode = 90  END//Open Locks
+			LPF DELETE_EFFECT INT_VAR match_opcode = 91  END//Find Traps
+			LPF DELETE_EFFECT INT_VAR match_opcode = 92  END//PickPockets		
+		END
+		
+    END		
+	
+

@@ -2,10 +2,17 @@ DEFINE_PATCH_FUNCTION ~REPLACE_SUBSTRING~
 	INT_VAR
 		strref_offset=0x0050
 		always_replace=0
+		substring_to_replace_ref = 0
+		new_substring_ref = 0
 	STR_VAR
 		substring_to_replace=~dummy~
 		new_substring=~dummy~
 	BEGIN
+	
+		PATCH_IF (substring_to_replace_ref AND new_substring_ref) BEGIN
+			SPRINT substring_to_replace (AT "substring_to_replace_ref")
+			SPRINT new_substring (AT "new_substring_ref")
+		END
 		READ_LONG  strref_offset erg_strref
 		READ_STRREF strref_offset "string_to_modify"
 		PATCH_IF (((~%string_to_modify%~ STRING_CONTAINS_REGEXP ~%substring_to_replace%~) == 0) 

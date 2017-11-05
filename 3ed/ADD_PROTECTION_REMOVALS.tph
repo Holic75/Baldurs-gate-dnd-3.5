@@ -10,14 +10,26 @@ DEFINE_ACTION_FUNCTION ~ADD_PROTECTION_REMOVALS~
 		OUTER_SPRINT resource EVALUATE_BUFFER ~%new_spell%~
 	    OUTER_SPRINT match_resource EVALUATE_BUFFER ~%original_spell%~
 						
-		COPY ~Removals~ ~Removals~ 							
-			LPF CLONE_EFFECT INT_VAR match_opcode=321 silent=1 STR_VAR match_resource resource END//remove spell
-			LPF CLONE_EFFECT INT_VAR match_opcode=206 silent=1 STR_VAR match_resource resource END//prot from spell
-			LPF CLONE_EFFECT INT_VAR match_opcode=318 silent=1 STR_VAR match_resource resource END//prot from spell					
-			LPF CLONE_EFFECT INT_VAR match_opcode=207 silent=1 STR_VAR match_resource resource END//reflect spell 		
-		BUT_ONLY				
+						
+		ACTION_PHP_EACH SpellsProtRemovals AS Id => FileName BEGIN 
+		
+			OUTER_SET BeginId = Id_0
+			OUTER_SET EndId = Id_1
 
-																				
+			OUTER_FOR (i=BeginId; i<EndId; i = i+1) BEGIN
+			
+				OUTER_SPRINT CurrentResource EVALUATE_BUFFER $SpellProtRemovalsResource("%i%")
+				OUTER_SET EVALUATE_BUFFER match_opcode = $SpellProtRemovalsOpcode("%i%")
+			
+				ACTION_IF (~%CurrentResource%~ STR_EQ ~%original_spell%~) BEGIN
+                  	
+					COPY_EXISTING ~%FileName%~ ~override~
+						LPF CLONE_EFFECT INT_VAR match_opcode STR_VAR match_resource resource END		
+					BUT_ONLY				
+				END
+			END
+
+		END																		
     END		
 	
 

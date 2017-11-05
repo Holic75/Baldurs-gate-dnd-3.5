@@ -1,0 +1,18 @@
+IF
+	NumTimesTalkedTo(0)
+THEN
+	RESPONSE #100
+		MakeGlobal()
+		MoveGlobalObject(Myself,LastSummonerOf(Myself))
+		ApplySpellRES("FE_MRK",LastSummonerOf(Myself))
+		Dialogue(LastSummonerOf(Myself))
+		
+END
+
+IF
+	NumTimesTalkedToGT(0)
+THEN
+	RESPONSE #100
+        ApplySpellRES("FE_RMV",LastSummonerOf(Myself))
+		DestroySelf()
+END

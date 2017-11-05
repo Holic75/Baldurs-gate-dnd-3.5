@@ -2,6 +2,7 @@
 DEFINE_ACTION_FUNCTION ~ADD_LUA_FEAT~ //activated ability bonus feat
 	INT_VAR
 		n_uses=1
+		copy_icons = 1
 	STR_VAR
 		ability_name=~dummy~
 		game_name=~~
@@ -10,18 +11,20 @@ DEFINE_ACTION_FUNCTION ~ADD_LUA_FEAT~ //activated ability bonus feat
 		COPY ~3ed/Feats/LimitedUseAbilities/%ability_name%~  ~override~
 		
 		COPY_EXISTING ~%ability_name%.SPL~  ~override~
-		SPRINT icon EVALUATE_BUFFER ~%ability_name%1B~
-		LPF ALTER_SPELL_HEADER STR_VAR icon END //spell header icon
-		WRITE_EVALUATED_ASCII 0x003a ~%ability_name%1C~ #8 //spell icon
-		SAY_EVALUATED NAME1 ~%game_name%~
-		SAY_EVALUATED UNIDENTIFIED_DESC ~%game_description%~
+			PATCH_IF (copy_icons = 1) BEGIN
+				SPRINT icon EVALUATE_BUFFER ~%ability_name%1B~
+				LPF ALTER_SPELL_HEADER STR_VAR icon END //spell header icon
+				WRITE_EVALUATED_ASCII 0x003a ~%ability_name%1C~ #8 //spell icon
+			END
+			SAY_EVALUATED NAME1 ~%game_name%~
+			SAY_EVALUATED UNIDENTIFIED_DESC ~%game_description%~
 		
 		//feat
 		COPY ~3ed/Feats/LimitedUseAbilities/Template/LUAFT.SPL~  ~override/%ability_name%FT.SPL~
-		//give n_uses of ability
-		SPRINT resource EVALUATE_BUFFER ~%ability_name%~
-		FOR (i=1;i<=n_uses;i=i+1) BEGIN
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=2 timing=9 duration=1 STR_VAR resource END
-		END
+			//give n_uses of ability
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%~
+			FOR (i=1;i<=n_uses;i=i+1) BEGIN
+				LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=2 timing=9 duration=1 STR_VAR resource END
+			END
 			
 	END

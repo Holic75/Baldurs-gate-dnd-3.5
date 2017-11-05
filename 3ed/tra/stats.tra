@@ -1,0 +1,73 @@
+//-----------------------------------------------------------------------------------
+@001=~CHARISMA: Charisma measures a character's persuasiveness, personal magnetism, and ability to lead. This ability has the following effects:
+
+– Increases number of Channel Energy uses per day for Paladins and Clerics (+1 per 2 points above 10).
+– Improves all Paladin and Jester savingthrows (+1 per 2 points above 9 and -1 per 2 points below 10).
+– Increases number of Lay On Hands uses per day for Paladin or Absorb Health uses per day for Blackguards (+1 per 2 points above 12).
+– Increases number of spells per day that can be cast by Bards, Sorcereres and Shamans.
+– Influences reaction of people on your character and prices in stores.
+– Increases Saving Throw penalties for Bard, Sorcerer and Shaman spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).
+
+Minimum: <MINIMUM>
+Maximum: <MAXIMUM>~
+//---------------------------------------------------------------------------------------------------//
+@002=~INTELLIGENCE: Intelligence measures a character's memory, cunning, reasoning, and learning ability. This ability has the following effects:
+
+– Determines the maximum level of spell that can be cast by Bards and Mages.
+– Determines number of spells per level that can be learned by Bards and Mages.
+– Determines chance to learn a spell by Bards and Mages.
+– Determines bonus to Lore.
+– Gives combat bonuses with certain feats, weapons and armors.
+– Increases all thieving skills (+5% of base value for every point above 10 and -5% for every point below 10).
+– Increases number of spells per day that can be cast by Mages.
+– Increases Saving Throw penalties for Wizard spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).
+
+Note: A character with an Intelligence score of 8 or less is illiterate and cannot use scrolls or most wands regardless of <PRO_HISHER> class.
+
+Minimum: <MINIMUM>
+Maximum: <MAXIMUM>~
+//-------------------------
+
+@003=~WISDOM: Wisdom measures a character's enlightenment, judgment, and common sense. This ability has the following effects:
+
+– Increases AC bonus of Monk and Kensai (+1 per 2 points above 10).
+– Increases number of spells per day that can be cast by Clerics, Paladins, Druids and Rangers.	
+– Improves Saving Throws vs. Spells (+1 per 2 points above 9, -1 per 2 points below 10).
+– Increases Saving Throw penalties for Cleric, Druid, Paladin and Ranger spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).
+
+Minimum: <MINIMUM>
+Maximum: <MAXIMUM>~
+//---------------------------------------------------------------------------------------------------//
+@004=~DEXTERITY: Dexterity measures a character's hand-eye coordination, agility, reflexes, and balance. This ability has the following effects:
+	
+– Determines to hit bonus with ranged weapons (+1 per 2 points above 9, -1 per 2 points below 8).
+– Determines AC bonus (+1 per 2 points above 10, -1 per 2 points below 9).
+– Gives combat bonuses with certain feats, weapons and armors.
+– Determines bonus to all base thieving skill values, except detect illusions (+2.5% per point above 10, -2.5% per point below 8).
+– Improves Saving Throws vs. Rod/Staff/Wand and vs. Breath Weapon (+1 per 2 points above 9, -1 per 2 points below 10).
+
+Note: wearing heavy armor may restrict maximum dexterity bonus to AC a character can have.
+
+Minimum: <MINIMUM>
+Maximum: <MAXIMUM>~
+//---------------------------------------------------------------------------------------------------//
+@005=~CONSTITUTION: Constitution measures a character's fitness, health, and physical resistance to hardship, injury, and disease. This ability has the following effects:
+	
+– Determines bonus HP that characters receives per level (+1 per 2 points above 10).
+– For values greater than 19 gives slow HP regenearion over time.
+– Improves Saving Throws vs. Paralysis/Poison/Death and vs. Petrification/Polymorph (+1 per 2 points above 9, -1 per 2 points below 10).
+
+Minimum: <MINIMUM>
+Maximum: <MAXIMUM>~
+//---------------------------------------------------------------------------------------------------//
+@006=~STRENGTH: Strength measures a character's muscle, endurance, and stamina.This ability has the following effects:
+	
+– Determines to hit bonus with melee weapons (+1 per 2 points above 9, -1 per 2 points below 8).
+– Determines damage bonus with melee weapons (+1 per 2 points above 10, -1 per 2 points below 9).
+– Determines chance to force open the lock.
+– Determines Weight Allowance.
+
+Note: two-handed weapons receive 1.5 damage bonus from STRENGTH.
+
+Minimum: <MINIMUM>
+Maximum: <MAXIMUM>~

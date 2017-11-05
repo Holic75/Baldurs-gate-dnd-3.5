@@ -1,0 +1,36 @@
+DEFINE_ACTION_FUNCTION ~UPDATE_KENSAICRE_DLG~
+	INT_VAR
+		proficiency_id=0
+
+	STR_VAR
+		sftcre_name=~~  //dialog file name
+		tree_name=~~  
+		tree_desc=~~     
+		
+	BEGIN
+	
+
+					
+		//dialog for selecting signature weapon category		
+		OUTER_SPRINT condition_str EVALUATE_BUFFER
+~~~~~ IF ~~  THEN REPLY ~%tree_name%~ GOTO %proficiency_id%
+|condition_str|~~~~~
+
+		OUTER_SPRINT give_feat_str EVALUATE_BUFFER
+			
+~~~~~IF ~~ THEN BEGIN %proficiency_id%
+	SAY ~%tree_name%. %tree_desc%~
+	IF ~True()~ REPLY #%kensai_yes_response% DO ~ApplySpellRES("KNSFT%proficiency_id%",LastSummonerOf(Myself))~  EXIT
+	IF ~True()~ REPLY #%kensai_no_response% GOTO 1
+END	
+
+|give_feat_str|~~~~~
+
+		COPY_EXISTING ~kenscre.d~  ~override/kenscre.d~  									
+			EVALUATE_BUFFER	
+			REPLACE_TEXTUALLY ~|~ ~%~	
+			
+			
+    END		
+	
+

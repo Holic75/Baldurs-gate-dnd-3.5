@@ -1,10 +1,25 @@
 IF
-	CheckStatGT(%object%,0,XP)
-	CheckStat(%object%,0,LEVEL)
+	NumInPartyGT(%party_size%)
+    CheckStatGT(%object%,%xp1%,XP)
+    CheckStat(%object%,%lvl%,LEVEL)
+	CheckStat(%object%,0,LEVEL2)
 THEN
 	RESPONSE #100
-		ApplySpellRES("SETXP0",%object%)
+		ApplySpellRES("SETXP1%lvl%",%object%)
 		Continue()
 END
 
-%lvlup_block%
+
+IF
+    NumInPartyGT(%party_size%)
+	CheckStatGT(%object%,%xp2%,XP)
+    CheckStat(%object%,%lvl%,LEVEL)
+	!CheckStat(%object%,0,LEVEL2)
+THEN
+	RESPONSE #100
+		ApplySpellRES("SETXP2%lvl%",%object%)
+		Continue()
+END
+
+
+

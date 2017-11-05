@@ -1,0 +1,162 @@
+DEFINE_PATCH_FUNCTION ~ALTER_CREATURE~
+	INT_VAR
+		Xp = 666666
+		Power = 666666
+		MaxHp = 666666
+		Gold = 666666
+		CurrentHp = 666666
+		AcNatural = 666666
+		AcEffective = 666666
+		AcMissile = 666666
+		AcCrushing = 666666
+		AcMissile = 666666
+		AcPiercing = 666666
+		AcSlashing = 666666
+		THAC0 = 6666666
+		APR = 666666
+		SaveDeath = 666666
+		SaveWands = 666666
+		SavePoly = 666666
+		SaveBreath = 666666
+		SaveSpell = 666666
+		ResistFire = 666666
+		ResistCold = 666666
+		ResistMagicFire = 666666
+		ResistMagicCold = 666666
+		ResistElectricity = 666666
+		ResistAcid = 666666
+		ResistMagic = 666666
+		ResistSlashing = 666666
+		ResistCrushing = 666666
+		ResistPiercing = 666666
+		ResistMissile = 666666
+		Strength = 666666
+		Dexterity = 666666
+		Constitution = 666666
+		Charisma = 666666
+		Intelligence = 666666
+		Wisdom = 666666
+		Lore = 666666
+		DetectIllusion = 666666
+		PickPockets = 666666
+		Lockpick = 666666
+		SetTraps = 666666
+		FindTraps = 666666
+		HideInShadows = 666666
+		MoveSilently = 666666
+		Lore = 666666
+		LongName = 666666
+		Tooltip = 666666
+		Level1 = 666666
+		Level2 = 666666
+
+	
+  
+	STR_VAR
+        ScriptOverride = ~---~
+		ScriptClass = ~---~
+		ScriptRace  = ~---~
+		ScriptGeneral = ~---~
+		ScriptDefault = ~---~
+		
+	BEGIN
+
+		CLEAR_ARRAY FileFields1
+		CLEAR_ARRAY FileFields1
+		CLEAR_ARRAY FileFields4
+		CLEAR_ARRAY FileFields8
+
+
+		DEFINE_ASSOCIATIVE_ARRAY FileFields1 BEGIN
+			0x0045 	=> 	~%HideInShadows%~
+			0x0052 	=> 	~%THAC0%~
+			0x0053 	=> 	~%APR%~
+			0x0054 	=> 	~%SaveDeath%~
+			0x0055 	=> 	~%SaveWands%~
+			0x0056 	=> 	~%SavePoly%~
+			0x0057 	=> 	~%SaveBreath%~
+			0x0058 	=> 	~%SaveSpell%~
+			0x0059 	=> 	~%ResistFire%~
+			0x005a 	=> 	~%ResistCold%~
+			0x005b 	=> 	~%ResistElectricity%~
+			0x005c 	=> 	~%ResistAcid%~
+			0x005d 	=> 	~%ResistMagic%~
+			0x005e 	=> 	~%ResistMagicFire%~
+			0x005f 	=> 	~%ResistMagicCold%~
+			0x0060 	=> 	~%ResistSlashing%~
+			0x0061 	=> 	~%ResistCrushing%~
+			0x0062 	=> 	~%ResistPiercing%~
+			0x0063 	=> 	~%ResistMissile%~
+			0x0064 	=> 	~%DetectIllusion%~
+			0x0065 	=> 	~%SetTraps%~
+			0x0066 	=> 	~%PickPockets%~
+			0x0067 	=> 	~%Lockpick%~
+			0x0068 	=> 	~%MoveSilently%~
+			0x0069 	=> 	~%FindTraps%~
+			0x006a 	=> 	~%PickPockets%~
+			0x0238 	=> 	~%Strength%~ 
+			0x023a 	=> 	~%Intelligence%~
+			0x023b 	=> 	~%Wisdom%~
+			0x023c 	=> 	~%Dexterity%~ 
+			0x023d 	=> 	~%Constitution%~
+			0x023e 	=> 	~%Charisma%~
+			0x0234  =>  ~%Level1%~
+			0x0235  =>  ~%Level2%~
+		END
+		
+		DEFINE_ASSOCIATIVE_ARRAY FileFields2 BEGIN
+			0x0024 	=> 	~%CurrentHp%~
+			0x0026 	=> 	~%MaxHp%~
+			0x0046 	=> ~%AcNatural%~
+			0x0048 	=> ~%AcEffective%~
+			0x004a 	=> ~%AcCrushing%~
+			0x004c 	=> ~%AcMissile%~
+			0x004e 	=> ~%AcPiercing%~
+			0x0050 	=> ~%AcSlashing%~		
+		END
+		
+		
+		DEFINE_ASSOCIATIVE_ARRAY FileFields8 BEGIN
+			0x0248 	=>	~%ScriptOverride%~
+			0x0250 	=>	~%ScriptClass%~
+			0x0258 	=>	~%ScriptRace%~
+			0x0260 	=>	~%ScriptGeneral%~
+			0x0268 	=>	~%ScriptDefault%~
+		END
+		
+		DEFINE_ASSOCIATIVE_ARRAY FileFields4 BEGIN
+			0x0008 	=> 	~%LongName%~
+			0x000c 	=> ~%Tooltip%~
+			0x0014 	=> 	~%Xp%~
+			0x0018 	=> 	~%Power%~
+			0x001c 	=> 	~%Gold%~
+		END
+
+		PHP_EACH FileFields1 AS Offset => Val  BEGIN					 
+			PATCH_IF (Val!=666666) BEGIN
+				WRITE_BYTE Offset Val										
+			END
+		END
+		
+		PHP_EACH FileFields2 AS Offset => Val  BEGIN					 
+			PATCH_IF (Val!=666666) BEGIN
+				WRITE_SHORT Offset Val										
+			END
+		END
+		
+		PHP_EACH FileFields4 AS Offset => Val  BEGIN					 
+			PATCH_IF (Val!=666666) BEGIN
+				WRITE_LONG Offset Val										
+			END
+		END
+	
+		PHP_EACH FileFields8 AS Offset => Val  BEGIN					 
+			PATCH_IF (NOT(~%Val%~ STRING_EQUAL ~---~)) BEGIN
+				WRITE_EVALUATED_ASCII Offset ~%Val%~ #8										
+			END
+		END
+
+			
+    END		
+	
+

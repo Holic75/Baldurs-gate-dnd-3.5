@@ -1,0 +1,46 @@
+2DA              V1.0
+*
+                 ROWNAME          LOWER            MIXED            HELP             ABILITIES        PROFICIENCY      UNUSABLE         CLASS            KITIDS
+0                RESERVE          *                *                *                *                *                *                *                *
+1                BERSERKER        37093            37095            37094            CLABFI02         29               0x00000001       2                0x00004001
+2                WIZARD_SLAYER    37096            37098            37097            CLABFI03         30               0x00000002       2                0x00004002
+3                KENSAI           37099            37101            37100            CLABFI04         31               0x00000004       2                0x00004003
+4                CAVALIER         37132            37134            37133            CLABPA02         32               0x00000008       6                0x00004004
+5                INQUISITOR       37136            37138            37137            CLABPA03         33               0x00000010       6                0x00004005
+6                UNDEAD_HUNTER    37140            37142            37141            CLABPA04         34               0x00000020       6                0x00004006
+7                FERALAN          37110            37112            37111            CLABRN02         35               0x00008000       12               0x00004007
+8                STALKER          37113            37115            37114            CLABRN03         36               0x00010000       12               0x00004008
+9                BEASTMASTER      37116            37118            37117            CLABRN04         37               0x00020000       12               0x00004009
+10               ASSASIN          37223            37225            37224            CLABTH02         38               0x00040000       4                0x0000400A
+11               BOUNTY_HUNTER    37226            37228            37227            CLABTH03         39               0x00080000       4                0x0000400B
+12               SWASHBUCKLER     37229            37231            37230            CLABTH04         40               0x00100000       4                0x0000400C
+13               BLADE            37239            37241            37240            CLABBA02         41               0x00200000       5                0x0000400D
+14               JESTER           37242            37244            37243            CLABBA03         42               0x00400000       5                0x0000400E
+15               SKALD            37245            37247            37246            CLABBA04         43               0x00800000       5                0x0000400F
+16               TOTEMIC_DRUID    37179            37181            37180            CLABDR02         44               0x08000000       11               0x00004010
+17               SHAPESHIFTER     37182            37184            37183            CLABDR03         45               0x10000000       11               0x00004011
+18               BEAST_FRIEND     37185            37187            37186            CLABDR04         46               0x20000000       11               0x00004012
+19               TALOS            37162            37164            37163            CLABPR02         47               0x01000000       3                0x00004013
+20               HELM             37165            37167            37166            CLABPR03         48               0x02000000       3                0x00004014
+21               LATHANDER        37168            37170            37169            CLABPR04         49               0x04000000       3                0x00004015
+22               ABJURER          37192            37194            37193            CLABMA02         21               0x00000040       1                0x00000040
+23               CONJURER         37195            37197            37196            CLABMA06         22               0x00000080       1                0x00004080
+24               DIVINER          37198            37200            37199            CLABMA05         23               0x00000100       1                0x00000100
+25               ENCHANTER        37201            37203            37202            CLABMA09         24               0x00000200       1                0x00000200
+26               ILLUSIONIST      37204            37206            37205            CLABMA08         25               0x00000400       1                0x00000400
+27               INVOKER          37207            37209            37208            CLABMA07         26               0x00000800       1                0x00000800
+28               NECROMANCER      37210            37212            37211            CLABMA03         27               0x00001000       1                0x00001000
+29               TRANSMUTER       37213            37215            37214            CLABMA04         28               0x00002000       1                0x00002000
+30               WILDMAGE         37216            37218            37217            CLABMA01         52               0x80000000       1                0x80000000
+31               BARBARIAN        37265            37267            37266            CLABFI05         51               0x40000000       2                0x40000000
+32               Blackguard       37144            37146            37145            CLABPA06         53               0x00004000       6                0x00004020
+33               SHADOWDANCER     37232            37234            37233            CLABTH05         54               0x00004000       4                0x00004021
+34               DWARVEN_DEFENDER 37102            37104            37103            CLABFI06         55               0x00004000       2                0x00004022
+35               DRAGON_DISCIPLE  37252            37254            37253            CLABSO01         56               0x00004000       19               0x00004023
+36               DARK_MOON        37259            37261            37260            CLABMO02         57               0x00004000       20               0x00004024
+37               SUN_SOUL         37262            37264            37263            CLABMO03         58               0x00004000       20               0x00004025
+38               LATHANDER_X      37168            37170            37169            CLABPR04         49               0x04000000       3                0x00004015
+39               GRIZZLY_BEAR     37307            37307            37308            CLABBEAR         59               0xFFFFFFFF       2
+40               OHTYR            40681            40681            40682            OHTYR            60               0x00004000       3                0x00004028
+41               OHTEMPUS         40774            40775            40776            OHTEMPUS         61               0x00004000       3                0x00004029
+42               THIEF_BASE       37219            37221             37220           CLABTH01         62               0x00004000       4                0x0000402A

@@ -1,0 +1,13 @@
+	@001=~Channel Positive Energy~
+	@002=~Channel Positive Energy
+
+Priest creates a burst of positive energy that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
+All allied living creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
+All hostile undead creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.~
+//-----------------------------------------------------------------------------------
+	@003=~Channel Negative Energy~	
+	@004=~Channel Negative Energy
+
+Priest creates a burst of negative energy that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
+All allied undead creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
+All hostile living creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.~

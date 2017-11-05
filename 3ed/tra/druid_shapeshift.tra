@@ -1,0 +1,176 @@
+
+	@001=~Shapeshift: Wild shape~
+	@002=~Shapeshift: Wild shape
+
+At 5th level druid gains ability to shapeshift into one of the following forms:
+
+Black Bear:
+	Strength: 16
+	Dexterity: 12
+	Constitution :18
+	Base Armor Class: 7
+	Number of Attacks 3
+	Attack Damage: 1d4+1 (piercing), strikes as +1 weapon
+	
+Brown Bear:
+	Strength: 18
+	Dexterity: 12
+	Constitution :16
+	Base Armor Class: 7
+	Number of Attacks 3
+	Attack Damage: 1d6 (piercing), strikes as +1 weapon	
+
+Wolf:
+	Strength: 15
+	Dexterity: 18
+	Constitution: 14
+	Base Armor Class: 6
+	Number of Attacks: 2
+	Attack Damage: 1d8 (piercing), strikes as +1 weapon
+	Special Abilities:
+		– Cold Resistance: 100%
+		– Electrical Resistance: 50%
+		– Magic Cold Resistance: 100%
+		
+Starting from level 8 <PRO_HESHE> can alternatively shapeshift into the following forms:
+
+Fire Salamander:
+	Strength: 18 
+	Dexterity: 19
+	Constitution: 15
+	Base Armor Class: 2 
+	Number of Attacks: same as druid 
+	Attack Damage: 1d6 + 1d8 (piercing), strikes as +3 weapon
+	Special Abilities: 
+		– THAC0: +1
+		– Fire Resistance: 50%
+		– Breathe Fireball three times per day (2d6 fire damage to target)
+	
+Baby Wyvern:
+	Strength: 16
+	Dexterity: 17
+	Constitution: 16
+	Base Armor Class: 3
+	Number of Attacks: 1
+	Attack Damage: 2d8 (crushing) + 1d6 (piercing), on hit it causes 1 poison damage/second for 6 seconds (Save vs. Poison to avoid)
+	Hits as though using a +2 weapon
+	Special Abilities:
+		– Immunity to hold, paralysis, slow, level drain, web, entangle, and grease
+		
+		
+Sword Spider:
+	Strength: 16
+	Dexterity: 16
+	Constitution: 10
+	Base Armor Class: 3
+	Number of Attacks: 4
+	Attack Damage: 1d4 (piercing), strikes as +1 weapon
+	Special Abilities:
+		– Immunity to web
+		
+Starting from level 16 Druid can alternatively shapeshift into large elemental forms:
+
+Large Fire Elemental:
+	Strength: 14
+	Dexterity: 21
+	Constitution: 16
+	Base Armor Class: 6
+	Number of Attacks: 2
+	Attack Damage: 2d6 (crushing) + 2d6 fire, strikes as +4 weapon
+	Special Abilities:
+		– Immunity to weapons below +3
+		– Weapon Finesse
+		– Fire Resistance: 100%
+		– Cold Resistance: -50%
+		– Physical Resistance: 25%
+		
+Large Earth Elemental:
+	Strength: 21
+	Dexterity: 8
+	Constitution: 19
+	Base Armor Class: 0
+	Number of Attacks: 2
+	Attack Damage: 2d10 (crushing), strikes as +4 weapon
+	Special Abilities:
+		– Immunity to weapons below +3
+		– Physical Resistance: 50%
+		
+Finally, at level 20  <PRO_HESHE>	can take forms of greater elementals instead:
+
+Greater Fire Elemental:
+	Strength: 18
+	Dexterity: 25
+	Constitution: 18
+	Base Armor Class: 6
+	Number of Attacks: 2
+	Attack Damage: 2d8 (crushing) + 2d8 fire, strikes as +4 weapon
+	Special Abilities:
+		– Immunity to weapons below +3
+		– Weapon Finesse
+		– Fire Resistance: 100%
+		– Cold Resistance: -50%
+		– Physical Resistance: 25%
+		
+Greater Earth Elemental:
+	Strength: 25
+	Dexterity: 8
+	Constitution: 21
+	Base Armor Class: 0
+	Number of Attacks: 2
+	Attack Damage: 2d12 (crushing), strikes as +4 weapon
+	Special Abilities:
+		– Immunity to weapons below +3
+		– Physical Resistance: 50%~
+		
+		
+//-------------------------------------------------------------------------------------------------------------------------------//
+	@003=~Shapeshift: Werewolf~
+	@004=~Shapeshift: Werewolf
+	
+Shapeshifter turns <PRO_HIMHER>self into a Werewolf:
+	
+Werewolf:
+	Strength: 19 
+	Dexterity: 16
+	Constitution: 15
+	Base Armor Class: 1
+	Number of Attacks: 2
+	Attack Damage: 1d6 (piercing), strikes as +2 weapon
+	Special Abilities:
+		– Magic Resistance: 20%
+
+Starting from level 15 <PRO_HESHE> can shapechange into Greater Werewolf instead.
+
+Greater Werewolf:
+	Strength: 21
+	Dexterity: 20
+	Constitution: 25
+	Base Armor Class: -6
+	Number of Attacks: 3 
+	Attack Damage: 2d8 (slashing), strikes as +4 weapon
+	Special Abilities:
+		– Immune to all non magical weapons
+		– Fire Resistance: 50%
+		– Cold Resistance: 50%
+		– Electricity Resistance: 50%
+		– Acid Resistance: 50%
+		– Magic Resistance: 40%
+		– Regenerates 1 Hit Point per second~
+//-------------------------------------------------------------------------
+	@005 = ~Large Fire Elemental Form~
+	@006 = ~Large Earth Elemental Form~
+	@007 = ~Greater Fire Elemental Form~
+	@008 = ~Greater Earth Elemental Form~
+	@009 = ~Black Bear Shape~
+	@010 = ~Brown Bear Shape~
+	@011 = ~Wolf Shape~
+	@012 = ~Fire Salamander Shape~
+	@013 = ~Baby Wyvern Shape~
+	@014 = ~Sword Spider Shape~
+	@015 = ~Return to Natural Form~
+	@016 = ~Return to Natural Form
+
+This ability causes the character to return to its natural shape and ends the shapeshift effect.~
+	@017 = ~Attack~
+	
+	

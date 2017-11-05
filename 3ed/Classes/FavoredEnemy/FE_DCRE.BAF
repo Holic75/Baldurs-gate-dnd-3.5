@@ -1,0 +1,20 @@
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		MakeGlobal()
+		MoveGlobalObject(Myself,LastSummonerOf(Myself))
+        SmallWait(5)
+        Continue()
+END
+
+
+%detect_str%
+
+IF
+	True()
+THEN
+	RESPONSE #100
+        ApplySpellRES("FE_RMV",LastSummonerOf(Myself))
+		DestroySelf()
+END

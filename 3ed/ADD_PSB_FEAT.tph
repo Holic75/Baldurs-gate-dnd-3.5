@@ -9,17 +9,50 @@ DEFINE_ACTION_FUNCTION ~ADD_PSB_FEAT~ //ability bonus feat
 		ability_name=~dummy~
 
 	BEGIN
-		COPY ~3ed/Feats/PersistentAbilities/StatBonus/%ability_name%/%ability_name%.SPL~  ~override\%ability_name%.spl~
-		COPY ~3ed/Feats/PersistentAbilities/StatBonus/Template/PSBBN.SPL~ ~override\%ability_name%BN.spl~
-		SPRINT resource EVALUATE_BUFFER ~%ability_name%~
-		LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 STR_VAR resource END //remove effect
-		FOR (i=min_val;i<=max_val;i=i+step) BEGIN			
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 duration=1  parameter1=i parameter2=par1 STR_VAR resource END 	 //DEX>=i	
+	
+		//add bonuses
+		OUTER_FOR (i=min_val;i<=max_val;i=i+step) BEGIN
+		
+			COPY ~3ed/Feats/PersistentAbilities/StatBonus/%ability_name%/%ability_name%.SPL~  ~override\%ability_name%%i%.spl~
+				LPF ALTER_SPELL_EFFECT INT_VAR timing = 9 END
+				SPRINT resource EVALUATE_BUFFER ~%ability_name%%i%~
+				LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 timing=9 duration=1 parameter1=0 parameter2=0 STR_VAR resource END //add protection from itself										
 		END
-		SPRINT resource EVALUATE_BUFFER ~%ability_name%BN~
+		
+		//apply removals in reverse order
+		COPY ~3ed/Feats/PersistentAbilities/StatBonus/Template/PSBBN.SPL~ ~override\%ability_name%RM.spl~
+		FOR (i=min_val;i<=max_val;i=i+step) BEGIN
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%%i%~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 timing=0 duration=1 insert_point = 0 STR_VAR resource END //remove effects
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%RM~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=318 target=2 timing=0 duration=0 parameter1=i parameter2=par1 insert_point = 0 STR_VAR resource END //add protection from itself if stat>=						
+		END		
+		
+		
+		
+		COPY ~3ed/Feats/PersistentAbilities/StatBonus/Template/PSBBN.SPL~ ~override\%ability_name%BN.spl~
+		
+		FOR (i=min_val;i<=max_val;i=i+step) BEGIN		
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%%i%~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 duration=1  parameter1=i parameter2=par1 STR_VAR resource END 	 //abi>=i	
+		END
+		
+		
+		OUTER_SPRINT resource EVALUATE_BUFFER ~%ability_name%BN~
 		COPY ~3ed/Feats/PersistentAbilities/StatBonus/Template/PSBBN.EFF~ ~override\%ability_name%BN.EFF~
 		WRITE_EVALUATED_ASCII 0x0030 ~%resource%~ #8
+		
+		OUTER_SPRINT resource EVALUATE_BUFFER ~%ability_name%RM~
+		COPY ~3ed/Feats/PersistentAbilities/StatBonus/Template/PSBBN.EFF~ ~override\%ability_name%RM.EFF~
+		WRITE_EVALUATED_ASCII 0x0030 ~%resource%~ #8
+		
 		COPY ~3ed/Feats/PersistentAbilities/StatBonus/Template/PSBFT.SPL~ ~override\%ability_name%FT.SPL~
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326  STR_VAR resource END // initial effect application
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=272  STR_VAR resource END //apply every n seconds		
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%BN~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=326  target = 2 timing = 0 duration = 1 STR_VAR resource END // initial bonus application
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=272  target = 2 parameter1 = 1 parameter2 = 3 timing = 9 duration = 1 STR_VAR resource END //apply bonus every n seconds	
+			
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%RM~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=272  target = 2 parameter1 = 1 parameter2 = 3 timing = 9 duration = 1 STR_VAR resource END //check removing every n seconds	
+	
+
 	END

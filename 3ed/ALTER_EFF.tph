@@ -1,0 +1,80 @@
+DEFINE_PATCH_FUNCTION ~ALTER_EFF~
+	INT_VAR
+	  
+	  opcode = ~666666666~// to the value the of the new effect’s opcode.
+      target = ~666666666~//to the new effect’s target.
+      power  = ~666666666~//to the new effect’s power.
+      parameter1 =~666666666~ //to the new effect’s parameter1.
+      parameter2 =~666666666~ //to the new effect’s parameter2.
+      timing = ~666666666~ //to the new effect’s timing mode.
+      resist_dispel =~666666666~ //to the new effect’s resist/dispel setting.
+      duration = ~666666666~ //to the new effect’s duration.
+      probability1 = ~666666666~ //to the new effect’s probability1 (the upper bound).
+      probability2 = ~666666666~ //to the new effect’s probability2 (the lower bound).
+      dicenumber  =~666666666~ //to the new effect’s number of dice. This field is instead used for maximum hit-dice (HD) by some opcodes.
+      dicesize = ~666666666~ //to the new effect’s size of dice. This field is also instead for minimum hit-dice (HD) by some opcodes.
+      savingthrow = ~666666666~ //to the new effect’s saving-throw type.
+      savebonus = ~666666666~ //to the new effect’s saving-throw bonus/penalty. This variable can take negative values down to 6666666660 while still writing to the corresponding field.
+      special =~666666666~ //to the new effect’s special field. The special field is used by many EE effects. 
+      min_level = ~666666666~ //max level of target
+      max_level =~666666666~ //min level of target
+	  
+	STR_VAR
+        match_resource = ~~
+		resource = ~~
+		
+	BEGIN
+
+		CLEAR_ARRAY FileFields2
+		CLEAR_ARRAY FileFields4
+
+		
+		DEFINE_ASSOCIATIVE_ARRAY FileFields2 BEGIN
+			0x0024 => ~%timing%~ 
+			0x000d => ~%resist_dispel%~
+			0x002c => ~%probability1%~ 
+			0x002e => ~%probability2%~ 		
+		END
+				
+		DEFINE_ASSOCIATIVE_ARRAY FileFields4 BEGIN
+			0x0010 => ~%opcode%~ 
+			0x0014 => ~%target%~ 
+			0x0018 => ~%power%~ 
+			0x001c => ~%parameter1%~ 
+			0x0020 => ~%parameter2%~ 
+			0x0028 => ~%duration%~ 
+			0x0038 => ~%dicenumber%~ 
+			0x003c => ~%dicesize%~ 
+			0x0040 => ~%savingthrow%~ 
+			0x0044 => ~%savebonus%~ 
+			0x0048 => ~%special%~ 
+			0x005c => ~%resist_dispel%~
+			0x0054 => ~%min_level%~
+			0x0058 => ~%max_level%~
+		END
+
+		
+										
+		PATCH_IF (NOT(~%resource%~ STRING_EQUAL ~~)) BEGIN
+			WRITE_EVALUATED_ASCII 0x0030  ~%resource%~ #8 						
+		END
+				
+		PHP_EACH FileFields2 AS Offset => Val  BEGIN					 
+			PATCH_IF (Val!=666666666) BEGIN
+				WRITE_SHORT Offset Val										
+			END
+		END
+				
+		PHP_EACH FileFields4 AS Offset => MatchVal  BEGIN					 
+			PATCH_IF (MatchVal!=666666666) BEGIN
+				WRITE_LONG Offset Val
+			END
+		END				
+				
+
+				
+
+		
+    END		
+	
+

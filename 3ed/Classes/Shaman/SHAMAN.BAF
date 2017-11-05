@@ -1,0 +1,9 @@
+IF
+	PartyRested()
+	Class(Player%player_id%,SHAMAN)
+	LevelGT(Player%player_id%,18)
+THEN
+	RESPONSE #100
+		ApplySpellRES("FVRD_SP",Player%player_id%)
+		Continue()
+END

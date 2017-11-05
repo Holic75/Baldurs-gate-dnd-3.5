@@ -1,0 +1,13 @@
+IF
+	PartyRested()
+	Class(Player%player_id%,PALADIN)
+	OR(3)
+		Kit(Player%player_id%,CAVALIER)
+		Kit(Player%player_id%,MAGESCHOOL_GENERALIST)
+		Kit(Player%player_id%,Blackguard)
+THEN
+	RESPONSE #100
+		ApplySpellRES("LAYHND0",Player%player_id%)
+		ApplySpellRES("LAYHND1",Player%player_id%)
+		Continue()
+END

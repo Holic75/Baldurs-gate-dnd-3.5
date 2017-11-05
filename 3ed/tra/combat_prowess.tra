@@ -1,0 +1,16 @@
+	@001=~Flurry of Strikes~ 
+	@002=~Flurry of Strikes
+	
+Character receives one extra attack per round and -5 penalty to THAC0 while fighting with light melee weapons.~
+
+
+	@003=~Whirlwind Attack~
+	@004=~Whirlwind Attack
+	
+This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10, but one's THAC0 and damage suffer a 4 point penalty. The Whirlwind Attack lasts for one round. Can be used once every 2 minutes.~
+
+
+	@005=~Greater Whirlwind Attack~
+	@006=~Greater Whirlwind Attack
+	
+This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10. The Greater Whirlwind Attack lasts for one round. Can be used once every 2 minutes.~

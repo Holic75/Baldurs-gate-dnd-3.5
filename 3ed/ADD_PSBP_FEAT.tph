@@ -11,31 +11,88 @@ DEFINE_ACTION_FUNCTION ~ADD_PSBP_FEAT~ //ability bonus/penalty feat
 
 	BEGIN
 		
-		COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/%ability_name%/%ability_name%BO.SPL~  ~override\%ability_name%BO.spl~
+		//bonus
+		OUTER_FOR (i=bdr_val;i<=max_val;i=i+step) BEGIN		
+			COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/%ability_name%/%ability_name%BO.SPL~  ~override\%ability_name%%i%.spl~		
+				LPF ALTER_SPELL_EFFECT INT_VAR timing = 9 END 	 //abi>=i	
+				SPRINT resource EVALUATE_BUFFER ~%ability_name%%i%~
+				LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 timing=9 duration=1 parameter1=0 parameter2=0 STR_VAR resource END //add protection from itself
+		END
 		
-		COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/%ability_name%/%ability_name%PE.SPL~  ~override\%ability_name%PE.spl~
-
+		//penalty
+		OUTER_FOR (i=min_val;i<bdr_val;i=i+step) BEGIN		
+			COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/%ability_name%/%ability_name%PE.SPL~  ~override\%ability_name%%i%.spl~		
+				LPF ALTER_SPELL_EFFECT INT_VAR timing = 9 END 	 //abi>=i	
+				SPRINT resource EVALUATE_BUFFER ~%ability_name%%i%~
+				LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 timing=9 duration=1 parameter1=0 parameter2=0 STR_VAR resource END //add protection from itself
+		END
 		
+		//apply bonus removals in reverse order
+		COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/Template/PSBPBN.SPL~ ~override\%ability_name%RB.spl~
+		FOR (i=bdr_val;i<=max_val;i=i+step) BEGIN
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%%i%~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 timing=0 duration=1 insert_point = 0 STR_VAR resource END //remove effects
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%RB~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=318 target=2 timing=0 duration=0 parameter1=i parameter2=par1 insert_point = 0 STR_VAR resource END //add protection from itself if stat>=						
+		END
+		
+		
+		//apply penalty removals in original order
+		COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/Template/PSBPBN.SPL~ ~override\%ability_name%RP.spl~
+		FOR (i=min_val;i<bdr_val;i=i+step) BEGIN
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%RP~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=318 target=2 timing=0 duration=0 parameter1=i parameter2=par1 + 1  STR_VAR resource END //add protection from itself if stat<			
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%%i%~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 timing=0 duration=1  STR_VAR resource END //remove effects					
+		END
+	
+		
+		//add bonus application
 		COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/Template/PSBPBN.SPL~ ~override\%ability_name%BN.spl~
-
-		SPRINT resource EVALUATE_BUFFER ~%ability_name%BO~
-		LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 STR_VAR resource END //remove bonus effect
-		FOR (i=bdr_val;i<=max_val;i=i+step) BEGIN			
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 duration=1  parameter1=i parameter2=par1 STR_VAR resource END 	 //DEX>=i	
-		END
-
 		
-		SPRINT resource EVALUATE_BUFFER ~%ability_name%PE~
-		LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource END //remove penalty effect
-		FOR (i=min_val;i<bdr_val;i=i+step) BEGIN			
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 duration=1  parameter1=i parameter2=par1+1 STR_VAR resource END 	 //DEX>=i	
+		FOR (i=bdr_val;i<=max_val;i=i+step) BEGIN		
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%%i%~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 duration=1  parameter1=i parameter2=par1 STR_VAR resource END 	 //abi>=i	
 		END
 
-		SPRINT resource EVALUATE_BUFFER ~%ability_name%BN~
+		//add penalty application in reverse order application
+		COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/Template/PSBPBN.SPL~ ~override\%ability_name%PE.spl~
+		
+		FOR (i=min_val;i<bdr_val;i=i+step) BEGIN		
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%%i%~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 duration=1  parameter1=i parameter2=par1 + 1 insert_point = 0 STR_VAR resource END 	 //abi>=i	
+		END
+		
+		
+		OUTER_SPRINT resource EVALUATE_BUFFER ~%ability_name%BN~
 		COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/Template/PSBPBN.EFF~ ~override\%ability_name%BN.EFF~
-		WRITE_EVALUATED_ASCII 0x0030 ~%resource%~ #8
+			WRITE_EVALUATED_ASCII 0x0030 ~%resource%~ #8
+			
+		OUTER_SPRINT resource EVALUATE_BUFFER ~%ability_name%PE~
+		COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/Template/PSBPBN.EFF~ ~override\%ability_name%PE.EFF~
+			WRITE_EVALUATED_ASCII 0x0030 ~%resource%~ #8
+		
+		OUTER_SPRINT resource EVALUATE_BUFFER ~%ability_name%RB~
+		COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/Template/PSBPBN.EFF~ ~override\%ability_name%RB.EFF~
+			WRITE_EVALUATED_ASCII 0x0030 ~%resource%~ #8
+			
+		OUTER_SPRINT resource EVALUATE_BUFFER ~%ability_name%RP~
+		COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/Template/PSBPBN.EFF~ ~override\%ability_name%RP.EFF~
+			WRITE_EVALUATED_ASCII 0x0030 ~%resource%~ #8
+			
 		COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/Template/PSBPFT.SPL~ ~override\%ability_name%FT.SPL~
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326  STR_VAR resource END // initial effect application
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=272  STR_VAR resource END //apply every n seconds
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%BN~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=326  target = 2 timing = 0 duration = 1 STR_VAR resource END // initial bonus application
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=272  target = 2 parameter1 = 1 parameter2 = 3 timing = 9 duration = 1 STR_VAR resource END //apply bonus every n seconds
+			
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%PE~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=326  target = 2 timing = 0 duration = 1 STR_VAR resource END // initial penalty application
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=272  target = 2 parameter1 = 1 parameter2 = 3 timing = 9 duration = 1 STR_VAR resource END //apply penalty every n seconds
+			
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%RB~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=272  target = 2 parameter1 = 1 parameter2 = 3 timing = 9 duration = 1 STR_VAR resource END //check removing every n seconds	
+			
+			SPRINT resource EVALUATE_BUFFER ~%ability_name%RP~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=272  target = 2 parameter1 = 1 parameter2 = 3 timing = 9 duration = 1 STR_VAR resource END //check removing every n seconds	
 		
 	END

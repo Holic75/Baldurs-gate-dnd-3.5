@@ -1,0 +1,25 @@
+	@001=~Last Berserk~
+	@002=~Last Berserk
+
+The enraged state lasts for 6 rounds. While enraged, a Berserker gains a bonus of +5 to <PRO_HISHER> attack rolls and +15 to <PRO_HISHER> damage rolls as well as 30% physical damage reduction, but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
+
+While in this state the hitpoints of Berserker can not be reduced below 1, but at the end of Last Berserk Berserker receives 1 point of damage which can kill <PRO_HIMHER> if <PRO_HESHE> has only 1 hit point.
+
+Last Berserk can not be prolonged and after it ends Berserker can no longer rage for next 8 hours.
+
+After the effects end, the character becomes winded, suffering a -2 penalty to Armor Class, to-hit rolls, and damage rolls.~
+
+	@003=~You need to rest after Last Berserk before you can use Enrage again~
+	
+	
+	@004=~Enrage
+
+The enraged state lasts for 6 rounds. While enraged, a Berserker gains a bonus of +2 to <PRO_HISHER> attack and damage rolls as well as 10% physical damage reduction, but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
+At 8th the attack and damage rolls bonus increases to +3 and physical damage resistance bonus to 20%.
+At 16th level the attack and damage rolls bonus increases to +5 and physical damage resistance bonus to 30%.
+
+Starting from level 8 Berserker can prolong <PRO_HISHER> rage if the combat lasts too long, while enraged <PRO_HESHE> can spend an extra use of <PRO_HISHER> Rage to prolong it for a new full duration, <PRO_HESHE> does not feel the tiring effects until the end of this new Rage, <PRO_HESHE> can continue to prolong the Rage as long as <PRO_HESHE> has Rages.
+Starting from level 18 the hit points of enraged Berserker can not be reduced below 1, but at the end of Rage Berserker receives 1 point of damage which can kill <PRO_HIMHER> if <PRO_HESHE> has only 1 hit point.
+
+After the effects end, the character becomes winded, suffering a -2 penalty to Armor Class, to-hit rolls, and damage rolls.~
+//-------------------------------------------------------------------------------------------------------------------------------//

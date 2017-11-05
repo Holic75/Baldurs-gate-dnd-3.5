@@ -1,0 +1,15 @@
+
+	@001=~Craft Arrows~
+	@002=~Craft Arrows
+
+Archer creates 40 arrows, these arrows receive +1 enchantment bonus per 5 levels of archer (to maximum +4 at level 20).~ 
+
+
+	@003=~Called Shot
+	
+All successful ranged attacks within the next 10 seconds have the following cumulative effects besides normal damage, according to the level of the caster:
+  4th Level: -2 penalty to target's THAC0.
+  8th Level: -2 penalty to target's Saving Throws vs. Spell.
+  12th Level: -2 penalty to target's Strength score.
+  16th Level: +4 bonus to damage roll.~
+//-------------------------------------------------------------------------------------------------------------------------------//

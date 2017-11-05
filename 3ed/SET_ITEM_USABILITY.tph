@@ -1,0 +1,34 @@
+DEFINE_PATCH_FUNCTION ~SET_ITEM_USABILITY~
+	
+	INT_VAR
+		value = 1
+		
+	STR_VAR
+		
+		values_table = ~~
+		id_string = ~~
+	
+BEGIN
+
+	PATCH_INCLUDE ~%values_table%~
+
+	SPRINT var_byte_s EVALUATE_BUFFER ~%%id_string%_byte%~
+	SPRINT var_mask_s EVALUATE_BUFFER ~%%id_string%_mask%~
+	
+
+	//PATCH_PRINT ~%var_byte_s%   %var_mask_s%~
+	SET var_byte = var_byte_s
+	SET var_mask = var_mask_s
+	
+	READ_BYTE var_byte usability_byte
+	
+	PATCH_IF (value) BEGIN
+		SET result = usability_byte BAND (BNOT var_mask)
+	END
+	ELSE BEGIN
+		SET result = usability_byte BOR var_mask
+	END
+	
+	WRITE_BYTE var_byte result
+
+END

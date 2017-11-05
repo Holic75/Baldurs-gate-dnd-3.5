@@ -1,0 +1,27 @@
+
+DEFINE_ACTION_FUNCTION ~GET_PROFICIENCY_STRREF~ 
+	INT_VAR
+		proficiency_id = 0
+	RET
+		strref_name
+		strref_desc
+	BEGIN
+	
+		OUTER_SET strref_name = 0
+		OUTER_SET strref_desc = 0
+		COPY_EXISTING ~WEAPPROF.2DA~ ~override~
+			COUNT_2DA_ROWS 4 n_rows		
+			SET Found = 0
+			FOR (i=1;i<n_rows*(1 - Found);i=i+1) BEGIN
+				READ_2DA_ENTRY %i% 1 4 2da_prof_id
+				PATCH_IF (2da_prof_id = proficiency_id) BEGIN
+					READ_2DA_ENTRY %i% 2 4 strref_name  //read str id of name of proficiency 
+					READ_2DA_ENTRY %i% 3 4 strref_desc  //read str id of description of proficiency 
+					SET Found = 1
+				END				
+			END			
+	PATCH_IF !(Found) BEGIN
+		PATCH_FAIL ~unknown proficiency id %proficiency_id%~
+	END
+		
+	END

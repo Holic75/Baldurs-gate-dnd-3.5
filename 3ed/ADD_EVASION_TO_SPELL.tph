@@ -3,8 +3,12 @@ DEFINE_PATCH_FUNCTION ~ADD_EVASION_TO_SPELL~
 		evasion=1 //if set to 0 will not add protection but simply make spell ignore mirror image instead
 		target_save_type = 2 // 2 for breath, 8 for wands  , 10  for both
 	BEGIN
-
-		READ_LONG 0x64 header_block_offset //beginning of extended_headers table
+		
+		SET evasion = 0
+		SET opcode_mark = 1024
+		
+				
+ 		READ_LONG 0x64 header_block_offset //beginning of extended_headers table
 		READ_LONG 0x6a effects_block_offset //beginning of effects table
 		READ_SHORT 0x68 n_headers //number of extended_headers
 
@@ -22,8 +26,10 @@ DEFINE_PATCH_FUNCTION ~ADD_EVASION_TO_SPELL~
 		SET relative_n_effects_offset=0x001e
 		SET relative_saves_offset=0x0024
 		SET opcode_damage=12
+			
+	    SET ignore_mirror = 0b1000000000000000000000000
+		SET mirror_image_save_type = target_save_type BOR ignore_mirror
 		
-		SET ignore_mirror=0b00000001000000000000000000000000
 		FOR (i=0;i<n_headers;i=i+1) BEGIN
 			SET current_header_offset = header_block_offset+i*header_size
 			
@@ -31,10 +37,9 @@ DEFINE_PATCH_FUNCTION ~ADD_EVASION_TO_SPELL~
 			READ_SHORT current_header_offset+relative_effects_offset     current_effects_offset //offset to effects of the header
 			
 			SET current_effects_offset=effects_block_offset + current_effects_offset*effect_size
-			SET saves_value=0
-			SET evasion=0
 			FOR (j=0;j<n_effects;j=j+1) BEGIN
-				READ_SHORT current_effects_offset + j*effect_size  opcode
+				SET opcode_offset = current_effects_offset + j*effect_size
+				READ_SHORT opcode_offset  opcode
 				
 				SET current_effect_offset=current_effects_offset + j*effect_size
 				SET saves_offset = current_effect_offset + relative_saves_offset //offset to saves of the current effect
@@ -47,44 +52,51 @@ DEFINE_PATCH_FUNCTION ~ADD_EVASION_TO_SPELL~
 					READ_BYTE current_effect_offset+0x000d  resist_value
 					READ_BYTE current_effect_offset+0x0002  target_value
 					READ_LONG current_effect_offset+0x0028  savebonus_value
+					READ_BYTE saves_offset+3 mirror_image_flags
+					WRITE_BYTE saves_offset+3 (mirror_image_flags BOR 1) //set to ignore mirror image 
 					PATCH_IF (opcode=opcode_damage) BEGIN
+						WRITE_SHORT opcode_offset  opcode_mark
 						SET evasion=1
 					END
 				END
 					
 			END
-							
-			PATCH_IF (saves_value) BEGIN
-			
-				FOR (j=0;j<n_effects;j=j+1) BEGIN
-						SET current_effect_offset=current_effects_offset + j*effect_size
-						SET saves_offset = current_effect_offset + relative_saves_offset //offset to saves of the current effect
-						READ_BYTE saves_offset+3 mirror_image_flags
-						WRITE_BYTE saves_offset+3 (mirror_image_flags BOR 1) //set to ignore mirror image 
-				END
-				
-				PATCH_IF (evasion) BEGIN
-					//remove protection from protection from effect with similar saves
-					LPF ADD_SPELL_EFFECT INT_VAR header=i+1 opcode=337 target=target_value power=power_value resist_dispel=resist_value duration=1 
-						timing=0 parameter2=101 parameter1=12 savingthrow=saves_value savebonus=savebonus_value insert_point=0 END 
-						
-					//add protection from damage effect just before to classes that have evasion
-					LPF ADD_SPELL_EFFECT INT_VAR header=i+1 opcode=177 target=target_value power=power_value resist_dispel=resist_value duration=1 
-						timing=0 parameter2=5 parameter1=4 insert_point=0 savingthrow=ignore_mirror STR_VAR resource=~IMMDMG~ END //thiefs
-					LPF ADD_SPELL_EFFECT INT_VAR header=i+1 opcode=177 target=target_value power=power_value resist_dispel=resist_value duration=1 
-						timing=0 parameter2=5 parameter1=12 insert_point=0 savingthrow=ignore_mirror STR_VAR resource=~IMMDMG~ END //rangers
-					LPF ADD_SPELL_EFFECT INT_VAR header=i+1 opcode=177 target=target_value power=power_value resist_dispel=resist_value duration=1 
-						timing=0 parameter2=5 parameter1=20 insert_point=0 savingthrow=ignore_mirror  STR_VAR resource=~IMMDMG~ END //monks
-					
-					//remove protection from protection from effect unconditionally at the end of spell
-					LPF ADD_SPELL_EFFECT INT_VAR header=i+1 opcode=337 target=target_value power=power_value resist_dispel=resist_value duration=1 
-						timing=0 parameter2=101 parameter1=12 savingthrow=ignore_mirror END 				
-				END	
-			END
-
-			
+		
 		END
 		
+
+		
+		PATCH_IF (evasion) BEGIN
+			//remove protection from protection from effect with similar saves
+				SPRINT insert  ~first~
+				LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark  silent = 1
+									opcode=337  parameter2=101 parameter1=12 dicenumber =0 dicesize =0 special = 0 STR_VAR insert END
+									
+						
+				//add protection from damage effect just before to classes that have evasion
+				LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent =1
+						opcode=177  parameter2=5 parameter1=4  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //thiefs
+						STR_VAR insert resource=~IMMDMG~ END
+			
+				LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark silent = 1
+						opcode=177 parameter2=5 parameter1=12  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //rangers
+						STR_VAR insert resource=~IMMDMG~ END
+						
+				LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent = 1
+						opcode=177  parameter2=5 parameter1=20 dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //monks
+						STR_VAR insert resource=~IMMDMG~ END
+									
+											
+				//remove protection from protection from effect unconditionally at the end of spell
+				SPRINT insert  ~last~
+				LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark  silent = 1
+									opcode=337  parameter2=101 parameter1=12 dicenumber =0 dicesize =0 special = 0
+									savingthrow =ignore_mirror savebonus = 0 
+									STR_VAR insert END
+						
+
+				LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = opcode_mark opcode = opcode_damage END
+		END
     END		
 	
 

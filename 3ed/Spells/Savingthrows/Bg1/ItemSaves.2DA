@@ -1,0 +1,22 @@
+Name     Description        original  target    ignore_mirror_image
+AMUL01   necklace_missiles      1		2          1
+ANGAROW  arrow_of_fire          1		2          0
+AROW06   arrow_detonation       1		2          1
+AROW08   arrow_fire             1		2          0
+AROWKC   arrow_fire             1		2          0
+ARROPHE2 arrow_fire             1		2          0
+BULL07   bullet_fire            1		2          0
+BULL08   bullet_cold            1		2          0
+BULL09   bullet_electr          1		2          0
+CLCK07   nymph_clock            2		8          0
+CLCK08   algernon_clck          2		8          0
+DART09   dart_fire              1		2          0
+DART10   dart_ice               1		2          0   
+DART11   dart_acid              1		2          0
+FIRESEED fireseed               1		2          1
+POTN26   potion_explosions      1		2          1
+WAND05   wand_fire              0		8          1
+WAND06   wand_cold              0		8          1
+WAND07   wand_lightning         0		2          1
+WAND13   wand_cloudkill         1		4          0
+

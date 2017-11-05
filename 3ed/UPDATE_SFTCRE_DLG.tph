@@ -16,14 +16,14 @@ DEFINE_ACTION_FUNCTION ~UPDATE_SFTCRE_DLG~
 			
 		LAF GET_FEAT_CLASSKIT_CONDITION INT_VAR proficiency_id n_stars RET condition_str END
 			
+		OUTER_SET lvl_m1 = lvl - 1		
 		OUTER_SPRINT condition_str EVALUATE_BUFFER  
-			
+		
 "IF ~CheckStat(LastSummonerOf(Myself),%n_stars_old%,%proficiency_id%)
-LevelGT(LastSummonerOf(Myself),%lvl%)	
+LevelGT(LastSummonerOf(Myself),%lvl_m1%)	
 %condition_str%~ THEN REPLY #%str_game_name% GOTO %proficiency_id%%n_stars%
 
 |condition_str|" 
-
 
 
 			OUTER_SPRINT give_feat_str EVALUATE_BUFFER
@@ -36,7 +36,7 @@ END
 
 |give_feat_str|~~~~~
 	
-			COPY ~3ed/Feats/FeatAttribution/%sftcre_name%.d~  ~3ed/Feats/FeatAttribution/%sftcre_name%.d~  									
+			COPY_EXISTING ~%sftcre_name%.d~  ~override/%sftcre_name%.d~  									
 				EVALUATE_BUFFER	
 			REPLACE_TEXTUALLY ~|~ ~%~
 	

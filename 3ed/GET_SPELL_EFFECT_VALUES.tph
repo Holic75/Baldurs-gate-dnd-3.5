@@ -1,0 +1,205 @@
+DEFINE_PATCH_FUNCTION ~GET_SPELL_EFFECT_VALUES~
+	INT_VAR
+      match_opcode = ~666666666~// to the opcode of effects to be matched (default 666666666).
+      match_target = ~666666666~//to the target of effects to be matched (default 666666666).
+      match_power  = ~666666666~ //to the power of effects to be matched (default 666666666).
+      match_parameter1 = ~666666666~ //to parameter1 of effects to be matched (default 666666666).
+      match_parameter2 = ~666666666~ //to parameter2 of effects to be matched (default 666666666).
+      match_timing = ~666666666~ //to the timing of effects to be matched (default 666666666).
+      match_resist_dispel = ~666666666~ //to the resist/dispel setting of effects to be matched (default 666666666).
+      match_duration = ~666666666~ // to the duration of effects to be matched (default 666666666).
+      match_probability1 = ~666666666~ //to probability1 (the upper bound) of effects to be matched (default 666666666).
+      match_probability2 = ~666666666~ // to probability2 (the lower bound) of effects to be matched (default 666666666).
+      match_dicenumber = ~666666666~ // to the number of dice of effects to be matched (default 666666666). This field is instead used for maximum hit-dice (HD) by some opcodes.
+      match_dicesize =~666666666~ // to the size of dice of effects to be matched (default 666666666). This field is used instead for minimum hit-dice (HD) by some opcodes.
+      match_savingthrow = ~666666666~ //to the saving throw type of effects to be matched (default 666666666).
+      match_savebonus = ~666666666~ //to the saving throw bonus of effects to be matched (default 6666666661). Since saving throws can range into negative values, this variable can match all the way down to 6666666660.
+      match_special  = ~666666666~ //to the special field of effects to be matched (default 666666666). The special field is used by some EE effects.
+	  header = ~666666666~ //0 for global effects
+	  
+	  match_id = 1
+	STR_VAR
+        match_resource = ~~
+		
+	
+	RET
+	  opcode // read value the of the new effect’s opcode.
+      target //read effect’s target.
+      power  //read effect’s power.
+      parameter1  //read effect’s parameter1.
+      parameter2  //read effect’s parameter2.
+      timing  //read effect’s timing mode.
+      resist_dispel  //read effect’s resist/dispel setting.
+      duration  //read effect’s duration.
+      probability1  //read effect’s probability1 (the upper bound).
+      probability2  //read effect’s probability2 (the lower bound).
+      dicenumber   //read effect’s number of dice. This field is instead used for maximum hit-dice (HD) by some opcodes.
+      dicesize  //read effect’s size of dice. This field is also instead for minimum hit-dice (HD) by some opcodes.
+      savingthrow  //read effect’s saving-throw type.
+      savebonus  //read effect’s saving-throw bonus/penalty. This variable can take negative values while still writing to the corresponding field.
+      special  //read effect’s special field. The special field is used by many EE effects. 
+	  resource 
+	  found_match  
+	  
+	  
+	BEGIN
+		SET found_match = 0
+		SET	opcode=0
+		SET target=0
+		SET power=0
+		SET parameter1=0
+		SET parameter2=0
+		SET timing=0
+		SET resist_dispel=0
+		SET duration=0
+		SET probability1=0
+		SET probability2=0
+		SET dicenumber=0
+        SET dicesize=0
+		SET savingthrow=0
+		SET savebonus=0
+		SET special=0
+		SPRINT resource ~~
+
+		CLEAR_ARRAY MatchFileFields1
+		CLEAR_ARRAY MatchFileFields4
+
+		DEFINE_ASSOCIATIVE_ARRAY MatchFileFields1 BEGIN
+			0x0002 => ~%match_target%~ 
+			0x0003 => ~%match_power%~ 
+			0x000c => ~%match_timing%~ 
+			0x000d => ~%match_resist_dispel%~
+			0x0012 => ~%match_probability1%~ 
+			0x0013 => ~%match_probability2%~ 		
+		END
+		
+		
+		DEFINE_ASSOCIATIVE_ARRAY MatchFileFields4 BEGIN
+			0x0004 => ~%match_parameter1%~ 
+			0x0008 => ~%match_parameter2%~ 
+			0x000e => ~%match_duration%~ 
+			0x001c => ~%match_dicenumber%~ 
+			0x0020 => ~%match_dicesize%~ 
+			0x0024 => ~%match_savingthrow%~ 
+			0x0028 => ~%match_savebonus%~ 
+			0x002c => ~%match_special%~ 
+		END
+		
+
+
+		SET matches_found = 0
+		
+		READ_LONG 0x64 header_block_offset //beginning of extended_headers table
+		READ_LONG 0x6a effects_block_offset //beginning of effects table
+		READ_SHORT 0x68 n_headers //number of extended_headers
+
+		
+		SET effect_size=0x30 //size of effect block
+		
+		PATCH_IF (~%SOURCE_EXT%~ STR_EQ ~ITM~) BEGIN
+			SET header_size=0x38 //size of header block for items
+		END ELSE BEGIN
+			SET header_size=0x28 //size of header block for spells
+		END
+
+		
+		
+		SET relative_effects_offset=0x0020
+		SET relative_n_effects_offset=0x001e
+		SET relative_saves_offset=0x0024
+		
+		FOR (i=0;i<=n_headers*(matches_found<match_id);i=i+1) BEGIN
+			
+			SET matched_header = 1
+			
+			
+
+			
+			PATCH_IF (i=n_headers) BEGIN //parsing global feature block
+				PATCH_IF (header!=666666666 AND 0=header) BEGIN
+					SET matched_header =0
+				END
+				
+				READ_SHORT 0x0070     n_effects //number of effects in the header
+				READ_SHORT 0x006e     current_effects_offset //offset to to global effects
+			
+			END ELSE BEGIN
+				PATCH_IF (header!=666666666 AND i+1!=header) BEGIN
+					SET matched_header =0
+				END
+				SET current_header_offset = header_block_offset+i*header_size
+			
+			
+				READ_SHORT current_header_offset+relative_n_effects_offset   n_effects //number of effects in the header
+				READ_SHORT current_header_offset+relative_effects_offset     current_effects_offset //offset to effects of the header
+				
+			END
+			
+			SET current_effects_offset=effects_block_offset + current_effects_offset*effect_size
+			
+			FOR (j=0;j<n_effects*matched_header*(matches_found<match_id);j=j+1) BEGIN
+			
+				SET current_effect_offset  = current_effects_offset + j*effect_size
+				SET matched =1 
+				//matching
+				PATCH_IF (match_opcode!=666666666) BEGIN
+					READ_SHORT current_effect_offset  current_opcode					
+					SET matched = matched AND (current_opcode == match_opcode)
+				END
+				
+				PATCH_IF (NOT(~%match_resource%~ STRING_EQUAL ~~)) BEGIN
+					READ_ASCII current_effect_offset + 0x0014  current_resource
+					SET matched = matched AND (~%match_resource%~ STRING_EQUAL_CASE ~%current_resource%~)
+				END
+				
+				PHP_EACH MatchFileFields1 AS Offset => MatchVal  BEGIN					 
+					PATCH_IF (MatchVal!=666666666) BEGIN
+						READ_BYTE current_effect_offset +Offset Val
+						SET matched = matched AND (MatchVal == Val)
+												
+					END
+				END
+				
+				PHP_EACH MatchFileFields4 AS Offset => MatchVal  BEGIN					 
+					PATCH_IF (MatchVal!=666666666) BEGIN
+						READ_LONG current_effect_offset +Offset Val
+						
+						
+						SET matched = matched AND (MatchVal == Val)
+						
+					END
+				END
+				
+				SET matches_found = matches_found + matched
+				//updating
+				PATCH_IF (matched AND matches_found = match_id) BEGIN
+
+					SET found_match = 1 
+					READ_BYTE current_effect_offset + 0x0002 target 
+					READ_BYTE current_effect_offset + 0x0003 power 
+					READ_BYTE current_effect_offset + 0x000c timing
+					READ_BYTE current_effect_offset + 0x000d resist_dispel
+					READ_BYTE current_effect_offset + 0x0012 probability1 
+					READ_BYTE current_effect_offset + 0x0013 probability2 
+					
+					READ_SHORT current_effect_offset + 0x0000 opcode
+					
+					READ_LONG current_effect_offset + 0x0004 parameter1 
+					READ_LONG current_effect_offset + 0x0008 parameter2 
+					READ_LONG current_effect_offset + 0x000e duration 
+					READ_LONG current_effect_offset + 0x001c dicenumber 
+					READ_LONG current_effect_offset + 0x0020 dicesize 
+					READ_LONG current_effect_offset + 0x0024 savingthrow 
+					READ_LONG current_effect_offset + 0x0028 savebonus 
+					READ_LONG current_effect_offset + 0x002c special 
+					
+					READ_ASCII current_effect_offset + 0x0014 resource
+				END
+				
+			END		
+			
+		END
+		
+    END		
+	
+

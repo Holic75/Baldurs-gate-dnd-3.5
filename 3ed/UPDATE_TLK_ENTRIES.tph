@@ -1,0 +1,17 @@
+DEFINE_ACTION_FUNCTION ~UPDATE_TLK_ENTRIES~
+
+	STR_VAR
+		Folder=~~
+		Tpd=~~
+		TraFile=~~
+	BEGIN
+	
+		
+	INCLUDE "%TpdFolder%\%Tpd%" //descriptions string refs to new strings in array descriptions_map
+		
+	ACTION_PHP_EACH descriptions_map AS TlkStrRef => TraStrId BEGIN
+		STRING_SET_EVALUATE ~%TlkStrRef%~ (AT "TraStrId")	USING ~%LANGUAGE%\%TraFile%~
+	END
+	
+	
+	END

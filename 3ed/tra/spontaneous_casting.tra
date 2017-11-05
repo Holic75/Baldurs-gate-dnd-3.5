@@ -1,0 +1,94 @@
+
+	@1=~Spontaneous Healing~
+	@2=~Spontaneous Healing
+
+Duration: 1 round
+Casting Time: Instant
+
+When this ability is activated, all memorized priest spells are transformed into healing spells of respective spell level. This lasts for 1 round, or until the first priest spell is cast.
+
+Depending on spell level spells are transformed as follows:
+
+1st level: Cure Light Wounds
+2nd level: Cure Moderate Wounds
+3rd level: Cure Medium Wounds
+4th level: Cure Serious Wounds
+5th level: Cure Critical Wounds
+6th level: Heal
+7th level: Resurrection~
+
+//--------------------------------------------------------------------------------------------------------------//
+	@3=~Spontaneous Harming~
+	@4=~Spontaneous Harming
+
+Duration: 1 round
+Casting Time: Instant
+
+When this ability is activated, all memorized priest spells are transformed into harming spells of respective spell level. This effect lasts for 1 round, or until the first priest spell is cast.
+
+Depending on spell level spells are transformed as follows:
+
+1st level: Cause Light Wounds
+2nd level: Cause Moderate Wounds
+3rd level: Cause Medium Wounds
+4th level: Cause Serious Wounds
+5th level: Cause Critical Wounds
+6th level: Harm
+7th level: Finger Of Death~
+//--------------------------------------------------------------------------------------------------------------//
+	@5=~Spontaneous Summoning~
+	@6=~Spontaneous Summoning
+
+Duration: 1 round
+Casting Time: Instant
+
+When this ability is activated, all memorized priest spells are transformed into summoning spells of respective spell level. It lasts for 1 round, or until the first priest spell is cast.
+
+Depending on spell level spells are transformed as follows:
+
+1st level: Lesser Animal Summoning I
+2nd level: Lesser Animal Summoning II
+3rd level: Lesser Animal Summoning III
+4th level: Animal Summoning I
+5th level: Animal Summoning II
+6th level: Animal Summoning III
+7th level: Conjure Earth Elemental~
+//--------------------------------------------------------------------------------------------------------------//
+
+@7=~Spontaneous Battle Casting~
+@8=~Spontaneous Battle Casting
+
+Duration: 1 round
+Casting Time: Instant
+
+When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds. Ability lasts for 1 round, or until the first spell is sacrificed.~
+
+@9=~Spontaneous Battle Casting I~
+@10=~Spontaneous Battle Casting II~
+@11=~Spontaneous Battle Casting III~
+@12=~Spontaneous Battle Casting IV~
+@13=~Spontaneous Battle Casting V~
+@14=~Spontaneous Battle Casting VI~
+@15=~Spontaneous Battle Casting VII~
+
+
+
+
+@16=~Spontaneous Spell Channeling~
+@17=~Spontaneous Spell Channeling
+
+Duration: 1 round 
+Casting Time: Instant
+
+When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds. Ability lasts for 1 round, or until the first spell is sacrificed.~
+
+@18=~Spontaneous Spell Channeling I~
+@19=~Spontaneous Spell Channeling II~
+@20=~Spontaneous Spell Channeling III~
+@21=~Spontaneous Spell Channeling IV~
+@22=~Spontaneous Spell Channeling V~
+@23=~Spontaneous Spell Channeling VI~
+@24=~Spontaneous Spell Channeling VII~
+
+
+

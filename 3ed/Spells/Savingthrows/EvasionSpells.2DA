@@ -15,9 +15,7 @@ SPPR304    glyph_of_warding                 xxxx
 SPPR450    spirit_fire                      xxxx
 SPPR450B   spirit_fire                      xxxx
 SPPR503    flame_strike                     SCRL62
-TRMR1      earthquake1                      xxxx
-TRMR2      earthquake2                      xxxx
-TRMR3      earthquake3                      xxxx
+SPPR720    earthquake                       xxxx
 SPPR985    flame_strike                     xxxx
 SPPR987    call_lightning                   xxxx
 SPWI001    fireball_trap                    xxxx

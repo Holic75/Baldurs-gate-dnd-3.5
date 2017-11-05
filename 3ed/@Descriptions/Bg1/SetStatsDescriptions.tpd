@@ -1,0 +1,15 @@
+
+
+
+ACTION_CLEAR_ARRAY descriptions_map
+
+ACTION_DEFINE_ASSOCIATIVE_ARRAY descriptions_map BEGIN
+
+	 9587   => 001//Charisma
+	 9585   => 002//Intelligence
+	 9586   => 003//Wisdom
+	 9584   => 004//Dexterity
+	 9583   => 005//Constitution
+	 9582   => 006//Strength
+	
+END

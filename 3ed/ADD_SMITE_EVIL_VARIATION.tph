@@ -1,0 +1,37 @@
+DEFINE_ACTION_FUNCTION ~ADD_SMITE_EVIL_VARIATION~
+
+	INT_VAR
+		name_ref =0
+		descr_ref =0
+		
+		par1 =0
+		par2 =0
+	STR_VAR
+		SmiteName = ~~
+	BEGIN
+	
+	
+	WITH_TRA ~%LANGUAGE%\smite.tra~ BEGIN
+	
+		COPY_EXISTING ~SMTEVL.SPL~ ~override/%SmiteName%.SPL~
+	
+			SAY NAME1 (AT "name_ref")
+			SAY UNIDENTIFIED_DESC (AT "descr_ref")
+		
+			SPRINT resource EVALUATE_BUFFER ~%SmiteName%H~
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=248 STR_VAR resource END
+			SPRINT resource EVALUATE_BUFFER ~%SmiteName%~
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=206 STR_VAR resource  END	
+		
+			
+ 
+	
+		COPY_EXISTING ~SMTEVLH.EFF~ ~override/%SmiteName%H.EFF~//hit effect
+			WRITE_EVALUATED_ASCII 0x0030 ~%SmiteName%H~ #8
+		
+		COPY_EXISTING ~SMTEVLH.SPL~ ~override/%SmiteName%H.SPL~//hit effect (spell)
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 parameter1 = par1 parameter2=par2 END 
+	END
+
+		
+	END
