@@ -1,5 +1,15 @@
 
-	COPY ~3ed/Core/Proficiencies/Map/WEAPPROF.2DA~ ~3ed/Core/Proficiencies/Map/WEAPPROF.2DA~ 
+    //append thief_base
+    OUTER_SPRINT THIEF_BASE_STR  ~$ $ THIEF_BASE~
+    OUTER_FOR (i=0;i<=50;i=i+1) BEGIN
+        OUTER_SPRINT THIEF_BASE_STR EVALUATE_BUFFER ~%THIEF_BASE% 0~
+    END
+        
+    APPEND_COL  ~WEAPPROF.2DA~ 
+    ~$ $ THIEF_BASE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+      
+        
+	COPY ~3ed/Core/Proficiencies/Map/WEAPPROF.2DA~ ~override/MAP_PROF.2DA~ 
 	
 		COUNT_2DA_ROWS 10 n_rows
 		COUNT_2DA_COLS n_cols 

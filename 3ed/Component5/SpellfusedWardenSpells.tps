@@ -3,17 +3,17 @@
 	OUTER_SET   no_response=RESOLVE_STR_REF (@500006)
 	
 	LAF SPLIT_SPELLS_BY_SCHOOL END
-	OUTER_SET k=1
-	COPY ~3ed/Feats/SpellfusedWarden/Schools2DA~ ~override~
-		DEFINE_ASSOCIATIVE_ARRAY school_list BEGIN "%k%" => "%SOURCE_RES%" END
-		SET k=k+1
-		
-		
-		ACTION_PHP_EACH school_list AS school_i =>school_file_name BEGIN
-		OUTER_SET school_id=school_i
-		OUTER_SPRINT school_file_2DA EVALUATE_BUFFER ~%school_file_name%~
-		LAF UPDATE_SPELLFUSED_WARDEN_SCHOOLS INT_VAR school_id yes_response no_response STR_VAR school_file_2DA END	
-	END	
+	OUTER_FOR (k=1;k<=8;k=k+1) BEGIN
+        COPY_EXISTING ~Schl%k%.2DA~ ~override~
+            DEFINE_ASSOCIATIVE_ARRAY school_list BEGIN "%k%" => "%SOURCE_RES%" END
+	
+    END
+    
+    ACTION_PHP_EACH school_list AS school_i =>school_file_name BEGIN
+        OUTER_SET school_id=school_i
+        OUTER_SPRINT school_file_2DA EVALUATE_BUFFER ~%school_file_name%~
+        LAF UPDATE_SPELLFUSED_WARDEN_SCHOOLS INT_VAR school_id yes_response no_response STR_VAR school_file_2DA END	
+    END	
 	
 
 	

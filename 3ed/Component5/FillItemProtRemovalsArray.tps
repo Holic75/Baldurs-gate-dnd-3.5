@@ -1,6 +1,8 @@
 	
 	COPY_EXISTING_REGEXP GLOB ~.*\.ITM~ ~override~
 	
+    PATCH_IF (SOURCE_SIZE > 0x72) BEGIN
+    
 		SET LastCurrentResourceId = CurrentResourceId
 		SET Found = 0
 		READ_LONG 0x64 header_block_offset //beginning of extended_headers table
@@ -40,9 +42,9 @@
 					//look if it is already in the array segment for this Spell
 					SET found = 0
 					
-					FOR (i=LastCurrentResourceId; i< CurrentResourceId*(1 - found);i=i+1) BEGIN					
-						SPRINT Resource_i  EVALUATE_BUFFER  $SpellProtRemovalsResource("%i%")
-						SET EVALUATE_BUFFER Opcode_i  = $SpellProtRemovalsOpcode("%i%")
+					FOR (k=LastCurrentResourceId; k< CurrentResourceId*(1 - found);k=k+1) BEGIN					
+						SPRINT Resource_i  EVALUATE_BUFFER  $SpellProtRemovalsResource("%k%")
+						SET EVALUATE_BUFFER Opcode_i  = $SpellProtRemovalsOpcode("%k%")
 						PATCH_IF (~%Resource_i%~ STR_EQ ~%current_resource%~) AND (Opcode_i == opcode) BEGIN
 							SET found = 1
 						END						
@@ -67,4 +69,4 @@
 			END
 		END
 		
-		
+	END	

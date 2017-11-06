@@ -49,7 +49,7 @@ DEFINE_ACTION_FUNCTION ~UPDATE_SPELLFUSED_WARDEN_SCHOOLS~
 			END
 		
 		SPRINT DescriptionString EVALUATE_BUFFER ~%DescriptionString%.~
-					
+					               
 		OUTER_SPRINT school_str EVALUATE_BUFFER  
 			
 ~~~~~IF ~True()~ THEN REPLY ~%school_name%~ GOTO %school_id%

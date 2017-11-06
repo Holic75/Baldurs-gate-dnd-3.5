@@ -6,16 +6,16 @@ ACTION_CLEAR_ARRAY descriptions_map
 ACTION_DEFINE_ASSOCIATIVE_ARRAY descriptions_map BEGIN
 
 	//update proficiencies description
-	24590  => 1011
-	24315  => 1012
+	5271  => 1011
+	//24315   => 1012
 	9588   => 1012
 	
 	
 	12126 => 1013 //turn undead level -> channel energy level 
 	 
 	//update sneak attack description
-	  3033 => 1014 //sneak attack description
-	  3034 => 1014 //sneak attack description
-	  3042 => 1014 //sneak attack description
+	  //3033 => 1014 //sneak attack description
+	  //3034 => 1014 //sneak attack description
+	  //3042 => 1014 //sneak attack description
 	
 END

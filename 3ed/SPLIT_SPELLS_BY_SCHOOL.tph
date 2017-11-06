@@ -1,6 +1,12 @@
 DEFINE_ACTION_FUNCTION ~SPLIT_SPELLS_BY_SCHOOL~
 
 	BEGIN
+    
+    
+        OUTER_FOR (i=1;i<=8;i=i+1) BEGIN
+            COPY ~3ed/Feats/SpellfusedWarden/Schools2DA/Schl%i%.2DA~  ~override~
+        
+        END
 		//spells to exclude
 		OUTER_SET k=0
 		COPY_EXISTING ~hidespl.2DA~ ~override~
@@ -14,6 +20,8 @@ DEFINE_ACTION_FUNCTION ~SPLIT_SPELLS_BY_SCHOOL~
 				END
 			END
 		
+
+       
 		COPY ~3ed/Feats/SpellfusedWarden/exclude.2DA~ ~3ed/Feats/SpellfusedWarden/exclude.2DA~
 			COUNT_2DA_ROWS 2 n_rows
 			FOR (i=0;i<n_rows;i=i+1) BEGIN				
@@ -33,7 +41,7 @@ DEFINE_ACTION_FUNCTION ~SPLIT_SPELLS_BY_SCHOOL~
 			PATCH_IF (castable AND school>0 AND school<9 AND spell_level<8 AND spell_level>0 AND spell_type=1) BEGIN
 				SET exclude=0
 				PHP_EACH exclude_spells AS spell_id=>spell_file_name BEGIN
-					PATCH_IF (NOT exclude) AND (~%spell_name%~ STRING_EQUAL ~%spell_file_name%~) BEGIN
+					PATCH_IF (NOT exclude) AND (~%spell_name%~ STR_EQ ~%spell_file_name%~) BEGIN
 						SET exclude=1
 					END
 				END
@@ -41,7 +49,7 @@ DEFINE_ACTION_FUNCTION ~SPLIT_SPELLS_BY_SCHOOL~
 				PATCH_IF (NOT exclude) BEGIN
 					INNER_ACTION BEGIN
 					
-						COPY ~3ed/Feats/SpellfusedWarden/Schools2DA/Schl%school%.2DA~ ~3ed/Feats/SpellfusedWarden/Schools2DA/Schl%school%.2DA~  //get list of spells 
+						COPY_EXISTING ~Schl%school%.2DA~ ~override~  //get list of spells 
 							COUNT_2DA_ROWS 1 n_rows
 							INSERT_2DA_ROW %n_rows% 1 ~%spell_name%~
 					END

@@ -3,7 +3,8 @@
 
 	COPY_EXISTING_REGEXP GLOB ~.*\.CRE~ ~override~
 	
-
+    PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
+    
 		SET LastCurrentResourceId = CurrentResourceId
 		READ_LONG 0x02c4 effects_block_offset //beginning of global_effects table
 		READ_LONG 0x02c8 n_effect //number of global_effects
@@ -33,9 +34,9 @@
 				//look if it is already in the array segment for this Spell
 				SET found = 0
 					
-					FOR (i=LastCurrentResourceId; i< CurrentResourceId*(1 - found);i=i+1) BEGIN					
-						SPRINT Resource_i  EVALUATE_BUFFER  $SpellProtRemovalsResource("%i%")
-						SET EVALUATE_BUFFER Opcode_i  = $SpellProtRemovalsOpcode("%i%")
+					FOR (k=LastCurrentResourceId; k< CurrentResourceId*(1 - found);k=k+1) BEGIN					
+						SPRINT Resource_i  EVALUATE_BUFFER  $SpellProtRemovalsResource("%k%")
+						SET EVALUATE_BUFFER Opcode_i  = $SpellProtRemovalsOpcode("%k%")
 						PATCH_IF (~%Resource_i%~ STR_EQ ~%current_resource%~) AND (Opcode_i == opcode) BEGIN
 							SET found = 1
 						END						
@@ -54,10 +55,10 @@
 
 
 		
-	PATCH_IF (CurrentResourceId != LastCurrentResourceId) BEGIN
-		DEFINE_ASSOCIATIVE_ARRAY SpellsProtRemovals BEGIN
-			~%LastCurrentResourceId%~, ~%CurrentResourceId%~ => ~%SOURCE_FILE%~				
-		END
-	END
-		
+        PATCH_IF (CurrentResourceId != LastCurrentResourceId) BEGIN
+            DEFINE_ASSOCIATIVE_ARRAY SpellsProtRemovals BEGIN
+                ~%LastCurrentResourceId%~, ~%CurrentResourceId%~ => ~%SOURCE_FILE%~				
+            END
+        END
+	END	
 		

@@ -3,7 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		ChangeEnemyAlly(Myself,CONTROLLED)
-		MakeGlobalOverride()
+		MakeGlobal()
 		Continue()
 END
 

@@ -1,12 +1,12 @@
 
 #SUNRUND   sunrund                        x
-bdumstl    no_description                 x
+bdsumst1    no_description                 x
 SPBLUN29   lightning_trap                 x
 SPCTMD01   fireball_trap                  x
 SPCL239    sun_soulbeam                   x
 SPCL239a   sun_soulbeam                   x
-SPC722     lightning_bolt                 x
-SPC911b    trap                           x
+SPCL722    lightning_bolt                 x
+SPCL911b   trap                           x
 SPDR201    druid_web                      x
 SPDR301    druid_lightning_bolt           x
 SPDR601    druid_chain_lightning          x
@@ -19,7 +19,7 @@ SPPR218    alicorn_lance                  x
 SPPR302    call_lightning                 x
 SPPR304    glyph_of_warding               x
 SPPR325    cloud_burst                    x
-SPPR420b   static charge_b                x
+SPPR420b   static_charge_b                x
 SPPR503    flame_strike                   x
 SPPR519    spike_stones                   x
 SPPR603d   blade_barrier                  x
@@ -67,7 +67,6 @@ SPWI724    acid_fog                       x
 SPWI810    icendary_cloud                 x
 SPWI812    abi-dazim                      x
 SPWISH32   abi-dazim                      x
-SPCL722    talos_lightning_bolt           x
 
 
 

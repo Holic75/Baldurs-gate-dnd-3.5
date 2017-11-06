@@ -1,12 +1,12 @@
 	
-	//xp regularization for multiclasses
+/* 	//xp regularization for multiclasses
 	OUTER_FOR (player_id=1;player_id<=6;player_id=player_id+1) BEGIN
 		EXTEND_TOP ~BALDUR.BCS~ ~3ed/HybridXP/XPPlayer.baf~
 			EVALUATE_BUFFER	
 	END
-	EXTEND_TOP ~BALDUR.BCS~ ~3ed/HybridXP/XPMRK.baf~
+	EXTEND_TOP ~BALDUR.BCS~ ~3ed/HybridXP/XPMRK.baf~ */
 	
-	//double xp 
+	//double xp  
 	
 	COPY ~3ed/HybridXP/MLTXP.EFF~ ~override~
 	COPY ~3ed/HybridXP/MLTXP.SPL~ ~override~
@@ -39,4 +39,4 @@
 						STR_VAR clab=~CLABTH01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREMT.SPL~ feat_type_file=~MLTXP~ caption=~MLTXPM_T~ END		
 	
 						
-	COPY ~3ed/HybridXP/%GameId%/STARTARE.2DA~ ~override~
+	//COPY ~3ed/HybridXP/%GameId%/STARTARE.2DA~ ~override~

@@ -260,10 +260,13 @@
 		LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=54 END //remove thac0 bonus
 		
 		LPF ALTER_SPELL_HEADER INT_VAR target = 5 range = 0 END //target is set to caster
+    COPY_EXISTING ~SPPR507.spl~ ~override~
 		PATCH_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
 			FOR (i=1;i<12;i=i+1) BEGIN
+     
 				LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-				LPF ALTER_SPELL_HEADER INT_VAR min_level = i+9 END
+                
+				LPF ALTER_SPELL_HEADER INT_VAR header = i+1 min_level = i+9 END
 			END
 		END
 		FOR (i=1;i<=12;i+=1) BEGIN   
@@ -433,7 +436,8 @@
 		LPF ALTER_SPELL_HEADER INT_VAR target = 5 projectile = 1 END //cast on self and remove projectile
 		LPF ALTER_SPELL_EFFECT INT_VAR target = 1 savingthrow = 0 END 
 		LPF ADD_SPELL_EFFECT INT_VAR opcode = 122 target = 1 power = 1 parameter1 = 2 timing =4 resist_dispel = 2 duration = 1 STR_VAR resource =~MGCSTN~ END //create 2 stones
-		FOR (i=2;i<=20;i+=1) BEGIN
+	COPY_EXISTING ~SPPR106.SPL~ ~override~
+        FOR (i=2;i<=20;i+=1) BEGIN
 			LPF ADD_SPELL_HEADER INT_VAR  copy_header=1 END
 			LPF ALTER_SPELL_HEADER INT_VAR  header=i min_level=i END
 			LPF ALTER_SPELL_EFFECT INT_VAR  header = i match_opcode = 122 parameter1 = 2*i END 

@@ -193,29 +193,31 @@
 					
 	END	
 	//--------------------- assasin poison weapon progression change -------------------------- (spells will be done later in spells section)
-	COPY_EXISTING ~bdpweapn.spl~ ~override~
-		LPF ADD_SPELL_HEADER INT_VAR copy_header = 4 insert_point =5 END
-		LPF ADD_SPELL_HEADER INT_VAR copy_header = 4 insert_point =6 END
+    ACTION_IF NOT (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+        COPY_EXISTING ~bdpweapn.spl~ ~override~
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 4 insert_point =5 END
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 4 insert_point =6 END
 		
-		FOR (i=2;i<=6;i=i+i) BEGIN
-			LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = (i - 1) *4 END
-		END
+            FOR (i=2;i<=6;i=i+i) BEGIN
+                LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = (i - 1) *4 END
+            END
 		
-		LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 5 match_opcode = 12 parameter1 = 12 END
-		SET savebonus = 0 - 4
-		LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 5 match_opcode = 25 duration = 24 savebonus  END
-		LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 5 match_opcode = 142 duration = 24 savebonus  END
-		SET savebonus = 0 - 5
-		LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 6 match_opcode = 12 parameter1 = 16 END
-		LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 5 match_opcode = 25 duration = 24 parameter1 = 2 savebonus  END
-		LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 5 match_opcode = 142 duration = 24 savebonus  END	
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 5 match_opcode = 12 parameter1 = 12 END
+            SET savebonus = 0 - 4
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 5 match_opcode = 25 duration = 24 savebonus  END
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 5 match_opcode = 142 duration = 24 savebonus  END
+            SET savebonus = 0 - 5
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 6 match_opcode = 12 parameter1 = 16 END
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 5 match_opcode = 25 duration = 24 parameter1 = 2 savebonus  END
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 5 match_opcode = 142 duration = 24 savebonus  END	
 		
 		
-	WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN  
-		COPY_EXISTING ~SPCL423.SPL~ ~override~ //update description of poison weapon
-			READ_LONG 0x0050 ~descr_strref~
-			STRING_SET_EVALUATE %descr_strref% @001
-	END
+        WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN  
+            COPY_EXISTING ~SPCL423.SPL~ ~override~ //update description of poison weapon
+                READ_LONG 0x0050 ~descr_strref~
+                STRING_SET_EVALUATE %descr_strref% @001
+        END
+    END
 	// ---------------------------------------- shadowdancer special abilities (mislead and shadow form)
 	COPY ~3ed/Classes/Shadowdancer~ ~override~
 	
@@ -361,114 +363,116 @@ END
 	END
 	  
 	 //----------------------------------------------//
-	 //shaman dance update (duration +1 additional round at lvl1, +2 at lvl 6 +3 at lvel 12 +4 at lvl 18)
-	 COPY ~3ed/Classes/Shaman~ ~override~
+     ACTION_IF NOT (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+        //shaman dance update (duration +1 additional round at lvl1, +2 at lvl 6 +3 at lvel 12 +4 at lvl 18)
+        COPY ~3ed/Classes/Shaman~ ~override~
 	 
-	 //create major spirits
+        //create major spirits
 	 
-	 //weapons
-	COPY_EXISTING ~BDSHA18A.ITM~	~override\BDSHA24A.ITM~
-		LPF ALTER_ITEM_EFFECT INT_VAR check_headers = 1 match_opcode = 12 dicenumber = 2 dicesize = 8 END 
+        //weapons
+        COPY_EXISTING ~BDSHA18A.ITM~	~override\BDSHA24A.ITM~
+            LPF ALTER_ITEM_EFFECT INT_VAR check_headers = 1 match_opcode = 12 dicenumber = 2 dicesize = 8 END 
 		
-	COPY_EXISTING ~BDSHA18B.ITM~	~override\BDSHA24B.ITM~
-		LPF ALTER_ITEM_HEADER INT_VAR dicenumber = 2 dicesize = 8 END 
+        COPY_EXISTING ~BDSHA18B.ITM~	~override\BDSHA24B.ITM~
+            LPF ALTER_ITEM_HEADER INT_VAR dicenumber = 2 dicesize = 8 END 
 		
-	COPY_EXISTING ~BDSHA18C.ITM~	~override\BDSHA24C.ITM~
-		LPF ALTER_ITEM_HEADER INT_VAR dicenumber = 2 dicesize = 12 END 	
+        COPY_EXISTING ~BDSHA18C.ITM~	~override\BDSHA24C.ITM~
+            LPF ALTER_ITEM_HEADER INT_VAR dicenumber = 2 dicesize = 12 END 	
 		
-	//spirits
-	WITH_TRA ~%LANGUAGE%\shaman.tra~ BEGIN  
-		OUTER_SET StrRefA = RESOLVE_STR_REF(@001)
-		OUTER_SET StrRefB = RESOLVE_STR_REF(@002)
-		OUTER_SET StrRefC = RESOLVE_STR_REF(@003)
-		OUTER_SET StrRefDisplay = RESOLVE_STR_REF(@004)
-	END
+        //spirits
+        WITH_TRA ~%LANGUAGE%\shaman.tra~ BEGIN  
+            OUTER_SET StrRefA = RESOLVE_STR_REF(@001)
+            OUTER_SET StrRefB = RESOLVE_STR_REF(@002)
+            OUTER_SET StrRefC = RESOLVE_STR_REF(@003)
+            OUTER_SET StrRefDisplay = RESOLVE_STR_REF(@004)
+        END
 	
-	COPY_EXISTING ~BDSHA18A.CRE~	~override\BDSHA24A.CRE~
-		REPLACE_CRE_ITEM ~BDSHA24A~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~
-		LPF ALTER_CREATURE INT_VAR MaxHp = 120 CurrentHp = 120 Strength  =19 Constitution = 19 Dexterity = 19 Level1 = 16 THAC0 = 7 LongName = StrRefA Tooltip = StrRefA
+        COPY_EXISTING ~BDSHA18A.CRE~	~override\BDSHA24A.CRE~
+            REPLACE_CRE_ITEM ~BDSHA24A~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~
+            LPF ALTER_CREATURE INT_VAR MaxHp = 120 CurrentHp = 120 Strength  =19 Constitution = 19 Dexterity = 19 Level1 = 16 THAC0 = 7 LongName = StrRefA Tooltip = StrRefA
 							SaveDeath = 5 SaveWand = 7 SaveBreath = 6 SavePoly = 6 SaveSpell = 8 END
 		
-	COPY_EXISTING ~BDSHA18B.CRE~	~override\BDSHA24B.CRE~
-		REPLACE_CRE_ITEM ~BDSHA24B~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~
-		LPF ALTER_CREATURE INT_VAR MaxHp = 120 CurrentHp = 120 Strength  =20 Constitution = 16 Dexterity = 23 Level1 = 16 THAC0 = 7 LongName = StrRefB Tooltip = StrRefB
+        COPY_EXISTING ~BDSHA18B.CRE~	~override\BDSHA24B.CRE~
+            REPLACE_CRE_ITEM ~BDSHA24B~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~
+            LPF ALTER_CREATURE INT_VAR MaxHp = 120 CurrentHp = 120 Strength  =20 Constitution = 16 Dexterity = 23 Level1 = 16 THAC0 = 7 LongName = StrRefB Tooltip = StrRefB
 							SaveDeath = 5 SaveWand = 7 SaveBreath = 6 SavePoly = 6 SaveSpell = 8 END
 									
-	COPY_EXISTING ~BDSHA18C.CRE~	~override\BDSHA24C.CRE~
-		REPLACE_CRE_ITEM ~BDSHA24C~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~	
-		LPF ALTER_CREATURE INT_VAR MaxHp = 120 CurrentHp = 120 Strength  =23 Constitution = 10 Dexterity = 23 Level1 = 16 THAC0 = 7 LongName = StrRefC Tooltip = StrRefC
+        COPY_EXISTING ~BDSHA18C.CRE~	~override\BDSHA24C.CRE~
+            REPLACE_CRE_ITEM ~BDSHA24C~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~	
+            LPF ALTER_CREATURE INT_VAR MaxHp = 120 CurrentHp = 120 Strength  =23 Constitution = 10 Dexterity = 23 Level1 = 16 THAC0 = 7 LongName = StrRefC Tooltip = StrRefC
 							SaveDeath = 5 SaveWand = 7 SaveBreath = 6 SavePoly = 6 SaveSpell = 8 END
 	 
-	 //shamanic dance update
-	 COPY_EXISTING ~SPSH004.SPL~ ~override~
-		//LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=363 END //remove movement rate checking
-		LPF ALTER_SPELL_HEADER INT_VAR header = 20 min_level=20 END
-		FOR (i=21;i<=23;i=i+1) BEGIN		
-			SET d_prob = (i - 20) *2
-			LPF ADD_SPELL_HEADER INT_VAR copy_header = 20 END
-			LPF ALTER_SPELL_HEADER INT_VAR header = i min_level=i END
-				LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_probability1 = 74 probability1 = 74 + d_prob END
-				LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_probability2 = 75 probability2 = 75 + d_prob END
-		END
+        //shamanic dance update
+        COPY_EXISTING ~SPSH004.SPL~ ~override~
+            //LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=363 END //remove movement rate checking
+            LPF ALTER_SPELL_HEADER INT_VAR header = 20 min_level=20 END
+            FOR (i=21;i<=23;i=i+1) BEGIN		
+                SET d_prob = (i - 20) *2
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 20 END
+                LPF ALTER_SPELL_HEADER INT_VAR header = i min_level=i END
+                    LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_probability1 = 74 probability1 = 74 + d_prob END
+                    LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_probability2 = 75 probability2 = 75 + d_prob END
+            END
 		
-		FOR (i=24;i<=30;i=i+1) BEGIN		
-			SET d_prob = (i - 20) *2
-			LPF ADD_SPELL_HEADER INT_VAR copy_header = 20 END
-			LPF ALTER_SPELL_HEADER INT_VAR header = i min_level=i END
-				LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_probability1 = 4 probability1 = 0 END //1 % of calling minor animal spirit
-				LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_probability2 = 5 match_probability1 = 14 probability2 = 1 probability1 = 10 END  //9% calling major animal
-				LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_probability2 = 15 match_probability1 = 34 probability2 = 11 probability1 = 20 END // 10% minor nature spirit
-				LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_probability2 = 35 match_probability1 = 74 probability2 = 21 probability1 = 30 END // 10% major nature spirit
+            FOR (i=24;i<=30;i=i+1) BEGIN		
+                SET d_prob = (i - 20) *2
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 20 END
+                LPF ALTER_SPELL_HEADER INT_VAR header = i min_level=i END
+                    LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_probability1 = 4 probability1 = 0 END //1 % of calling minor animal spirit
+                    LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_probability2 = 5 match_probability1 = 14 probability2 = 1 probability1 = 10 END  //9% calling major animal
+                    LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_probability2 = 15 match_probability1 = 34 probability2 = 11 probability1 = 20 END // 10% minor nature spirit
+                    LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_probability2 = 35 match_probability1 = 74 probability2 = 21 probability1 = 30 END // 10% major nature spirit
 				
-				LPF ADD_SPELL_EFFECT INT_VAR header = i opcode = 139 target =1 timing = 1 probability2 = 31 probability1 = 74 + d_prob parameter1 = StrRefDisplay END
-				LPF ADD_SPELL_EFFECT INT_VAR header = i opcode = 331 duration = 2400  target =1 timing = 0 probability2 = 31 probability1 = 74 + d_prob STR_VAR resource =~BDSHAM24~ END
+                    LPF ADD_SPELL_EFFECT INT_VAR header = i opcode = 139 target =1 timing = 1 probability2 = 31 probability1 = 74 + d_prob parameter1 = StrRefDisplay END
+                    LPF ADD_SPELL_EFFECT INT_VAR header = i opcode = 331 duration = 2400  target =1 timing = 0 probability2 = 31 probability1 = 74 + d_prob STR_VAR resource =~BDSHAM24~ END
 				
-				LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_probability2 = 75 probability2 = 75 + d_prob END
-		END
+                    LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_probability2 = 75 probability2 = 75 + d_prob END
+            END
 	 
-		FOR (i=1;i<=30;i=i+1) BEGIN
-			//change duration based on level
-			PATCH_IF (i<6) BEGIN
-				LPF ALTER_SPELL_EFFECT INT_VAR header=i match_opcode=328 duration =13 END
-			END ELSE PATCH_IF (i<12) BEGIN
-				LPF ALTER_SPELL_EFFECT INT_VAR header=i match_opcode=328 duration =19 END
-			END ELSE PATCH_IF (i<18) BEGIN
-				LPF ALTER_SPELL_EFFECT INT_VAR header=i match_opcode=328 duration =25 END
-			END ELSE BEGIN
-				LPF ALTER_SPELL_EFFECT INT_VAR header=i match_opcode=328 duration =31 END
-			END
-		END
+            FOR (i=1;i<=30;i=i+1) BEGIN
+                //change duration based on level
+                PATCH_IF (i<6) BEGIN
+                    LPF ALTER_SPELL_EFFECT INT_VAR header=i match_opcode=328 duration =13 END
+                END ELSE PATCH_IF (i<12) BEGIN
+                    LPF ALTER_SPELL_EFFECT INT_VAR header=i match_opcode=328 duration =19 END
+                END ELSE PATCH_IF (i<18) BEGIN
+                    LPF ALTER_SPELL_EFFECT INT_VAR header=i match_opcode=328 duration =25 END
+                END ELSE BEGIN
+                    LPF ALTER_SPELL_EFFECT INT_VAR header=i match_opcode=328 duration =31 END
+                END
+            END
 	 
-		LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=363 END //remove movement rate checking
+            LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=363 END //remove movement rate checking
 	
 	
-	 //favored of spirits for non bg1
-		ACTION_IF !(~%GameId%~ STR_EQ ~Bg1~) BEGIN
+            //favored of spirits for non bg1
+            ACTION_IF !(~%GameId%~ STR_EQ ~Bg1~) BEGIN
 		
 			
-			//making favored of spirits permanent (just heal)
-			COPY_EXISTING ~SPCL941.SPL~ ~override/FVRD_HL.SPL~ //updating heal
-				LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 321 STR_VAR resource = ~FVRD_SP~ END
+                //making favored of spirits permanent (just heal)
+                COPY_EXISTING ~SPCL941.SPL~ ~override/FVRD_HL.SPL~ //updating heal
+                    LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 321 STR_VAR resource = ~FVRD_SP~ END
 				
-			COPY_EXISTING ~SPCL941B.SPL~ ~override/FVRD_SP.SPL~
-				LPF DELETE_EFFECT INT_VAR  match_opcode = 101 END
-				LPF DELETE_EFFECT INT_VAR  match_opcode = 267 END	
-				LPF ALTER_SPELL_EFFECT_EX INT_VAR  match_timing = 4 opcode = 169 END				
-				LPF DELETE_EFFECT INT_VAR  match_opcode = 169 END
+                COPY_EXISTING ~SPCL941B.SPL~ ~override/FVRD_SP.SPL~
+                    LPF DELETE_EFFECT INT_VAR  match_opcode = 101 END
+                    LPF DELETE_EFFECT INT_VAR  match_opcode = 267 END	
+                    LPF ALTER_SPELL_EFFECT_EX INT_VAR  match_timing = 4 opcode = 169 END				
+                    LPF DELETE_EFFECT INT_VAR  match_opcode = 169 END
 				
-				LPF ALTER_SPELL_EFFECT INT_VAR  timing = 9 END
-				LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 321 timing = 0 STR_VAR resource = ~FVRD_SP~ END
-				LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 215 timing = 0 END
-				LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 174 timing = 0 END
-				LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 50 timing = 0 END
-				LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 232 STR_VAR resource = ~FVRD_HL~ END
+                    LPF ALTER_SPELL_EFFECT INT_VAR  timing = 9 END
+                    LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 321 timing = 0 STR_VAR resource = ~FVRD_SP~ END
+                    LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 215 timing = 0 END
+                    LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 174 timing = 0 END
+                    LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 50 timing = 0 END
+                    LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 232 STR_VAR resource = ~FVRD_HL~ END
 				
-			OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN //apply favored of spirits every time after rest
-				EXTEND_TOP ~BALDUR.BCS~ ~override/SHAMAN.baf~
-					EVALUATE_BUFFER			
-			END
+                OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN //apply favored of spirits every time after rest
+                    EXTEND_TOP ~BALDUR.BCS~ ~override/SHAMAN.baf~
+                        EVALUATE_BUFFER			
+                END
 				
-		END
+            END
+        END
 	 //-------------------------Berserker--------------------------
 	 COPY_EXISTING ~SPCL321D.SPL~ ~override~
 		LPF DELETE_EFFECT INT_VAR  match_opcode = 139 END

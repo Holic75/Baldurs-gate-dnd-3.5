@@ -49,7 +49,7 @@ BEGIN @1
 	COPY ~3ed/Core/ThiefSkill~ ~override~ 
 	
 	COPY ~3ed/Core/Xp/Common~ ~override~ //xp table		
-	COPY ~3ed/Core/Xp/%GameId%~ ~override~ //max xp (different for bg1, bg2 and iwd
+	COPY ~3ed/Core/Xp/%GameId%~ ~override~ //max xp (different for bg1, bg2 and iwd)
 		
 	//update descriptions
 	
@@ -149,6 +149,7 @@ INCLUDE ~3ed/SET_ITEM_USABILITY.tph~
 INCLUDE ~3ed/PTCH_WPN.tph~
 INCLUDE ~3ed/UPDATE_WEAPON_DMG.tph~
 INCLUDE ~3ed/UPDATE_ARMOR.tph~
+INCLUDE ~3ed/ALTER_SPELL_EFFECT_EX.tph~
 INCLUDE ~3ed/ALTER_EFF.tph~
 INCLUDE ~3ed/GET_SPELL_EFFECT_VALUES.tph~
 
@@ -272,9 +273,13 @@ WITH_TRA ~%LANGUAGE%\Spells.tra~ BEGIN
 	INCLUDE ~3ed/Component5/NewClericSpells.tps~ 
 	INCLUDE ~3ed/Component5/NewDruidSpells.tps~ 
 	
+    
 	INCLUDE ~3ed/Component5/PriestDomains.tps~ 
+   
 	INCLUDE ~3ed/Component5/SorcBloodlines.tps~ 
+  
 	INCLUDE ~3ed/Component5/AssasinSpells.tps~ 
+  
 	INCLUDE ~3ed/Component5/SpellfusedWardenSpells.tps~ 
 	
 	//regularization of protection removals
@@ -376,7 +381,7 @@ BEGIN @11
 BEGIN @12	//point buy system
 	
 	//copying lua files for interface 
-	COPY ~3ed/LUA/%GameId%/UI.menu~ ~override~
+	COPY ~3ed/LUA/%GameId%~ ~override~
 		
 BEGIN @13	
 	//update npc stats and set their lvl to 0
