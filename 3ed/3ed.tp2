@@ -44,8 +44,12 @@ BEGIN @1
 	COPY ~3ed/Core/Stats~ ~override~
 	
 	COPY ~3ed/Core/Proficiencies/Common~ ~override~ 
-			
-	
+    
+    ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
+    
+        COPY ~3ed/Core/Proficiencies/Bg2~ ~override~  //copy proficiency ui (up to 7 slots
+    END
+				
 	COPY ~3ed/Core/ThiefSkill~ ~override~ 
 	
 	COPY ~3ed/Core/Xp/Common~ ~override~ //xp table		
@@ -84,6 +88,20 @@ BEGIN @1
 
 	//------------------------------xp regularization for multi classes	
 	INCLUDE ~3ed/Component1/MultiClassXp.tps~
+    
+    //initial xp regularization
+    ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
+        
+        OUTER_SET XP=89000 //original game
+        EXTEND_TOP ~AR0602.bcs~ ~3ed/Core/Xp/Bg2/InitialXp.baf~
+			EVALUATE_BUFFER
+            
+            
+        OUTER_SET XP=500000*6
+        EXTEND_TOP ~OH8000.bcs~ ~3ed/Core/Xp/Bg2/InitialXp.baf~
+			EVALUATE_BUFFER
+    
+    END
 	
 ////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
@@ -385,14 +403,16 @@ BEGIN @12	//point buy system
 		
 BEGIN @13	
 	//update npc stats and set their lvl to 0
-	COPY  ~3ed/Npc/%GameId%~ ~override~
+    INCLUDE ~3ed/ALTER_CREATURE.tph~
+    INCLUDE ~3ed/SET_DEFAULT_NPC_STATS.tph~
+
+    
+    
+    
+
 	
     WITH_TRA ~%LANGUAGE%\npc.tra~ BEGIN
-        ACTION_IF (~%GameId%~ STR_EQ ~Bg1~) BEGIN
-    
-            //qualye dialog change
-            STRING_SET 126  @001 
-        END
+         INCLUDE ~3ed/Component12/UpdateNpc.tps~
     END
 
 

@@ -1,0 +1,14 @@
+2DA V1.0
+BADVAL
+                    VALUE      
+START_AREA          OH8000     
+START_XPOS          2
+START_YPOS          2
+START_AREA_TUTORIAL AR0015     
+START_XPOS_TUTORIAL 607        
+START_YPOS_TUTORIAL 660        
+START_AREA_MP       OH8000
+START_XPOS_MP       2
+START_YPOS_MP       2       
+START_XP            0          
+START_XP_CAP        8000000     

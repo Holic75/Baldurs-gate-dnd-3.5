@@ -106,7 +106,7 @@ DEFINE_PATCH_FUNCTION ~GET_SPELL_EFFECT_VALUES~
 		
 		SET relative_effects_offset=0x0020
 		SET relative_n_effects_offset=0x001e
-		SET relative_saves_offset=0x0024
+
 		
 		FOR (i=0;i<=n_headers*(matches_found<match_id);i=i+1) BEGIN
 			
@@ -116,7 +116,7 @@ DEFINE_PATCH_FUNCTION ~GET_SPELL_EFFECT_VALUES~
 
 			
 			PATCH_IF (i=n_headers) BEGIN //parsing global feature block
-				PATCH_IF (header!=666666666 AND 0=header) BEGIN
+				PATCH_IF (header!=666666666 AND 0=!header) BEGIN
 					SET matched_header =0
 				END
 				

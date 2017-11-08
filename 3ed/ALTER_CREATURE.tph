@@ -6,8 +6,7 @@ DEFINE_PATCH_FUNCTION ~ALTER_CREATURE~
 		Gold = 666666
 		CurrentHp = 666666
 		AcNatural = 666666
-		AcEffective = 666666
-		AcMissile = 666666
+		AcEffective = 666666		
 		AcCrushing = 666666
 		AcMissile = 666666
 		AcPiercing = 666666
@@ -49,8 +48,10 @@ DEFINE_PATCH_FUNCTION ~ALTER_CREATURE~
 		Tooltip = 666666
 		Level1 = 666666
 		Level2 = 666666
-
-	
+        Level3 = 666666
+        Kit = 666666
+        Class = 666666
+        RacialEnemy = 666666
   
 	STR_VAR
         ScriptOverride = ~---~
@@ -102,6 +103,9 @@ DEFINE_PATCH_FUNCTION ~ALTER_CREATURE~
 			0x023e 	=> 	~%Charisma%~
 			0x0234  =>  ~%Level1%~
 			0x0235  =>  ~%Level2%~
+            0x0236  =>  ~%Level3%~
+            0x0273  =>  ~%Class%~
+            0x0241  =>  ~%RacialEnemy%~
 		END
 		
 		DEFINE_ASSOCIATIVE_ARRAY FileFields2 BEGIN
@@ -130,6 +134,8 @@ DEFINE_PATCH_FUNCTION ~ALTER_CREATURE~
 			0x0014 	=> 	~%Xp%~
 			0x0018 	=> 	~%Power%~
 			0x001c 	=> 	~%Gold%~
+            0x0244  =>  ~%Kit%~
+
 		END
 
 		PHP_EACH FileFields1 AS Offset => Val  BEGIN					 

@@ -8,12 +8,19 @@
 	@5 = ~Splint Mail~
 	@6 = ~Plate Mail~
 	@7 = ~Full Plate Armor~
+    @71 = ~Full Plate Mail~
 	
 	@8  = ~– Open Locks: -5%
 – Find Traps: -5%
 – Pick Pockets: -20%
 – Move Silently: -10%
 – Hide In Shadows: -10%
+– Spellcasting is not disabled~
+
+	@81  = ~– Open Locks: -5%
+– Find Traps: -5%
+– Pick Pockets: -20%
+– Move Silently: -10%
 – Spellcasting is not disabled~
 
 	@9  = ~Equipped abilities:~

@@ -16,7 +16,7 @@
 		SET ar_id=ar_id+1
 		SPRINT AreaName EVALUATE_BUFFER ~%SOURCE_RES%~
 		INNER_ACTION BEGIN 
-			EXTEND_TOP ~%SOURCE_RES%.bcs~ ~3ed/Classes/AnimalCompanion/ACMPAR.baf~
+			EXTEND_BOTTOM ~%SOURCE_RES%.bcs~ ~3ed/Classes/AnimalCompanion/ACMPAR.baf~
 				EVALUATE_BUFFER
 		END
 	//unsummon all companions after rest

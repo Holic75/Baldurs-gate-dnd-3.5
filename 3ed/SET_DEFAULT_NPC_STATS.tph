@@ -1,0 +1,61 @@
+DEFINE_ACTION_FUNCTION ~SET_DEFAULT_NPC_STATS~
+	INT_VAR
+        Str = 0
+        Dex = 0
+        Int =  0
+        Wis = 0
+        Cha = 0
+        Con = 0
+        HideInShadows = 0
+        MoveSilently = 0
+        DetectIllusion = 0
+        PickPockets = 0
+        Lockpick = 0
+        FindTraps = 0
+        SetTraps = 0
+    
+        RemoveKnownSpells = 1
+        
+    
+    STR_VAR
+        NpcName = ~~
+        ScriptName=~~
+        ClassName = ~~
+        KitName =~MAGESCHOOL_GENERALIST~
+    
+    
+    BEGIN
+    
+        OUTER_SET Class = IDS_OF_SYMBOL ( ~Class~ ~%ClassName%~)
+        OUTER_SET Kit = IDS_OF_SYMBOL ( ~Kit~ ~%KitName%~)
+        
+        OUTER_SET Kit = (Kit BLSR 16) + (Kit  BLSL 16) 
+        
+        ACTION_IF (Class +1 == 0) OR (Kit+1 ==0) BEGIN      
+            FAIL ~SET_DEFAULT_NPC_STATS::Incorrect Class or Kit Name - %ClassName% - %KitName%~
+        END
+        
+        
+       
+        COPY_EXISTING_REGEXP ~%NpcName%\.CRE~ ~override~
+
+            REMOVE_CRE_EFFECTS
+            
+            REMOVE_MEMORIZED_SPELLS
+                        
+            PATCH_IF (RemoveKnownSpells) BEGIN
+                REMOVE_KNOWN_SPELLS	
+            END
+
+            LPF ALTER_CREATURE INT_VAR Strength = Str Dexterity = Dex Constitution = Con Wisdom = Wis Intelligence = Int Charisma = Cha 
+                               MoveSilently HideInShadows DetectIllusion Lockpick FindTraps SetTraps 
+                               MaxHp = 2 SaveDeath =20 SaveWands = 20 SaveBreath = 20 SavePoly  =20 SaveSpell = 20 
+                               AcNatural = 10 AcEffective = 10 AcMissile = 0 AcCrushing = 0 AcMissile = 0 AcPiercing = 0 AcSlashing = 0
+                               Lore = 0 Level1= 0 Level2 = 0 Level3 = 0 THAC0 = 20 RacialEnemy = 151 Class Kit END
+    
+        EXTEND_TOP ~%ScriptName%.bcs~ ~3ed/Npc/Common/Rejoin.baf~
+				EVALUATE_BUFFER 
+    
+    
+    END
+    

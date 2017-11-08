@@ -16,14 +16,14 @@ HELM16   helm_brilliance        1       4
 KUOBOLT  kuo_bolt               1       4
 KUOBOLT2 kuo_bolt               1       4
 KUOBOLT3 kuo_bolt               1       4
-OHBSHLD  kazrah_shield          1       2
+OHBSHLD1 kazrah_shield          1       2
 OHDSW03  brass_blade            1       2
 POTN26   potion_explosions      1		2
 RING30   ring_human_influence   1       8  
-SLING06  sling_arvoreen         1       4       
-STAFF11  staff_magi             1       2
-STAFF12  staff_magi             1       2
-STAFF13  staff_magi             1       2 
+SLNG06   sling_arvoreen         1       4       
+STAF11   staff_magi             1       2
+STAF12   staff_magi             1       2
+STAF13   staff_magi             1       2 
 WAND02   wand_fear              1		8         
 WAND13   wand_cold              1		4         
         

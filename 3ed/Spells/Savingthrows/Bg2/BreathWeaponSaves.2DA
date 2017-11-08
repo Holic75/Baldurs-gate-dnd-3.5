@@ -1,6 +1,6 @@
 BALTH01    solar_fireball                 x
 MELIS02B   blade_barrier                  x
-ohbcall    chain_lightning				  x
+ohbcalll   chain_lightning				  x
 ohbeflam   flame_strike                   x
 ohbquake   earthquake	                  x
 OHBWI304   fireball                       x
@@ -9,8 +9,8 @@ OHDDIVRT   divine_retribution             x
 SPBLUN29   chain_lightning                x
 SPCL239    sun_soulbeam                   x
 SPCL239a   sun_soulbeam                   x
-SPC722     lightning_bolt                 x
-SPC911b    trap                           x
+SPCL722    lightning_bolt                 x
+SPCL911b   trap                           x
 SPCRYO01   cone_of_cold                   x
 SPCTMD01   fire_ball                      x
 SPDR201    druid_web                      x

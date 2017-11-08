@@ -1,0 +1,18 @@
+IF
+	!Class(Myself,NO_CLASS)
+	!InParty(Myself)
+THEN
+	RESPONSE #100
+		ChangeClass(Myself,NO_CLASS)
+		Continue()
+END
+
+
+IF
+	Class(Myself,NO_CLASS)
+	InParty(Myself)
+THEN
+	RESPONSE #100
+		ChangeClass(Myself,%Class%)
+		Continue()
+END

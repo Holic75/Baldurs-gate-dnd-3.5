@@ -74,7 +74,7 @@ DEFINE_PATCH_FUNCTION ~UPDATE_ARMOR~
 			
 			PATCH_IF ((~%target_string%~ STRING_CONTAINS_REGEXP ~%substring_to_replace_match%~) == 0) BEGIN	
 				SPRINT substring_to_replace (AT "string_to_replace_ref_match")	
-			END ELSE BEGIN 
+			END ELSE PATCH_IF ((~%target_string%~ STRING_CONTAINS_REGEXP ~%new_substring%~) == 1) BEGIN 
 				SPRINT substring_to_replace (AT "string_to_replace_ref")		
 				SPRINT new_substring EVALUATE_BUFFER ~%substring_to_replace%
 				
@@ -90,7 +90,7 @@ DEFINE_PATCH_FUNCTION ~UPDATE_ARMOR~
 			
 			PATCH_IF ((~%target_string%~ STRING_CONTAINS_REGEXP ~%substring_to_replace_match%~) == 0) BEGIN	
 				SPRINT substring_to_replace (AT "string_to_replace_ref_match")		
-			END ELSE BEGIN 
+			END ELSE PATCH_IF ((~%target_string%~ STRING_CONTAINS_REGEXP ~%new_substring%~) == 1) BEGIN 
 				SPRINT substring_to_replace (AT "string_to_replace_ref")		
 				SPRINT new_substring EVALUATE_BUFFER ~%substring_to_replace%
 				

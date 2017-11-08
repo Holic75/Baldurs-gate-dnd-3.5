@@ -1,0 +1,9 @@
+IF 
+    !Global("ReceivedInitialXP","GLOBAL",1)
+    
+THEN
+    RESPONSE #100
+        AddexperienceParty(%XP%)
+        SetGlobal("ReceivedInitialXP","GLOBAL",1)
+        Continue()
+END

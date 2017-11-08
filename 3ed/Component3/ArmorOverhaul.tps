@@ -4,7 +4,8 @@
 	OUTER_SPRINT ChainMailStr @4
 	OUTER_SPRINT SplintMailStr @5
 	OUTER_SPRINT PlateMailStr @6
-	OUTER_SPRINT FullPlateStr @7	
+	OUTER_SPRINT FullPlateStr @7
+    OUTER_SPRINT FullPlateMailStr @71	
 	
 COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   READ_STRREF 0x0008 "unid_name"
@@ -29,7 +30,9 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~CHAN17~) BEGIN //ashen scales +2 -> chain mail (allow bard)
   
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 16  string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 14 END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 16  string_to_replace_ref_match = 9 string_to_replace_ref = 10 
+                             new_string_to_add_ref = 14 update_unid_string = 0 END
+                             
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~bard~ END
 	
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~PLAT18~) BEGIN //red dragon scale -> splint (allow barbarian)
@@ -61,6 +64,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~ELFCHAN~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN12~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN13~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN14~) 
 					OR (~%SOURCE_RES%~ STR_EQ ~CHAN15~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN10~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN16~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN17~) 
 					OR (~%SOURCE_RES%~ STR_EQ ~CHAN14~) OR (~%SOURCE_RES%~ STR_EQ ~DWCHAN01~) OR (~%SOURCE_RES%~ STR_EQ ~DWCHAN02~) OR (~%SOURCE_RES%~ STR_EQ ~CLOLTH~) 
+                    OR (~%SOURCE_RES%~ STR_EQ ~CHAN19~)
 					BEGIN //elven chain  (allow stalker, beastmaster)
 	
 	update_unid_string = 1 
@@ -68,7 +72,13 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	PATCH_IF (~%SOURCE_RES%~ STR_EQ ~ELFCHAN~ OR ~%SOURCE_RES%~ STR_EQ ~KAYCHAI~) BEGIN
 		update_unid_string = 0
 	END
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 0 max_dex = 18 skill_penalty = 18 is_light = 1 clear_thief_penalty = 1 string_to_replace_ref_match = 8 string_to_replace_ref = 10 new_string_to_add_ref = 141 update_unid_string END
+    
+    string_to_replace_ref_match = 8
+    
+    PATCH_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
+        string_to_replace_ref_match = 81
+    END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 0 max_dex = 18 skill_penalty = 18 is_light = 1 clear_thief_penalty = 1 string_to_replace_ref_match string_to_replace_ref = 10 new_string_to_add_ref = 141 update_unid_string END
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~beastmaster~ END
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~stalker~ END
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~archer~ END
@@ -129,7 +139,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 		
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~SECRET05~) BEGIN//combined pantalons 
   
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 50 max_dex = 10 skill_penalty = 10 is_light = 0 string_to_replace_ref_match = 18 string_to_replace_ref = 10 new_string_to_add_ref = 181 update unidstring = 0 END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 50 max_dex = 10 skill_penalty = 10 is_light = 0 string_to_replace_ref_match = 18 string_to_replace_ref = 10 new_string_to_add_ref = 181 update_unidstring = 0 END
 	WRITE_BYTE 0x002c 0 //dex
 	SAY IDENTIFIED_DESC @1002
 	SAY UNIDENTIFIED_DESC @1002	
@@ -167,7 +177,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   
 	LPF UPDATE_ARMOR INT_VAR spell_failure = 40 max_dex = 12 skill_penalty = 12 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 16 END
   	
-  END  ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~%FullPlateArmor%~) BEGIN //Full Plate
+  END  ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~%FullPlateStr%~ ) OR (~%unid_name%~ STRING_EQUAL ~%FullPlateMailStr%~ ) BEGIN //Full Plate
 	
 	LPF UPDATE_ARMOR INT_VAR spell_failure = 50 max_dex = 10 skill_penalty = 10 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 17 END
 	
