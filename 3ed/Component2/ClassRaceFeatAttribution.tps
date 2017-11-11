@@ -1,10 +1,13 @@
 //-------------------------------------------------class-specific bonus feats---------------------------------------------					
 //archery feats tree for archer and ftr/druid
     COPY ~3ed/Feats/FeatAttribution/SFTCRE_E.SPL~ ~override/ARCHFT.SPL~
-		FOR (i=1;i<=5;i=i+1) BEGIN
+		FOR (i=1;i<=7;i=i+1) BEGIN
 			SET lvl=4*(i - 1)
 			PATCH_IF (lvl==0) BEGIN
 				SET lvl=1
+			END
+            PATCH_IF (lvl==20) BEGIN
+				SET lvl=21
 			END
 			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=lvl speed=0 END
 				SPRINT resource EVALUATE_BUFFER ~SFT115_%i%~
@@ -16,10 +19,13 @@
 							mask_file=~~ feat_type_file=~~ caption=~ARCHFT~ END	
 //2 weapon fighting for ranger and ranger/cleric
     COPY ~3ed/Feats/FeatAttribution/SFTCRE_E.SPL~ ~override/TWFFT.SPL~
-		FOR (i=1;i<=5;i=i+1) BEGIN
+		FOR (i=1;i<=7;i=i+1) BEGIN
 			SET lvl=4*(i - 1)
 			PATCH_IF (lvl==0) BEGIN
 				SET lvl=1
+			END
+            PATCH_IF (lvl==20) BEGIN
+				SET lvl=21
 			END
 			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=lvl speed=0 END
 				SPRINT resource EVALUATE_BUFFER ~SFT114_%i%~

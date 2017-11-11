@@ -19,7 +19,9 @@
 	COPY_EXISTING ~ohtyr2.SPL~ ~override~
 		LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_level=5 spell_type=2 END
 		READ_LONG 0x0050 ~descr_strref~
+        WRITE_ASCII 0x003a ~OHTYR2C~ //set icon (it is somehow not set in bg2)
 		STRING_SET_EVALUATE %descr_strref% @104	
+        
 	//making seeking sword give only one additional apr and creating headers for levels 5-9 (also make lvl 3 cleric spell)
 	COPY_EXISTING ~SPCL731.SPL~ ~override~ 
 		LPF ALTER_SPELL_HEADER INT_VAR  header=1 min_level=10 END

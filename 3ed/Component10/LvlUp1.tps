@@ -1,6 +1,9 @@
 	OUTER_SET reset_xp_mode=3
 	
-	COPY ~3ed/lvlUp1/SETXP0.SPL~ ~override~
+	COPY ~3ed/lvlUp1/SETXP0.SPL~ ~override~    
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 timing = 0 target = 2 duration = 1 insert_point =0 STR_VAR resource = ~MLTXP1~ END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 1 target = 2 insert_point =0 STR_VAR resource = ~MLTXP1~ END
+            
 	COPY ~3ed/lvlUp1/RESETXP.SPL~ ~override/RSTXP0.SPL~
 		SPRINT resource EVALUATE_BUFFER ~SETXP0~
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 timing=0 duration=1 STR_VAR resource END
@@ -27,10 +30,15 @@
             EVALUATE_BUFFER	
                
 	//adding new setxp spell
-		COPY ~3ed/lvlUp1/SETXP0.SPL~ ~override/SETXP1%lvl%.SPL~
+		COPY_EXISTING ~SETXP0.SPL~ ~override/SETXP1%lvl%.SPL~
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=104 parameter1=xp1 END
- 		COPY ~3ed/lvlUp1/SETXP0.SPL~ ~override/SETXP2%lvl%.SPL~
+            SPRINT resource EVALUATE_BUFFER ~SETXP1%lvl%~
+
+             
+ 		COPY_EXISTING ~SETXP0.SPL~ ~override/SETXP2%lvl%.SPL~
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=104 parameter1=xp2 END
+            
+            
 	//adding it to reset		
 		COPY_EXISTING ~3ed/lvlUp1/RESETXP.SPL~ ~override/RSTXP%lvl%.SPL~ 
             SPRINT resource EVALUATE_BUFFER ~SETXP1%lvl%~

@@ -7,21 +7,28 @@
 	END
 	//medium thaco
 	COPY ~3ed/Core/THAC0/THAC0M.SPL~ ~override/THAC0M.SPL~
-		FOR (i=1;i<=20;i=i+1) BEGIN
+		FOR (i=1;i<=30;i=i+1) BEGIN
 			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=0 END
 				SET r = 20 - (3*i/4)
+                PATCH_IF (r<5) BEGIN
+                    SET r=5
+                END
 				SPRINT resource EVALUATE_BUFFER ~THAC0%r%~
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=8 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/cleric
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=16 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/druid
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=7 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/mage
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=9 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/thief
+                LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=18 parameter2=105 timing=0 duration=1 STR_VAR resource END // cleric/ranger
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=19 parameter2=105 timing=0 duration=1 STR_VAR resource END // sorceror for battle caster
 		END
 	//low thac0
 	COPY ~3ed/Core/THAC0/THAC0M.SPL~ ~override/THAC0L.SPL~
-		FOR (i=1;i<=20;i=i+1) BEGIN
+		FOR (i=1;i<=30;i=i+1) BEGIN
 			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=0 END
 				SET r = 20 - (i/2)
+                PATCH_IF (r<10) BEGIN
+                    SET r=10
+                END
 				SPRINT resource EVALUATE_BUFFER ~THAC0%r%~
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=13 parameter2=105 timing=0 duration=1 STR_VAR resource END // mage/thief
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=14 parameter2=105 timing=0 duration=1 STR_VAR resource END // cleric/mage
@@ -30,9 +37,9 @@
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 
 						STR_VAR clab=~CLABTH04\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~THAC0H~ END		
-	//mdium thaco (fighter-*, and battle caster)
+	//medium thaco (fighter-*, ranger - clr*  and battle caster)
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 
-						STR_VAR clab=~\(CLABFI01\)\|\(CLABSO01\)\.2DA~ mask_file=~~
+						STR_VAR clab=~\(CLABFI01\)\|\(CLABSO01\)\|\(CLABRN01\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~THAC0M~ END		
 	//low thaco (cleric/mage and mage/thief)
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 
@@ -71,8 +78,13 @@
 	
 	//saving throws regularization
 	COPY ~3ed/Core/THAC0/THAC0H.SPL~ ~override/SAVESDH.SPL~ //high thaco for swashbucklers
-		FOR (i=1;i<=20;i=i+1) BEGIN
-			LPF ALTER_SPELL_EFFECT INT_VAR header=i parameter1=(16 - i/2) new_opcode = 33  END //saving throw vs death value
+		FOR (i=1;i<=30;i=i+1) BEGIN
+        
+            SET save_val = (16 - i/2)
+            PATCH_IF (save_val<6) BEGIN
+                SET save_val = 6
+            END
+			LPF ALTER_SPELL_EFFECT INT_VAR header=i parameter1=save_val new_opcode = 33  END //saving throw vs death value
 		END
 	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESWH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 34  END //saving throw vs wand
 	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESPH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 35  END //saving throw vs polymorph

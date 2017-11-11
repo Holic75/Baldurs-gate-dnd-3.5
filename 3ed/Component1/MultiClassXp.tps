@@ -10,6 +10,7 @@
 	
 	COPY ~3ed/HybridXP/MLTXP.EFF~ ~override~
 	COPY ~3ed/HybridXP/MLTXP.SPL~ ~override~
+    COPY ~3ed/HybridXP/MLTXP1.SPL~ ~override~
 	
 	//fighter/mage
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
