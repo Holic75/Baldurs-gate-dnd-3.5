@@ -153,9 +153,8 @@ Disadvantages:
 
 Advantages:
 – Gains +1 bonus to AC for every 2 points of Wisdom above 10.
-– +1 to hit and damage rolls every 4 levels.
-– -1 bonus to Speed Factor every 4 levels.
 – Signature Weapon Category: At level 1 Kensai chooses one weapon category which becomes his Signature Weapon Category. At level 1 Kensai gets for free Weapon Focus with this category, at level 4 - Weapon Specialization, at level 8 - Improved Weapon Focus, at level 12 - Improved Weapon Specialization, at level 16 - Weapon Mastery, at level 21 - Epic Weapon Focus, at level 24 - Epic Weapon Specialization.
+– +1 to hit and damage rolls with Signature weapon category every 4 levels (starting from level 4).
 – May use the Kai ability once per day. Gains one use at level 1 then at level 5 and an additional use every 5 levels thereafter.
 
 KAI: All successful attacks within the next 10 seconds deal maximum damage.
@@ -164,7 +163,6 @@ KAI: All successful attacks within the next 10 seconds deal maximum damage.
 
 Disadvantages:
 – May only wear light armor.
-– May not use missile weapons.
 – May not use shields.
 – Does not get bonus feats like trueclass fighters do.
 – May only put one star in any weapon <PRO_HESHE> can use.

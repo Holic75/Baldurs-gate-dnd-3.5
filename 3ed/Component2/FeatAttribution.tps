@@ -144,7 +144,7 @@
 COPY ~3ed/Classes/Kensai/KENSCRE.BCS~ ~override~
 COPY ~3ed/Classes/Kensai/kenscre.d~  ~override/kenscre.d~ 
 
-	OUTER_FOR (k=0;k<7;k=k+1) BEGIN
+	OUTER_FOR (k=0;k<10;k=k+1) BEGIN
 
 		OUTER_SET proficiency_id_idx = k*FeatSize + 7		
 		OUTER_SET tree_name_idx = k*FeatSize + 9
@@ -188,4 +188,4 @@ COPY ~3ed/Classes/Kensai/kenscre.d~  ~override/kenscre.d~
 	
 	LAF ADD_BONUS_FEATS INT_VAR mask = 0b100100001000100010001001 //(1,4,8,12,16,21,24)
 				STR_VAR clab=~CLABFI04.2DA~ mask_file=~~
-					feat_type_file=~~ caption=~KENSCRE~ END 		
+					feat_type_file=~~ caption=~KENSCRE~ END 	

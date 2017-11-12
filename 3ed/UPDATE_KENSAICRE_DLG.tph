@@ -20,7 +20,9 @@ DEFINE_ACTION_FUNCTION ~UPDATE_KENSAICRE_DLG~
 			
 ~~~~~IF ~~ THEN BEGIN %proficiency_id%
 	SAY ~%tree_name%. %tree_desc%~
-	IF ~True()~ REPLY #%kensai_yes_response% DO ~ApplySpellRES("KNSFT%proficiency_id%",LastSummonerOf(Myself))~  EXIT
+	IF ~True()~ REPLY #%kensai_yes_response% DO ~ApplySpellRES("KNSFT%proficiency_id%",LastSummonerOf(Myself))
+    ApplySpellRES("KNSPR%proficiency_id%",LastSummonerOf(Myself)) 
+    ~  EXIT
 	IF ~True()~ REPLY #%kensai_no_response% GOTO 1
 END	
 

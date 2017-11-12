@@ -34,11 +34,11 @@
 
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 12 Dex = 16 Con = 12 Int = 10 Wis = 10 Cha = 16  
-                                  STR_VAR NpcName = ~Nalia[0-9]+.*~ ScriptName = ~NALIA~ ClassName = ~SORCERER~ Kit = ~DRAGON_DISCIPLE~ RemoveKnownSpells = 0  END                                    
+                                  STR_VAR NpcName = ~Nalia[0-9]+.*~ ScriptName = ~NALIA~ ClassName = ~SORCERER~ Kit = ~DRAGON_DISCIPLE~   END                                    
                                   
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 12 Dex = 16 Con = 12 Int = 10 Wis = 14 Cha = 15  
-                                  STR_VAR NpcName = ~MAZZY+.*~ ScriptName = ~MAZZY~ ClassName = ~PALADIN~ END                                         
-         STRING_SET 11569  @002 //change biography (remove line about not being paladin)
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 12 Dex = 18 Con = 14 Int = 10 Wis = 14 Cha = 10  
+                                  STR_VAR NpcName = ~MAZZY+.*~ ScriptName = ~MAZZY~ ClassName = ~FIGHTER~ KitName= ~KENSAI~  RemoveKnownSpells = 0 END                                         
+         //STRING_SET 11569  @002 //change biography (remove line about not being paladin)
          
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 18 Dex = 12 Con = 18 Int = 8 Wis = 8 Cha = 8  
                 STR_VAR NpcName = ~KORGAN+.*~ ScriptName = ~KORGAN~ ClassName = ~FIGHTER~ KitName = ~BERSERKER~ END      

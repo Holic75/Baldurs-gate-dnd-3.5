@@ -1,7 +1,45 @@
 	INCLUDE ~3ed/ADD_SMITE_EVIL_BASE.tph~
 	INCLUDE ~3ed/ADD_SMITE_EVIL_VARIATION.tph~
 
+//--------------------- kensai -----------------------------
+//replace permanent THAC0/dmg bonus with persistent (to be ale to block it with weapons)
 
+OUTER_FOR (i=1;i<=7;i=i+1) BEGIN //up to +7 bonuses
+
+    OUTER_SPRINT resource EVALUATE_BUFFER ~KENSBN%i%~
+    COPY ~3ed/Classes/Kensai/KENSBN.SPL~ ~override/KENSBN%i%.SPL~         
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode =321 STR_VAR resource END
+        
+    COPY ~3ed/Classes/Kensai/KENSBN.EFF~ ~override/KENSBN%i%.EFF~
+        LPF ALTER_EFF STR_VAR resource END
+        
+    COPY ~3ed/Classes/Kensai/KENSBNA.SPL~ ~override/KENSBNA%i%.SPL~
+        LPF ALTER_SPELL_EFFECT STR_VAR resource END
+        
+END
+
+
+    //kensai bonuses regularization
+    OUTER_FOR (i=89;i<=98;i=i+1) BEGIN     
+    
+         OUTER_SPRINT resource EVALUATE_BUFFER ~KENSR%i%~     
+         
+		 COPY ~3ed\Classes\Kensai\KENSR.SPL~ ~override\KENSR%i%.SPL~    
+            LPF ADD_SPELL_EFFECT INT_VAR opcode =321 target =2 duration =1 STR_VAR resource END //remove protections and add them again
+            FOR (j=1;j<=7;j=j+1) BEGIN
+                SPRINT resource EVALUATE_BUFFER ~KENSBN%j%~
+                LPF ADD_SPELL_EFFECT INT_VAR opcode =321 target =2 duration =1 STR_VAR resource END
+                LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target =2 duration =1 STR_VAR resource END
+            END
+         
+         OUTER_SPRINT resource EVALUATE_BUFFER ~KENSR%i%~
+         COPY ~3ed\Classes\Kensai\KENSR.EFF~ ~override\KENSR%i%.EFF~
+            LPF ALTER_EFF STR_VAR resource END
+            
+         COPY ~3ed\Classes\Kensai\KNSPR.SPL~ ~override\KNSPR%i%.SPL~                 
+            LPF ALTER_SPELL_EFFECT STR_VAR resource END
+    END
+    
 //--------------------- paladin ----------------------------------------
 	//saving throws
 	COPY ~3ed/Classes/Paladin/PDNSVCR.SPL~ ~override~//correction for paladin saves	

@@ -14,7 +14,9 @@
 	OUTER_SET APR2s_ref =302
 
 	COPY ~3ed/2HSTRBonus~ ~override~ //2h weapon bonuses
-	
+     
+
+   
 	//change description for weapons and apply protections from feats
 	COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 		READ_BYTE  0x0031 "proficiency"
@@ -44,6 +46,7 @@
 			LPF PTCH_WPN INT_VAR replace_label=2001 wpn_class_label=001 caption_label=2000 is_melee=1 END		
 
 			LPF SET_ITEM_USABILITY INT_VAR value=usable_by_mage STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~jester~ END
+           
 		END 
 		ELSE PATCH_IF (proficiency = 90) BEGIN//longsword ->straight swords
 			WRITE_BYTE 0x0031 89
@@ -199,13 +202,15 @@
 		ELSE PATCH_IF (proficiency = 107) BEGIN //sling -> missile weapons
 			WRITE_BYTE 0x0031 98
 			LPF ALTER_ITEM_EFFECT INT_VAR check_globals=1 match_opcode=1 parameter1=6 END //fix apr to 0.5
-			LPF PTCH_WPN INT_VAR replace_label=2020 wpn_class_label=037 caption_label=2000 is_melee=0 END				
+			LPF PTCH_WPN INT_VAR replace_label=2020 wpn_class_label=037 caption_label=2000 is_melee=0 END			
+
+           
 		END  		
 		ELSE PATCH_IF (category = 28) BEGIN//fist weapons
 			LPF PTCH_WPN INT_VAR is_melee=1 is_light=1 is_fist=1 END			
 		END
 		
-		
+
 		
 		
 		PATCH_IF (category = BoltsCategory OR category = CrossbowsCategory) BEGIN//bolts, crossbows for mages and thiefs
@@ -238,7 +243,7 @@
 		LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter~  RET usable_by_fighter = result END
 		LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~thief~  RET usable_by_thief = result END
   
-		PATCH_IF (category=!ArmorCategory AND category=!ShieldsCategory) BEGIN
+		PATCH_IF (category!=ArmorCategory AND category!=ShieldsCategory) BEGIN
 			LPF SET_ITEM_USABILITY INT_VAR value = usable_by_cleric OR usable_by_mage STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~cleric_mage~   END
 			LPF SET_ITEM_USABILITY INT_VAR value = usable_by_cleric OR usable_by_ranger STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~cleric_ranger~   END
 			LPF SET_ITEM_USABILITY INT_VAR value = usable_by_cleric OR usable_by_fighter STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_cleric~   END
@@ -262,4 +267,11 @@
 		PATCH_IF (NOT(usable_by_kensai) AND category!=ArmorCategory AND category!=ShieldsCategory AND category!=BracersCategory AND category!=HelmsCategory)  BEGIN //(everything except armors, shields,bracers)
 			LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~berserker~ END
 		END
+        
+        //allow kensai to use missile weapons (generally all weapons of a fighter)
+        PATCH_IF (category!=ArmorCategory AND category!=ShieldsCategory) BEGIN
+			LPF SET_ITEM_USABILITY INT_VAR value = usable_by_kensai OR usable_by_fighter STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~kensai~   END			
+		END
+        
 	BUT_ONLY
+    

@@ -7,9 +7,24 @@
     COPY ~3ed/Classes/FavoredEnemy/FE_DCRE.BAF~  ~override~     
     
     
-    //read racial enemies and their descriptions from haterace.2da
-    ACTION_CLEAR_ARRAY FavoredEnemies   
     
+    ACTION_CLEAR_ARRAY FavoredEnemies   
+    //read racial enemies and their descriptions from racetext.2da (playable races)
+    COPY_EXISTING ~racetext.2DA~   ~override~
+        COUNT_2DA_ROWS 6 n_rows		
+		FOR (i=0;i<n_rows;i=i+1) BEGIN       
+			READ_2DA_ENTRY %i% 4 6 name_strref
+            READ_2DA_ENTRY %i% 1 6 ids
+            READ_2DA_ENTRY %i% 3 6 descr_strref
+		
+            PATCH_IF (ids<=7) BEGIN
+                DEFINE_ASSOCIATIVE_ARRAY FavoredEnemies BEGIN           
+                    ~%name_strref%~, ~%descr_strref%~ => ~%ids%~
+                END
+            END
+		END	   
+    
+    //read racial enemies and their descriptions from haterace.2da (non-playable races)
     COPY_EXISTING ~HATERACE.2DA~   ~override~
         COUNT_2DA_ROWS 4 n_rows		
 		FOR (i=0;i<n_rows;i=i+1) BEGIN
@@ -164,7 +179,9 @@ END
 	
 
 	COPY_EXISTING ~fecre.d~  ~override~  	
-        REPLACE_TEXTUALLY ~%~	~|~
+        REPLACE_TEXTUALLY ~%c~	~|c~
+        REPLACE_TEXTUALLY ~r%~	~r|~
+        REPLACE_TEXTUALLY ~%g~	~|g~
         REPLACE_TEXTUALLY ~|condition_str|~ ~~
         REPLACE_TEXTUALLY ~|give_str|~ ~~
         COMPILE ~override/fecre.d~  
@@ -182,7 +199,9 @@ END
 	
 	
 	COPY_EXISTING ~feicre.d~  ~override~  	
-        REPLACE_TEXTUALLY ~%~	~|~
+        REPLACE_TEXTUALLY ~%c~	~|c~
+        REPLACE_TEXTUALLY ~r%~	~r|~
+        REPLACE_TEXTUALLY ~%g~	~|g~
         REPLACE_TEXTUALLY ~|condition_str|~ ~~
         REPLACE_TEXTUALLY ~|give_str|~ ~~
         COMPILE ~override/feicre.d~  
