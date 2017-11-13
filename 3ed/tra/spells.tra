@@ -610,21 +610,40 @@ The recipient of this spell gains +1 to attack rolls and Saving Throws and a spe
 	@051=~Animate Dead
 (Necromancy)
 
+Level: 5
+Range: 30 ft.
+Duration: 8 hours
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
+
+This spell causes two skeleton warriors to rise and serve the caster under any conditions. The type of skeleton warriors that appear depends upon the level of the wizard casting the spell.
+  1st – 6th: a 3 HD skeleton warriors wielding a long sword.
+  7th – 10th: a 5 HD skeleton warriors wielding a long sword +1.
+  11th – 14th: a 7 HD skeleton warriors wielding a bastard sword +1.
+  15th and up: a 9 HD skeleton warriors wielding a two-handed sword +1.
+The skeleton warriors can follow the caster, remain in an area and attack any creature entering the place, etc. They remain animated until destroyed in combat or 8 hours pass. This spell cannot be dispelled.~
+
+	@0511=~Animate Dead
+(Necromancy)
+
 Level: 3
 Sphere: Necromantic
 Range: 30 ft.
 Duration: 8 hours
 Casting Time: 9
-Area of Effect: Special 
-Saving Throw: None 
+Area of Effect: Special
+Saving Throw: None
 
-This spell causes two skeleton warriors to rise and serve the caster under any conditions. The type of skeleton warrior that appears depends upon the level of the priest casting the spell.
-  1st – 6th: 3 HD skeleton warriors wielding a long sword.
-  7th – 10th: 5 HD skeleton warriors wielding a long sword +1.
-  11th – 14th: 7 HD skeleton warriors wielding a bastard sword +1.
-  15th and up: 9 HD skeleton warriors wielding a two-handed sword +1.
-The skeleton warriors can follow the caster, remain in an area and attack any creature entering the place, etc. They remain animated until it is destroyed in combat, 8 hours pass, or they are turned. This spell cannot be dispelled.~
-//---------------------------------------------------------------------------------------------------
+This spell causes two skeleton warriors to rise and serve the caster under any conditions. The type of skeleton warriors that appear depends upon the level of the priest casting the spell.
+  1st – 6th: a 3 HD skeleton warriors wielding a long sword.
+  7th – 10th: a 5 HD skeleton warriors wielding a long sword +1.
+  11th – 14th: a 7 HD skeleton warriors wielding a bastard sword +1.
+  15th and up: a 9 HD skeleton warriors wielding a two-handed sword +1.
+The skeleton warriors can follow the caster, remain in an area and attack any creature entering the place, etc. They remain animated until destroyed in combat or 8 hours pass. This spell cannot be dispelled.~
+
+
+    //---------------------------------------------------------------------------------------------------
 	@052=~Lay On Hands
 The character channels positive energy to heal the touched creature of 2 Hit Points per level of the caster.
 Starting from level 6 Paladin also cures touched creature of any disease and starting from level 9 of any poison effects.~
@@ -684,6 +703,24 @@ Saving Throw: None
 
 An energy blade is a discus made of pure energy. The disc gives +10 to THAC0, and when thrown does 1d4+5 missile damage as well as 1d10 additional electrical damage. This spell creates 1 energy disc per level of the caster and sets the caster's attacks to 8 as long as the discs are held.~
 //---------------------------------------------------------------------------------------------------------
+    @056=~Magic Resistance
+(Alteration)
+
+Level: 5
+Sphere: Protection
+Range: Touch
+Duration: 3 rounds + 1 round/level
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None 
+
+When this spell is cast, the recipient receives a bonus to resistance to all magic. The resistance bonus conferred is 2% per level of the caster, up to a maximum of 40% at 20th level. This effect will last for the duration of the spell or until dispelled.~
+//----------------------------------------------------------------------------------------------------------------------------------------------
+    @057=~Resist Magic
+This ability allows the warrior to temporarily tap a great inner strength and fight off the effects of malevolent magic. For 4 rounds, the warrior's Magic Resistance is increased by 50%.~
+
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------------------------------------------------
 
 	@101=~Exaltation

@@ -592,8 +592,15 @@
 			LPF ALTER_SPELL_EFFECT INT_VAR header = 4 opcode =177 parameter1= 0 parameter2 = 2 dicesize =0 dicenumber =0 STR_VAR resource ~SPANDE15~ END
 		END
 		LPF CLONE_EFFECT INT_VAR check_globals=0 END
+        
+        COPY_EXISTING ~SPPR301.SPL~ ~override~
+		READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @0511
+        
+        COPY_EXISTING ~SPPR501.SPL~ ~override~
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @051
+
 
 
 	//make absorb health a melee spell
@@ -634,12 +641,32 @@
 			LPF ALTER_SPELL_EFFECT INT_VAR savebonus = 6 END 
 	END	
 	
-	ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) OR (~%GameId%~ STR_EQ ~Bg2~) BEGIN//change description on enrgy blades 9 - 8 attacks
+	ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) OR (~%GameId%~ STR_EQ ~Bg2~) BEGIN//change description on energy blades 9 - 8 attacks
 		COPY_EXISTING ~SPPR721.SPL~ ~override~
 			READ_LONG 0x0050 ~descr_strref~
 			STRING_SET_EVALUATE %descr_strref% @055
 	
 	END
+    
+    
+/*     //update magic resistance to give incremental bonus
+    COPY_EXISTING ~SPPR509.SPL~ ~override~
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 166 parameter2 = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 target = 2 opcode =321 duration = 1 resist_dispel = 2 STR_VAR resource = ~SPPR509~  END
+        
+        PATCH_IF (~%GameId%~ STR_EQ ~Iwd~) OR (~%GameId%~ STR_EQ ~Bg2~) BEGIN
+            LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 target = 2 opcode =321 duration = 1 resist_dispel = 2 STR_VAR resource = ~SPCL904~  END
+        END
+        READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @056
 	
-		
+    //update resist magic to give incremental bonus
+	ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) OR (~%GameId%~ STR_EQ ~Bg2~) BEGIN
+        COPY_EXISTING ~SPCL904.SPL~ ~override~
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 166 parameter2 = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 target = 2 opcode =321 duration = 1 resist_dispel = 2 STR_VAR resource = ~SPCL904~  END
+        LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 target = 2 opcode =321 duration = 1 resist_dispel = 2 STR_VAR resource = ~SPPR509~  END
+        READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @057
+    END  */
 		
