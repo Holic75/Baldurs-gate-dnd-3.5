@@ -300,7 +300,12 @@ WITH_TRA ~%LANGUAGE%\Spells.tra~ BEGIN
 	INCLUDE ~3ed/Component5/AssasinSpells.tps~ 
   
 	INCLUDE ~3ed/Component5/SpellfusedWardenSpells.tps~ 
-	
+END	
+
+WITH_TRA ~%LANGUAGE%\bardic_performance.tra~ BEGIN
+    INCLUDE ~3ed/Component5/BardicPerformance.tps~
+END
+
 	//regularization of protection removals
 	//setting global arrays for storing spells we need to consider
 	ACTION_CLEAR_ARRAY SpellsProtRemovals  //[StartId_in resource_names, EndId_in_resource_names ] => file name	
@@ -314,10 +319,10 @@ WITH_TRA ~%LANGUAGE%\Spells.tra~ BEGIN
         
 		INCLUDE ~3ed/Component5/RegularizeProtectionRemovals.tps~
 	
-	
+	PRINT ~Updating Spell DC~
 	//adding spell dc dependent on caster attirbutes(int for mage, cha for sorc, shaman,bard,  wis - cleric,paladin,ranger,druid)
 	INCLUDE ~3ed/Component5/SpellDC.tps~ 
-END
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////Spontaneous casting
@@ -366,21 +371,6 @@ BEGIN @8
     
 
 ////////////////////////////////////////////////////////////////////////////////////////
-////bardic performance
-////
-////
-BEGIN @9
-	INCLUDE ~3ed/INCREMENT_SPELL_DC.tph~
-	INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
-	INCLUDE ~3ed/CREATE_PSEUDO_SPELL_SELECTION.tph~
-	INCLUDE ~3ed/ADD_BONUS_FEATS.tph~
-
-	
-    WITH_TRA ~%LANGUAGE%\bardic_performance.tra~ BEGIN
-       INCLUDE ~3ed/Component9/BardicPerformance.tps~
-    END
-						
-						
 
 ////////////////////////////////////////////////////////////////////////////////////////
 

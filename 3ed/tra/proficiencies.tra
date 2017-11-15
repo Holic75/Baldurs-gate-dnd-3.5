@@ -182,7 +182,7 @@ Study Opponent:
 
 Character can spend one round studying enemy and getting insight about its weakneses and share them to the party. The target receives a -3 penalty to AC, saving throws and THAC0. 
 This is an extraordinary ability and thus is not subject to magic resistance or savingthrows, neither can be dispelled.~
-	@214=~While wearing light or no armor the character receives +1 bonus to AC for every 2 points of Intelligence above 10.~
+	@214=~The character receives +1 bonus to AC for every 2 points of Intelligence above 10.~
 	@215=~The character receives Critical Strike innate ability.
 
 Critical Strike:

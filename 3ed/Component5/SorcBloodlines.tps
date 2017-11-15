@@ -8,7 +8,7 @@
 		DEFINE_ASSOCIATIVE_ARRAY bloodline_list BEGIN "%k%" => "%SOURCE_RES%" END
 		SET k=k+1
 		
-		
+	COPY ~3ed/Feats/SorcBloodlines/bldline.d~ ~override~
 	ACTION_PHP_EACH bloodline_list AS bloodline_i =>bloodline_file_name BEGIN
 		OUTER_SET bloodline_id=bloodline_i
 		OUTER_SPRINT bloodline_file_2DA EVALUATE_BUFFER ~%bloodline_file_name%~
@@ -16,7 +16,7 @@
 	END
 	
 	
-	COPY ~3ed/Feats/SorcBloodlines/bldline.d~  ~3ed/Feats/SorcBloodlines/bldline.d~  	
+	COPY_EXISTING ~bldline.d~  ~override~  	
 		REPLACE_TEXTUALLY ~%~	~|~
 		REPLACE_TEXTUALLY ~|bloodline_description_str|~ ~~
 		REPLACE_TEXTUALLY ~|bloodline_str|~ ~~

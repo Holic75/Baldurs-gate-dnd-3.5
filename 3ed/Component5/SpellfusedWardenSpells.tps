@@ -9,6 +9,7 @@
 	
     END
     
+    COPY ~3ed/Feats/SpellfusedWarden/school.d~  ~override~ 
     ACTION_PHP_EACH school_list AS school_i =>school_file_name BEGIN
         OUTER_SET school_id=school_i
         OUTER_SPRINT school_file_2DA EVALUATE_BUFFER ~%school_file_name%~
@@ -17,7 +18,7 @@
 	
 
 	
-	COPY ~3ed/Feats/SpellfusedWarden/school.d~  ~3ed/Feats/SpellfusedWarden/school.d~  	
+	COPY_EXISTING ~school.d~  ~override~  	
 		REPLACE_TEXTUALLY ~%~	~|~
 		REPLACE_TEXTUALLY ~|school_description_str|~ ~~
 		REPLACE_TEXTUALLY ~|school_str|~ ~~

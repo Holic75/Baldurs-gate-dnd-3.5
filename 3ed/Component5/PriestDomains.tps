@@ -7,8 +7,9 @@
 	COPY ~3ed/Feats/PriestDomains/Domains2DA~ ~override~
 		DEFINE_ASSOCIATIVE_ARRAY domain_list BEGIN "%k%" => "%SOURCE_RES%" END
 		SET k=k+1
-		
-		
+
+    COPY ~3ed/Feats/PriestDomains/domain.d~  ~override~  	
+
 	ACTION_PHP_EACH domain_list AS domain_i =>domain_file_name BEGIN
 		OUTER_SET domain_id=domain_i
 		OUTER_SPRINT domain_file_2DA EVALUATE_BUFFER ~%domain_file_name%~
@@ -16,7 +17,7 @@
 	END
 	
 	
-	COPY ~3ed/Feats/PriestDomains/domain.d~  ~3ed/Feats/PriestDomains/domain.d~  	
+	COPY_EXISTING ~domain.d~  ~override~  	
 		REPLACE_TEXTUALLY ~%~	~|~
 		REPLACE_TEXTUALLY ~|domain_description_str|~ ~~
 		REPLACE_TEXTUALLY ~|domain_str|~ ~~

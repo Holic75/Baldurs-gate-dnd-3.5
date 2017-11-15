@@ -1,24 +1,26 @@
 	COPY ~3ed/BardSongs/Bam~ ~override~
-	COPY ~3ed/BardSongs/Songs/BARD1.SPL~ ~override~
+	COPY ~3ed/BardSongs/Songs/BARD1.SPL~ ~override~ //inspire courage
 		SAY NAME1 @001
 		SAY UNIDENTIFIED_DESC @002
-	COPY ~3ed/BardSongs/Songs/BARD2.SPL~ ~override~
+	COPY ~3ed/BardSongs/Songs/BARD2.SPL~ ~override~ //countersong
 		SAY NAME1 @003
 		SAY UNIDENTIFIED_DESC @004	
 		
-	COPY ~3ed/BardSongs/Songs/BARD3.SPL~ ~override~
+	COPY ~3ed/BardSongs/Songs/BARD3.SPL~ ~override~ //inspire competence
 		SAY NAME1 @005
 		SAY UNIDENTIFIED_DESC @006
 		
-	COPY ~3ed/BardSongs/Songs/BARD4.SPL~ ~override~
+	COPY ~3ed/BardSongs/Songs/BARD4.SPL~ ~override~ //fascinate
 		SAY NAME1 @007
 		SAY UNIDENTIFIED_DESC @008
-		
-	COPY ~3ed/BardSongs/Songs/BARD5.SPL~ ~override~
+		DEFINE_ASSOCIATIVE_ARRAY bard_songs_to_check_for_prot_removals BEGIN  "BARD4" => "SPWI220" END //power word sleep
+        
+	COPY ~3ed/BardSongs/Songs/BARD5.SPL~ ~override~ //dirge of doom
 		SAY NAME1 @009
-		SAY UNIDENTIFIED_DESC @010
+		SAY UNIDENTIFIED_DESC @010       
+        DEFINE_ASSOCIATIVE_ARRAY bard_songs_to_check_for_prot_removals BEGIN  "BARD5" => "SPPR113" END //doom
 		
-	COPY ~3ed/BardSongs/Songs/BARD6.SPL~ ~override~
+	COPY ~3ed/BardSongs/Songs/BARD6.SPL~ ~override~ //inspire competence
 		SAY NAME1 @011
 		SAY UNIDENTIFIED_DESC @012
 		
@@ -31,21 +33,24 @@
 		SAY NAME1 @013
 		SAY UNIDENTIFIED_DESC @014
 	
-	COPY ~3ed/BardSongs/Songs/BARD8.SPL~ ~override~
+	COPY ~3ed/BardSongs/Songs/BARD8.SPL~ ~override~ //firghtening tune
 		SAY NAME1 @015
 		SAY UNIDENTIFIED_DESC @016
+        DEFINE_ASSOCIATIVE_ARRAY bard_songs_to_check_for_prot_removals BEGIN  "BARD8" => "SPWI205" END //horror
 		
-	COPY ~3ed/BardSongs/Songs/BARD9.SPL~ ~override~
+	COPY ~3ed/BardSongs/Songs/BARD9.SPL~ ~override~ //inspire heroics
 		SAY NAME1 @017
 		SAY UNIDENTIFIED_DESC @018
 		
-	COPY ~3ed/BardSongs/Songs/BARDA.SPL~ ~override~
+	COPY ~3ed/BardSongs/Songs/BARDA.SPL~ ~override~ //deadly performance
 		SAY NAME1 @019
 		SAY UNIDENTIFIED_DESC @020
+        DEFINE_ASSOCIATIVE_ARRAY bard_songs_to_check_for_prot_removals BEGIN  "BARDA" => "SPWI913" END //wail of banshee
 		
-	COPY ~3ed/BardSongs/Songs/BARDB.SPL~ ~override~
+	COPY ~3ed/BardSongs/Songs/BARDB.SPL~ ~override~ //jester's song
 		SAY NAME1 @021
 		SAY UNIDENTIFIED_DESC @022
+        DEFINE_ASSOCIATIVE_ARRAY bard_songs_to_check_for_prot_removals BEGIN  "BARDB" => "SPWI401" END //confusion
 		
 	COPY ~3ed/BardSongs/Songs/BARDC.SPL~ ~override~ //song of requiem
 		FOR (i=1;i<=5;i=i+1) BEGIN

@@ -37,3 +37,15 @@
 		PRINT "Processing spellfused warden spells... %school_id% / 8"
 		LAF ADD_PROTECTION_REMOVALS_SPELLFUSED_WARDEN_SCHOOLS STR_VAR school_file_2DA END	
 	END	
+    
+    PRINT "Processing bard songs..."
+    ACTION_PHP_EACH bard_songs_to_check_for_prot_removals AS new_base_spell =>original_spell BEGIN
+        OUTER_SET max_val=25
+        OUTER_SET min_val=10
+        OUTER_SET step=2
+        OUTER_FOR (i=min_val;i<=max_val;i=i+step) BEGIN
+            OUTER_SPRINT new_spell EVALUATE_BUFFER ~%new_base_spell%%i%~
+            LAF ADD_PROTECTION_REMOVALS STR_VAR original_spell new_spell END	
+        END
+	END	
+    

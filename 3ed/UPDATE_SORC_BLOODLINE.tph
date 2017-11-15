@@ -69,7 +69,7 @@ END
 
 |bloodline_description_str|~~~~~
 	
-		COPY ~3ed/Feats/SorcBloodlines/bldline.d~ ~3ed/Feats/SorcBloodlines/bldline.d~									
+		COPY_EXISTING ~bldline.d~  ~override~  									
 			EVALUATE_BUFFER	
 			REPLACE_TEXTUALLY ~|~ ~%~
 	
