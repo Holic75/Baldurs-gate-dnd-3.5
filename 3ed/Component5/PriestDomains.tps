@@ -21,7 +21,7 @@
 		REPLACE_TEXTUALLY ~%~	~|~
 		REPLACE_TEXTUALLY ~|domain_description_str|~ ~~
 		REPLACE_TEXTUALLY ~|domain_str|~ ~~
-		COMPILE ~3ed/Feats/PriestDomains/domain.d~ 
+		COMPILE ~override/domain.d~ 
 		
 		
 	COPY ~3ed/Feats/FeatAttribution/FEATCRE.CRE~ ~override/DFTCRE.CRE~

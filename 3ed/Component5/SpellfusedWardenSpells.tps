@@ -22,7 +22,7 @@
 		REPLACE_TEXTUALLY ~%~	~|~
 		REPLACE_TEXTUALLY ~|school_description_str|~ ~~
 		REPLACE_TEXTUALLY ~|school_str|~ ~~
-		COMPILE ~3ed/Feats/SpellfusedWarden/school.d~ 
+		COMPILE ~override/school.d~ 
 		
 		
 	COPY ~3ed/Feats/FeatAttribution/FEATCRE.CRE~ ~override/SWFTCRE.CRE~

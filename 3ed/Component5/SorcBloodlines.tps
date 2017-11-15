@@ -20,7 +20,7 @@
 		REPLACE_TEXTUALLY ~%~	~|~
 		REPLACE_TEXTUALLY ~|bloodline_description_str|~ ~~
 		REPLACE_TEXTUALLY ~|bloodline_str|~ ~~
-		COMPILE ~3ed/Feats/SorcBloodlines/bldline.d~ 
+		COMPILE ~override/bldline.d~ 
 		
 		
 	COPY ~3ed/Feats/FeatAttribution/FEATCRE.CRE~ ~override/BDFTCRE.CRE~
