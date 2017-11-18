@@ -18,7 +18,7 @@
 
 
 # Baldurs-gate-dnd-3.5
-This is a WeiDu mod for BG:Enchanced edition and BG2:Enchanced edition  that changes 2ed ADnD rules to DnD 3.5 with some elements taken from Pathfinder.  
+This is a WeiDu mod for BG:Enhanced edition and BG2:Enhanced edition  that changes 2ed ADnD rules to DnD 3.5 with some elements taken from Pathfinder.  
 It changes game mechanics (i.e classes, spells, abilities, etc...) to that of 3.5 edition (to the extent that game engine allows).
 
 # Installation
@@ -29,12 +29,11 @@ In C:\Users\UserName\Documents\Baldur's Gate (II) - Enhanced Edition folder find
 SetPrivateProfileString('Game Options','3E Thief Sneak Attack','1')
 ```
 if it is not already there (it replaces backstab with 3ed Sneak Attack).  
-This mod was only tested with clean BG:ENCHANCED EDITION 2.3 install (Non Sod) and BG 2:ENCHANCED EDITION 2.3 and might not be compatible with any other mods.
+This mod was only tested with clean BG:ENHANCED EDITION 2.3 install (Non Sod) and BG 2:ENHANCED EDITION 2.3 and might not be compatible with any other mods.
 At current state it can be installed along IWD:EE but due to certain effects not supported by the engine (mostly related to opcode 326) abilities depending on character stats do not work (may be it will be fixed by Beamdog in the upcoming 2.5 patch)
 
 
-#### Due to big amount of content it is very difficult to test everything, so I would really appreciate if you could send information on the bugs and inconsistencies you found to holic.denis@gmail.com or post them on the github page.
-Any critics and suggestions are also more than welcome.
+#### Due to big amount of content it is very difficult to test everything, so I would really appreciate if you could send information on the bugs and inconsistencies you found to holic.denis@gmail.com or post them on the issues page. Any critics and suggestions are also more than welcome.
 
 # Rule Changes
 ## 1. Abilities
