@@ -15,7 +15,7 @@ DEFINE_ACTION_FUNCTION ~SET_DEFAULT_NPC_STATS~
         SetTraps = 0
     
         RemoveKnownSpells = 1
-        
+        RemoveMemorizedSpells = 1
     
     STR_VAR
         NpcName = ~~
@@ -40,8 +40,9 @@ DEFINE_ACTION_FUNCTION ~SET_DEFAULT_NPC_STATS~
         COPY_EXISTING_REGEXP ~%NpcName%\.CRE~ ~override~
 
             REMOVE_CRE_EFFECTS
-            
-            REMOVE_MEMORIZED_SPELLS
+            PATCH_IF (RemoveMemorizedSpells) BEGIN
+                REMOVE_MEMORIZED_SPELLS
+            END
                         
             PATCH_IF (RemoveKnownSpells) BEGIN
                 REMOVE_KNOWN_SPELLS	

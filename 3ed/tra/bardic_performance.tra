@@ -1,19 +1,19 @@
 	@001=~Inspire Courage~
 	@002=~Inspire Courage
-	
+
 A 1st level bard can use <PRO_HISHER> performance to inspire courage in <PRO_HISHER> allies (including <PRO_HISHER>self), bolstering them against fear and improving their combat abilities. To be affected, an ally must be able to perceive the bard’s performance. An affected ally receives a +1 bonus on attack and weapon damage rolls as well and becomes immune to fear and panic effects for 4 rounds. At 6th level, and every six levels thereafter, this bonus increases by +1, to a maximum of +6 at 30th level.~
 //---------------------------------------------
 	@003=~Countersong~
 	@004=~Countersong
-	
+
 At 1st level, a bard learns to counter magic effects that depend on sound. Any creature within 30 feet of the bard becomes Immune to the following spells: Silence 15', Command, Greater Command, Wail of Banshee.~
 
 //---------------------------------------------
 	@005=~Inspire Competence~
-	@006=~Inspire Competence 
+	@006=~Inspire Competence
 
 A bard of 3rd level or higher can use <PRO_HISHER> performance to help <PRO_HISHER> ally succeed at a task. The allies must be within 30 feet and able to see and hear the bard. They get a +5% bonus to all their thieving skills for 4 rounds. This bonus increases by +5% at level 6 and every 6 levels thereafter to a maximum of 30% at level 30.~
-	
+
 //-----------------------------------
 	@007=~Fascinate~
 	@008=~Fascinate
@@ -21,22 +21,22 @@ A bard of 3rd level or higher can use <PRO_HISHER> performance to help <PRO_HISH
 At 1st level, a bard can use <PRO_HISHER> performance to cause one creature to become fascinated with <PRO_HIMHER>. Creature must be able to see and hear the bard, and capable of paying attention to him. The bard must also be able to see the creatures affected. If creatures fails saving throw vs. Spell the creature sits quietly and observes the performance for next 4 rounds. Any obvious threat, such as someone drawing a weapon, casting a spell, or aiming a weapon at the target, automatically breaks the effect.
 Target creatures receives -1 penalty to Saving throws to resist Fascinate per 5 levels of the bard to a maximum of -6 at level 30.
 At 8th level bard fascinates all creatures around <PRO_HIMHER> in 30ft radius instead.~
-	
+
 //--------------------------------------------------------
 	@009=~Dirge of Doom~
 	@010=~Dirge of Doom
-	
+
 A bard of 8th level or higher can use <PRO_HISHER> performance to foster a sense of growing dread in <PRO_HISHER> enemies, causing them to become shaken and receive -2 penalty to their attack rolls, Armor Class and Saving throws. To be affected, an enemy must be within 30 feet and able to see and hear the bard’s performance. The effect persists for 4 rounds. There is no Saving throw against this ability.~
 //----------------------------------------------
 	@011=~Inspire Greatness~
 	@012=~Inspire Greatness
 
 A bard of 9th level or higher can use <PRO_HISHER> performance to inspire greatness in all <PRO_HISHER> allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the bard. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Thorws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12. Every 6 levels thereafter the bonus Hit Points increase by +5 and THAC0 and Saving Throws vs. Death bonus increases by 1.~
-//----------------------------------------------	
+//----------------------------------------------
 
 	@013=~Soothing Performance~
 	@014=~Soothing Performance
-	
+
 A bard of 12th level or higher can use <PRO_HISHER> performance to create an effect equivalent to the mass cure light wounds, using the bard’s level as the caster level.~
 //------------------------------------------------
 
@@ -50,17 +50,17 @@ A bard of 14th level or higher can use <PRO_HISHER> performance to cause fear in
 	@018=~Inspire Heroics
 
 A bard of 15th level or higher can inspire tremendous heroism in all <PRO_HISHER> allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the bard. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds. These bonuses increase to +5 at level 24, and +6 at level 30.~
-	
+
 //---------------------------------------
 	@019=~Deadly Performance~
 	@020=~Deadly Performance
-	
+
 A bard of 20th level or higher can use <PRO_HISHER> performance to cause one enemy to die from joy or sorrow. To be affected, the target must be able to see and hear the bard perform and be within 30 feet. The target can make a Saving Throw vs. Spell (-1 penalty at level 25, and -2 at level 30) to negate the effect. If a creature’s Saving Throw succeeds, the target is paralyzed for 2 rounds. If a creature’s Saving Throw fails, it dies.~
 
 //---------------------------------------
 	@021=~Jester's Song~
 	@022=~Jester's Song
-	
+
 The jester is the master of the verbal put down, the hilarious joke, or the savage verbal lashing. Starting from level 1 <PRO_HISHER> words can inspire dread and outrage in <PRO_HISHER> enemies making them confused for next 4 rounds. The target creatures receive a Saving Throw vs. Spell with +2 bonus to avoid this effect.
 At level 5 the enemies no longer receive a bonus to their Saving Throws.
 At level 10 they receive a -2 penalty instead, which increases further to -4 at level 15, -6 at level 20,-8 at level 25 and -10 at level 30.~
@@ -68,19 +68,19 @@ At level 10 they receive a -2 penalty instead, which increases further to -4 at 
 //---------------------------------------
 	@023=~Song of Requiem~
 	@024=~Song of Requiem
-	
+
 This epic performance drains the very life force of the bard's enemies causing them to suffer 1 point of damage per level of bard. ~
 
 	@031=~Bardic Performance~
 	@032=~Bardic Performance
-	
-Inspire Courage	
+
+Inspire Courage
 A 1st level bard can use <PRO_HISHER> performance to inspire courage in <PRO_HISHER> allies (including <PRO_HISHER>self), bolstering them against fear and improving their combat abilities. To be affected, an ally must be able to perceive the bard’s performance. An affected ally receives a +1 bonus on attack and weapon damage rolls as well and becomes immune to fear and panic effects for 4 rounds. At 6th level, and every six levels thereafter, this bonus increases by +1, to a maximum of +6 at 30th level.
 
 Countersong
 At 1st level, a bard learns to counter magic effects that depend on sound. Any creature within 30 feet of the bard becomes Immune to the following spells: Silence 15', Command, Greater Command, Wail of Banshee.
 
-Inspire Competence 
+Inspire Competence
 A bard of 3rd level or higher can use <PRO_HISHER> performance to help <PRO_HISHER> ally succeed at a task. The allies must be within 30 feet and able to see and hear the bard. They get a +5% bonus to all their thieving skills for 4 rounds. This bonus increases by +5% at level 6 and every 6 levels thereafter to a maximum of 30% at level 30.
 
 Fascinate
@@ -88,12 +88,12 @@ At 1st level, a bard can use <PRO_HISHER> performance to cause one creature to b
 Target creatures receives -1 penalty to Saving throws to resist Fascinate per 5 levels of the bard to a maximum of -6 at level 30.
 At 8th level bard fascinates all creatures around <PRO_HIMHER> in 30ft radius instead.
 
-Dirge of Doom	
+Dirge of Doom
 A bard of 8th level or higher can use <PRO_HISHER> performance to foster a sense of growing dread in <PRO_HISHER> enemies, causing them to become shaken and receive -2 penalty to their attack rolls, Armor Class and Saving throws. To be affected, an enemy must be within 30 feet and able to see and hear the bard’s performance. The effect persists for 4 rounds. There is no Saving throw against this ability.
 
 Inspire Greatness
 A bard of 9th level or higher can use <PRO_HISHER> performance to inspire greatness in all <PRO_HISHER> allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the bard. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Thorws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12. Every 6 levels thereafter the bonus Hit Points increase by +5 and THAC0 and Saving Throws vs. Death bonus increases by 1.
-	
+
 Soothing Performance
 A bard of 12th level or higher can use <PRO_HISHER> performance to create an effect equivalent to the mass cure light wounds, using the bard’s level as the caster level.
 
@@ -103,15 +103,15 @@ A bard of 14th level or higher can use <PRO_HISHER> performance to cause fear in
 Inspire Heroics
 A bard of 15th level or higher can inspire tremendous heroism in all <PRO_HISHER> allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the bard. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds. These bonuses increase to +5 at level 24, and +6 at level 30.
 
-Deadly Performance	
+Deadly Performance
 A bard of 20th level or higher can use <PRO_HISHER> performance to cause one enemy to die from joy or sorrow. To be affected, the target must be able to see and hear the bard perform and be within 30 feet. The target can make a Saving Throw vs. Spell (-1 penalty at level 25, and -2 at level 30) to negate the effect. If a creature’s Saving Throw succeeds, the target is paralyzed for 2 rounds. If a creature’s Saving Throw fails, it dies.
 
 Song of Requiem
 A bard of 24th level or higher can use this epic performance to drain the very life force of <PRO_HISHER> all enemies within 30 feet, causing them to suffer 1 point of damage per level of bard.~
 
 	@033=~Bardic Performance
-	
-Inspire Courage	
+
+Inspire Courage
 A 1st level blade or skald can use <PRO_HISHER> performance to inspire courage in <PRO_HISHER> allies (including <PRO_HISHER>self), bolstering them against fear and improving their combat abilities. To be affected, an ally must be able to perceive the bard’s performance. An affected ally receives a +1 bonus on attack and weapon damage rolls as well and becomes immune to fear and panic effects for 4 rounds. At 6th level, and every six levels thereafter, this bonus increases by +1, to a maximum of +6 at 30th level.
 
 Inspire Greatness
@@ -121,16 +121,16 @@ Inspire Heroics
 A blade or skald of 15th level or higher can inspire tremendous heroism in all <PRO_HISHER> allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the bard. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds. These bonuses increase to +5 at level 24, and +6 at level 30.
 
 Song of Requiem
-A blade or sklad of 24th level or higher can use this epic performance to drain the very life force of <PRO_HISHER> all enemies within 30 feet, causing them to suffer 1 point of damage per level of bard.~
+A blade or skald of 24th level or higher can use this epic performance to drain the very life force of <PRO_HISHER> all enemies within 30 feet, causing them to suffer 1 point of damage per level of bard.~
 
 	@034=~Bardic Performance
-	
+
 Jester's Song
 The jester is the master of the verbal put down, the hilarious joke, or the savage verbal lashing. Starting from level 1 <PRO_HISHER> words can inspire dread and outrage in <PRO_HISHER> enemies making them confused for next 4 rounds. The target creatures receive a Saving Throw vs. Spell with +2 bonus to avoid this effect.
 At level 5 the enemies no longer receive a bonus to their Saving Throws.
 At level 10 they receive a -2 penalty instead, which increases further to -4 at level 15, -6 at level 20, -8 at level 25 and -10 at level 30.
-	
-Dirge of Doom	
+
+Dirge of Doom
 A jester of 8th level or higher can use <PRO_HISHER> performance to foster a sense of growing dread in <PRO_HISHER> enemies, causing them to become shaken and receive -2 penalty to their attack rolls, Armor Class and Saving throws. To be affected, an enemy must be within 30 feet and able to see and hear the jester’s performance. The effect persists for 4 rounds. There is no Saving throw against this ability.
 
 Frightening Tune

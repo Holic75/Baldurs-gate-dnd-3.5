@@ -1,21 +1,21 @@
-	@001=~Combat Expertise~ 
+	@001=~Combat Expertise~
 	@002=~Combat Expertise
-	
+
 Character receives +3 bonus to AC and -3 penalty to THAC0 while fighting with melee weapons .~
 
 	@003=~Study Opponent~
 	@004=~Study Opponent
-	
-Character can spend one round studying enemy and getting insight about its weakneses and share it the party. The target receives a -3 penalty to AC, saving throws and THAC0. 
+
+Character can spend one round studying enemy and getting insight about its weaknesses and share it the party. The target receives a -3 penalty to AC, saving throws and THAC0.
 This is an extraordinary ability and thus is not subject to magic resistance or savingthrows, neither can be dispelled.~
 
 	@005=~Critical Strike~
 	@006=~Critical Strike
-	
+
 A high-level warrior's intimate knowledge of vital spots on opponents allows <PRO_HIMHER> to concentrate all of the attacks in one round to strike a vital area every time. With this ability, every attack roll made in the next round is a natural 20, a critical hit. This ability can be used once every 2 minutes.~
 
 
 	@007=~Premonition~
 	@008=~Premonition
-	
+
 Premonition allows character to use his experience and mastery of combat to predict where a next blow will land and physically avoid being in that place. This ability improves Armor Class by 6 and Saving Throws by 3. Also to everyone else character seem to move so quickly that <PRO_HISHER> movement rate is increased by 2 (base is 10) and normal missiles have no chance of striking <PRO_HIMHER>. This ability lasts for 5 rounds. Can be used once every 5 minutes.~

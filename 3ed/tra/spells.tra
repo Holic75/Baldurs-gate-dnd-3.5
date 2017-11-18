@@ -1,6 +1,6 @@
 
 	@001=~Magic Fang~
-	
+
 	@002=~Magic Fang
 (Alteration)
 
@@ -8,11 +8,11 @@ Level: 1
 Sphere: Combat
 Range: Touch
 Duration: 1 min/level
-Casting Time: 6 
+Casting Time: 6
 Area of Effect: 1 creature
-Saving Throw: None 
+Saving Throw: None
 
-This spell gives an animal a +1 enchantment bonus on attack and damage rolls.~ 
+This spell gives an animal a +1 enchantment bonus on attack and damage rolls.~
 
 	@003=~Greater Magic Fang~
 	@004=~Greater Magic Fang
@@ -22,9 +22,9 @@ Level: 3
 Sphere: Combat
 Range: Touch
 Duration: 1 min/level
-Casting Time: 6 
+Casting Time: 6
 Area of Effect: 1 creature
-Saving Throw: None 
+Saving Throw: None
 
 This spell gives an animal a +1 enchantment bonus on attack and damage rolls, which increases by +1 for every five caster levels.~
 
@@ -37,9 +37,9 @@ Level: Quest
 Sphere: Combat
 Range: Touch
 Duration: 1 min/level
-Casting Time: 6 
+Casting Time: 6
 Area of Effect: 1 creature
-Saving Throw: None 
+Saving Throw: None
 
 With a touch, druid gifts an animal ally with nature's strength, resilience, and speed.
 
@@ -52,10 +52,10 @@ The affected animal gains a +10 on attack rolls and damage rolls and 4 temporary
 (Abjuration)
 
 Level: 3
-Sphere: Protection 
+Sphere: Protection
 Range: 40 ft.
 Duration: Instant
-Casting Time: 6 
+Casting Time: 6
 Area of Effect: 30-ft. radius
 Saving Throw: None
 
@@ -68,10 +68,10 @@ Note: Inquisitors using this spell have 2 times higher chance to dispel magical 
 (Abjuration)
 
 Level: 3
-Sphere: Protection 
+Sphere: Protection
 Range: 40 ft.
 Duration: Instant
-Casting Time: 6 
+Casting Time: 6
 Area of Effect: 30-ft. radius
 Saving Throw: None
 
@@ -85,7 +85,7 @@ Note: While this spell dispels the individual effects of Grease, Web, Stinking C
 Level: 3
 Range: 40 ft.
 Duration: Instant
-Casting Time: 3 
+Casting Time: 3
 Area of Effect: 30-ft. radius
 Saving Throw: None
 
@@ -98,7 +98,7 @@ Note: While this spell dispels the individual effects of Grease, Web, Stinking C
 (Necromancy)
 
 Level: 7
-Range: Visual range of the caster 
+Range: Visual range of the caster
 Duration: Permanent
 Casting Time: 5
 Area of Effect: 1 creature
@@ -163,12 +163,12 @@ Curing is permanent only insofar as the creature does not sustain further damage
 (Necromancy)
 
 Level: 3
-Sphere: Healing 
-Range: Touch 
-Duration: Permanent 
-Casting Time: 5 
-Area of Effect: 1 creature 
-Saving Throw: None 
+Sphere: Healing
+Range: Touch
+Duration: Permanent
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: None
 
 By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 20 points of wound or other injury damage from the creature's body. This healing cannot affect creatures without corporeal bodies, nor can it cure wounds of creatures not living or of extraplanar origin. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.~
 //--------------------------------------------------------------------------------------------------
@@ -176,12 +176,12 @@ By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest h
 (Necromancy)
 
 Level: 4
-Sphere: Healing 
-Range: Touch 
-Duration: Permanent 
-Casting Time: 7 
-Area of Effect: 1 creature 
-Saving Throw: None 
+Sphere: Healing
+Range: Touch
+Duration: Permanent
+Casting Time: 7
+Area of Effect: 1 creature
+Saving Throw: None
 
 This spell is a more potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hand upon a creature and heals 26 points of wound or other injury damage to the creature's body. This healing cannot affect noncorporeal, nonliving, or extraplanar creatures.~
 //--------------------------------------------------------------------------------------------------
@@ -189,7 +189,7 @@ This spell is a more potent version of the Cure Light Wounds spell. The priest l
 (Necromancy)
 
 Level: 5
-Sphere: Healing 
+Sphere: Healing
 Range: Touch
 Duration: Permanent
 Casting Time: 8
@@ -204,12 +204,12 @@ The Cure Critical Wounds spell is a very potent version of the Cure Light Wounds
 (Necromancy)
 
 Level: 1
-Sphere: Healing 
-Range: Touch 
-Duration: Permanent 
-Casting Time: 3 
-Area of Effect: 1 creature 
-Saving Throw: 1/2 
+Sphere: Healing
+Range: Touch
+Duration: Permanent
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: 1/2
 
 This spell is the reverse of Cure Light Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 8 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.~
 //--------------------------------------------------------------------------------------------------------------//
@@ -218,12 +218,12 @@ This spell is the reverse of Cure Light Wounds. Instead of healing the creature 
 (Necromancy)
 
 Level: 2
-Sphere: Healing 
-Range: Touch 
-Duration: Permanent 
-Casting Time: 3 
-Area of Effect: 1 creature 
-Saving Throw: 1/2 
+Sphere: Healing
+Range: Touch
+Duration: Permanent
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: 1/2
 
 This spell is the reverse of Cure Moderate Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 14 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.~
 //---------------------------------------------------------------------------------------------------------------//
@@ -232,12 +232,12 @@ This spell is the reverse of Cure Moderate Wounds. Instead of healing the creatu
 (Necromancy)
 
 Level: 3
-Sphere: Healing 
-Range: Touch 
-Duration: Permanent 
-Casting Time: 3 
-Area of Effect: 1 creature 
-Saving Throw: 1/2 
+Sphere: Healing
+Range: Touch
+Duration: Permanent
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: 1/2
 
 This spell is the reverse of Cure Medium Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 20 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.~
 //--------------------------------------------------------------------------------------------------------------//
@@ -245,12 +245,12 @@ This spell is the reverse of Cure Medium Wounds. Instead of healing the creature
 (Necromancy)
 
 Level: 4
-Sphere: Healing 
-Range: Touch 
-Duration: Permanent 
-Casting Time: 3 
-Area of Effect: 1 creature 
-Saving Throw: None 
+Sphere: Healing
+Range: Touch
+Duration: Permanent
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None
 
 This spell is the reverse of Cure Serious Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 26 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.~
 //--------------------------------------------------------------------------------------------------
@@ -258,12 +258,12 @@ This spell is the reverse of Cure Serious Wounds. Instead of healing the creatur
 (Necromancy)
 
 Level: 5
-Sphere: Healing 
-Range: Touch 
-Duration: Permanent 
+Sphere: Healing
+Range: Touch
+Duration: Permanent
 Casting Time: 3
-Area of Effect: 1 creature 
-Saving Throw: None 
+Area of Effect: 1 creature
+Saving Throw: None
 
 This spell is the reverse of Cure Critical Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 32 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.~
 //--------------------------------------------------------------------------------------------------
@@ -272,9 +272,9 @@ This spell is the reverse of Cure Critical Wounds. Instead of healing the creatu
 
 Level: 5
 Sphere: Combat
-Range: Touch 
+Range: Touch
 Duration: Permanent
-Casting Time: 7 
+Casting Time: 7
 Area of Effect: 1 creature
 Saving Throw: Special
 
@@ -329,29 +329,29 @@ Saving Throw: None
 
 When the wizard touches a creature while this spell is in effect, an electrical charge will deal 1d6 points of damage per level of the caster to the creature touched (up to 5d6).~
 //-------------------------------------------------------------------
-	@032=~Chain Lightning 
+	@032=~Chain Lightning
 (Invocation/Evocation)
 
 Level: 6
 Range: 40 ft.
 Duration: Instant
 Casting Time: 5
-Area of Effect: Special 
-Saving Throw: 1/2 
+Area of Effect: Special
+Saving Throw: 1/2
 
 When the wizard casts Chain Lightning, arcs of electrical energy burst from <PRO_HISHER> fingertips. These brilliant arcs of lightning leap at all enemies near the caster, burning them with electrical damage. The lightning causes 12d6 points of damage. If the target of the lightning saves vs. Breath Weapon, only half damage is inflicted.~
 
 //--------------------------------------------------------------------------------------------------
-	@033=~Barkskin 
+	@033=~Barkskin
 (Alteration)
 
 Level: 2
-Sphere: Protection, Plant 
-Range: Touch 
-Duration: 4 rounds + 1 round/level 
-Casting Time: 5 
-Area of Effect: 1 creature 
-Saving Throw: None 
+Sphere: Protection, Plant
+Range: Touch
+Duration: 4 rounds + 1 round/level
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: None
 
 When a priest casts the Barkskin spell upon a creature, its skin becomes as tough as bark, giving it +3 bonus to AC, bonus increases to +4 at 7th level and to +5 at 13th level. In addition, Saving Throws vs. all attack forms except magic gain a +1 bonus. This spell can be placed on the caster or on any other creature <PRO_HESHE> touches.~
 //------------------------------------------------------------------
@@ -370,13 +370,13 @@ When this spell is cast, an invisible barrier comes into being in front of the w
 	@035=~Champion's Strength
 (Alteration)
 
-Level: 5 
+Level: 5
 Sphere: Law
 Range: 0
 Duration: 3 rounds/level
 Casting Time: 2
 Area of Effect: Caster
-Saving Throw: None 
+Saving Throw: None
 
 When this spells is cast, the priest effectively draws on the strength of <PRO_HISHER> god through himself becoming an ultimate fighting machine. Caster's base THAC0 becomes equal to that of a fighter of the same level and <PRO_HESHE> receive +1/2 additional attack per round. Also <PRO_HESHE> gets a +4 Strength bonus for the duration of the spell and receives all the bonuses to hit and damage rolls that this Strength confers.
 
@@ -404,7 +404,7 @@ Casting Time: 6
 Area of Effect: The caster
 Saving Throw: None
 
-Tenser's Transformation is a sight guaranteed to astound any creature not aware of its power, for when the wizard casts the spell, <PRO_HESHE> undergoes a startling transformation. The size and strength of the wizard increase to heroic proportions, and <PRO_HESHE> becomes a formidable fighting machine. 
+Tenser's Transformation is a sight guaranteed to astound any creature not aware of its power, for when the wizard casts the spell, <PRO_HESHE> undergoes a startling transformation. The size and strength of the wizard increase to heroic proportions, and <PRO_HESHE> becomes a formidable fighting machine.
 
 The spell causes the caster to become a berserk Fighter: <PRO_HISHER> Hit Points double, and all damage <PRO_HESHE> sustains is first detracted from this magically-gained life; <PRO_HISHER> Armor Class gains a +4 bonus up to a maximum Armor Class of -10; <PRO_HISHER> THAC0 becomes that of a fighter of the same level and number of attacks per round increases by 1. Each attack also receives a +2 bonus to hit and damage rolls. The effect lasts for the duration of the spell or until dispelled.~
 //-----------------------------------------------------------------------------------------------------------------------
@@ -412,11 +412,11 @@ The spell causes the caster to become a berserk Fighter: <PRO_HISHER> Hit Points
 (Alteration)
 
 Level: 3
-Sphere: Weather 
+Sphere: Weather
 Range: 80 ft.
 Duration: 1 turn/4 levels
 Casting Time: 9
-Area of Effect: 360-ft. radius 
+Area of Effect: 360-ft. radius
 Saving Throw: 1/2
 
 The caster is able to call down one bolt of lightning per turn. The spell has a duration of 1 turn every 4 levels of the caster. Each bolt causes 1d6 points of electrical damage per level of the caster up to 10d6. Thus, an 8th-level caster will call down two bolts, each dealing 8d6 points of damage. The bolt of lightning flashes down in a vertical stroke at any of the priest's enemies. The first enemy struck by the lightning will be the enemy targeted. After that, any enemy (but no allies) may be struck by the ensuing lightning storm.~
@@ -439,12 +439,12 @@ The caster is able to call down 1 bolt per round per caster level (capped at 10 
 (Alteration, Evocation)
 
 Level: 2
-Sphere: Plant 
-Range: Touch 
+Sphere: Plant
+Range: Touch
 Duration: Permanent
-Casting Time: 9 
-Area of Effect: Special 
-Saving Throw: None 
+Casting Time: 9
+Area of Effect: Special
+Saving Throw: None
 
 Casting a Goodberry spell creates 5 magical berries that the caster can carry with <PRO_HIMHER>. Each berry restores 3 Hit Points when eaten.~
 //-------------------------------------------------------------------------------------------------------------------------
@@ -461,12 +461,12 @@ Weight: 0~
 (Evocation)
 
 Level: 2
-Sphere: Elemental (Fire) 
-Range: Touch 
-Duration: 4 rounds + 1 round/2 levels 
-Casting Time: 4 
+Sphere: Elemental (Fire)
+Range: Touch
+Duration: 4 rounds + 1 round/2 levels
+Casting Time: 4
 Area of Effect: 1 Creature
-Saving Throw: None 
+Saving Throw: None
 
 With this spell, caster imbues  target's weapon(s) with power of fire granting it + 1d6 fire damage bonus.~
 //--------------------------------------------------------------------------
@@ -474,12 +474,12 @@ With this spell, caster imbues  target's weapon(s) with power of fire granting i
 (Evocation)
 
 Level: 2
-Sphere: Elemental (Fire) 
-Range: Touch 
+Sphere: Elemental (Fire)
+Range: Touch
 Duration: 4 rounds + 1 round/level
-Casting Time: 4 
+Casting Time: 4
 Area of Effect: 1 Creature
-Saving Throw: None 
+Saving Throw: None
 
 With this spell, caster imbues  target's weapon(s) with power of fire granting it + 1d6 fire damage bonus.~
 //------------------------------------------------------------------------------//
@@ -487,12 +487,12 @@ With this spell, caster imbues  target's weapon(s) with power of fire granting i
 (Alteration)
 
 Level: 5
-Sphere: Combat 
+Sphere: Combat
 Range: 0
-Duration: 1 round/level 
-Casting Time: 9 
-Area of Effect: The caster 
-Saving Throw: None 
+Duration: 1 round/level
+Casting Time: 9
+Area of Effect: The caster
+Saving Throw: None
 
 This is a powerful combat spell that enhances the priest's physical prowess, transforming <PRO_HIMHER> into a juggernaut of destruction. The effect adds 1 temporary Hit Point per level of the caster, +2 bonus to AC, adds 1 point of Strength and 5% physical damage resistance for every 3 levels of the caster, and causes every successful hit to inflict maximum damage. The effects last for the duration of the spell or until dispelled.~
 //----------------------------------------------------------------------------------//
@@ -505,7 +505,7 @@ Range: 40 ft.
 Duration: Instant
 Casting Time: 8
 Area of Effect: 5-ft. radius
-Saving Throw: 1/2 
+Saving Throw: 1/2
 
 When the priest calls down a Flame Strike spell, a vertical column of fire roars downward in the exact location called for by the caster. The targets must roll a Saving Throw vs. Breath Weapon. Failure means the creatures sustain 1d8 points of damage per level of the caster; otherwise, the damage is halved.~
 //--------------------------------------------------------------------------------------------------------//
@@ -513,12 +513,12 @@ When the priest calls down a Flame Strike spell, a vertical column of fire roars
 (Enchantment)
 
 Level: 1
-Sphere: Combat 
+Sphere: Combat
 Range: 0
 Duration: Instant
-Casting Time: 4 
+Casting Time: 4
 Area of Effect: The caster
-Saving Throw: None 
+Saving Throw: None
 
 By using this spell, the priest can create 2 magical peebles per level, which then can be used as sling bullets. The stones have +1 enchantment bonus on attack and damage rolls. They deal 1d6+1 points of damage to whomever they hit and 2d6+2 to undead creatures.~
 
@@ -535,7 +535,7 @@ Weight: 0~
 
 
 // Substrings for mage armor(s)
- @441=~Area of Effect: The caster~ 
+ @441=~Area of Effect: The caster~
  @442=~Area of Effect: 1 Creature~
  @443=~Range: 0~
  @444=~Range: Touch~
@@ -545,8 +545,8 @@ Weight: 0~
 
 Level: 1
 Range: 15 ft.
-Duration: Instant 
-Casting Time: 1 
+Duration: Instant
+Casting Time: 1
 Area of Effect: 15 ft cone with 90-deg. arc
 Saving Throw: 1/2
 
@@ -556,12 +556,12 @@ When the wizard casts this spell, a jet of searing flame shoots from <PRO_HISHER
 (Invocation)
 
 Level: 2
-Sphere: Combat 
-Range: 0 
+Sphere: Combat
+Range: 0
 Duration: 1 turn
 Casting Time: 2
-Area of Effect: The caster 
-Saving Throw: None 
+Area of Effect: The caster
+Saving Throw: None
 
 The priest calls upon <PRO_HISHER> god to grant <PRO_HIMHER> power for a short period. When <PRO_HESHE> does this, <PRO_HISHER> Strength, Constitution, and Dexterity are all raised by 1 point + 1 more for every 5 levels of the caster. A 5th-level caster would have <PRO_HISHER> abilities raised by 2, while a 20th-level caster would have <PRO_HISHER> abilities raised by 5.~
 //----------------------------------------------------------------------------
@@ -574,7 +574,7 @@ Range: 0
 Duration: 3 rounds + 1 round/level
 Casting Time: 5
 Area of Effect: Special
-Saving Throw: None 
+Saving Throw: None
 
 By calling upon <PRO_HISHER> deity, the caster of a Spiritual Hammer spell brings into existence a magical throwing hammer, which <PRO_HESHE> can use for the duration of the spell. It strikes as a magical weapon with a bonus of +1 for every 3 experience levels  of the caster, up to a total of +5 to the attack roll and +5 to the damage roll for a 15th-level caster. The base damage inflicted when it scores a hit is exactly the same as a normal war hammer (1d4+1 vs. opponents of man-size or smaller and 1d4 upon larger opponents, plus strength and magical bonus). Once thrown the hammer immidiately rematerializes in the hand of the caster.~
 //---------------------------------------------------------------------------------------------------
@@ -598,12 +598,12 @@ The character projects a blast of light from <PRO_HISHER> open palm, dealing 1d8
 (Necromancy, Conjuration)
 
 Level: 2
-Sphere: Necromantic 
-Range: Touch 
-Duration: 3 rounds + 1 round/level 
-Casting Time: 5 
-Area of Effect: 1 creature 
-Saving Throw: None 
+Sphere: Necromantic
+Range: Touch
+Duration: 3 rounds + 1 round/level
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: None
 
 The recipient of this spell gains +1 to attack rolls and Saving Throws and a special bonus of 5 +1/caster level to maximum Hit Points (up to 15) for the duration of the spell. The Aid spell enables the recipient to actually have more Hit Points than <PRO_HISHER> current maximum. The bonus Hit Points are lost first when the recipient takes damage and may not be regained by curative magic.~
 //----------------------------------------------
@@ -655,7 +655,7 @@ Level: 7
 Range: 60 ft.
 Duration: Instant
 Casting Time: 7
-Area of Effect: 70-ft.-long cone 
+Area of Effect: 70-ft.-long cone
 Saving Throw: Special
 
 When casting this spell, the wizard causes seven shimmering multicolored rays of light to flash from <PRO_HISHER> hand, portraying all colors of the visible spectrum. Any creature with fewer than 8 Hit Dice struck by a ray is blinded for 5 rounds, regardless of any other effect. All creatures caught within the area of effect will be touched by 1 or 2 of the rays, each of which has a different power and purpose:
@@ -667,8 +667,8 @@ When casting this spell, the wizard causes seven shimmering multicolored rays of
   Blue — Save vs. Petrification or be turned to stone.
   Indigo — Save vs. Wand or be feebleminded.
   Violet — Save vs. Death or be disintegrated.~
-//-------------------------------------------------------------------------- 
-  @054=~Chromatic Orb 
+//--------------------------------------------------------------------------
+  @054=~Chromatic Orb
 (Evocation)
 
 Level: 1
@@ -712,7 +712,7 @@ Range: Touch
 Duration: 3 rounds + 1 round/level
 Casting Time: 9
 Area of Effect: 1 creature
-Saving Throw: None 
+Saving Throw: None
 
 When this spell is cast, the recipient receives a bonus to resistance to all magic. The resistance bonus conferred is 2% per level of the caster, up to a maximum of 40% at 20th level. This effect will last for the duration of the spell or until dispelled.~
 //----------------------------------------------------------------------------------------------------------------------------------------------
@@ -736,8 +736,8 @@ Saving Throw: None
 
 This spell enables a priest to aid and protect any one being other than themselves. By touch, the caster removes the effects of fear, sleep, feeblemind, unconsciousness, and intoxication, as well as berserk and confused states of mind. In addition, the recipient is protected against spells and other attacks that cause these effects for 1 turn.~
 //--------------------------------------------------------------------------------------------------
-	@102=~Boon of Diety~
-	@103=~Boon of Diety
+	@102=~Boon of Deity~
+	@103=~Boon of Deity
 (Conjuration)
 
 Level: 6
@@ -763,7 +763,7 @@ Saving Throw: None
 
 This spell grants the caster a +1 bonus to hit and damage rolls every 3 levels of the caster. The spell lasts for 2 rounds.~
 //--------------------------------------------------------------------------------------------------
-	@105=~Seeking Sword	
+	@105=~Seeking Sword
 (Invocation)
 
 Level: 3
@@ -772,11 +772,11 @@ Range: 0
 Duration: 1 round/level
 Casting Time: 5
 Area of Effect: The caster
-Saving Throw: None 
+Saving Throw: None
 
 This spell creates a sword in the Cleric's hand that cannot be dropped or unequipped. The sword is enchanted as a +4 weapon and provides a +4 THAC0 bonus, but no damage bonus. It deals 2d4 damage to any target it hits. The weapon increases the Cleric's number of attacks per round by 1 and lasts for 1 round per level. While it is equipped, the wielder cannot cast further spells.~
 //------------------------------------------------------------------
-	@106=~Storm Shield	
+	@106=~Storm Shield
 (Invocation)
 
 Level: 6
@@ -785,7 +785,7 @@ Range: 0
 Duration: 1 round/level
 Casting Time: 3
 Area of Effect: The caster
-Saving Throw: None 
+Saving Throw: None
 
 This spell lasts 1 round per level of the caster. It protects the caster completely from lightning, fire, cold, and normal missiles.~
 //------------------------------------------------------------------
@@ -798,7 +798,7 @@ Range: 0
 Duration: 12 hours
 Casting Time: 1
 Area of Effect: The caster
-Saving Throw: None 
+Saving Throw: None
 
 When a priest casts this powerful spell upon <PRO_HIMHER>self, an outer skin of stone will move up from the ground, completely covering <PRO_HIMHER>. This skin is of course magical and will hinder the wizard in no way. The effect of this is to protect the wizard from physical attacks such as melee weapons and projectiles. For every 2 levels of the caster, an additional skin is gained upon casting. For example, a 10th-level wizard would receive 5 skins while a 20th-level wizard would receive 10. For each skin the wizard possesses, the spell will stop one attack, so a 10th-level wizard would be protected from the first 5 attacks made against <PRO_HIMHER>, but the 6th would affect <PRO_HIMHER> normally. The skins will remain on the wizard until <PRO_HESHE> is affected by a Dispel Magic, all of the skins are removed due to physical attacks, or the spell duration expires. It is important to note that this will not protect the wizard from any magical attacks, such as Fireball.~
 //--------------------------------------------------------------------------------------------------
@@ -814,7 +814,7 @@ Area of Effect: 30-ft. radius
 Saving Throw: None
 
 When this spell is cast, all creatures affected function at double their normal movement rate, gain a -2 initiative bonus, and receive an extra attack per round. Thus, a creature moving at 6 and attacking once per round would move at 12 and attack twice per round. At the instant the spell is completed, it affects all ally creatures in a 30-ft. radius centered on a point selected by the caster (thus, creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not). This spell is not cumulative with itself or with other similar magic. Spellcasting and spell effects are not affected. Note that this spell negates the effects of a Slow spell.~
-//--------------------------------------------------------------------------------------------------	
+//--------------------------------------------------------------------------------------------------
 	@109=~Searing light~
 //---------------------------------
 	@110=~Searing Light
@@ -825,10 +825,10 @@ Sphere: Elemental (Fire)
 Range: 50 ft.
 Duration: instant
 Casting Time: 3
-Area of Effect: 1 creature 
+Area of Effect: 1 creature
 Saving Throw: None
 
-Focusing divine power like a ray of the sun, priest projects a blast of light from open palm. A creature struck by this ray of light takes 1d8 points of fire damage per two caster levels (maximum 5d8). An undead creature takes double (maximum 10d8) instead.~ 
+Focusing divine power like a ray of the sun, priest projects a blast of light from open palm. A creature struck by this ray of light takes 1d8 points of fire damage per two caster levels (maximum 5d8). An undead creature takes double (maximum 10d8) instead.~
 //--------------------------------
 	@111=~Aid, 10' Radius~
 //------------------------------------------------
@@ -836,15 +836,15 @@ Focusing divine power like a ray of the sun, priest projects a blast of light fr
 (Necromancy, Conjuration)
 
 Level: 3
-Sphere: Necromantic 
-Range: 0 
-Duration: 3 rounds + 1 round/level 
-Casting Time: 5 
+Sphere: Necromantic
+Range: 0
+Duration: 3 rounds + 1 round/level
+Casting Time: 5
 Area of Effect: 30-ft. radius
-Saving Throw: None 
+Saving Throw: None
 
 When this spell is cast, all creatures within a 30-ft. radius are affected individually by Aid spell.
-The recipients gain +1 to attack rolls and Saving Throws and a special bonus of 5 +1/caster level to maximum Hit Points (up to 20) for the duration of the spell.~		
+The recipients gain +1 to attack rolls and Saving Throws and a special bonus of 5 +1/caster level to maximum Hit Points (up to 20) for the duration of the spell.~
 //--------------------------------------------------------------------------------------------
 	@201=~Flame Strike
 (Evocation)
@@ -855,36 +855,36 @@ Range: 40 ft.
 Duration: Instant
 Casting Time: 8
 Area of Effect: 5-ft. radius
-Saving Throw: 1/2 
+Saving Throw: 1/2
 
 When the priest calls down a Flame Strike spell, a vertical column of fire roars downward in the exact location called for by the caster. The targets must roll a Saving Throw vs. Breath Weapon. Failure means the creatures sustain 1d8 points of damage per level of the caster; otherwise, the damage is halved.~
-//--------------------------------------------------------------------------------------------------------//	
-	@202=~Chain Lightning 
+//--------------------------------------------------------------------------------------------------------//
+	@202=~Chain Lightning
 (Invocation/Evocation)
 
 Level: 6
-Sphere: Weather 
+Sphere: Weather
 Range: 40 ft.
 Duration: Instant
 Casting Time: 5
-Area of Effect: Special 
-Saving Throw: 1/2 
+Area of Effect: Special
+Saving Throw: 1/2
 
-When the wizard casts Chain Lightning, arcs of electrical energy burst from <PRO_HISHER> fingertips. These brilliant arcs of lightning leap at all enemies near the caster, burning them with electrical damage. The lightning causes 12d6 points of damage. If the target of the lightning saves vs. Breath Weapon, only half damage is inflicted.~	
-//----------------------------------------------------------------------------------------------	
+When the wizard casts Chain Lightning, arcs of electrical energy burst from <PRO_HISHER> fingertips. These brilliant arcs of lightning leap at all enemies near the caster, burning them with electrical damage. The lightning causes 12d6 points of damage. If the target of the lightning saves vs. Breath Weapon, only half damage is inflicted.~
+//----------------------------------------------------------------------------------------------
 	@203=~Burning Hands
 (Alteration)
 
 Level: 1
-Sphere: Elemental (Fire) 
+Sphere: Elemental (Fire)
 Range: 15 ft.
-Duration: Instant 
-Casting Time: 1 
+Duration: Instant
+Casting Time: 1
 Area of Effect: 15 ft cone with 90-deg. arc
 Saving Throw: 1/2
 
 When the druid casts this spell, a jet of searing flame shoots from <PRO_HISHER> fingertips. The druid's hands must be held so as to send forth a fanlike sheet of flames: <PRO_HISHER> thumbs must touch each other and the fingers must be spread. The burning hands send out flame jets of 15 ft. length in a horizontal arc of about 90 degrees in front of the druid. Those in area of effect suffer 2d2 points of damage, +2 points for each level of the caster, to a maximum of 2d2+20 points of fire damage. A creature that successfully saves vs. Breath Weapon receives half damage.~
-//---------------------------------------------------------------------------	
+//---------------------------------------------------------------------------
 	@204=~Hold Monster
 (Enchantment/Charm)
 
@@ -907,120 +907,120 @@ Level: 4
 Sphere: Elemental (Cold)
 Range: Visual range of the caster
 Duration: 4 rounds
-Casting Time: 4 
+Casting Time: 4
 Area of Effect: 30-ft. radius
-Saving Throw: None 
+Saving Throw: None
 
 When this spell is cast, great hail stones pound down for four rounds in a 60-ft. diameter area and inflict 2d8 points of cold damage to any creatures within the area of effect. Also, anyone that remains within the area of effect takes 2d8 cold damage each round for 4 rounds.~
-//----------------------------------------------------------------------------------------------------	
+//----------------------------------------------------------------------------------------------------
 	@206=~Sleep
 (Enchantment/Charm)
 
 Level: 1
 Sphere: Charm
 Range: 60 ft.
-Duration: 5 rounds/level 
-Casting Time: 1 
+Duration: 5 rounds/level
+Casting Time: 1
 Area of Effect: 30-ft. radius
 Saving Throw: Neg.
 
 When a druid casts a Sleep spell, <PRO_HESHE> causes a comatose slumber to come upon one or more enemies (other than undead and certain other creatures specifically excluded from the spell's effects). All creatures to be affected by the Sleep spell must be within a 30-ft. radius. Creatures in the area of effect must make a Saving Throw vs. Death with a -3 penalty or fall asleep. Monsters with 5 Hit Dice or more are unaffected. Attacks against sleeping opponents never miss.~
-//---------------------------------------------------------------------------------------------------------------------------------------------------------	
+//---------------------------------------------------------------------------------------------------------------------------------------------------------
 	@207=~Camouflage~
 	@208=~Camouflage
 (Illusion/Phantasm)
 
 Level: 1
-Sphere: Plant 
-Range: Touch 
+Sphere: Plant
+Range: Touch
 Duration: 1 Turn/level
-Casting Time: 2 
-Area of Effect: 1 creature 
-Saving Throw: None 
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
 
-Target creature colouring changes to match the surrounding environment, granting it +20% bonus to Hide in Shadows and Move Silently Skills for the duration of the spell.~
-//-------------------------------------------------------------------------------------------------------------------------------------//	
-	
+Target creature coloring changes to match the surrounding environment, granting it +20% bonus to Hide in Shadows and Move Silently Skills for the duration of the spell.~
+//-------------------------------------------------------------------------------------------------------------------------------------//
+
 	@209=~Lesser Animal Summoning I~
-	@210=~Lesser Animal Summoning I 
+	@210=~Lesser Animal Summoning I
 (Conjuration/Summoning)
 
 Level: 1
-Sphere: Animal, Summoning 
+Sphere: Animal, Summoning
 Range: 30 ft.
 Duration: 3 turns
-Casting Time: 4 
-Area of Effect: Special 
-Saving Throw: None 
+Casting Time: 4
+Area of Effect: Special
+Saving Throw: None
 
 By means of this spell, the caster calls a war dog to fight along his side. It will remain under the caster's control until slain or the spell duration expires.~
 //--------------------------------------------------------------------------------------------------------------//
 	@211=~Lesser Animal Summoning II~
-	@212=~Lesser Animal Summoning II 
+	@212=~Lesser Animal Summoning II
 (Conjuration/Summoning)
 
 Level: 2
-Sphere: Animal, Summoning 
+Sphere: Animal, Summoning
 Range: 30 ft.
 Duration: 3 turns
-Casting Time: 5 
-Area of Effect: Special 
-Saving Throw: None 
+Casting Time: 5
+Area of Effect: Special
+Saving Throw: None
 
 By means of this spell, the caster calls a wolf to fight along his side. It will remain under the caster's control until slain or the spell duration expires.~
 //--------------------------------------------------------------------------------------------------------------//
 	@213=~Lesser Animal Summoning III~
-	@214=~Lesser Animal Summoning III 
+	@214=~Lesser Animal Summoning III
 (Conjuration/Summoning)
 
 Level: 3
-Sphere: Animal, Summoning 
+Sphere: Animal, Summoning
 Range: 30 ft.
 Duration: 3 turns
-Casting Time: 6 
-Area of Effect: Special 
-Saving Throw: None 
+Casting Time: 6
+Area of Effect: Special
+Saving Throw: None
 
 By means of this spell, the caster calls between 1 and 2 animals that have 4 Hit Dice or less. The animals appearing are randomly determined. They will remain under the caster's control until slain or the spell duration expires.~
 //--------------------------------------------------------------------------------------------------------------//
-	
-	
-	
-	
-		
-	
+
+
+
+
+
+
 	@1000 =~vs. None~
 	@1001 =~vs. Spell~
 	@1002 =~vs. Breath Weapon~
 	@1003 =~vs. Death~
 	@1004 =~vs. Petrification~
 	@1005 =~vs. Wand~
-    
-    
- //assasin spells  
+
+
+ //assassin spells
     @1201=~First Level Spells~
 	@1202=~First Level Spells
-	
+
 Starting from level 4 Assassin gets access to the following spells: Sleep, Blindness, Reflected Image, Chill Touch.~
 
 	@1203=~Second Level Spells~
 	@1204=~Second Level Spells
-	
+
 Starting from level 7 Assassin gets access to the following spells: Ghoul Touch, Power Word: Sleep, Blur, Invisibility.~
 
 	@1205=~Third Level Spells~
 	@1206=~Third Level Spells
-	
-Starting from level 10 Assassin gets access to the following spells: Vampyric Touch, Non-Detection, Hold Person, Detect Illusions.~	
+
+Starting from level 10 Assassin gets access to the following spells: Vampiric Touch, Non-Detection, Hold Person, Detect Illusions.~
 
 	@1207=~Fourth Level Spells~
 	@1208=~Fourth Level Spells
-	
-Starting from level 13 Assassin gets access to the following spells: Improved Invisibility, Free Action, Poison, Cloak of Fear.~	
-    
-    
-    
-    //bonus spells 
+
+Starting from level 13 Assassin gets access to the following spells: Improved Invisibility, Free Action, Poison, Cloak of Fear.~
+
+
+
+    //bonus spells
     @500001=~Choose this domain.~
 	@500002=~Choose another domain.~
 	@500003=~Choose this bloodline.~

@@ -1,76 +1,76 @@
 
-	@001=~Straight Swords~ //long swords, bastard swords, 2h swords	
+	@001=~Straight Swords~ //long swords, bastard swords, 2h swords
 	@002=~This weapon category includes Bastard Swords, Two-handed swords and Long Swords.~	//straight swords
 	@003=~Weapon Focus~
-	@004=~Weapon Specialziation~
+	@004=~Weapon Specialization~
 	@005=~Greater Weapon Focus~
 	@006=~Greater Weapon Specialization~
 	@007=~Weapon Mastery~
 	@008=~Epic Weapon Focus~
-	@009=~Epic Weapon Specialization~		
+	@009=~Epic Weapon Specialization~
 	@010=~The character receives +1 to hit bonus with specified weapon category.~
 	@011=~The character receives +2 bonus to damage with specified weapon category.~
 	@012=~The character receives another +1 to hit bonus with specified weapon category.~
 	@013=~The character receives another +2 bonus to damage with specified weapon category.~
-	@014=~The character reveives + 1/2 attack per round with specified weapon category.~ 
-	@015=~The character reveives another +2 to hit bonus with specified weapon category.~
+	@014=~The character receives + 1/2 attack per round with specified weapon category.~
+	@015=~The character receives another +2 to hit bonus with specified weapon category.~
 	@016=~The character receives another +4 bonus to damage with specified weapon category.~
-		
-	@021=~Blades~   //short swords daggers	
+
+	@021=~Blades~   //short swords daggers
 	@022=~This weapon category includes Daggers and Short swords.~ //blades
-			
+
 	@023=~Axes~     //axes, throwing axes
 	@024=~This weapon category includes Battle Axes and Throwing Axes.~ //axes
-	
+
 	@025=~Curved Swords~ //Scimitar, Wakizashi, Ninja-to, Katana
 	@026=~This weapon category includes Scimitars, Katanas, Wakizashi and Ninja-to.~ //curved swords
-	
+
 	@027=~Blunt Weapons~ //warhammer, mace, quarterstaff, club
 	@028=~This weapon category includes Maces, Clubs, Warhammers, and the Staff.~//blunt weapons
-	
+
 	@029=~Spiked Weapons~ //Flail, Morning star
 	@030=~This weapon category includes Morning Stars and Flails.~//spiked weapons
-	
+
 	@031=~Polearms~       //spear, Halberd
 	@032=~This weapon category includes Spears and Halberds.~//polearm
-	
+
 	@033=~Crossbows~       // Light/ heavy crossbows
-	@034=~This weapon category includes Light and Heavy Crossbows.~// crossbows	
-	
+	@034=~This weapon category includes Light and Heavy Crossbows.~// crossbows
+
 	@035=~Bows~          //Short bows, longbows
 	@036=~This weapon category includes Shortbows and Longbows.~// bows
-	
+
 	@037=~Missile Weapons~ //sling, dart
 	@038=~This weapon category includes Darts, Throwing Daggers and Sling.~//missile weapons
 
-	
+
 	@101=~Two-Handed Combat~
 	@102=~This fighting style allows the character to use a two-handed melee weapon and receive special bonuses~
 	@103=~Style Focus~
-	@104=~Style Specialziation~
+	@104=~Style Specialization~
 	@105=~Greater Style Focus~
 	@106=~Greater Style Specialization~
 	@107=~Style Mastery~
 	@108=~Improved Style Mastery~
 	@109=~Epic Style Mastery~
 	@110=~The wielder gets a +1 bonus to damage rolls, and -1 bonus to Speed Factor.~
-	@111=~The wielder gets a further +1 bonus to damge rolls (to a total of +2).~
-	@112=~The wielder gets a further +1 bonus to damge rolls (to a total of +3) and -1 bonus to Speed Factor to a total of (-2).~
-	@113=~The wielder gets a further +1 bonus to damge rolls (to a total of +4).~
-	@114=~The wielder gets a further +1 bonus to damge rolls (to a total of +5) and -1 bonus to Speed Factor to a total of (-3).~
-	@115=~The wielder gets a further +2 bonus to damge rolls (to a total of +7)~
-	@116=~The wielder gets a further +2 bonus to damge rolls (to a total of +9)~
-		
+	@111=~The wielder gets a further +1 bonus to damage rolls (to a total of +2).~
+	@112=~The wielder gets a further +1 bonus to damage rolls (to a total of +3) and -1 bonus to Speed Factor to a total of (-2).~
+	@113=~The wielder gets a further +1 bonus to damage rolls (to a total of +4).~
+	@114=~The wielder gets a further +1 bonus to damage rolls (to a total of +5) and -1 bonus to Speed Factor to a total of (-3).~
+	@115=~The wielder gets a further +2 bonus to damage rolls (to a total of +7)~
+	@116=~The wielder gets a further +2 bonus to damage rolls (to a total of +9)~
+
 	@121=~Sword and Shield Combat~
 	@122=~Anyone can pick up a shield and get its basic protection bonuses, but by spending stars on this fighting style, an adventurer can maximize the benefits received.~
 	@123=~The wielder gets a -1 bonus to AC.~
-	@124=~The wielder gets anoter -1 bonus to AC (to a total of -2).~
-	@125=~The wielder gets anoter -1 bonus to AC (to a total of -3).~
-	@126=~The wielder gets anoter -1 bonus to AC (to a total of -4).~
-	@127=~The wielder gets anoter -1 bonus to AC (to a total of -5).~
-	@128=~The wielder gets anoter -1 bonus to AC (to a total of -6).~
-	@129=~The wielder gets anoter -1 bonus to AC (to a total of -7).~
-	
+	@124=~The wielder gets another -1 bonus to AC (to a total of -2).~
+	@125=~The wielder gets another -1 bonus to AC (to a total of -3).~
+	@126=~The wielder gets another -1 bonus to AC (to a total of -4).~
+	@127=~The wielder gets another -1 bonus to AC (to a total of -5).~
+	@128=~The wielder gets another -1 bonus to AC (to a total of -6).~
+	@129=~The wielder gets another -1 bonus to AC (to a total of -7).~
+
 	@131=~Single-Weapon Combat~
 	@132=~This fighting style is for characters who do not wish to use a shield but want some bonus when using a one-handed melee weapon.~
 	@133=~The wielder gets a -1 bonus to AC and inflicts critical damage on an attack roll of 19 - 20.~
@@ -80,19 +80,19 @@
 	@137=~The wielder gets another -1 bonus to AC (to a total of -3) and inflicts critical damage on an attack roll of 13 - 20.~
 	@138=~The wielder inflicts critical damage on an attack roll of 11 - 20.~
 	@139=~The wielder gets another -1 bonus to AC (to a total of -4) and inflicts critical damage on an attack roll of 10 - 20.~
-	
+
 	@141=~Two-Weapon Combat~
 	@142=~This fighting style allows the character to use two melee weapons at the same time with fewer penalties. A character wielding two weapons without a star in this fighting style would incur a -4 penalty to attack rolls with the main weapon and a -4 penalty with the off-hand weapon.~
 	@143=~The wielder's penalties are reduced to -2 with the main weapon and with the off-hand weapon.~
 	@144=~The wielder's penalties are reduced to 0 with the main weapon and  with the off-hand weapon.~
 	@145=~The wielder receives a -2 bonus to AC.~
 	@146=~The wielder additionally gets -2 bonus to AC to a total of -4.~
-	@147=~The wielder additionally gets another -1 bonus to AC (to a total of -5) and and inflicts critical damage on an attack roll of 19 - 20.~
-	@148=~The wielder additionally gets another -1 bonus to AC (to a total of -6) and and inflicts critical damage on an attack roll of 18 - 20.~
-	@149=~The wielder additionally gets another -1 bonus to AC (to a total of -7) and and inflicts critical damage on an attack roll of 17 - 20.~
-	
-	@151=~Archery~	
-	@152=~This fighting style allows character to use ranged weapons with higher effciency.~
+	@147=~The wielder additionally gets another -1 bonus to AC (to a total of -5) and inflicts critical damage on an attack roll of 19 - 20.~
+	@148=~The wielder additionally gets another -1 bonus to AC (to a total of -6) and inflicts critical damage on an attack roll of 18 - 20.~
+	@149=~The wielder additionally gets another -1 bonus to AC (to a total of -7) and inflicts critical damage on an attack roll of 17 - 20.~
+
+	@151=~Archery~
+	@152=~This fighting style allows character to use ranged weapons with higher efficiency.~
 	@153=~The character receives Rapid Shot modal ability. While activated the character can make one additional APR with ranged weapons, but all attacks are done with -2 penalty to hit.~
 	@154=~The character receives +1 to hit and +1 damage bonus with ranged weapons.~
 	@155=~Rapid Shot mode becomes permanently activated if character equips bow and <PRO_HESHE> no longer suffers -2 penalty to hit.~
@@ -101,16 +101,16 @@
 	@158=~The character receives Hail of Arrows innate ability.
 
 Hail of Arrows:
-	
-Hail of arrows greatly speeds up archer's ability to strike at foes with ranged weapons. The ability sets archer's number of attacks per round to 10, but <PRO_HISHER> THAC0 and damage suffer a 4 point penalty. The Hail of Arrows lasts for one round. Can be used once every 2 minutes.~	
+
+Hail of arrows greatly speeds up archer's ability to strike at foes with ranged weapons. The ability sets archer's number of attacks per round to 10, but <PRO_HISHER> THAC0 and damage suffer a 4 point penalty. The Hail of Arrows lasts for one round. Can be used once every 2 minutes.~
 	@159=~The character receives Greater Hail of Arrows innate ability.
-	
+
 Greater Hail of Arrows:
-	
+
 Greater Hail of arrows greatly speeds up archer's ability to strike at foes with ranged weapons. The ability sets archer's number of attacks per round to 10. The Greater Hail of Arrows lasts for one round. Can be used once every 2 minutes.~
 
 	@161=~Combat Prowess~
-	@162=~This group covers usage of character's agility in combat.~ 
+	@162=~This group covers usage of character's agility in combat.~
 	@163=~Weapon Finesse~
 	@164=~Dodge~
 	@165=~Lightning Reflexes~
@@ -126,13 +126,13 @@ Greater Hail of arrows greatly speeds up archer's ability to strike at foes with
 	@175=~The character receives Whirlwind Attack innate ability.
 
 Whirlwind Attack:
-	
+
 This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10, but one's THAC0 and damage suffer a 4 point penalty. The Whirlwind Attack lasts for one round. Can be used once every 2 minutes.~
-	@176=~The character receives Greater Whirlwind Attack innate ability.	
-	
+	@176=~The character receives Greater Whirlwind Attack innate ability.
+
 Greater Whirlwind Attack:
-	
-This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10. The Greater Whirlwind Attack lasts for one round. Can be used once every 2 minutes.~	
+
+This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10. The Greater Whirlwind Attack lasts for one round. Can be used once every 2 minutes.~
 
 
 	@181=~Warfare~
@@ -143,28 +143,28 @@ This ability allows the warrior to unleash a flurry of super-fast blows. The abi
 	@186=~Greater Cleave~
 	@187=~Toughness~
 	@188=~Stunning Attack~
-	@189=~Deathblow~	
+	@189=~Deathblow~
 	@190=~The character receives Power Attack modal ability. While activated all attacks with melee weapons are done with +3 bonus to damage but suffer -3 penalty to hit.~
-	@191=~Once per round, if the caharacter slays an enemy in melee, <PRO_HESHE> gains one additional APR till end of round.~
-	@192=~The character receives +2 bonus on Saving Throws vs. Paralysis/Poison/Death and vs. Pertification/Polymorph.~
+	@191=~Once per round, if the character slays an enemy in melee, <PRO_HESHE> gains one additional APR till end of round.~
+	@192=~The character receives +2 bonus on Saving Throws vs. Paralysis/Poison/Death and vs. Petrification/Polymorph.~
 	@193=~The effects of Cleave feat can be applied to the character any number of times per round whenever <PRO_HESHE> slays an enemy with melee weapon.~
 	@194=~The character receives +30 bonus HP.~
 	@195=~The character receives Stunning Attack innate ability.
 
 Stunning Attack:
-	
+
 Stunning Attack allows the warrior to strike blows so forceful that they stun an opponent for 2 rounds if the opponent fails a Save vs. Death at a -6 penalty. The ability lasts for 2 rounds and can be used once every 2 minutes.~
-	@196=~The character receives Deathblow innate ability.	
-	
+	@196=~The character receives Deathblow innate ability.
+
 Deathblow:
-	
+
 This ability allows the warrior to vanquish foes with a single blow.  For the next 2 rounds, any creature is instantly killed when struck by the warrior unless it makes a Save vs. Death  at a -4 penalty. This ability can be used once every 2 hours.~
 
-	
-		
+
+
 	@201=~Tactics~
-	@202=~This group covers usage of character's cunning in combat.~ 
-	@203=~Insightfull Strike~
+	@202=~This group covers usage of character's cunning in combat.~
+	@203=~Insightful Strike~
 	@204=~Combat Expertise~
 	@205=~Iron Will~
 	@206=~Study Opponent~
@@ -172,30 +172,30 @@ This ability allows the warrior to vanquish foes with a single blow.  For the ne
 	@208=~Critical Strike~
 	@209=~Premonition~
 	@210=~With unarmed strikes, short swords, daggers, long swords, scimitars, clubs, quarterstaves and spears the character may use Intelligence value instead of Strength to determine bonus to damage.
-	NOTE: This damage bonus is not multiplied by 1.5 for two-handed weapons, although if character got additional 0.5 strength bonus from Strength score, it is retained (i.e. if Strength is 14 and Intelligence is 16, the character will get +3 damage bonus from Intelligenge and +1 (0.5*2) from Strength to a total of +4 with two-handed weapons).~
-	
+	NOTE: This damage bonus is not multiplied by 1.5 for two-handed weapons, although if character got additional 0.5 strength bonus from Strength score, it is retained (i.e. if Strength is 14 and Intelligence is 16, the character will get +3 damage bonus from Intelligence and +1 (0.5*2) from Strength to a total of +4 with two-handed weapons).~
+
 	@211=~The character receives Combat Expertise modal ability. While activated all attacks with melee weapons suffer -3 penalty to THAC0 but character receives +3 bonus to AC.~
 	@212=~The character receives +2 bonus on Saving Throws vs. Spells.~
 	@213=~The character receives Study Opponent innate ability which can be used 3 times per day.
-	
+
 Study Opponent:
 
-Character can spend one round studying enemy and getting insight about its weakneses and share them to the party. The target receives a -3 penalty to AC, saving throws and THAC0. 
+Character can spend one round studying enemy and getting insight about its weaknesses and share them to the party. The target receives a -3 penalty to AC, saving throws and THAC0.
 This is an extraordinary ability and thus is not subject to magic resistance or savingthrows, neither can be dispelled.~
 	@214=~The character receives +1 bonus to AC for every 2 points of Intelligence above 10.~
 	@215=~The character receives Critical Strike innate ability.
 
 Critical Strike:
-	
+
 A high-level warrior's intimate knowledge of vital spots on opponents allows <PRO_HIMHER> to concentrate all of the attacks in one round to strike a vital area every time. With this ability, every attack roll made in the next round is a natural 20, a critical hit. This ability can be used once every 2 minutes.~
-	@216=~The character receives Preminition innate ability.	
-	
+	@216=~The character receives Premonition innate ability.
+
 Premonition:
-	
+
 Premonition allows character to use his experience and mastery of combat to predict where a next blow will land and physically avoid being in that place. This ability improves Armor Class by 6 and Saving Throws by 3. Also to everyone else character seem to move so quickly that <PRO_HISHER> movement rate is increased by 2 (base is 10) and normal missiles have no chance of striking <PRO_HIMHER>. This ability lasts for 5 rounds. Can be used once every 5 minutes.~
 
-		
-	
+
+
 	@221=~Bonus Priest Spell~
 	@222=~Additional priest spell slots.~
 	@223=~1st Level Spell~
@@ -209,10 +209,10 @@ Premonition allows character to use his experience and mastery of combat to pred
 	@231=~The character can cast one more 2nd level priest spell per day.~
 	@232=~The character can cast one more 3rd and 4th level priest spells per day.~
 	@233=~The character can cast one more 5th and 6th level priest spells per day.~
-	@234=~The character can cast two more 7th level priest spells per day.~	
-	@235=~The character can cast one more priest spells of each level per day.~	
-	@236=~The character can cast one more priest spells of each level per day.~	
-	
+	@234=~The character can cast two more 7th level priest spells per day.~
+	@235=~The character can cast one more priest spell of each level per day.~
+	@236=~The character can cast one more priest spell of each level per day.~
+
 	@241=~Bonus Wizard Spell~
 	@242=~Additional wizard spell slots.~
 	@243=~1st Level Spell~
@@ -226,12 +226,12 @@ Premonition allows character to use his experience and mastery of combat to pred
 	@251=~The character can cast one more 2nd level wizard spell per day.~
 	@252=~The character can cast one more 3rd and 4th level wizard spells per day.~
 	@253=~The character can cast one more 5th and 6th level wizard spells per day.~
-	@254=~The character can cast one more 7th and 8th level wizard spells per day.~	
-	@255=~The character can cast two more 9th level wizard spells per day.~	
-	@256=~The character can cast one more wizard spells of eqach level per day.~	
-	
-	
-	
+	@254=~The character can cast one more 7th and 8th level wizard spells per day.~
+	@255=~The character can cast two more 9th level wizard spells per day.~
+	@256=~The character can cast one more wizard spell of each level per day.~
+
+
+
 	@261=~Empower Magic~
 	@262=~Techniques used for increasing direct damage of spells.~
 	@263=~6%~
@@ -245,10 +245,10 @@ Premonition allows character to use his experience and mastery of combat to pred
 	@271=~Character's spells deal 14 % more damage.~
 	@272=~Character's spells deal 24 % more damage.~
 	@273=~Character's spells deal 36 % more damage.~
-	@274=~Character's spells deal 50 % more damage.~	
+	@274=~Character's spells deal 50 % more damage.~
 	@275=~Character's spells deal 66 % more damage.~
 	@276=~Character's spells deal 84 % more damage.~
-	
+
 	@281=~Extend Magic~
 	@282=~Techniques used for increasing duration of spells.~
 	@283=~11%~
@@ -262,12 +262,12 @@ Premonition allows character to use his experience and mastery of combat to pred
 	@291=~Character's spells last 24% longer.~
 	@292=~Character's spells last 39% longer.~
 	@293=~Character's spells last 56% longer.~
-	@294=~Character's spells last 75% longer.~		
+	@294=~Character's spells last 75% longer.~
 	@295=~Character's spells last 96% longer.~
 	@296=~Character's spells last 119% longer.~
-	
+
 	@301=~Endure Magic~
-	@302=~Ability to withstand magical attacks.~ 
+	@302=~Ability to withstand magical attacks.~
 	@303=~5%~
 	@304=~10%~
 	@305=~15%~
@@ -279,13 +279,13 @@ Premonition allows character to use his experience and mastery of combat to pred
 	@311=~The character gains another 5% resistance (to a total of 10%) against Fire, Lightning, Acid, Cold and Magical damage.~
 	@312=~The character gains another 5% resistance (to a total of 15%) against Fire, Lightning, Acid, Cold and Magical damage.~
 	@313=~The character gains another 5% resistance (to a total of 20%) against Fire, Lightning, Acid, Cold and Magical damage.~
-	@314=~The character gains another 5% resistance (to a total of 25%) against Fire, Lightning, Acid, Cold and Magical damage.~	
-	@315=~The character gains another 5% resistance (to a total of 30%) against Fire, Lightning, Acid, Cold and Magical damage.~	
-	@316=~The character gains another 5% resistance (to a total of 35%) against Fire, Lightning, Acid, Cold and Magical damage.~	
-	
-	
-	@321=~Quicken Magic~	
-	@322=~Techniques used to cast spells faster.~ 
+	@314=~The character gains another 5% resistance (to a total of 25%) against Fire, Lightning, Acid, Cold and Magical damage.~
+	@315=~The character gains another 5% resistance (to a total of 30%) against Fire, Lightning, Acid, Cold and Magical damage.~
+	@316=~The character gains another 5% resistance (to a total of 35%) against Fire, Lightning, Acid, Cold and Magical damage.~
+
+
+	@321=~Quicken Magic~
+	@322=~Techniques used to cast spells faster.~
 	@323=~-1 Casting Time~
 	@324=~-2 Casting Time~
 	@325=~-3 Casting Time~
@@ -297,28 +297,28 @@ Premonition allows character to use his experience and mastery of combat to pred
 	@331=~Spell casting time for all spells is further reduced by 1.~
 	@332=~Spell casting time for all spells is further reduced by 1.~
 	@333=~Spell casting time for all spells is further reduced by 1.~
-	@334=~Spell casting time for all spells is further reduced by 1.~		
+	@334=~Spell casting time for all spells is further reduced by 1.~
 	@335=~The character receives Improved Alacrity innate ability which can be used once per day.
 
 Improved Alacrity:
 
 Improved Alacrity essentially erases the pause between casting spells. When cast, the wizard can begin casting a new spell the instant <PRO_HESHE> is finished casting <PRO_HISHER> current spell. The effect lasts for 2 rounds.~
-	
-	@336=~The character receives another use per day of Improved Alacrity innate ability.~	
-	
 
-	
+	@336=~The character receives another use per day of Improved Alacrity innate ability.~
+
+
+
 	@1001=~star~
 	@1002=~stars~
 	@1003=~Pick this feat.~
 	@1004=~Select another feat.~
 	@1005=~Pick this weapon category.~
 	@1006=~Select another weapon category.~
-		
+
 	//------------------------------------------------------------
 	@1011=~Additional proficiencies~
 //--------------------------------------------------------------------------------------------------------------------------------//
-	@1012=~You have been given one feat (proficieny star) to start your character with. Generally a character can master to maximum any proficiency tree available to <PRO_HIMHER>, except weapon proficiencies where only trueclass fighters can put more than one star.
+	@1012=~You have been given one feat (proficiency star) to start your character with. Generally a character can master to maximum any proficiency tree available to <PRO_HIMHER>, except weapon proficiencies where only trueclass fighters can put more than one star.
 Every character class gets one proficiency star every three levels, certain classes can get proficiency stars more frequently in the form of feats.
 At level 1 character can put at most one star into any proficiency. Second star can be put starting from level 4, third - starting from level 8, fourth - starting from level 12, fifth - starting from level 16, sixth at level 21 and finally seventh at level 24.~
 //--------------------------------------------------------------------------------------------------------------------------------//
@@ -326,9 +326,9 @@ At level 1 character can put at most one star into any proficiency. Second star 
 	@1013 = ~Channel Energy Level~
 	@1014 = ~Sneak attack~
 
-	
-	
-	
+
+
+
 	@2000=~Weapon Class~
 
 	//string which is looked for in weapon description for replacing weapon categories
@@ -355,4 +355,3 @@ At level 1 character can put at most one star into any proficiency. Second star 
 	@2020=~Proficiency Type: Sling~
 
 	@2050=~Strength~ //replacement attribute for composite bows
-

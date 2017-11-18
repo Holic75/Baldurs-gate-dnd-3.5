@@ -1,7 +1,7 @@
 
 //---------------------------------------------------------------------------------------------------//
 	@001=~Poison Weapon
-	
+
 Each successful hit within the next 5 rounds will inject poison into the target. Each target can only be affected once per round. The amount of poison damage depends on the character's level:
 
 1st - Target suffers 1 poison damage per second for 6 seconds (Save vs. Death at +1 negates)
@@ -13,7 +13,7 @@ Each successful hit within the next 5 rounds will inject poison into the target.
 24th - Target suffers 2 poison damage per second for 24 seconds (Save vs. Death at -5 negates), and also immediately suffers 16 poison damage (no save)~
 //------------------------------------------------------------------------------------------------------------------------------//
 	@002=~Set Snare
-	
+
 Set a trap in the chosen location when no hostile creatures are in sight. Traps grow more powerful with the character's level and can only be triggered by enemies.
   1st Level: Deals 2d8+5 missile damage.
   10th Level: Deals 2d8+5 missile damage, plus 2d6 poison damage per round for the next 3 rounds.
@@ -21,7 +21,7 @@ Set a trap in the chosen location when no hostile creatures are in sight. Traps 
   20th Level: Deals 3d8+5 missile damage and 20 poison damage with no save; slays target if a Save vs. Death with a +4 bonus is failed.~
 //---------------------------------------------------------------------------------------------------//
 	@003=~Set Special Snare
-	
+
 Set a trap in the chosen location when no hostile creatures are in sight. Traps grow more powerful with the character's level and can only be triggered by enemies.
   1st Level: Deals 3d8+5 missile damage and slows target for 5 rounds if a Save vs. Spell with a -4 penalty is failed.
   10th Level: Deals 4d8+5 missile damage and holds target for 5 rounds if a Save vs. Spell with a -1 penalty is failed.
@@ -29,11 +29,10 @@ Set a trap in the chosen location when no hostile creatures are in sight. Traps 
   20th Level: Mazes the target.~
 //---------------------------------------------------------------------------------------------------//
 	@004=~Barbarian Rage
-	
+
 The character is enraged for 10 rounds, which grants <PRO_HIMHER> a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class, and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
 At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
 At 11th level, barbarian’s bonuses to Strength and Constitution during his rage each increase to +6, and his morale bonus on saves  vs. Spell increases to +3. The penalty to AC remains at -2.
 At 17th level, the character is no longer subject to fatigue effects after rage.
-At 20th level, barbarian’s bonuses to Strength and Constitution during his rage each increase to +8, and his morale bonus on saves  vs. Spell increases to +4. The penalty to AC remains at -2.~ 
+At 20th level, barbarian’s bonuses to Strength and Constitution during his rage each increase to +8, and his morale bonus on saves  vs. Spell increases to +4. The penalty to AC remains at -2.~
 //---------------------------------------------------------------------------------------------------//
-
