@@ -1,5 +1,9 @@
 	COPY ~3ed/BardSongs/Bam~ ~override~
+    
+    COPY_EXISTING ~SPWI205.SPL~ ~override~ //get "panic" strref
+        LPF GET_SPELL_EFFECT_VALUES INT_VAR header =  1 match_opcode = 139 RET panic_strref = parameter1 END
 	COPY ~3ed/BardSongs/Songs/BARD1.SPL~ ~override~ //inspire courage
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 267  parameter1 = panic_strref END
 		SAY NAME1 @001
 		SAY UNIDENTIFIED_DESC @002
 	COPY ~3ed/BardSongs/Songs/BARD2.SPL~ ~override~ //countersong
@@ -15,7 +19,11 @@
 		SAY UNIDENTIFIED_DESC @008
 		DEFINE_ASSOCIATIVE_ARRAY bard_songs_to_check_for_prot_removals BEGIN  "BARD4" => "SPWI220" END //power word sleep
         
+    COPY_EXISTING ~SPPR113.SPL~ ~override~ //get "doomed" strref
+        LPF GET_SPELL_EFFECT_VALUES INT_VAR header =  1 match_opcode = 139 RET doomed_strref = parameter1 END
+    
 	COPY ~3ed/BardSongs/Songs/BARD5.SPL~ ~override~ //dirge of doom
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 139 parameter1 = doomed_strref END
 		SAY NAME1 @009
 		SAY UNIDENTIFIED_DESC @010       
         DEFINE_ASSOCIATIVE_ARRAY bard_songs_to_check_for_prot_removals BEGIN  "BARD5" => "SPPR113" END //doom
@@ -23,9 +31,13 @@
 	COPY ~3ed/BardSongs/Songs/BARD6.SPL~ ~override~ //inspire competence
 		SAY NAME1 @011
 		SAY UNIDENTIFIED_DESC @012
-		
+        
+    COPY_EXISTING ~SPPR514.SPL~ ~override~ //get "healed" strref
+        LPF GET_SPELL_EFFECT_VALUES INT_VAR header =  1 match_opcode = 139 RET healed_strref = parameter1 END
+	
 	COPY ~3ed/BardSongs/Songs/BARD7.SPL~ ~override~ //soothing performance
 		FOR (i=0;i<=20;i=i+1) BEGIN
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 139 parameter1 = healed_strref END
 			LPF ADD_SPELL_HEADER  INT_VAR insert_point=i+2 copy_header=1 END
 			LPF ALTER_SPELL_HEADER  INT_VAR header=i+2 min_level = i+10 END
 			LPF ALTER_SPELL_EFFECT INT_VAR header=i+2 match_opcode = 17 parameter1 = i+10 END
@@ -33,7 +45,10 @@
 		SAY NAME1 @013
 		SAY UNIDENTIFIED_DESC @014
 	
+    COPY_EXISTING ~SPWI205.SPL~ ~override~ //get "panic" strref
+        LPF GET_SPELL_EFFECT_VALUES INT_VAR header =  1 match_opcode = 139 RET panic_strref = parameter1 END
 	COPY ~3ed/BardSongs/Songs/BARD8.SPL~ ~override~ //firghtening tune
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 139 parameter1 = panic_strref END
 		SAY NAME1 @015
 		SAY UNIDENTIFIED_DESC @016
         DEFINE_ASSOCIATIVE_ARRAY bard_songs_to_check_for_prot_removals BEGIN  "BARD8" => "SPWI205" END //horror
@@ -47,7 +62,10 @@
 		SAY UNIDENTIFIED_DESC @020
         DEFINE_ASSOCIATIVE_ARRAY bard_songs_to_check_for_prot_removals BEGIN  "BARDA" => "SPWI913" END //wail of banshee
 		
+    COPY_EXISTING ~SPWI401.SPL~ ~override~ //get "confused" strref
+        LPF GET_SPELL_EFFECT_VALUES INT_VAR header =  1 match_opcode = 139 RET confused_strref = parameter1 END    
 	COPY ~3ed/BardSongs/Songs/BARDB.SPL~ ~override~ //jester's song
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 139 parameter1 = confused_strref END
 		SAY NAME1 @021
 		SAY UNIDENTIFIED_DESC @022
         DEFINE_ASSOCIATIVE_ARRAY bard_songs_to_check_for_prot_removals BEGIN  "BARDB" => "SPWI401" END //confusion

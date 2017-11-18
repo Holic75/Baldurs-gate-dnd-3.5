@@ -13,6 +13,9 @@
                                   
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 14 Con = 14 Int = 10 Wis = 16 Cha = 10 
                                   STR_VAR NpcName = ~JAHEIR+.*~ ScriptName = ~JAHEIRA~ ClassName = ~FIGHTER_DRUID~ END
+        COPY_EXISTING_REGEXP ~JAHEIR+.*\.CRE~ ~override~ //put back harpers call
+            ADD_MEMORIZED_SPELL ~SPJA01~ #4 ~priest~                                  
+                                  
                                   
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 12 Con = 14 Int = 18 Wis = 9 Cha = 10 
                                   STR_VAR NpcName = ~EDWIN+.*~ ScriptName = ~EDWIN~ ClassName = ~MAGE~ Kit = ~MAGESCHOOL_CONJURER~ RemoveKnownSpells = 0 END
@@ -48,7 +51,9 @@
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 16 Con = 16 Int = 16 Wis = 9 Cha = 9  Lockpick = 4 FindTraps = 4
                 STR_VAR NpcName = ~JAN[0-9]+.*~ ScriptName = ~JAN~ ClassName = ~MAGE_THIEF~ KitName = ~MAGESCHOOL_ILLUSIONIST~ RemoveKnownSpells = 0 END                 
- 
+        COPY_EXISTING_REGEXP ~JAN[0-9]+.*\.CRE~ ~override~ //put innate for creating ammo back
+            ADD_MEMORIZED_SPELL ~SPIN829~ #0 ~innate~
+            
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 16 Con = 10 Int = 16 Wis = 10 Cha = 14  
                 STR_VAR NpcName = ~HAER+.*~ ScriptName = ~HAERDALI~ ClassName = ~BARD~ KitName = ~BLADE~ RemoveKnownSpells = 0 END  
 
