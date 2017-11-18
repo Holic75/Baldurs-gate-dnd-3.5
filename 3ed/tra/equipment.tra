@@ -487,3 +487,28 @@ Requires:
  9 Intelligence
 
 Weight: 1~
+
+
+
+//------------------------------------------------------------------------
+   @4101 = ~Requires:
+ 17 Dexterity~
+
+ 
+ 
+ @4102 =~Requires:
+ 5 Strength
+ 12 Intelligence~
+ 
+  @4103 =~Requires:
+ 14 Strength~
+ 
+    @4104 = ~Requires:
+ 17 Strength
+ 18 Dexterity
+ 16 Constitution
+ 14 Wisdom~
+ 
+    @4105 =~Requires:
+ 6 Strength~
+

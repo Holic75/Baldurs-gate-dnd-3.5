@@ -148,3 +148,33 @@ ACTION_PHP_EACH DescriptionChangeItems AS ItemName =>DescrStrRef BEGIN
 		READ_LONG 0x0054 ~id_descr_strref~
 		STRING_SET_EVALUATE %id_descr_strref% (AT "DescrStrRef")
 END
+
+
+//remove requirements from npc items
+ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
+
+    COPY_EXISTING ~NPCLCK.ITM~ ~override~ //clock of high forest
+        WRITE_SHORT 0x0026 0  WRITE_BYTE  0x002a 0  WRITE_BYTE  0x002c 0  WRITE_BYTE  0x002e 0 WRITE_BYTE  0x0030 0 WRITE_SHORT 0x0032 0
+
+    COPY_EXISTING ~NPSTAF.ITM~ ~override~ //staff of high forest
+        WRITE_SHORT 0x0026 5  WRITE_BYTE  0x002a 0  WRITE_BYTE  0x002c 0  WRITE_BYTE  0x002e 0 WRITE_BYTE  0x0030 0 WRITE_SHORT 0x0032 0
+        
+    COPY_EXISTING~NPMISC1.ITM~ ~override~ //jan items
+        WRITE_BYTE  0x002c 0
+        LPF REMOVE_SUBSTRING INT_VAR  strref_offset=0x0050   substring_to_remove_ref = 4101 END
+    COPY_EXISTING~NPMISC2.ITM~ ~override~ 
+        WRITE_BYTE  0x002c 0
+        LPF REMOVE_SUBSTRING INT_VAR  strref_offset=0x0054   substring_to_remove_ref = 4101 END
+        
+    COPY_EXISTING ~NPSHLD.ITM~ ~override~ //anomen shield
+         WRITE_SHORT 0x0026 12  WRITE_SHORT 0x0032 0  
+         
+ 
+     COPY_EXISTING ~NPSW03.ITM~ ~override~ //keldorn sword 
+        WRITE_SHORT 0x0026 14  WRITE_BYTE  0x002a 0  WRITE_BYTE  0x002c 0  WRITE_BYTE  0x002e 0 WRITE_BYTE  0x0030 0 WRITE_SHORT 0x0032 0
+        LPF REPLACE_SUBSTRING INT_VAR  strref_offset=0x0054   substring_to_replace_ref = 4102 new_substring_ref = 4103 END
+        
+     COPY_EXISTING ~NPSW04.ITM~ ~override~ //valygar katana
+        WRITE_SHORT 0x0026 6  WRITE_BYTE  0x002a 0  WRITE_BYTE  0x002c 0  WRITE_BYTE  0x002e 0 WRITE_BYTE  0x0030 0 WRITE_SHORT 0x0032 0
+        LPF REPLACE_SUBSTRING INT_VAR  strref_offset=0x0054   substring_to_replace_ref = 4104 new_substring_ref = 4105 END
+END

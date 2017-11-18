@@ -50,12 +50,12 @@
                 STR_VAR NpcName = ~JAN[0-9]+.*~ ScriptName = ~JAN~ ClassName = ~MAGE_THIEF~ KitName = ~MAGESCHOOL_ILLUSIONIST~ RemoveKnownSpells = 0 END                 
  
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 14 Con = 14 Int = 14 Wis = 10 Cha = 14  
-                STR_VAR NpcName = ~HAER+.*~ ScriptName = ~HAERDALI~ ClassName = ~BARD~ KitName = ~BLADE~ END  
+                STR_VAR NpcName = ~HAER+.*~ ScriptName = ~HAERDALI~ ClassName = ~BARD~ KitName = ~BLADE~ RemoveKnownSpells = 0 END  
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 14 Con = 12 Int = 10 Wis = 18 Cha = 10  
                 STR_VAR NpcName = ~CERND+.*~ ScriptName = ~CERND~ ClassName = ~DRUID~ KitName = ~SHAPESHIFTER~ END    
 
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 15 Dex = 10 Con = 14 Int = 10 Wis = 14 Cha = 12  
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 15 Dex = 10 Con = 14 Int = 10 Wis = 16 Cha = 12  
                 STR_VAR NpcName = ~ANOMEN+.*~ ScriptName = ~ANOMEN~ ClassName = ~FIGHTER_CLERIC~ END    
                 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 8 Dex = 16 Con = 8 Int = 16 Wis = 16 Cha = 12  
@@ -71,18 +71,16 @@
                 STR_VAR NpcName = ~DORN+.*~ ScriptName = ~DORN~ ClassName = ~PALADIN~ KitName = ~BLACKGUARD~ END      
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 9 Dex = 16 Con = 12 Int = 17 Wis = 9 Cha = 11  
-                STR_VAR NpcName = ~NEERA+.*~ ScriptName = ~NEERA~ ClassName = ~MAGE~ KitName = ~WILDMAGE~ END   
+                STR_VAR NpcName = ~NEERA+.*~ ScriptName = ~NEERA~ ClassName = ~MAGE~ KitName = ~WILDMAGE~ RemoveKnownSpells = 0 END   
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 18 Dex = 10 Con = 18 Int = 8 Wis = 8 Cha = 8  
                 STR_VAR NpcName = ~WILSON+.*~ ScriptName = ~WILSON~ ClassName = ~FIGHTER~ KitName = ~GRIZZLY_BEAR~ END   
-
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 18 Dex = 10 Con = 18 Int = 8 Wis = 8 Cha = 8  
-                STR_VAR NpcName = ~WILSON+.*~ ScriptName = ~WILSON~ ClassName = ~FIGHTER~ KitName = ~GRIZZLY_BEAR~ END          
+      
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 12 Dex = 16 Con = 12 Int = 16 Wis = 10 Cha = 10  
-                STR_VAR NpcName = ~ohhfak+.*~ ScriptName = ~OHHFAK~ ClassName = ~THIEF~  KitName = ~THIEF_BASE~ END          
+                STR_VAR NpcName = ~ohhfak+.*~ ScriptName = ~OHHFAK~ ClassName = ~THIEF~  KitName = ~THIEF_BASE~ RemoveKnownSpells = 0 END          
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 20 Con = 12 Int = 18 Wis = 12 Cha = 14  
-                STR_VAR NpcName = ~ohhfak+.*~ ScriptName = ~OHHFAK~ ClassName = ~THIEF~ KitName = ~SHADOWDANCER~ END                      
+                STR_VAR NpcName = ~ohhfak+.*~ ScriptName = ~OHHFAK~ ClassName = ~THIEF~ KitName = ~SHADOWDANCER~ RemoveKnownSpells = 0 END                      
     END
     

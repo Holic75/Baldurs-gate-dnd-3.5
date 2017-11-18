@@ -1,0 +1,22 @@
+DEFINE_PATCH_FUNCTION ~REMOVE_SUBSTRING~
+	INT_VAR
+		strref_offset=0x0050
+		substring_to_remove_ref = 0
+	STR_VAR
+		substring_to_remove=~dummy~
+	BEGIN
+	
+		PATCH_IF (substring_to_remove_ref) BEGIN
+			SPRINT substring_to_remove (AT "substring_to_remove_ref")
+		END
+		READ_LONG  strref_offset erg_strref
+		READ_STRREF strref_offset "string_to_modify"
+		PATCH_IF (((~%string_to_modify%~ STRING_CONTAINS_REGEXP ~%substring_to_remove%~) == 0) AND erg_strref>0) BEGIN
+			INNER_PATCH_SAVE new_string ~%string_to_modify%~ BEGIN
+				REPLACE_TEXTUALLY ~%substring_to_remove%~ ~~
+			END	
+            INNER_ACTION BEGIN
+                STRING_SET_EVALUATE %erg_strref% ~%new_string%~
+            END
+		END
+	END

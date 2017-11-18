@@ -132,7 +132,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~NPARM~) BEGIN//jan's lether armor (remove requirements)
   
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 10 max_dex = 20 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 11 END
+	//LPF UPDATE_ARMOR INT_VAR spell_failure = 10 max_dex = 20 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 11 update_unidstring = 0 END
 	WRITE_BYTE 0x002c 0 //dex
 	SAY IDENTIFIED_DESC @1002
 	SAY UNIDENTIFIED_DESC @1002
@@ -140,11 +140,8 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~SECRET05~) BEGIN//combined pantalons 
   
 	LPF UPDATE_ARMOR INT_VAR spell_failure = 50 max_dex = 10 skill_penalty = 10 is_light = 0 string_to_replace_ref_match = 18 string_to_replace_ref = 10 new_string_to_add_ref = 181 update_unidstring = 0 END
-	WRITE_BYTE 0x002c 0 //dex
-	SAY IDENTIFIED_DESC @1002
-	SAY UNIDENTIFIED_DESC @1002	
-		
-		
+
+				
 	//general armors
   END ELSE PATCH_IF (~%unid_name%~ STRING_EQUAL ~%LeatherArmorStr%~ OR ~%SOURCE_RES%~ STR_EQ ~MOURNER~) BEGIN //Leather Armor
   
