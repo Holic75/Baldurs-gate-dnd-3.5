@@ -31,12 +31,30 @@ DEFINE_PATCH_FUNCTION ~CREATE_PSEUDO_SPELL_SELECTION~
 					DEFINE_ASSOCIATIVE_ARRAY spell_list BEGIN "%i%"=>"%spell_name%" END
 				END
 			
+            //add correct effect removals
+			ACTION_PHP_EACH spell_list AS id=>spell_name BEGIN	
+                OUTER_SPRINT match_resource EVALUATE_BUFFER ~%spell_name%~ 
+                COPY_EXISTING ~%spell_name%.spl~ ~override~	
+                    FOR (i=min_val;i<=max_val;i=i+step) BEGIN  
+                        SPRINT resource EVALUATE_BUFFER ~%spell_name%%i%~                 	
+                        LPF CLONE_EFFECT INT_VAR match_opcode =321 silent = 1 STR_VAR  match_resource resource END
+                    END
+					LPF DELETE_EFFECT INT_VAR match_opcode =321  STR_VAR  match_resource END
+
+			END
 			
+            
 			OUTER_FOR (i=min_val;i<=max_val;i=i+step) BEGIN 
 				OUTER_SET saves_mod = (i - min_val) / step
 				//updating spells
-				ACTION_PHP_EACH spell_list AS id=>spell_name BEGIN		
-					COPY_EXISTING ~%spell_name%.spl~ ~override\%spell_name%%i%.spl~						
+				ACTION_PHP_EACH spell_list AS id=>spell_name BEGIN	
+                    OUTER_SPRINT match_resource EVALUATE_BUFFER ~%spell_name%~ 
+					COPY_EXISTING ~%spell_name%.spl~ ~override\%spell_name%%i%.spl~	
+                        SPRINT resource EVALUATE_BUFFER ~%spell_name%%i%~
+                        // add correct protections
+                        LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode =318 STR_VAR  match_resource resource END
+                        LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode =206 STR_VAR  match_resource resource END
+                        //increase DC
 						LPF INCREMENT_SPELL_DC INT_VAR saves_mod END
 
 				END

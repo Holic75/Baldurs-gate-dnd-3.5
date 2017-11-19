@@ -10,7 +10,7 @@
 	
 	
 	PRINT "Processing ninja spells..."
-	ACTION_PHP_EACH NinjaSpellList AS new_spell =>original_spell BEGIN
+	ACTION_PHP_EACH NinjaSpells AS new_spell =>original_spell BEGIN
 		LAF ADD_PROTECTION_REMOVALS STR_VAR original_spell new_spell END	
 	END
 	

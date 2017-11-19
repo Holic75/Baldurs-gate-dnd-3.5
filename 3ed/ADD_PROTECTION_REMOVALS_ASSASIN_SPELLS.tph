@@ -10,8 +10,8 @@ DEFINE_ACTION_FUNCTION ~ADD_PROTECTION_REMOVALS_ASSASIN_SPELLS~
 			READ_2DA_ENTRY i 1 3 new_spell_name 
 			READ_2DA_ENTRY i 2 3 original_spell 
 			INNER_ACTION BEGIN 
-				OUTER_FOR (i=10;i<25;i+=2) BEGIN
-					OUTER_SPRINT new_spell EVALUATE_BUFFER ~%new_spell_name%%i%~
+				OUTER_FOR (k=10;k<25;k+=2) BEGIN
+					OUTER_SPRINT new_spell EVALUATE_BUFFER ~%new_spell_name%%k%~
 					LAF ADD_PROTECTION_REMOVALS STR_VAR new_spell original_spell END
 				END			
 			END
