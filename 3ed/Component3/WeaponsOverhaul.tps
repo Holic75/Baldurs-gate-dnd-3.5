@@ -256,6 +256,10 @@
 		PATCH_IF (usable_by_fighter AND usable_by_thief AND NOT(usable_by_mage))  BEGIN
 			LPF SET_ITEM_USABILITY INT_VAR value = 1 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~mage~   END
 			LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 319 target = 1  power = 0  parameter1 = 1   parameter2 = 5  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  special = mage_strref  END
+            
+            PATCH_IF (category=ArmorCategory OR category=ShieldsCategory) BEGIN //also restrict cleric-mages from wearing armor
+                LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 319 target = 1  power = 0  parameter1 = 14   parameter2 = 5  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  special = cleric_mage_strref  END            
+            END
 		END
 		
 		PATCH_IF (usable_by_druid  OR category = AxesCategory) AND usable_by_ranger BEGIN //axes	and druid weapons

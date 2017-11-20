@@ -78,7 +78,7 @@ BEGIN @1
 	//---------------------update classes-------------------//
 	INCLUDE ~3ed/Component1/UpdateClasses.tps~ //add high level abilities (fighter, thief)
 	
-	INCLUDE ~3ed/Component1/AddHla.tps~ //add high level abilities (fighter, thief,druid,cleric,mage,sorceror, shaman)
+	INCLUDE ~3ed/Component1/AddHla.tps~ //add high level abilities (fighter, thief,druid,cleric,mage,sorcerer, shaman)
 
 	INCLUDE ~3ed/Component1/UpdateThac0SavesClasses.tps~
 	INCLUDE ~3ed/Component1/DiminishSpellCastingClasses.tps~
@@ -92,17 +92,19 @@ BEGIN @1
     
     //initial xp regularization
     ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
-        
-        OUTER_SET XP=89000 //original game
-        EXTEND_TOP ~AR0602.bcs~ ~3ed/Core/Xp/Bg2/InitialXp.baf~
-			EVALUATE_BUFFER
-            
-            
-        OUTER_SET XP=500000*6
-        EXTEND_TOP ~OH8000.bcs~ ~3ed/Core/Xp/Bg2/InitialXp.baf~
-			EVALUATE_BUFFER
-    
+            OUTER_FOR (PlayerId=1;PlayerId<=6;PlayerId=PlayerId+1) BEGIN
+                OUTER_SET XP=89000 //original game
+                    EXTEND_TOP ~AR0602.bcs~ ~3ed/Core/Xp/Bg2/InitialXp.baf~
+                    EVALUATE_BUFFER  
+                    
+                OUTER_SET XP=500000 //blackPits
+                    EXTEND_TOP ~OH8000.bcs~ ~3ed/Core/Xp/Bg2/InitialXp.baf~
+                    EVALUATE_BUFFER                   
+            END          
     END
+    
+    //allow magical armors to be used with items granting protection bonuses
+    COPY ~3ed/Core/ItemExcl/%GameId%~ ~override~
 	
 ////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
@@ -156,6 +158,7 @@ WITH_TRA ~%LANGUAGE%\proficiencies.tra~ BEGIN
 	INCLUDE ~3ed/Component2/ClassRaceFeatAttribution.tps~
 	
 END 		
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
@@ -211,7 +214,7 @@ INCLUDE ~3ed/Component3/CreateArmorDexPenalty.tps~
 WITH_TRA ~%LANGUAGE%\equipment.tra~ BEGIN
 		
 	OUTER_SET mage_strref=RESOLVE_STR_REF (@2004)
-	
+	OUTER_SET cleric_mage_strref=RESOLVE_STR_REF (@2005)
 END
 
 WITH_TRA ~%LANGUAGE%\proficiencies.tra~ BEGIN
@@ -374,7 +377,9 @@ BEGIN @8
     
 
 ////////////////////////////////////////////////////////////////////////////////////////
-
+//	regularize creatures
+BEGIN @9
+     INCLUDE ~3ed/Component9/RegularizeCreatures.tps~
 ////////////////////////////////////////////////////////////////////////////////////////
 
 //	lvl up by one level

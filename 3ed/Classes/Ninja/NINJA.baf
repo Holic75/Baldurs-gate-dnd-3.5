@@ -4,6 +4,6 @@ IF
 	
 THEN
 	RESPONSE #100
-		ApplySpellRES("GV_KIPW",Player%player_id%) 
+        ActionOverride(Player%player_id%,ReallyForceSpellRes("GV_KIPW",Player%player_id%))
 		Continue()
 END

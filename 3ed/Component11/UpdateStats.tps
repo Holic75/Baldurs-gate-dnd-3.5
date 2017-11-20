@@ -31,10 +31,4 @@
 			LPF ADD_CRE_EFFECT INT_VAR opcode=17 timing=1 parameter1=HP_BONUS parameter2=2 duration=1 END
 		END
 		
-		//spell dc bonus based on stats
-		LPF ADD_CRE_EFFECT INT_VAR opcode=272 timing=9 parameter1=1 parameter2=3 duration=1 STR_VAR resource=~SPDCWBN~ END //int 
-		LPF ADD_CRE_EFFECT INT_VAR opcode=272 timing=9 parameter1=1 parameter2=3 duration=1 STR_VAR resource=~SPDCPBN~ END //wis 
-		//saves bonus based on stats
-		LPF ADD_CRE_EFFECT INT_VAR opcode=272 timing=9 parameter1=1 parameter2=3 duration=1 STR_VAR resource=~DEXSAVBN~ END
-		LPF ADD_CRE_EFFECT INT_VAR opcode=272 timing=9 parameter1=1 parameter2=3 duration=1 STR_VAR resource=~CONSAVBN~ END
-		LPF ADD_CRE_EFFECT INT_VAR opcode=272 timing=9 parameter1=1 parameter2=3 duration=1 STR_VAR resource=~WISSAVBN~ END
+

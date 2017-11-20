@@ -64,7 +64,9 @@
                 STR_VAR NpcName = ~ANOMEN+.*~ ScriptName = ~ANOMEN~ ClassName = ~FIGHTER_CLERIC~ END    
                 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 10 Int = 16 Wis = 16 Cha = 12  
-                STR_VAR NpcName = ~AERIE+.*~ ScriptName = ~AERIE~ ClassName = ~CLERIC_MAGE~ RemoveKnownSpells = 0 END   
+                STR_VAR NpcName = ~AERIE[0-9]+.*~ ScriptName = ~AERIE~ ClassName = ~CLERIC_MAGE~ RemoveKnownSpells = 0 END  
+        COPY_EXISTING_REGEXP ~AERIE[0-9]+.*\.CRE~ ~override~       
+                REMOVE_KNOWN_SPELL ~sppr202~ ~sppr206~ //remove druid spells
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 14 Con = 14 Int = 14 Wis = 10 Cha = 10  
                 STR_VAR NpcName = ~SAREVOK~ ScriptName = ~SAREV25~ ClassName = ~FIGHTER~ RemoveKnownSpells = 0 END       

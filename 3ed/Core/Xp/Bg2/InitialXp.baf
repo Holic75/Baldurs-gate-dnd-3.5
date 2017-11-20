@@ -1,9 +1,21 @@
 IF 
-    !Global("ReceivedInitialXP","GLOBAL",1)
-    
+    !Global("ReceivedInitialXP%PlayerId%","GLOBAL",1)
+    NumInPartyLT(%PlayerId%)
+               
 THEN
     RESPONSE #100
-        AddexperienceParty(%XP%)
-        SetGlobal("ReceivedInitialXP","GLOBAL",1)
+        SetGlobal("ReceivedInitialXP%PlayerId%","GLOBAL",1)
+        Continue()
+END
+
+
+IF 
+    !Global("ReceivedInitialXP%PlayerId%","GLOBAL",1)
+    XPLT(Player%PlayerId%,%XP%)
+               
+THEN
+    RESPONSE #100
+        SetGlobal("ReceivedInitialXP%PlayerId%","GLOBAL",1)
+        ChangeStat(Player%PlayerId%,XP,%XP%,SET)
         Continue()
 END

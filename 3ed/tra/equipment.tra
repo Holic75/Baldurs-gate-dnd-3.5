@@ -295,7 +295,8 @@ Weight: 3~
 	@2002=~Protects against critical hits~
 	@2003=~Does not protect against critical hits~
 	@2004=~Mage~
-	
+	@2005=~Cleric/Mage~
+        
 	@2011=~Dexterity~
 	
 	
