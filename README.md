@@ -19,7 +19,7 @@
 
 # Baldurs-gate-dnd-3.5
 This is a WeiDu mod for BG:Enhanced edition and BG2:Enhanced edition  that changes 2ed ADnD rules to DnD 3.5 with some elements taken from Pathfinder.  
-It changes game mechanics (i.e classes, spells, abilities, etc...) to that of 3.5 edition (to the extent that game engine allows).
+It changes game mechanics (i.e. classes, spells, abilities, etc...) to that of 3.5 edition (to the extent that game engine allows).
 
 # Installation
 
@@ -861,8 +861,8 @@ Advantages:
 	Starting from level 1 ninja can spend one point from ki pool to become invisible for 10 seconds.  
 	Starting from level 3 ninja can alternatively spend one point from ki pool to create 1d4 mirror images of herself or become blurred (+3 AC, +1 Saving throw bonus) for 10 seconds or detect invisible creatures.  
 	Starting from level 5 ninja can alternatively spend one point from ki pool to become hasted for 10 seconds.  
-  Starting from level 7 ninja can alternatively spend one point from ki pool to make all her attacks for next round stun opponents unless they make a Saving throw vs. Death.
-
+  Starting from level 7 ninja can alternatively spend one point from ki pool to make all her attacks for next round stun opponents unless they make a Saving throw vs. Death.  
+– Gets one bonus feat at levels 25 and 30  
 Disadvantages:  
 – May not wear any armor or use shields.   
 – May only distribute 16 skill points per level among thieving skills (24 points at level 1).  
@@ -926,7 +926,7 @@ A bard of 8th level or higher can use her performance to foster a sense of growi
 ```
 ```
 Inspire Greatness
-A bard of 9th level or higher can use her performance to inspire greatness in all her allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the bard. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Thorws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12. Every 6 levels thereafter the bonus Hit Points increase by +5 and THAC0 and Saving Throws vs. Death bonus increases by 1.
+A bard of 9th level or higher can use her performance to inspire greatness in all her allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the bard. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Throws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12. Every 6 levels thereafter the bonus Hit Points increase by +5 and THAC0 and Saving Throws vs. Death bonus increases by 1.
 ```
 ```
 Soothing Performance
@@ -974,7 +974,7 @@ Disadvantages:
 ### SKALD
 Advantages:  
 – +1 bonus to hit and damage rolls.  
-– Can use Rage (starts with one use at level 2 then gets another every 4 levels thereafter), though Skald never gets benifits of Greater or Mighty Rage.  
+– Can use Rage (starts with one use at level 2 then gets another every 4 levels thereafter), though Skald never gets benefits of Greater or Mighty Rage.  
 ```
 RAGE: The enraged status lasts for 10 rounds and provides a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
 At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
@@ -1754,7 +1754,7 @@ For item abilities, area effect ones are generally checked against Breath Weapon
 - Burning hands is now and area effect spell (15 ft cone)  
 - The saving throw penalties against Spook now no longer increase with caster level  
 - If creatures under effect of Sleep are being attacked, they wake up  
-- Shoking Grasp now acts as close range spell (instead of weapon) dealing 1d6 electrical damage per level
+- Shocking Grasp now acts as close range spell (instead of weapon) dealing 1d6 electrical damage per level
 - Ghoul touch now acts as close range spell (instead of weapon)  
 - Horror duration was reduced to 3 rounds  
 - Dispel Magic and Remove Magic spells now  dispel with probability equal to 30% + 1% per level (twice for Inquisitors)  
@@ -1764,9 +1764,9 @@ For item abilities, area effect ones are generally checked against Breath Weapon
 - Magical Stone now creates one magical sling bullet per priest level (+1 THAC0, 1d6+1 damage or 2d6+2 against undead)  
 - Bless is now a cleric only spell
 - Barkskin now gives +3 bonus to AC (+4 at level 7, +5 at level 13) which is cumulative with everything else and +1 bonus to saving throws (except vs. Spell)    
-- Flame Blade spell was removed, it is now repalced with druid only Flame Weapon spell which makes target deal +1d6 fire damage bonus on every attack for the duration of the spell  
+- Flame Blade spell was removed, it is now replaced with druid only Flame Weapon spell which makes target deal +1d6 fire damage bonus on every attack for the duration of the spell  
 - Goodberries now heal 3 HP each when eaten  
-- Spiritual Hammer is now a throwing weapon with +1 enchatment, THAC0 and Damage bonus per 3 caster levels (up to +5 at lvl 15)  
+- Spiritual Hammer is now a throwing weapon with +1 enchnatment, THAC0 and Damage bonus per 3 caster levels (up to +5 at lvl 15)  
 - Draw Upon Holy Might now gives 1+1/per 5 caster level bonus to STE, DEX and CON (up to +5 at level 20)  
 - Aid's +1 THACO bonus is now cumulative with bless ,also bonus HP are increased to +5 +1/caster level (up to 15)  
 - Seeking sword now gives only +1 APR (instead of 2) and is now 3rd level War Domain Spell  
@@ -2035,7 +2035,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 
 To compensate for new character abilities most of the enemies were made stronger, they got +50% HP and bonuses to AC, THAC0 and APR.   
 Certain scripts for spell casting enemies were also changed to make battles more challenging.  
-Also killing greater basiliscs now gives only 2800 experience points (instead of 7000).
+Also killing greater basiliscs in BG1 now gives only 2800 experience points (instead of 7000).
 
 Note: this changes only apply if Component [More powerful enemies] is installed.
 

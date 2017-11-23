@@ -2,30 +2,6 @@ SC
 CR
 CO
 TR
-16396 255 0 0 0 "" "" OB
-0 0 0 0 0 0 0 1 0 0 0 0 ""OB
-TR
-TR
-16451 0 0 0 0 "" "" OB
-0 0 0 0 0 0 0 1 0 0 0 0 ""OB
-TR
-CO
-RS
-RE
-100AC
-156OB
-0 0 0 0 0 0 0 0 0 0 0 0 ""OB
-OB
-0 0 0 0 0 0 0 1 0 0 0 0 ""OB
-OB
-0 0 0 0 0 0 0 0 0 0 0 0 ""OB
-19 0 0 0 0"" "" AC
-RE
-RS
-CR
-CR
-CO
-TR
 16399 1 0 0 0 "GLOBALDORN_ROMANCE_FIGHT" "" OB
 0 0 0 0 0 0 0 0 0 0 0 0 ""OB
 TR

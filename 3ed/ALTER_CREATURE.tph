@@ -43,7 +43,6 @@ DEFINE_PATCH_FUNCTION ~ALTER_CREATURE~
 		FindTraps = 666666
 		HideInShadows = 666666
 		MoveSilently = 666666
-		Lore = 666666
 		LongName = 666666
 		Tooltip = 666666
 		Level1 = 666666
@@ -90,7 +89,7 @@ DEFINE_PATCH_FUNCTION ~ALTER_CREATURE~
 			0x0063 	=> 	~%ResistMissile%~
 			0x0064 	=> 	~%DetectIllusion%~
 			0x0065 	=> 	~%SetTraps%~
-			0x0066 	=> 	~%PickPockets%~
+			0x0066 	=> 	~%Lore%~
 			0x0067 	=> 	~%Lockpick%~
 			0x0068 	=> 	~%MoveSilently%~
 			0x0069 	=> 	~%FindTraps%~
