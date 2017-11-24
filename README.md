@@ -432,7 +432,7 @@ This ability allows the warrior to temporarily tap a great inner strength and fi
 Advantages:
 – Hit Die: d12  
 – Bonus Feats: at level 1 Berserker receives Warfare (1):Power Attack, at level 3 she receives Warfare (2):Cleave.  
-– May use Rage ability once per day. Gains one use at level 1, additional uses at levels 4, 8, 12 and 16.  
+– May use Rage ability once per day. Gains one use at level 1, additional uses at level 4 and every 4 levels thereafter.
 ```
 RAGE: The enraged state lasts for 6 rounds. While enraged, a Berserker gains a bonus of +2 to her attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to her Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
 At 8th the attack and damage rolls bonus increases to +3 and physical damage resistance bonus to 20%.
@@ -497,9 +497,9 @@ RAGE: The enraged status lasts for 10 rounds and provides a +4 bonus to Strength
 At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
 ```
 – 7th level: Gains 5% resistance to crushing, slashing, piercing, and missile damage. An additional 5% is gained every 3 levels thereafter.  
-– 11th level: Greater Rage: Barbarian’s Rage bonuses to Strength and Constitution during his rage each increase to +6, and his morale bonus on saves  vs. Spell increases to +6. The penalty to AC remains at -2.  
+– 11th level: Greater Rage: Barbarian’s Rage bonuses to Strength and Constitution during rage each increase to +6, and morale bonus on saves  vs. Spell increases to +6. The penalty to AC remains at -2.  
 – 17th level: Tireless Rage: Barbarian is no longer fatigued after the rage ends.  
-– 20th level: Mighty Rage: Barbarian’s Rage bonuses to Strength and Constitution during his rage each increase to +8, and his morale bonus on saves  vs. Spell increases to +4. The penalty to AC remains at -2.   
+– 20th level: Mighty Rage: Barbarian’s Rage bonuses to Strength and Constitution during rage each increase to +8, and morale bonus on saves  vs. Spell increases to +4. The penalty to AC remains at -2.   
 – Hit Die: d12  
 – High THAC0/APR progression, High Savingthrows vs. Death , vs. Polymorph, vs. Breath Weapon and vs. Wand
 
@@ -509,7 +509,7 @@ Advantages:
 ```
 DEFENSIVE STANCE: For 1 turn, the Dwarven Defender gains +50% resistance to all forms of physical damage, a +2 bonus to Saving Throws, and a 50% movement rate penalty.
 ```
-– Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 3 and every 5 levels thereafter to a maximum of 20% at level 18.  
+– Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 3 and every 5 levels thereafter to a maximum of 30% at level 28.  
 – Gets one bonus feat at level 5 and every 5 levels thereafter.  
 – Hit Die: d12  
 
@@ -535,9 +535,9 @@ All hostile undead creatures suffer 2d4 points of magical damage per Channel Ene
 – May cast priest spells starting at level 4.  
 – May use Smite Evil ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.  
 ```
-SMITE EVIL: For 10 seconds Paladin receives +1 bonus to her attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per paladin level against evil creatures.
+SMITE EVIL: For 10 seconds Paladin receives +1 bonus to her attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level against evil creatures.
 ```
-– Receives a bonus to all saving throws for every 2 points of Charisma above 9 (i.e +1 at 11, +2 at 13, etc) and penalty for every 2 points below 10.  
+– Receives a bonus to all saving throws for every 2 points of Charisma above 9 (i.e. +1 at 11, +2 at 13, etc) and penalty for every 2 points below 10.  
 – Gets one bonus feat at levels 25 and 30.  
 – Alignment restricted to lawful good.  
 – Hit Die: d10  
@@ -559,6 +559,10 @@ Advantages:
 – May cast Dispel Magic once per day. Gains one use at level 1 and an additional use every 4 levels thereafter. The spell is cast at Speed Factor 1 and acts at twice the Inquisitor's character level.   
 – May cast True Sight once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.  
 – Immune to hold and charm.  
+– May use Smite Mage ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.  
+```
+SMITE MAGE: For 10 seconds Inquisitor receives +1 bonus to her attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level against arcane magic users.
+```
 
 Disadvantages:  
 – May not channel positive energy.  
@@ -572,7 +576,7 @@ Advantages:
 – Immune to hold and level drain.  
 – May use Smite Undead ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.  
 ```
-SMITE UNDEAD: For 10 seconds Undead Hunter receives +1 bonus to her attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per paladin level against undead creatures.
+SMITE UNDEAD: For 10 seconds Undead Hunter receives +1 bonus to her attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level against undead creatures.
 ```
 Disadvantages:  
 – May not use Lay On Hands ability.  
@@ -614,6 +618,12 @@ When this ability is activated, all enemies within 30 feet of the Blackguard suf
   15th - All enemies suffer a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class for 1 turn; enemies with 8 or fewer Hit Dice are panicked as well.
   20th - All enemies suffer a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class for 1 turn; enemies with 18 or fewer Hit Dice are panicked as well.
 ```
+
+– May use Smite Good ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.  
+```
+SMITE GOOD: For 10 seconds Blackguard receives +1 bonus to her attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level against good creatures.
+```
+
 Disadvantages:  
 – Alignment restricted to evil.  
 – May not cast Detect Evil.  
