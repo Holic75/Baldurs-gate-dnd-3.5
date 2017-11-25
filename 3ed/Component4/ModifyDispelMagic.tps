@@ -44,11 +44,11 @@
 				OUTER_SET inquisitor_ch = 100
 			END
 			
-			COPY ~3ed/Spells/DispelMagic/DSP_E.SPL~ ~override/DSP_I%i%.SPL~
+			COPY ~3ed/Spells/DispelMagic/DSP_E.SPL~ ~override/DSP_E%i%.SPL~
 				LPF ALTER_SPELL_EFFECT INT_VAR  probability1 = ch END
 				LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 139 parameter1 = DispelStrRef  END
 				
-			COPY ~3ed/Spells/DispelMagic/DSP_E.SPL~ ~override/DSP_E%i%.SPL~
+			COPY ~3ed/Spells/DispelMagic/DSP_E.SPL~ ~override/DSP_I%i%.SPL~
 				LPF ALTER_SPELL_EFFECT INT_VAR probability1 = inquisitor_ch END
 				LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 139 parameter1 = DispelStrRef  END
 				
