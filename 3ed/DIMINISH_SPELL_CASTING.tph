@@ -53,18 +53,13 @@ DEFINE_ACTION_FUNCTION ~DIMINISH_SPELL_CASTING~
 				PATCH_IF (k!=1) BEGIN
 					LPF ADD_SPELL_HEADER INT_VAR  copy_header=1 END	
 					SET Nheaders=Nheaders+1
+         
 				END
 				LPF ALTER_SPELL_HEADER INT_VAR  header=Nheaders min_level=lvl END
 				SPRINT resource EVALUATE_BUFFER ~%caption%%lvl%~
 				LPF ALTER_SPELL_EFFECT INT_VAR header=Nheaders STR_VAR resource END
 			
-				ACTION_IF (k=1 AND levels_to_remove) BEGIN //remove complete spell levels
-					COPY ~%lvl_file%~ ~override/%caption%0.SPL~
-						LPF ALTER_SPELL_EFFECT INT_VAR parameter2=levels_to_remove END
-					COPY_EXISTING ~%caption%.SPL~ ~override~ 
-						SPRINT resource EVALUATE_BUFFER ~%caption%0~
-						LPF CLONE_EFFECT INT_VAR check_globals=0 header=0 STR_VAR resource END						
-				END
+
 								
 			OUTER_FOR (i=lvl_last;i<lvl;i=i+1) BEGIN //filling string with empty lines entries
 				OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line% ****~ 
@@ -72,6 +67,14 @@ DEFINE_ACTION_FUNCTION ~DIMINISH_SPELL_CASTING~
 			OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line% AP_%caption%~
 			OUTER_SET k=k+1	
 			OUTER_SET lvl_last=lvl+1
+		END
+        
+ 		ACTION_IF (levels_to_remove) BEGIN //remove complete spell levels
+			COPY ~%lvl_file%~ ~override/%caption%0.SPL~
+				LPF ALTER_SPELL_EFFECT INT_VAR parameter2=levels_to_remove END
+					COPY_EXISTING ~%caption%.SPL~ ~override~ 
+					SPRINT resource EVALUATE_BUFFER ~%caption%0~
+				LPF CLONE_EFFECT INT_VAR check_globals=0 header=0 STR_VAR resource END						
 		END
 		
 		
