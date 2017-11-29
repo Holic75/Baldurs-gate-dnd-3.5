@@ -21,8 +21,15 @@
 		LPF  ALTER_SPELL_EFFECT INT_VAR duration  =1 timing =3  END
 	
 //same for ftr/mage
-	LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=30 d_level=5 add_at_level1=0 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=30 d_level=4 add_at_level1=1 
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFM.SPL~ feat_type_file=~SFTCRE~ caption=~F_MBONFT~ END
+//same for ftr/mage/thief
+	LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=30 d_level=5 add_at_level1=0 
+						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRFMT.SPL~ feat_type_file=~SFTCRE~ caption=~FMTBONFT~ END
+                        
+//same for ftr/mage/cleric
+	LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=30 d_level=5 add_at_level1=0 
+						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRFMC.SPL~ feat_type_file=~SFTCRE~ caption=~FMCBONFT~ END
 						
 //add bonus feats to ftr/thief every 3 levels starting from lvl1
 	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=30 d_level=3 add_at_level1=1 
@@ -38,16 +45,17 @@
 						STR_VAR clab=~\(CLABTH02\)\|\(CLABTH03\)\.2DA~
 							mask_file=~3ed/Feats/FeatAttribution/SFTCRET.SPL~ feat_type_file=~FFTCRE~ caption=~THFEPCFT~ END	
  				
-							
+//same for mage thief (10,20,25,30)
+	LAF ADD_BONUS_FEATS INT_VAR mask = 0b100001000010000000001000000000 
+						STR_VAR clab=~CLABMA+.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREMT.SPL~ feat_type_file=~SFTCRE~ caption=~M_TBONFT~ END
+                        
 //add bonus feats to mage and sorcerer every 5 levels starting from lvl 5
 	LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=30 d_level=5 add_at_level1=0 
 						STR_VAR clab=~CLABMA+.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREW.SPL~ feat_type_file=~MFTCRE~ caption=~WIZBONFT~ END
 //battle caster
 	LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=30 d_level=5 add_at_level1=0 
 						STR_VAR clab=~CLABSO01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRES.SPL~ feat_type_file=~SFTCRE~ caption=~BCSBONFT~ END
-//same for mage thief
-	LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=30 d_level=5 add_at_level1=0 
-						STR_VAR clab=~CLABMA+.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREMT.SPL~ feat_type_file=~SFTCRE~ caption=~M_TBONFT~ END
+
 //bards
 	LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=30 d_level=5 add_at_level1=0 
 						STR_VAR clab=~CLABBA+.*\.2DA~ mask_file=~~ caption=~SFTCRE~ END		

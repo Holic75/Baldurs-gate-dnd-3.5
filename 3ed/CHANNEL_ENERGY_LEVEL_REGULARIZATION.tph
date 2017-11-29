@@ -48,6 +48,7 @@ DEFINE_ACTION_FUNCTION ~CHANNEL_ENERGY_LEVEL_REGULARIZATION~
 			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=8 parameter2=105 duration=1 timing=1 STR_VAR  resource END //fighter cleric 
 			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=15 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric thief
 			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=14 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric mage
+            LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=17 parameter2=105 duration=1 timing=1 STR_VAR  resource END //fighter cleric mage
             
             SPRINT resource EVALUATE_BUFFER ~CE_LVL%no_ce_lvl%~
 			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=18 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric ranger (no ce)

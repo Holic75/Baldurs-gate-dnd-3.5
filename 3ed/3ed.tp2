@@ -2,7 +2,7 @@
 
 BACKUP ~3ed/backup~
 AUTHOR ~denis.holic@gmail.com~
-VERSION ~v2.04~
+VERSION ~v2.03~
 
 
 ALWAYS
@@ -228,6 +228,8 @@ WITH_TRA ~%LANGUAGE%\equipment.tra~ BEGIN
 
 END
 	
+    INCLUDE ~3ed/Component3/TripleMultiClassUsability.tps~
+    
 	INCLUDE ~3ed/Component3/MakeRobesSellableAgain.tps~
    
    //replace weapon of polymorphs to provide protection from dex decrease

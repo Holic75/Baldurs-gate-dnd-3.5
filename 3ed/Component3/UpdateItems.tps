@@ -149,6 +149,19 @@ ACTION_PHP_EACH DescriptionChangeItems AS ItemName =>DescrStrRef BEGIN
 		STRING_SET_EVALUATE %id_descr_strref% (AT "DescrStrRef")
 END
 
+//update staff of woodlands  and potion of barkskin(proper barkskin effect)
+ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
+    COPY_EXISTING ~STAF14.ITM~ ~override~
+        LPF ALTER_ITEM_EFFECT  INT_VAR check_globals = 1 match_opcode =  0 parameter1 = 3 parameter2 = 0 END //+3 AC BONUS
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~SPPR202~ END
+		LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~SPPR202~ END
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = 11  new_substring_ref = 12 END
+    
+    COPY_EXISTING ~OHBPTN01.ITM~ ~override~
+        LPF DELETE_EFFECT INT_VAR check_headers = 1 END
+        LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 duration = 1  STR_VAR resource = ~SPPR202~ END
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = 13  new_substring_ref = 14 END	
+END
 
 //remove requirements from npc items
 ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN

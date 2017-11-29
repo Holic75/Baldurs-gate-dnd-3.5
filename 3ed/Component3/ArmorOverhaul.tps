@@ -46,7 +46,18 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	
 	LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~thief~ END
 	LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~mage_thief~ END
+    LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_mage_thief~ END
+
+  END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~CHAN20~) BEGIN //white dragon scale bg2-> splint mail
 	
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 16  string_to_replace_ref_match = 9 string_to_replace_ref = 10 
+                             new_string_to_add_ref = 14 update_unid_string = 0 END
+                             
+	LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~thief~ END
+	LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~mage_thief~ END
+    LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_mage_thief~ END
+	LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/KitUsabilityValues.tps~    id_string = ~stalker~ END
+    
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~NPCHAN~) BEGIN //valygar armor (remove requirements) - >studded leather
 	
 	LPF UPDATE_ARMOR INT_VAR spell_failure = 15 max_dex = 18 skill_penalty = 18 is_light = 1 string_to_replace_ref_match = 0 string_to_replace_ref = 10 new_string_to_add_ref = 1001 END	

@@ -67,10 +67,9 @@ CLASS FEATURES:
 
 – May wear helmets.
 – May wear any armor and use any weapon.
-– May get up to Weapon Specialization (2 stars) in any weapon they can use.
-– Can cast one spell less per day than trueclass mage.
+– May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
 – Cannot cast spells of 8th and 9th levels.
-– Gets one bonus feat at level 5 and every 5 levels thereafter.
+– Gets one bonus feat at level 1, 4 and every 4 levels thereafter.
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.
 – Can use Spontaneous Battlecasting.
 
@@ -86,7 +85,29 @@ This ability allows the warrior to temporarily tap a great inner strength and fi
 
 NOTE: Gnomes can choose this class, but become Fighter/Illusionists by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class. ~
 //---------------------------------------------------------------------------------------------------//
-@005=~FIGHTER/MAGE/THIEF: This character can use the abilities of a Fighter, Mage, and Thief. Depending on armor they wear they get penalties to their thieving skills and a chance of casting failure. They may only get up to Greater Weapon Focus (3 stars) in any weapon they can use.~
+@005=~FIGHTER/MAGE/THIEF: This is a hybrid class that can use the abilities of a Fighter, a Mage and a Thief.
+
+CLASS FEATURES:
+
+– May not wear armor heavier than studded leather.
+– May not equip shields larger than bucklers.
+– May get up to Weapon Specialization (2 stars) in any weapon they can use.
+– May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling, mace, flail, morning star, war hammer.
+– Can cast one spell less per day than trueclass mage.
+– Cannot cast spells of 8th and 9th levels.
+– May distribute 12 skill points per level among thieving skills (20 points at level 1).
+– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.
+– May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.
+– May use Spontaneous Spell Channeling
+
+SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds.
+
+– Gets one bonus feat at level 5 and every 5 levels thereafter.
+– At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.
+– Hit Die: d6
+– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph vs. Breath Weapon, vs. Wand and vs. Spell
+
+NOTE: Gnomes can choose this class, but become Fighter/Illusionist/Thieves by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class. ~
 //---------------------------------------------------------------------------------------------------//
 @006=~FIGHTER/DRUID: This is a hybrid class that can use the abilities of a Fighter and a Druid.
 
@@ -106,8 +127,29 @@ CLASS FEATURES:
 ~
 
 //---------------------------------------------------------------------------------------------------//
-@007=~FIGHTER/MAGE/CLERIC: This character can use the abilities of a Fighter, Mage, and Cleric, though they get a chance of casting failure while wearing armor. They may only get up to Greater Weapon Focus (3 stars) in any weapon they can use.
-	Gnomes can choose this multi-class, but become Fighter/Illusionist/Clerics by default.~
+@007=~FIGHTER/MAGE/CLERIC: This is a hybrid class that can use the abilities of a Fighter a Mage and a Cleric.
+
+CLASS FEATURES:
+
+– May wear helmets.
+– May wear light and medium armor and use any weapons and shields.
+– May get up to Weapon Specialization (2 stars) in any weapon they can use.
+– Can cast two arcane spells less per day than trueclass mage.
+– Cannot cast arcane spells of 8th and 9th levels.
+– Can cast three divine spells less per day than trueclass cleric.
+– Cannot cast divine spells of 6th and 7th levels.
+– Gets one bonus feat at level 5 and every 5 levels thereafter.
+– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels thereafter).
+– At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, at level 12 Armored Arcana: Splint Mail Casting.
+– Can use Spontaneous Battlecasting.
+
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
+
+– At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
+– Hit Die: d7
+– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
+
+NOTE: Gnomes can choose this class, but become Fighter/Illusionist/Clerics by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class. ~
 //---------------------------------------------------------------------------------------------------//
 @008=~BERSERKER: This is a warrior who is in tune with <PRO_HISHER> animalistic side and, during combat, can achieve an ecstatic state of mind that will enable <PRO_HIMHER> to fight longer, harder, and more savagely than any person has a right to. Berserkers tend to be barbarian-like in nature, but not always. Sometimes it is a conscious choice that a warrior in training makes. Regardless, opponents on the battlefield will be unsettled when they see the savage and inhuman elements of the Berserker's personality. This class is common amongst dwarves, known to them as the Battlerager.
 
@@ -479,10 +521,10 @@ CLASS FEATURES:
 – May distribute 16 skill points per level among thieving skills (24 points at level 1).
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.
-– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels up to 10d4).
+– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels).
 – May use Spontaneous Spell Channeling
 
-SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds. Ability lasts for 3 rounds, or until the first spell is sacrificed.
+SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds.
 
 – At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
 – Gets one bonus feat at levels 25 and 30.
@@ -630,10 +672,10 @@ CLASS FEATURES:
 – May not equip shields larger than bucklers.
 – May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.
 – Can cast one arcane spell per day less than trueclass mage.
-– Receives Bonus Feats at level 5 and every 5 levels thereafter.
 – May distribute 12 skill points per level among thieving skills (20 points at level 1).
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.
+– Gets one bonus feat at levels 10, 20, 25 and 30.
 – Hit Die: d5
 – Low THAC0/APR progression, High Savingthrows vs. Breath Weapon, vs. Wand and vs. Spell
 

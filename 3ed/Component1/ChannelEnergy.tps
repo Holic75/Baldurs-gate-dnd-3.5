@@ -42,6 +42,8 @@
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=8 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_NM1~  END //evil fighter cleric
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=14 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_PM1~ END //good cleric/mage
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=14 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_NM1~  END //evil cleric/mage
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=17 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_PM1~ END //good fighter/cleric/mage
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=17 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_NM1~  END //evil fighter/cleric/mage
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=6 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_PC1~  END //good paladin
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=6 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_NC1~  END //evil paladin
 		
@@ -57,8 +59,9 @@
 	COPY ~3ed/Feats/FeatAttribution/SFTCRECT.SPL~ ~override/CE_CT1.SPL~
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //cleric thief
 	COPY ~3ed/Feats/FeatAttribution/SFTCRECM.SPL~ ~override/CE_CM1.SPL~
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //cleric thief
-
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //cleric mage
+	COPY ~3ed/Feats/FeatAttribution/SFTCRFMC.SPL~ ~override/CE_FMC1.SPL~
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //fighter_cleric mage
 		
 	//script for giving channel abilities	
 	OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN

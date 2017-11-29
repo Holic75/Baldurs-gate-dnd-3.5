@@ -95,7 +95,12 @@ Charge abilities:
 
 Weight: 1~
 
-
+//------------------------------------------------------
+    @011=~– Barkskin: Armor Class set to 3~
+    @012=~– Barkskin:  +3 AC bonus~
+//------------------------------------------------------
+    @013=~Armor Class: 3~
+    @014=~Armor Class bonus: 3~
 
 
 

@@ -7,7 +7,8 @@ ARROPHE2 arrow_fire             1		2
 BLUN26   club_detonation_3      1       2     
 BLUN27   club_detonation_5      1       2      
 BOLT07   jan_bolt               1       4 
-BLUN29   storm_star             1       2        
+BLUN29   storm_star             1       2  
+CHAN20   white_dragon_scale_cc  1       2      
 CLCK07   nymph_clock            2		8         
 CLCK08   algernon_clck          2		8          
 DART03   dart_stun              1		4                
@@ -25,6 +26,7 @@ STAF11   staff_magi             1       2
 STAF12   staff_magi             1       2
 STAF13   staff_magi             1       2 
 WAND02   wand_fear              1		8         
-WAND13   wand_cold              1		4         
+WAND13   wand_cold              1		4    
+     
         
 

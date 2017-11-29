@@ -15,6 +15,7 @@ IF
 	CheckStatGT(%object%,%xp2%,XP)
     CheckStat(%object%,%lvl%,LEVEL)
 	!CheckStat(%object%,0,LEVEL2)
+    CheckStat(%object%,0,LEVEL3)
 THEN
 	RESPONSE #100
 		ApplySpellRES("SETXP2%lvl%",%object%)
@@ -22,4 +23,15 @@ THEN
 END
 
 
+IF
+    NumInPartyGT(%party_size%)
+	CheckStatGT(%object%,%xp3%,XP)
+    CheckStat(%object%,%lvl%,LEVEL)
+	!CheckStat(%object%,0,LEVEL2)
+    !CheckStat(%object%,0,LEVEL3)
+THEN
+	RESPONSE #100
+		ApplySpellRES("SETXP3%lvl%",%object%)
+		Continue()
+END
 

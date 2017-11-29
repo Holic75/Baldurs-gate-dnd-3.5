@@ -12,13 +12,13 @@ DEFINE_ACTION_FUNCTION ~DIMINISH_SPELL_CASTING~
 			
 		OUTER_SET spell_opcode=62
 		OUTER_SET max_spell_level=7
-		OUTER_SPRINT spl_file ~3ed/SpellProgression/REMSPLP.SPL~
+        OUTER_SPRINT spl_file ~3ed/SpellProgression/ADDSPLP.SPL~
 		OUTER_SPRINT lvl_file ~3ed/SpellProgression/REMLVLP.SPL~
 		
 		ACTION_IF (is_wizard) BEGIN
 			OUTER_SET spell_opcode=42
 			OUTER_SET max_spell_level=9
-			OUTER_SPRINT spl_file ~3ed/SpellProgression/REMSPLW.SPL~
+            OUTER_SPRINT spl_file ~3ed/SpellProgression/ADDSPLW.SPL~
 			OUTER_SPRINT lvl_file ~3ed/SpellProgression/REMLVLW.SPL~
 		END
 		
@@ -28,12 +28,19 @@ DEFINE_ACTION_FUNCTION ~DIMINISH_SPELL_CASTING~
 			COUNT_2DA_ROWS row_size n_rows			
 			FOR (i=1;i<n_rows;i=i+1) BEGIN
 				SET spells_to_remove=0
+                SET spells_to_add=0
 				READ_2DA_ENTRY %i% 0 row_size lvl //lvl at which to modify spells
 				FOR (j=1;j<row_size;j=j+1) BEGIN
-					READ_2DA_ENTRY %i% j row_size remove_spell	
-					SET spells_to_remove=spells_to_remove + (1 << (j - 1))*remove_spell //bit mask for spells to remove
+					READ_2DA_ENTRY %i% j row_size change_spell	
+                    
+                    PATCH_IF (change_spell<0) BEGIN
+                        SET spells_to_remove=spells_to_remove + (1 << (j - 1))*(0 - change_spell) //bit mask for spells to remove
+                    END ELSE BEGIN
+                        SET spells_to_add=spells_to_add + (1 << (j - 1))*change_spell //bit mask for spells to add
+                    END
 				END
-				DEFINE_ASSOCIATIVE_ARRAY diminished_spellcasting BEGIN "%lvl%" => "%spells_to_remove%" END
+               
+				DEFINE_ASSOCIATIVE_ARRAY diminished_spellcasting BEGIN  "%spells_to_remove%", "%spells_to_add%", "%lvl%" => "%i%" END
 			END
 		
 		
@@ -45,9 +52,16 @@ DEFINE_ACTION_FUNCTION ~DIMINISH_SPELL_CASTING~
 		
 		OUTER_SET k=1
 		OUTER_SET lvl_last=1
-		ACTION_PHP_EACH diminished_spellcasting AS lvl=>spells_to_remove BEGIN
-			COPY ~%spl_file%~ ~override/%caption%%lvl%.SPL~
-				LPF ALTER_SPELL_EFFECT INT_VAR parameter2=spells_to_remove END														
+		ACTION_PHP_EACH diminished_spellcasting AS spells => id BEGIN
+        
+            OUTER_SET lvl = spells_2
+           
+            COPY ~%spl_file%~ ~override/%caption%%lvl%.SPL~
+                LPF ALTER_EFFECT INT_VAR match_parameter1 = 0 - 1 parameter2=spells_0 END		
+                LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 parameter2=spells_1 END	
+                LPF DELETE_EFFECT INT_VAR match_parameter2 = 0 END //remove empty effects
+
+                          
 			COPY_EXISTING ~%caption%.SPL~ ~override~ 
 				READ_SHORT 0x0068 "Nheaders" //number of headers
 				PATCH_IF (k!=1) BEGIN
@@ -56,6 +70,8 @@ DEFINE_ACTION_FUNCTION ~DIMINISH_SPELL_CASTING~
          
 				END
 				LPF ALTER_SPELL_HEADER INT_VAR  header=Nheaders min_level=lvl END
+                
+                
 				SPRINT resource EVALUATE_BUFFER ~%caption%%lvl%~
 				LPF ALTER_SPELL_EFFECT INT_VAR header=Nheaders STR_VAR resource END
 			
@@ -73,8 +89,8 @@ DEFINE_ACTION_FUNCTION ~DIMINISH_SPELL_CASTING~
 			COPY ~%lvl_file%~ ~override/%caption%0.SPL~
 				LPF ALTER_SPELL_EFFECT INT_VAR parameter2=levels_to_remove END
 					COPY_EXISTING ~%caption%.SPL~ ~override~ 
-					SPRINT resource EVALUATE_BUFFER ~%caption%0~
-				LPF CLONE_EFFECT INT_VAR check_globals=0 header=0 STR_VAR resource END						
+                        SPRINT resource EVALUATE_BUFFER ~%caption%0~
+                        LPF CLONE_EFFECT INT_VAR check_globals=0 header=0 multi_match = 1 STR_VAR resource END						
 		END
 		
 		

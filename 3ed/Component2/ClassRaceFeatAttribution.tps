@@ -47,11 +47,35 @@
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=7 parameter2=105 timing=0 duration=1 STR_VAR resource END // fighter/mage
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=5 parameter2=105 timing=0 duration=1 STR_VAR resource END // bard
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=13 parameter2=105 timing=0 duration=1 STR_VAR resource END // mage/thief
+                LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=10 parameter2=105 timing=0 duration=1 STR_VAR resource END // fighter/mage/thief
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=19 parameter2=105 timing=0 duration=1 STR_VAR resource END // sorceror (for battle caster)
 		END
+        
+        
+        
+//armored arcana (ftr/mage, lvl1 bard, lvl1 -mage/thief)
+    COPY ~3ed/Feats/FeatAttribution/SFTCRE_E.SPL~ ~override/ARMAR2FT.SPL~
+		FOR (i=1;i<=3;i=i+1) BEGIN
+			SET lvl=6*(i - 1)
+			PATCH_IF (lvl==0) BEGIN
+				SET lvl=1
+			END
+			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=lvl speed=0 END
+				SPRINT resource EVALUATE_BUFFER ~ARCST%i%FT~
+				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=17 parameter2=105 timing=0 duration=1 STR_VAR resource END // fighter/mage/cleric
+		END
+        
+        
+        
+        
 	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=16 d_level=4 add_at_level1=1 
 						STR_VAR clab=~CLABFI01\.2DA~
 							mask_file=~~ feat_type_file=~~ caption=~ARMARCFT~ END	
+                            
+	LAF ADD_BONUS_FEATS INT_VAR min_level=6 max_level=12 d_level=6 add_at_level1=1 
+						STR_VAR clab=~CLABFI01\.2DA~
+							mask_file=~~ feat_type_file=~~ caption=~ARMAR2FT~ END	
+                            
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
 						STR_VAR clab=~\(CLABBA+.*\)\|\(CLABSO01\)\|\(CLABTH01\)\.2DA~
 							mask_file=~~ feat_type_file=~~ caption=~ARMARCFT~ END								

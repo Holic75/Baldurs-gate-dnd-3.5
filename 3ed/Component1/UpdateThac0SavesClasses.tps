@@ -17,6 +17,8 @@
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=8 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/cleric
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=16 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/druid
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=7 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/mage
+                LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=17 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/cleric/mage
+                LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=10 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/mage/thief
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=9 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/thief
                 LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=18 parameter2=105 timing=0 duration=1 STR_VAR resource END // cleric/ranger
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=19 parameter2=105 timing=0 duration=1 STR_VAR resource END // sorceror for battle caster
@@ -37,7 +39,7 @@
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 
 						STR_VAR clab=~CLABTH04\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~THAC0H~ END		
-	//medium thaco (fighter-*, ranger - clr*  and battle caster)
+	//medium thaco (fighter-*, ranger - clr*  and battle caster, f/m/t, f/m/c)
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 
 						STR_VAR clab=~\(CLABFI01\)\|\(CLABSO01\)\|\(CLABRN01\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~THAC0M~ END		

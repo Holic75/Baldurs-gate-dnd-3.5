@@ -39,5 +39,16 @@
 		LPF ADD_CRE_EFFECT INT_VAR opcode=272 timing=9 parameter1=1 parameter2=3 duration=1 STR_VAR resource=~CONSAVBN~ END
 		LPF ADD_CRE_EFFECT INT_VAR opcode=272 timing=9 parameter1=1 parameter2=3 duration=1 STR_VAR resource=~WISSAVBN~ END
     
+        //fix low hp (that npc do not die because of low const)
+    
+        READ_SHORT 0x0024 CurHp
+        READ_SHORT 0x0026 MaxHp
+    
+        PATCH_IF (MaxHp<5) BEGIN
+        
+            WRITE_SHORT 0x0024 5
+            WRITE_SHORT 0x0026 5
+        END
+    
 
     

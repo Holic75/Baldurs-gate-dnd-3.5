@@ -19,7 +19,7 @@ SET fighter_byte = 0x001f	SET fighter_mask = 8
 SET fighter_druid_byte = 0x001f	SET fighter_druid_mask = 16
 SET fighter_mage_byte = 0x001f	SET fighter_mage_mask = 32
 SET fighter_cleric_byte = 0x001f		SET fighter_cleric_mask = 64
-SET fighter_cleric_mage_byte = 0x001f	SET fighter_cleric_mage_mask = 128
+SET fighter_mage_cleric_byte = 0x001f	SET fighter_mage_cleric_mask = 128
 
 
 SET fighter_mage_thief_byte = 0x0020   SET fighter_mage_thief_mask = 1

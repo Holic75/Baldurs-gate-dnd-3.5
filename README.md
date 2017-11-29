@@ -386,7 +386,7 @@ Half-orcs have the following traits:
 
 ## 4. Classes
 
-All the classes we changed to better correspond to the DND 3.5 Edition counterparts (or Pathfinder ones), some of the kits were completely replaced or completely removed. Dual-classing was disabled (instead humans can now choose any multi-class) since with the feat system it becomes utterly unfair (dual-class characters would gain twice the number of feats). Triple multi-classes were also removed. The experience progression of double multi-classes were changed so that with same amount of experience they will have the same level as single classes (i.e. a for example with 160 000 experience a single class Fighter will reach level 9, same as Fighter/Mage will reach level 9/9), although the abilities they get we changed so that instead of being almost a direct sum of 2 single classes they now correspond more to Pathfinder  hybrid classes which gain a mix of certain traits of both parent classes as well receiving some unique abilities.
+All the classes we changed to better correspond to the DND 3.5 Edition counterparts (or Pathfinder ones), some of the kits were completely replaced or completely removed. Dual-classing was disabled (instead humans can now choose any multi-class) since with the feat system it becomes utterly unfair (dual-class characters would gain twice the number of feats). The experience progression of multi-classes were changed so that with same amount of experience they will have the same level as single classes (i.e. a for example with 160 000 experience a single class Fighter will reach level 9, same as Fighter/Mage will reach level 9/9), although the abilities they get we changed so that instead of being almost a direct sum of 2 single classes they now correspond more to Pathfinder  hybrid classes which gain a mix of certain traits of both parent classes as well receiving some unique abilities.
 The number of experience points needed to reach new levels was also changed as follows:
 
 Lvl| Exp Points |
@@ -1204,10 +1204,9 @@ SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice 
 CLASS FEATURES:  
 – May wear helmets.  
 – May wear any armor and use any weapon.  
-– May get up to Weapon Specialization (2 stars) in any weapon they can use.   
-– Can cast one spell less per day than trueclass mage.  
+– May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.     
 – Cannot cast spells of 8th and 9th levels.  
-– Gets one bonus feat at level 5 and every 5 levels thereafter.  
+– Gets one bonus feat at level 1, level 4 and every 4 levels thereafter.  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.  
 – Can use Spontaneous Battlecasting.  
 ```
@@ -1284,7 +1283,7 @@ CLASS FEATURES:
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels).  
 – May use Spontaneous Spell Channeling
 ```
-SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to her sneak attack damage for next 10 seconds. Ability lasts for 3 rounds, or until the first spell is sacrificed.
+SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to her sneak attack damage for next 10 seconds.
 ```
 – At 1st level chooses two domains that grant her access to additional spells, normally not available to Clerics of other domains.  
 – Gets one bonus feat at levels 25 and 30.  
@@ -1296,15 +1295,56 @@ CLASS FEATURES:
 – May not wear armor heavier than studded leather.  
 – May not equip shields larger than bucklers.  
 – May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.   
-– Can cast one arcane spell per day less than trueclass mage.  
-– Receives Bonus Feats at level 5 and every 5 levels thereafter.  
+– Can cast one arcane spell per day less than trueclass mage.   
 – May distribute 12 skill points per level among thieving skills (20 points at level 1).  
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.  
-– May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
+– May use the Set Snare ability once per day. Gains one use at levels 10, 15 and 20.  
+– Gets one bonus feat at levels 10, 20, 25 and 30.  
 – Hit Die: d5  
 – Low THAC0/APR progression, High Savingthrows vs. Breath Weapon, vs. Wand and vs. Spell  
 NOTE: Gnomes can choose this hybrid class, but become Illusionist/Thieves by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.
 
+### FIGHTER/MAGE/THIEF
+CLASS FEATURES:  
+– May not wear armor heavier than studded leather.  
+– May not equip shields larger than bucklers.  
+– May get up to Weapon Specialization (2 stars) in any weapon they can use.  
+– May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling, mace, flail, morning star, war hammer.  
+– Can cast one spell less per day than trueclass mage.  
+– Cannot cast spells of 8th and 9th levels.  
+– May distribute 12 skill points per level among thieving skills (20 points at level 1).  
+– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.   
+– May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
+– May use Spontaneous Spell Channeling
+```
+SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds.
+```
+– Gets one bonus feat at level 5 and every 5 levels thereafter.  
+– At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.  
+– Hit Die: d6  
+– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph vs. Breath Weapon, vs. Wand and vs. Spell  
+NOTE: Gnomes can choose this class, but become Fighter/Illusionist/Thieves by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.
+
+### FIGHTER/MAGE/CLERIC
+CLASS FEATURES:  
+– May wear helmets.  
+– May wear light and medium armor and use any weapons and shields.  
+– May get up to Weapon Specialization (2 stars) in any weapon they can use.  
+– Can cast two arcane spells less per day than trueclass mage.  
+– Cannot cast arcane spells of 8th and 9th levels.  
+– Can cast three divine spells less per day than trueclass cleric.  
+– Cannot cast divine spells of 6th and 7th levels.  
+– Gets one bonus feat at level 5 and every 5 levels thereafter.  
+– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels thereafter).  
+– At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, at level 12 Armored Arcana: Splint Mail Casting.  
+– Can use Spontaneous Battlecasting.
+```
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
+```
+– At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.  
+– Hit Die: d7  
+– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph vs. Breath Weapon, vs. Wand and vs. Spell  
+NOTE: Gnomes can choose this class, but become Fighter/Illusionist/Clerics by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.
 
 ### Saving throw progression per level
 Lvl| High | Low |
@@ -1453,7 +1493,34 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 19|4|4|4|4|4|4|4|3|3
 20|4|4|4|4|4|4|4|4|4
 
-Note: Specialist MAges may cast one spell per level per day
+Note: Specialist Mages may cast one spell per level per day
+
+### Mage/Thief spell slots per day
+
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+--- | --- | --- | --- |--- |--- |--- |--- |--- |---
+1 |0|0|0|0|0|0|0|0|0
+2 |1|0|0|0|0|0|0|0|0
+3 |1|0|0|0|0|0|0|0|0
+4 |2|1|0|0|0|0|0|0|0
+5 |2|1|0|0|0|0|0|0|0
+6 |2|2|1|0|0|0|0|0|0
+7 |3|2|1|0|0|0|0|0|0
+8 |3|2|2|1|0|0|0|0|0
+9 |3|3|2|1|0|0|0|0|0
+10|3|3|2|2|1|0|0|0|0
+11|3|3|3|2|1|0|0|0|0
+12|3|3|3|2|2|1|0|0|0
+13|3|3|3|3|2|1|0|0|0
+14|3|3|3|3|2|2|1|0|0
+15|3|3|3|3|3|2|1|0|0
+16|3|3|3|3|3|2|2|1|0
+17|3|3|3|3|3|3|2|1|0
+18|3|3|3|3|3|3|2|2|1
+19|3|3|3|3|3|3|3|2|2
+20|3|3|3|3|3|3|3|3|3
+
+Note: Specialist Mages may cast one spell per level per day
 
 ### Fighter/Cleric, Fighter/Druid, Cleric/Ranger and Cleric/Thief spell slots per day
 
@@ -1480,57 +1547,59 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 19|4|4|4|4|4|3|3
 20|4|4|4|4|4|4|4
 
+### Fighter/Mage spell slots per day
 
-### Fighter/Mage and Mage/Thief spell slots per day
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+--- | --- | --- | --- |--- |--- |--- |---
+1| 1|0|0|0|0|0|0
+2| 2|0|0|0|0|0|0
+3| 2|0|0|0|0|0|0
+4| 3|1|0|0|0|0|0
+5| 3|2|0|0|0|0|0
+6| 3|2|0|0|0|0|0
+7| 4|3|1|0|0|0|0
+8| 4|3|2|0|0|0|0
+9| 4|3|2|0|0|0|0
+10|4|4|3|1|0|0|0
+11|4|4|3|2|0|0|0
+12|4|4|3|2|0|0|0
+13|4|4|4|3|1|0|0
+14|4|4|4|3|2|0|0
+15|4|4|4|3|2|0|0
+16|4|4|4|4|3|1|0
+17|4|4|4|4|3|2|0
+18|4|4|4|4|3|2|0
+19|4|4|4|4|4|3|1
+20|4|4|4|4|4|4|2
+21|4|4|4|4|4|4|2
+22|4|4|4|4|4|4|3
+23|4|4|4|4|4|4|4
 
-Lvl\Spell level | 1| 2 | 3 | 4 | 5 | 6 | 7 | 8 (M/T only) | 9 (M/T only)|
---- | --- | --- | --- |--- |--- |--- |--- |--- |---
-1| 0|0|0|0|0|0|0|0|0
-2| 1|0|0|0|0|0|0|0|0
-3| 1|0|0|0|0|0|0|0|0
-4| 2|1|0|0|0|0|0|0|0
-5| 2|1|0|0|0|0|0|0|0
-6| 2|2|1|0|0|0|0|0|0
-7| 3|2|1|0|0|0|0|0|0
-8| 3|2|2|1|0|0|0|0|0
-9| 3|3|2|1|0|0|0|0|0
-10|3|3|2|2|1|0|0|0|0
-11|3|3|3|2|1|0|0|0|0
-12|3|3|3|2|2|1|0|0|0
-13|3|3|3|3|2|1|0|0|0
-14|3|3|3|3|2|2|1|0|0
-15|3|3|3|3|3|2|1|0|0
-16|3|3|3|3|3|2|2|1|0
-17|3|3|3|3|3|3|2|1|0
-18|3|3|3|3|3|3|2|2|1
-19|3|3|3|3|3|3|3|2|2
-20|3|3|3|3|3|3|3|3|3
-
-Note: Fighter/Mages can not cast spells higher than of 7th level, Specialist Mages can cast one spell more per level per day.
+Note: Specialist Mages can cast one spell more per level per day.
 
 ### Cleric/Mage arcane spell slots per day
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 --- | --- | --- | --- |--- |--- |--- |--- |--- |---
-1| 0|0|0|0|0|0|0|0|0
-2| 1|0|0|0|0|0|0|0|0
-3| 1|0|0|0|0|0|0|0|0
-4| 1|1|0|0|0|0|0|0|0
-5| 1|1|0|0|0|0|0|0|0
-6| 1|1|1|0|0|0|0|0|0
-7| 2|1|1|0|0|0|0|0|0
-8| 2|1|1|1|0|0|0|0|0
-9| 2|2|1|1|0|0|0|0|0
-10|2|2|1|1|1|0|0|0|0
-11|2|2|2|1|1|0|0|0|0
-12|2|2|2|1|1|1|0|0|0
-13|2|2|2|2|1|1|0|0|0
-14|2|2|2|2|1|1|1|0|0
-15|2|2|2|2|2|1|1|0|0
-16|2|2|2|2|2|1|1|1|0
-17|2|2|2|2|2|2|1|1|0
-18|2|2|2|2|2|2|1|1|1
-19|2|2|2|2|2|2|2|1|1
+1 |0|0|0|0|0|0|0|0|0
+2 |1|0|0|0|0|0|0|0|0
+3 |1|0|0|0|0|0|0|0|0
+4 |2|1|0|0|0|0|0|0|0
+5 |2|1|0|0|0|0|0|0|0
+6 |2|2|1|0|0|0|0|0|0
+7 |2|2|1|0|0|0|0|0|0
+8 |2|2|2|1|0|0|0|0|0
+9 |2|2|2|1|0|0|0|0|0
+10|2|2|2|2|1|0|0|0|0
+11|2|2|2|2|1|0|0|0|0
+12|2|2|2|2|2|1|0|0|0
+13|2|2|2|2|2|1|0|0|0
+14|2|2|2|2|2|2|1|0|0
+15|2|2|2|2|2|2|1|0|0
+16|2|2|2|2|2|2|2|1|0
+17|2|2|2|2|2|2|2|1|0
+18|2|2|2|2|2|2|2|2|1
+19|2|2|2|2|2|2|2|2|2
 20|2|2|2|2|2|2|2|2|2
 
 Note: Specialist Mages can cast one spell more per level per day.
@@ -1542,27 +1611,110 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 1| 0|0|0|0|0|0|0
 2| 1|0|0|0|0|0|0
 3| 1|0|0|0|0|0|0
-4| 1|1|0|0|0|0|0
-5| 1|1|0|0|0|0|0
-6| 1|1|1|0|0|0|0
-7| 2|1|1|0|0|0|0
-8| 2|1|1|1|0|0|0
-9| 2|2|1|1|0|0|0
-10|2|2|1|1|1|0|0
-11|2|2|2|1|1|0|0
-12|2|2|2|1|1|1|0
-13|2|2|2|2|1|1|0
-14|2|2|2|2|1|1|1
-15|2|2|2|2|2|1|1
-16|3|2|2|2|2|2|2
-17|3|2|2|2|2|2|2
-18|3|3|3|3|2|2|2
-19|3|3|3|3|3|2|2
+4| 2|1|0|0|0|0|0
+5| 2|1|0|0|0|0|0
+6| 2|2|1|0|0|0|0
+7| 2|2|1|0|0|0|0
+8| 2|2|2|1|0|0|0
+9| 2|2|2|1|0|0|0
+10|2|2|2|2|1|0|0
+11|3|2|2|2|1|0|0
+12|3|2|2|2|2|1|0
+13|3|3|2|2|2|1|0
+14|3|3|2|2|2|2|1
+15|3|3|3|2|2|2|2
+16|3|3|3|2|2|2|2
+17|3|3|3|3|3|3|2
+18|3|3|3|3|3|3|2
+19|3|3|3|3|3|3|3
 20|3|3|3|3|3|3|3
 
+### Fighter/Mage/Thief spell slots per day
+
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+--- | --- | --- | --- |--- |--- |--- |---
+1 |0|0|0|0|0|0|0
+2 |1|0|0|0|0|0|0
+3 |1|0|0|0|0|0|0
+4 |2|0|0|0|0|0|0
+5 |2|1|0|0|0|0|0
+6 |2|1|0|0|0|0|0
+7 |3|2|0|0|0|0|0
+8 |3|2|1|0|0|0|0
+9 |3|2|1|0|0|0|0
+10|3|3|2|0|0|0|0
+11|3|3|2|1|0|0|0
+12|3|3|2|1|0|0|0
+13|3|3|3|2|0|0|0
+14|3|3|3|2|1|0|0
+15|3|3|3|2|1|0|0
+16|3|3|3|3|2|0|0
+17|3|3|3|3|2|1|0
+18|3|3|3|3|2|1|0
+19|3|3|3|3|3|2|0
+20|3|3|3|3|3|3|1
+21|3|3|3|3|3|3|1
+22|3|3|3|3|3|3|2
+23|3|3|3|3|3|3|3
+
+Note: Specialist Mages can cast one spell more per level per day.
+
+### Fighter/Mage/Cleric arcane spell slots per day
+
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+--- | --- | --- | --- |--- |--- |--- |---
+1 |0|0|0|0|0|0|0
+2 |1|0|0|0|0|0|0
+3 |1|0|0|0|0|0|0
+4 |2|0|0|0|0|0|0
+5 |2|1|0|0|0|0|0
+6 |2|1|0|0|0|0|0
+7 |2|2|0|0|0|0|0
+8 |2|2|1|0|0|0|0
+9 |2|2|1|0|0|0|0
+10|2|2|2|0|0|0|0
+11|2|2|2|1|0|0|0
+12|2|2|2|1|0|0|0
+13|2|2|2|2|0|0|0
+14|2|2|2|2|1|0|0
+15|2|2|2|2|1|0|0
+16|2|2|2|2|2|0|0
+17|2|2|2|2|2|1|0
+18|2|2|2|2|2|1|0
+19|2|2|2|2|2|2|0
+20|2|2|2|2|2|2|1
+21|2|2|2|2|2|2|1
+22|2|2|2|2|2|2|2
+
+Note: Specialist Mages can cast one spell more per level per day.
+
+### Fighter/Mage/Cleric divine spell slots per day
+
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 |
+--- | --- | --- | --- |--- |---
+1 |1|0|0|0|0
+2 |2|0|0|0|0
+3 |2|0|0|0|0
+4 |3|1|0|0|0
+5 |3|2|0|0|0
+6 |3|2|0|0|0
+7 |4|3|1|0|0
+8 |4|3|2|0|0
+9 |4|3|2|0|0
+10|4|4|3|1|0
+11|4|4|3|2|0
+12|4|4|3|2|0
+13|4|4|4|3|1
+14|4|4|4|3|2
+15|4|4|4|3|2
+16|4|4|4|4|3
+17|4|4|4|4|3
+18|4|4|4|4|3
+19|4|4|4|4|4
+20|4|4|4|4|4
 
 
-### Sorceror spell slots per day
+### Sorcerer spell slots per day
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 --- | --- | --- | --- |--- |--- |--- |--- |--- |---
@@ -1590,7 +1742,7 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 Note: Battle Casters can cast one spell per day per level less.
 
 
-### Sorceror and Battle Caster spells known
+### Sorcerer and Battle Caster spells known
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 --- | --- | --- | --- |--- |--- |--- |--- |--- |---

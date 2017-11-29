@@ -815,7 +815,7 @@ Saving Throw: None
 
 When this spell is cast, all creatures affected function at double their normal movement rate, gain a -2 initiative bonus, and receive an extra attack per round. Thus, a creature moving at 6 and attacking once per round would move at 12 and attack twice per round. At the instant the spell is completed, it affects all ally creatures in a 30-ft. radius centered on a point selected by the caster (thus, creatures leaving the area are still subject to the spell's effect; those entering the area after the casting is completed are not). This spell is not cumulative with itself or with other similar magic. Spellcasting and spell effects are not affected. Note that this spell negates the effects of a Slow spell.~
 //--------------------------------------------------------------------------------------------------
-	@109=~Searing light~
+	@109=~Searing Light~
 //---------------------------------
 	@110=~Searing Light
 (Evocation)
@@ -828,7 +828,7 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
 
-Focusing divine power like a ray of the sun, priest projects a blast of light from open palm. A creature struck by this ray of light takes 1d8 points of fire damage per two caster levels (maximum 5d8). An undead creature takes double (maximum 10d8) instead.~
+Focusing divine power like a ray of the sun, priest projects a blast of light from open palm. A creature struck by this ray of light takes 1d8 points of fire damage per two caster levels (maximum 5d8). An undead creature takes double damage (maximum 10d8) instead.~
 //--------------------------------
 	@111=~Aid, 10' Radius~
 //------------------------------------------------

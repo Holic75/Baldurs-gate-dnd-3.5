@@ -6,6 +6,7 @@ IF
 		Class(Player%player_id%,CLERIC_THIEF)
 		Class(Player%player_id%,FIGHTER_CLERIC)
 		Class(Player%player_id%,CLERIC_MAGE)
+        Class(Player%player_id%,FIGHTER_MAGE_CLERIC)
 		
 	!Kit(Player%player_id%,INQUISITOR)
 	
@@ -21,6 +22,10 @@ IF
 	OR(2)
 		!Class(Player%player_id%,CLERIC_MAGE)
 		LevelGT(Player%player_id%,1)
+	OR(2)
+		!Class(Player%player_id%,FIGHTER_MAGE_CLERIC)
+		LevelGT(Player%player_id%,1)
+     
 THEN
 	RESPONSE #100
 		ApplySpellRES("CE_0",Player%player_id%) 

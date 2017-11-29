@@ -3,6 +3,8 @@
 	COPY ~3ed/lvlUp1/SETXP0.SPL~ ~override~    
             LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 timing = 0 target = 2 duration = 1 insert_point =0 STR_VAR resource = ~MLTXP1~ END
             LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 1 target = 2 insert_point =0 STR_VAR resource = ~MLTXP1~ END
+             LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 timing = 0 target = 2 duration = 1 insert_point =0 STR_VAR resource = ~MLTXP31~ END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 timing = 1 target = 2 insert_point =0 STR_VAR resource = ~MLTXP31~ END
             
 	COPY ~3ed/lvlUp1/RESETXP.SPL~ ~override/RSTXP0.SPL~
 		SPRINT resource EVALUATE_BUFFER ~SETXP0~
@@ -24,6 +26,7 @@
     ACTION_PHP_EACH XP_TABLE1 AS lvl => xp1 BEGIN
             
         OUTER_SET xp2=2*xp1
+        OUTER_SET xp3=3*xp1
         
         COPY_EXISTING ~LvlUp1.BAF~ ~override~
             APPEND_FILE ~3ed\lvlUp1\LvlUp.BAF~
@@ -37,14 +40,18 @@
              
  		COPY_EXISTING ~SETXP0.SPL~ ~override/SETXP2%lvl%.SPL~
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=104 parameter1=xp2 END
-            
+
+ 		COPY_EXISTING ~SETXP0.SPL~ ~override/SETXP3%lvl%.SPL~
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=104 parameter1=xp3 END            
             
 	//adding it to reset		
 		COPY_EXISTING ~3ed/lvlUp1/RESETXP.SPL~ ~override/RSTXP%lvl%.SPL~ 
             SPRINT resource EVALUATE_BUFFER ~SETXP1%lvl%~
 			LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 timing=reset_xp_mode duration=reset_xp_mode STR_VAR resource END
             SPRINT resource EVALUATE_BUFFER ~SETXP2%lvl%~
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 timing=reset_xp_mode duration=reset_xp_mode STR_VAR resource END			        
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 timing=reset_xp_mode duration=reset_xp_mode STR_VAR resource END		
+            SPRINT resource EVALUATE_BUFFER ~SETXP3%lvl%~
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 timing=reset_xp_mode duration=reset_xp_mode STR_VAR resource END		        
     END
     	
 	//adding lvl1 xp limiter remover to clabs

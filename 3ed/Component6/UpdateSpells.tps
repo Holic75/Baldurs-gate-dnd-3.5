@@ -127,4 +127,13 @@
 			LPF ADD_SPELL_HEADER  INT_VAR  type=1  location=2  target=5  target_count=0  range=0  required_level=bcst_level  STR_VAR  icon   END
 			LPF ADD_SPELL_EFFECT  INT_VAR  header = Nheaders+1  opcode = 146  target = 2  parameter1 = 1  timing = 1  resist_dispel = 2  STR_VAR  resource   END //cast spell on caster
 			LPF ADD_SPELL_EFFECT  INT_VAR  header = Nheaders+1  opcode = 321  target = 1  timing = 0 duration=1  resist_dispel = 2  STR_VAR resource=~RGSPBCST~ END	 //remove effects
+            
+            //channeling for wizards
+			//channeling
+			SPRINT icon EVALUATE_BUFFER ~CSTRK%spell_level%B~
+			SPRINT resource EVALUATE_BUFFER ~CHSTK%spell_level%~
+			LPF ADD_SPELL_HEADER  INT_VAR  type=1  location=2  target=5  target_count=0  range=0  required_level=cstk_level  STR_VAR  icon   END
+			LPF ADD_SPELL_EFFECT  INT_VAR  header = Nheaders+4  opcode = 146  target = 2  parameter1 = 1  timing = 1  resist_dispel = 2  STR_VAR  resource   END //cast spell on caster
+			LPF ADD_SPELL_EFFECT  INT_VAR  header = Nheaders+4  opcode = 321  target = 1  timing = 0 duration=1  resist_dispel = 2  STR_VAR resource=~RGSPCSTK~ END	 //remove effects	
+			
 		END BUT_ONLY	
