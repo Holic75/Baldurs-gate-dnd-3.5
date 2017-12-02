@@ -91,8 +91,8 @@ CLASS FEATURES:
 
 – May not wear armor heavier than studded leather.
 – May not equip shields larger than bucklers.
+– May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.
 – May get up to Weapon Specialization (2 stars) in any weapon they can use.
-– May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling, mace, flail, morning star, war hammer.
 – Can cast one spell less per day than trueclass mage.
 – Cannot cast spells of 8th and 9th levels.
 – May distribute 12 skill points per level among thieving skills (20 points at level 1).
@@ -719,7 +719,6 @@ This ability allows the rogue to set a powerful trap that unleashes a fireball w
 SET TIME TRAP:
 This ability allows the rogue to set a magical trap that casts a weaker version of the high-level Time Stop spell. For 10 seconds, the flow of time slows for all but the rogue. Often, a rogue will use this trap to get behind an opponent for a free attack.
 
-– Can set Spiked Trap once per day starting from level 21, gets an additional use at level 26.
 – Alignment restricted to any except lawful good.
 – Hit Die: d6
 – Medium THAC0/APR progression, High Savingthrows vs. Breath Weapon and vs. Wand
@@ -785,8 +784,8 @@ Advantages:
 	Starting from level 4 ninja can alternatively spend one point from ki pool to create 1d4 mirror images of <PRO_HIMHER>self or become blurred (+3 AC, +1 Saving throw bonus) for 10 seconds or detect invisible creatures.
 	Starting from level 7 ninja can alternatively spend one point from ki pool to become hasted for 10 seconds.
 	Starting from level 10 ninja can alternatively spend one point from ki pool to make all <PRO_HISHER> attacks for next round stun opponents unless they make a Saving throw vs. Death.
-    Starting from level 13 ninja can alternatively spend one point from ki pool to heal 10 Hit Points to <PRO_HIMHER>self and neutralize any poison
-    Starting from level 16 ninja can alternatively spend one point from ki pool to place <PRO_HIMHER>self under the effect of improved invisibility spell for 10 seconds
+    Starting from level 13 ninja can alternatively spend one point from ki pool to heal 10 Hit Points to <PRO_HIMHER>self and neutralize any poison.
+    Starting from level 16 ninja can alternatively spend one point from ki pool to place <PRO_HIMHER>self under the effect of improved invisibility spell for 10 seconds.
     
 – Gets one bonus feat at levels 25 and 30.
 

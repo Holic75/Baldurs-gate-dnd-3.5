@@ -123,10 +123,10 @@
     END
     ELSE ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
     
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 18 Dex = 14 Con = 16 Int = 8 Wis = 8 Cha = 8 
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 18 Dex = 14 Con = 16 Int = 8 Wis = 8 Cha = 8 InitialXp = 89000
                                   STR_VAR NpcName = ~MINSC+.*~ ScriptName = ~MINSC~ ClassName = ~FIGHTER~ KitName =~BARBARIAN~ END
                                   
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 14 Con = 14 Int = 10 Wis = 16 Cha = 10 
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 14 Con = 14 Int = 10 Wis = 16 Cha = 10 InitialXp = 89000
                                   STR_VAR NpcName = ~JAHEIR+.*~ ScriptName = ~JAHEIRA~ ClassName = ~FIGHTER_DRUID~ END
         COPY_EXISTING_REGEXP ~JAHEIR+.*\.CRE~ ~override~ //put back harpers call
             ADD_MEMORIZED_SPELL ~SPJA01~ #4 ~priest~                                  
@@ -138,10 +138,10 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 10 Int = 16 Wis = 14 Cha = 14 MoveSilently = 4 HideInShadows = 4
                                   STR_VAR NpcName = ~VICONI+.*~ ScriptName = ~VICONIA~ ClassName = ~CLERIC_THIEF~ END       
                                   
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 16 Con = 12 Int = 14 Wis = 8 Cha = 16 RemoveKnownSpells = 0 
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 16 Con = 12 Int = 14 Wis = 8 Cha = 16 RemoveKnownSpells = 0 InitialXp = 89000
                                   STR_VAR NpcName = ~IMOEN1+.*~ ScriptName = ~IMOEN~ ClassName = ~BARD~ END  
                                   
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 16 Con = 12 Int = 14 Wis = 8 Cha = 16  RemoveKnownSpells = 0
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 16 Con = 12 Int = 14 Wis = 8 Cha = 16  RemoveKnownSpells = 0 InitialXp = 89000
                                   STR_VAR NpcName = ~IMOEN2+.*~ ScriptName = ~IMOEN2~ ClassName = ~BARD~  END   
                                   
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 14 Con = 14 Int = 16 Wis = 10 Cha = 10  Lockpick = 4 FindTraps = 4

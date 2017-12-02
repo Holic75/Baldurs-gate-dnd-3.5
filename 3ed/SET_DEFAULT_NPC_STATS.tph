@@ -17,6 +17,7 @@ DEFINE_ACTION_FUNCTION ~SET_DEFAULT_NPC_STATS~
         RemoveKnownSpells = 1
         RemoveMemorizedSpells = 1
         HpTotal = 2
+        InitialXp = 0
     STR_VAR
         NpcName = ~~
         ScriptName=~~
@@ -68,6 +69,35 @@ DEFINE_ACTION_FUNCTION ~SET_DEFAULT_NPC_STATS~
     
         EXTEND_TOP ~%ScriptName%.bcs~ ~3ed/Npc/Common/Rejoin.baf~
 				EVALUATE_BUFFER 
+                
+                
+
+        EXTEND_BOTTOM ~%ScriptName%.bcs~ ~3ed/Npc/Common/InitialXpJoin.baf~
+            EVALUATE_BUFFER                               
+
+        COPY_EXISTING ~XPLEVEL.2DA~ ~override~
+            COUNT_2DA_ROWS 20 "nrows"
+            FOR (lvl=1; lvl<=20;lvl=lvl+1) BEGIN
+                READ_2DA_ENTRY 1 lvl 20 xp1
+                READ_2DA_ENTRY 1 lvl+1 20 xp2
+                SET xp = (xp1 + xp2) / 2
+                
+                PATCH_IF (xp>InitialXp) BEGIN
+                    INNER_ACTION BEGIN
+                        EXTEND_BOTTOM ~%ScriptName%.bcs~ ~3ed/Npc/Common/InitialXp.baf~
+                            EVALUATE_BUFFER                               
+                    END
+                END
+                
+            END
+            
+        EXTEND_BOTTOM ~%ScriptName%.bcs~ ~3ed/Npc/Common/InitialXpLast.baf~
+            EVALUATE_BUFFER    
+             
+             
+        
+        
+
     
     
     END

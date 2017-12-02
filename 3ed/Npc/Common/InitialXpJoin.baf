@@ -1,0 +1,10 @@
+IF 
+	!Global("BD_JOINXP0","LOCALS",1)
+    InParty(Myself)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("BD_JOINXP0","LOCALS",1)
+        ChangeStat(Myself,XP,%InitialXp%,SET)
+		SetInterrupt(TRUE)
+END

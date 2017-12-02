@@ -91,7 +91,7 @@ INT\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 Note: A character with an Intelligence score of 8 or less is illiterate and cannot use scrolls or most wands regardless of her class.
 
 #### WISDOM
-– Increases AC bonus of Monk and Kensai (+1 per 2 points above 10).  
+– Increases AC bonus of Monk, Kensai and Ninja (+1 per 2 points above 10).  
 – Increases number of spells per day that can be cast by Clerics, Paladins, Druids and Rangers.  	 
 
 WIS\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
@@ -1310,8 +1310,8 @@ NOTE: Gnomes can choose this hybrid class, but become Illusionist/Thieves by def
 CLASS FEATURES:  
 – May not wear armor heavier than studded leather.  
 – May not equip shields larger than bucklers.  
+– May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.   
 – May get up to Weapon Specialization (2 stars) in any weapon they can use.  
-– May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling, mace, flail, morning star, war hammer.  
 – Can cast one spell less per day than trueclass mage.  
 – Cannot cast spells of 8th and 9th levels.  
 – May distribute 12 skill points per level among thieving skills (20 points at level 1).  

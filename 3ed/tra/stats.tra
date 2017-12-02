@@ -30,7 +30,7 @@ Maximum: <MAXIMUM>~
 
 @003=~WISDOM: Wisdom measures a character's enlightenment, judgment, and common sense. This ability has the following effects:
 
-– Increases AC bonus of Monk and Kensai (+1 per 2 points above 10).
+– Increases AC bonus of Monk, Kensai and Ninja (+1 per 2 points above 10).
 – Increases number of spells per day that can be cast by Clerics, Paladins, Druids and Rangers.
 – Improves Saving Throws vs. Spells (+1 per 2 points above 9, -1 per 2 points below 10).
 – Increases Saving Throw penalties for Cleric, Druid, Paladin and Ranger spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).
