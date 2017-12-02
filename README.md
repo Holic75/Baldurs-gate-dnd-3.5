@@ -869,9 +869,11 @@ Advantages:
 – Gains +1 AC bonus per 2 points of Wisdom above 10.  
 – Ninja gains a pool of  ki points equal to 1/2 of her level +1 per 2 points of Wisdom above 10. These points can be spent to use different ki powers and are replenished after rest.  
 	Starting from level 1 ninja can spend one point from ki pool to become invisible for 10 seconds.  
-	Starting from level 3 ninja can alternatively spend one point from ki pool to create 1d4 mirror images of herself or become blurred (+3 AC, +1 Saving throw bonus) for 10 seconds or detect invisible creatures.  
-	Starting from level 5 ninja can alternatively spend one point from ki pool to become hasted for 10 seconds.  
-  Starting from level 7 ninja can alternatively spend one point from ki pool to make all her attacks for next round stun opponents unless they make a Saving throw vs. Death.  
+	Starting from level 4 ninja can alternatively spend one point from ki pool to create 1d4 mirror images of herself or become blurred (+3 AC, +1 Saving throw bonus) for 10 seconds or detect invisible creatures.  
+	Starting from level 7 ninja can alternatively spend one point from ki pool to become hasted for 10 seconds.  
+    Starting from level 10 ninja can alternatively spend one point from ki pool to make all her attacks for next round stun opponents unless they make a Saving throw vs. Death.  
+    Starting from level 13 ninja can alternatively spend one point from ki pool to heal 10 Hit Points to <PRO_HIMHER>self and neutralize any poison.  
+    Starting from level 16 ninja can alternatively spend one point from ki pool to place <PRO_HIMHER>self under the effect of improved invisibility spell for 10 seconds.   
 – Gets one bonus feat at levels 25 and 30  
 Disadvantages:  
 – May not wear any armor or use shields.   
@@ -1584,22 +1586,22 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 1 |0|0|0|0|0|0|0|0|0
 2 |1|0|0|0|0|0|0|0|0
 3 |1|0|0|0|0|0|0|0|0
-4 |2|1|0|0|0|0|0|0|0
-5 |2|1|0|0|0|0|0|0|0
-6 |2|2|1|0|0|0|0|0|0
-7 |2|2|1|0|0|0|0|0|0
-8 |2|2|2|1|0|0|0|0|0
-9 |2|2|2|1|0|0|0|0|0
-10|2|2|2|2|1|0|0|0|0
-11|2|2|2|2|1|0|0|0|0
-12|2|2|2|2|2|1|0|0|0
-13|2|2|2|2|2|1|0|0|0
-14|2|2|2|2|2|2|1|0|0
-15|2|2|2|2|2|2|1|0|0
-16|2|2|2|2|2|2|2|1|0
-17|2|2|2|2|2|2|2|1|0
-18|2|2|2|2|2|2|2|2|1
-19|2|2|2|2|2|2|2|2|2
+4 |1|1|0|0|0|0|0|0|0
+5 |1|1|0|0|0|0|0|0|0
+6 |1|1|1|0|0|0|0|0|0
+7 |2|1|1|0|0|0|0|0|0
+8 |2|1|1|1|0|0|0|0|0
+9 |2|2|1|1|0|0|0|0|0
+10|2|2|1|1|1|0|0|0|0
+11|2|2|2|1|1|0|0|0|0
+12|2|2|2|1|1|1|0|0|0
+13|2|2|2|2|1|1|0|0|0
+14|2|2|2|2|1|1|1|0|0
+15|2|2|2|2|2|1|1|0|0
+16|2|2|2|2|2|1|1|1|0
+17|2|2|2|2|2|2|1|1|0
+18|2|2|2|2|2|2|1|1|1
+19|2|2|2|2|2|2|2|1|1
 20|2|2|2|2|2|2|2|2|2
 
 Note: Specialist Mages can cast one spell more per level per day.
@@ -1608,25 +1610,25 @@ Note: Specialist Mages can cast one spell more per level per day.
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 --- | --- | --- | --- |--- |--- |--- |---
-1| 0|0|0|0|0|0|0
-2| 1|0|0|0|0|0|0
-3| 1|0|0|0|0|0|0
-4| 2|1|0|0|0|0|0
-5| 2|1|0|0|0|0|0
-6| 2|2|1|0|0|0|0
-7| 2|2|1|0|0|0|0
-8| 2|2|2|1|0|0|0
-9| 2|2|2|1|0|0|0
-10|2|2|2|2|1|0|0
-11|3|2|2|2|1|0|0
-12|3|2|2|2|2|1|0
-13|3|3|2|2|2|1|0
-14|3|3|2|2|2|2|1
-15|3|3|3|2|2|2|2
-16|3|3|3|2|2|2|2
-17|3|3|3|3|3|3|2
-18|3|3|3|3|3|3|2
-19|3|3|3|3|3|3|3
+1 |0|0|0|0|0|0|0
+2 |1|0|0|0|0|0|0
+3 |1|0|0|0|0|0|0
+4 |1|1|0|0|0|0|0
+5 |1|1|0|0|0|0|0
+6 |1|1|1|0|0|0|0
+7 |1|1|1|0|0|0|0
+8 |1|1|1|1|0|0|0
+9 |1|1|1|1|0|0|0
+10|1|1|1|1|1|0|0
+11|2|1|1|1|1|0|0
+12|2|1|1|1|1|1|0
+13|2|2|1|1|1|1|0
+14|2|2|1|1|1|1|1
+15|2|2|2|1|1|1|1
+16|3|2|2|1|1|1|1
+17|3|2|2|2|2|2|1
+18|3|3|3|3|2|2|1
+19|3|3|3|3|3|2|2
 20|3|3|3|3|3|3|3
 
 ### Fighter/Mage/Thief spell slots per day
@@ -1666,25 +1668,26 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 1 |0|0|0|0|0|0|0
 2 |1|0|0|0|0|0|0
 3 |1|0|0|0|0|0|0
-4 |2|0|0|0|0|0|0
-5 |2|1|0|0|0|0|0
-6 |2|1|0|0|0|0|0
-7 |2|2|0|0|0|0|0
-8 |2|2|1|0|0|0|0
-9 |2|2|1|0|0|0|0
-10|2|2|2|0|0|0|0
-11|2|2|2|1|0|0|0
-12|2|2|2|1|0|0|0
-13|2|2|2|2|0|0|0
-14|2|2|2|2|1|0|0
-15|2|2|2|2|1|0|0
-16|2|2|2|2|2|0|0
-17|2|2|2|2|2|1|0
-18|2|2|2|2|2|1|0
-19|2|2|2|2|2|2|0
+4 |1|0|0|0|0|0|0
+5 |1|1|0|0|0|0|0
+6 |1|1|0|0|0|0|0
+7 |2|1|0|0|0|0|0
+8 |2|1|1|0|0|0|0
+9 |2|1|1|0|0|0|0
+10|2|2|1|0|0|0|0
+11|2|2|1|1|0|0|0
+12|2|2|1|1|0|0|0
+13|2|2|2|1|0|0|0
+14|2|2|2|1|1|0|0
+15|2|2|2|1|1|0|0
+16|2|2|2|2|1|0|0
+17|2|2|2|2|1|1|0
+18|2|2|2|2|1|1|0
+19|2|2|2|2|2|1|0
 20|2|2|2|2|2|2|1
 21|2|2|2|2|2|2|1
-22|2|2|2|2|2|2|2
+22|2|2|2|2|2|2|1
+23|2|2|2|2|2|2|2
 
 Note: Specialist Mages can cast one spell more per level per day.
 
@@ -1692,26 +1695,29 @@ Note: Specialist Mages can cast one spell more per level per day.
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 |
 --- | --- | --- | --- |--- |---
-1 |1|0|0|0|0
-2 |2|0|0|0|0
-3 |2|0|0|0|0
-4 |3|1|0|0|0
-5 |3|2|0|0|0
-6 |3|2|0|0|0
-7 |4|3|1|0|0
-8 |4|3|2|0|0
-9 |4|3|2|0|0
-10|4|4|3|1|0
-11|4|4|3|2|0
-12|4|4|3|2|0
-13|4|4|4|3|1
-14|4|4|4|3|2
-15|4|4|4|3|2
-16|4|4|4|4|3
-17|4|4|4|4|3
-18|4|4|4|4|3
-19|4|4|4|4|4
-20|4|4|4|4|4
+1 |0|0|0|0|0
+2 |1|0|0|0|0
+3 |1|0|0|0|0
+4 |1|0|0|0|0
+5 |1|1|0|0|0
+6 |1|1|0|0|0
+7 |2|1|0|0|0
+8 |2|1|1|0|0
+9 |2|1|1|0|0
+10|2|2|1|0|0
+11|3|2|1|1|0
+12|3|2|1|1|0
+13|3|2|2|1|0
+14|3|3|2|1|1
+15|3|3|2|1|1
+16|3|3|2|2|1
+17|3|3|3|2|1
+18|3|3|3|2|1
+19|3|3|3|2|2
+20|3|3|3|3|2
+21|3|3|3|3|2
+22|3|3|3|3|2
+23|3|3|3|3|3
 
 
 ### Sorcerer spell slots per day
@@ -1900,7 +1906,9 @@ Ankheg Plate Mail      | 20% | +3 | -30%|-30%|-20%|-20%|-20%
  - Damage of Two-Handed Swords was changed to 2d6  
  - Damage of Halberds was changed to 1d12  
  - Damage of Spears was changed to 1d8  
- - Initial number of attacks per rounds for all ranged weapons was set to 1, except for slings and crossbows for which it was set to 0.5; it increases at normal character APR progression and Rapid Shot feat also gives +1 APR with ranged weapons.  
+ - AC bonus of Medium Shields was increased to +2  
+ - AC bonus of Large Shields was increased to +4, but they also now give -2 THAC0 penalty       
+ - Initial number of attacks per rounds for all ranged weapons was set to 1, except for slings and crossbows for which it was set to 0.5; it increases at normal character APR progression and Rapid Shot feat also gives +1 APR with ranged weapons    
  - Moonblade type was changed to longsword (do not worry, Xan can still use it)
 
 ## 6. Spells

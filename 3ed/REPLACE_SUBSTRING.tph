@@ -19,6 +19,7 @@ DEFINE_PATCH_FUNCTION ~REPLACE_SUBSTRING~
 				AND ((~%string_to_modify%~ STRING_CONTAINS_REGEXP ~%new_substring%~) OR always_replace) AND erg_strref>0) BEGIN
 			INNER_PATCH_SAVE new_string ~%string_to_modify%~ BEGIN
 				REPLACE_TEXTUALLY ~%substring_to_replace%~ ~%new_substring%~
+                REPLACE_TEXTUALLY ~\~ ~~ //remove special regexp symbols
 			END	
 			INNER_ACTION BEGIN
 				ACTION_IF ((~%string_to_modify%~ STRING_CONTAINS_REGEXP ~%new_substring%~)) BEGIN

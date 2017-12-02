@@ -6,6 +6,11 @@
 	OUTER_SPRINT PlateMailStr @6
 	OUTER_SPRINT FullPlateStr @7
     OUTER_SPRINT FullPlateMailStr @71	
+    
+    OUTER_SPRINT MediumShieldStr @51
+    OUTER_SPRINT LargeShieldStr @52
+    OUTER_SPRINT AcShieldStr @50
+    OUTER_SPRINT THAC0ShieldStr @500
 	
 COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   READ_STRREF 0x0008 "unid_name"
@@ -191,6 +196,42 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	
   END 
   
+  ELSE PATCH_IF (~%unid_name%~ STR_EQ ~%MediumShieldStr%~) BEGIN
+  
+    LPF GET_SPELL_EFFECT_VALUES INT_VAR header =0 match_opcode = 0 match_parameter2 = 0 RET ac_bonus = parameter1 found = found_match END
+          
+    SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%1~
+    SPRINT new_substring EVALUATE_BUFFER ~%AcShieldStr%2~
+      
+    LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
+    
+    SET NewAcBonus = ac_bonus + 1    
+    LPF ALTER_EFFECT INT_VAR  check_headers = 0 match_opcode = 0 match_parameter2 = 0 parameter1 = NewAcBonus  END   
+    SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%%ac_bonus%~
+    SPRINT new_substring EVALUATE_BUFFER ~%AcShieldStr%%NewAcBonus%~
+    
+    LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
+  END  ELSE PATCH_IF (~%unid_name%~ STR_EQ ~%LargeShieldStr%~) BEGIN
+  
+    LPF GET_SPELL_EFFECT_VALUES INT_VAR header =0 match_opcode = 0 match_parameter2 = 0 RET ac_bonus = parameter1 found = found_match END
+          
+    SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%1~
+    SPRINT new_substring EVALUATE_BUFFER ~%THAC0ShieldStr%%AcShieldStr%4~
+      
+    LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
+    
+    SET NewAcBonus = ac_bonus + 3    
+    LPF ALTER_EFFECT INT_VAR  check_headers = 0 match_opcode = 0 match_parameter2 = 0 parameter1 = NewAcBonus  END 
+    LPF CLONE_EFFECT INT_VAR  check_headers = 0 match_opcode = 0 match_parameter2 = 0 opcode = 278 parameter1 = 100 multi_match = 1 END 
+
+    SET parameter1 = 0 - 2    
+    LPF ALTER_SPELL_EFFECT_EX INT_VAR  header = 0 match_opcode = 278 match_parameter1 = 100 parameter1  END 
+    
+    SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%%ac_bonus%~
+    SPRINT new_substring EVALUATE_BUFFER ~%THAC0ShieldStr%%AcShieldStr%%NewAcBonus%~
+    
+    LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
+  END
   
   
   

@@ -190,4 +190,8 @@ ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
      COPY_EXISTING ~NPSW04.ITM~ ~override~ //valygar katana
         WRITE_SHORT 0x0026 6  WRITE_BYTE  0x002a 0  WRITE_BYTE  0x002c 0  WRITE_BYTE  0x002e 0 WRITE_BYTE  0x0030 0 WRITE_SHORT 0x0032 0
         LPF REPLACE_SUBSTRING INT_VAR  strref_offset=0x0054   substring_to_replace_ref = 4104 new_substring_ref = 4105 END
+        
+//correct description of DarkSteelShield +4
+    COPY_EXISTING ~SHLD31.ITM~ ~override~
+        LPF REPLACE_SUBSTRING INT_VAR  strref_offset=0x0054   substring_to_replace_ref = 501 new_substring_ref = 50 END
 END

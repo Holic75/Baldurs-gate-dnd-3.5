@@ -20,8 +20,8 @@ DEFINE_PATCH_FUNCTION ~ALTER_SPELL_EFFECT_EX~
 	  opcode = ~666666666~// to the value the of the new effect’s opcode.
       target = ~666666666~//to the new effect’s target.
       power  = ~666666666~//to the new effect’s power.
-      parameter1 =~666666666~ //to the new effect’s parameter1.
-      parameter2 =~666666666~ //to the new effect’s parameter2.
+      parameter1 = ~666666666~ //to the new effect’s parameter1.
+      parameter2 = ~666666666~ //to the new effect’s parameter2.
       timing = ~666666666~ //to the new effect’s timing mode.
       resist_dispel =~666666666~ //to the new effect’s resist/dispel setting.
       duration = ~666666666~ //to the new effect’s duration.
@@ -188,8 +188,8 @@ DEFINE_PATCH_FUNCTION ~ALTER_SPELL_EFFECT_EX~
 						END
 					END
 				
-					PHP_EACH FileFields4 AS Offset => MatchVal  BEGIN					 
-						PATCH_IF (MatchVal!=666666666) BEGIN
+					PHP_EACH FileFields4 AS Offset => Val  BEGIN					 
+						PATCH_IF (Val!=666666666) BEGIN 
 							WRITE_LONG current_effect_offset +Offset Val
 						END
 					END				

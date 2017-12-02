@@ -137,6 +137,14 @@
 – Move Silently: -60%
 – Hide In Shadows: -60%~
 
+@50 = ~– Armor Class: \+~
+@501 = ~Armor Class: \+~
+@500 = ~– THAC0: -2
+~
+@51 = ~Medium Shield~
+@52 = ~Large Shield~
+
+
 	@101 = ~– 2 attacks per round~
 	@102 = ~– 3 attacks per round~
 	@103 = ~– Sets attacks per round to 5~
