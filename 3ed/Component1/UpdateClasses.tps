@@ -230,6 +230,37 @@ END
 			
 					
 	END	
+    //--------------------------Priest of talos lightning dmg ----------------------------------------------------------
+    
+    OUTER_SPRINT clab_line  ~ABIL_TALOS~
+    OUTER_FOR (i=2;i<=12;i=i+2) BEGIN
+        COPY ~3ed/Classes/Talos/TALWPN.EFF~ ~override/TLWPN%i%.EFF~
+            WRITE_LONG 0x003c i
+        
+        COPY ~3ed/Classes/Talos/TALWPN.SPL~ ~override/TLWPN%i%.SPL~
+            LPF ALTER_SPELL_EFFECT INT_VAR dicesize = i END
+            
+        COPY ~3ed/Classes/Talos/TALWPA.SPL~ ~override/TLWPA%i%.SPL~    
+            SPRINT resource EVALUATE_BUFFER ~TLWPN%i%~
+            LPF ALTER_SPELL_EFFECT STR_VAR resource END
+            
+            PATCH_IF (i>2) BEGIN
+                SET i_old  = i - 2
+                SPRINT resource EVALUATE_BUFFER ~TLWPA%i_old%~
+                LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 321 target = 2 duration = 1 STR_VAR resource END
+            END
+            SPRINT clab_line EVALUATE_BUFFER ~%clab_line%    AP_TLWPA%i%    ****    ****    ****    ****~
+        
+    END
+    OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line%    ****    ****    ****    ****    ****    ****    ****    ****    ****    ****~
+    
+    
+    COPY_EXISTING ~CLABPR02.2DA~ ~override~
+        COUNT_2DA_ROWS 20 "nrows"
+        INSERT_2DA_ROW nrows 20 ~%clab_line%~
+        
+    
+    
 	//--------------------- assasin poison weapon progression change -------------------------- (spells will be done later in spells section)
     ACTION_IF NOT (~%GameId%~ STR_EQ ~Iwd~) BEGIN
         COPY_EXISTING ~bdpweapn.spl~ ~override~

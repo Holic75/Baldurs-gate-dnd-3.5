@@ -44,15 +44,13 @@
 	//add stoneskin as possible 6 level cleric spell
 	COPY_EXISTING ~SPWI408.SPL~ ~override/PRSTNSK.SPL~
 		LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_level=6 spell_type=2 END
-		READ_LONG 0x0050 ~descr_strref~
-		STRING_SET_EVALUATE %descr_strref% @107	
+        SAY UNIDENTIFIED_DESC @107
 		ACTION_DEFINE_ASSOCIATIVE_ARRAY extended_spell_list BEGIN   "PRSTNSK" => "SPWI408"  END
 	
 	//add haste as lvl4 potential cleric spell
 	COPY_EXISTING ~SPWI305.SPL~ ~override/PRHASTE.SPL~
 		LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_level=4 spell_type=2 END
-		READ_LONG 0x0050 ~descr_strref~
-		STRING_SET_EVALUATE %descr_strref% @108		
+        SAY UNIDENTIFIED_DESC @108	
 		ACTION_DEFINE_ASSOCIATIVE_ARRAY extended_spell_list BEGIN  "PRHASTE" => "SPWI305"  END
 	
 	

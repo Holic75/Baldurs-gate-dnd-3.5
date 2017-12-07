@@ -22,6 +22,8 @@ DEFINE_ACTION_FUNCTION ~CHANNEL_ENERGY_LEVEL_REGULARIZATION~
 	
 	COPY ~3ed/Classes/TurnUndead/CE_LVL.SPL~ ~override~
 		SPRINT clab_line ~CE_LVL_SET~
+        SPRINT clab_line0 ~CE_LVL_SET~
+        
 		FOR (i=1;i<=max_lvl;i=i+1) BEGIN
 			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=1 END
 		
@@ -38,6 +40,10 @@ DEFINE_ACTION_FUNCTION ~CHANNEL_ENERGY_LEVEL_REGULARIZATION~
 				SET multi_class_level=max_multi_class_channel_lvl
 			END
 			
+            SPRINT resource EVALUATE_BUFFER ~CE_LVL%no_ce_lvl%~
+			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=18 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric ranger (no ce)
+          
+            
 			SPRINT resource EVALUATE_BUFFER ~CE_LVL%cleric_level%~
 			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=3 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric 
 			
@@ -50,15 +56,18 @@ DEFINE_ACTION_FUNCTION ~CHANNEL_ENERGY_LEVEL_REGULARIZATION~
 			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=14 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric mage
             LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=17 parameter2=105 duration=1 timing=1 STR_VAR  resource END //fighter cleric mage
             
-            SPRINT resource EVALUATE_BUFFER ~CE_LVL%no_ce_lvl%~
-			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=18 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric ranger (no ce)
-            
+
 			SPRINT clab_line EVALUATE_BUFFER ~%clab_line%   AP_CE_LVL~
+            SPRINT clab_line0 EVALUATE_BUFFER ~%clab_line0%   AP_CE_LVL%no_ce_lvl%~           
 		END
 		
 	//creating  channel levels string in clabs
-	COPY_EXISTING_REGEXP GLOB ~\(CLABPA01\)\|\(CLABPA02\)\|\(CLABPA04\)\|\(CLABPA06\)\|\(CLABPR0+.*\)\|\(OHTYR\)\.2DA~ ~override~
+	COPY_EXISTING_REGEXP GLOB ~\(CLABPA0[1-2]\)\|\(CLABPA04\)\|\(CLABPA06\)\|\(CLABPR01\)\|\(CLABPR0[3-4]\)\.2DA~ ~override~
 		COUNT_2DA_ROWS 20 "nrows"	
 		INSERT_2DA_ROW nrows 20 ~%clab_line%~
+  
+	COPY_EXISTING_REGEXP GLOB ~\(CLABPA03\)\|\(CLABPR02\)\|\(OHTYR\)\.2DA~  ~override~ // no ce for inquisitor, priest of talos, priest of tyr
+		COUNT_2DA_ROWS 20 "nrows"	
+		INSERT_2DA_ROW nrows 20 ~%clab_line0%~
 		
 END	

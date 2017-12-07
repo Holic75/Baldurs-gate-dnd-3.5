@@ -28,7 +28,10 @@ In C:\Users\UserName\Documents\Baldur's Gate (II) - Enhanced Edition folder find
 ```
 SetPrivateProfileString('Game Options','3E Thief Sneak Attack','1')
 ```
-if it is not already there (it replaces backstab with 3ed Sneak Attack).  
+if it is not already there (it replaces backstab with 3ed Sneak Attack). 
+
+Also it is strongly advised that you make a backup of your dialog.tlk file before installing. 
+ 
 This mod was only tested with clean BG:ENHANCED EDITION 2.3 install (Non Sod) and BG 2:ENHANCED EDITION 2.3 and might not be compatible with any other mods.
 At current state it can be installed along IWD:EE but due to certain effects not supported by the engine (mostly related to opcode 326) abilities depending on character stats do not work (may be it will be fixed by Beamdog in the upcoming 2.5 patch)
 
@@ -444,7 +447,7 @@ At 16th level the attack and damage rolls bonus increases to +5 and physical dam
 – 18th level: Immortal Berserker: The hit points of enraged Berserker can not be reduced below 1, but at the end of Rage Berserker receives 1 point of damage which can kill her if she has only 1 hit point.   
 Note: although her hit points can not be reduced below 1, Berserker can still be killed by spells like Slay Living, Disintegrate and others.  
 – 20th level: Last Berserk: Berserker gains one use per day of special form of Rage called Last Berserk. It has the same effect as normal Rage and Berserker also receives +10 damage bonus on damage rolls (to a total of +15). However it can not be prolonged and after it ends Berserker can no longer use Rage for next 8 hours.    
-– Gets one bonus feat at levels 25 and 30.
+– Gets one bonus feat at levels 22 and 28.
 
 Disadvantages:  
 – Becomes winded after berserking: -2 penalty to Armor Class, to-hit rolls, and damage rolls.  
@@ -459,7 +462,7 @@ Advantages:
 – Each successful hit bestows a 25% cumulative chance of spell failure on the target.  
 – Each successful hit has a 30% chance to remove spell protections from a mage (like Breach spell).  
 – Magic Resistance: 25% +2% per level to a maximum of 85% at level 30.  
-– Gets one bonus feat at levels 25 and 30.
+– Gets one bonus feat at levels 22 and 28.
 
 Disadvantages:  
 – Does not get bonus feats like trueclass fighters do.  
@@ -475,7 +478,7 @@ Advantages:
 ```
 KAI: All successful attacks within the next 10 seconds deal maximum damage.
 ```
-– Gets one bonus feat at levels 25 and 30.  
+– Gets one bonus feat at levels 22 and 28.  
 
 Disadvantages:  
 – May only wear light armor.  
@@ -490,7 +493,7 @@ CLASS FEATURES:
 – May only get 1 star with any weapon class.  
 – Moves 2 points faster than other characters.  
 – Immune to sneak attack.  
-– Gets one bonus feat at level 5 and every 5 levels thereafter.  
+– Gets one bonus feat at level 5, 10, 15, 20, 22, 28.  
 – May use the Rage ability once per day. Gains one use at level 1, then at level 4 and an additional use every 4 levels thereafter.  
 ```
 RAGE: The enraged status lasts for 10 rounds and provides a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
@@ -538,7 +541,7 @@ All hostile undead creatures suffer 2d4 points of magical damage per Channel Ene
 SMITE EVIL: For 10 seconds Paladin receives +1 bonus to her attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level against evil creatures.
 ```
 – Receives a bonus to all saving throws for every 2 points of Charisma above 9 (i.e. +1 at 11, +2 at 13, etc) and penalty for every 2 points below 10.  
-– Gets one bonus feat at levels 25 and 30.  
+– Gets one bonus feat at levels 22 and 28.  
 – Alignment restricted to lawful good.  
 – Hit Die: d10  
 – High THAC0/APR progression, High Savingthrows vs. Death , vs. Polymorph and vs. Spell
@@ -646,7 +649,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May call for an animal companion who fights for her side.  
 – Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.  
 – May cast druidic spells starting at level 4.  
-– Gets one bonus feat at levels 25 and 30.
+– Gets one bonus feat at level 28.  
 – Alignment restricted to good.  
 – Hit Die: d10  
 – High THAC0/APR progression, High Savingthrows vs. Death , vs. Polymorph, vs. Breath Weapon and vs. Wand
@@ -673,6 +676,7 @@ Disadvantages:
 Advantages:  
 – +15% to Move Silently and Hide In Shadows.  
 – Has a telepathic link with his animal companion which allows them to fight as one. When fighting close to each other Beast master and his animal companion get +1 To Hit, Damage, AC and Saving Throws. These bonuses increase to +2 at level 7,  +3 at level 13 and +4 at level 19, +5 at level 25 and +6 at level 30.  
+– Gains additional bonus feat at level 22.  
 – Hit Die: d12.  
 
 Disadvantages:  
@@ -686,6 +690,7 @@ Advantages:
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.  
 – Racial Enemy is replaced with Improved Racial Enemy which gives Stalkers +4 bonus on to hit and damage rolls and +2 bonus to AC and savingthrows vs selected races.  
 – May be of any alignment.  
+– Gains additional bonus feat at level 22.  
 
 Disadvantages:  
 – Do not gain Bonus Feats in Two Weapon Fighting Style.  
@@ -713,9 +718,59 @@ All hostile living creatures suffer 2d4 points of magical damage per Channel Ene
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).  
 – At 1st level chooses two domains that grant her access to additional spells, normally not available to Clerics of other domains.  
 – Gains access to the following epic spells: Globe of Blades (at level 19), Mass Raise Dead (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Implosion (at level 23) and Summon Deva (at level 24).  
-– Gets one bonus feat at levels 25 and 30.  
+– Gets one bonus feat at levels 22, 25 and 28.  
 – Hit Die: d8  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
+
+
+### PRIEST OF LATHANDER
+Advantages:  
+– May use Cleansing Flames starting from level 1 number of times per day equal to 3 plus 1 per 2 points of Charisma above 10.  
+```
+Cleansing Flames:  Priest creates a burst of cleansing fire that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
+All allied living creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
+All hostile creatures are blinded for 2 rounds, additionally evil creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage and are not subject to blind effect.
+```
+
+– Immune to hold, level drain and poison.  
+
+Disadvantages:  
+– Alignment restricted to lawful good, neutral good, chaotic good, and true neutral.  
+– Gains access only to Glory and Sun domains.  
+– Can cast two less spells per day per level than trueclass clerics.  
+### PRIEST OF HELM  
+Advantages:  
+– Gains one bonus combat feat at levels 5, 10, 15 and 20.  
+– May get up to Weapon Specialization (2 stars) in any weapon they can use.  
+
+Disadvantages:  
+– Alignment restricted to lawful good, lawful neutral, lawful evil, and true neutral.  
+– Gains access only to War and Protection domains.  
+– Can cast two less spells per day per level than trueclass clerics.  
+
+### PRIEST OF TALOS
+Advantages:  
+– Deals additional electrical damage on every successful hit (double on critical hits):  
+  Level 1-5: 1d2  
+  Level 6-10: 1d4  
+  Level 11-15: 1d6  
+  Level 16-20: 1d8   
+  Level 21-25: 1d10  
+  Level 26+: 1d12  
+
+Disadvantages:
+– Alignment restricted to neutral evil, chaotic evil, and chaotic neutral.  
+– Gains access only to Elemental (Air) and Destruction domain.  
+– Can not Channel Energy.  
+
+### PRIEST OF TYR
+Advantages:  
+– May use Smite Evil ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.  
+
+Disadvantages:  
+– Alignment restricted to lawful good, neutral good, or lawful neutral.  
+– Gains access only to Glory and War domains.  
+– Can not Channel Energy.  
 
 ### DRUID
 CLASS FEATURES:  
@@ -734,7 +789,7 @@ CLASS FEATURES:
 – 20th level: While using Shapeshift ability a Druid can alternatively take form of greater fire or earth elementals.  
 – 21th level: May call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.  
 – Gains access to the following epic spells: Elemental Summoning (at level 19), Aura of Flaming Death (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Greater Elemental Summoning (at level 23) and Nature's Avatar (at level 24).  
-– Gets one bonus feat at levels 25 and 30.  
+– Gets one bonus feat at levels 22 and 28.  
 – Alignment restricted to true neutral.  
 – Hit Die: d8  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
@@ -774,7 +829,7 @@ Disadvantages:
 CLASS FEATURES:  
 – May not wear any armor.  
 – May only use the following weapons: dagger, quarterstaff, dart, sling, crossbow.  
-– Receives one bonus Feat at level 5 and every 5 levels thereafter.  
+– Receives one bonus Feat at level 5, 10, 15, 20, 22 and 28.  
 – May cast arcane spells.  
 – Gains access to the following epic spells: Comet (at level 21), Energy Blades (at level 22), Dragon's Breath (at level 23) and Summon Planetar (at level 24).  
 – Hit Die: d4  
@@ -844,7 +899,7 @@ Second level spells: starting from level 7 Assassin gets access to the following
 Third level spells: starting from level 10 Assassin gets access to the following spells: Vampiric Touch, Non-Detection, Hold Person, Detect Illusions.	  
 Fourth level spells: starting from level 13 Assassin gets access to the following spells: Improved Invisibility, Free Action, Poison, Cloak of Fear.  
 ```
-– Gets one bonus feat at levels 25 and 30.  
+– Gets one bonus feat at levels 22 and 28.  
 Disadvantages:  
 – Do not receive Bonus Feats as trueclass thieves do.  
 – May only distribute 12 skill points per level among thieving skills (20 points at level 1)  
@@ -874,7 +929,7 @@ Advantages:
     Starting from level 10 ninja can alternatively spend one point from ki pool to make all her attacks for next round stun opponents unless they make a Saving throw vs. Death.  
     Starting from level 13 ninja can alternatively spend one point from ki pool to heal 10 Hit Points to <PRO_HIMHER>self and neutralize any poison.  
     Starting from level 16 ninja can alternatively spend one point from ki pool to place <PRO_HIMHER>self under the effect of improved invisibility spell for 10 seconds.   
-– Gets one bonus feat at levels 25 and 30  
+– Gets one bonus feat at levels 22 and 28.  
 Disadvantages:  
 – May not wear any armor or use shields.   
 – May only distribute 16 skill points per level among thieving skills (24 points at level 1).  
@@ -906,7 +961,7 @@ Disadvantages:
 CLASS FEATURES:  
 – May not wear armor heavier than chain mail. (Bardic spells being simpler than those of mages are not subject to casting failure when bard wears light armor.)  
 – May not equip shields larger than bucklers.  
-– Receives one bonus Feat at level 5 and every 5 levels thereafter.  
+– Receives one bonus Feat at level 5, 10, 15, 20, 22 and 28.  
 – Thieving abilities: Pick Pockets.  
 – Increased Lore score.  
 – May cast arcane spells up to level 6.  
@@ -1031,7 +1086,7 @@ CLASS FEATURES:
 – May not wear any armor.  
 – May only use the following weapons: dagger, quarterstaff, dart, sling, crossbow.  
 – May cast arcane spells.  
-– Receives one bonus Feat at level 5 and every 5 levels thereafter.  
+– Receives one bonus Feat at level 5, 10, 15, 20, 22 and 28.  
 – May not scribe spells into their spellbooks as Mages do. Instead, Sorcerers learn a small number of spells at each level, which they can cast daily without memorization.  
 – At 1st level chooses a bloodline which grants access to 9 spells (1 per spell level) in addition to those gained normally.  
 – Gains access to the following epic spells: Comet (at level 21), Energy Blades (at level 22), Dragon's Breath (at level 23) and Summon Planetar (at level 24).  
@@ -1043,7 +1098,8 @@ Advantages:
 – May wear light armor.  
 – May equip bucklers.  
 – May use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.    
-– At first level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.  
+– At first level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.
+– Gets one  bonus feat at levels 22 and 28.  
 – Hit Die: d6  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -1098,7 +1154,7 @@ QUIVERING PALM: The next successful attack forces the opponent to save vs. Spell
 – 14th level: Gains 3% Magic Resistance per level (starting with 42% at 14th level).  
 – 20th level: Becomes immune to non-magical weapons.  
 – Thieving abilities: Move Silently, Hide In Shadows, Find Traps (but not disarm) and Detect Illusion. Monks can distribute 10 skill points per level.  
-- Gets one bonus feat at levels 25 and 30.
+- Gets one bonus feat at levels 22 and 28.  
 – Alignment restricted to lawful.  
 – Hit Die: d8   
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell
@@ -1167,7 +1223,7 @@ SHAMANIC DANCE: Shamans can summon spirit allies by performing a ritualistic dan
 The type of the summoned spirit is randomly determined from all the spirits available at the Shaman's level. For example, a level 12 Shaman will summon either a minor nature spirit, a major animal spirit, or a minor animal spirit, but cannot choose which one appears. Spirits will do their best to protect the Shaman but are not controlled directly.  
 ```
 – Gains access to the following epic spells: Elemental Summoning (at level 19), Aura of Flaming Death (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Greater Elemental Summoning (at level 23) and Ethereal Retribution (at level 24).  
-– Gets one bonus feat at levels 25 and 30.  
+– Gets one bonus feat at levels 22 and 28.  
 – Alignment restricted to neutral good, true neutral, and neutral evil.  
 – Ineligible for any stronghold. (This affects only the Shadows of Amn campaign in Baldur's Gate II: Enhanced Edition.)  
 – Hit Die: d8  
@@ -1192,7 +1248,8 @@ CLASS FEATURES:
 – May wear any armor and use any weapon.  
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.  
 – Can cast two spell per day less than trueclass cleric.  
-– Gets one bonus feat at level 1 and at every 4th level.  
+– Gets one bonus feat at level 1 and at every 4th level up to level 20.  
+– Gets one bonus feat at levels 22, 25 and 28.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels).  
 – Can use Spontaneous Battlecasting.  
 ```
@@ -1208,7 +1265,8 @@ CLASS FEATURES:
 – May wear any armor and use any weapon.  
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.     
 – Cannot cast spells of 8th and 9th levels.  
-– Gets one bonus feat at level 1, level 4 and every 4 levels thereafter.  
+– Gets one bonus feat at level 1, level 4 and every 4 levels thereafter up to level 20.  
+– Gets one bonus feat at levels 22, 25 and 28.  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.  
 – Can use Spontaneous Battlecasting.  
 ```
@@ -1234,7 +1292,7 @@ CLASS FEATURES:
 – May select one racial enemy at levels 1, 5 and every 5 levels thereafter, which grants a +4 bonus on damage rolls against the selected enemy race.  
 – May call for an animal companion who fights for her side.  
 – Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage résistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.  
-– Gets one bonus feat at levels 25 and 30.  
+– Gets one bonus feat at level 28.  
 – Hit Die: d9  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -1252,7 +1310,7 @@ CLASS FEATURES:
 – Can spontaneously convert memorized spells into healing ones.  
 – Eventually can cast low level druidic spells (same as trueclass ranger).  
 – At 1st level chooses two domains that grant her access to additional spells, normally not available to Clerics of other domains.  
-– Gets one bonus feat at levels 25 and 30.  
+– Gets one bonus feat at level 28.  
 – Alignment restricted to good.  
 – Hit Die: d9  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell
@@ -1267,7 +1325,7 @@ CLASS FEATURES:
 – At 1st level chooses two domains that grant her access to additional spells, normally not available to Clerics of other domains.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels).  
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).  
-– Gets one bonus feat at levels 25 and 30.  
+– Gets one bonus feat at levels 22, 25 and 28.  
 – Hit Die: d6  
 – Low THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -1288,7 +1346,7 @@ CLASS FEATURES:
 SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to her sneak attack damage for next 10 seconds.
 ```
 – At 1st level chooses two domains that grant her access to additional spells, normally not available to Clerics of other domains.  
-– Gets one bonus feat at levels 25 and 30.  
+– Gets one bonus feat at levels 22, 25 and 28.  
 – Hit Die: d7  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell
 
@@ -1301,7 +1359,7 @@ CLASS FEATURES:
 – May distribute 12 skill points per level among thieving skills (20 points at level 1).  
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.  
 – May use the Set Snare ability once per day. Gains one use at levels 10, 15 and 20.  
-– Gets one bonus feat at levels 10, 20, 25 and 30.  
+– Gets one bonus feat at levels 10, 20, 22, 25 and 28.  
 – Hit Die: d5  
 – Low THAC0/APR progression, High Savingthrows vs. Breath Weapon, vs. Wand and vs. Spell  
 NOTE: Gnomes can choose this hybrid class, but become Illusionist/Thieves by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.
@@ -1321,7 +1379,8 @@ CLASS FEATURES:
 ```
 SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds.
 ```
-– Gets one bonus feat at level 5 and every 5 levels thereafter.  
+– Gets one bonus feat at level 5 and every 5 levels thereafter up to level 20.  
+– Gets one bonus feat at levels 22, 25 and 28.  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.  
 – Hit Die: d6  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph vs. Breath Weapon, vs. Wand and vs. Spell  
@@ -1336,7 +1395,8 @@ CLASS FEATURES:
 – Cannot cast arcane spells of 8th and 9th levels.  
 – Can cast three divine spells less per day than trueclass cleric.  
 – Cannot cast divine spells of 6th and 7th levels.  
-– Gets one bonus feat at level 5 and every 5 levels thereafter.  
+– Gets one bonus feat at level 5 and every 5 levels thereafter up to level 20.  
+– Gets one bonus feat at levels 22, 25 and 28.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels thereafter).  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, at level 12 Armored Arcana: Splint Mail Casting.  
 – Can use Spontaneous Battlecasting.
@@ -1524,7 +1584,7 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 
 Note: Specialist Mages may cast one spell per level per day
 
-### Fighter/Cleric, Fighter/Druid, Cleric/Ranger and Cleric/Thief spell slots per day
+### Fighter/Cleric, Fighter/Druid, Cleric/Ranger, Cleric/Thief, Priest of Lathander and Priest of Helm spell slots per day
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 --- | --- | --- | --- |--- |--- |--- |---

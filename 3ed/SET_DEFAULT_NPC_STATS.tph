@@ -64,7 +64,7 @@ DEFINE_ACTION_FUNCTION ~SET_DEFAULT_NPC_STATS~
             LPF ALTER_CREATURE INT_VAR Strength = Str Dexterity = Dex Constitution = Con Wisdom = Wis Intelligence = Int Charisma = Cha 
                                MoveSilently HideInShadows DetectIllusion Lockpick FindTraps SetTraps PickPockets
                                MaxHp = HpTotal  SaveDeath =20 SaveWands = 20 SaveBreath = 20 SavePoly  =20 SaveSpell = 20 
-                               AcNatural = 10 AcEffective = 10 AcMissile = 0 AcCrushing = 0 AcMissile = 0 AcPiercing = 0 AcSlashing = 0
+                               AcNatural = 10 AcEffective = 10 AcMissile = 0 AcCrushing = 0  AcPiercing = 0 AcSlashing = 0
                                Lore = 0 Level1= 0 Level2 = 0 Level3 = 0 THAC0 = 20 RacialEnemy = 151 Class Kit END
     
         EXTEND_TOP ~%ScriptName%.bcs~ ~3ed/Npc/Common/Rejoin.baf~

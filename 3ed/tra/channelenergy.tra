@@ -11,3 +11,10 @@ All hostile undead creatures suffer 2d4 points of magical damage per Channel Ene
 Priest creates a burst of negative energy that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
 All allied undead creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
 All hostile living creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.~
+
+    @005=~Cleansing Flames~
+    @006=~Cleansing Flames
+    
+Priest creates a greater burst of cleansing fire that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
+All allied living creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
+All hostile creatures are blinded for 2 rounds, additionally evil creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down + 2. In which case they receive only half damage and are not subject to blind effect.~
