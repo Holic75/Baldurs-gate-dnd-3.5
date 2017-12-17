@@ -2221,56 +2221,56 @@ This spell is the reverse of Cure Medium Wounds. Instead of healing the creature
 #### Mass Cure Medium Wounds (Cleric)
 (Necromancy)
 
-Level: 6
-Sphere: Healing
-Range: 0
-Duration: Permanent
-Casting Time: 5
-Area of Effect: 30-ft. radius
-Saving Throw: None
+Level: 6  
+Sphere: Healing  
+Range: 0  
+Duration: Permanent  
+Casting Time: 5  
+Area of Effect: 30-ft. radius  
+Saving Throw: None  
 
-This is a more powerful version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 3d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
+This is a more powerful version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 3d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.  
 
 
 #### Mass Cure Critical Wounds (Cleric)
-(Necromancy)
+(Necromancy)  
 
-Level: 7
-Sphere: Healing
-Range: 0
-Duration: Permanent
-Casting Time: 5
-Area of Effect: 30-ft. radius
-Saving Throw: None
+Level: 7  
+Sphere: Healing  
+Range: 0  
+Duration: Permanent  
+Casting Time: 5  
+Area of Effect: 30-ft. radius  
+Saving Throw: None  
 
-This is an even stronger version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 5d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
+This is an even stronger version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 5d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.  
 
 
 #### Vigorous Cycle (Cleric, Druid)
-(Necromancy)
+(Necromancy)  
 
-Level: 6
-Sphere: Healing
-Range: Caster
-Duration: 1 round/level
-Casting Time: 7
-Area of Effect: allied creatures in 30-ft radius
-Saving Throw: None
+Level: 6  
+Sphere: Healing  
+Range: Caster  
+Duration: 1 round/level  
+Casting Time: 7  
+Area of Effect: allied creatures in 30-ft radius  
+Saving Throw: None  
 
-The subjects of this spell are able to regenerate 3 Hit Points per round for the duration of the spell.
+The subjects of this spell are able to regenerate 3 Hit Points per round for the duration of the spell.  
 
 #### Aura of Vitality (Druid)
-(Alteration)
+(Alteration)  
 
-Level: 7
-Sphere: Protection, Plant
-Range: 0
-Duration: 1 round/ level
-Casting Time: 3
-Area of Effect: 30-ft. radius
-Saving Throw: None
+Level: 7  
+Sphere: Protection, Plant  
+Range: 0  
+Duration: 1 round/ level  
+Casting Time: 3  
+Area of Effect: 30-ft. radius  
+Saving Throw: None  
 
-All allies within the area of effect receive a +4 bonus to Strength, Constitution, and Dexterity.
+All allies within the area of effect receive a +4 bonus to Strength, Constitution, and Dexterity.  
 
 #### Nature's Avatar (Druid)
 (Alteration)  
