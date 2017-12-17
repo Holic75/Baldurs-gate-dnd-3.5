@@ -135,7 +135,7 @@ CLASS FEATURES:
 CLASS FEATURES:
 
 – May wear helmets.
-– May wear light and medium armor and use any weapons and shields.
+– May wear any armor and use any weapons and shields.
 – May get up to Weapon Specialization (2 stars) in any weapon they can use.
 – Can cast two arcane spells less per day than trueclass mage.
 – Cannot cast arcane spells of 8th and 9th levels.
@@ -143,7 +143,7 @@ CLASS FEATURES:
 – Cannot cast divine spells of 6th and 7th levels.
 – Gets one bonus feat at level 5 and every 5 levels thereafter up to level 20.
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels thereafter).
-– At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, at level 12 Armored Arcana: Splint Mail Casting.
+– At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.
 – Can use Spontaneous Battlecasting.
 
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
@@ -182,18 +182,45 @@ Disadvantages:
 – May not wear armor heavier than splint mail.
 – Alignment restricted to any non-lawful.~
 //---------------------------------------------------------------------------------------------------//
-@009=~WIZARD SLAYER: This warrior has been specially trained by <PRO_HISHER> sect to excel in hunting and combating spellcasters of all kinds.
+@0090001 = ~hexblade~
+@0090002 = ~Hexblade~
+
+@009=~HEXBLADE: Combining the dynamic powers of martial prowess and arcane might, the hexblade presents a deadly challenge to opponents unused to such a foe.
 
 Advantages:
-– Each successful hit bestows a 25% cumulative chance of spell failure on the target.
-– Each successful hit has a 30% chance to remove spell protections from a mage (like Breach spell).
-– Magic Resistance: 25% +2% per level to a maximum of 85% at level 30.
-– Gets one bonus feat at levels 22 and 28.
+– Receives a bonus to all saving throws for every 2 points of Charisma above 9 (i.e +1 at 11, +2 at 13, etc) and penalty for every 2 points below 10.
+- May use Hexblade's Curse innate ability. Gets a number of uses per day equal to 1 + 1 per 2 points of Charisma above 10 at level 1. Gets one additional use per day every 4 levels thereafter. 
+
+HEXBLADE'S CURSE:
+Hexblade unleashes a curse upon a foe who receives a penalty of -2 to THAC0, damage and savingthrows for 1 turn if he fails the savingthrow vs. Spell with penalty equal to one fourth of Hexblade's level rounded down + 1 per 2 points of Hexblade's Charisma above 10.
+At level 7 the penalty to THAC0, damage and savingthrows increases to -4, at level 17 to -6 and finally at level 27 to - 8.
+
+– May summon Familiar starting from level 4.
+
+– Starting from level 4 can cast a limited number of Spells (through Innate Abilities menu). Hexblade does not need to memorize <PRO_HISHER> spells in advance and can spontaneously cast any spell <PRO_HESHE> knows.
+Hexblade Spellbook:
+First Level Spells: Starting from level 4 Hexblade gets access to the following spells: Sleep, Blindness, Charm Person, Spook and Protection from Evil.
+Second Level Spells: Starting from level 7 Hexblade gets access to the following spells: Strength, Glitterdust, Invisibility, Mirror Image and Stinking Cloud.
+Third Level Spells: Starting from level 10 Hexblade gets access to the following spells: Vampiric Touch, Dispel Magic, Dire Charm, Detect Illusions and Slow.
+Fourth Level Spells: Starting from level 13 Hexblade gets access to the following spells: Improved Invisibility, Domination, Polymorph Other, Breach and Confusion.
+
+– Gets one bonus feat only at levels 5, 10, 15, 20, 22 and 28.
+– Starting from level 6 may use Swift Spell ability once per day. Gets additional uses at levels 8, 11, 14, 18, 23 and 30.
+
+SWIFT SPELL:
+When this ability is activated for next round Hexblade's casting speed is increased by 5.
+
+– Starting from level 12 may use the Aura of Unluck ability once per day. Gains and additional use every 4 levels thereafter.
+ 
+AURA OF UNLUCK:
+When this ability is activated, all enemies within 30 feet of the Hexblade suffer -1 penalty to luck. This penalty increases to -2 at level 16, -3 at level 20 and finally up to -4 at level 24.
+
 
 Disadvantages:
+– May not be of good alignment.
 – Does not get bonus feats like trueclass fighters do.
 – May only put one star in any weapon <PRO_HESHE> can use.
-– May use only light armor.~
+– May use only light armor and medium armor.~
 //---------------------------------------------------------------------------------------------------//
 @010=~KENSAI: This class's name, which means "sword saint" in the common tongue, refers to a warrior who has been specially trained to be one with <PRO_HISHER> weapon. The kensai is deadly, fast, and trained to fight without the protection of armor. (Note: Despite its common name, a Kensai may use any melee weapon with which <PRO_HESHE> is proficient.)
 
@@ -275,6 +302,16 @@ All hostile undead creatures suffer 2d4 points of magical damage per Channel Ene
 
 SMITE EVIL: For 10 seconds Paladin receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level against evil creatures.
 
+– Starting from level 3 may use the Aura of Faith ability once per day. Gains and additional use every 6 levels thereafter. 
+
+AURA OF FAITH:
+When this ability is activated, all allies within 30 feet of the Paladin are receiving beneficial effects based on the Paladin's level:
+  3rd - All allies receive a +1 bonus to hit, damage rolls and Armor Class as well as immunity to fear for 1 turn.
+  9th - All allies receive a +2 bonus to hit, damage rolls and Armor Class as well as immunity to fear for 1 turn.
+  15th - All allies receive a +3 bonus to hit, damage rolls and Armor Class as well as immunity to fear for 1 turn.
+  21st - All allies receive a +4 bonus to hit, damage rolls and Armor Class as well as immunity to fear for 1 turn.
+
+
 
 – Receives a bonus to all saving throws for every 2 points of Charisma above 9 (i.e +1 at 11, +2 at 13, etc) and penalty for every 2 points below 10.
 – Alignment restricted to lawful good.
@@ -292,7 +329,7 @@ Advantages:
 – 20% resistance to fire and acid.
 
 Disadvantages:
-– May not use Smite Evil ability.
+– May not use Aura of Faith ability.
 – May not use missile weapons.~
 //--------------------------------------------------------------------------------------------------//
 @015=~INQUISITOR: The Inquisitor has dedicated <PRO_HISHER> life to finding and eliminating practitioners of evil magic and defeating the forces of darkness, and <PRO_HISHER> god has provided <PRO_HIMHER> with special abilities toward that end.
@@ -301,6 +338,8 @@ Advantages:
 – May cast Dispel Magic once per day. Gains one use at level 1 and an additional use every 4 levels thereafter. The spell is cast at Speed Factor 1 and acts at twice the Inquisitor's character level.
 – May cast True Sight once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
 – Immune to hold and charm.
+– Each successful hit bestows a 25% cumulative chance of spell failure on the target.
+– Magic Resistance: 25% +2% per level to a maximum of 85% at level 30.
 – May use Smite Mage ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.
 
 SMITE MAGE: For 10 seconds Inquisitor receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level against arcane magic users.
@@ -310,6 +349,7 @@ Disadvantages:
 – May not channel positive energy.
 – May not use the Lay On Hands ability.
 – May not use Smite Evil ability.
+– May not use Aura of Faith ability.
 – May not cast priest spells.~
 //---------------------------------------------------------------------------------------------------//
 @016=~UNDEAD HUNTER: This holy avenger has honed <PRO_HISHER> abilities toward the destruction of the undead and other unnatural creatures and is immune to many of their most devastating abilities.
@@ -353,7 +393,7 @@ Each successful hit within the next 5 rounds will inject poison into the target.
 20th - Target suffers 1 poison damage per second for 24 seconds (Save vs. Death at -4 negates), and also immediately suffers 12 poison damage (no save)
 24th - Target suffers 2 poison damage per second for 24 seconds (Save vs. Death at -5 negates), and also immediately suffers 16 poison damage (no save)
 
-– 3rd level: May use the Aura of Despair ability once per day.
+– 3rd level: May use the Aura of Despair ability once per day. Gains and additional use every 6 levels thereafter. 
 
 AURA OF DESPAIR:
 When this ability is activated, all enemies within 30 feet of the Blackguard suffer ill effects based on the Blackguard's level:
@@ -370,6 +410,7 @@ Disadvantages:
 – Alignment restricted to evil.
 – May not cast Detect Evil.
 – May not use the Lay on Hands ability.
+– May not use Aura of Faith ability.
 – May not use Smite Evil ability.~
 //---------------------------------------------------------------------------------------------------//
 @018=~RANGER: The Ranger is a warrior and a woods<PRO_MANWOMAN> who is skilled with weapons and is knowledgeable in the ways of the forest. The Ranger often protects and guides lost travelers and honest peasant-folk. A Ranger needs to be strong and wise to the ways of nature to live a full life.
@@ -401,7 +442,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 CLASS FEATURES:
 
 – May wear helmets.
-– May use any weapon.
+– May use any weapon and shields.
 – May not wear armor heavier than splint mail.
 – Bonus Feats: Cleric/Ranger gets Style Focus in Two Weapon Fighting for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12, Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.
 – May select one racial enemy at levels 1, 5 and every 5 levels thereafter which grants a +4 bonus on damage rolls against the selected enemy race.
@@ -409,6 +450,13 @@ CLASS FEATURES:
 – May use the Hide In Shadows ability.
 – Can cast two spells per day less than trueclass clerics.
 – Can spontaneously convert memorized spells into healing ones.
+– May channel positive energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels thereafter).
+
+CHANNEL POSITIVE ENERGY:  Priest creates a burst of positive energy that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
+All allied living creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
+All hostile undead creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
+
+
 – Eventually can cast low level druidic spells (same as trueclass ranger).
 – At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
 – Alignment restricted to good.
@@ -774,8 +822,8 @@ Advantages:
 – THAC0 and APR progression of a FIGHTER.
 – At first level receives for free Combat Prowess(1):Weapon Finesse and Tactics(1):Insightful Strike feats.
 – At 11th level Swashbuckler receives +1 bonus to all savingthrows.
-– At 14th each critical hit of Swashbuckler reduces target's Strength by 2 points for 10 rounds (cumulatively).
-– At 19th each critical hit of Swashbuckler additionally reduces target's Constitution by 2 points for 10 rounds (cumulatively).
+– At 14th level each critical hit of Swashbuckler reduces target's Strength by 2 points for 10 rounds (cumulatively).
+– At 19th level each critical hit of Swashbuckler additionally reduces target's Constitution by 2 points for 10 rounds (cumulatively).
 
 Disadvantages:
 – May not use Sneak attack.
@@ -841,6 +889,7 @@ CLASS FEATURES:
 – Thieving abilities: Pick Pockets.
 – Increased Lore score.
 – May cast arcane spells up to level 6.
+– Starting from level 6 may cast arcane spells without suffering spellcasting failure chance while wearing chain mail.
 – Bardic Performance: a bard is trained to perform to create magical effects on those around <PRO_HIMHER>. Bard can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each even level a bard can use bardic performance one more time per day.
 List of Bardic Performances:
 
@@ -966,7 +1015,7 @@ A jester of 24th level or higher can use this epic performance to drain the very
 
 Disadvantages:
 – Smaller variety of available Bardic performance types and less uses per day.
-– May only use weapons a wizard can (daggers, quarterstaves, darts, slings).~
+– May only use weapons a wizard can (daggers, quarterstaves, darts, slings, crossbows).~
 //-------------------------------------------------------------------------------------------------//
 @047=~SORCERER: Sorcerers are practitioners of magic who were born with the innate ability to cast spells. It is thought that the blood of some powerful creature flows through their veins; perhaps they are the spawn of the gods themselves, or even dragons walking in humanoid form. Regardless, the Sorcerer's magic is intuitive rather than logical. They know fewer spells than Mages, and acquire spells more slowly, but they can cast spells more often and have no need to select and prepare spells ahead of time. Sorcerers cannot specialize in magic the way Mages do. Other than these differences, a Sorcerer is very similar to a Mage.
 
@@ -975,7 +1024,7 @@ CLASS FEATURES:
 – May not wear any armor.
 – May only use the following weapons: dagger, quarterstaff, dart, sling, crossbow.
 – May cast arcane spells.
-– Receives one bonus Feat at level 5 and every 5 levels thereafter.
+– Receives one bonus Feat at level 5, 10, 15, 20, 22 and 28.  
 – May not scribe spells into their spellbooks as Mages do. Instead, Sorcerers learn a small number of spells at each level, which they can cast daily without memorization.
 – At 1st level chooses a bloodline which grants access to 9 spells (1 per spell level) in addition to those gained normally.
 – Gains access to the following epic spells: Comet (at level 21), Energy Blades (at level 22), Dragon's Breath (at level 23) and Summon Planetar (at level 24).
@@ -993,12 +1042,10 @@ Advantages:
 – May use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.
 – Have THAC0 and APR progression of a cleric.
 – At first level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.
-- Gets one bonus feat at levels 23 and 28.
 – Hit Die: d6
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
 Disadvantages:
-- Does not get bonus feat at level 30.
 – Does not gain access to epic spells.
 – May not choose bloodline and thus may not receive bonus bloodline spells.
 – May cast one fewer spell per level per day.~

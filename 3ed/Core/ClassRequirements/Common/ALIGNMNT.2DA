@@ -28,7 +28,7 @@ INVOKER             1                   1                   1                   
 NECROMANCER         1                   1                   1                   1                   1                   1                   1                   1                   1
 TRANSMUTER          1                   1                   1                   1                   1                   1                   1                   1                   1
 BERSERKER           0                   0                   0                   1                   1                   1                   1                   1                   1
-WIZARD_SLAYER       1                   1                   1                   1                   1                   1                   1                   1                   1
+WIZARD_SLAYER       0                   1                   1                   0                   1                   1                   0                   1                   1
 KENSAI              1                   1                   1                   1                   1                   1                   0                   0                   0
 CAVALIER            1                   0                   0                   0                   0                   0                   0                   0                   0
 INQUISITOR          1                   0                   0                   0                   0                   0                   0                   0                   0

@@ -114,3 +114,91 @@
 		SAY NAME1 @213
 		SAY UNIDENTIFIED_DESC @214
 		ADD_SPELL "override/rgspc03.spl" 1  3 DRUID_LESSER_SUMMONING_3
+
+        
+    //add false down to druid's spellbook
+    COPY_EXISTING ~SPPR609.SPL~ ~override~
+        WRITE_BYTE 0x0021 0b00000000
+        
+    //add sunray to druid spellbook
+    COPY_EXISTING ~SPPR707.SPL~ ~override~
+        WRITE_BYTE 0x0021 0b00000000        
+        
+        
+    //add vigorous cycle  to cleric and druid spell lists
+    
+    COPY ~3ed/Spells/VigorousCycle/VIGCYCLB.BAM~ ~override~
+    COPY ~3ed/Spells/VigorousCycle/VIGCYCLC.BAM~ ~override~
+    
+    COPY_EXISTING ~SPPR711.SPL~  ~override/PR_RGN6.SPL~
+        WRITE_BYTE 0x0021 0b00000000 //allow everyone to use it 
+        WRITE_LONG 0x0034 6 //spell level
+        WRITE_ASCII 0x003a ~VIGCYCLC~ #8 //spellbook icon
+        
+        FOR (i=2;i<=30;i=i+1) BEGIN
+            SET header_type = 0 - 1
+            LPF DELETE_SPELL_HEADER INT_VAR header_type min_level = i END
+        END
+        
+        //min level - 11
+        LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 66 power = 6 END
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 98 parameter1 = 2 parameter2 = 3 END //1 hp per 2 seconds
+       
+        
+        LPF ALTER_SPELL_HEADER INT_VAR target = 5 projectile = 162  STR_VAR icon  = ~VIGCYCLB~ END
+        
+        FOR (i=12;i<=30;i=i+1) BEGIN    
+            SET header = i - 10        
+            LPF ADD_SPELL_HEADER INT_VAR copy_header=1 END
+            LPF ALTER_SPELL_HEADER INT_VAR header min_level = i END
+            
+            LPF ALTER_SPELL_EFFECT INT_VAR header duration_high = i*6 END
+        END
+
+        SAY NAME1 @58
+		SAY UNIDENTIFIED_DESC @59
+        ADD_SPELL "override/PR_RGN6.SPL" 1  6 CLERIC_VIGOR_CYCLE
+		SPRINT resource EVALUATE_BUFFER ~%DEST_RES%~		
+			LPF ADD_SPELL_EFFECT INT_VAR  opcode = 321 power=6 target=2  duration=1 timing=0 insert_point=0 STR_VAR resource END //remove effects from previous cast
+			        
+        //add removal of vigorous cycle effects if casting regeneration
+        COPY_EXISTING ~SPPR711.SPL~ ~override~
+             LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 power =7 target = 2 duration = 1 timing = 0 insert_point = 0 STR_VAR resource END 
+        
+    //aura of vitality 
+    
+    COPY ~3ed/Spells/AuraVitality/AURAVITC.BAM~ ~override~
+    COPY ~3ed/Spells/AuraVitality/AURAVITB.BAM~ ~override~
+    
+    SET NameStrRef = RESOLVE_STR_REF (@61)
+    SET DescStrRef = RESOLVE_STR_REF (@62)
+    
+    COPY_EXISTING ~SPPR312.SPL~ ~override/AURAVITD.SPL~
+        READ_BYTE 0x0021 ~cleric_usability~
+		WRITE_BYTE 0x0021 (cleric_usability BOR 0b01000000)
+        WRITE_ASCII 0x003a ~AURAVITC~ #8 //spellbook icon
+        WRITE_LONG 0x0050 DescStrRef
+        WRITE_LONG 0x0008 NameStrRef
+        LPF ALTER_SPELL_HEADER STR_VAR icon  = ~AURAVITB~ END
+        
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 97 END
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 44 parameter1 = 4 parameter2 =0 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 44 opcode = 15 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 44 opcode = 10 END
+        
+        LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 13*6 power = 7 END
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 139 parameter1 = NameStrRef END
+        
+        FOR (i=14;i<=30;i=i+1) BEGIN
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END            
+            SET header = i - 12 
+            LPF ALTER_SPELL_HEADER INT_VAR header  min_level = i END      
+            LPF ALTER_SPELL_EFFECT INT_VAR header duration_high = i*6 END            
+        END 
+                      
+        ADD_SPELL "override/AURAVITD.SPL" 1  7 DRUID_AURA_VITALITY
+        SPRINT resource EVALUATE_BUFFER ~%DEST_RES%~		
+			LPF ADD_SPELL_EFFECT INT_VAR  opcode = 321 power=7 target=2  duration=1 timing=0  insert_point=0 STR_VAR resource END //remove effects from previous cast
+
+         
+    

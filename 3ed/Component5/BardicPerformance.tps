@@ -71,10 +71,10 @@
         DEFINE_ASSOCIATIVE_ARRAY bard_songs_to_check_for_prot_removals BEGIN  "BARDB" => "SPWI401" END //confusion
 		
 	COPY ~3ed/BardSongs/Songs/BARDC.SPL~ ~override~ //song of requiem
-		FOR (i=1;i<=5;i=i+1) BEGIN
+		FOR (i=1;i<=3;i=i+1) BEGIN
 			LPF ADD_SPELL_HEADER  INT_VAR insert_point=i+1 copy_header=1 END
-			LPF ALTER_SPELL_HEADER  INT_VAR header=i+1 min_level = i+25 END
-			LPF ALTER_SPELL_EFFECT INT_VAR header=i+1 match_opcode = 12 parameter1 = i+20 END
+			LPF ALTER_SPELL_HEADER  INT_VAR header=i+1 min_level = i*2+24 END
+			LPF ALTER_SPELL_EFFECT INT_VAR header=i+1 match_opcode = 12 parameter1 = i+12 END
 		END
 		SAY NAME1 @023
 		SAY UNIDENTIFIED_DESC @024

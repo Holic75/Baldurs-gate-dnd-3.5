@@ -17,7 +17,7 @@
 
 
 
-# Baldurs-gate-dnd-3.5
+# Baldurs-gate-dnd-3.5 v2.06
 This is a WeiDu mod for BG:Enhanced edition and BG2:Enhanced edition  that changes 2ed ADnD rules to DnD 3.5 with some elements taken from Pathfinder.  
 It changes game mechanics (i.e. classes, spells, abilities, etc...) to that of 3.5 edition (to the extent that game engine allows).
 
@@ -28,10 +28,10 @@ In C:\Users\UserName\Documents\Baldur's Gate (II) - Enhanced Edition folder find
 ```
 SetPrivateProfileString('Game Options','3E Thief Sneak Attack','1')
 ```
-if it is not already there (it replaces backstab with 3ed Sneak Attack). 
+if it is not already there (it replaces backstab with 3ed Sneak Attack).
 
-Also it is strongly advised that you make a backup of your dialog.tlk file before installing. 
- 
+Also it is strongly advised that you make a backup of your dialog.tlk file before installing.
+
 This mod was only tested with clean BG:ENHANCED EDITION 2.3 install (Non Sod) and BG 2:ENHANCED EDITION 2.3 and might not be compatible with any other mods.
 At current state it can be installed along IWD:EE but due to certain effects not supported by the engine (mostly related to opcode 326) abilities depending on character stats do not work (may be it will be fixed by Beamdog in the upcoming 2.5 patch)
 
@@ -112,9 +112,9 @@ WIS\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 
 #### CHARISMA
 – Increases number of Channel Energy uses per day for Paladins and Clerics (+1 per 2 points above 10).  
-– Improves all Paladin and Jester savingthrows (+1 per 2 points above 9 and -1 per 2 points below 10).  
+– Improves all Paladin, Hexblade and Jester savingthrows (+1 per 2 points above 9 and -1 per 2 points below 10).  
 – Increases number of Lay On Hands uses per day for Paladin or Absorb Health uses per day for Blackguards (+1 per 2 points above 12).  
-– Increases number of spells per day that can be cast by Bards, Sorcerers and Shamans.  
+– Increases number of spells per day that can be cast by Bards, Hexblades, Sorcerers and Shamans.  
 
 CHA\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 --- | --- | --- | --- |--- |--- |--- |--- |--- |---
@@ -127,7 +127,7 @@ CHA\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 24-25 | 2 | 2 | 2 | 1 | 1 | 1 | 1 | 0 | 0
 
 – Influences reaction of people on your character and prices in stores.  
-– Increases Saving Throw penalties for Bard, Sorcerer and Shaman spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).
+– Increases Saving Throw penalties for Bard, Hexblade, Sorcerer and Shaman spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).
 
 ## 2. Feats
 The proficiency system that was in the original was replaced with a feat system, also you can now place up to seven stars in most proficiency groups.   
@@ -188,13 +188,13 @@ Improved Style Mastery (6 stars) - The wielder gets another -1 bonus to AC (to a
 Epic Style Mastery (7 stars) - The wielder gets another -1 bonus to AC (to a total of -7).
 
 ###### Single Weapon Combat
-Style Focus (1 star) - The wielder gets a -1 bonus to AC and inflicts critical damage on an attack roll of 19 - 20.  
-Style Specialization (2 stars) - The wielder inflicts critical damage on an attack roll of 17 - 20.  
-Greater Style Focus (3 stars) - The wielder gets another -1 bonus to AC (to a total of -2) and inflicts critical damage on an attack roll of 16 - 20.  
-Greater Style Specialization (4 stars) - The wielder inflicts critical damage on an attack roll of 14 - 20.  
-Style Mastery (5 stars) - The wielder gets another -1 bonus to AC (to a total of -3) and inflicts critical damage on an attack roll of 13 - 20.  
-Improved Style Mastery (6 stars) - The wielder inflicts critical damage on an attack roll of 11 - 20.  
-Epic Style Mastery (7 stars) - The wielder gets another -1 bonus to AC (to a total of -4) and inflicts critical damage on an attack roll of 10 - 20.
+Style Focus (1 star) - The wielder gets a -1 bonus to AC and THAC0 and inflicts critical damage on an attack roll of 19 - 20.  
+Style Specialization (2 stars) - The wielder gets another -1 bonus to THAC0 (to a total of -2) and inflicts critical damage on an attack roll of 17 - 20.  
+Greater Style Focus (3 stars) - The wielder gets another -1 bonus to AC (to a total of -2) and THAC0 (to a total of -3) and inflicts critical damage on an attack roll of 16 - 20.  
+Greater Style Specialization (4 stars) - The wielder gets another -1 bonus to THAC0 (to a total of -4) and inflicts critical damage on an attack roll of 14 - 20.  
+Style Mastery (5 stars) - The wielder gets another -1 bonus to AC (to a total of -3) and THAC0 (to a total of -5) and inflicts critical damage on an attack roll of 13 - 20.  
+Improved Style Mastery (6 stars) - The wielder gets another -1 bonus to THAC0 (to a total of -6) and inflicts critical damage on an attack roll of 11 - 20.  
+Epic Style Mastery (7 stars) - The wielder gets another -1 bonus to AC (to a total of -4) and THAC0 (to a total of -7) and inflicts critical damage on an attack roll of 10 - 20.
 
 ###### Two-Weapon Combat
 Style Focus (1 star) - The wielder's penalties are reduced to -2 with the main weapon and with the off-hand weapon.  
@@ -310,11 +310,11 @@ Premonition allows character to use his experience and mastery of combat to pred
 (7 stars) - Character's spells deal 84 % more damage.
 
 ###### Extend Magic
-(1 star) - Character's spells last 10% longer.  
-(2 stars) - Character's spells last 22% longer.  
-(3 stars) - Character's spells last 36% longer.  
-(4 stars) - Character's spells last 52% longer.  
-(5 stars) - Character's spells last 70% longer.  
+(1 star) - Character's spells last 11% longer.  
+(2 stars) - Character's spells last 24% longer.  
+(3 stars) - Character's spells last 39% longer.  
+(4 stars) - Character's spells last 56% longer.  
+(5 stars) - Character's spells last 75% longer.  
 (6 stars) - Character's spells last 96% longer.  
 (7 stars) - Character's spells last 119% longer.
 
@@ -341,8 +341,8 @@ Improved Alacrity essentially erases the pause between casting spells. When cast
 (7 stars) - The character receives another use per day of Improved Alacrity innate ability.
 
 
-Generally character can put up to 5 stars in any proficiency unless stated otherwise and as long as it makes sense (for example since Paladins can cast spells of maximum 4th level, they can only put up to 3 stars in Bonus Priest Spell feat).  
-Unless stated otherwise characters get a new Feat at level 1, level 3 and every 3 levels thereafter. The maximum number of stars that can be put in any feat tree is equal to 1 + 1/per 4 levels of the character.
+Generally character can put up to 7 stars in any proficiency unless stated otherwise and as long as it makes sense (for example since Paladins can cast spells of maximum 4th level, they can only put up to 3 stars in Bonus Priest Spell feat).  
+Unless stated otherwise characters get a new Feat at level 1, level 3 and every 3 levels thereafter. The maximum number of stars that can be put in any feat tree is equal to 1 + 1/per 4 levels of the character (although 6th star can not be obtained before level 21).
 
 ## 3. Races
 ### HUMANS
@@ -457,17 +457,41 @@ Disadvantages:
 – May not wear armor heavier than splint mail.  
 – Alignment restricted to any non-lawful.  
 
-### WIZARD SLAYER
+### HEXBLADE (Replaces WIZARDSLAYER)
 Advantages:  
-– Each successful hit bestows a 25% cumulative chance of spell failure on the target.  
-– Each successful hit has a 30% chance to remove spell protections from a mage (like Breach spell).  
-– Magic Resistance: 25% +2% per level to a maximum of 85% at level 30.  
-– Gets one bonus feat at levels 22 and 28.
+– Receives a bonus to all saving throws for every 2 points of Charisma above 9 (i.e +1 at 11, +2 at 13, etc) and penalty for every 2 points below 10.  
+– May use Hexblade's Curse innate ability. Gets a number of uses per day equal to 1 + 1 per 2 points of Charisma above 10 at level 1. Gets one additional use per day every 4 levels thereafter.  
+```
+HEXBLADE'S CURSE:
+Hexblade unleashes a curse upon a foe who receives a penalty of -2 to THAC0, damage and savingthrows for 1 turn if he fails the savingthrow vs. Spell with penalty equal to one fourth of Hexblade's level rounded down + 1 per 2 points of Hexblade's Charisma above 10.
+At level 7 the penalty to THAC0, damage and savingthrows increases to -4, at level 17 to -6 and finally at level 27 to - 8.
+```
+– May summon Familiar starting from level 4.  
+– Starting from level 4 can cast a limited number of Spells (through Innate Abilities menu). Hexblade does not need to memorize her spells in advance and can spontaneously cast any spell she knows.  
+```
+Hexblade Spellbook:
+First Level Spells: Starting from level 4 Hexblade gets access to the following spells: Sleep, Blindness, Charm Person, Spook and Protection from Evil.
+Second Level Spells: Starting from level 7 Hexblade gets access to the following spells: Strength, Glitterdust, Invisibility, Mirror Image and Stinking Cloud.
+Third Level Spells: Starting from level 10 Hexblade gets access to the following spells: Vampiric Touch, Dispel Magic, Dire Charm, Detect Illusions and Slow.
+Fourth Level Spells: Starting from level 13 Hexblade gets access to the following spells: Improved Invisibility, Domination, Polymorph Other, Breach and Confusion.
+```
+– Gets one bonus feat only at levels 5, 10, 15, 20, 22 and 28.  
+– Starting from level 6 may use Swift Spell ability once per day. Gets additional uses at levels 8, 11, 14, 18, 23 and 30.  
+```
+SWIFT SPELL:
+When this ability is activated for next round Hexblade's casting speed is increased by 5.
+```
+– Starting from level 12 may use the Aura of Unluck ability once per day. Gains and additional use every 4 levels thereafter.  
+ ```
+AURA OF UNLUCK:
+When this ability is activated, all enemies within 30 feet of the Hexblade suffer -1 penalty to luck. This penalty increases to -2 at level 16, -3 at level 20 and finally up to -4 at level 24.
+```
 
 Disadvantages:  
+– May not be of good alignment.  
 – Does not get bonus feats like trueclass fighters do.  
-– May only put one star in any weapon category she can use.  
-– May use only light armor.  
+– May only put one star in any weapon <PRO_HESHE> can use.  
+– May use only light armor and medium armor.  
 
 ### KENSAI
 Advantages:  
@@ -540,6 +564,15 @@ All hostile undead creatures suffer 2d4 points of magical damage per Channel Ene
 ```
 SMITE EVIL: For 10 seconds Paladin receives +1 bonus to her attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level against evil creatures.
 ```
+– Starting from level 3 may use the Aura of Faith ability once per day. Gains and additional use every 6 levels thereafter.  
+```
+AURA OF FAITH:
+When this ability is activated, all allies within 30 feet of the Paladin are receiving beneficial effects based on the Paladin's level:
+  3rd - All allies receive a +1 bonus to hit, damage rolls and Armor Class as well as immunity to fear for 1 turn.
+  9th - All allies receive a +2 bonus to hit, damage rolls and Armor Class as well as immunity to fear for 1 turn.
+  15th - All allies receive a +3 bonus to hit, damage rolls and Armor Class as well as immunity to fear for 1 turn.
+  21st - All allies receive a +4 bonus to hit, damage rolls and Armor Class as well as immunity to fear for 1 turn.
+```
 – Receives a bonus to all saving throws for every 2 points of Charisma above 9 (i.e. +1 at 11, +2 at 13, etc) and penalty for every 2 points below 10.  
 – Gets one bonus feat at levels 22 and 28.  
 – Alignment restricted to lawful good.  
@@ -554,7 +587,7 @@ Advantages:
 – 20% resistance to fire and acid.  
 
 Disadvantages:  
-– May not use Smite Evil ability.  
+– May not use Aura of Faith ability.    
 – May not use missile weapons.  
 
 ### INQUISITOR
@@ -562,6 +595,8 @@ Advantages:
 – May cast Dispel Magic once per day. Gains one use at level 1 and an additional use every 4 levels thereafter. The spell is cast at Speed Factor 1 and acts at twice the Inquisitor's character level.   
 – May cast True Sight once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.  
 – Immune to hold and charm.  
+– Each successful hit bestows a 25% cumulative chance of spell failure on the target.  
+– Magic Resistance: 25% +2% per level to a maximum of 85% at level 30.  
 – May use Smite Mage ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.  
 ```
 SMITE MAGE: For 10 seconds Inquisitor receives +1 bonus to her attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level against arcane magic users.
@@ -571,6 +606,7 @@ Disadvantages:
 – May not channel positive energy.  
 – May not use the Lay On Hands ability.   
 – May not use Smite Evil ability.  
+– May not use Aura of Faith ability.  
 – May not cast priest spells.  
 
 ### UNDEAD HUNTER
@@ -612,7 +648,7 @@ Each successful hit within the next 5 rounds will inject poison into the target.
 20th - Target suffers 1 poison damage per second for 24 seconds (Save vs. Death at -4 negates), and also immediately suffers 12 poison damage (no save)
 24th - Target suffers 2 poison damage per second for 24 seconds (Save vs. Death at -5 negates), and also immediately suffers 16 poison damage (no save)
 ```
-– 3rd level: May use the Aura of Despair ability once per day.  
+– 3rd level: May use the Aura of Despair ability once per day. Gains and additional use every 6 levels thereafter.     
 ```
 AURA OF DESPAIR:
 When this ability is activated, all enemies within 30 feet of the Blackguard suffer ill effects based on the Blackguard's level:
@@ -910,8 +946,8 @@ Advantages:
 – THAC0 and APR progression of a FIGHTER.  
 – At first level receives for free Combat Prowess(1):Weapon Finesse and Tactics(1):Insightful Strike feats.  
 – At 11th level Swashbuckler receives +1 bonus to all savingthrows.  
-– At 14th each critical hit of Swashbuckler reduces target's Strength by 2 points for 10 rounds (cumulatively).  
-– At 19th each critical hit of Swashbuckler additionally reduces target's Constitution by 2 points for 10 rounds (cumulatively).  
+– At 14th level each critical hit of Swashbuckler reduces target's Strength by 2 points for 5 rounds (cumulatively).  
+– At 19th level each critical hit of Swashbuckler additionally reduces target's Constitution by 2 points for 5 rounds (cumulatively).  
 
 Disadvantages:  
 – May not use Sneak attack.  
@@ -965,6 +1001,7 @@ CLASS FEATURES:
 – Thieving abilities: Pick Pockets.  
 – Increased Lore score.  
 – May cast arcane spells up to level 6.  
+– Starting from level 6 may cast arcane spells without suffering spellcasting failure chance while wearing chain mail.  
 – Bardic Performance: a bard is trained to perform to create magical effects on those around her. Bard can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each even level a bard can use bardic performance one more time per day.  
 – Medium THAC0/APR progression, High Savingthrows vs. Breath Weapon vs. Wand, and vs. Spell
 
@@ -1079,7 +1116,7 @@ Song of Requiem (starting from level 24)
 
 Disadvantages:  
 – Smaller variety of available Bardic performance types and less uses per day.  
-– May only use weapons a wizard can (daggers, quarterstaves, darts, slings).  
+– May only use weapons a wizard can (daggers, quarterstaves, darts, slings, crossbows).  
 
 ### SORCERER
 CLASS FEATURES:  
@@ -1099,7 +1136,6 @@ Advantages:
 – May equip bucklers.  
 – May use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.    
 – At first level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.
-– Gets one  bonus feat at levels 22 and 28.  
 – Hit Die: d6  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -1308,6 +1344,7 @@ CLASS FEATURES:
 – May use the Hide In Shadows ability.  
 – Can cast two spells per day less than trueclass clerics.  
 – Can spontaneously convert memorized spells into healing ones.  
+– May channel positive energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels).  
 – Eventually can cast low level druidic spells (same as trueclass ranger).  
 – At 1st level chooses two domains that grant her access to additional spells, normally not available to Clerics of other domains.  
 – Gets one bonus feat at level 28.  
@@ -1358,7 +1395,7 @@ CLASS FEATURES:
 – Can cast one arcane spell per day less than trueclass mage.   
 – May distribute 12 skill points per level among thieving skills (20 points at level 1).  
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.  
-– May use the Set Snare ability once per day. Gains one use at levels 10, 15 and 20.  
+– May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
 – Gets one bonus feat at levels 10, 20, 22, 25 and 28.  
 – Hit Die: d5  
 – Low THAC0/APR progression, High Savingthrows vs. Breath Weapon, vs. Wand and vs. Spell  
@@ -1389,7 +1426,7 @@ NOTE: Gnomes can choose this class, but become Fighter/Illusionist/Thieves by de
 ### FIGHTER/MAGE/CLERIC
 CLASS FEATURES:  
 – May wear helmets.  
-– May wear light and medium armor and use any weapons and shields.  
+– May wear any armor and use any weapons and shields.  
 – May get up to Weapon Specialization (2 stars) in any weapon they can use.  
 – Can cast two arcane spells less per day than trueclass mage.  
 – Cannot cast arcane spells of 8th and 9th levels.  
@@ -1398,7 +1435,7 @@ CLASS FEATURES:
 – Gets one bonus feat at level 5 and every 5 levels thereafter up to level 20.  
 – Gets one bonus feat at levels 22, 25 and 28.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels thereafter).  
-– At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, at level 12 Armored Arcana: Splint Mail Casting.  
+– At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting arcane spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.  
 – Can use Spontaneous Battlecasting.
 ```
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
@@ -1409,6 +1446,7 @@ SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice 
 NOTE: Gnomes can choose this class, but become Fighter/Illusionist/Clerics by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.
 
 ### Saving throw progression per level
+
 Lvl| High | Low |
 --- | --- | ---
 1| 16 | 18
@@ -1433,6 +1471,7 @@ Lvl| High | Low |
 20| 6 | 12
 
 ### THACO/bonus APR progression per level
+
 Lvl| High | Medium | Low |
 --- | --- | --- | ---
 1| 19 /+0  | 20 /+0  | 20 /+0
@@ -1456,7 +1495,7 @@ Lvl| High | Medium | Low |
 19| 1 /+1.5|  6 /+1  | 11 /+0.5
 20| 0 /+1.5|  5 /+1  | 10 /+0.5
 
-### Paladin, Ranger and Assassin spell slots per day
+### Hexblade, Paladin, Ranger and Assassin spell slots per day
 
 Lvl\Spell level | 1 | 2 | 3 | 4 |
 --- | --- | --- | --- |---
@@ -1990,9 +2029,9 @@ For item abilities, area effect ones are generally checked against Breath Weapon
 - Dispel Magic and Remove Magic spells now  dispel with probability equal to 30% + 1% per level (twice for Inquisitors)  
 - Animate Dead now summons two skeletons instead of one  
 - Tenser's transformation now sets THAC0 to that of a fighter of equal level gives +1 APR, +2 To Hit and Damage bonus and doubles caster's HP  
-
 - Magical Stone now creates one magical sling bullet per priest level (+1 THAC0, 1d6+1 damage or 2d6+2 against undead)  
 - Bless is now a cleric only spell
+- Silence now only has -2 penalty to Save vs. Spell
 - Barkskin now gives +3 bonus to AC (+4 at level 7, +5 at level 13) which is cumulative with everything else and +1 bonus to saving throws (except vs. Spell)    
 - Flame Blade spell was removed, it is now replaced with druid only Flame Weapon spell which makes target deal +1d6 fire damage bonus on every attack for the duration of the spell  
 - Goodberries now heal 3 HP each when eaten  
@@ -2016,6 +2055,7 @@ For item abilities, area effect ones are generally checked against Breath Weapon
 - Boon of Lathander was renamed to Boon of Deity (it is now a 6th level Glory Domain Spell)  
 - Finger of Death now deals 6d8 points of damage to the target if it succeeds on a Saving Throw vs. Death  
 - Damage of Chain Lightning is now fixed to 12d6
+- Regeneration now regenerates 10% HP per round and lasts 10 rounds.
 
 ### New Spells
 
@@ -2176,9 +2216,63 @@ Casting Time: 3
 Area of Effect: 1 creature   
 Saving Throw: 1/2   
 
-This spell is the reverse of Cure Medium Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 20 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.
+This spell is the reverse of Cure Medium Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 20 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.  
 
-#### Nature's Avatar
+#### Mass Cure Medium Wounds (Cleric)
+(Necromancy)
+
+Level: 6
+Sphere: Healing
+Range: 0
+Duration: Permanent
+Casting Time: 5
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+This is a more powerful version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 3d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
+
+
+#### Mass Cure Critical Wounds (Cleric)
+(Necromancy)
+
+Level: 7
+Sphere: Healing
+Range: 0
+Duration: Permanent
+Casting Time: 5
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+This is an even stronger version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 5d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
+
+
+#### Vigorous Cycle (Cleric, Druid)
+(Necromancy)
+
+Level: 6
+Sphere: Healing
+Range: Caster
+Duration: 1 round/level
+Casting Time: 7
+Area of Effect: allied creatures in 30-ft radius
+Saving Throw: None
+
+The subjects of this spell are able to regenerate 3 Hit Points per round for the duration of the spell.
+
+#### Aura of Vitality (Druid)
+(Alteration)
+
+Level: 7
+Sphere: Protection, Plant
+Range: 0
+Duration: 1 round/ level
+Casting Time: 3
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+All allies within the area of effect receive a +4 bonus to Strength, Constitution, and Dexterity.
+
+#### Nature's Avatar (Druid)
 (Alteration)  
 
 Level: Quest  
@@ -2194,7 +2288,8 @@ The affected animal gains a +10 on attack rolls and damage rolls and 4 temporary
 
 
 Additionally Druids gain access to the following spells: Burning Hands (as 1st level spell), Sleep (as 1st level spell),
- Flame Strike (as 4th level spell), Hold Monster (as 4th level spell), Ice Storm (as 4th levels spell), Chain Lightning (as 6th level spell).
+ Flame Strike (as 4th level spell), Hold Monster (as 4th level spell), Ice Storm (as 4th levels spell), Chain Lightning (as 6th level spell),
+ False Dawn (as 6th level spell), Sunray (as 7th level spell), Regeneration (as 7th level spell).  
 
 ## 7. Racial Enemies
 Now racial enemy can be chosen at level 1 and every 5th level.   
@@ -2210,28 +2305,28 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Alora - Thief (10 /20/ 10/ 14/ 9 / 9)
 #### Baeloth - Battle Caster (14/ 16/ 12/ 10/ 10/ 16)
 #### Branwen - Fighter/Cleric (15/ 10/ 14/ 10/ 16/ 12)
-#### Coran - Archer (14/ 18/ 12/ 10/ 14/ 10)
+#### Coran - Fighter/Thief (14/ 18/ 12/ 14/ 10/ 10)
 #### Dorn - Blackguard (18/ 10/ 12/ 8/ 14/ 15)
 #### Dynaheir - Sorcerer (12/ 14/ 14/ 10/ 9/ 17)
 #### Edwin - Conjurer (10/ 12/ 14/ 18/ 9 / 10)
 #### Eldoth - Blade (14/ 14/ 14/ 14/ 10/ 14)
 #### Faldorn - Avenger (14/ 14/ 14/ 10/ 16/ 10)
-#### Garrick - Bard (10/ 16/ 14/ 14/ 9/ 14)
-#### Imoen - Jester (9/ 16/ 10/ 14/ 8/ 17)
+#### Garrick - Bard (10/ 16/ 14/ 14/ 10/ 14)
+#### Imoen - Fighter/Mage/Thief (9/ 16/ 12/ 16/ 11/ 10)
 #### Jaheira - Fighter/Druid (14/ 14/ 14/ 10/ 16/ 10) - as half-elf will receive +2 bonus to any ability score at level 1
 #### Kagain - Dwarven Defender (16/ 10/ 19/ 10/ 11/ 8)
 #### Khalid - Fighter/Thief (14/ 16/ 14/ 15/ 9/ 9) - as half-elf will receive +2 bonus to any ability score at level 1
-#### Kivan - Cleric/Ranger (14/ 16/ 12/ 10/ 16/ 10)
+#### Kivan - Archer (14/ 18/ 12/ 10/ 14/ 10)
 #### Minsc - Barbarian (18/ 14/ 16/ 8/ 8/ 8)
 #### Montaron - Assassin (10/ 18/ 14/ 16/ 9/ 9)
 #### Neera - Wild Mage (9/ 16/ 12/ 17/ 9/ 11)  - as half-elf will receive +2 bonus to any ability score at level 1
-#### Qualye - Illusionist/Thief (10/ 16/ 16/ 16/ 10/ 8)
+#### Qualye - Cleric/Illusionist (8/ 10/ 16/ 16/ 16/ 10)
 #### Rasaad - Sun Soul Monk (14/ 16/ 12/ 10/ 15/ 10)
 #### Safana - Swashbuckler (11/ 16/ 14/ 16/ 9/ 10)
-#### Shar-Teel - Stalker (16/ 16/ 10/ 10/ 14/ 10)
+#### Shar-Teel - Hexblade (16/ 14/ 10/ 10/ 10/ 16)
 #### Skie - Shadowdancer (10/ 18/ 10/ 16/ 8/ 10)
-#### Tiax - Cleric/Illusionist (10/ 10/ 16/ 16/ 16/ 8)
-#### Viconia - Cleric/Thief (10/ 18/ 10/ 14/ 14/ 12)
+#### Tiax - Fighter/Illusionist/Cleric (12/ 10/ 16/ 16/ 14/ 10)
+#### Viconia - Cleric/Thief (10/ 18/ 10/ 16/ 14/ 14)
 #### Xan - Fighter/Mage (14/ 16/ 12/ 16/ 10/ 10)
 #### Xzar - Necromancer (10/ 14/ 12/ 18/ 9/ 9)
 #### Yeslick - Cleric (14/ 10/ 16/ 10/ 16/ 12)
@@ -2242,10 +2337,10 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Jaheira - Fighter/Druid (14/ 14/ 14/ 10/ 16/ 10) - as half-elf will receive +2 bonus to any ability score at level 1
 #### Edwin - Conjurer (10/ 12/ 14/ 18/ 9 / 10)
 #### Viconia - Cleric/Thief (10/ 18/ 10/ 16/ 14/ 14)
-#### Imoen - Bard (10/ 16/ 12/ 14/ 8/ 16)
+#### Imoen - Fighter/Mage/Thief (9/ 16/ 12/ 16/ 11/ 10)  
 #### Yoshimo - Fighter/Thief (14/ 14/ 14/ 16/ 10/ 10)
 #### Valygar - Stalker (14/ 16/ 14/ 10/ 14/ 10)
-#### Nalia - Battle Caster (12/ 16/ 12/ 10/ 10/ 16)
+#### Nalia - Bard (9/ 16/ 12/ 14/ 9/ 16)
 #### Mazzy - Kensai (12/ 18/ 14/ 10/ 14/ 10)
 #### Keldorn - Inquisitor (16/ 10/ 14/ 10/ 10/ 16)
 #### Korgan - Berserker (18/ 12/ 18/ 8/ 8/ 8)

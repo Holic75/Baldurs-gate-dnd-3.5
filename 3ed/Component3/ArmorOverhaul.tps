@@ -294,16 +294,16 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
  
   PATCH_IF (category=ArmorCategory OR category=ShieldsCategory) BEGIN
   
-  //ranger, berserker <- barbarian
+  //ranger, berserker, wizardslayer <- barbarian
 	LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~  RET usable_by_barbarian = result END
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_barbarian STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~berserker~ END
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_barbarian STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~ranger~ END
-	
+	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_barbarian STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~wizardslayer~ END
 		
-	PATCH_IF (category!=ShieldsCategory) BEGIN //wizardslayer <-kensai
+	/*PATCH_IF (category!=ShieldsCategory) BEGIN //wizardslayer <-kensai
 		LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~kensai~  RET usable_by_kensai = result END
 		LPF SET_ITEM_USABILITY INT_VAR value = usable_by_kensai STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~wizardslayer~ END
-	END
+	END*/
 	
 	LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~ranger~  RET usable_by_ranger = result END
 	

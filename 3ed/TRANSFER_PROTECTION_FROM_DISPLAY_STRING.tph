@@ -1,0 +1,32 @@
+DEFINE_ACTION_FUNCTION ~TRANSFER_PROTECTION_FROM_DISPLAY_STRING~
+	
+
+       
+	STR_VAR		
+		Target = ~~
+		Origin = ~~
+
+	
+	
+BEGIN
+
+    ACTION_CLEAR_ARRAY StrRefs
+    COPY_EXISTING ~%Origin%~ ~override~
+        SET found_disable_string = 1
+        SET match_id = 1
+        WHILE (found_disable_string ) BEGIN
+            LPF GET_SPELL_EFFECT_VALUES INT_VAR match_id match_opcode = 267 RET str_ref = parameter1 found_disable_string = found_match END
+            PATCH_IF (found_disable_string) BEGIN
+                DEFINE_ASSOCIATIVE_ARRAY StrRefs BEGIN "%match_id%" =>  "%str_ref%" END
+            END
+            SET match_id = match_id + 1
+        END
+            
+    COPY_EXISTING ~%Target%~ ~override~    
+        PHP_EACH  StrRefs AS match_id => parameter1 BEGIN
+           LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 267 target = 1 parameter1 timing = 2 insert_point = 0 END
+        END
+            
+	
+
+END

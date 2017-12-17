@@ -99,8 +99,8 @@
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(CLABRN+.*\)\|\(CLABFI05\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~SAVESBH~ END
 	
-	//spell saves for bard and paladin
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(CLABBA+.*\)\|\(CLABPA+.*\)\.2DA~ mask_file=~~
+	//spell saves for bard, hexblade and paladin
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(CLABBA+.*\)\|\(CLABPA+.*\)\|\(CLABFI03\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~SAVESSH~ END	
 	//fort saves for battle caster	
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~CLABSO01\.2DA~ mask_file=~~

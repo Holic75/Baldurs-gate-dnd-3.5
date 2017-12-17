@@ -1,0 +1,22 @@
+IF
+	PartyRested()
+	Kit(Player%player_id%,WIZARDSLAYER)
+
+THEN
+	RESPONSE #100		
+		ActionOverride(Player%player_id%,ReallyForceSpellRes("GV_HEXA",Player%player_id%))
+		Continue()
+END
+
+
+IF
+	PartyRested()
+	Kit(Player%player_id%,WIZARDSLAYER)
+    LevelGT(Player%player_id%,3)
+THEN
+	RESPONSE #100		
+		ApplySpellRES("RMHXB",Player%player_id%) 
+		ActionOverride(Player%player_id%,ReallyForceSpellRes("BNHXB",Player%player_id%))
+		ActionOverride(Player%player_id%,ReallyForceSpellRes("GVHXB",Player%player_id%))
+		Continue()
+END

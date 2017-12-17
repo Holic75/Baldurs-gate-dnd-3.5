@@ -45,7 +45,7 @@
 
 
 	@101=~Two-Handed Combat~
-	@102=~This fighting style allows the character to use a two-handed melee weapon and receive special bonuses~
+	@102=~This fighting style allows the character to use a two-handed melee weapon and receive special bonuses.~
 	@103=~Style Focus~
 	@104=~Style Specialization~
 	@105=~Greater Style Focus~
@@ -73,13 +73,13 @@
 
 	@131=~Single-Weapon Combat~
 	@132=~This fighting style is for characters who do not wish to use a shield but want some bonus when using a one-handed melee weapon.~
-	@133=~The wielder gets a -1 bonus to AC and inflicts critical damage on an attack roll of 19 - 20.~
-	@134=~The wielder inflicts critical damage on an attack roll of 17 - 20.~
-	@135=~The wielder gets another -1 bonus to AC (to a total of -2) and inflicts critical damage on an attack roll of 16 - 20.~
-	@136=~The wielder inflicts critical damage on an attack roll of 14 - 20.~
-	@137=~The wielder gets another -1 bonus to AC (to a total of -3) and inflicts critical damage on an attack roll of 13 - 20.~
-	@138=~The wielder inflicts critical damage on an attack roll of 11 - 20.~
-	@139=~The wielder gets another -1 bonus to AC (to a total of -4) and inflicts critical damage on an attack roll of 10 - 20.~
+	@133=~The wielder gets a -1 bonus to AC and THAC0 and inflicts critical damage on an attack roll of 19 - 20.~
+	@134=~The wielder gets another -1 bonus to THAC0 (to a total of -2) and inflicts critical damage on an attack roll of 17 - 20.~
+	@135=~The wielder gets another -1 bonus to AC (to a total of -2) and THAC0 (to a total of -3) and inflicts critical damage on an attack roll of 16 - 20.~
+	@136=~The wielder gets another -1 bonus to THAC0 (to a total of -4) and inflicts critical damage on an attack roll of 14 - 20.~
+	@137=~The wielder gets another -1 bonus to AC (to a total of -3) and THAC0 (to a total of -5) and inflicts critical damage on an attack roll of 13 - 20.~
+	@138=~The wielder gets another -1 bonus to THAC0 (to a total of -6) and inflicts critical damage on an attack roll of 11 - 20.~
+	@139=~The wielder gets another -1 bonus to AC (to a total of -4) and THAC0 (to a total of -7) and inflicts critical damage on an attack roll of 10 - 20.~
 
 	@141=~Two-Weapon Combat~
 	@142=~This fighting style allows the character to use two melee weapons at the same time with fewer penalties. A character wielding two weapons without a star in this fighting style would incur a -4 penalty to attack rolls with the main weapon and a -4 penalty with the off-hand weapon.~

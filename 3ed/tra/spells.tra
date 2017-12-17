@@ -719,7 +719,51 @@ When this spell is cast, the recipient receives a bonus to resistance to all mag
     @057=~Resist Magic
 This ability allows the warrior to temporarily tap a great inner strength and fight off the effects of malevolent magic. For 4 rounds, the warrior's Magic Resistance is increased by 50%.~
 
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+    @058 =~Vigorous Cycle~
+    
+    @059 =~Vigorous Cycle
+(Necromancy)
 
+Level: 6
+Sphere: Healing
+Range: Caster
+Duration: 1 round/level
+Casting Time: 7
+Area of Effect: allied creatures in 30-ft radius
+Saving Throw: None 
+
+The subjects of this spell are able to regenerate 3 Hit Points per round for the duration of the spell.~
+
+    @060 =~Regeneration
+(Necromancy)
+
+Level: 7
+Sphere: Healing
+Range: Touch
+Duration: 10 rounds
+Casting Time: 7
+Area of Effect: 1 creature
+Saving Throw: None
+
+This powerful spell enables the priest to imbue one creature with the ability to regenerate. This regeneration will heal any wounds and even regenerate lost limbs. The creature affected will regain 10% of its Hit Points per second. The effect lasts for 10 round per 2 levels of the caster or until dispelled.~
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------
+    @061 =~Aura of Vitality~
+    
+    @062 =~Aura of Vitality
+(Alteration)
+
+Level: 7
+Sphere: Protection, Plant
+Range: 0 
+Duration: 1 round/ level 
+Casting Time: 3 
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+All allies within the area of effect receive a +4 bonus to Strength, Constitution, and Dexterity.~ 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -984,8 +1028,39 @@ Saving Throw: None
 By means of this spell, the caster calls between 1 and 2 animals that have 4 Hit Dice or less. The animals appearing are randomly determined. They will remain under the caster's control until slain or the spell duration expires.~
 //--------------------------------------------------------------------------------------------------------------//
 
+    @215 = ~Mass Cure Medium Wounds~
+    
+    @216 =~Mass Cure Medium Wounds
+(Necromancy)
 
+Level: 6
+Sphere: Healing
+Range: 0
+Duration: Permanent
+Casting Time: 5
+Area of Effect: 30-ft. radius
+Saving Throw: None
 
+This is a more powerful version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 3d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.~
+
+//-----------------------------------------------------------------------------------------------------------------
+
+    @217 = ~Mass Cure Critical Wounds~
+    
+    @218 =~Mass Cure Critical Wounds
+(Necromancy)
+
+Level: 7
+Sphere: Healing
+Range: 0
+Duration: Permanent
+Casting Time: 5
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+This is an even stronger version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 5d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.~
+
+//-----------------------------------------------------------------------------------------------------------------
 
 
 
@@ -1018,7 +1093,28 @@ Starting from level 10 Assassin gets access to the following spells: Vampiric To
 
 Starting from level 13 Assassin gets access to the following spells: Improved Invisibility, Free Action, Poison, Cloak of Fear.~
 
+//hexblade spells
 
+//assassin spells
+    @1211=~First Level Spells~
+	@1212=~First Level Spells
+
+Starting from level 4 Hexblade gets access to the following spells: Sleep, Blindness, Charm Person, Spook and Protection from Evil.~
+
+	@1213=~Second Level Spells~
+	@1214=~Second Level Spells
+
+Starting from level 7 Hexblade gets access to the following spells: Strength, Glitterdust, Invisibility, Mirror Image and Stinking Cloud.~
+
+	@1215=~Third Level Spells~
+	@1216=~Third Level Spells
+
+Starting from level 10 Hexblade gets access to the following spells: Vampiric Touch, Dispel Magic, Dire Charm, Detect Illusions and Slow.~
+
+	@1217=~Fourth Level Spells~
+	@1218=~Fourth Level Spells
+
+Starting from level 13 Hexblade gets access to the following spells: Improved Invisibility, Domination, Polymorph Other, Breach and Confusion.~
 
     //bonus spells
     @500001=~Choose this domain.~

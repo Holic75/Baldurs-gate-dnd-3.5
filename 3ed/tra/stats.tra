@@ -2,11 +2,11 @@
 @001=~CHARISMA: Charisma measures a character's persuasiveness, personal magnetism, and ability to lead. This ability has the following effects:
 
 – Increases number of Channel Energy uses per day for Paladins and Clerics (+1 per 2 points above 10).
-– Improves all Paladin and Jester savingthrows (+1 per 2 points above 9 and -1 per 2 points below 10).
+– Improves all Hexblade, Paladin and Jester savingthrows (+1 per 2 points above 9 and -1 per 2 points below 10).
 – Increases number of Lay On Hands uses per day for Paladin or Absorb Health uses per day for Blackguards (+1 per 2 points above 12).
 – Increases number of spells per day that can be cast by Bards, Sorcerers and Shamans.
 – Influences reaction of people on your character and prices in stores.
-– Increases Saving Throw penalties for Bard, Sorcerer and Shaman spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).
+– Increases Saving Throw penalties for Bard, Hexblade,  Sorcerer and Shaman spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).
 
 Minimum: <MINIMUM>
 Maximum: <MAXIMUM>~

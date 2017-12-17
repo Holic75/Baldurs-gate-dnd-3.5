@@ -1,0 +1,17 @@
+	@001=~Aura of Unluck~
+	@002=~Aura of Unluck
+
+When this ability is activated, all enemies within 30 feet of the Hexblade suffer -1 penalty to luck. This penalty increases to -2 at level 16, -3 at level 20 and finally up to -4 at level 24.~
+
+
+	@003=~Hexblade's Curse~
+	@004=~Hexblade's Curse
+
+Hexblade unleashes a curse upon a foe who receives a penalty of -2 to THAC0, damage and savingthrows for 1 turn if he fails the savingthrow vs. Spell with penalty equal to one fourth of Hexblade's level rounded down + 1 per 2 points of Hexblade's Charisma above 10.
+At level 7 the penalty to THAC0, damage and savingthrows increases to -4, at level 17 to -6 and finally at level 27 to - 8.~
+
+
+	@005=~Swift Spell~
+	@006=~Swift Spell
+
+When this ability is activated for next round Hexblade's casting speed is increased by 5.~

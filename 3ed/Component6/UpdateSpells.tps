@@ -137,3 +137,9 @@
 			LPF ADD_SPELL_EFFECT  INT_VAR  header = Nheaders+2  opcode = 321  target = 1  timing = 0 duration=1  resist_dispel = 2  STR_VAR resource=~RGSPCSTK~ END	 //remove effects	
 			
 		END BUT_ONLY	
+        
+        
+        
+        
+        
+        

@@ -50,6 +50,8 @@
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=17 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_NM1~  END //evil fighter/cleric/mage
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=6 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_PC1~  END //good paladin
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=6 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_NC1~  END //evil paladin
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=18 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_PM1~ END //good cleric/ranger
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=18 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_NM1~  END //evil cleric/ranger
 		
 	COPY ~3ed/Classes/TurnUndead/CHANGV.SPL~ ~override/CE_GV.SPL~
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_1~ END

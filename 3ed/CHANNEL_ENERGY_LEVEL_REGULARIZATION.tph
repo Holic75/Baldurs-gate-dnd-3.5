@@ -40,8 +40,8 @@ DEFINE_ACTION_FUNCTION ~CHANNEL_ENERGY_LEVEL_REGULARIZATION~
 				SET multi_class_level=max_multi_class_channel_lvl
 			END
 			
-            SPRINT resource EVALUATE_BUFFER ~CE_LVL%no_ce_lvl%~
-			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=18 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric ranger (no ce)
+            //SPRINT resource EVALUATE_BUFFER ~CE_LVL%no_ce_lvl%~
+			//LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=18 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric ranger (no ce)
           
             
 			SPRINT resource EVALUATE_BUFFER ~CE_LVL%cleric_level%~
@@ -55,7 +55,7 @@ DEFINE_ACTION_FUNCTION ~CHANNEL_ENERGY_LEVEL_REGULARIZATION~
 			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=15 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric thief
 			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=14 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric mage
             LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=17 parameter2=105 duration=1 timing=1 STR_VAR  resource END //fighter cleric mage
-            
+            LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=18 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric ranger 
 
 			SPRINT clab_line EVALUATE_BUFFER ~%clab_line%   AP_CE_LVL~
             SPRINT clab_line0 EVALUATE_BUFFER ~%clab_line0%   AP_CE_LVL%no_ce_lvl%~           

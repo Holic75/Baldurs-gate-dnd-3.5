@@ -5,6 +5,8 @@
 	LAF ADD_PSBP_FEAT INT_VAR min_val=1 bdr_val=11 max_val=25 step=2 par1=122 STR_VAR ability_name=~DEXSAV~ END //dex bonus to saving throws
 	LAF ADD_PSBP_FEAT INT_VAR min_val=1 bdr_val=11 max_val=25 step=2 par1=130 STR_VAR ability_name=~WISSAV~ END //wis bonus to saving throws
 	LAF ADD_PSBP_FEAT INT_VAR min_val=1 bdr_val=11 max_val=25 step=2 par1=126 STR_VAR ability_name=~CONSAV~ END //con bonus to saving throws
+    
+    LAF ADD_PSBP_FEAT INT_VAR min_val=1 bdr_val=11 max_val=25 step=2 par1=132 STR_VAR ability_name=~HEXSAV~ END //cha bonus to spell saving throws for hexblade
 	
 	//protection against applying saves bonus second time (for multi-class)
 	COPY_EXISTING ~DEXSAVFT.SPL~ ~override~ 

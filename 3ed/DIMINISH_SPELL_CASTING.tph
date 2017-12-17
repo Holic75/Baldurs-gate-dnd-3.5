@@ -1,7 +1,6 @@
 DEFINE_ACTION_FUNCTION ~DIMINISH_SPELL_CASTING~
 	INT_VAR
-		is_wizard=0
-	    levels_to_remove=0
+		is_wizard=0	
 	STR_VAR
 		clab=~~
 		mask_file=~~
@@ -13,13 +12,11 @@ DEFINE_ACTION_FUNCTION ~DIMINISH_SPELL_CASTING~
 		OUTER_SET spell_opcode=62
 		OUTER_SET max_spell_level=7
         OUTER_SPRINT spl_file ~3ed/SpellProgression/ADDSPLP.SPL~
-		OUTER_SPRINT lvl_file ~3ed/SpellProgression/REMLVLP.SPL~
 		
 		ACTION_IF (is_wizard) BEGIN
 			OUTER_SET spell_opcode=42
 			OUTER_SET max_spell_level=9
             OUTER_SPRINT spl_file ~3ed/SpellProgression/ADDSPLW.SPL~
-			OUTER_SPRINT lvl_file ~3ed/SpellProgression/REMLVLW.SPL~
 		END
 		
 		OUTER_SET row_size=1+max_spell_level
@@ -57,8 +54,8 @@ DEFINE_ACTION_FUNCTION ~DIMINISH_SPELL_CASTING~
             OUTER_SET lvl = spells_2
            
             COPY ~%spl_file%~ ~override/%caption%%lvl%.SPL~
-                LPF ALTER_EFFECT INT_VAR match_parameter1 = 0 - 1 parameter2=spells_0 END		
-                LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 parameter2=spells_1 END	
+                LPF ALTER_EFFECT INT_VAR match_parameter1 = 0 - 1 parameter2=spells_0 timing = 1 END		
+                LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 parameter2=spells_1 timing =  1 END	
                 LPF DELETE_EFFECT INT_VAR match_parameter2 = 0 END //remove empty effects
 
                           
@@ -84,16 +81,7 @@ DEFINE_ACTION_FUNCTION ~DIMINISH_SPELL_CASTING~
 			OUTER_SET k=k+1	
 			OUTER_SET lvl_last=lvl+1
 		END
-        
- 		ACTION_IF (levels_to_remove) BEGIN //remove complete spell levels
-			COPY ~%lvl_file%~ ~override/%caption%0.SPL~
-				LPF ALTER_SPELL_EFFECT INT_VAR parameter2=levels_to_remove END
-					COPY_EXISTING ~%caption%.SPL~ ~override~ 
-                        SPRINT resource EVALUATE_BUFFER ~%caption%0~
-                        LPF CLONE_EFFECT INT_VAR check_globals=0 header=0 multi_match = 1 STR_VAR resource END						
-		END
-		
-		
+        		
 		COPY_EXISTING_REGEXP GLOB ~%clab%~ ~override~
 			COUNT_2DA_ROWS 20 "nrows"
 			COUNT_2DA_COLS "n_cols"

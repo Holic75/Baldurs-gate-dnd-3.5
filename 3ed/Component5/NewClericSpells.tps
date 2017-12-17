@@ -142,6 +142,34 @@
 			ADD_SPELL "override/rgspb03.spl" 1  3 CLERIC_CAUSE_MEDIUM_WOUNDS			
 	END
 		
-		
+
+    // mass cure moderate wounds - medium and critical
+    
+    COPY ~3ed/Spells/MassCure/MSCURE1C.BAM~ ~override~
+    COPY ~3ed/Spells/MassCure/MSCURE2C.BAM~ ~override~
+    COPY ~3ed/Spells/MassCure/MSCURE1B.BAM~ ~override~
+    COPY ~3ed/Spells/MassCure/MSCURE2B.BAM~ ~override~
+    
+    COPY_EXISTING ~SPPR514.SPL~  ~override/MSCURE1.SPL~
+        WRITE_LONG 0x0034 6 //spell level
+        WRITE_ASCII 0x003a ~MSCURE1C~ #8 //spellbook icon
+        WRITE_BYTE 0x0021 0b10000000 //remove from cleric spell list
+        LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = 3 END
+        LPF ALTER_SPELL_HEADER STR_VAR icon = ~MSCURE1B~ END
+		SAY NAME1 @215
+		SAY UNIDENTIFIED_DESC @216
+		ADD_SPELL "override/MSCURE1.SPL" 1  6 CLERIC_MASS_CURE_MEDIUM        
+    
+    // mass cure critical wounds
+    
+    COPY_EXISTING ~SPPR514.SPL~  ~override/MSCURE2.SPL~
+        WRITE_LONG 0x0034 7 //spell level
+        WRITE_ASCII 0x003a ~MSCURE2C~ #8 //spellbook icon
+        WRITE_BYTE 0x0021 0b10000000 //remove from cleric spell list
+        LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = 5 END
+        LPF ALTER_SPELL_HEADER STR_VAR icon = ~MSCURE2B~ END
+		SAY NAME1 @217
+		SAY UNIDENTIFIED_DESC @218
+		ADD_SPELL "override/MSCURE2.SPL" 1  7 CLERIC_MASS_CURE_CRITICAL    
 	
 			

@@ -2,7 +2,7 @@
 
 BACKUP ~3ed/backup~
 AUTHOR ~denis.holic@gmail.com~
-VERSION ~v2.05~
+VERSION ~v2.06~
 
 
 ALWAYS
@@ -36,6 +36,7 @@ BEGIN @1
 	INCLUDE ~3ed/UPDATE_TLK_ENTRIES.tph~
 	INCLUDE ~3ed/CHANGE_SPELL_PROPERTIES.tph~
     INCLUDE ~3ed/GET_SPELL_EFFECT_VALUES.tph~
+    INCLUDE ~3ed/TRANSFER_PROTECTION_FROM_DISPLAY_STRING.tph~
 
 	
 	COPY ~3ed/Core/Clab~ ~override~ 
@@ -49,7 +50,7 @@ BEGIN @1
     
     ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
     
-        COPY ~3ed/Core/Proficiencies/Bg2~ ~override~  //copy proficiency ui (up to 7 slots
+        COPY ~3ed/Core/Proficiencies/Bg2~ ~override~  //copy proficiency ui (up to 7 slots)
     END
 				
 	COPY ~3ed/Core/ThiefSkill~ ~override~ 
@@ -293,7 +294,8 @@ INCLUDE ~3ed/UPDATE_SPELLFUSED_WARDEN_SCHOOLS.tph~
 INCLUDE ~3ed/ADD_PROTECTION_REMOVALS.tph~
 INCLUDE ~3ed/ADD_PROTECTION_REMOVALS_SPELLFUSED_WARDEN_SCHOOLS.tph~
 INCLUDE ~3ed/ADD_PROTECTION_REMOVALS_PRIEST_DOMAIN.tph~
-INCLUDE ~3ed/ADD_PROTECTION_REMOVALS_ASSASIN_SPELLS.tph~
+INCLUDE ~3ed/ADD_PROTECTION_REMOVALS_MINOR_SPELLCASTING.tph~
+INCLUDE ~3ed/CREATE_MINOR_SPELLCASTING.tph~
 
 WITH_TRA ~%LANGUAGE%\Spells.tra~ BEGIN
 	
@@ -306,7 +308,18 @@ WITH_TRA ~%LANGUAGE%\Spells.tra~ BEGIN
    
 	INCLUDE ~3ed/Component5/SorcBloodlines.tps~ 
   
-	INCLUDE ~3ed/Component5/AssasinSpells.tps~ 
+    
+    COPY ~3ed/Spells/MinorSpellcasting/Bam~ ~override~ //icons for minor spellcasting
+    
+	COPY ~3ed/Classes/Assassin/Spells/SpellList~ ~override~ //spel list for assasin   
+    LAF CREATE_MINOR_SPELLCASTING INT_VAR par1 = 128 LabelStart = 1200  
+                                  STR_VAR  SpellmapFile = ~3ed/Classes/Assassin/Spells/SPELLMAP.2DA~ SpellPrefix = ~ASN~  clab = ~CLABTH02\.2DA~ END
+                                  
+                                  
+	COPY ~3ed/Classes/Hexblade/Spells/SpellList~ ~override~ //spel list for assasin   
+    LAF CREATE_MINOR_SPELLCASTING INT_VAR par1 = 132 LabelStart = 1210  
+                                  STR_VAR  SpellmapFile = ~3ed/Classes/Hexblade/Spells/SPELLMAP.2DA~ SpellPrefix = ~HXB~  clab = ~CLABFI03\.2DA~ END
+
   
 	INCLUDE ~3ed/Component5/SpellfusedWardenSpells.tps~ 
 END	

@@ -41,14 +41,46 @@
     
         //fix low hp (that npc do not die because of low const)
     
-        READ_SHORT 0x0024 CurHp
-        READ_SHORT 0x0026 MaxHp
+        READ_BYTE 0x023d Const     
     
-        PATCH_IF (MaxHp<5) BEGIN
-        
-            WRITE_SHORT 0x0024 5
-            WRITE_SHORT 0x0026 5
+        PATCH_IF (Const<10) BEGIN       
+            WRITE_BYTE 0x023d  10
         END
+        
+        
+        //put protections from sneak attack based and posion, slay, kill on 3.5
+        
+        SET race_dragon_id  = IDS_OF_SYMBOL ( ~Race~ ~DRAGON~)
+        SET race_golem_id  = IDS_OF_SYMBOL ( ~Race~ ~GOLEM~)
+        SET race_elemental_id  = IDS_OF_SYMBOL ( ~Race~ ~ELEMENTAL~)
+        SET race_slime_id  = IDS_OF_SYMBOL ( ~Race~ ~SLIME~)
+        SET undead_id  = IDS_OF_SYMBOL ( ~General~ ~UNDEAD~)
+        
+        READ_BYTE 0x0271 general_id
+        READ_BYTE 0x0272 race_id
     
+        PATCH_IF (race_id == race_dragon_id) BEGIN //remove backstab immunity from dragons
+            LPF DELETE_EFFECT INT_VAR match_opcode = 292 END           
+        END
+        
+        PATCH_IF (race_id == race_golem_id OR race_id == race_elemental_id OR general_id == undead_id) BEGIN //add backstab immunity
+            LPF DELETE_EFFECT INT_VAR match_opcode = 292 END   
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 292 timing = 1 parameter2 = 1  END 
+        END
+        
+        PATCH_IF (race_id == race_golem_id OR race_id == race_elemental_id OR general_id == undead_id OR race_id == race_slime_id) BEGIN //add immunity against poison, kill and slay
+            LPF DELETE_EFFECT INT_VAR match_opcode = 101 match_parameter2 = 13 END   //kill
+            LPF DELETE_EFFECT INT_VAR match_opcode = 101 match_parameter2 = 25 END   //poison
+            LPF DELETE_EFFECT INT_VAR match_opcode = 101 match_parameter2 = 55 END   //slay
+            
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 101 target = 1 timing = 9 parameter2 = 13  END 
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 101 target = 1 timing = 9 parameter2 = 25  END 
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 101 target = 1 timing = 9 parameter2 = 55  END 
+            
+            //add immunity against swashbuckler strikes
+            
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource=~CRITSTR~  END 
+            LPF ADD_CRE_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource=~CRITCON~  END 
+        END
 
     

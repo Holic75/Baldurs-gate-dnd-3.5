@@ -157,7 +157,7 @@
 			SET Color = 87*256+54*256*256+0*256*256*256 
 			LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 0 - 1 END
 			LPF ALTER_SPELL_HEADER INT_VAR speed = 2 target = 1 END	
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 50 target = 2 power = 2 parameter1 = Color parameter2 = 25*256*256 timing = 0 resist_dispel = 4  duration =2 savingthrow = 1 END
+			LPF ADD_SPELL_EFFECT INT_VAR opcode = 50 target = 2 power = 2 parameter1 = Color parameter2 = 25*256*256 timing = 0 resist_dispel = 4  duration =2 savingthrow = 4 END
 			LPF ADD_SPELL_EFFECT INT_VAR opcode = 142 target = 2 power = 2 parameter2 = 13 timing = 0 resist_dispel = 1  duration =30 savingthrow = 4 END
 			LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 power = 2 parameter1 = GhoulStrRef timing = 1 resist_dispel = 1  savingthrow = 4 END
 			LPF ADD_SPELL_EFFECT INT_VAR opcode = 141 target = 2 power = 2 parameter2 = 1 timing = 1 resist_dispel = 1  savingthrow = 4 END
@@ -421,8 +421,8 @@
 		END
 		
 		FOR (i = 1; i<=20;i=i+1) BEGIN
-			LPF ALTER_SPELL_HEADER INT_VAR min_level = i END
-			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=12 parameter1=2*(i - 2*(i/2)) dicesize = 8 dicenumber = (i/2) END
+			LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = i END
+			LPF ALTER_SPELL_EFFECT INT_VAR header = i match_opcode=12 parameter1=2*(i - 2*(i/2)) dicesize = 8 dicenumber = (i/2) END
 		END
 		
 		READ_LONG 0x0050 ~descr_strref~
@@ -648,6 +648,45 @@
 	
 	END
     
+    
+    //update regeneration   
+    COPY_EXISTING ~SPPR711.SPL~  ~override~
+        WRITE_BYTE 0x0021 0b00000000 //allow everyone to use it       
+        FOR (i=2;i<=30;i=i+1) BEGIN
+            SET header_type = 0 - 1
+            LPF DELETE_SPELL_HEADER INT_VAR header_type min_level = i END
+        END
+        
+      
+        LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 60 END
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 98 duration_high = 60 parameter1 = 2 parameter2 = 1 END
+        
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 power =7 target = 2 duration = 1 timing = 0 insert_point = 0 STR_VAR resource = ~SPPR711~ END //remove prev cast effects 
+        
+        READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @060
+        
+    
+   
+    
+    ACTION_IF NOT (~%GameId%~ STR_EQ  ~Iwd~) BEGIN
+    
+    //fix saves for creeping doom
+        COPY_EXISTING ~FLPR717A.SPL~ ~override~
+            LPF ALTER_SPELL_EFFECT INT_VAR savingthrow = 0 END
+            
+        COPY_EXISTING ~SPPR717.SPL~ ~override~ 
+            SET savebonus = 0 - 2 
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 146 opcode = 326 parameter1 = 0 parameter2 = 0 savingthrow = 1 savebonus  END
+    END
+    
+    
+    //modify silence to have -2 save
+     COPY_EXISTING ~SPPR211.SPL~ ~override~
+        LPF ALTER_SPELL_EFFECT_EX INT_VAR savebonus = 0 - 2 END
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset = 0x0050  STR_VAR substring_to_replace = ~-5~ new_substring  = ~-2~ END
+        
+        
     
 /*     //update magic resistance to give incremental bonus
     COPY_EXISTING ~SPPR509.SPL~ ~override~

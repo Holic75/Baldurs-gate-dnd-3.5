@@ -13,7 +13,7 @@ DEFINE_ACTION_FUNCTION ~ADD_PSL_FEAT~ //simple persistent feat
 		COPY ~3ed/Feats/PersistentAbilities/Simple/Template/PSLBN.EFF~ ~override\%ability_name%BN.EFF~
 		WRITE_EVALUATED_ASCII 0x0030 ~%resource%~ #8
 		COPY ~3ed/Feats/PersistentAbilities/Simple/Template/PSLFT.SPL~ ~override\%ability_name%FT.SPL~
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326  STR_VAR resource END // initial effect application
+		//LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326  STR_VAR resource END // initial effect application
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=272  STR_VAR resource END //apply every n seconds
 		
 	END

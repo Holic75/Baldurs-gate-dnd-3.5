@@ -69,7 +69,7 @@ At level 10 they receive a -2 penalty instead, which increases further to -4 at 
 	@023=~Song of Requiem~
 	@024=~Song of Requiem
 
-This epic performance drains the very life force of the bard's enemies causing them to suffer 1 point of damage per level of bard. ~
+This epic performance drains the very life force of the bard's enemies causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds. ~
 
 	@031=~Bardic Performance~
 	@032=~Bardic Performance
@@ -107,7 +107,7 @@ Deadly Performance
 A bard of 20th level or higher can use <PRO_HISHER> performance to cause one enemy to die from joy or sorrow. To be affected, the target must be able to see and hear the bard perform and be within 30 feet. The target can make a Saving Throw vs. Spell (-1 penalty at level 25, and -2 at level 30) to negate the effect. If a creature’s Saving Throw succeeds, the target is paralyzed for 2 rounds. If a creature’s Saving Throw fails, it dies.
 
 Song of Requiem
-A bard of 24th level or higher can use this epic performance to drain the very life force of <PRO_HISHER> all enemies within 30 feet, causing them to suffer 1 point of damage per level of bard.~
+A bard of 24th level or higher can use this epic performance to drain the very life force of <PRO_HISHER> all enemies within 30 feet, causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds.~
 
 	@033=~Bardic Performance
 
@@ -121,7 +121,7 @@ Inspire Heroics
 A blade or skald of 15th level or higher can inspire tremendous heroism in all <PRO_HISHER> allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the bard. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds. These bonuses increase to +5 at level 24, and +6 at level 30.
 
 Song of Requiem
-A blade or skald of 24th level or higher can use this epic performance to drain the very life force of <PRO_HISHER> all enemies within 30 feet, causing them to suffer 1 point of damage per level of bard.~
+A blade or skald of 24th level or higher can use this epic performance to drain the very life force of <PRO_HISHER> all enemies within 30 feet, causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds.~
 
 	@034=~Bardic Performance
 
@@ -137,4 +137,4 @@ Frightening Tune
 A jester of 14th level or higher can use <PRO_HISHER> performance to cause fear in <PRO_HISHER> enemies. To be affected, an enemy must be able to hear the bard perform and be within 30 feet. Each enemy within range can make a Saving Throw vs. Spell with -4 (-5 at level 24, -6 at level 30) penalty to negate the effect. If the Saving Throw fails, the target becomes panicked for next 4 rounds.
 
 Song of Requiem
-A jester of 24th level or higher can use this epic performance to drain the very life force of <PRO_HISHER> all enemies within 30 feet, causing them to suffer 1 point of damage per level of bard.~
+A jester of 24th level or higher can use this epic performance to drain the very life force of <PRO_HISHER> all enemies within 30 feet, causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds.~

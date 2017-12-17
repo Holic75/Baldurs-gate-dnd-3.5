@@ -82,11 +82,11 @@ DEFINE_ACTION_FUNCTION ~ADD_PSBP_FEAT~ //ability bonus/penalty feat
 			
 		COPY ~3ed/Feats/PersistentAbilities/StatBonusPenalty/Template/PSBPFT.SPL~ ~override\%ability_name%FT.SPL~
 			SPRINT resource EVALUATE_BUFFER ~%ability_name%BN~
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=326  target = 2 timing = 0 duration = 1 STR_VAR resource END // initial bonus application
+			//LPF ADD_SPELL_EFFECT INT_VAR opcode=326  target = 2 timing = 0 duration = 1 STR_VAR resource END // initial bonus application
 			LPF ADD_SPELL_EFFECT INT_VAR opcode=272  target = 2 parameter1 = 1 parameter2 = 3 timing = 9 duration = 1 STR_VAR resource END //apply bonus every n seconds
 			
 			SPRINT resource EVALUATE_BUFFER ~%ability_name%PE~
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=326  target = 2 timing = 0 duration = 1 STR_VAR resource END // initial penalty application
+			//LPF ADD_SPELL_EFFECT INT_VAR opcode=326  target = 2 timing = 0 duration = 1 STR_VAR resource END // initial penalty application
 			LPF ADD_SPELL_EFFECT INT_VAR opcode=272  target = 2 parameter1 = 1 parameter2 = 3 timing = 9 duration = 1 STR_VAR resource END //apply penalty every n seconds
 			
 			SPRINT resource EVALUATE_BUFFER ~%ability_name%RB~

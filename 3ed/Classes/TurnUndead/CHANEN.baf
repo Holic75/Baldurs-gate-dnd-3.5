@@ -1,11 +1,12 @@
 IF
 	PartyRested()
-	OR(6)
+	OR(7)
 		Class(Player%player_id%,PALADIN)
 		Class(Player%player_id%,CLERIC)
 		Class(Player%player_id%,CLERIC_THIEF)
 		Class(Player%player_id%,FIGHTER_CLERIC)
 		Class(Player%player_id%,CLERIC_MAGE)
+        Class(Player%player_id%,CLERIC_RANGER)
         Class(Player%player_id%,FIGHTER_MAGE_CLERIC)
 		
 	!Kit(Player%player_id%,INQUISITOR)
@@ -25,6 +26,9 @@ IF
 		LevelGT(Player%player_id%,1)
 	OR(2)
 		!Class(Player%player_id%,FIGHTER_MAGE_CLERIC)
+		LevelGT(Player%player_id%,1)
+	OR(2)
+		!Class(Player%player_id%,CLERIC_RANGER)
 		LevelGT(Player%player_id%,1)
      
 THEN

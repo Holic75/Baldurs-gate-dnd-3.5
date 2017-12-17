@@ -15,7 +15,10 @@
 	END
 	
 	PRINT "Processing assasin spells..."	
-	LAF ADD_PROTECTION_REMOVALS_ASSASIN_SPELLS END
+	LAF ADD_PROTECTION_REMOVALS_MINOR_SPELLCASTING STR_VAR Spellmap =~3ed/Classes/Assassin/Spells/SPELLMAP.2DA~ END
+    
+    PRINT "Processing hexblade spells..."	
+	LAF ADD_PROTECTION_REMOVALS_MINOR_SPELLCASTING STR_VAR Spellmap =~3ed/Classes/Assassin/Spells/SPELLMAP.2DA~ END
 	
 	PRINT "Processing new spells..."
 	ACTION_PHP_EACH extended_spell_list AS new_spell=>original_spell BEGIN
