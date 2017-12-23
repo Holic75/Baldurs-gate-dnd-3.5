@@ -159,7 +159,7 @@ NOTE: Gnomes can choose this class, but become Fighter/Illusionist/Clerics by de
 
 Advantages:
 – Hit Die: d12
-– Bonus Feats: at level 1 Berserker receives Warfare (1):Power Attack, at level 3 <PRO_HESHE> receives Warfare (2):Cleave.
+– Bonus Feats: at level 1 Berserker receives for free Warfare (1):Power Attack, at level 4 <PRO_HESHE> receives Warfare (2):Cleave and finally Warfare (3):Great Fortitude at level 8.
 – May use Rage ability once per day. Gains one use at level 1, level 4 and every 4 levels thereafter.
 
 RAGE: The enraged state lasts for 6 rounds. While enraged, a Berserker gains a bonus of +2 to <PRO_HISHER> attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
@@ -169,10 +169,11 @@ At 16th level the attack and damage rolls bonus increases to +5 and physical dam
 – 8th level: Endless Berserk: Berserker can prolong <PRO_HISHER> rage if the combat lasts too long, while enraged <PRO_HESHE> can spend an extra use of <PRO_HISHER> Rage to prolong it for a new full duration, <PRO_HESHE> does not feel the tiring effects until the end of this new Rage, <PRO_HESHE> can continue to prolong the Rage as long as <PRO_HESHE> has Rages.
 – 12th level: Improved Power Attack: Power attack damage bonus is increased to +5.
 – 16th level: Supreme Power Attack:  Power attack damage bonus is further increased to +6.
-– 18th level: Immortal Berserker: The hit points of enraged Berserker can not be reduced below 1, but at the end of Rage Berserker receives 1 point of damage which can kill <PRO_HIMHER> if <PRO_HESHE> has only 1 hit point.
+– 18th level: Immortal Berserker: The hit points of enraged Berserker can not be reduced below 1, but at the end of Rage Berserker receives 15 points of damage which can kill <PRO_HIMHER> if <PRO_HESHE> has fewer hit points.
 Note: although <PRO_HISHER> hit points can not be reduced below 1, Berserker can still be killed by spells like Slay Living, Disintegrate and others.
+– 20th level: Tireless Berserk: Berserker is no longer winded after rage.
 – 20th level: Last Berserk: Berserker gains one use per day of special form of Rage called Last Berserk. It has the same effect as normal Rage and Berserker also receives +10 damage bonus on damage rolls (to a total of +15). However it can not be prolonged and after it ends Berserker can no longer use Rage for next 8 hours.
-– Gets one bonus feat at levels 22 and 28.
+– Gets one bonus feat at levels 22, 25 and 28.
 
 Disadvantages:
 – Becomes winded after berserking: -2 penalty to Armor Class, to-hit rolls, and damage rolls.
@@ -1015,7 +1016,8 @@ A jester of 24th level or higher can use this epic performance to drain the very
 
 Disadvantages:
 – Smaller variety of available Bardic performance types and less uses per day.
-– May only use weapons a wizard can (daggers, quarterstaves, darts, slings, crossbows).~
+– May only use weapons a wizard can (daggers, quarterstaves, darts, slings, crossbows).
+– May only wear light armor.~
 //-------------------------------------------------------------------------------------------------//
 @047=~SORCERER: Sorcerers are practitioners of magic who were born with the innate ability to cast spells. It is thought that the blood of some powerful creature flows through their veins; perhaps they are the spawn of the gods themselves, or even dragons walking in humanoid form. Regardless, the Sorcerer's magic is intuitive rather than logical. They know fewer spells than Mages, and acquire spells more slowly, but they can cast spells more often and have no need to select and prepare spells ahead of time. Sorcerers cannot specialize in magic the way Mages do. Other than these differences, a Sorcerer is very similar to a Mage.
 

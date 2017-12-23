@@ -17,7 +17,7 @@
 
 
 
-# Baldurs-gate-dnd-3.5 v2.06
+# Baldurs-gate-dnd-3.5 v2.07
 This is a WeiDu mod for BG:Enhanced edition and BG2:Enhanced edition  that changes 2ed ADnD rules to DnD 3.5 with some elements taken from Pathfinder.  
 It changes game mechanics (i.e. classes, spells, abilities, etc...) to that of 3.5 edition (to the extent that game engine allows).
 
@@ -434,7 +434,7 @@ This ability allows the warrior to temporarily tap a great inner strength and fi
 ### BERSERKER
 Advantages:
 – Hit Die: d12  
-– Bonus Feats: at level 1 Berserker receives Warfare (1):Power Attack, at level 3 she receives Warfare (2):Cleave.  
+– Bonus Feats: at level 1 Berserker receives Warfare (1):Power Attack, at level 4 she receives Warfare (2):Cleave and finally at level 8 - Warfare (3):Great Fortitude.    
 – May use Rage ability once per day. Gains one use at level 1, additional uses at level 4 and every 4 levels thereafter.
 ```
 RAGE: The enraged state lasts for 6 rounds. While enraged, a Berserker gains a bonus of +2 to her attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to her Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
@@ -444,10 +444,11 @@ At 16th level the attack and damage rolls bonus increases to +5 and physical dam
 – 8th level: Endless Berserk: Berserker can prolong her rage if the combat lasts too long, while enraged she can spend an extra use of her Rage to prolong it for a new full duration, she does not feel the tiring effects until the end of this new Rage, she can continue to prolong the Rage as long as she has Rages.  
 – 12th level: Improved Power Attack: Power attack damage bonus is increased to +5.  
 – 16th level: Supreme Power Attack:  Power attack damage bonus is further increased to +6.  
-– 18th level: Immortal Berserker: The hit points of enraged Berserker can not be reduced below 1, but at the end of Rage Berserker receives 1 point of damage which can kill her if she has only 1 hit point.   
+– 18th level: Immortal Berserker: The hit points of enraged Berserker can not be reduced below 1, but at the end of Rage Berserker receives 15 points of damage which can kill her if she has fewer hit points.   
 Note: although her hit points can not be reduced below 1, Berserker can still be killed by spells like Slay Living, Disintegrate and others.  
+– 20th level: Tireless Berserk: Berserker is no longer winded after Rage.  
 – 20th level: Last Berserk: Berserker gains one use per day of special form of Rage called Last Berserk. It has the same effect as normal Rage and Berserker also receives +10 damage bonus on damage rolls (to a total of +15). However it can not be prolonged and after it ends Berserker can no longer use Rage for next 8 hours.    
-– Gets one bonus feat at levels 22 and 28.
+– Gets one bonus feat at levels 22, 25 and 28.
 
 Disadvantages:  
 – Becomes winded after berserking: -2 penalty to Armor Class, to-hit rolls, and damage rolls.  
@@ -457,7 +458,7 @@ Disadvantages:
 – May not wear armor heavier than splint mail.  
 – Alignment restricted to any non-lawful.  
 
-### HEXBLADE (Replaces WIZARDSLAYER)
+### HEXBLADE (replaces WIZARDSLAYER)
 Advantages:  
 – Receives a bonus to all saving throws for every 2 points of Charisma above 9 (i.e +1 at 11, +2 at 13, etc) and penalty for every 2 points below 10.  
 – May use Hexblade's Curse innate ability. Gets a number of uses per day equal to 1 + 1 per 2 points of Charisma above 10 at level 1. Gets one additional use per day every 4 levels thereafter.  
@@ -1117,6 +1118,7 @@ Song of Requiem (starting from level 24)
 Disadvantages:  
 – Smaller variety of available Bardic performance types and less uses per day.  
 – May only use weapons a wizard can (daggers, quarterstaves, darts, slings, crossbows).  
+– May only wear light armor.    
 
 ### SORCERER
 CLASS FEATURES:  
@@ -2338,7 +2340,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Edwin - Conjurer (10/ 12/ 14/ 18/ 9 / 10)
 #### Viconia - Cleric/Thief (10/ 18/ 10/ 16/ 14/ 14)
 #### Imoen - Fighter/Mage/Thief (9/ 16/ 12/ 16/ 11/ 10)  
-#### Yoshimo - Fighter/Thief (14/ 14/ 14/ 16/ 10/ 10)
+#### Yoshimo - Fighter/Thief (14/ 16/ 14/ 14/ 10/ 10)
 #### Valygar - Stalker (14/ 16/ 14/ 10/ 14/ 10)
 #### Nalia - Bard (9/ 16/ 12/ 14/ 9/ 16)
 #### Mazzy - Kensai (12/ 18/ 14/ 10/ 14/ 10)

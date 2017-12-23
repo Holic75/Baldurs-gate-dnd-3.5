@@ -11,24 +11,31 @@ DEFINE_ACTION_FUNCTION ~ADD_BONUS_FEATS~
 		feat_type_file=~~
 		caption=~~
 	BEGIN
+    
+        OUTER_SPRINT feat EVALUATE_BUFFER ~%feat_type_file%~
 		ACTION_IF NOT (~%mask_file%~ STRING_EQUAL ~~) BEGIN
 			COPY ~%mask_file%~ ~override/%caption%.SPL~ //mask 
 				SPRINT resource EVALUATE_BUFFER ~%feat_type_file%~
 				LPF  ALTER_SPELL_EFFECT STR_VAR resource END
 				SPRINT resource EVALUATE_BUFFER ~%caption%~ 
 				LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=206 STR_VAR resource END //if mask protects from itself it should be changed to  caption.SPL 
-		END 
+            
+            OUTER_SPRINT feat EVALUATE_BUFFER ~%caption%~
+		END         
+        ACTION_IF (~%feat_type_file%~ STRING_EQUAL ~~) BEGIN
+            OUTER_SPRINT feat EVALUATE_BUFFER ~%caption%~        
+        END
 		
 
 	
-COPY_EXISTING_REGEXP GLOB ~%clab%~ ~override~
+    COPY_EXISTING_REGEXP GLOB ~%clab%~ ~override~
 		COUNT_2DA_ROWS 20 "nrows"
 		COUNT_2DA_COLS "ncols"
 		SPRINT clab_line EVALUATE_BUFFER ~%caption%~
 
 		PATCH_IF (mask=0) BEGIN //defined by min_level, max_level, add_at_level1, d_level
 			PATCH_IF (add_at_level1) BEGIN
-				SPRINT clab_line EVALUATE_BUFFER ~%clab_line% AP_%caption%~
+				SPRINT clab_line EVALUATE_BUFFER ~%clab_line% AP_%feat%~
 			END ELSE BEGIN
 				SPRINT clab_line EVALUATE_BUFFER ~%clab_line% ****     ~
 			END
@@ -43,7 +50,7 @@ COPY_EXISTING_REGEXP GLOB ~%clab%~ ~override~
 		
 			FOR (i=min_level;i<=max_level;i=i+1) BEGIN
 				PATCH_IF (d_level*((i - min_level)/d_level) = (i - min_level)) BEGIN
-					SPRINT clab_line EVALUATE_BUFFER ~%clab_line% AP_%caption%~
+					SPRINT clab_line EVALUATE_BUFFER ~%clab_line% AP_%feat%~
 				
 				END 
 				ELSE BEGIN
@@ -60,7 +67,7 @@ COPY_EXISTING_REGEXP GLOB ~%clab%~ ~override~
 			FOR (i=1;i<=ncols;i=i+1) BEGIN
 				
 				PATCH_IF (k BAND mask) BEGIN
-					SPRINT clab_line EVALUATE_BUFFER ~%clab_line% AP_%caption%~				
+					SPRINT clab_line EVALUATE_BUFFER ~%clab_line% AP_%feat%~				
 				END
 				ELSE BEGIN
 				    SPRINT clab_line EVALUATE_BUFFER ~%clab_line% ****     ~
@@ -73,3 +80,4 @@ COPY_EXISTING_REGEXP GLOB ~%clab%~ ~override~
 		
 		INSERT_2DA_ROW nrows 20 ~%clab_line%~	
 	END
+    

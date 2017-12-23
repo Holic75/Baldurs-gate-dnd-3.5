@@ -866,32 +866,38 @@ END
 	 
 		OUTER_SET StrRefProt = RESOLVE_STR_REF(@003)
 		COPY_EXISTING ~SPCL321.SPL~ ~override/LSTBRSK.SPL~
+              WRITE_ASCII 0x003a ~LSTBRSK~ #8 //spellbook icon
+              LPF ALTER_SPELL_HEADER STR_VAR icon = ~LSTBRSK~ END
 			  SAY NAME1 @001
 			  SAY UNIDENTIFIED_DESC @002
 			  LPF ALTER_SPELL_EFFECT INT_VAR duration_high=36 END //duration to 6 rounds
-			  LPF ADD_SPELL_EFFECT INT_VAR  insert_point = 0 opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPCL321~ END
-			  LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode=208 parameter1 = 1 timing = 0 duration=36 END //min hp to 1 
-			  LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode=12 parameter1 = 1 parameter2 = 134217728 timing = 3 duration=37 END //damage 1 second after rage 			  
+			  
+			  LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode=208 parameter1 = 1 timing = 0 duration=35 END //min hp to 1 		  
 			  LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=206 duration=2400 parameter1 = StrRefProt END //restore duration of inability to rage	
 			  LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 73 parameter1 = 15 END //damage
 			  LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 278 parameter1 = 5 END //thac0
+              LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 146 END //remove fatigue
+              LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 18 END //hp bonus
 			  //resistances
-			  LPF ADD_SPELL_EFFECT INT_VAR opcode = 86 parameter1 = 30 target = 1 duration = 36 END 
-			  LPF ADD_SPELL_EFFECT INT_VAR opcode = 87 parameter1 = 30 target = 1 duration = 36 END 
-			  LPF ADD_SPELL_EFFECT INT_VAR opcode = 88 parameter1 = 30 target = 1 duration = 36 END 
-			  LPF ADD_SPELL_EFFECT INT_VAR opcode = 89 parameter1 = 30 target = 1 duration = 36 END 
-			  
+			  LPF ADD_SPELL_EFFECT INT_VAR opcode = 86 parameter1 = 30 target = 1 duration = 36 insert_point = 0 END 
+			  LPF ADD_SPELL_EFFECT INT_VAR opcode = 87 parameter1 = 30 target = 1 duration = 36 insert_point = 0 END 
+			  LPF ADD_SPELL_EFFECT INT_VAR opcode = 88 parameter1 = 30 target = 1 duration = 36 insert_point = 0 END 
+			  LPF ADD_SPELL_EFFECT INT_VAR opcode = 89 parameter1 = 30 target = 1 duration = 36 insert_point = 0 END 
+              LPF ADD_SPELL_EFFECT INT_VAR  insert_point = 0 opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPCL321~ END
+			  LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=12 parameter2 = 0 END //damage after berserk
 
 
 	 //berserker rage update
 	 COPY_EXISTING ~SPCL321.SPL~ ~override~
 		LPF ALTER_SPELL_EFFECT INT_VAR duration_high=36 END //duration to 6 rounds
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 206 duration = 37 END //fatigue
+        //resistances
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 86 parameter1 = 10 target = 1 duration = 36 insert_point = 0 END 
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 87 parameter1 = 10 target = 1 duration = 36 insert_point = 0 END 
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 88 parameter1 = 10 target = 1 duration = 36 insert_point = 0 END 
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 89 parameter1 = 10 target = 1 duration = 36 insert_point = 0 END 
 		LPF ADD_SPELL_EFFECT INT_VAR  insert_point = 0 opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPCL321~ END
-			//resistances
-			  LPF ADD_SPELL_EFFECT INT_VAR opcode = 86 parameter1 = 10 target = 1 duration = 36 END 
-			  LPF ADD_SPELL_EFFECT INT_VAR opcode = 87 parameter1 = 10 target = 1 duration = 36 END 
-			  LPF ADD_SPELL_EFFECT INT_VAR opcode = 88 parameter1 = 10 target = 1 duration = 36 END 
-			  LPF ADD_SPELL_EFFECT INT_VAR opcode = 89 parameter1 = 10 target = 1 duration = 36 END 
+
 		LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
 		LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 8 END
 			  //resistances
@@ -901,8 +907,9 @@ END
 			  LPF ALTER_SPELL_EFFECT INT_VAR header = 2 match_opcode = 89 parameter1 = 20 END
 			  LPF ALTER_SPELL_EFFECT INT_VAR header = 2 match_opcode = 73 parameter1 = 3 END //damage
 			  LPF ALTER_SPELL_EFFECT INT_VAR header = 2 match_opcode = 278 parameter1 = 3 END //thac0
-			  LPF DELETE_EFFECT INT_VAR header = 2 match_opcode = 206 END //remove protection from spell
+			 
 		
+        
 		LPF ADD_SPELL_HEADER INT_VAR copy_header = 2 END
 		LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 16 END
 			  //resistances
@@ -915,12 +922,30 @@ END
 		
 		LPF ADD_SPELL_HEADER INT_VAR copy_header = 3 END
 			LPF ALTER_SPELL_HEADER INT_VAR header = 4 min_level = 18 END		
-			  LPF ADD_SPELL_EFFECT INT_VAR header = 4 target = 1 opcode=208 parameter1 = 1 timing = 0 duration=36 END //min hp to 1 
-			  LPF ADD_SPELL_EFFECT INT_VAR header = 4 target = 1 opcode=12 parameter1 = 1 parameter2 = 134217728 timing = 3 duration=37 END //damage 1 second after rage 
+			  LPF ADD_SPELL_EFFECT INT_VAR header = 4 target = 1 opcode=208 parameter1 = 1 timing = 0 duration=35 END //min hp to 1 
+              LPF ALTER_SPELL_EFFECT INT_VAR header = 4 match_opcode=12 parameter2 = 0 END //damage after berserk 
 
-		READ_LONG 0x0050 ~descr_strref~
-		STRING_SET_EVALUATE %descr_strref% @004			  
-	 END
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = 4 END
+            LPF ALTER_SPELL_HEADER INT_VAR header = 5 min_level = 20 END
+        
+       	READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @004		
+            
+    COPY_EXISTING ~SPCL321.SPL~ ~override~
+        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 18 END //hp bonus
+        LPF DELETE_EFFECT INT_VAR header = 0 check_headers = 1 match_opcode = 12 END //remove damage
+        LPF DELETE_EFFECT INT_VAR header = 1 check_headers = 1 match_opcode = 12 END //remove damage
+        LPF DELETE_EFFECT INT_VAR header = 2 check_headers = 1 match_opcode = 12 END //remove damage
+        LPF DELETE_EFFECT INT_VAR header = 0 check_headers = 1 match_opcode = 139 END //remove string damage
+        LPF DELETE_EFFECT INT_VAR header = 1 check_headers = 1 match_opcode = 139 END //remove string damage
+        LPF DELETE_EFFECT INT_VAR header = 2 check_headers = 1 match_opcode = 139 END //remove string damage
+        LPF DELETE_EFFECT INT_VAR header = 1 check_headers = 1 match_opcode = 206 END //remove protection from spell
+        LPF DELETE_EFFECT INT_VAR header = 2 check_headers = 1 match_opcode = 206 END //remove protection from spell
+        LPF DELETE_EFFECT INT_VAR header = 3 check_headers = 1 match_opcode = 206 END //remove protection from spell
+        LPF DELETE_EFFECT INT_VAR header = 4 check_headers = 1 match_opcode = 206 END //remove protection from spell
+        LPF DELETE_EFFECT INT_VAR header = 4 check_headers = 1 match_opcode = 146 END //remove fatigue
+	  
+	END
 			  		
 	 //---------------------------jester-------------------------------
 	 //mind shield

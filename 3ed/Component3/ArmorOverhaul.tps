@@ -9,6 +9,7 @@
     
     OUTER_SPRINT MediumShieldStr @51
     OUTER_SPRINT LargeShieldStr @52
+    OUTER_SPRINT AnomenShieldStr @53
     OUTER_SPRINT AcShieldStr @50
     OUTER_SPRINT THAC0ShieldStr @500
 	
@@ -171,7 +172,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 				
   END ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~%HideArmorStr%~) BEGIN //Hide Armor
   
-	PATCH_IF (~%GameId%~ STR_EQ ~IWD~) BEGIN
+	PATCH_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
 		LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 17 keep_old_string = 0 clear_thief_penalty = 1 string_to_replace_ref_match = 131 string_to_replace_ref = 10 new_string_to_add_ref = 132 END
 	END ELSE BEGIN
 		LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 17 keep_old_string = 0 clear_thief_penalty = 1 string_to_replace_ref_match = 133 string_to_replace_ref = 10 new_string_to_add_ref = 132 END
@@ -196,7 +197,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	
   END 
   
-  ELSE PATCH_IF (~%unid_name%~ STR_EQ ~%MediumShieldStr%~) BEGIN
+  ELSE PATCH_IF (~%unid_name%~ STR_EQ ~%MediumShieldStr%~) OR (~%unid_name%~ STR_EQ ~%AnomenShieldStr%~) BEGIN
   
     LPF GET_SPELL_EFFECT_VALUES INT_VAR header =0 match_opcode = 0 match_parameter2 = 0 RET ac_bonus = parameter1 found = found_match END
           
@@ -320,6 +321,12 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_thief STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~cleric_thief~ END
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_mage STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~cleric_mage~ END
 	
+    
+    //allow jesters only to wear light armors
+    PATCH_IF (category=ArmorCategory) BEGIN
+        LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~bard~  RET usable_by_bard = result END
+        LPF SET_ITEM_USABILITY INT_VAR value = (usable_by_bard AND usable_by_thief) STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~jester~ END
+    END
 	//disallow ninjas to use armor (same as monks)
 	PATCH_IF (NOT usable_by_monk) BEGIN
 		LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~bounty_hunter~ END	

@@ -8,9 +8,12 @@
 	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1000001010000100001000010000 
 						STR_VAR clab=~\(CLABFI03\)\|\(CLABFI05\)\|\(CLABFI06\)\.2DA~ feat_type_file=~FFTCRE~ caption=~FTRBONFT~ END
 						
-//add bonus feats to berzerker, kensai
+//add bonus feats to berzerker
+	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=3 add_at_level1=0 
+						STR_VAR clab=~CLABFI02\.2DA~ feat_type_file=~FFTCRE~ caption=~FTREPCFT~ END
+//add bonus feats to  kensai
 	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=0 
-						STR_VAR clab=~\(CLABFI02\)\|\(CLABFI04\)\.2DA~ feat_type_file=~FFTCRE~ caption=~FTREPCFT~ END
+						STR_VAR clab=~CLABFI04\.2DA~ feat_type_file=~FFTCRE~ caption=~FTREPCFT~ END
 
 //add bonus feats to ftr/cleric every 4 levels and at level 1 till lvl 20, then at level 22, 25 and 28
 	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010001000100010001001

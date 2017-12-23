@@ -67,6 +67,9 @@ DEFINE_ACTION_FUNCTION ~SET_DEFAULT_NPC_STATS~
                                AcNatural = 10 AcEffective = 10 AcMissile = 0 AcCrushing = 0  AcPiercing = 0 AcSlashing = 0
                                Lore = 0 Level1= 0 Level2 = 0 Level3 = 0 THAC0 = 20 RacialEnemy = 151 Class Kit END
     
+    
+            WRITE_SHORT 0x0010  0 //remove all dual classing
+
         EXTEND_TOP ~%ScriptName%.bcs~ ~3ed/Npc/Common/Rejoin.baf~
 				EVALUATE_BUFFER 
                 

@@ -57,8 +57,7 @@
 	@133=~– Open Locks: -10%
 – Find Traps: -10%
 – Pick Pockets: -10%
-– Move Silently: -20%
-– Hide In Shadows: -20%~
+– Move Silently: -20%~
 
 	@132=~– Max Dexterity AC Bonus: 3
 – Arcane Spell Casting Failure: 20%
@@ -143,7 +142,7 @@
 ~
 @51 = ~Medium Shield~
 @52 = ~Large Shield~
-
+@53 = ~Delryn Family Shield~
 
 	@101 = ~– 2 attacks per round~
 	@102 = ~– 3 attacks per round~
