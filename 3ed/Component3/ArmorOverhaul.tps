@@ -121,7 +121,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	WRITE_BYTE 0x0026 14 //str
 	WRITE_BYTE 0x002e 0 //wis
 	WRITE_BYTE 0x0030 0 //con
-	WRITE_SHORT 0x002e 0 //cha
+	WRITE_SHORT 0x0032 0 //cha
 	
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~SHARK3~) OR  (~%SOURCE_RES%~ STR_EQ ~UMHULK~) BEGIN //sahaguin and umberhulk plate armor
   
@@ -181,7 +181,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
  			
   END  ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~%ChainMailStr%~) BEGIN //Chain Mail 
   
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 16  string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 14 END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 16  is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 14 END
 	
   END  ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~%SplintMailStr%~) BEGIN //Splint Mail
   

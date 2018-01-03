@@ -1,5 +1,5 @@
 	
-	COPY_EXISTING_REGEXP GLOB ~.*\.ITM~ ~override~
+COPY_EXISTING_REGEXP GLOB ~.*\.ITM~ ~override~
 	
     PATCH_IF (SOURCE_SIZE > 0x72) BEGIN
     
@@ -70,3 +70,4 @@
 		END
 		
 	END	
+BUT_ONLY

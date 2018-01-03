@@ -2,7 +2,9 @@ DEFINE_PATCH_FUNCTION ~UPDATE_SPELL_SAVES~
 	INT_VAR
 		original_save=0b00001
 	    target_save=0b00001
-		match_opcode=~-1~
+		match_opcode=~-1~        
+        new_save_bonus = 666666
+        ignore_pwr = 1
 	BEGIN
 
 		READ_LONG 0x64 header_block_offset //beginning of extended_headers table
@@ -23,6 +25,7 @@ DEFINE_PATCH_FUNCTION ~UPDATE_SPELL_SAVES~
 		SET relative_effects_offset=0x0020
 		SET relative_n_effects_offset=0x001e
 		SET relative_saves_offset=0x0024
+        SET relative_saves_bonus_offset=0x0028
 		
 		FOR (i=0;i<n_headers;i=i+1) BEGIN
 			SET current_header_offset = header_block_offset+i*header_size
@@ -38,11 +41,20 @@ DEFINE_PATCH_FUNCTION ~UPDATE_SPELL_SAVES~
 				PATCH_IF (match_opcode<0 OR match_opcode=opcode) BEGIN
 					SET current_effect_offset=current_effects_offset + j*effect_size
 					SET saves_offset = current_effect_offset + relative_saves_offset //offset to saves of the current effect
-				
+                    SET saves_bonus_offset = current_effect_offset + relative_saves_bonus_offset //offset to saves bonus of the current effect
+                    
 					READ_BYTE saves_offset saves		//first byte of saves (actually only first 5 bits containing saves data)
 				
-					PATCH_IF ((saves BAND original_save) OR (saves == original_save)) BEGIN					
-						WRITE_BYTE saves_offset target_save												
+					PATCH_IF ((saves BAND original_save) OR (saves == original_save)) BEGIN		
+                        
+                        PATCH_IF (target_save!=0) BEGIN
+                            WRITE_BYTE saves_offset target_save			
+                        END
+                        
+                        
+                        PATCH_IF (new_save_bonus!=666666) BEGIN
+                            WRITE_LONG saves_bonus_offset new_save_bonus
+                        END
 					END
 					
 				END

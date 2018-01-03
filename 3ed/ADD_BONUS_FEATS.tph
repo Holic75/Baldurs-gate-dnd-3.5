@@ -13,6 +13,7 @@ DEFINE_ACTION_FUNCTION ~ADD_BONUS_FEATS~
 	BEGIN
     
         OUTER_SPRINT feat EVALUATE_BUFFER ~%feat_type_file%~
+               
 		ACTION_IF NOT (~%mask_file%~ STRING_EQUAL ~~) BEGIN
 			COPY ~%mask_file%~ ~override/%caption%.SPL~ //mask 
 				SPRINT resource EVALUATE_BUFFER ~%feat_type_file%~
@@ -21,10 +22,13 @@ DEFINE_ACTION_FUNCTION ~ADD_BONUS_FEATS~
 				LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=206 STR_VAR resource END //if mask protects from itself it should be changed to  caption.SPL 
             
             OUTER_SPRINT feat EVALUATE_BUFFER ~%caption%~
-		END         
+		END  
+
         ACTION_IF (~%feat_type_file%~ STRING_EQUAL ~~) BEGIN
+            OUTER_SPRINT feat_type_file EVALUATE_BUFFER ~%caption%~
             OUTER_SPRINT feat EVALUATE_BUFFER ~%caption%~        
-        END
+        END    
+
 		
 
 	
@@ -64,7 +68,7 @@ DEFINE_ACTION_FUNCTION ~ADD_BONUS_FEATS~
 		END
 		ELSE BEGIN //define by mask
 			SET k=1
-			FOR (i=1;i<=ncols;i=i+1) BEGIN
+			FOR (i=1;i<ncols;i=i+1) BEGIN
 				
 				PATCH_IF (k BAND mask) BEGIN
 					SPRINT clab_line EVALUATE_BUFFER ~%clab_line% AP_%feat%~				

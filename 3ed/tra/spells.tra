@@ -589,7 +589,7 @@ Casting Time: 6
 Area of Effect: The caster
 Saving Throw: Neg.
 
-Cloak of Fear empowers the caster to radiate a personal aura of fear out to a 5-ft. radius. All other characters and creatures within this aura must roll a successful Save vs. Spell at -4 penalty or run away in panic for 4 rounds. Party members are immune to the effects, although the aura of fear may still disturb them.~
+Cloak of Fear empowers the caster to radiate a personal aura of fear out to a 5-ft. radius. All other characters and creatures within this aura must roll a successful Save vs. Spell with -4 penalty or run away in panic for 4 rounds. Party members are immune to the effects, although the aura of fear may still disturb them.~
 //--------------------------------------------------------------------------------------------------
 	@049=~Sun Soulray
 The character projects a blast of light from <PRO_HISHER> open palm, dealing 1d8 fire damage for every 2 caster levels (up to a maximum of 5d8 damage) to a single target. Undead creatures take double damage (up to 10d8). There is no Saving Throw against this ability.~
@@ -765,6 +765,20 @@ Saving Throw: None
 
 All allies within the area of effect receive a +4 bonus to Strength, Constitution, and Dexterity.~ 
 //-----------------------------------------------------------------------------------------------------------------------------------------------
+    @063=~Glyph of Warding 
+(Abjuration, Evocation)
+
+Level: 3
+Sphere: Guardian 
+Range: 60 ft.
+Duration: Permanent until discharged 
+Casting Time: 9
+Area of Effect: 25-ft. radius
+Saving Throw: 1/2
+
+A Glyph of Warding is a powerful inscription magically drawn to prevent unauthorized or hostile creatures from passing, entering, or opening. It can be used to guard a small bridge, to ward an entry, or as a trap on a chest or box. Any creature violating the warded area is subject to the magic it stores, although a successful Saving Throw vs. Breath Weapon enables the creature to partially escape the effects of the glyph and receive only have the damage. When the spell is cast, the priest weaves a tracery of faintly glowing lines around the warding sigil. When the glyph is activated, it deals 1d4 points of electrical damage per level of the caster.~
+
+//-----------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------------------------------------------------
 
 	@101=~Exaltation
@@ -800,12 +814,12 @@ This spell lasts 1 round per level of the caster. It gives the caster a +1 bonus
 Level: 5
 Sphere: War
 Range: 0
-Duration: 2 rounds
+Duration: 4 rounds
 Casting Time: 1
 Area of Effect: Caster
 Saving Throw: None
 
-This spell grants the caster a +1 bonus to hit and damage rolls every 3 levels of the caster. The spell lasts for 2 rounds.~
+This spell grants the caster a +1 bonus to hit and damage rolls every 3 levels of the caster. The spell lasts for 4 rounds.~
 //--------------------------------------------------------------------------------------------------
 	@105=~Seeking Sword
 (Invocation)
@@ -1061,9 +1075,82 @@ Saving Throw: None
 This is an even stronger version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 5d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.~
 
 //-----------------------------------------------------------------------------------------------------------------
+    @301 =~Mantle
+(Abjuration)
+
+Level: 7
+Range: 0
+Duration: 1 round/level
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None
+
+When the spell is cast, it confers complete invulnerability to all weapons of +2 or lower enchantment. This spell is incredibly powerful and useful in the thick of intense combat. This spell will not work in conjunction with Protection From Magical Weapons. This effect lasts for the duration of the spell or until dispelled.~
 
 
+    @302=~Improved Mantle
+(Abjuration) 
 
+Level: 8
+Range: 0
+Duration: 1 round/level
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None 
+
+When the spell is cast, it confers complete invulnerability to all weapons of +3 or lower enchantment. This spell is incredibly powerful and useful in the thick of intense combat. This spell will not work in conjunction with Protection From Magical Weapons. This effect lasts for the duration of the spell or until dispelled.~
+    
+    
+   @303=~Absolute Immunity
+(Abjuration) 
+
+Level: 9
+Range: 0
+Duration: 1 round/level
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None 
+
+When the spell is cast, it confers complete invulnerability to all weapons. This spell is incredibly powerful and useful in the thick of combat. It is important to note that this spell does not work in combination with Protection From Magical Weapons. This spell lasts for the duration or until dispelled.~
+
+
+    @304=~Energy Drain
+(Necromancy) 
+
+Level: 9
+Range: Touch
+Duration: Permanent
+Casting Time: 3
+Area of Effect: 1 creature
+Saving Throw: None 
+
+The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining <PRO_HIMHER> of 2d4 levels of experience. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell.~
+
+
+    @305 = ~Contagion
+(Necromancy)
+
+Level: 4
+Range: 90 ft.
+Duration: Permanent
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell causes a major disease and weakness in a creature. The afflicted individual is immediately stricken with painful and distracting symptoms: boils, blotches, lesions, seeping abscesses, and so on. Strength, Dexterity, and Charisma scores are reduced by 2, they are further reduced by 2 one round and two rounds later (up to a totatl of 6). The afflicted character is also Slowed. These effects persist until the character receives a Cure Disease spell.~
+ 
+    @306 = ~Color Spray
+(Alteration)
+
+Level: 1
+Range: 50 ft.
+Duration: Instant
+Casting Time: 1
+Area of Effect: 90-degree arc
+Saving Throw: Special
+
+Upon casting this spell, the wizard causes a vivid, fan-shaped spray of clashing colors to spring forth from <PRO_HISHER> hand. 1d6 creatures within the area are affected in order of increasing distance from the wizard. All creatures in the area of effect that have 4 Hit Dice or less must make a successful Saving Throw vs. Spell or be rendered unconscious for 5 rounds. Creatures with 5 Hit Dice or more are rendred unconscious for 1 round only.~
+//------------------------------------------------------------------------------------------------------------------------ 
 	@1000 =~vs. None~
 	@1001 =~vs. Spell~
 	@1002 =~vs. Breath Weapon~
@@ -1081,7 +1168,7 @@ Starting from level 4 Assassin gets access to the following spells: Sleep, Blind
 	@1203=~Second Level Spells~
 	@1204=~Second Level Spells
 
-Starting from level 7 Assassin gets access to the following spells: Ghoul Touch, Power Word: Sleep, Blur, Invisibility.~
+Starting from level 7 Assassin gets access to the following spells: Ghoul Touch, Glitterdust, Blur, Invisibility.~
 
 	@1205=~Third Level Spells~
 	@1206=~Third Level Spells
@@ -1095,7 +1182,6 @@ Starting from level 13 Assassin gets access to the following spells: Improved In
 
 //hexblade spells
 
-//assassin spells
     @1211=~First Level Spells~
 	@1212=~First Level Spells
 
@@ -1114,8 +1200,28 @@ Starting from level 10 Hexblade gets access to the following spells: Vampiric To
 	@1217=~Fourth Level Spells~
 	@1218=~Fourth Level Spells
 
-Starting from level 13 Hexblade gets access to the following spells: Improved Invisibility, Domination, Polymorph Other, Breach and Confusion.~
+Starting from level 13 Hexblade gets access to the following spells: Improved Invisibility, Emotion:Hopelessness, Polymorph Other, Secret Word and Confusion.~
 
+
+
+    //substring removals for saves regularization
+    
+    @10001 = ~ with a -[0-9] penalty~
+    @10002 = ~ with -[1-9] penalty~
+    @10003 = ~ at a -[1-9] penalty~
+    @10004 = ~ at -[1-9]~
+    @10005 = ~ with a \+[1-9] bonus~
+    @10006 = ~ with \+[1-9] bonus~
+    @10007 = ~ at \+[1-9]~
+    
+    
+    //corrections for spells with items
+    @20001 = ~up to five missiles~
+    @20002 = ~up to four missiles~
+    @20003 = ~attacks to 9~
+    @20004 = ~attacks to 8~
+    
+    
     //bonus spells
     @500001=~Choose this domain.~
 	@500002=~Choose another domain.~

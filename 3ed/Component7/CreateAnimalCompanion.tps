@@ -4,7 +4,17 @@
 	COPY ~3ed/Classes/AnimalCompanion/ANM_CST.WAV~ ~override~
 	COPY ~3ed/Classes/AnimalCompanion/ANM_EFF.WAV~ ~override~
 	COPY ~3ed/Classes/AnimalCompanion/ANM_WLF.WAV~ ~override~
-	COPY ~3ed/Classes/AnimalCompanion/EP_ANM.SPL~ ~override~
+    
+    
+    //create epic animal companion bonuses
+    
+    COPY_EXISTING ~SPCL221.SPL~ ~override/EP_ANM.SPL~ //use inquisitor immunities as base and add resistances
+        LPF CLONE_EFFECT INT_VAR match_ocpode = 30 opcode = 28 END //cold
+        LPF CLONE_EFFECT INT_VAR match_ocpode = 30 opcode = 29 END //elec
+        LPF CLONE_EFFECT INT_VAR match_ocpode = 30 opcode = 31 END //magic dam
+        LPF CLONE_EFFECT INT_VAR match_ocpode = 30 opcode = 166 END //magic
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 345 target = 2 timing = 9 parameter1 = 4 END  //+4 enchantment
+	
 
 //copying animal companion script
 //animal summon spell
@@ -27,14 +37,14 @@ OUTER_FOR (player_id=1;player_id<=6;player_id=player_id+1) BEGIN
 	
 		//SAY 0x0008 @701
 		//SAY 0x000c @701
-	
+	    SET lvl_i  = i>20 ? 20 : i
 		WRITE_LONG  0x0008 name_ref  //name
 		WRITE_LONG  0x000c name_ref  //tooltip
 		WRITE_SHORT 0x0024 3+i*(3+2+(1+i/4)/2)+i/2 //Current Hp
 		WRITE_SHORT 0x0026 3+i*(3+2+(1+i/4)/2)+i/2//Max Hp
 		WRITE_SHORT 0x0046 (7 - i / 2 )//Natural AC
 		WRITE_SHORT 0x0048 (7 - i / 2 )//Effective AC
-		WRITE_BYTE  0x0052 (20 - (3 * i) / 4)//THAC0
+		WRITE_BYTE  0x0052 (20 - (3 * lvl_i) / 4)//THAC0
 		//APR
 		PATCH_IF (i<8) BEGIN
 			WRITE_BYTE   0x0053  1  //1
@@ -48,11 +58,13 @@ OUTER_FOR (player_id=1;player_id<=6;player_id=player_id+1) BEGIN
 
 		
 		//saves
-		WRITE_BYTE   0x0054   15 - i / 3 //Death
-		WRITE_BYTE   0x0055   13 - i / 2//Wand
-		WRITE_BYTE   0x0056   15 - i / 3 //Polymorph
-		WRITE_BYTE   0x0057   13 - i / 2 //Breath
-		WRITE_BYTE   0x0058   13 - i / 2 //Spells
+        
+
+		WRITE_BYTE   0x0054   14 - lvl_i / 3 //Death
+		WRITE_BYTE   0x0055   12 - lvl_i / 2//Wand
+		WRITE_BYTE   0x0056   14 - lvl_i / 3 //Polymorph
+		WRITE_BYTE   0x0057   12 - lvl_i / 2 //Breath
+		WRITE_BYTE   0x0058   14 - lvl_i / 2 //Spells
 	
 		WRITE_BYTE   0x0234   i //level
 		WRITE_BYTE   0x0238   13+i/4 //Str

@@ -20,7 +20,6 @@ DEFINE_PATCH_FUNCTION ~ALTER_EFF~
       max_level =~666666666~ //min level of target
 	  
 	STR_VAR
-        match_resource = ~~
 		resource = ~~
 		
 	BEGIN
@@ -65,8 +64,8 @@ DEFINE_PATCH_FUNCTION ~ALTER_EFF~
 			END
 		END
 				
-		PHP_EACH FileFields4 AS Offset => MatchVal  BEGIN					 
-			PATCH_IF (MatchVal!=666666666) BEGIN
+		PHP_EACH FileFields4 AS Offset => Val  BEGIN					 
+			PATCH_IF (Val!=666666666) BEGIN
 				WRITE_LONG Offset Val
 			END
 		END				

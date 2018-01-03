@@ -68,7 +68,7 @@
 						STR_VAR clab=~CLABBA+.*\.2DA~
 							mask_file=~~ feat_type_file=~~ caption=~ARMARCFT~ END	
                             
-//armored training (ftr, ftr-thief)
+//armored training (ftr, ftr-thief, ftr - cleric)
 	COPY ~3ed/Feats/ArmorTraining~ ~override~
     COPY ~3ed/Feats/FeatAttribution/SFTCRE_E.SPL~ ~override/ARMTRFT.SPL~
 		FOR (i=1;i<=5;i=i+1) BEGIN
@@ -80,6 +80,7 @@
 				SPRINT resource EVALUATE_BUFFER ~ARMTR%i%~
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=2 parameter2=105 timing=0 duration=1 STR_VAR resource END // fighter
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=9 parameter2=105 timing=0 duration=1 STR_VAR resource END // fighter/thief
+                LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=8 parameter2=105 timing=0 duration=1 STR_VAR resource END // fighter/cleric
 		END
 	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=16 d_level=4 add_at_level1=1 
 						STR_VAR clab=~CLABFI01\.2DA~

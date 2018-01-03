@@ -1,7 +1,7 @@
 
 
 
-	COPY_EXISTING_REGEXP GLOB ~.*\.CRE~ ~override~
+COPY_EXISTING_REGEXP GLOB ~.*\.CRE~ ~override~
 	
     PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
     
@@ -61,4 +61,5 @@
             END
         END
 	END	
+BUT_ONLY
 		

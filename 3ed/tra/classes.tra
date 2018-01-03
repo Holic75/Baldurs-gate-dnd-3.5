@@ -32,9 +32,17 @@ CLASS FEATURES:
 – May wear helmets.
 – May wear any armor and use any weapon.
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
+– Immune to sneak attack.
+– Starting from level 5 every hit of Fighter/Thief has 10% chance to slow the target for 1d4 rounds.
+– Starting from level 10 every hit of Fighter/Thief has additional 10% chance to blind the target for 1d4 rounds.
+– Starting from level 15 every hit of Fighter/Thief has additional 10% chance to make the target Sickened for 1d4 rounds (-2 to THAC0, Damage and all Savingthorws).
+– Has Evasion passive ability.
+
+EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
+
 – May distribute 16 skill points per level among thieving skills (24 points at level 1).
 – Gets one bonus feat at level 1 and every 3 levels thereafter.
-– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.
+– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.
 – At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill and AC penalties. Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.
 – Hit Die: d8
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon and vs. Wand
@@ -48,13 +56,14 @@ CLASS FEATURES:
 – May wear any armor and use any weapon.
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
 – Can cast two spell per day less than trueclass cleric.
-– Gets one bonus feat at level 1 and at every 4th level up to level 20.
+– Gets one bonus feat at every 5th level up to level 20.
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels thereafter).
 – Can use Spontaneous Battlecasting.
 
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
 
 – At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
+– At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill and AC penalties. Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.
 – Gets one bonus feat at levels 22, 25 and 28.
 – Hit Die: d9
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
@@ -70,7 +79,7 @@ CLASS FEATURES:
 – May wear any armor and use any weapon.
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
 – Cannot cast spells of 8th and 9th levels.
-– Gets one bonus feat at level 1, 4 and every 4 levels thereafter up to level 20.
+– Gets one bonus feat at every 5th levels up to level 20.
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.
 – Can use Spontaneous Battlecasting.
 
@@ -95,18 +104,22 @@ CLASS FEATURES:
 – May not equip shields larger than bucklers.
 – May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.
 – May get up to Weapon Specialization (2 stars) in any weapon they can use.
+– Immune to sneak attack.
+– Has Evasion passive ability.
+
+EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
+
 – Can cast one spell less per day than trueclass mage.
 – Cannot cast spells of 8th and 9th levels.
 – May distribute 12 skill points per level among thieving skills (20 points at level 1).
-– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.
+– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.
 – May use Spontaneous Spell Channeling
 
 SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds.
 
-– Gets one bonus feat at level 5 and every 5 levels thereafter up to level 20.
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.
-– Gets one bonus feat at levels 22, 25 and 28.
+– Gets one bonus feat at levels 10, 20, 22, 25 and 28.
 – Hit Die: d6
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph vs. Breath Weapon, vs. Wand and vs. Spell
 
@@ -190,7 +203,7 @@ Disadvantages:
 
 Advantages:
 – Receives a bonus to all saving throws for every 2 points of Charisma above 9 (i.e +1 at 11, +2 at 13, etc) and penalty for every 2 points below 10.
-- May use Hexblade's Curse innate ability. Gets a number of uses per day equal to 1 + 1 per 2 points of Charisma above 10 at level 1. Gets one additional use per day every 4 levels thereafter. 
+- May use Hexblade's Curse innate ability. Gets a number of uses per day equal to 1 + 1 per 2 points of Charisma above 10 at level 1. Gets one additional use per day every 4 levels thereafter.
 
 HEXBLADE'S CURSE:
 Hexblade unleashes a curse upon a foe who receives a penalty of -2 to THAC0, damage and savingthrows for 1 turn if he fails the savingthrow vs. Spell with penalty equal to one fourth of Hexblade's level rounded down + 1 per 2 points of Hexblade's Charisma above 10.
@@ -203,7 +216,7 @@ Hexblade Spellbook:
 First Level Spells: Starting from level 4 Hexblade gets access to the following spells: Sleep, Blindness, Charm Person, Spook and Protection from Evil.
 Second Level Spells: Starting from level 7 Hexblade gets access to the following spells: Strength, Glitterdust, Invisibility, Mirror Image and Stinking Cloud.
 Third Level Spells: Starting from level 10 Hexblade gets access to the following spells: Vampiric Touch, Dispel Magic, Dire Charm, Detect Illusions and Slow.
-Fourth Level Spells: Starting from level 13 Hexblade gets access to the following spells: Improved Invisibility, Domination, Polymorph Other, Breach and Confusion.
+Fourth Level Spells: Starting from level 13 Hexblade gets access to the following spells: Improved Invisibility, Emotion: Hopelessness, Polymorph Other, Secret Word and Confusion.
 
 – Gets one bonus feat only at levels 5, 10, 15, 20, 22 and 28.
 – Starting from level 6 may use Swift Spell ability once per day. Gets additional uses at levels 8, 11, 14, 18, 23 and 30.
@@ -212,7 +225,7 @@ SWIFT SPELL:
 When this ability is activated for next round Hexblade's casting speed is increased by 5.
 
 – Starting from level 12 may use the Aura of Unluck ability once per day. Gains and additional use every 4 levels thereafter.
- 
+
 AURA OF UNLUCK:
 When this ability is activated, all enemies within 30 feet of the Hexblade suffer -1 penalty to luck. This penalty increases to -2 at level 16, -3 at level 20 and finally up to -4 at level 24.
 
@@ -303,7 +316,7 @@ All hostile undead creatures suffer 2d4 points of magical damage per Channel Ene
 
 SMITE EVIL: For 10 seconds Paladin receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level against evil creatures.
 
-– Starting from level 3 may use the Aura of Faith ability once per day. Gains and additional use every 6 levels thereafter. 
+– Starting from level 3 may use the Aura of Faith ability once per day. Gains and additional use every 6 levels thereafter.
 
 AURA OF FAITH:
 When this ability is activated, all allies within 30 feet of the Paladin are receiving beneficial effects based on the Paladin's level:
@@ -393,8 +406,9 @@ Each successful hit within the next 5 rounds will inject poison into the target.
 16th - Target suffers 1 poison damage per second for 24 seconds (Save vs. Death at -3 negates), and also immediately suffers 9 poison damage (no save)
 20th - Target suffers 1 poison damage per second for 24 seconds (Save vs. Death at -4 negates), and also immediately suffers 12 poison damage (no save)
 24th - Target suffers 2 poison damage per second for 24 seconds (Save vs. Death at -5 negates), and also immediately suffers 16 poison damage (no save)
+28th - Target suffers 2 poison damage per second for 24 seconds (Save vs. Death at -6 negates), and also immediately suffers 16 poison damage (no save)
 
-– 3rd level: May use the Aura of Despair ability once per day. Gains and additional use every 6 levels thereafter. 
+– 3rd level: May use the Aura of Despair ability once per day. Gains and additional use every 6 levels thereafter.
 
 AURA OF DESPAIR:
 When this ability is activated, all enemies within 30 feet of the Blackguard suffer ill effects based on the Blackguard's level:
@@ -459,6 +473,8 @@ All hostile undead creatures suffer 2d4 points of magical damage per Channel Ene
 
 
 – Eventually can cast low level druidic spells (same as trueclass ranger).
+– May call for an animal companion who fights for <PRO_HISHER> side.
+– Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.
 – At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
 – Alignment restricted to good.
 – Gets one bonus feat at level 28.
@@ -501,7 +517,7 @@ Disadvantages:
 
 Advantages:
 – +20% to Move Silently and Hide In Shadows.
-– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.
+– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.
 – Racial Enemy is replaced with Improved Racial Enemy which gives Stalkers +4 bonus on to hit and damage rolls and +2 bonus to AC and savingthrows vs selected races.
 – May be of any alignment.
 – Gets one more bonus feat at level 22.
@@ -572,9 +588,14 @@ CLASS FEATURES:
 – May not wear armor heavier than studded leather.
 – May not equip shields larger than bucklers.
 – May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling, mace, flail, morning star, war hammer.
+– Immune to sneak attack.
+– Has Evasion passive ability.
+
+EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
+
 – Can cast two spell per day less than trueclass clerics.
-– May distribute 16 skill points per level among thieving skills (24 points at level 1).
-– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.
+– May distribute 12 skill points per level among thieving skills (20 points at level 1).
+– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels).
 – May use Spontaneous Spell Channeling
@@ -582,7 +603,7 @@ CLASS FEATURES:
 SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds.
 
 – At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
-– Gets one bonus feat at levels 22, 25 and 28.
+– Gets one bonus feat at levels 10, 20, 22, 25 and 28.
 – Hit Die: d7
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell
 ~
@@ -592,19 +613,17 @@ SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrific
 Advantages:
 
 – May use Cleansing Flames starting from level 1 number of times per day equal to 3 plus 1 per 2 points of Charisma above 10.
- 
+
 CLEANSING FLAMES
-    
+
 Priest creates a greater burst of cleansing fire that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
 All allied living creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
 All hostile creatures are blinded for 2 rounds, additionally evil creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down + 2. In which case they receive only half damage and are not subject to blind effect.
 
 – Immune to hold, level drain and poison.
 
-
 Disadvantages:
 – Alignment restricted to lawful good, neutral good, chaotic good, and true neutral.
-– Gains access only to Glory and Sun domains.
 – Can cast two less spells per day per level than trueclass clerics.~
 //----------------------------------------------------------------------------------------------------
 @027=~PRIEST OF HELM: Followers of the neutral god of watchers and protectors are warriors in their own right and are often seen as defenders of the innocent.
@@ -615,7 +634,6 @@ Advantages:
 
 Disadvantages:
 – Alignment restricted to lawful good, lawful neutral, lawful evil, and true neutral.
-– Gains access only to War and Protection domains.
 – Can cast two less spells per day per level than trueclass clerics.~
 //-----------------------------------------------------------------------------------------------------
 @028=~PRIEST OF TALOS: Talos is the evil god of storms, destruction, and rebellion. Clerics of the Stormlord warn that Talos must be appeased or he will rain destruction upon the land.
@@ -632,7 +650,6 @@ Advantages:
 
 Disadvantages:
 – Alignment restricted to neutral evil, chaotic evil, and chaotic neutral.
-– Gains access only to Elemental (Air) and Destruction domains.
 – Can not Channel Energy.~
 //--------------------------------------------------------------------------------------------------
 @029=~PRIEST OF TYR: Tyr is the deity of law and justice and is primarily concerned with the punishment of wrongdoers and the general furthering of law and good in the world. The belief in justice through (benevolent) force, or at least armed vigilance, is the reason for Tyr's existence. Tyr holds great prominence in the pantheon due to his position as leader of the Triad, a trio of lawful good gods that are collectively devoted to the concepts of courage, justice, perseverance, relief of suffering, duty, obedience, honor, and to some extent, righteous martyrdom.
@@ -642,7 +659,6 @@ Advantages:
 
 Disadvantages:
 – Alignment restricted to lawful good, neutral good, or lawful neutral.
-– Gains access only to Glory and War domains.
 – Can not Channel Energy.~
 //---------------------------------------------------------------------------------------------------//
 @030=~DRUID: The Druid serves the cause of nature and neutrality; the wilderness is <PRO_HISHER> community, and <PRO_HESHE> uses <PRO_HISHER> special powers to protect it and to preserve balance in the world.
@@ -733,7 +749,8 @@ CLASS FEATURES:
 – May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.
 – Can cast one arcane spell per day less than trueclass mage.
 – May distribute 12 skill points per level among thieving skills (20 points at level 1).
-– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.
+– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.
+– Starting from level 8 can cast spells in complete silence (as being always under constant effect of Vocalize).
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.
 – Gets one bonus feat at levels 10, 20, 22, 25 and 28.
 – Hit Die: d5
@@ -748,6 +765,7 @@ CLASS FEATURES:
 – May not wear armor heavier than studded leather.
 – May not equip shields larger than bucklers.
 – May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.
+– Immune to sneak attack.
 – Has Evasion passive ability.
 
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
@@ -755,7 +773,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – Receives Bonus Feats at level 10 and every 3 levels thereafter.
 – May distribute 20 points per level (30 at level 1) in thieving abilities: Open Locks, Pick Pockets, Find Traps, Move Silently, Hide In Shadows, Detect Illusion, Set Traps.
 – Starts with base scores of 10% in Open Locks, 5% in Find Traps, 15% in Pick Pockets, 10% in Move Silently, and 5% in Hide in Shadows.
-– May Sneak attack for increased damage: 1d6 at level 1 + 1d6 every 3 levels thereafter.
+– May Sneak attack for increased damage: 1d6 at level 1 + 1d6 every 2 levels thereafter.
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.
 
 SET SNARE: Set a trap in the chosen location when no hostile creatures are in sight. Traps grow more powerful with the Thief's level and can only be triggered by enemies.
@@ -772,7 +790,7 @@ This ability allows the rogue to set a powerful spring-loaded spike trap that do
 – Can set Exploding Trap once per day starting from level 23, gets an additional use at level 28.
 
 SET EXPLODING TRAP
-This ability allows the rogue to set a powerful trap that unleashes a fireball which causes 10d6 damage (Save vs. Spell for half damage) and will knock its victims off their feet.
+This ability allows the rogue to set a powerful trap that unleashes a fireball which causes 10d6 damage (Save vs. Breath Weapon for half damage with -5 penalty) and will knock its victims off their feet.
 
 – Can set Time Trap once per day starting from level 25, gets an additional use at level 30.
 
@@ -789,7 +807,7 @@ This ability allows the rogue to set a magical trap that casts a weaker version 
 @039=~ASSASSIN: This is a killer trained in discreet and efficient murder, relying on anonymity and surprise to perform <PRO_HISHER> task.
 
 Advantages:
-– Better Sneak attack progression: 1d6 at level 1 + 1d6 every 2 levels thereafter.
+– Better Sneak attack progression: +1d6 damage bonus every 6 levels (in addition to trueclass thief sneak attack damage)
 – May use the Poison Weapon ability. Gains one use at level 1, then at level 4 and an additional use every 4 levels thereafter.
 
 POISON WEAPON:
@@ -802,12 +820,12 @@ Each successful hit within the next 5 rounds will inject poison into the target.
 16th - Target suffers 1 poison damage per second for 24 seconds (Save vs. Death at -3 negates), and also immediately suffers 9 poison damage (no save)
 20th - Target suffers 1 poison damage per second for 24 seconds (Save vs. Death at -4 negates), and also immediately suffers 12 poison damage (no save)
 24th - Target suffers 2 poison damage per second for 24 seconds (Save vs. Death at -5 negates), and also immediately suffers 16 poison damage (no save)
+28th - Target suffers 2 poison damage per second for 24 seconds (Save vs. Death at -6 negates), and also immediately suffers 16 poison damage (no save)
 
 – Starting from level 4 can cast a limited number of Spells (through Innate Abilities menu). Assassin does not need to memorize <PRO_HISHER> spells in advance and can spontaneously cast any spell <PRO_HESHE> knows.
 Assassin Spellbook:
-
 First level spells: starting from level 4 Assassin gets access to the following spells: Sleep, Blindness, Reflected Image, Chill Touch.
-Second level spells: starting from level 7 Assassin gets access to the following spells: Ghoul Touch, Power Word: Sleep, Blur, Invisibility.
+Second level spells: starting from level 7 Assassin gets access to the following spells: Ghoul Touch, Glitterdust, Blur, Invisibility.
 Third level spells: starting from level 10 Assassin gets access to the following spells: Vampiric Touch, Non-Detection, Hold Person, Detect Illusions.
 Fourth level spells: starting from level 13 Assassin gets access to the following spells: Improved Invisibility, Free Action, Poison, Cloak of Fear.
 
@@ -843,10 +861,11 @@ Advantages:
 	Starting from level 1 ninja can spend one point from ki pool to become invisible for 10 seconds.
 	Starting from level 4 ninja can alternatively spend one point from ki pool to create 1d4 mirror images of <PRO_HIMHER>self or become blurred (+3 AC, +1 Saving throw bonus) for 10 seconds or detect invisible creatures.
 	Starting from level 7 ninja can alternatively spend one point from ki pool to become hasted for 10 seconds.
-	Starting from level 10 ninja can alternatively spend one point from ki pool to make all <PRO_HISHER> attacks for next round stun opponents unless they make a Saving throw vs. Death.
-    Starting from level 13 ninja can alternatively spend one point from ki pool to heal 10 Hit Points to <PRO_HIMHER>self and neutralize any poison.
-    Starting from level 16 ninja can alternatively spend one point from ki pool to place <PRO_HIMHER>self under the effect of improved invisibility spell for 10 seconds.
-    
+	Starting from level 10 ninja can alternatively spend one point from ki pool to make all <PRO_HISHER> attacks for next round stun opponents unless they make a Saving throw vs. Paralyze (with penalty equal to one quarter level of ninja rounded down).
+  Starting from level 13 ninja can alternatively spend one point from ki pool to heal 10 Hit Points to <PRO_HIMHER>self and neutralize any poison.
+  Starting from level 16 ninja can alternatively spend one point from ki pool to place <PRO_HIMHER>self under the effect of Improved Invisibility spell or use True Sight ability for 10 seconds.
+  Starting from level 19 ninja can alternatively spend one point from ki pool to place <PRO_HIMHER>self under the effect of Improved Haste spell for 10 seconds.
+
 – Gets one bonus feat at levels 22 and 28.
 
 Disadvantages:
@@ -871,12 +890,14 @@ SHADOW FORM:
 This ability temporarily transposes some of the user's tissue with shadow-material, making the subject partially incorporeal. For the next 5 rounds, all physical attacks directed against the Shadowdancer only deal 50% of their normal damage. During this time, the Shadowdancer is also under the effects of Improved Invisibility and cannot be directly targeted by spells.
 
 – May cast Mislead once per day starting from level 9. Gains an additional use every 5 levels thereafter.
-
 – Slippery Mind: +1 bonus to Saving Throws.
+– May use Shadow Maze ability once per day starting from level 21. Gains an additional use at level 26.
+SHADOW MAZE:
+This ability opens a temporary gateway to a small pocket within the Plane of Shadow. All enemies within 10 feet of the Shadowdancer must make a Save vs. Spell at a -5 penalty or become trapped inside a shadowy labyrinth as per the Maze spell.
 
 Disadvantages:
 – Alignment restricted to any non-lawful.
-– Worse Sneak attack progression: 1d6 at level 1 + 1d6 every 4 levels thereafter.
+– Worse Sneak attack progression: 1d6 at level 1 + 1d6 every 3 levels thereafter.
 – May only distribute 16 skill points per level (24 at level 1) among thieving skills.
 – May not use the Set Snare ability.~
 //---------------------------------------------------------------------------------------------------//
@@ -924,11 +945,10 @@ Inspire Heroics
 A bard of 15th level or higher can inspire tremendous heroism in all <PRO_HISHER> allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the bard. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds. The bonuses increase to +5 at level 24, and +6 at level 30.
 
 Deadly Performance
-A bard of 20th level or higher can use <PRO_HISHER> performance to cause one enemy to die from joy or sorrow. To be affected, the target must be able to see and hear the bard perform and be within 30 feet. The target can make a Saving Throw vs. Spell (with -1 penalty at level 25, and -2 at level 30) to negate the effect. If a creature’s Saving Throw succeeds, the target is paralyzed for 2 rounds. If a creature’s Saving Throw fails, it dies.
+A bard of 20th level or higher can use <PRO_HISHER> performance to cause one enemy to die from joy or sorrow. To be affected, the target must be able to see and hear the bard perform and be within 30 feet. The target can make a Saving Throw vs. Spell with -4 penalty (-5 at level 25, and -6 at level 30) to negate the effect. If a creature’s Saving Throw succeeds, the target is paralyzed for 2 rounds. If a creature’s Saving Throw fails, it dies.
 
 Song of Requiem
-A bard of 24th level or higher can use this epic performance to drain the very life force of all <PRO_HISHER> enemies within 30 feet, causing them to suffer 1 point of damage per level of bard.
-
+A bard of 24th level or higher can use this epic performance drains the very life force of the bard's enemies causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds.
 – Alignment restricted to any neutral.
 – Hit Die: d6
 – Medium THAC0/APR progression, High Savingthrows vs. Breath Weapon, vs. Wand and vs. Spell
@@ -996,14 +1016,14 @@ Disadvantages:
 Advantages:
 – May use the Poison Weapon ability. Gains one use at level 2, and an additional use every 4 levels thereafter.
 – Laugh It Off: Fate protects fools and little children, and Jesters certainly adopt the role of fools. Jester receives a bonus to all <PRO_HISHER> saves per 2 points of CHARISMA above 9 (but also suffers a penalty per 2 points below 10).
-– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 5 levels thereafter.
+– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.
 – Bardic Performance: a jester is trained to perform to create magical effects on those around <PRO_HIMHER>. Jester can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each fourth level a jester can use bardic performance one more time per day.
 List of Bardic Performances:
 
 Jester's Song
 The jester is the master of the verbal put down, the hilarious joke, or the savage verbal lashing. Starting from level 1 <PRO_HISHER> words can inspire dread and outrage in <PRO_HISHER> enemies making them confused for next 4 rounds. The target creatures receive a Saving Throw vs. Spell with +2 bonus to avoid this effect.
 At level 5 the enemies no longer receive a bonus to their Saving Throws.
-At level 10 they receive a -2 penalty instead, which increases further to -4 at level 15, -6 at level 20, -8 at level 25 and -10 at level 30.
+At level 10 they receive a -2 penalty instead, which increases further to -3 at level 15, -4 at level 20, -5 at level 25 and -6 at level 30.
 
 Dirge of Doom
 A jester of 8th level or higher can use <PRO_HISHER> performance to foster a sense of growing dread in <PRO_HISHER> enemies, causing them to become shaken and receive -2 penalty to their attack rolls, Armor Class and Saving throws. To be affected, an enemy must be within 30 feet and able to see and hear the jester’s performance. The effect persists for 4 rounds. There is no Saving throw against this ability.
@@ -1026,7 +1046,7 @@ CLASS FEATURES:
 – May not wear any armor.
 – May only use the following weapons: dagger, quarterstaff, dart, sling, crossbow.
 – May cast arcane spells.
-– Receives one bonus Feat at level 5, 10, 15, 20, 22 and 28.  
+– Receives one bonus Feat at level 5, 10, 15, 20, 22 and 28.
 – May not scribe spells into their spellbooks as Mages do. Instead, Sorcerers learn a small number of spells at each level, which they can cast daily without memorization.
 – At 1st level chooses a bloodline which grants access to 9 spells (1 per spell level) in addition to those gained normally.
 – Gains access to the following epic spells: Comet (at level 21), Energy Blades (at level 22), Dragon's Breath (at level 23) and Summon Planetar (at level 24).
@@ -1084,7 +1104,7 @@ When using flurry of blows, a monk may attack only with unarmed strikes, with da
 – Gains +1 AC bonus per 2 points of Wisdom above 10.
 – May use the Stunning Blow ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
 
-STUNNING BLOW: All successful attacks within the next round force the victim to save vs. Spell or be stunned. This special ability automatically modifies normal attacks; no targeting needs to be done.
+STUNNING BLOW: All successful attacks within the next round force the victim to save vs. Paralyze (with penalty equal to one quarter of monk level rounded down) or be stunned. This special ability automatically modifies normal attacks; no targeting needs to be done.
 
 – 5th level: Becomes immune to all diseases and cannot be slowed or hasted.
 – 7th level: May use the Lay On Hands ability on <PRO_HIMHER>self to heal 2 Hit Points per level.
@@ -1094,7 +1114,7 @@ STUNNING BLOW: All successful attacks within the next round force the victim to 
 – 12th level: Gains another -1 bonus to Speed Factor.
 – 13th level: May use the Quivering Palm ability once per day.
 
-QUIVERING PALM: The next successful attack forces the opponent to save vs. Spell or die. This special ability automatically modifies normal attacks; no targeting needs to be done.
+QUIVERING PALM: The next successful attack forces the opponent to save vs. Death (with penalty equal to one quarter of monk level rounded down) or die. This special ability automatically modifies normal attacks; no targeting needs to be done.
 
 – 14th level: Gains 3% Magic Resistance per level (starting with 42% at 14th level).
 – 20th level: Becomes immune to non-magical weapons.

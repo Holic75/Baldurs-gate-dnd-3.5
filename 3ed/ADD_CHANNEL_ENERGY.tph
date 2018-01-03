@@ -107,7 +107,7 @@ DEFINE_ACTION_FUNCTION ~ADD_CHANNEL_ENERGY~
 		 WRITE_LONG 0x0050 neg_descr_ref
 		 FOR (i=1;i<=max_char_level;i=i+1) BEGIN
 			SET savebonus = 0 - (i/4)
-			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=3 projectile=251 STR_VAR icon=~CHANNEGB~ END
+			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=3 projectile=252 STR_VAR icon=~CHANNEGB~ END
 			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=141 target=2 parameter1 = 0 parameter2 =2 duration=1 timing=1 END
 			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=215 target=2 parameter1 = 0 parameter2 =1 duration=3 timing=0 STR_VAR resource=~SPUNHOLY~ END
 			SET dmg=((i+level_offset)/divisor)

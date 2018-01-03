@@ -85,12 +85,13 @@ DEFINE_ACTION_FUNCTION ~DIMINISH_SPELL_CASTING~
 		COPY_EXISTING_REGEXP GLOB ~%clab%~ ~override~
 			COUNT_2DA_ROWS 20 "nrows"
 			COUNT_2DA_COLS "n_cols"
-			
+			SPRINT padded_clab_line EVALUATE_BUFFER ~%clab_line%~ 
+            
 			FOR (i=lvl_last;i<n_cols;i=i+1) BEGIN //filling clab with empty lines
-				SPRINT clab_line EVALUATE_BUFFER ~%clab_line% ****~ 
+				SPRINT padded_clab_line EVALUATE_BUFFER ~%padded_clab_line% ****~ 
 			END
 			
-			INSERT_2DA_ROW nrows 20 ~%clab_line%~
+			INSERT_2DA_ROW nrows 20 ~%padded_clab_line%~
     END		
 	
 

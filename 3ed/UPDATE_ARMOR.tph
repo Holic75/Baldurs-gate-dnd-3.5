@@ -36,11 +36,15 @@ DEFINE_PATCH_FUNCTION ~UPDATE_ARMOR~
 			LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0   duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource END			
 		END
 		
-/*		PATCH_IF (NOT is_light) BEGIN
-
-			//disallow combat intuition
-			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~CMBINTBN~ END
-			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~CMBINTBN~ END	
+		PATCH_IF (NOT is_light) BEGIN
+        
+			//disallow combat intuition           
+        	FOR (i=12;i<=25;i=i+2) BEGIN
+				SPRINT resource EVALUATE_BUFFER ~CMBINT%i%~
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource END
+			END
+			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~CMBINTBN~ END    
+        /*
 			//disallow weapon finesse
 			FOR (i=1;i<=25;i=i+2) BEGIN
 				SPRINT resource EVALUATE_BUFFER ~WPFNS%i%~
@@ -51,8 +55,11 @@ DEFINE_PATCH_FUNCTION ~UPDATE_ARMOR~
 			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~FLRSTKBN~ END
 			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~FLRSTKBN~ END	
 			//disallow elegant strike
-			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~ELTSTKBN~ END
-			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~ELTSTKBN~ END
+        	FOR (i=12;i<=25;i=i+2) BEGIN
+				SPRINT resource EVALUATE_BUFFER ~ELTSTK%i%~
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource END
+			END
+			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~ELTSTKBN~ END  
 			
 			//disallow combat insight
 			FOR (i=2;i<=25;i=i+2) BEGIN
@@ -60,8 +67,8 @@ DEFINE_PATCH_FUNCTION ~UPDATE_ARMOR~
 				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource END
 			END
 			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~INSTKBN~ END	
-			
-		END*/
+		*/	
+		END
 		
 		//add substring with descriptions of properties
 		PATCH_IF (string_to_replace_ref_match) BEGIN

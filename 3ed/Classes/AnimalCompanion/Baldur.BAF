@@ -1,7 +1,8 @@
 IF
 	!CheckStat(Player%player_id%,%player_id%,EXTRAPROFICIENCY20)
-	OR(3)
+	OR(4)
 		Class(Player%player_id%,RANGER)
+        Class(Player%player_id%,CLERIC_RANGER)
 		Class(Player%player_id%,FIGHTER_DRUID)
 		Class(Player%player_id%,DRUID)
 

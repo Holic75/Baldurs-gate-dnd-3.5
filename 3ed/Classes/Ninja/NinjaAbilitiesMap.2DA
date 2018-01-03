@@ -5,4 +5,5 @@ DetectInvis     NJ_DTIN  SPWI203
 Haste           NJ_HST   SPWI305
 NeutralizePoi   NJ_NPOI  SPPR404
 ImprovedInvis   NJ_IINV  SPWI405
-
+TrueSight       NJ_TRSH  SPWI609
+ImprovedHaste   NJ_IHST  SPWI613

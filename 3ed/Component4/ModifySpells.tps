@@ -376,6 +376,7 @@
 			LPF ADD_SPELL_EFFECT INT_VAR opcode=9 target=2 power=2 parameter1=256*255+71*256*256+41*256*256*256 parameter2=16+256*256*30 timing=0 duration=24+i*6 resist_dispel=1 header=i+1  END //major colour pulse //weapon glow
 		END
 		LPF ADD_SPELL_EFFECT INT_VAR  opcode = 321 power=2 target=2  duration=1 timing=0 resist_dispel=3 insert_point=0 STR_VAR resource=~SPPR206~ END //remove effects from previous cast
+        LPF ALTER_SPELL_EFFECT INT_VAR resist_dispel = 3 END
 		//allow only druids to cast it 
 		READ_BYTE 0x0021 ~cleric_usability~
 		WRITE_BYTE 0x0021 (cleric_usability BOR 0b01000000)
@@ -641,14 +642,8 @@
 			LPF ALTER_SPELL_EFFECT INT_VAR savebonus = 6 END 
 	END	
 	
-	ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) OR (~%GameId%~ STR_EQ ~Bg2~) BEGIN//change description on energy blades 9 - 8 attacks
-		COPY_EXISTING ~SPPR721.SPL~ ~override~
-			READ_LONG 0x0050 ~descr_strref~
-			STRING_SET_EVALUATE %descr_strref% @055
-	
-	END
-    
-    
+
+   
     //update regeneration   
     COPY_EXISTING ~SPPR711.SPL~  ~override~
         WRITE_BYTE 0x0021 0b00000000 //allow everyone to use it       
@@ -708,4 +703,93 @@
         READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @057
     END  */
-		
+    
+    //add half damage at failed saves on reflex to glyph of warding    
+    COPY_EXISTING ~SPPR304.SPL~ ~override~
+        LPF ALTER_SPELL_EFFECT INT_VAR special = 256 END 
+        READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @063
+    
+    //modify some high level wizard spells
+    
+    //increase duration of mantle to 1 round/level
+    COPY_EXISTING ~SPWI708.SPL~ ~override~
+        FOR (i=2;i<=30;i=i+1) BEGIN
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+            LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = i END
+        END
+        FOR (i=1;i<=30;i=i+1) BEGIN
+            LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high = 6*i END
+        END
+        READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @301
+    //increase duration of improved mantle to 1 round/level    
+    COPY_EXISTING ~SPWI808.SPL~ ~override~
+        FOR (i=2;i<=30;i=i+1) BEGIN
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+            LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = i END
+        END
+        FOR (i=1;i<=30;i=i+1) BEGIN
+            LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high = 6*i END
+        END
+        READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @302
+    //increase duration of absolute immunity to 1 round/level    
+    COPY_EXISTING ~SPWI907.SPL~ ~override~
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 120 target = 1 parameter1 = 6 resist_dispel = 3 END //add resist to +6 weapons
+        FOR (i=2;i<=30;i=i+1) BEGIN
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+            LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = i END
+        END
+        FOR (i=1;i<=30;i=i+1) BEGIN
+            LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high = 6*i END
+        END
+        READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @303
+        
+        
+    // make energy drain drain 2d4 levels 
+    COPY_EXISTING ~SPWI914.SPL~ ~override~    
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 216 probability1 = 5 END //2 
+        LPF CLONE_EFFECT INT_VAR match_opcode = 216 probability2 = 6 probability1 = 18  multi_match = 1 parameter1 = 3 END //3
+        LPF CLONE_EFFECT INT_VAR match_opcode = 216 probability2 = 19 probability1 = 38  multi_match = 1 parameter1 = 4 END //4
+        LPF CLONE_EFFECT INT_VAR match_opcode = 216 probability2 = 39 probability1 = 64  multi_match = 1 parameter1 = 5 END //5
+        LPF CLONE_EFFECT INT_VAR match_opcode = 216 probability2 = 65 probability1 = 83  multi_match = 1 parameter1 = 6 END //6
+        LPF CLONE_EFFECT INT_VAR match_opcode = 216 probability2 = 84 probability1 = 95  multi_match = 1 parameter1 = 7 END //7
+        LPF CLONE_EFFECT INT_VAR match_opcode = 216 probability2 = 96 probability1 = 100  multi_match = 1 parameter1 = 8 END //8    
+        READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @304
+    
+    
+    
+    //make contagion strike 3 times
+    COPY_EXISTING ~SPWI409.SPL~ ~override~  
+        FOR (i=1;i<=2;i=i+1) BEGIN
+            LPF CLONE_EFFECT INT_VAR match_opcode = 78 match_parameter2 = 4 multi_match = 1 timing = 4 duration = i*6 END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 78 match_parameter2 = 9 multi_match = 1 timing = 4 duration = i*6 END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 78 match_parameter2 = 5 multi_match = 1 timing = 4 duration = i*6 END
+        END        
+        READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @305
+        
+        
+    //make color spray work on enemies with more than 4 hd
+     COPY_EXISTING ~SPWI105.SPL~ ~override~  
+        LPF CLONE_EFFECT INT_VAR match_opcode = 39 dicenumber = 0  dicesize = 5 duration = 6 END 
+        LPF CLONE_EFFECT INT_VAR match_opcode = 7 dicenumber = 0  dicesize = 5 duration = 6 END 
+        LPF CLONE_EFFECT INT_VAR match_opcode = 142 dicenumber = 0  dicesize = 5 duration = 6 END 
+		READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @306
+        
+        
+    //modify descriptions for melfs minute meteors and energy blades
+    COPY_EXISTING ~SPWI325.SPL~ ~override~
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset = 0x0050  substring_to_replace_ref = 20001 new_substring_ref = 20002 END
+      
+    ACTION_IF NOT (~%GameId%~ STR_EQ ~Bg1~) BEGIN
+        COPY_EXISTING ~SPWI920.SPL~ ~override~
+            LPF REPLACE_SUBSTRING INT_VAR strref_offset = 0x0050  substring_to_replace_ref = 20003 new_substring_ref = 20004 END 
+        COPY_EXISTING ~SPPR721.SPL~ ~override~
+            LPF REPLACE_SUBSTRING INT_VAR strref_offset = 0x0050  substring_to_replace_ref = 20003 new_substring_ref = 20004 END             
+    END
+        

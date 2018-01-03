@@ -19,4 +19,8 @@ When a monk reaches 5th level, the penalty lessens to -1, and at 9th level it di
 
 	
 
- 
+    @021 = ~Stunning Blow
+All successful attacks within the next round force the victim to Save vs. Paralyze (with penalty equal to one quarter of monk level rounded down) or be stunned. This special ability automatically modifies normal attacks; no targeting needs to be done.~
+
+    @022 = ~Quivering Palm
+The next successful attack forces the target to Save vs. Death (with penalty equal to one quarter of monk level rounded down) or die. This special ability automatically modifies normal attacks; no targeting needs to be done.~

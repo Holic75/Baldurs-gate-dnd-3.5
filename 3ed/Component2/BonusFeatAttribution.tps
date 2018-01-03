@@ -15,8 +15,8 @@
 	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=0 
 						STR_VAR clab=~CLABFI04\.2DA~ feat_type_file=~FFTCRE~ caption=~FTREPCFT~ END
 
-//add bonus feats to ftr/cleric every 4 levels and at level 1 till lvl 20, then at level 22, 25 and 28
-	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010001000100010001001
+//add bonus feats to ftr/cleric every at level 5, 10, 15, 20l  22, 25 and 28
+	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000100001000010000 
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFC.SPL~ feat_type_file=~SFTCRE~ caption=~F_CBONFT~ END
 						
 //set delay to 1 second (to avoid hangup on 1st level character creation)
@@ -24,10 +24,10 @@
 		LPF  ALTER_SPELL_EFFECT INT_VAR duration  =1 timing =3  END
 	
 //same for ftr/mage
-	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010001000100010001001 
+	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000100001000010000  
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFM.SPL~ feat_type_file=~SFTCRE~ caption=~F_MBONFT~ END
-//same for ftr/mage/thief
-	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000100001000010000 
+//same for ftr/mage/thief (10,20, 22, 25 ,28)
+	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000000001000000000  
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRFMT.SPL~ feat_type_file=~SFTCRE~ caption=~FMTBONFT~ END
                         
                         
@@ -76,8 +76,8 @@
 	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=3 add_at_level1=0 
 						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRECM.SPL~ feat_type_file=~MFTCRE~ caption=~MCEPCFT~ END    
                         
-//epic feats to cleric - thief
-	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=3 add_at_level1=0 
+//feats to cleric - thief (10,20,22,25,28)
+	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000000001000000000  
 						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRECT.SPL~ feat_type_file=~SFTCRE~ caption=~CTEPCFT~ END 
                         
 //epic feats to cleric - ranger

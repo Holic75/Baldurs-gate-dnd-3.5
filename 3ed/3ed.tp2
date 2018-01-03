@@ -2,7 +2,7 @@
 
 BACKUP ~3ed/backup~
 AUTHOR ~denis.holic@gmail.com~
-VERSION ~v2.07~
+VERSION ~v2.08~
 
 
 ALWAYS
@@ -37,7 +37,7 @@ BEGIN @1
 	INCLUDE ~3ed/CHANGE_SPELL_PROPERTIES.tph~
     INCLUDE ~3ed/GET_SPELL_EFFECT_VALUES.tph~
     INCLUDE ~3ed/TRANSFER_PROTECTION_FROM_DISPLAY_STRING.tph~
-
+    INCLUDE ~3ed/UPDATE_SPELL_SAVES.tph~
 	
 	COPY ~3ed/Core/Clab~ ~override~ 
 	
@@ -84,6 +84,13 @@ BEGIN @1
 
 	INCLUDE ~3ed/Component1/UpdateThac0SavesClasses.tps~
 	INCLUDE ~3ed/Component1/DiminishSpellCastingClasses.tps~
+    
+    
+    //add uncanny dodge to thieves (pure and multiclass) and barbarian
+    COPY ~3ed/Feats/PermanentAbilities/UncannyDodge/IMMSNK.SPL~ ~override~
+    LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1
+						STR_VAR mask_file=~3ed/Feats/FeatAttribution/SFTCRNMT.SPL~ clab=~\(CLABTH+\)\|\(CLABFI05\).*\.2DA~  feat_type_file = ~IMMSNK~ caption=~IMM_SNK~ END	
+    
 	 //-----------------------------------------------------//
 
 	//---------------------channel energy
@@ -262,7 +269,7 @@ WITH_TRA ~%LANGUAGE%\Spells.tra~ BEGIN
 	INCLUDE ~3ed/Component4/ModifySpells.tps~ //modify rest of the spells
 	INCLUDE ~3ed/Component4/UpdateSavesAndEvasion.tps~ //change spells of saves, items (mostly spell to something)
 	
-	INCLUDE ~3ed/Component4/UpdateScrollDescriptions.tps~ //map scroll descriptiosn to that of corresponding spells
+	INCLUDE ~3ed/Component4/UpdateScrollDescriptions.tps~ //map scroll descriptions to that of corresponding spells
 	
 END
 	
@@ -272,7 +279,7 @@ END
 // New spells
 BEGIN @5
 
-	
+INCLUDE ~3ed/REMOVE_SUBSTRING.tph~
 INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
 INCLUDE ~3ed/GET_SPELL_EFFECT_VALUES.tph~
 INCLUDE ~3ed/ALTER_SPELL_EFFECT_EX.tph~
@@ -296,12 +303,16 @@ INCLUDE ~3ed/ADD_PROTECTION_REMOVALS_SPELLFUSED_WARDEN_SCHOOLS.tph~
 INCLUDE ~3ed/ADD_PROTECTION_REMOVALS_PRIEST_DOMAIN.tph~
 INCLUDE ~3ed/ADD_PROTECTION_REMOVALS_MINOR_SPELLCASTING.tph~
 INCLUDE ~3ed/CREATE_MINOR_SPELLCASTING.tph~
+INCLUDE ~3ed/REGULARIZE_SPELL_SAVES.tph~
 
 WITH_TRA ~%LANGUAGE%\Spells.tra~ BEGIN
 	
 	INCLUDE ~3ed/Component5/MagicFangSpells.tps~ //magic fang spells and nature avatar hla
 	INCLUDE ~3ed/Component5/NewClericSpells.tps~ 
 	INCLUDE ~3ed/Component5/NewDruidSpells.tps~ 
+    
+    INCLUDE ~3ed/Component5/RegularizeSpellSaves.tps~
+    
 	
     
 	INCLUDE ~3ed/Component5/PriestDomains.tps~ 
@@ -427,7 +438,7 @@ BEGIN @13
 
 	
     WITH_TRA ~%LANGUAGE%\npc.tra~ BEGIN
-         INCLUDE ~3ed/Component12/UpdateNpc.tps~
+         INCLUDE ~3ed/Component13/UpdateNpc.tps~
     END
 
 

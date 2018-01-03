@@ -26,7 +26,7 @@ FOR (i=1;i<=maxlvl;i+=1) BEGIN
 	LPF ADD_SPELL_EFFECT  INT_VAR  header = i power=1 opcode=345 target = 2 resist_dispel = 1 power=1 parameter1=1 duration = 60*i  END   // updating enchantment bonus and duration
 	LPF ADD_SPELL_EFFECT  INT_VAR  header = i power=1 opcode=278 target = 2 resist_dispel = 1 power=1 parameter1=1 duration = 60*i  END   // updating THAC0 bonus  and duration
 	LPF ADD_SPELL_EFFECT  INT_VAR  header = i power=1 opcode=73  target = 2 resist_dispel = 1 power=1 parameter1=1 duration = 60*i  END   // updating damage bonus and duration	
-	LPF ADD_SPELL_EFFECT  INT_VAR  header = i power=1 opcode=9   target = 2 resist_dispel = 1 power=1 duration = 60*i  END   // updating color pulse duration 		
+	LPF ADD_SPELL_EFFECT  INT_VAR  header = i power=1 opcode=9   target = 2 resist_dispel = 1 power=1 duration = 60*i  parameter1 = Color   parameter2 = CycleLocation END   // updating color pulse duration 		
 END
 LPF ADD_SPELL_EFFECT  INT_VAR  opcode=321 target=2 power=1 resist_dispel = 1 insert_point=0 STR_VAR resource = ~NATAV~ END
 LPF ADD_SPELL_EFFECT  INT_VAR  opcode=321 target=2 power=1 resist_dispel = 1 insert_point=0 STR_VAR resource = ~MFANG~ END

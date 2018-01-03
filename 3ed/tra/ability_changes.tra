@@ -10,7 +10,8 @@ Each successful hit within the next 5 rounds will inject poison into the target.
 12th - Target suffers 1 poison damage per second for 24 seconds (Save vs. Death at -2 negates), and also immediately suffers 6 poison damage (no save)
 16th - Target suffers 1 poison damage per second for 24 seconds (Save vs. Death at -3 negates), and also immediately suffers 9 poison damage (no save)
 20th - Target suffers 1 poison damage per second for 24 seconds (Save vs. Death at -4 negates), and also immediately suffers 12 poison damage (no save)
-24th - Target suffers 2 poison damage per second for 24 seconds (Save vs. Death at -5 negates), and also immediately suffers 16 poison damage (no save)~
+24th - Target suffers 2 poison damage per second for 24 seconds (Save vs. Death at -5 negates), and also immediately suffers 16 poison damage (no save)
+28th - Target suffers 2 poison damage per second for 24 seconds (Save vs. Death at -6 negates), and also immediately suffers 16 poison damage (no save)~
 //------------------------------------------------------------------------------------------------------------------------------//
 	@002=~Set Snare
 
@@ -36,3 +37,13 @@ At 11th level, barbarian’s bonuses to Strength and Constitution during his rag
 At 17th level, the character is no longer subject to fatigue effects after rage.
 At 20th level, barbarian’s bonuses to Strength and Constitution during his rage each increase to +8, and his morale bonus on saves  vs. Spell increases to +4. The penalty to AC remains at -2.~
 //---------------------------------------------------------------------------------------------------//
+    @005=~Charm Animal
+This spell affects any single animal it is cast upon. The animal is allowed a Saving Throw vs. Spell with penalty equal to one quarter of character level to negate the effect.
+
+If the spell's recipient fails its Saving Throw, it regards the caster as a trusted friend and ally to be heeded and protected. The caster may give it orders, and the charmed animal will carry them out as quickly as possible.
+
+If the caster harms—or attempts to harm—the charmed animal by some overt action, or if a Dispel Magic spell is cast upon the charmed animal, the Charm spell is broken. If two or more Charms simultaneously affect a creature, the most recent Charm takes precedence. Note that the subject will be hostile when the Charm expires, regardless of its original attitude. Also note that you cannot have a charmed creature leave the area where it was charmed.~
+
+//----------------------------------------------
+    @006=~Set Exploding Trap
+This ability allows the rogue to set a powerful trap that unleashes a fireball which causes 10d6 damage (Save vs. Breath Weapon for half damage with -5 penalty) and will knock its victims off their feet.~

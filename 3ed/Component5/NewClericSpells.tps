@@ -18,6 +18,7 @@
 	//make divine favor into cleric spell
 	COPY_EXISTING ~ohtyr2.SPL~ ~override~
 		LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_level=5 spell_type=2 END
+        LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 4*6 END
 		READ_LONG 0x0050 ~descr_strref~
         WRITE_ASCII 0x003a ~OHTYR2C~ //set icon (it is somehow not set in bg2)
 		STRING_SET_EVALUATE %descr_strref% @104	

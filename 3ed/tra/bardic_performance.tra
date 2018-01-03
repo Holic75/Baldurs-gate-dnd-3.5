@@ -55,7 +55,7 @@ A bard of 15th level or higher can inspire tremendous heroism in all <PRO_HISHER
 	@019=~Deadly Performance~
 	@020=~Deadly Performance
 
-A bard of 20th level or higher can use <PRO_HISHER> performance to cause one enemy to die from joy or sorrow. To be affected, the target must be able to see and hear the bard perform and be within 30 feet. The target can make a Saving Throw vs. Spell (-1 penalty at level 25, and -2 at level 30) to negate the effect. If a creature’s Saving Throw succeeds, the target is paralyzed for 2 rounds. If a creature’s Saving Throw fails, it dies.~
+A bard of 20th level or higher can use <PRO_HISHER> performance to cause one enemy to die from joy or sorrow. To be affected, the target must be able to see and hear the bard perform and be within 30 feet. The target can make a Saving Throw vs. Spell with -4 penalty, (-5 at level 25, and -6 at level 30) to negate the effect. If a creature’s Saving Throw succeeds, the target is paralyzed for 2 rounds. If a creature’s Saving Throw fails, it dies.~
 
 //---------------------------------------
 	@021=~Jester's Song~
@@ -63,7 +63,7 @@ A bard of 20th level or higher can use <PRO_HISHER> performance to cause one ene
 
 The jester is the master of the verbal put down, the hilarious joke, or the savage verbal lashing. Starting from level 1 <PRO_HISHER> words can inspire dread and outrage in <PRO_HISHER> enemies making them confused for next 4 rounds. The target creatures receive a Saving Throw vs. Spell with +2 bonus to avoid this effect.
 At level 5 the enemies no longer receive a bonus to their Saving Throws.
-At level 10 they receive a -2 penalty instead, which increases further to -4 at level 15, -6 at level 20,-8 at level 25 and -10 at level 30.~
+At level 10 they receive a -2 penalty instead, which increases further to -3 at level 15, -4 at level 20, -5 at level 25 and -6 at level 30.~
 
 //---------------------------------------
 	@023=~Song of Requiem~
@@ -104,7 +104,7 @@ Inspire Heroics
 A bard of 15th level or higher can inspire tremendous heroism in all <PRO_HISHER> allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the bard. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds. These bonuses increase to +5 at level 24, and +6 at level 30.
 
 Deadly Performance
-A bard of 20th level or higher can use <PRO_HISHER> performance to cause one enemy to die from joy or sorrow. To be affected, the target must be able to see and hear the bard perform and be within 30 feet. The target can make a Saving Throw vs. Spell (-1 penalty at level 25, and -2 at level 30) to negate the effect. If a creature’s Saving Throw succeeds, the target is paralyzed for 2 rounds. If a creature’s Saving Throw fails, it dies.
+A bard of 20th level or higher can use <PRO_HISHER> performance to cause one enemy to die from joy or sorrow. To be affected, the target must be able to see and hear the bard perform and be within 30 feet. The target can make a Saving Throw vs. Spell with -4 penalty (-5 at level 25, and -6 at level 30) to negate the effect. If a creature’s Saving Throw succeeds, the target is paralyzed for 2 rounds. If a creature’s Saving Throw fails, it dies.
 
 Song of Requiem
 A bard of 24th level or higher can use this epic performance to drain the very life force of <PRO_HISHER> all enemies within 30 feet, causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds.~
@@ -128,7 +128,7 @@ A blade or skald of 24th level or higher can use this epic performance to drain 
 Jester's Song
 The jester is the master of the verbal put down, the hilarious joke, or the savage verbal lashing. Starting from level 1 <PRO_HISHER> words can inspire dread and outrage in <PRO_HISHER> enemies making them confused for next 4 rounds. The target creatures receive a Saving Throw vs. Spell with +2 bonus to avoid this effect.
 At level 5 the enemies no longer receive a bonus to their Saving Throws.
-At level 10 they receive a -2 penalty instead, which increases further to -4 at level 15, -6 at level 20, -8 at level 25 and -10 at level 30.
+At level 10 they receive a -2 penalty instead, which increases further to -3 at level 15, -4 at level 20, -5 at level 25 and -6 at level 30.
 
 Dirge of Doom
 A jester of 8th level or higher can use <PRO_HISHER> performance to foster a sense of growing dread in <PRO_HISHER> enemies, causing them to become shaken and receive -2 penalty to their attack rolls, Armor Class and Saving throws. To be affected, an enemy must be within 30 feet and able to see and hear the jester’s performance. The effect persists for 4 rounds. There is no Saving throw against this ability.

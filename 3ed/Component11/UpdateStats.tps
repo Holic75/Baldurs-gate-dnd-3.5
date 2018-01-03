@@ -10,13 +10,13 @@
 		SET HP_BONUS=150 //in percent
 		
 		PATCH_IF (allegience=0 OR allegience>5) BEGIN //if not summoned
-			PATCH_IF (level>5 AND level<10) BEGIN
+			PATCH_IF (level>5 AND level<=10) BEGIN
 				SET APR_BONUS=6 
 			END
-			ELSE PATCH_IF (level>10 AND level<15) BEGIN
+			ELSE PATCH_IF (level>10 AND level<=15) BEGIN
 				SET APR_BONUS=1
 			END
-			ELSE PATCH_IF (level>15 AND level<20) BEGIN
+			ELSE PATCH_IF (level>15 AND level<=20) BEGIN
 				SET APR_BONUS=7
 			END
 			ELSE PATCH_IF (level>20) BEGIN

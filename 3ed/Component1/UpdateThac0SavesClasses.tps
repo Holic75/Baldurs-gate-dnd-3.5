@@ -82,9 +82,9 @@
 	COPY ~3ed/Core/THAC0/THAC0H.SPL~ ~override/SAVESDH.SPL~ //high thaco for swashbucklers
 		FOR (i=1;i<=30;i=i+1) BEGIN
         
-            SET save_val = (16 - i/2)
+            SET save_val = (12 - i/2)
             PATCH_IF (save_val<6) BEGIN
-                SET save_val = 6
+                SET save_val = 2
             END
 			LPF ALTER_SPELL_EFFECT INT_VAR header=i parameter1=save_val new_opcode = 33  END //saving throw vs death value
 		END

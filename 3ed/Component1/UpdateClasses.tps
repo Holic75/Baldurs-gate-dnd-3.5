@@ -71,7 +71,10 @@ END
         COPY ~3ed/Classes/Paladin/AuraFaith~ ~override~ //copy icons
     
         COPY_EXISTING ~SPPR108.SPL~ ~override/AURAFAI.SPL~ //use remove fear as base for a spell
-        
+            READ_BYTE 0x001b spell_flags
+            SET spell_flags = spell_flags BAND 2
+            WRITE_BYTE 0x001b spell_flags
+            
             WRITE_ASCII 0x003a ~AURAFAIC~ #8 //spellbook icon
             LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_type = 4 END
             LPF ADD_SPELL_EFFECT INT_VAR opcode = 73 target = 2 parameter1 = 1 resist_dispel = 3 duration = 60 END //damage bonus
@@ -97,7 +100,13 @@ END
 	END
 	//-------------------------inquisitor----------------------
 	//mr bonus (25%+2/level till level 30)
-	COPY ~3ed/Classes/Inquisitor~ ~override~
+	COPY ~3ed/Classes/Inquisitor/INQMR.SPL~ ~override~
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 insert_point = 0 duration = 1 STR_VAR resource = ~INQMR~ END
+        FOR (i=2;i<=30;i=i+1) BEGIN
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+            LPF ALTER_SPELL_HEADER INT_VAR  header = i min_level = i END
+            LPF ALTER_SPELL_EFFECT INT_VAR header = i match_opcode = 166 parameter1 = 25 + i*2 END
+        END
 	
     
     //-------------------------------hexblade----------------------    
@@ -262,6 +271,56 @@ END
 		COPY_EXISTING  ~MFIST8.ITM~ ~override~	
 			WRITE_LONG 0x0008 fist_6
 			WRITE_LONG 0x000c fist_6
+            
+            
+        //monk stunning blow and quivering palm
+        //create header placeholders
+        OUTER_FOR (i=1;i<=7;i=i+1) BEGIN
+            COPY_EXISTING ~SPCL811.SPL~ ~override~ //stunning blow
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 1  END 
+                LPF ALTER_SPELL_HEADER INT_VAR header = i min_level =  4*i END
+                
+            COPY_EXISTING ~SPCL820.SPL~ ~override~ //quivering palm
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 1  END 
+                LPF ALTER_SPELL_HEADER INT_VAR header = i + 1 min_level =  4*i END
+        END
+        
+      
+        OUTER_FOR (i=0;i<=7;i=i+1) BEGIN
+            OUTER_SET savebonus = 0 -  i
+            OUTER_SET savingthrow = 4
+            COPY_EXISTING ~SPCL811.EFF~ ~override/MNKSTNH%i%.EFF~
+                LPF ALTER_EFF INT_VAR savebonus savingthrow END
+            COPY_EXISTING ~STUNSTRG.EFF~ ~override/MNKSTNS%i%.EFF~
+                LPF ALTER_EFF INT_VAR savebonus savingthrow END
+            COPY_EXISTING ~STUNVIS.EFF~ ~override/MNKSTNV%i%.EFF~
+                LPF ALTER_EFF INT_VAR savebonus savingthrow END
+            
+            COPY_EXISTING ~SPCL820.EFF~ ~override/MNKQVPH%i%.EFF~
+                 LPF ALTER_EFF INT_VAR savebonus savingthrow END
+            COPY_EXISTING ~QUIVVIS.EFF~ ~override/MNKQVPV%i%.EFF~
+                 LPF ALTER_EFF INT_VAR savebonus savingthrow END
+            
+            COPY_EXISTING ~SPCL811.SPL~ ~override~    
+                SPRINT resource EVALUATE_BUFFER ~MNKSTNH%i%~
+                LPF ALTER_SPELL_EFFECT_EX INT_VAR header =  i+1 STR_VAR match_resource = ~SPCL811~ resource END
+                SPRINT resource EVALUATE_BUFFER ~MNKSTNS%i%~
+                LPF ALTER_SPELL_EFFECT_EX INT_VAR header =  i+1 STR_VAR match_resource = ~STUNSTRG~ resource END
+                SPRINT resource EVALUATE_BUFFER ~MNKSTNV%i%~
+                LPF ALTER_SPELL_EFFECT_EX INT_VAR header =  i+1 STR_VAR match_resource = ~STUNVIS~ resource END
+                
+            COPY_EXISTING ~SPCL820.SPL~ ~override~    
+                SPRINT resource EVALUATE_BUFFER ~MNKQVPH%i%~
+                LPF ALTER_SPELL_EFFECT_EX INT_VAR header =  i+1 STR_VAR match_resource = ~SPCL820~ resource END
+                SPRINT resource EVALUATE_BUFFER ~MNKQVPV%i%~
+                LPF ALTER_SPELL_EFFECT_EX INT_VAR header =  i+1 STR_VAR match_resource = ~QUIVVIS~ resource END            
+        END    
+        //update descriptions
+        COPY_EXISTING ~SPCL811.SPL~ ~override~
+			SAY UNIDENTIFIED_DESC @021
+        COPY_EXISTING ~SPCL820.SPL~ ~override~
+			SAY UNIDENTIFIED_DESC @022
+        
 	END
 	//---------------------------- ninja (bounty hunter->ninja)---------------------------------------
 	WITH_TRA ~%LANGUAGE%\ninja.tra~ BEGIN
@@ -313,7 +372,7 @@ END
 		END
 	END
 	
-	//------------------------------Druid shapeshifts and other polymorph forms-----------------------------------------		
+	//------------------------------Druid shapeshifts and other polymorph forms and charm animal update-----------------------------------------		
 	WITH_TRA ~%LANGUAGE%\druid_shapeshift.tra~ BEGIN   
 		//shapeshifts that can use items
 		COPY ~3ed/Classes/Druid/Polymorph2DA~ ~override~ //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -351,7 +410,7 @@ END
              LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 144 target = 1 timing = 2 parameter1 = 0 parameter2 = 3 END
              LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 144 target = 1 timing = 2 parameter1 = 0 parameter2 = 4 END
              LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 144 target = 1 timing = 2 parameter1 = 0 parameter2 = 5 END
-             LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 144 target = 1 timing = 2 parameter1 = 0 parameter2 = 5 END
+             LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 144 target = 1 timing = 2 parameter1 = 0 parameter2 = 2 END
 
 			       
 		COPY_EXISTING ~PL_NFRM.SPL~ ~override~ 
@@ -382,7 +441,7 @@ END
             LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 144 target = 1 timing = 2 parameter1 = 0 parameter2 = 3 END
             LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 144 target = 1 timing = 2 parameter1 = 0 parameter2 = 4 END
             LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 144 target = 1 timing = 2 parameter1 = 0 parameter2 = 5 END
-            LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 144 target = 1 timing = 2 parameter1 = 0 parameter2 = 5 END
+            LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 144 target = 1 timing = 2 parameter1 = 0 parameter2 = 2 END
             
         COPY ~3ed/Classes/Polymorphs/Forms~ ~override~
         ACTION_DEFINE_ASSOCIATIVE_ARRAY SpellPolymorphStrings BEGIN
@@ -502,8 +561,8 @@ END
             COPY_EXISTING ~CLCK27.ITM~ ~override~   
                  LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~SPIN151~ resource = ~PL_NFRM~ END
                  LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~SPWI491~ resource = ~PL_NFRM~ END
-                 LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~PLYTROLL~ resource = ~PL_TROL~ END
-                 LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~PLYJELLY~ resource = ~PL_JELL~ END                
+                 LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~PLYTROLL~ resource = ~WP_TROL~ END
+                 LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~PLYJELLY~ resource = ~WP_JELL~ END                
         END
         
         //add removals of abilities
@@ -534,8 +593,24 @@ END
         BUT_ONLY
 			
 			
-					
-	END	
+    END    
+    
+    WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN  
+        COPY_EXISTING_REGEXP ~\(\(SPIN108\)\|\(SPCL311\)\)\.SPL~ ~override~
+            LPF ALTER_SPELL_EFFECT INT_VAR power = 0 END
+            
+            FOR (i=1;i<=7;i=i+1) BEGIN
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+                LPF ALTER_SPELL_HEADER INT_VAR header = i+1 min_level = 4*i END
+                
+                SET savebonus = 0 - i
+                LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i+1 savebonus END
+            
+            END
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR match_savingthrow = 8 savingthrow = 1 END
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @005
+	END				
     //--------------------------Priest of talos lightning dmg ----------------------------------------------------------
     
     OUTER_SPRINT clab_line  ~ABIL_TALOS~
@@ -572,8 +647,9 @@ END
         COPY_EXISTING ~bdpweapn.spl~ ~override~
             LPF ADD_SPELL_HEADER INT_VAR copy_header = 4 insert_point =5 END
             LPF ADD_SPELL_HEADER INT_VAR copy_header = 4 insert_point =6 END
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 4 insert_point =7 END
 		
-            FOR (i=2;i<=6;i=i+i) BEGIN
+            FOR (i=2;i<=7;i=i+i) BEGIN
                 LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = (i - 1) *4 END
             END
 		
@@ -583,8 +659,12 @@ END
             LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 5 match_opcode = 142 duration = 24 savebonus  END
             SET savebonus = 0 - 5
             LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 6 match_opcode = 12 parameter1 = 16 END
-            LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 5 match_opcode = 25 duration = 24 parameter1 = 2 savebonus  END
-            LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 5 match_opcode = 142 duration = 24 savebonus  END	
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 6 match_opcode = 25 duration = 24 parameter1 = 2 savebonus  END
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 6 match_opcode = 142 duration = 24 savebonus  END
+            SET savebonus = 0 - 6
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 7 match_opcode = 12 parameter1 = 16 END
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 7 match_opcode = 25 duration = 24 parameter1 = 2 savebonus  END
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 7 match_opcode = 142 duration = 24 savebonus  END	            
 		
 		
         WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN  
@@ -627,7 +707,19 @@ END
 				SAY UNIDENTIFIED_DESC @002
 		END
 	END
-	//---------------------------------------thief traps at lvls 1,10,15,20
+    
+    //update shadow maze (description + save at -5)
+    ACTION_IF NOT (~%GameId%~ STR_EQ ~Bg1~) BEGIN
+        WITH_TRA ~%LANGUAGE%\shadowdancer.tra~ BEGIN
+			COPY_EXISTING ~spcl937.SPL~ ~override~				
+                SET new_save_bonus = 0 - 5 
+                LPF UPDATE_SPELL_SAVES INT_VAR original_save = 1 new_save_bonus END
+                SAY UNIDENTIFIED_DESC @003
+    
+        END
+    END
+    
+	//---------------------------------------thief traps at lvls 1,10,15,20 and exploding trap
 	COPY_EXISTING ~SPCL411.spl~ ~override~
 		FOR (i=2;i<=4;i=i+1) BEGIN
 			SET lvl = 1+ (7+i)*(i>1)
@@ -642,13 +734,79 @@ END
 		COPY_EXISTING ~SPCL414.SPL~ ~override~
 			READ_LONG 0x0050 ~descr_strref~
 			STRING_SET_EVALUATE %descr_strref% @003
+            
+            //update exploding trap to have -5 penalty
+        ACTION_IF NOT (~%GameId%~ STR_EQ ~Bg1~) BEGIN
+            
+            COPY_EXISTING ~SPCL911.SPL~ ~override~
+                SAY UNIDENTIFIED_DESC @006
+                
+            COPY_EXISTING ~SPCL911B.SPL~ ~override~           
+                SET new_save_bonus = 0 - 5 
+                LPF UPDATE_SPELL_SAVES INT_VAR original_save = 1 new_save_bonus END
+                LPF ALTER_SPELL_EFFECT INT_VAR power = 0 END 
+        END
 	END		
 		
+  
 	COPY_EXISTING ~SPCL415.spl~ ~override~
 		FOR (i=2;i<=4;i=i+1) BEGIN
 			SET lvl = 1+ (7+i)*(i>1)
 			LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = i*5 END
 		END
+//fighter/thief dirty combat ----------------------------------------------------------
+    COPY ~3ed/Classes/FighterThief~ ~override~
+WITH_TRA ~%LANGUAGE%\fighter_thief.tra~ BEGIN          
+    //slow    
+    COPY_EXISTING ~F_T_DRH.SPL~ ~override/F_T_DR1.SPL~
+        SET  SlowStrRef=RESOLVE_STR_REF (@001)
+        FOR (i=1;i<=4;i=i+1) BEGIN
+            SET probability2 = 25*(i - 1) + 1
+            SET probability2 = probability2 > 0 ? probability2 : 0 
+            LPF ADD_SPELL_EFFECT INT_VAR target = 2 opcode = 40 duration = 6*i probability1 = 25*i probability2 END
+            LPF ADD_SPELL_EFFECT INT_VAR target = 2 opcode = 142 parameter2 = 41 duration = 6*i probability1 = 25*i probability2 END
+        END
+        LPF ADD_SPELL_EFFECT INT_VAR target = 2 opcode = 139 parameter1 = SlowStrRef duration = 1  END
+        
+    //blindness   
+    COPY_EXISTING ~F_T_DRH.SPL~ ~override/F_T_DR2.SPL~
+        SET  BlindStrRef=RESOLVE_STR_REF (@002)
+        FOR (i=1;i<=4;i=i+1) BEGIN
+            SET probability2 = 25*(i - 1) + 1
+            SET probability2 = probability2 > 0 ? probability2 : 0 
+            LPF ADD_SPELL_EFFECT INT_VAR target = 2 opcode = 74 duration = 6*i probability1 = 25*i probability2 END
+            LPF ADD_SPELL_EFFECT INT_VAR target = 2 opcode = 142 parameter2 = 8 duration = 6*i probability1 = 25*i probability2 END
+        END
+        LPF ADD_SPELL_EFFECT INT_VAR target = 2 opcode = 139 parameter1 = BlindStrRef duration = 1 END
+    //Sickened
+    COPY_EXISTING ~F_T_DRH.SPL~ ~override/F_T_DR3.SPL~
+        SET  SickenedStrRef=RESOLVE_STR_REF (@003)
+        FOR (i=1;i<=4;i=i+1) BEGIN
+            SET probability2 = 25*(i - 1) + 1
+            SET probability2 = probability2 > 0 ? probability2 : 0 
+            SET parameter1 = 0 - 2
+            LPF ADD_SPELL_EFFECT INT_VAR target = 2 opcode = 278 parameter1 duration = 6*i probability1 = 25*i probability2 END //thac0
+            LPF ADD_SPELL_EFFECT INT_VAR target = 2 opcode = 73 parameter1 duration = 6*i probability1 = 25*i probability2 END //damage
+            LPF ADD_SPELL_EFFECT INT_VAR target = 2 opcode = 325 parameter1 duration = 6*i probability1 = 25*i probability2 END //saves
+            LPF ADD_SPELL_EFFECT INT_VAR target = 2 opcode = 142 parameter2 = 100 duration = 6*i probability1 = 25*i probability2 END          
+        END    
+        LPF ADD_SPELL_EFFECT INT_VAR target = 2 opcode = 139 parameter1 = SickenedStrRef duration = 1 END
+    
+    COPY_EXISTING ~F_T_DRH.SPL~ ~override~
+        LPF ADD_SPELL_EFFECT INT_VAR target = 2 opcode = 326  duration = 1  STR_VAR resource = ~F_T_DR1~ probability1  = 10 END 
+        
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+        LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 10 END
+        LPF ADD_SPELL_EFFECT INT_VAR target = 2 header = 2 opcode = 326  duration = 1  probability2 = 11 probability1 = 20 STR_VAR resource = ~F_T_DR2~ END 
+        
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = 2 END
+        LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 15 END
+        LPF ADD_SPELL_EFFECT INT_VAR target = 2 header = 3 opcode = 326  duration = 1  probability2 = 21 probability1 = 30 STR_VAR resource = ~F_T_DR3~ END 
+        
+        
+    LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=5 d_level=1 add_at_level1=0 
+            STR_VAR clab=~CLABTH01\.2DA~  mask_file=~3ed/Feats/FeatAttribution/SFTCREFT.SPL~ feat_type_file = ~F_T_DRT~ caption=~DRT_CMB~ END
+END
 	
 	//--------------------------------------------------//
 	//barbarian rage update (tireless, mighty) 
@@ -951,3 +1109,16 @@ END
 	 //mind shield
 	  COPY   ~3ed/Classes/Jester/%GameId%/JSTRIMM.SPL~  ~override~ //immunities !!!!!!!!!!!!!!!!!!!!!!	  	
 	 //--------------------------------------------//	 
+
+     
+     //constant vocalize for mage-thiefs
+     COPY_EXISTING ~SPWI219.SPL~ ~override/MT_VOC.SPL~
+        LPF DELETE_EFFECT INT_VAR header =0 match_opcode = 50 END
+        LPF DELETE_EFFECT INT_VAR header =0 match_opcode = 139 END
+        LPF DELETE_EFFECT INT_VAR header =0 match_opcode = 174 END
+        LPF DELETE_EFFECT INT_VAR header =0 match_opcode = 215 END
+        LPF ALTER_SPELL_EFFECT INT_VAR timing = 1 resist_dispel = 0 duration = 1 END
+     
+    
+    LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=8 d_level=1 add_at_level1=0 
+        STR_VAR mask_file=~3ed/Feats/FeatAttribution/SFTCREMT.SPL~ clab=~CLABTH01\.2DA~ feat_type_file = ~MT_VOC~ caption=~VOC_MT~ END	
