@@ -98,5 +98,27 @@ DEFINE_PATCH_FUNCTION ~PTCH_WPN~
                 LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1  parameter2 = 3  timing = 2  resist_dispel = 0  duration = 0 probability1 = 100  probability2 = 0  STR_VAR  resource  END	
 				LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 326 target = 1  power = 0  parameter1 = 0  parameter2 = 0  timing = 0  resist_dispel = 0  duration = 2 probability1 = 100  probability2 = 0  STR_VAR  resource  END            
             END
+            
+            //suppress enchantment bonuses
+            PATCH_IF (category == 28 OR (proficiency>=89 AND proficiency<=98)) BEGIN
+            
+                READ_LONG 0x0060 current_enchantment               
+                SET current_enchantment = current_enchantment > 5 ? 5 : current_enchantment
+           
+                FOR (k = 1; k<=current_enchantment;k = k + 1) BEGIN
+                    //attack bonus
+                    SPRINT resource EVALUATE_BUFFER ~ENC_WPA%k%~
+                    LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource END
+                    LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource END        
+                END  
+
+                SET current_enchantment = is_melee ? current_enchantment : 5
+                FOR (k = 1; k<=current_enchantment;k = k + 1) BEGIN
+                    //attack bonus
+                    SPRINT resource EVALUATE_BUFFER ~ENC_WPD%k%~
+                    LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource END
+                    LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource END        
+                END                      
+            END
 	END
     

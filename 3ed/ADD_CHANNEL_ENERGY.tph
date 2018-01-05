@@ -20,7 +20,7 @@ DEFINE_ACTION_FUNCTION ~ADD_CHANNEL_ENERGY~
         
     COPY ~3ed/Classes/TurnUndead/EN_PR.EFF~ ~override/EN_PRA%id%.EFF~
         WRITE_EVALUATED_ASCII 0x30 ~CE_A_%id%~ #8
-    
+    //cleansing flames
 	COPY ~3ed/Classes/TurnUndead/CH_POS.SPL~ ~override/CE_A_%id%.SPL~
 		 WRITE_LONG 0x0008 angel_name_ref
 		 WRITE_LONG 0x0050 angel_descr_ref
@@ -33,7 +33,7 @@ DEFINE_ACTION_FUNCTION ~ADD_CHANNEL_ENERGY~
 			PATCH_IF (dmg<1) BEGIN
 				dmg=1
 			END
-			SPRINT resource EVALUATE_BUFFER ~EN_HL%dmg%~
+			SPRINT resource EVALUATE_BUFFER ~EN_HLA%dmg%~
 			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 199 parameter2 =2 duration=1 timing=0 STR_VAR resource END
             
             //protection of non enemy creatures from further effects
@@ -41,7 +41,7 @@ DEFINE_ACTION_FUNCTION ~ADD_CHANNEL_ENERGY~
             LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 199 parameter2 =2 duration=1 timing=0 STR_VAR resource END
             
             //damage
-			SPRINT resource EVALUATE_BUFFER ~EN_DMG%dmg%~
+			SPRINT resource EVALUATE_BUFFER ~EN_DMA%dmg%~
 			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 3 parameter2 =8 duration=1 timing=0 STR_VAR resource END
 			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 3 parameter2 =8 duration=1 timing=0 savingthrow=1 savebonus STR_VAR resource END
             
@@ -69,7 +69,7 @@ DEFINE_ACTION_FUNCTION ~ADD_CHANNEL_ENERGY~
         
     COPY ~3ed/Classes/TurnUndead/EN_PR.EFF~ ~override/EN_PRP%id%.EFF~
         WRITE_EVALUATED_ASCII 0x30 ~CE_P_%id%~ #8
-	
+	//positive energy
 	COPY ~3ed/Classes/TurnUndead/CH_POS.SPL~ ~override/CE_P_%id%.SPL~
 		 WRITE_LONG 0x0008 pos_name_ref
 		 WRITE_LONG 0x0050 pos_descr_ref
@@ -101,7 +101,7 @@ DEFINE_ACTION_FUNCTION ~ADD_CHANNEL_ENERGY~
 	
     COPY ~3ed/Classes/TurnUndead/EN_PR.EFF~ ~override/EN_PRN%id%.EFF~
         WRITE_EVALUATED_ASCII 0x30 ~CE_N_%id%~ #8
-        
+    //negative energy    
 	COPY ~3ed/Classes/TurnUndead/CH_NEG.SPL~ ~override/CE_N_%id%.SPL~
 		 WRITE_LONG 0x0008 neg_name_ref
 		 WRITE_LONG 0x0050 neg_descr_ref

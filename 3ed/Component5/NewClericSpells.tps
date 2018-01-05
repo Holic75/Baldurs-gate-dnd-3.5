@@ -173,4 +173,80 @@
 		SAY UNIDENTIFIED_DESC @218
 		ADD_SPELL "override/MSCURE2.SPL" 1  7 CLERIC_MASS_CURE_CRITICAL    
 	
-			
+	//add enchanted weapon as 4th level cleric spell
+    COPY_EXISTING ~SPWI417.SPL~ ~override/CLR_EWP.SPL~
+        LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_type = 2 END
+        SAY UNIDENTIFIED_DESC @309
+		WRITE_BYTE 0x0021 0b10000000 //disallow druids to cast it
+        WRITE_BYTE 0x001f 0 
+        ADD_SPELL "override/CLR_EWP.SPL" 1  4 CLERIC_ENCHANTED_WEAPON
+        DEFINE_ASSOCIATIVE_ARRAY extended_spell_list BEGIN  "%DEST_RES%" => "SPWI417" END
+        
+
+    
+    //add magic weapon as lvl1 cleric spell
+    COPY ~3ed/Spells/EnchantedWeapon/MAGWEAPB.BAM~ ~override~
+    COPY ~3ed/Spells/EnchantedWeapon/MAGWEAPC.BAM~ ~override~
+    COPY_EXISTING ~SPWI417.SPL~ ~override/CLR_MWP.SPL~
+        WRITE_ASCII 0x003a ~MAGWEAPC~ #8 //spellbook icon        
+        LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_level = 1 spell_type = 2 END
+        SAY NAME1 @310
+        SAY UNIDENTIFIED_DESC @311
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 272 END
+        READ_SHORT 0x0068 "Nheaders" //number of headers
+        FOR (i=1;i<=Nheaders;i=i+1) BEGIN
+            LPF ADD_SPELL_EFFECT INT_VAR header = i target = 2 opcode = 272 power = 1 resist_dispel = 3 duration = i*30 parameter1 = 1 STR_VAR resource = ~ENC_WPD1~ END
+            LPF ADD_SPELL_EFFECT INT_VAR header = i target = 2 opcode = 272 power = 1 resist_dispel = 3 duration = i*30 parameter1 = 1 STR_VAR resource = ~ENC_WPA1~ END 
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_opcode = 345 power = 1 parameter1 =  1 END
+        END        
+        LPF ALTER_SPELL_HEADER STR_VAR icon = ~MAGWEAPB~ END
+		WRITE_BYTE 0x0021 0b10000000 //disallow druids to cast it
+        WRITE_BYTE 0x001f 0 
+        ADD_SPELL "override/CLR_MWP.SPL" 1  1 CLERIC_MAGIC_WEAPON
+        DEFINE_ASSOCIATIVE_ARRAY extended_spell_list BEGIN  "%DEST_RES%" => "SPWI417" END    
+        
+        
+    //add magic vestment as level 3 cleric spell    
+    COPY ~3ed/Spells/MagicVestment/MAGVESTB.BAM~ ~override~
+    COPY ~3ed/Spells/MagicVestment/MAGVESTC.BAM~ ~override~
+
+    OUTER_FOR (i=1;i<=5;i=i+1) BEGIN
+        COPY ~3ed/Spells/MagicVestment/MAG_VST.SPL~ ~override/MAG_VST%i%.SPL~
+            SPRINT resource EVALUATE_BUFFER ~MAG_VST%i%~
+            LPF ALTER_SPELL_EFFECT INT_VAR opcode = 321 STR_VAR resource END
+            
+        COPY_EXISTING ~SHLD_AC1.EFF~    ~override/MAG_VST%i%.EFF~
+            WRITE_EVALUATED_ASCII 0x0030 ~MAG_VST%i%~                  
+    END    
+    
+       
+    COPY_EXISTING ~SPWI417.SPL~ ~override/CLR_MVS.SPL~
+        WRITE_ASCII 0x003a ~MAGVESTC~ #8 //spellbook icon        
+        LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_level = 3 spell_type = 2 END
+        SAY NAME1 @312
+        SAY UNIDENTIFIED_DESC @313
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 272 END
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 345 END
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 321 END
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 215  STR_VAR resource = ~ICARMOR~  END //armor animation
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 142 parameter2 = 12 END //armor icon
+        LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 328 opcode = 282 parameter1 = 5 parameter2 = 4 special = 0 END //armor state
+        READ_SHORT 0x0068 "Nheaders" //number of headers
+        FOR (i=1;i<=Nheaders;i=i+1) BEGIN
+            SET max_ench = i/4
+            SET max_ench = max_ench<1 ? 1 : max_ench
+            SET max_ench = max_ench>5 ? 5 : max_ench
+            
+            FOR (k=1;k<=max_ench;k=k+1) BEGIN
+                SPRINT resource EVALUATE_BUFFER ~MAG_VST%k%~
+                LPF ADD_SPELL_EFFECT INT_VAR header = i target = 2 opcode = 272 power = 4 resist_dispel = 3 duration = i*30 parameter1 = 1 STR_VAR resource END
+            END                     
+        END        
+        LPF ALTER_SPELL_HEADER STR_VAR icon = ~MAGVESTB~ END
+		WRITE_BYTE 0x0021 0b10000000 //disallow druids to cast it
+        WRITE_BYTE 0x001f 0 
+        ADD_SPELL "override/CLR_MVS.SPL" 1  3 CLERIC_MAGIC_VESTMENT
+            SPRINT resource EVALUATE_BUFFER ~%DEST_RES%~		
+			LPF ADD_SPELL_EFFECT INT_VAR  opcode = 321 power=3 target=2  duration=1 timing=0 resist_dispel=3 insert_point=0 STR_VAR resource END //remove effects from previous cast
+	
+        

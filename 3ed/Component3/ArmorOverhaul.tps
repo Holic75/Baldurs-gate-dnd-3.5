@@ -30,18 +30,18 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   //unique armors
   PATCH_IF ((~%SOURCE_RES%~ STR_EQ ~PLAT06~) OR (~%SOURCE_RES%~ STR_EQ ~KING~)) BEGIN //ankheg or ice king plate mail -> chain mail (allow beastmaster)
 	WRITE_SHORT 0x0026 8 //str req to 8 
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 16  string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 14 END	
+	LPF UPDATE_ARMOR INT_VAR is_light = 0 spell_failure = 20 max_dex = 16 skill_penalty = 16  string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 14 END	
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~beastmaster~ END
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~ END
 	
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~CHAN17~) BEGIN //ashen scales +2 -> chain mail (allow bard)
   
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 16  string_to_replace_ref_match = 9 string_to_replace_ref = 10 
+	LPF UPDATE_ARMOR INT_VAR is_light = 0 spell_failure = 20 max_dex = 16 skill_penalty = 16  string_to_replace_ref_match = 9 string_to_replace_ref = 10 
                              new_string_to_add_ref = 14 update_unid_string = 0 END
                              
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~bard~ END
 	
-  END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~PLAT18~) BEGIN //red dragon scale -> splint (allow barbarian)
+  END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~PLAT18~ OR ~%SOURCE_RES%~ STR_EQ ~PLAT20~) BEGIN //red dragon scale -> splint (allow barbarian)
 	
 	LPF UPDATE_ARMOR INT_VAR spell_failure = 30 max_dex = 14 skill_penalty = 14 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 15 END
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~ END
@@ -54,9 +54,9 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~mage_thief~ END
     LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_mage_thief~ END
 
-  END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~CHAN20~) BEGIN //white dragon scale bg2-> splint mail
+  END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~CHAN20~) BEGIN //white dragon scale bg2-> chain mail
 	
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 16  string_to_replace_ref_match = 9 string_to_replace_ref = 10 
+	LPF UPDATE_ARMOR INT_VAR is_light = 0 spell_failure = 20 max_dex = 16 skill_penalty = 16  string_to_replace_ref_match = 9 string_to_replace_ref = 10 
                              new_string_to_add_ref = 14 update_unid_string = 0 END
                              
 	LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~thief~ END
@@ -233,8 +233,6 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
     
     LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
   END
-  
-  
   
   
   PATCH_IF (category = HelmsCategory) BEGIN//helms - remove critical hit protection

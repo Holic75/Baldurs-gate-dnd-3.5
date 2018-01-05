@@ -609,13 +609,19 @@
 		LPF ALTER_SPELL_HEADER INT_VAR range=1 END
 	
 	//make lay on hands cure disiese starting from level 6, and poison starting from level 9
+    COPY_EXISTING ~SPPR404.SPL~ ~override/LAY_PSN.SPL~  //make proxy poison neutralization without hp restoration
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=17 END
+        WRITE_LONG 0x0008 0
+        
 	COPY_EXISTING ~SPCL211.SPL~ ~override~ 
 		READ_SHORT 0x0068 "Nheaders" //number of headers
-		FOR (i=6;i<=Nheaders;i=i+1) BEGIN 
-			LPF ADD_SPELL_EFFECT INT_VAR  opcode = 79 power=0 target=2  duration=1 timing=0 resist_dispel=3 insert_point=i  END //cure disease 
-			PATCH_IF (i>=9) BEGIN
-				LPF ADD_SPELL_EFFECT INT_VAR  opcode = 11 power=0 target=2  duration=1 timing=0 resist_dispel=3 insert_point=i  END  //cure poison
+		FOR (i=6;i<=Nheaders;i=i+1) BEGIN 			 
+			PATCH_IF (i<9) BEGIN
+                LPF ADD_SPELL_EFFECT INT_VAR  opcode = 326 power=0 target=2  duration=1 timing=0 resist_dispel=3 header = i  STR_VAR resource = ~SPPR317~ END //cure disease				
 			END
+            ELSE BEGIN
+                LPF ADD_SPELL_EFFECT INT_VAR  opcode = 326 power=0 target=2  duration=1 timing=0 resist_dispel=3 header = i  STR_VAR resource = ~LAY_PSN~ END //cure disease and poison
+            END
 		END
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @052
@@ -661,14 +667,15 @@
         READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @060
         
-    
+        
    
-    
     ACTION_IF NOT (~%GameId%~ STR_EQ  ~Iwd~) BEGIN
     
-    //fix saves for creeping doom
-        COPY_EXISTING ~FLPR717A.SPL~ ~override~
-            LPF ALTER_SPELL_EFFECT INT_VAR savingthrow = 0 END
+        ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
+        //fix saves for creeping doom
+            COPY_EXISTING ~FLPR717A.SPL~ ~override~
+                LPF ALTER_SPELL_EFFECT INT_VAR savingthrow = 0 END
+        END
             
         COPY_EXISTING ~SPPR717.SPL~ ~override~ 
             SET savebonus = 0 - 2 
@@ -792,4 +799,68 @@
         COPY_EXISTING ~SPPR721.SPL~ ~override~
             LPF REPLACE_SUBSTRING INT_VAR strref_offset = 0x0050  substring_to_replace_ref = 20003 new_substring_ref = 20004 END             
     END
+    
+    
+    
+    //modfy enchanted weapon
+    OUTER_FOR (i=1;i<=5;i=i+1) BEGIN
+        COPY ~3ed/Spells/EnchantedWeapon/ENC_WP1.SPL~ ~override/ENC_WPD%i%.SPL~
+            SPRINT resource EVALUATE_BUFFER ~ENC_WPD%i%~
+            LPF ALTER_SPELL_EFFECT INT_VAR opcode = 321 STR_VAR resource END
+        COPY ~3ed/Spells/EnchantedWeapon/ENC_WP2.SPL~ ~override/ENC_WPA%i%.SPL~
+            SPRINT resource EVALUATE_BUFFER ~ENC_WPA%i%~
+            LPF ALTER_SPELL_EFFECT INT_VAR opcode = 321 STR_VAR resource END
+            
+        COPY_EXISTING ~SHLD_AC1.EFF~    ~override/ENC_WPD%i%.EFF~
+            WRITE_EVALUATED_ASCII 0x0030 ~ENC_WPD%i%~
         
+        COPY_EXISTING ~SHLD_AC1.EFF~    ~override/ENC_WPA%i%.EFF~
+            WRITE_EVALUATED_ASCII 0x0030 ~ENC_WPA%i%~
+            
+    END
+    
+    //fix iwd spell
+    ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+        COPY_EXISTING ~SPWI417.SPL~  ~override~
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 214 END 
+        LPF ALTER_SPELL_HEADER INT_VAR target = 1 speed = 4 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 duration = 1 insert_point = 0 STR_VAR resource = ~SPWI417~ END
+        LPF ALTER_SPELL_EFFECT INT_VAR target = 2 resist_dispel = 3 END
+        FOR (i=2;i<=30;i=i+1) BEGIN
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+            LPF ALTER_SPELL_HEADER INT_VAR header = i  min_level = i END
+        END
+        LPF ADD_SPELL_EFFECT INT_VAR target = 2 ocpode = 345 power = 4 special = 3 resist_dispel = 3 END
+        
+    END
+    
+    COPY_EXISTING ~SPWI417.SPL~  ~override~
+        READ_SHORT 0x0068 "Nheaders" //number of headers
+        
+        FOR (i=1;i<=Nheaders;i=i+1) BEGIN
+        
+            SET max_ench = i/4
+            SET max_ench = max_ench<1 ? 1 : max_ench
+            SET max_ench = max_ench>5 ? 5 : max_ench
+            
+            FOR (k=1;k<=max_ench;k=k+1) BEGIN
+                SPRINT resource EVALUATE_BUFFER ~ENC_WPD%k%~
+                LPF ADD_SPELL_EFFECT INT_VAR header = i target = 2 opcode = 272 power = 4 resist_dispel = 3 duration = i*30 parameter1 = 1 STR_VAR resource END
+                SPRINT resource EVALUATE_BUFFER ~ENC_WPA%k%~
+                LPF ADD_SPELL_EFFECT INT_VAR header = i target = 2 opcode = 272 power = 4 resist_dispel = 3 duration = i*30 parameter1 = 1 STR_VAR resource END
+                LPF ALTER_SPELL_EFFECT INT_VAR header = i match_opcode = 345 parameter1 = k STR_VAR resource END
+            END
+                       
+        END
+        READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @307
+        
+        
+    //modify shillelagh
+    COPY_EXISTING ~SPPR110.SPL~ ~override~
+        READ_SHORT 0x0068 "Nheaders" //number of headers
+        FOR (i=1;i<=Nheaders;i=i+1) BEGIN
+            LPF ALTER_SPELL_EFFECT INT_VAR duration = i*30 END
+        END
+        READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @308

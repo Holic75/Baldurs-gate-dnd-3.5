@@ -33,7 +33,7 @@ if it is not already there (it replaces backstab with 3ed Sneak Attack).
 Also it is strongly advised that you make a backup of your dialog.tlk file before installing.
 
 This mod was only tested with clean BG:ENHANCED EDITION 2.3 install (Non Sod) and BG 2:ENHANCED EDITION 2.3 and might not be compatible with any other mods.
-At current state it can be installed along IWD:EE but due to certain effects not supported by the engine (mostly related to opcode 326) abilities depending on character stats do not work (may be it will be fixed by Beamdog in the upcoming 2.5 patch)
+At current state it may be installed along IWD:EE but due to certain effects not supported by the engine (mostly related to opcode 326) abilities depending on character stats do not work (may be it will be fixed by Beamdog in the upcoming 2.5 patch)
 
 
 #### Due to big amount of content it is very difficult to test everything, so I would really appreciate if you could send information on the bugs and inconsistencies you found to holic.denis@gmail.com or post them on the issues page. Any critics and suggestions are also more than welcome.
@@ -554,11 +554,11 @@ CLASS FEATURES:
 – Starting from level 6 Lay On Hands ability also cures disease.  
 – Starting from level 9 Lay On Hands ability also cures poison.  
 – May cast Detect Evil once per day per level (starts at 1st level with 4 uses).  
-– May channel positive energy starting from level 3 number of times per day equal to 1 per 2 points of Charisma above 10 as good clerics (4d4 damage/healing at level 3 plus 2d4 per 2 levels).  
+– May channel positive energy starting from level 3 number of times per day equal to 1 per 2 points of Charisma above 10 as good clerics (2d6 damage/healing at level 3 plus 1d6 per 2 levels).  
 ```
 CHANNEL POSITIVE ENERGY:  Priest creates a burst of positive energy that affects all creatures  in a 30-foot radius centered on her.
-All allied living creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
-All hostile undead creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
+All allied living creatures are healed for 1d6 hit points per Channel Energy Level of the caster.
+All hostile undead creatures suffer 1d6 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
 ```
 – May cast priest spells starting at level 4.  
 – May use Smite Evil ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.  
@@ -628,8 +628,8 @@ Advantages:
 – May channel negative energy starting from level 3 number of times per day equal to 1 + 1 per 2 points of Charisma above 10 as evil clerics.  
 ```
 CHANNEL NEGATIVE ENERGY:  Priest creates a burst of negative energy that affects all creatures  in a 30-foot radius centered on her.
-All allied undead creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
-All hostile living creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster rounded down. In which case they receive only half damage.
+All allied undead creatures are healed for 1d6 hit points per Channel Energy Level of the caster.
+All hostile living creatures suffer 1d6 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster rounded down. In which case they receive only half damage.
 ```
 – May use the Absorb Health ability once per day per 2 points of Charisma above 10.  
 ```
@@ -741,16 +741,16 @@ CLASS FEATURES:
 – May wear any armor.  
 – May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).  
 – May only become Proficient (one star) in any weapon class.  
-– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 1 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 1 plus 2d4 per 2 levels).  
+– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 1 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 1 plus 1d6 per 2 levels).  
 ```
 CHANNEL POSITIVE ENERGY:  Priest creates a burst of positive energy that affects all creatures  in a 30-foot radius centered on her.
-All allied living creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
-All hostile undead creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
+All allied living creatures are healed for 1d6 hit points per Channel Energy Level of the caster.
+All hostile undead creatures suffer 1d6 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
 ```
 ```
 CHANNEL NEGATIVE ENERGY:  Priest creates a burst of negative energy that affects all creatures  in a 30-foot radius centered on her.
-All allied undead creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
-All hostile living creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
+All allied undead creatures are healed for 1d6 hit points per Channel Energy Level of the caster.
+All hostile living creatures suffer 1d6 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
 ```
 – May cast priest spells.  
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).  
@@ -763,11 +763,11 @@ All hostile living creatures suffer 2d4 points of magical damage per Channel Ene
 
 ### PRIEST OF LATHANDER
 Advantages:  
-– May use Cleansing Flames starting from level 1 number of times per day equal to 3 plus 1 per 2 points of Charisma above 10.  
+– May use Cleansing Flames starting from level 1 number of times per day equal to 5 plus 1 per 2 points of Charisma above 10.  
 ```
 Cleansing Flames:  Priest creates a burst of cleansing fire that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
-All allied living creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
-All hostile creatures are blinded for 2 rounds, additionally evil creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down +2. In which case they receive only half damage and are not subject to blind effect.
+All allied living creatures are healed for 1d8 hit points per Channel Energy Level of the caster.
+All hostile creatures are blinded for 2 rounds, additionally evil creatures suffer 1d8 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down +2. In which case they receive only half damage and are not subject to blind effect.
 ```
 – Immune to hold, level drain and poison.  
 
@@ -854,7 +854,7 @@ Disadvantages:
 
 ### SPELLFUSED WARDEN (replaces TOTEMIC DRUID)
 Advantages:  
-– At 1st level spellfused warden chooses an arcane school and get access to all its 1st to 7th level spells. These spells are cast as druidic ones and do not suffer from arcane spellcasting failure which may be induced by armor spellfused warden wears.   
+– At 1st level spellfused warden chooses an arcane school and gets access to all its 1st to 7th level spells. These spells are cast as druidic ones and do not suffer from arcane spellcasting failure which may be induced by armor spellfused warden wears.   
 
 Disadvantages:  
 – Cannot use shapeshift.
@@ -1304,7 +1304,7 @@ CLASS FEATURES:
 Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.  
 – Gets one bonus feat at every 5th level up to level 20.  
 – Gets one bonus feat at levels 22, 25 and 28.  
-– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels).  
+– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
 – Can use Spontaneous Battlecasting.  
 ```
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
@@ -1362,7 +1362,7 @@ CLASS FEATURES:
 – May use the Hide In Shadows ability.  
 – Can cast two spells per day less than trueclass clerics.  
 – Can spontaneously convert memorized spells into healing ones.  
-– May channel positive energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels).  
+– May channel positive energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
 – Eventually can cast low level druidic spells (same as trueclass ranger).  
 – At 1st level chooses two domains that grant her access to additional spells, normally not available to Clerics of other domains.  
 – May call for an animal companion who fights for her side.  
@@ -1380,8 +1380,9 @@ CLASS FEATURES:
 – Can cast two arcane spells per day less than trueclass mage.  
 – Can cast three divine spells per day less than trueclass cleric.  
 – At 1st level chooses two domains that grant her access to additional spells, normally not available to Clerics of other domains.  
-– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels).  
-– May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).  
+– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
+– May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).
+– Versatile Spellcasting: starting from level 7 can trade one first level cleric spell slot for a second level wizard spell slot, this exchange is reversible; every two levels thereafter can trade next level cleric spell slot for a wizard spell slot one level higher.  
 – Gets one bonus feat at levels 22, 25 and 28.  
 – Hit Die: d6  
 – Low THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
@@ -1402,7 +1403,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May distribute 12 skill points per level among thieving skills (20 points at level 1).  
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.  
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
-– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels).  
+– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
 – May use Spontaneous Spell Channeling
 ```
 SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to her sneak attack damage for next 10 seconds.
@@ -1463,8 +1464,9 @@ CLASS FEATURES:
 – Can cast three divine spells less per day than trueclass cleric.  
 – Cannot cast divine spells of 6th and 7th levels.  
 – Gets one bonus feat at level 5 and every 5 levels thereafter up to level 20.  
+– Versatile Spellcasting: starting from level 7 can trade one first level cleric spell slot for a second level wizard spell slot, this exchange is reversible; every three levels thereafter can trade next level cleric spell slot for a wizard spell slot one level higher.  
 – Gets one bonus feat at levels 22, 25 and 28.  
-– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels thereafter).  
+– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels thereafter).  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting arcane spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.  
 – Can use Spontaneous Battlecasting.
 ```
@@ -1782,16 +1784,16 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 4 |1|1|0|0|0|0|0
 5 |1|1|0|0|0|0|0
 6 |1|1|1|0|0|0|0
-7 |1|1|1|0|0|0|0
-8 |1|1|1|1|0|0|0
-9 |1|1|1|1|0|0|0
-10|1|1|1|1|1|0|0
-11|2|1|1|1|1|0|0
-12|2|1|1|1|1|1|0
-13|2|2|1|1|1|1|0
-14|2|2|1|1|1|1|1
-15|2|2|2|1|1|1|1
-16|3|2|2|1|1|1|1
+7 |2|1|1|0|0|0|0
+8 |2|1|1|1|0|0|0
+9 |2|2|1|1|0|0|0
+10|2|2|1|1|1|0|0
+11|2|2|2|1|1|0|0
+12|2|2|2|1|1|1|0
+13|2|2|2|2|1|1|0
+14|2|2|2|2|1|1|1
+15|2|2|2|2|2|1|1
+16|3|2|2|2|2|1|1
 17|3|2|2|2|2|2|1
 18|3|3|3|3|2|2|1
 19|3|3|3|3|3|2|2
@@ -2096,10 +2098,11 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Horror duration was reduced to 3 rounds  
 - Dispel Magic and Remove Magic spells now  dispel with probability equal to 30% + 1% per level (twice for Inquisitors)  
 - Animate Dead now summons two skeletons instead of one  
+- Enchanted Weapon now gives + 1 enchantment bonus / 4 caster levels  and also provides corresponding bonuses to THAC0 and damage (depending on original weapon enchantment), clerics can also cast it  
 - Tenser's Transformation now sets THAC0 to that of a fighter of equal level gives +1 APR, +2 To Hit and Damage bonus and doubles caster's HP  
 - Magical Stone now creates one magical sling bullet per priest level (+1 THAC0, 1d6+1 damage or 2d6+2 against undead)  
 - Bless is now a cleric only spell
-- Silence now only has -2 penalty to Save vs. Spell
+- Shillelagh duration was increased to 5 rounds/level, shillelagh damage was increased to 2d6
 - Barkskin now gives +3 bonus to AC (+4 at level 7, +5 at level 13) which is cumulative with everything else and +1 bonus to saving throws (except vs. Spell)    
 - Flame Blade spell was removed, it is now replaced with druid only Flame Weapon spell which makes target deal +1d6 fire damage bonus on every attack for the duration of the spell  
 - Goodberries now heal 3 HP each when eaten  
@@ -2183,6 +2186,20 @@ Saving Throw: 1/2
 
 This spell is the reverse of Cure Light Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 8 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.
 
+#### Magic Weapon (Cleric)
+(Enchantment/Charm)  
+
+Level: 1  
+Sphere: War  
+Range: 0  
+Duration:  5 rounds/level  
+Casting Time: 4  
+Area of Effect: 1 creature  
+Saving Throw: None  
+
+When this spell is cast on a creature it enchants any weapons that it currently wields. For the duration of the spell, those weapons are treated as having a +1 enchantment for the purposes of determining what they can hit as well as THAC0 and damage bonuses.  
+NOTE: Projectiles are not enchanted, only launchers receive corresponding THAC0 bonuses.  
+
 #### Lesser Animal Summoning II (Druid)
 (Conjuration/Summoning)  
 
@@ -2261,8 +2278,21 @@ Area of Effect: 30-ft. radius
 Saving Throw: None   
 
 When this spell is cast, all creatures within a 30-ft. radius are affected individually by Aid spell.
-The recipients gain +1 to attack rolls and Saving Throws and a special bonus of 5 +1/caster level to maximum Hit Points (up to 20) for the duration of the spell.
+The recipients gain +1 to attack rolls and Saving Throws and a special bonus of 5 +1/caster level to maximum Hit Points (up to 20) for the duration of the spell.  
 
+#### Magic vestment  
+(Enchantment/Charm)  
+
+Level: 3  
+Sphere: Protection  
+Range: 0  
+Duration:  5 rounds/level  
+Casting Time: 4  
+Area of Effect: 1 creature  
+Saving Throw: None  
+
+You imbue a suit of armor with an enhancement bonus of +1 per four caster levels (maximum +5 at 20th level).  
+NOTE: An outfit of regular clothing counts as armor that grants no AC bonus for the purpose of this spell.  
 
 #### Lesser Animal Summoning III (Druid)  
 (Conjuration/Summoning)  

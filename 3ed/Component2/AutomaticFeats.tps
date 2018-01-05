@@ -49,3 +49,28 @@ WITH_TRA ~%LANGUAGE%\monk.tra~ BEGIN
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource=~MKFLR3FT~ END 
 
 END
+
+
+
+
+//versatile spellcasting (fcm, cm)
+WITH_TRA ~%LANGUAGE%\cleric_mage.tra~ BEGIN
+    OUTER_FOR (i=1;i<=7;i=i+1) BEGIN
+       MKDIR ~3ed/Feats/ActivatedAbilities/CM_VS%i%~
+       COPY ~3ed/Classes/ClericMage/CM_VS%i%0B.BAM~     ~3ed/Feats/ActivatedAbilities/CM_VS%i%/CM_VS%i%0B.BAM~
+       COPY ~3ed/Classes/ClericMage/CM_VS%i%0B.BAM~     ~3ed/Feats/ActivatedAbilities/CM_VS%i%/CM_VS%i%0C.BAM~
+       COPY ~3ed/Classes/ClericMage/CM_VS%i%1B.BAM~     ~3ed/Feats/ActivatedAbilities/CM_VS%i%/CM_VS%i%1B.BAM~
+       COPY ~3ed/Classes/ClericMage/CM_VS%i%1B.BAM~     ~3ed/Feats/ActivatedAbilities/CM_VS%i%/CM_VS%i%1C.BAM~       
+       
+       COPY ~3ed/Classes/ClericMage/CM_VS%i%.SPL~     ~3ed/Feats/ActivatedAbilities/CM_VS%i%/CM_VS%i%.SPL~
+      
+       OUTER_SPRINT ability_name EVALUATE_BUFFER ~CM_VS%i%~
+    
+       OUTER_SET game_name_var = 2*(i - 1) + 1 OUTER_SET game_description_var = 2*(i - 1) + 2 
+       OUTER_SPRINT game_name (AT "game_name_var")  OUTER_SPRINT game_description  (AT "game_description_var")
+    
+       LAF ADD_ACT_FEAT INT_VAR persistent = 0 STR_VAR ability_name game_name game_description  END 
+    
+       DELETE  ~3ed/Feats/ActivatedAbilities/CM_VS%i%~
+    END
+END    

@@ -6,6 +6,27 @@ DEFINE_ACTION_FUNCTION ~ADD_SMITE_EVIL_VARIATION~
 		
 		par1 =0
 		par2 =0
+        
+        par11 = 0 - 1
+        par21 = 0 - 1
+        
+        par12 = 0 - 1
+        par22 = 0 - 1
+               
+        par13 = 0 - 1
+        par23 = 0 - 1
+        
+        par14 = 0 - 1
+        par24 = 0 - 1
+        
+        par15 = 0 - 1
+        par25 = 0 - 1
+        
+        par16 = 0 - 1
+        par26 = 0 - 1
+        
+        par17 = 0 - 1
+        par27 = 0 - 1
 	STR_VAR
 		SmiteName = ~~
 	BEGIN
@@ -31,7 +52,38 @@ DEFINE_ACTION_FUNCTION ~ADD_SMITE_EVIL_VARIATION~
 		
 		COPY_EXISTING ~SMTEVLH.SPL~ ~override/%SmiteName%H.SPL~//hit effect (spell)
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 parameter1 = par1 parameter2=par2 END 
+            
+            PATCH_IF (par11>=0 AND par21>=0) BEGIN
+                LPF CLONE_EFFECT INT_VAR match_opcode=326 match_parameter1 = par1 match_parameter2=par2  parameter1 = par11 parameter2 = par21 END
+            END
+        
+            PATCH_IF (par12>0 AND par22>0) BEGIN
+                LPF CLONE_EFFECT INT_VAR match_opcode=326 match_parameter1 = par1 match_parameter2=par2  parameter1 = par12 parameter2 = par22 END
+            END
+            
+            PATCH_IF (par13>0 AND par23>0) BEGIN
+                LPF CLONE_EFFECT INT_VAR match_opcode=326 match_parameter1 = par1 match_parameter2=par2  parameter1 = par13 parameter2 = par23 END
+            END
+            
+            PATCH_IF (par14>0 AND par24>0) BEGIN
+                LPF CLONE_EFFECT INT_VAR match_opcode=326 match_parameter1 = par1 match_parameter2=par2  parameter1 = par14 parameter2 = par24 END
+            END
+                      
+            PATCH_IF (par15>0 AND par25>0) BEGIN
+                LPF CLONE_EFFECT INT_VAR match_opcode=326 match_parameter1 = par1 match_parameter2=par2  parameter1 = par15 parameter2 = par25 END
+            END
+                       
+            PATCH_IF (par16>0 AND par26>0) BEGIN
+                LPF CLONE_EFFECT INT_VAR match_opcode=326 match_parameter1 = par1 match_parameter2=par2  parameter1 = par16 parameter2 = par26 END
+            END
+            
+            PATCH_IF (par17>0 AND par27>0) BEGIN
+                LPF CLONE_EFFECT INT_VAR match_opcode=326 match_parameter1 = par1 match_parameter2=par2  parameter1 = par17 parameter2 = par27 END
+            END
+        
+        
 	END
 
 		
 	END
+    

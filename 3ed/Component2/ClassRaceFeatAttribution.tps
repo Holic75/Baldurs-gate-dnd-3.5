@@ -86,7 +86,34 @@
 						STR_VAR clab=~CLABFI01\.2DA~
 							mask_file=~~ feat_type_file=~~ caption=~ARMTRFT~ END		
 		
-											
+
+
+   COPY ~3ed/Feats/FeatAttribution/SFTCRE_E.SPL~ ~override/CM_VSFT.SPL~
+// versatile spellcasting (cm)
+        FOR (i=1;i<=7;i=i+1) BEGIN       
+            SET lvl = (i==1) ? 1 : 2*i+5
+            LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=lvl speed=0 END
+			SPRINT resource EVALUATE_BUFFER ~CM_VS%i%FT~
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=14 parameter2=105 timing=0 duration=1 STR_VAR resource END // cleric_mage
+		END
+        
+	LAF ADD_BONUS_FEATS INT_VAR min_level = 7 d_level = 2 max_level = 19 add_at_level1 = 0
+						STR_VAR clab=~CLABPR01\.2DA~
+							mask_file=~~ feat_type_file=~~ caption=~CM_VSFT~ END	
+    
+    COPY ~3ed/Feats/FeatAttribution/SFTCRE_E.SPL~ ~override/FCM_VSFT.SPL~    
+// versatile spellcasting (fcm)                            
+        FOR (i=1;i<=5;i=i+1) BEGIN       
+            SET lvl = (i==1) ? 1 : 3*i+4
+            LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=lvl speed=0 END
+			SPRINT resource EVALUATE_BUFFER ~CM_VS%i%FT~
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=17 parameter2=105 timing=0 duration=1 STR_VAR resource END // fighter_mage_cleric
+		END
+        
+	LAF ADD_BONUS_FEATS INT_VAR min_level = 7 d_level = 3 max_level = 19 add_at_level1 = 0
+						STR_VAR clab=~CLABPR01\.2DA~
+							mask_file=~~ feat_type_file=~~ caption=~FCM_VSFT~ END	
+        
 //----------------------------------------------------------race specific bonus feats
 COPY ~3ed/Feats/HalfElfBonus/HFSTRBN.SPL~ ~override~ 
 COPY ~3ed/Feats/HalfElfBonus/HFCONBN.SPL~ ~override~ 

@@ -64,7 +64,15 @@ END
 	LAF ADD_SMITE_EVIL_VARIATION INT_VAR name_ref = 001 descr_ref =002 par1 = 0 par2 =37 STR_VAR SmiteName=~SMTEVL~ END //smite evil
 	LAF ADD_SMITE_EVIL_VARIATION INT_VAR name_ref = 003 descr_ref =004 par1 = 0 par2 =1 STR_VAR SmiteName=~SMTUND~  END //smite undead
 	LAF ADD_SMITE_EVIL_VARIATION INT_VAR name_ref = 005 descr_ref =006 par1 = 0 par2 =36 STR_VAR SmiteName=~SMTGUD~  END //smite good
-	LAF ADD_SMITE_EVIL_VARIATION INT_VAR name_ref = 007 descr_ref =008 par1 = 202 par2 =105 STR_VAR SmiteName=~SMTMAG~  END //smite mage
+	LAF ADD_SMITE_EVIL_VARIATION INT_VAR name_ref = 007 descr_ref =008 par1 = 202 par2 =105 //mage_all 
+                                                                       par11 = 19 par21 = 105 //sorcerer
+                                                                       par12 = 5 par22 = 105 //bard
+                                                                       par13 = 146 par23 = 104 //dragons
+                                                                       par14 = 160 par24 = 105 //tanari      
+                                                                       par15 = 147 par25 = 104 //genie 
+                                                                       par16 = 166 par26 = 105 //rakshasa
+                                                                       par17 = 126 par26 = 105 //ogre mage
+                                                                       STR_VAR SmiteName=~SMTMAG~  END //smite mage
 			
     //aura of faith
     WITH_TRA ~%LANGUAGE%\paladin.tra~ BEGIN
@@ -1122,3 +1130,10 @@ END
     
     LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=8 d_level=1 add_at_level1=0 
         STR_VAR mask_file=~3ed/Feats/FeatAttribution/SFTCREMT.SPL~ clab=~CLABTH01\.2DA~ feat_type_file = ~MT_VOC~ caption=~VOC_MT~ END	
+        
+        
+        
+        
+
+
+    

@@ -1151,6 +1151,79 @@ Saving Throw: Special
 
 Upon casting this spell, the wizard causes a vivid, fan-shaped spray of clashing colors to spring forth from <PRO_HISHER> hand. 1d6 creatures within the area are affected in order of increasing distance from the wizard. All creatures in the area of effect that have 4 Hit Dice or less must make a successful Saving Throw vs. Spell or be rendered unconscious for 5 rounds. Creatures with 5 Hit Dice or more are rendred unconscious for 1 round only.~
 //------------------------------------------------------------------------------------------------------------------------ 
+    @307 = ~Enchanted Weapon
+(Enchantment/Charm)
+
+Level: 4
+Range: 0
+Duration:  5 rounds/level
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast on a creature it enchants any weapons that it currently wields. For the duration of the spell, those weapons are treated as having a +1 enchantment per 4 caster levels (max +5 at level 20) for the purposes of determining what they can hit as well as THAC0 and damage bonuses.
+NOTE: Projectiles are not enchanted, only launchers receive corresponding THAC0 bonuses.~
+//------------------------------------------
+    @308 = ~Shillelagh
+(Alteration)
+
+Level: 1
+Sphere: Combat, Plant 
+Range: 0
+Duration: 5 rounds/ level 
+Casting Time: 2 
+Area of Effect: Special
+Saving Throw: None 
+
+This spell enables the caster to create a magical cudgel inflicts 2d6 points of damage on opponents and has +1 enchantment bonus.~
+//------------------------------------------------------------------------------------
+    @309 = ~Enchanted Weapon
+(Enchantment/Charm)
+
+Level: 4
+Sphere: War
+Range: 0
+Duration:  5 rounds/level
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast on a creature it enchants any weapons that it currently wields. For the duration of the spell, those weapons are treated as having a +1 enchantment per 4 caster levels (max +5 at level 20) for the purposes of determining what they can hit as well as THAC0 and damage bonuses.
+NOTE: Projectiles are not enchanted, only launchers receive corresponding THAC0 bonuses.~
+
+//------------------------------------------------------------------------------------
+    @310 = ~Magic Weapon~
+    @311 = ~Magic Weapon
+(Enchantment/Charm)
+
+Level: 1
+Sphere: War
+Range: 0
+Duration:  5 rounds/level
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: None
+
+When this spell is cast on a creature it enchants any weapons that it currently wields. For the duration of the spell, those weapons are treated as having a +1 enchantment for the purposes of determining what they can hit as well as THAC0 and damage bonuses.
+NOTE: Projectiles are not enchanted, only launchers receive corresponding THAC0 bonuses.~
+//----------------------------------------------------------------------------------
+    @312 = ~Magic Vestment~
+
+    @313 = ~Magic vestment
+(Enchantment/Charm)
+
+Level: 3
+Sphere: Protection
+Range: 0
+Duration:  5 rounds/level
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: None
+
+You imbue a suit of armor with an enhancement bonus of +1 per four caster levels (maximum +5 at 20th level).
+NOTE: An outfit of regular clothing counts as armor that grants no AC bonus for the purpose of this spell.~
+    
+//----------------------------------------------------------------------------------
 	@1000 =~vs. None~
 	@1001 =~vs. Spell~
 	@1002 =~vs. Breath Weapon~

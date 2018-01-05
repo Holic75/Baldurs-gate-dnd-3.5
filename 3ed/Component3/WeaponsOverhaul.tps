@@ -117,7 +117,7 @@
 			LPF SET_ITEM_USABILITY INT_VAR value=usable_by_mage STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~jester~ END
 		END   
 		ELSE PATCH_IF (proficiency = 98) BEGIN //spear -> polearms
-			LPF UPDATE_WEAPON_DMG INT_VAR match_dice_number = 1 match_dice_size = 6 target_dice_number = 1 target_dice_size = 8 END
+			LPF UPDATE_WEAPON_DMG INT_VAR match_dice_number = 1 match_dice_size = 6 target_dice_number = 1 target_dice_size = 8 is_light=1 END
 			LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace=~1d6~  new_substring=~1d8~ END
 			LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace=~1d6~  new_substring=~1d8~ END
 			
@@ -206,12 +206,11 @@
 
            
 		END  		
-		ELSE PATCH_IF (category = 28) BEGIN//fist weapons
+		ELSE PATCH_IF (category == 28) BEGIN//fist weapons
 			LPF PTCH_WPN INT_VAR is_melee=1 is_light=1 is_fist=1 END			
 		END
 		
 
-		
 		
 		PATCH_IF (category = BoltsCategory OR category = CrossbowsCategory) BEGIN//bolts, crossbows for mages and thiefs
   

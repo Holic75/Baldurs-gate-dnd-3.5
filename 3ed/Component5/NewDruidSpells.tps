@@ -52,7 +52,10 @@
 		LPF ALTER_SPELL_EFFECT INT_VAR power=4 END //set power lvl to 4
 		ADD_SPELL "override/DRHLDMN.spl" 1  4 DRUID_HOLD_MONSTER
 			DEFINE_ASSOCIATIVE_ARRAY extended_spell_list BEGIN  "%DEST_RES%" => "SPWI507" END
+            
 	//allow druid to cast ice storm as 4-th level spell
+    
+
 	COPY_EXISTING ~SPWI404.SPL~ ~override/DRDIST.SPL~
 		WRITE_BYTE 0x0021 (0b01000000)	//dissalow cleric casting it 
 		WRITE_BYTE 0x001F (0b00000000)  //clear invoker flag	

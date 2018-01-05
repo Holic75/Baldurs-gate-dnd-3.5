@@ -14,9 +14,19 @@
 	
 	OUTER_FOR (i=1;i<=max_channel_lvl;i=i+1) BEGIN
 		COPY ~3ed/Classes/TurnUndead/DMUNDD.EFF~ ~override/EN_DMG%i%.EFF~
-			WRITE_LONG 0x0038 i //i*1d4 damage (same part will be also added with save)
+			WRITE_LONG 0x0038 i //i*1d3 damage (same part will be also added with save)
+            WRITE_LONG 0x003c 3
 		COPY ~3ed/Classes/TurnUndead/HEAL.EFF~ ~override/EN_HL%i%.EFF~
-			WRITE_LONG 0x0038 2*i //i*2d4 healed 
+			WRITE_LONG 0x0038 i //i*1d6 healed 
+            WRITE_LONG 0x003c 6
+            
+        //for cleansing flames    
+		COPY ~3ed/Classes/TurnUndead/DMUNDD.EFF~ ~override/EN_DMA%i%.EFF~
+			WRITE_LONG 0x0038 i //i*1d4 damage (same part will be also added with save)
+            WRITE_LONG 0x003c 4
+		COPY ~3ed/Classes/TurnUndead/HEAL.EFF~ ~override/EN_HLA%i%.EFF~
+			WRITE_LONG 0x0038 i //i*1d8 healed
+            WRITE_LONG 0x003c 8
 	END
 	
 	
@@ -54,7 +64,7 @@
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=18 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_NM1~  END //evil cleric/ranger
 		
 	COPY ~3ed/Classes/TurnUndead/CHANGV.SPL~ ~override/CE_GV.SPL~
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_1~ END
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_1~ END 
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=177 STR_VAR resource=~CE_AC1~ END //2 additional uses for priest of lathander
 		
 	//first attribution of abilities

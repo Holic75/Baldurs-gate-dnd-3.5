@@ -57,7 +57,7 @@ CLASS FEATURES:
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
 – Can cast two spell per day less than trueclass cleric.
 – Gets one bonus feat at every 5th level up to level 20.
-– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels thereafter).
+– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels thereafter).
 – Can use Spontaneous Battlecasting.
 
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
@@ -155,7 +155,8 @@ CLASS FEATURES:
 – Can cast three divine spells less per day than trueclass cleric.
 – Cannot cast divine spells of 6th and 7th levels.
 – Gets one bonus feat at level 5 and every 5 levels thereafter up to level 20.
-– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels thereafter).
+– Versatile Spellcasting: starting from level 7 can trade one first level cleric spell slot for a second level wizard spell slot, this exchange is reversible; every three levels thereafter can trade next level cleric spell slot for a wizard spell slot one level higher.
+– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels thereafter).
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.
 – Can use Spontaneous Battlecasting.
 
@@ -305,11 +306,11 @@ CLASS FEATURES:
 – Starting from level 6 Lay On Hands ability also cures disease.
 – Starting from level 9 Lay On Hands ability also cures poison.
 – May cast Detect Evil once per day per level (starts at 1st level with 4 uses).
-– May channel positive energy starting from level 3 number of times per day equal to 1 per 2 points of Charisma above 10 as good clerics (4d4 damage/healing at level 3 plus 2d4 per 2 levels thereafter).
+– May channel positive energy starting from level 3 number of times per day equal to 1 per 2 points of Charisma above 10 as good clerics (2d6 damage/healing at level 3 plus 1d6 per 2 levels thereafter).
 
 CHANNEL POSITIVE ENERGY:  Priest creates a burst of positive energy that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
-All allied living creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
-All hostile undead creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
+All allied living creatures are healed for 1d6 hit points per Channel Energy Level of the caster.
+All hostile undead creatures suffer 1d6 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
 
 – May cast priest spells starting at level 4.
 – May use Smite Evil ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.
@@ -386,8 +387,8 @@ Advantages:
 – May channel negative energy starting from level 3 number of times per day equal to 1 + 1 per 2 points of Charisma above 10 as evil clerics.
 
 CHANNEL NEGATIVE ENERGY:  Priest creates a burst of negative energy that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
-All allied undead creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
-All hostile living creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster rounded down. In which case they receive only half damage.
+All allied undead creatures are healed for 1d6 hit points per Channel Energy Level of the caster.
+All hostile living creatures suffer 1d6 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster rounded down. In which case they receive only half damage.
 
 – May use the Absorb Health ability once per day per 2 points of Charisma above 10.
 
@@ -465,11 +466,11 @@ CLASS FEATURES:
 – May use the Hide In Shadows ability.
 – Can cast two spells per day less than trueclass clerics.
 – Can spontaneously convert memorized spells into healing ones.
-– May channel positive energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels thereafter).
+– May channel positive energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels thereafter).
 
 CHANNEL POSITIVE ENERGY:  Priest creates a burst of positive energy that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
-All allied living creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
-All hostile undead creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
+All allied living creatures are healed for 1d6 hit points per Channel Energy Level of the caster.
+All hostile undead creatures suffer 1d6 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
 
 
 – Eventually can cast low level druidic spells (same as trueclass ranger).
@@ -535,15 +536,15 @@ CLASS FEATURES:
 – May wear any armor.
 – May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).
 – May only become Proficient (one star) in any weapon class.
-– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 1 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 1 plus 2d4 per 2 levels thereafter).
+– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 1 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 1 plus 1d6 per 2 levels thereafter).
 
 CHANNEL POSITIVE ENERGY:  Priest creates a burst of positive energy that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
-All allied living creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
-All hostile undead creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
+All allied living creatures are healed for 1d6 hit points per Channel Energy Level of the caster.
+All hostile undead creatures suffer 1d6 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
 
 CHANNEL NEGATIVE ENERGY:  Priest creates a burst of negative energy that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
-All allied undead creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
-All hostile living creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
+All allied undead creatures are healed for 1d6 hit points per Channel Energy Level of the caster.
+All hostile living creatures suffer 1d6 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
 
 – May cast priest spells.
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).
@@ -563,18 +564,19 @@ CLASS FEATURES:
 – May cast both arcane and divine cleric spells.
 – Can cast two arcane spells per day less than trueclass mage.
 – Can cast three divine spells per day less than trueclass cleric.
-– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels thereafter).
+– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels thereafter).
 
 CHANNEL POSITIVE ENERGY:  Priest creates a burst of positive energy that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
-All allied living creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
+All allied living creatures are healed for 1d6 hit points per Channel Energy Level of the caster.
 All hostile undead creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
 
 CHANNEL NEGATIVE ENERGY:  Priest creates a burst of negative energy that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
-All allied undead creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
-All hostile living creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
+All allied undead creatures are healed for 1d6 hit points per Channel Energy Level of the caster.
+All hostile living creatures suffer 1d6 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
 
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).
 – At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
+– Versatile Spellcasting: starting from level 7 can trade one first level cleric spell slot for a second level wizard spell slot, this exchange is reversible; every two levels thereafter can trade next level cleric spell slot for a wizard spell slot one level higher.
 – Gets one bonus feat at levels 22, 25 and 28.
 – Hit Die: d6
 – Low THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
@@ -597,7 +599,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May distribute 12 skill points per level among thieving skills (20 points at level 1).
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.
-– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 1 + 1 per 2 points of Charisma above 10. (2d4 damage/healing at level 2 plus 2d4 per 4 levels).
+– May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).
 – May use Spontaneous Spell Channeling
 
 SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds.
@@ -612,13 +614,13 @@ SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrific
 
 Advantages:
 
-– May use Cleansing Flames starting from level 1 number of times per day equal to 3 plus 1 per 2 points of Charisma above 10.
+– May use Cleansing Flames starting from level 1 number of times per day equal to 5 plus 1 per 2 points of Charisma above 10.
 
 CLEANSING FLAMES
 
 Priest creates a greater burst of cleansing fire that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
-All allied living creatures are healed for 2d4 hit points per Channel Energy Level of the caster.
-All hostile creatures are blinded for 2 rounds, additionally evil creatures suffer 2d4 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down + 2. In which case they receive only half damage and are not subject to blind effect.
+All allied living creatures are healed for 1d8 hit points per Channel Energy Level of the caster.
+All hostile creatures are blinded for 2 rounds, additionally evil creatures suffer 1d8 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down + 2. In which case they receive only half damage and are not subject to blind effect.
 
 – Immune to hold, level drain and poison.
 

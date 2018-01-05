@@ -70,6 +70,15 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY RemapProficienciesItems BEGIN
 	~SHILLE~ => 115 //shillelagh
 END
 
+ACTION_IF (~%GameId%~ STR_EQ ~Iwd~ ) BEGIN
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY RemapProficienciesItems BEGIN
+        ~SHILLEL~ => 115 //iwd shillelagh
+    END
+END
+
+
+
+
 ACTION_DEFINE_ASSOCIATIVE_ARRAY RemapCategoryItems BEGIN //polymorph weapons
 	
 	~EARTHRN~  => 28
@@ -148,6 +157,12 @@ ACTION_PHP_EACH DescriptionChangeItems AS ItemName =>DescrStrRef BEGIN
 		READ_LONG 0x0054 ~id_descr_strref~
 		STRING_SET_EVALUATE %id_descr_strref% (AT "DescrStrRef")
 END
+
+//change shillelagh dmg to 2d6 +1
+COPY_EXISTING_REGEXP ~SHILLE.*\.ITM~ ~override~ 
+    LPF ALTER_ITEM_HEADER INT_VAR dicesize = 6 damage_bonus = 1 END
+    READ_LONG 0x0060 1 //enchantment bonus
+
 
 //update staff of woodlands  and potion of barkskin(proper barkskin effect)
 ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
