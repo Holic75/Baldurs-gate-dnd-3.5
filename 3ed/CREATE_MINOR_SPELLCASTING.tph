@@ -79,7 +79,7 @@ DEFINE_ACTION_FUNCTION ~CREATE_MINOR_SPELLCASTING~
 		END		
 		
 		OUTER_SET id=1
-	OUTER_FOR (k=12;k<=18;k=k+2) BEGIN	
+	OUTER_FOR (k=11;k<=17;k=k+2) BEGIN	
 		COPY ~3ed/Spells/MinorSpellcasting/Templates/GIVE.SPL~ ~override/BN%SpellPrefix%%id%.SPL~
 			SPRINT resource EVALUATE_BUFFER ~GV%SpellPrefix%%id%~
 			LPF ADD_SPELL_HEADER  INT_VAR  required_level=1 type=1 location=4 target=5 target_count=0 range=1 speed=1 projectile=1 END

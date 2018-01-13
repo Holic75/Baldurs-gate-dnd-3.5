@@ -8,13 +8,14 @@
 	
 	//name => feat_type
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY FtcreArray BEGIN
-		~fftcre~ => 1
-		~mftcre~ => 2
-		~sftcre~ => 3
+		~wftcre~ => 1 //weapons 001
+        ~fftcre~ => 3 //fighter feats 011
+		~mftcre~ => 4 //mage feats 100
+		~sftcre~ => 7 //all feats 111
 	END
 	
 	ACTION_PHP_EACH FtcreArray AS sftcre_name =>FtcreFeatType BEGIN 
-		COPY ~3ed/Feats/FeatAttribution/%sftcre_name%.d~  ~override/%sftcre_name%.d~	
+		COPY ~3ed/Feats/FeatAttribution/sftcre.d~  ~override/%sftcre_name%.d~	
 	END
 	
 	COPY ~3ed/Feats/FeatAttribution/SFTCRE.BCS~ ~override~
@@ -32,20 +33,20 @@
 		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~96~      ~1~       ~033~     ~034~		~003~            ~010~  //crossobows
 		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~97~      ~1~       ~035~     ~036~		~003~            ~010~  //bows
 		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~98~      ~1~       ~037~     ~038~		~003~            ~010~  //missile weapons
-		~WPFNSFT~  ~DODGEFT~  ~LTNGRXFT~ ~FLRSTKFT~ ~ELTSTKFT~ ~WHIRLNFT~ ~WHIRLGFT~   ~99~      ~1~       ~161~     ~162~      ~163~            ~170~  //combat prowess
-		~PWRATKFT~ ~CLEAV1FT~ ~GRTFTDFT~ ~CLEAV2FT~ ~TOUGHSFT~ ~EPCSTNFT~ ~EPCSLAFT~   ~100~     ~1~       ~181~     ~182~      ~183~            ~190~  //warfare
-		~INSTKFT~  ~CMBEXPFT~ ~IRONWLFT~ ~STUDOPFT~ ~CMBINTFT~ ~EPCCRTFT~ ~EPCEVSFT~   ~101~     ~1~       ~201~     ~202~      ~203~            ~210~  //tactics	
-		~PRSLT1FT~ ~PRSLT2FT~ ~PRSLT3FT~ ~PRSLT4FT~ ~PRSLT5FT~ ~PRSLT6FT~ ~PRSLT7FT~   ~102~     ~2~       ~221~     ~222~      ~223~            ~230~  //bonus priest spells	 
-		~WZSLT1FT~ ~WZSLT2FT~ ~WZSLT3FT~ ~WZSLT4FT~ ~WZSLT5FT~ ~WZSLT6FT~ ~WZSLT7FT~   ~103~     ~2~       ~241~     ~242~      ~243~            ~250~  //bonus wizard spells	
-		~EMPWR1FT~ ~EMPWR2FT~ ~EMPWR3FT~ ~EMPWR4FT~ ~EMPWR5FT~ ~EMPWR6FT~ ~EMPWR7FT~   ~104~     ~2~       ~261~     ~262~      ~263~            ~270~  //empower magic		   
-		~EXTND1FT~ ~EXTND2FT~ ~EXTND3FT~ ~EXTND4FT~ ~EXTND5FT~ ~EXTND6FT~ ~EXTND7FT~   ~105~     ~2~       ~281~     ~282~      ~283~            ~290~  //extend magic		
-		~MGPTN1FT~ ~MGPTN2FT~ ~MGPTN3FT~ ~MGPTN4FT~ ~MGPTN5FT~ ~MGPTN6FT~ ~MGPTN7FT~   ~106~     ~2~       ~301~     ~302~      ~303~            ~310~  //protection from magic	
-		~QUICK1FT~ ~QUICK2FT~ ~QUICK3FT~ ~QUICK4FT~ ~QUICK5FT~ ~QUICK6FT~ ~QUICK7FT~   ~107~     ~2~       ~321~     ~322~      ~323~            ~330~  //quicken magic				
-		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~111~     ~1~       ~101~     ~102~      ~103~            ~110~  //2h weapons    
-		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~112~     ~1~	   ~121~     ~122~      ~103~            ~123~  //sword and shield
-		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~113~     ~1~	   ~131~     ~132~      ~103~            ~133~  //single weapon
-		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~114~     ~1~       ~141~     ~142~      ~103~            ~143~  //two weapon combat
-		~RPDSHTFT~ ~PBSHOTFT~ ~RPDSTIFT~ ~DEDAIMFT~ ~RNGCRTFT~ ~HAILANFT~ ~HAILAGFT~   ~115~     ~1~       ~151~     ~152~      ~103~            ~153~  //archery
+		~WPFNSFT~  ~DODGEFT~  ~LTNGRXFT~ ~FLRSTKFT~ ~ELTSTKFT~ ~WHIRLNFT~ ~WHIRLGFT~   ~99~      ~2~       ~161~     ~162~      ~163~            ~170~  //combat prowess
+		~PWRATKFT~ ~CLEAV1FT~ ~GRTFTDFT~ ~CLEAV2FT~ ~TOUGHSFT~ ~EPCSTNFT~ ~EPCSLAFT~   ~100~     ~2~       ~181~     ~182~      ~183~            ~190~  //warfare
+		~INSTKFT~  ~CMBEXPFT~ ~IRONWLFT~ ~STUDOPFT~ ~CMBINTFT~ ~EPCCRTFT~ ~EPCEVSFT~   ~101~     ~2~       ~201~     ~202~      ~203~            ~210~  //tactics	
+		~PRSLT1FT~ ~PRSLT2FT~ ~PRSLT3FT~ ~PRSLT4FT~ ~PRSLT5FT~ ~PRSLT6FT~ ~PRSLT7FT~   ~102~     ~4~       ~221~     ~222~      ~223~            ~230~  //bonus priest spells	 
+		~WZSLT1FT~ ~WZSLT2FT~ ~WZSLT3FT~ ~WZSLT4FT~ ~WZSLT5FT~ ~WZSLT6FT~ ~WZSLT7FT~   ~103~     ~4~       ~241~     ~242~      ~243~            ~250~  //bonus wizard spells	
+		~EMPWR1FT~ ~EMPWR2FT~ ~EMPWR3FT~ ~EMPWR4FT~ ~EMPWR5FT~ ~EMPWR6FT~ ~EMPWR7FT~   ~104~     ~4~       ~261~     ~262~      ~263~            ~270~  //empower magic		   
+		~EXTND1FT~ ~EXTND2FT~ ~EXTND3FT~ ~EXTND4FT~ ~EXTND5FT~ ~EXTND6FT~ ~EXTND7FT~   ~105~     ~4~       ~281~     ~282~      ~283~            ~290~  //extend magic		
+		~MGPTN1FT~ ~MGPTN2FT~ ~MGPTN3FT~ ~MGPTN4FT~ ~MGPTN5FT~ ~MGPTN6FT~ ~MGPTN7FT~   ~106~     ~4~       ~301~     ~302~      ~303~            ~310~  //protection from magic	
+		~QUICK1FT~ ~QUICK2FT~ ~QUICK3FT~ ~QUICK4FT~ ~QUICK5FT~ ~QUICK6FT~ ~QUICK7FT~   ~107~     ~4~       ~321~     ~322~      ~323~            ~330~  //quicken magic				
+		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~111~     ~2~       ~101~     ~102~      ~103~            ~110~  //2h weapons    
+		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~112~     ~2~	   ~121~     ~122~      ~103~            ~123~  //sword and shield
+		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~113~     ~2~	   ~131~     ~132~      ~103~            ~133~  //single weapon
+		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~114~     ~2~       ~141~     ~142~      ~103~            ~143~  //two weapon combat
+		~RPDSHTFT~ ~PBSHOTFT~ ~RPDSTIFT~ ~DEDAIMFT~ ~RNGCRTFT~ ~HAILANFT~ ~HAILAGFT~   ~115~     ~2~       ~151~     ~152~      ~103~            ~153~  //archery
 
 	END
 	
@@ -111,6 +112,10 @@
 		REPLACE_TEXTUALLY ~%~	~|~
 		REPLACE_TEXTUALLY ~|condition_str|~ ~~
 		REPLACE_TEXTUALLY ~|give_feat_str|~ ~~	
+        SET dialog_string_ref = 10000 + FtcreFeatType
+        SPRINT dialog_string (AT "dialog_string_ref")
+        REPLACE_TEXTUALLY ~XXXX~	~%dialog_string%~
+        REPLACE_TEXTUALLY ~sftcre~	~%sftcre_name%~
 		
 		COMPILE ~override/%sftcre_name%.d~  
 		
@@ -170,11 +175,14 @@ COPY ~3ed/Classes/Kensai/kenscre.d~  ~override/kenscre.d~
 		END
 		
     END
-	
+	OUTER_SPRINT kens_string @10010
+
+      
 	COPY_EXISTING ~kenscre.d~  ~override/kenscre.d~
 		REPLACE_TEXTUALLY ~%~	~|~
 		REPLACE_TEXTUALLY ~|condition_str|~ ~~
 		REPLACE_TEXTUALLY ~|give_feat_str|~ ~~
+        REPLACE_TEXTUALLY ~XXXX~	~%kens_string%~
 		COMPILE ~override/kenscre.d~ 
 		
 	COPY ~3ed/Feats/FeatAttribution/FEATCRE.CRE~ ~override/KENSCRE.CRE~

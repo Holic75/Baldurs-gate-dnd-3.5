@@ -13,9 +13,13 @@ DEFINE_ACTION_FUNCTION ~UPDATE_PRIEST_DOMAIN~
 			READ_2DA_ENTRY 0 0 1 domain_name_read //domain name (with _ instead of spaces)
 			INNER_PATCH_SAVE domain_name ~%domain_name_read%~ BEGIN
 				REPLACE_TEXTUALLY ~_~  ~ ~
+            END    
+            READ_2DA_ENTRY 1 0 1 DomainAbilityDescription_read //domain ability (with _ instead of spaces)
+			INNER_PATCH_SAVE DomainAbilityDescription ~%DomainAbilityDescription_read%~ BEGIN
+				REPLACE_TEXTUALLY ~_~  ~ ~
 			END
 			
-			FOR (i=1;i<n_rows;i=i+1) BEGIN				
+			FOR (i=2;i<n_rows;i=i+1) BEGIN				
 				READ_2DA_ENTRY %i% 0 1 spl_file //spell name without spl extension
 				INNER_ACTION BEGIN
 					
@@ -26,7 +30,8 @@ DEFINE_ACTION_FUNCTION ~UPDATE_PRIEST_DOMAIN~
 						READ_LONG 0x0034 spl_level
 						
 					ACTION_IF (spell_type!=2) BEGIN //if it is not a priest spell, make it's copy as priest spell and update description with domain description
-						OUTER_SPRINT spl_to_add EVALUATE_BUFFER ~%domain_file_2DA%%i%~
+                        OUTER_SET i1 = i - 1
+						OUTER_SPRINT spl_to_add EVALUATE_BUFFER ~%domain_file_2DA%%i1%~
 						COPY_EXISTING  ~%spl_file%.SPL~ ~override/%spl_to_add%.SPL~
 							LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_type=2 END 
 							READ_STRREF 0x0050 descr_string
@@ -63,10 +68,15 @@ Range:~
 				END
 				SPRINT DescriptionString EVALUATE_BUFFER ~%DescriptionString% %spl_name% (%spl_to_add_1%)~
 			END
+            
+            SPRINT resource EVALUATE_BUFFER $DomainAbilities(~%domain_file_2DA%~)
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 326 target = 2 timing = 9 duration = 1 STR_VAR resource END
 		
-		SPRINT DescriptionString EVALUATE_BUFFER ~%DescriptionString%.~
+		OUTER_SPRINT DescriptionString EVALUATE_BUFFER ~%DescriptionString%.
+        
+Domain ability: %DomainAbilityDescription%.~
 					
-		OUTER_SPRINT domain_str EVALUATE_BUFFER  
+		OUTER_SPRINT domain_str EVALUATE_BUFFER
 			
 ~~~~~IF 
 ~!Global("DOM%domain_id%","LOCALS",1)~ THEN REPLY ~%domain_name%~ GOTO %domain_id%
@@ -77,7 +87,8 @@ Range:~
 			
 ~~~~~IF ~~ THEN BEGIN %domain_id%
 	SAY ~%DescriptionString%~
-	IF ~!Global("CHOSEN","LOCALS",1)~ THEN REPLY #%yes_response% DO 
+	IF ~!Global("CHOSEN","LOCALS",1)
+Class(LastSummonerOf(Myself),CLERIC)~ THEN REPLY #%yes_response% DO 
 	~ApplySpellRES("%domain_file_2DA%S",LastSummonerOf(Myself))
 	 SetGlobal("CHOSEN","LOCALS",1)
 	 SetGlobal("DOM%domain_id%","LOCALS",1)~ GOTO 1000

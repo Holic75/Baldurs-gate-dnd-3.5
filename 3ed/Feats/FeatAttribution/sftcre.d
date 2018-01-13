@@ -2,7 +2,7 @@
 BEGIN sftcre
 
 IF ~True()~ THEN BEGIN 1
-	SAY ~Select new feat.~
+	SAY ~XXXX~
 	%condition_str%
 END
 

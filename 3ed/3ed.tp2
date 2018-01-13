@@ -2,7 +2,7 @@
 
 BACKUP ~3ed/backup~
 AUTHOR ~denis.holic@gmail.com~
-VERSION ~v2.08~
+VERSION ~v2.09~
 
 
 ALWAYS
@@ -38,6 +38,8 @@ BEGIN @1
     INCLUDE ~3ed/GET_SPELL_EFFECT_VALUES.tph~
     INCLUDE ~3ed/TRANSFER_PROTECTION_FROM_DISPLAY_STRING.tph~
     INCLUDE ~3ed/UPDATE_SPELL_SAVES.tph~
+    INCLUDE ~3ed/ADD_ABILITY_DEPENDENT_EFFECTS.tph~
+    
 	
 	COPY ~3ed/Core/Clab~ ~override~ 
 	
@@ -89,7 +91,8 @@ BEGIN @1
     //add uncanny dodge to thieves (pure and multiclass) and barbarian
     COPY ~3ed/Feats/PermanentAbilities/UncannyDodge/IMMSNK.SPL~ ~override~
     LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1
-						STR_VAR mask_file=~3ed/Feats/FeatAttribution/SFTCRNMT.SPL~ clab=~\(CLABTH+\)\|\(CLABFI05\).*\.2DA~  feat_type_file = ~IMMSNK~ caption=~IMM_SNK~ END	
+						STR_VAR mask_file=~3ed/Feats/FeatAttribution/SFTCRNMT.SPL~ clab=~\(CLABTH+\)\|\(CLABFI05\)\|\(CLABFI06\).*\.2DA~  
+                                feat_type_file = ~IMMSNK~ caption=~IMM_SNK~ END	
     
 	 //-----------------------------------------------------//
 
@@ -305,6 +308,8 @@ INCLUDE ~3ed/ADD_PROTECTION_REMOVALS_MINOR_SPELLCASTING.tph~
 INCLUDE ~3ed/CREATE_MINOR_SPELLCASTING.tph~
 INCLUDE ~3ed/REGULARIZE_SPELL_SAVES.tph~
 
+INCLUDE ~3ed/DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST.tph~
+
 WITH_TRA ~%LANGUAGE%\Spells.tra~ BEGIN
 	
 	INCLUDE ~3ed/Component5/MagicFangSpells.tps~ //magic fang spells and nature avatar hla
@@ -314,9 +319,10 @@ WITH_TRA ~%LANGUAGE%\Spells.tra~ BEGIN
     INCLUDE ~3ed/Component5/RegularizeSpellSaves.tps~
     
 	
-    
+    INCLUDE ~3ed/Component5/PreparePriestDomainAbilities.tps~
 	INCLUDE ~3ed/Component5/PriestDomains.tps~ 
-   
+
+    
 	INCLUDE ~3ed/Component5/SorcBloodlines.tps~ 
   
     

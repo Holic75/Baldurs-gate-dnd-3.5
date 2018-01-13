@@ -295,7 +295,26 @@ Type: One-handed
 Weight: 3~
 
 
+//------------------------------------------------------
+    @1012=~– Barkskin: Armor Class set to 3~
+    @1013=~– Barkskin:  +3 AC bonus~
+//------------------------------------------------------
+    @1014=~Armor Class: 3~
+    @1015=~Armor Class bonus: 3~
+    
+    
+    
+    @1016=~This is Edwin's birthright, inlaid with his family stone.
 
+STATISTICS:
+
+Equipped abilities:
+– Can memorize one extra wizard spell of each level
+
+Weight: 1~
+
+
+//----------------------------------------------------------
 
 	@2001=~Strength~
 	@2002=~Protects against critical hits~

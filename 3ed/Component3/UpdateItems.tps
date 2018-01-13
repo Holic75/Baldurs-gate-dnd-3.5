@@ -170,12 +170,18 @@ ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
         LPF ALTER_ITEM_EFFECT  INT_VAR check_globals = 1 match_opcode =  0 parameter1 = 3 parameter2 = 0 END //+3 AC BONUS
         LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~SPPR202~ END
 		LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~SPPR202~ END
-        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = 11  new_substring_ref = 12 END
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = 1012  new_substring_ref = 1013 END
     
     COPY_EXISTING ~OHBPTN01.ITM~ ~override~
         LPF DELETE_EFFECT INT_VAR check_headers = 1 END
         LPF ADD_ITEM_EFFECT INT_VAR opcode = 326 target = 2 duration = 1  STR_VAR resource = ~SPPR202~ END
-        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = 13  new_substring_ref = 14 END	
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = 1014  new_substring_ref = 1015 END	
+        
+    //make edwin amulet give only one bonus spell per level
+    COPY_EXISTING ~MISC89.ITM~ ~override~
+        LPF ALTER_ITEM_EFFECT INT_VAR  check_globals = 1 parameter1 = 1 END
+		READ_LONG 0x0050 ~id_descr_strref~
+		STRING_SET_EVALUATE %id_descr_strref% @1016
 END
 
 //remove requirements from npc items
@@ -209,4 +215,7 @@ ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
 //correct description of DarkSteelShield +4
     COPY_EXISTING ~SHLD31.ITM~ ~override~
         LPF REPLACE_SUBSTRING INT_VAR  strref_offset=0x0054   substring_to_replace_ref = 501 new_substring_ref = 50 END
+        
+
+    
 END

@@ -5,7 +5,7 @@
 CLASS FEATURES:
 
 – May wear helmets.
-– May wear any armor and use any weapon.
+– May wear any armor and use any weapon and shield (including large shield).
 – May get seven stars in any weapon category.
 – Gets one bonus feat at level 1 and at every even level.
 – At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill and AC penalties. Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.
@@ -30,7 +30,7 @@ This ability allows the warrior to temporarily tap a great inner strength and fi
 CLASS FEATURES:
 
 – May wear helmets.
-– May wear any armor and use any weapon.
+– May wear any armor and use any weapon and shield (excluding large shield).
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
 – Immune to sneak attack.
 – Starting from level 5 every hit of Fighter/Thief has 10% chance to slow the target for 1d4 rounds.
@@ -53,16 +53,16 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 CLASS FEATURES:
 
 – May wear helmets.
-– May wear any armor and use any weapon.
+– May wear any armor and use any weapon and shield (excluding large shield).
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
 – Can cast two spell per day less than trueclass cleric.
-– Gets one bonus feat at every 5th level up to level 20.
+– Gets one bonus feat at every 4th level up to level 20.
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels thereafter).
 – Can use Spontaneous Battlecasting.
 
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
 
-– At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
+– At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
 – At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill and AC penalties. Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.
 – Gets one bonus feat at levels 22, 25 and 28.
 – Hit Die: d9
@@ -76,7 +76,7 @@ SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice 
 CLASS FEATURES:
 
 – May wear helmets.
-– May wear any armor and use any weapon.
+– May wear any armor and use any weapon and shield (excluding large shield).
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
 – Cannot cast spells of 8th and 9th levels.
 – Gets one bonus feat at every 5th levels up to level 20.
@@ -130,7 +130,7 @@ NOTE: Gnomes can choose this class, but become Fighter/Illusionist/Thieves by de
 CLASS FEATURES:
 
 – May wear helmets.
-– May wear light and medium armor and use any weapon.
+– May wear light and medium armor and use any weapon and shield (excluding large shield).
 – Can cast two spell per day less than trueclass druid.
 – Bonus Feats: Fighter/Druid gets Style Focus in Archery for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12, Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.
 – May spontaneously convert memorized spells to summoning ones.
@@ -148,7 +148,7 @@ CLASS FEATURES:
 CLASS FEATURES:
 
 – May wear helmets.
-– May wear any armor and use any weapons and shields.
+– May wear any armor and use any weapon and shield (excluding large shield).
 – May get up to Weapon Specialization (2 stars) in any weapon they can use.
 – Can cast two arcane spells less per day than trueclass mage.
 – Cannot cast arcane spells of 8th and 9th levels.
@@ -162,7 +162,7 @@ CLASS FEATURES:
 
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
 
-– At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
+– At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
 – Gets one bonus feat at levels 22, 25 and 28.
 – Hit Die: d7
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
@@ -176,7 +176,7 @@ Advantages:
 – Bonus Feats: at level 1 Berserker receives for free Warfare (1):Power Attack, at level 4 <PRO_HESHE> receives Warfare (2):Cleave and finally Warfare (3):Great Fortitude at level 8.
 – May use Rage ability once per day. Gains one use at level 1, level 4 and every 4 levels thereafter.
 
-RAGE: The enraged state lasts for 6 rounds. While enraged, a Berserker gains a bonus of +2 to <PRO_HISHER> attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
+RAGE: The enraged state lasts for 3 rounds + 1 round per 2 points of Constitution above 10. While enraged, a Berserker gains a bonus of +2 to <PRO_HISHER> attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
 At 8th the attack and damage rolls bonus increases to +3 and physical damage resistance bonus to 20%.
 At 16th level the attack and damage rolls bonus increases to +5 and physical damage resistance bonus to 30%.
 
@@ -194,7 +194,7 @@ Disadvantages:
 – Can not use ranged weapons.
 – Does not get bonus feats like trueclass fighters do.
 – May only put one star in any weapon <PRO_HESHE> can use.
-– May not wear armor heavier than splint mail.
+– May not wear armor heavier than splint mail and use large shield.
 – Alignment restricted to any non-lawful.~
 //---------------------------------------------------------------------------------------------------//
 @0090001 = ~hexblade~
@@ -228,14 +228,14 @@ When this ability is activated for next round Hexblade's casting speed is increa
 – Starting from level 12 may use the Aura of Unluck ability once per day. Gains and additional use every 4 levels thereafter.
 
 AURA OF UNLUCK:
-When this ability is activated, all enemies within 30 feet of the Hexblade suffer -1 penalty to luck. This penalty increases to -2 at level 16, -3 at level 20 and finally up to -4 at level 24.
+When this ability is activated, all enemies within 30 feet of the Hexblade suffer -1 penalty to luck. This penalty increases to -2 at level 16, -3 at level 20 and finally up to -4 at level 24. The effect lasts for 3 rounds + 1 round per 2 points of Hexblades's Charisma above 10.
 
 
 Disadvantages:
 – May not be of good alignment.
 – Does not get bonus feats like trueclass fighters do.
 – May only put one star in any weapon <PRO_HESHE> can use.
-– May use only light armor and medium armor.~
+– May use only light armor and medium armor, may not use large shield.~
 //---------------------------------------------------------------------------------------------------//
 @010=~KENSAI: This class's name, which means "sword saint" in the common tongue, refers to a warrior who has been specially trained to be one with <PRO_HISHER> weapon. The kensai is deadly, fast, and trained to fight without the protection of armor. (Note: Despite its common name, a Kensai may use any melee weapon with which <PRO_HESHE> is proficient.)
 
@@ -260,18 +260,17 @@ Disadvantages:
 
 CLASS FEATURES:
 
-– May not wear armor heavier than splint mail.
+– May not wear armor heavier than splint mail and use large shield.
 – May only get 1 star with any weapon class.
 – Moves 2 points faster than other characters.
 – Immune to sneak attack.
 – Gets one bonus feat at level 5, 10, 15, 20, 22 and 28.
 – May use the Rage ability once per day. Gains one use at level 1, then at level 4 and an additional use every 4 levels thereafter.
 
-RAGE: The enraged status lasts for 10 rounds and provides a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
-At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
+RAGE: The enraged status provides a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+It lasts for 3 rounds + 1 round per 2 points of newly modified Constitution above 10. At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
 
 – Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 7 and every 3 levels thereafter to a maximum of 40% at level 28.
-– 7th level: Gains 5% resistance to crushing, slashing, piercing, and missile damage. An additional 5% is gained every 3 levels thereafter.
 – 11th level: Greater Rage: Barbarian’s Rage bonuses to Strength and Constitution during rage each increase to +6, and morale bonus on saves  vs. Spell increases to +6. The penalty to AC remains at -2.
 – 17th level: Tireless Rage: Barbarian is no longer fatigued after the rage ends.
 – 20th level: Mighty Rage: Barbarian’s Rage bonuses to Strength and Constitution during rage each increase to +8, and morale bonus on saves  vs. Spell increases to +4. The penalty to AC remains at -2.
@@ -283,11 +282,15 @@ At the end of the rage, the character loses the rage modifiers and becomes fatig
 @012=~DWARVEN DEFENDER: The Dwarven Defender is a formidable warrior that is reputed to be worth two soldiers of any other race. Trained extensively in the art of dwarven warfare, a handful of these stout fighters can render a defensive line all but unbreakable.
 
 Advantages:
+– Immune to sneak attack.
 – May use Defensive Stance once per day. Gains one use at level 1, one use at level 4, and an additional use every 4 levels thereafter.
 
-DEFENSIVE STANCE: For 1 turn, the Dwarven Defender gains +50% resistance to all forms of physical damage, a +2 bonus to Saving Throws, and a 50% movement rate penalty.
+DEFENSIVE STANCE: When <PRO_HESHE> adopts a defensive stance, a Dwarven Defender gains phenomenal strength and durability, but can move only at 50% of its speed. Dwarven Defender gains +2 to Strength, +2 to Constitution, a +1 bonus on all savingthwrows, and a +2 dodge to AC. A defensive stance lasts for a number of rounds equal to 3 + 1 per 2 points of the character’s (newly improved) Constitution above 10.    
+At the end of the Defensive Stance, the character becomes fatigued (-2 penalty to Strength) for the duration of 5 rounds.
+At 10th level, Dwarven Defender’s bonuses to Strength, Constitution and AC each increase to +4, and bonus on saves increases to +2. 
+At 17th level, the character is no longer subject to fatigue effects after Defensive Stance.
 
-– Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 3 and every 5 levels thereafter to a maximum of 30% at level 28.
+– Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 3 and every 3 levels thereafter to a maximum of 50% at level 30.
 – Gets one bonus feat at level 5, 10, 15, 20, 22 and 28.
 – Hit Die: d12
 
@@ -301,7 +304,7 @@ Disadvantages:
 CLASS FEATURES:
 
 – May wear helmets.
-– May wear any armor and use any weapon.
+– May wear any armor and use any weapon and shield (excluding large shield).
 – May use Lay On Hands ability once per day for every 2 points of Charisma above 10 to heal a target for 2 Hit Points per level of the Paladin.
 – Starting from level 6 Lay On Hands ability also cures disease.
 – Starting from level 9 Lay On Hands ability also cures poison.
@@ -320,11 +323,11 @@ SMITE EVIL: For 10 seconds Paladin receives +1 bonus to <PRO_HISHER> attack roll
 – Starting from level 3 may use the Aura of Faith ability once per day. Gains and additional use every 6 levels thereafter.
 
 AURA OF FAITH:
-When this ability is activated, all allies within 30 feet of the Paladin are receiving beneficial effects based on the Paladin's level:
-  3rd - All allies receive a +1 bonus to hit, damage rolls and Armor Class as well as immunity to fear for 1 turn.
-  9th - All allies receive a +2 bonus to hit, damage rolls and Armor Class as well as immunity to fear for 1 turn.
-  15th - All allies receive a +3 bonus to hit, damage rolls and Armor Class as well as immunity to fear for 1 turn.
-  21st - All allies receive a +4 bonus to hit, damage rolls and Armor Class as well as immunity to fear for 1 turn.
+When this ability is activated, all allies within 30 feet of the Paladin are receiving beneficial effects based on the Paladin's level for 3 rounds + 1 round per 2 points of Paladin's Charisma above 10:
+  3rd Level: - All allies receive a +1 bonus to hit, damage rolls and Armor Class as well as immunity to fear.
+  9th Level: - All allies receive a +2 bonus to hit, damage rolls and Armor Class as well as immunity to fear .
+  15th Level: - All allies receive a +3 bonus to hit, damage rolls and Armor Class as well as immunity to fear.
+  21st Level: - All allies receive a +4 bonus to hit, damage rolls and Armor Class as well as immunity to fear.
 
 
 
@@ -412,11 +415,11 @@ Each successful hit within the next 5 rounds will inject poison into the target.
 – 3rd level: May use the Aura of Despair ability once per day. Gains and additional use every 6 levels thereafter.
 
 AURA OF DESPAIR:
-When this ability is activated, all enemies within 30 feet of the Blackguard suffer ill effects based on the Blackguard's level:
-  3rd - All enemies suffer a -1 penalty to hit and damage rolls and a -2 penalty to Armor Class for 1 turn.
-  6th - All enemies suffer a -2 penalty to hit and damage rolls and a -2 penalty to Armor Class for 1 turn.
-  15th - All enemies suffer a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class for 1 turn; enemies with 8 or fewer Hit Dice are panicked as well.
-  20th - All enemies suffer a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class for 1 turn; enemies with 18 or fewer Hit Dice are panicked as well.
+When this ability is activated, all enemies within 30 feet of the Blackguard suffer ill effects based on the Blackguard's level for 3 rounds + 1 round per 2 points of Blackguard's Charisma above 10:
+  3rd Level: - All enemies suffer a -1 penalty to hit and damage rolls and a -2 penalty to Armor Class.
+  9th Level: - All enemies suffer a -2 penalty to hit and damage rolls and a -2 penalty to Armor Class.
+  15th Level: - All enemies suffer a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class; enemies with 8 or fewer Hit Dice are panicked as well.
+  21st Level: - All enemies suffer a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class; enemies with 18 or fewer Hit Dice are panicked as well.
 
  – May use Smite Good ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.
 
@@ -434,7 +437,7 @@ Disadvantages:
 CLASS FEATURES:
 
 – May wear helmets.
-– May use any weapon.
+– May use any weapon and shield (excluding large shield).
 – May not wear armor heavier than splint mail.
 – Has Evasion passive ability.
 
@@ -458,7 +461,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 CLASS FEATURES:
 
 – May wear helmets.
-– May use any weapon and shields.
+– May use any weapon and shield (excluding large shield).
 – May not wear armor heavier than splint mail.
 – Bonus Feats: Cleric/Ranger gets Style Focus in Two Weapon Fighting for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12, Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.
 – May select one racial enemy at levels 1, 5 and every 5 levels thereafter which grants a +4 bonus on damage rolls against the selected enemy race.
@@ -476,7 +479,7 @@ All hostile undead creatures suffer 1d6 points of magical damage per Channel Ene
 – Eventually can cast low level druidic spells (same as trueclass ranger).
 – May call for an animal companion who fights for <PRO_HISHER> side.
 – Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.
-– At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
+– At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
 – Alignment restricted to good.
 – Gets one bonus feat at level 28.
 – Hit Die: d9
@@ -533,7 +536,7 @@ Disadvantages:
 CLASS FEATURES:
 
 – May wear helmets.
-– May wear any armor.
+– May wear any armor and use  any shield (excluding large shield).
 – May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).
 – May only become Proficient (one star) in any weapon class.
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 1 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 1 plus 1d6 per 2 levels thereafter).
@@ -548,7 +551,7 @@ All hostile living creatures suffer 1d6 points of magical damage per Channel Ene
 
 – May cast priest spells.
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).
-– At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
+– At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
 – Gains access to the following epic spells: Globe of Blades (at level 19), Mass Raise Dead (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Implosion (at level 23) and Summon Deva (at level 24).
 – Gets one bonus feat at levels 22, 25 and 28.
 – Hit Die: d8
@@ -559,7 +562,7 @@ All hostile living creatures suffer 1d6 points of magical damage per Channel Ene
 
 CLASS FEATURES:
 
-– May not wear any armor.
+– May not wear any armor or use shields.
 – May only use the following weapons: dagger, quarterstaff, dart, sling, crossbow, mace, flail, morning star, war hammer.
 – May cast both arcane and divine cleric spells.
 – Can cast two arcane spells per day less than trueclass mage.
@@ -575,7 +578,7 @@ All allied undead creatures are healed for 1d6 hit points per Channel Energy Lev
 All hostile living creatures suffer 1d6 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
 
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).
-– At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
+– At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
 – Versatile Spellcasting: starting from level 7 can trade one first level cleric spell slot for a second level wizard spell slot, this exchange is reversible; every two levels thereafter can trade next level cleric spell slot for a wizard spell slot one level higher.
 – Gets one bonus feat at levels 22, 25 and 28.
 – Hit Die: d6
@@ -604,7 +607,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 
 SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds.
 
-– At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.
+– At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
 – Gets one bonus feat at levels 10, 20, 22, 25 and 28.
 – Hit Die: d7
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell
@@ -908,7 +911,7 @@ Disadvantages:
 CLASS FEATURES:
 
 – May not wear armor heavier than chain mail. (Bardic spells being simpler than those of mages are not subject to casting failure when bard wears light armor.)
-– May not equip shields larger than bucklers.
+– May use any shield (excluding large shield).
 – Receives one bonus Feat at level 5, 10, 15, 20, 22 and 28.
 – Thieving abilities: Pick Pockets.
 – Increased Lore score.
@@ -1039,7 +1042,7 @@ A jester of 24th level or higher can use this epic performance to drain the very
 Disadvantages:
 – Smaller variety of available Bardic performance types and less uses per day.
 – May only use weapons a wizard can (daggers, quarterstaves, darts, slings, crossbows).
-– May only wear light armor.~
+– May only wear light armor and use bucklers.~
 //-------------------------------------------------------------------------------------------------//
 @047=~SORCERER: Sorcerers are practitioners of magic who were born with the innate ability to cast spells. It is thought that the blood of some powerful creature flows through their veins; perhaps they are the spawn of the gods themselves, or even dragons walking in humanoid form. Regardless, the Sorcerer's magic is intuitive rather than logical. They know fewer spells than Mages, and acquire spells more slowly, but they can cast spells more often and have no need to select and prepare spells ahead of time. Sorcerers cannot specialize in magic the way Mages do. Other than these differences, a Sorcerer is very similar to a Mage.
 

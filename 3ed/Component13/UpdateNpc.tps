@@ -22,7 +22,7 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 18 Con = 12 Int = 14 Wis = 10 Cha = 10  Lockpick = 4 FindTraps = 4
                                   STR_VAR NpcName = ~CORAN~ ScriptName = ~CORAN~ ClassName = ~FIGHTER_THIEF~ END     
 
-    	LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 10 Con = 14 Int = 10 Wis = 14 Cha = 16 
+    	LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 15 Dex = 10 Con = 14 Int = 9 Wis = 13 Cha = 16 
                                   STR_VAR NpcName = ~AJANTI~ ScriptName = ~AJANTIS~ ClassName = ~PALADIN~  END   
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 14 Con = 14 Int = 14 Wis = 10 Cha = 10
@@ -41,7 +41,7 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 14 Con = 14 Int = 10 Wis = 16 Cha = 10
                                   STR_VAR NpcName = ~FALDOR~ ScriptName = ~FALDORN~ ClassName = ~DRUID~ KitName = ~BEASTFRIEND~ END 
                 
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 15 Dex = 10 Con = 14 Int = 10 Wis = 16 Cha = 12  
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 10 Con = 14 Int = 10 Wis = 15 Cha = 12  
                                   STR_VAR NpcName = ~BRANWE~ ScriptName = ~BRANWEN~ ClassName = ~FIGHTER_CLERIC~ END    
         COPY_EXISTING ~BRANWE.CRE~ ~override~
             //return spiritual hammer
@@ -120,7 +120,7 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 16 Con = 12 Int = 10 Wis = 15 Cha = 10  
                                   STR_VAR NpcName = ~RASAAD~ ScriptName = ~RASAAD~ ClassName = ~MONK~ KitName = ~SUN_SOUL~ END       
 
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 18 Dex = 10 Con = 12 Int = 8 Wis = 14 Cha = 15  
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 18 Dex = 10 Con = 13 Int = 8 Wis = 13 Cha = 15  
                                   STR_VAR NpcName = ~DORN~ ScriptName = ~DORN~ ClassName = ~PALADIN~ KitName = ~BLACKGUARD~ END      
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 9 Dex = 16 Con = 12 Int = 17 Wis = 9 Cha = 11  RemoveKnownSpells = 0
@@ -188,13 +188,13 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 14 Con = 12 Int = 10 Wis = 18 Cha = 10  
                                   STR_VAR NpcName = ~CERND+.*~ ScriptName = ~CERND~ ClassName = ~DRUID~ KitName = ~SHAPESHIFTER~ END    
 
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 15 Dex = 10 Con = 14 Int = 10 Wis = 16 Cha = 12  
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 10 Con = 14 Int = 10 Wis = 15 Cha = 12  
                                   STR_VAR NpcName = ~ANOMEN+.*~ ScriptName = ~ANOMEN~ ClassName = ~FIGHTER_CLERIC~ END    
                 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 10 Int = 16 Wis = 16 Cha = 12  RemoveKnownSpells = 0  HpTotal = 5
                                   STR_VAR NpcName = ~AERIE[0-9]+.*~ ScriptName = ~AERIE~ ClassName = ~CLERIC_MAGE~  END  
         COPY_EXISTING_REGEXP ~AERIE[0-9]+.*\.CRE~ ~override~       
-                REMOVE_KNOWN_SPELL ~sppr202~ ~sppr206~ //remove druid spells
+                REMOVE_KNOWN_SPELL ~SPPR110~ ~sppr202~ ~sppr206~ //remove druid spells
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 18 Dex = 16 Con = 16 Int = 16 Wis = 10 Cha = 10  
                                   STR_VAR NpcName = ~SAREVOK~ ScriptName = ~SAREV25~ ClassName = ~FIGHTER~ END       
@@ -202,7 +202,7 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 16 Con = 12 Int = 10 Wis = 15 Cha = 10  
                                   STR_VAR NpcName = ~RASAAD+.*~ ScriptName = ~RASAAD~ ClassName = ~MONK~ KitName = ~SUN_SOUL~ END       
 
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 18 Dex = 10 Con = 12 Int = 8 Wis = 14 Cha = 15  
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 18 Dex = 10 Con = 13 Int = 8 Wis = 13 Cha = 15  
                                   STR_VAR NpcName = ~DORN+.*~ ScriptName = ~DORN~ ClassName = ~PALADIN~ KitName = ~BLACKGUARD~ END      
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 9 Dex = 16 Con = 12 Int = 17 Wis = 9 Cha = 11  RemoveKnownSpells = 0

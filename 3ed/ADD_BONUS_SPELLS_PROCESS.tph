@@ -7,7 +7,7 @@ DEFINE_ACTION_FUNCTION ~ADD_BONUS_SPELLS_PROCESS~ //activated ability bonus feat
 
 	BEGIN
 	
-		OUTER_FOR (i=12;i<25;i=i+2) BEGIN
+		OUTER_FOR (i=11;i<=25;i=i+2) BEGIN
 			
 			COPY ~%folder_name%%ability_name%A%i%.SPL~  ~override~
 			SPRINT resource EVALUATE_BUFFER ~%ability_name%A%i%~		

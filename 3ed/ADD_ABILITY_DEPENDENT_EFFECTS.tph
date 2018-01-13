@@ -1,0 +1,74 @@
+DEFINE_PATCH_FUNCTION ~ADD_ABILITY_DEPENDENT_EFFECTS~
+
+    INT_VAR
+        n_headers = 1
+        stat_ge_par = 126
+        stat_begin = 10
+        stat_end = 24
+        stat_step = 2
+        power = 0
+        resist_dispel = 2
+        target = 1
+        remove_in_effect = 0        
+    STR_VAR
+        abil_name=~~
+
+    BEGIN
+    
+        SET k=0
+        FOR (i=1;i<=n_headers;i=i+1) BEGIN  
+
+            
+            FOR (val = stat_begin;val<=stat_end;val=val+stat_step) BEGIN  
+                
+                PATCH_IF (n_headers ==1) BEGIN
+                    SPRINT resource EVALUATE_BUFFER ~%abil_name%%val%~
+                END
+                ELSE BEGIN
+                    SPRINT resource EVALUATE_BUFFER ~%abil_name%%i%%val%~                
+                END 
+                PATCH_IF (remove_in_effect == 1 ) BEGIN
+                    SPRINT $AbilToRemove("%k%") EVALUATE_BUFFER ~%resource%~
+                    SET k = k + 1
+                END
+                ELSE BEGIN    
+                    LPF ADD_SPELL_EFFECT INT_VAR header = i target = 1 opcode=321 duration=1 resist_dispel STR_VAR resource END
+                END
+            END
+            
+
+            FOR (val = stat_end;val>=stat_begin;val=val - stat_step) BEGIN  
+                
+                PATCH_IF (n_headers ==1) BEGIN
+                    SPRINT resource EVALUATE_BUFFER ~%abil_name%%val%~
+                END
+                ELSE BEGIN
+                    SPRINT resource EVALUATE_BUFFER ~%abil_name%%i%%val%~                
+                END 
+                SET parameter1 = (val == stat_begin) ? 0 : val
+                LPF ADD_SPELL_EFFECT INT_VAR header = i target = 1 opcode=326 duration=1 parameter1 parameter2 = stat_ge_par resist_dispel STR_VAR resource END
+                SPRINT resource EVALUATE_BUFFER ~%DEST_RES%~
+                LPF ADD_SPELL_EFFECT INT_VAR header = i target = 1 opcode=318 duration=1 parameter1 parameter2 = stat_ge_par resist_dispel STR_VAR resource END
+            END   
+            
+        END   
+
+
+        PATCH_IF (remove_in_effect == 1) BEGIN
+
+            INNER_ACTION BEGIN
+                 OUTER_FOR (l=0;l<k;l=l+1) BEGIN
+                    OUTER_SPRINT src EVALUATE_BUFFER $AbilToRemove("%l%") 
+                    OUTER_FOR (m=0;m<k;m=m+1) BEGIN                       
+                        OUTER_SPRINT resource EVALUATE_BUFFER $AbilToRemove("%m%") 
+                        COPY_EXISTING ~%src%.SPL~ ~override~
+                            LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 target opcode=321 duration=1 resist_dispel STR_VAR resource END
+                    END            
+                 END
+            END
+        
+        END
+       
+    END
+    
+    

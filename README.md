@@ -17,8 +17,8 @@
 
 
 
-# Baldurs-gate-dnd-3.5 v2.08
-This is a WeiDu mod for BG:Enhanced edition and BG2:Enhanced edition  that changes 2ed ADnD rules to DnD 3.5 with some elements taken from Pathfinder.  
+# Baldurs-gate-dnd-3.5 v2.09
+This is a WeiDu mod for BG:Enhanced edition and BG2:Enhanced edition that changes 2ed ADnD rules to DnD 3.5 with some elements taken from Pathfinder.  
 It changes game mechanics (i.e. classes, spells, abilities, etc...) to that of 3.5 edition (to the extent that game engine allows).
 
 # Installation
@@ -46,8 +46,8 @@ If Component [Point Buy System] is installed, roll based Abilities generation wi
 The effects of abilities were also changed as follows:
 
 #### STRENGTH:
-– Determines to hit bonus with melee weapons and throwing axes (+1 per 2 points above 9, -1 per 2 points below 8).  
-– Determines damage bonus with melee weapons and throwing axes and slings (+1 per 2 points above 10, -1 per 2 points below 9).  
+– Determines to hit bonus with melee weapons and throwing axes (+1 per 2 points above 9, -1 per 2 points below 10).  
+– Determines damage bonus with melee weapons and throwing axes and slings (+1 per 2 points above 10, -1 per 2 points below 11).  
 – Determines chance to force open the lock.  
 – Determines Weight Allowance.  
 
@@ -59,8 +59,8 @@ Bash| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |13 | 16 | 20 | 25 | 30 | 35 | 40 |
 Note: two-handed weapons receive 1.5 damage bonus from STRENGTH.
 
 #### DEXTERITY:
-– Determines to hit bonus with ranged weapons (+1 per 2 points above 9, -1 per 2 points below 8).  
-– Determines AC bonus (+1 per 2 points above 10, -1 per 2 points below 9).  
+– Determines to hit bonus with ranged weapons (+1 per 2 points above 9, -1 per 2 points below 10).  
+– Determines AC bonus (+1 per 2 points above 10, -1 per 2 points below 11).  
 – Gives combat bonuses with certain feats, weapons and armors.  
 – Determines bonus to all base thieving skill values, except detect illusions (+2.5% per point above 10, -2.5% per point below 8).  
 – Improves Saving Throws vs. Rod/Staff/Wand and vs. Breath Weapon (+1 per 2 points above 9, -1 per 2 points below 10).  
@@ -79,34 +79,12 @@ Note: wearing heavy armor may restrict maximum dexterity bonus to AC a character
 – Gives combat bonuses with certain feats, weapons and armors.  
 – Increases all thieving skills (+5% of base value for every point above 10 and -5% for every point below 10, i.e. if the base value of your skill is 50 and you have 18 INT the effective base value will become 50*(100%+8 x 5%) = 50 x 140% = 70).    
 – Increases number of spells per day that can be cast by Mages and Assassins.
-
-INT\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
---- | --- | --- | --- |--- |--- |--- |--- |--- |---
-12-13 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-14-15 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-16-17 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0
-18-19 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 0
-20-21 | 2 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0
-22-23 | 2 | 2 | 1 | 1 | 1 | 1 | 0 | 0 | 0
-24-25 | 2 | 2 | 2 | 1 | 1 | 1 | 1 | 0 | 0
-
 – Increases Saving Throw penalties for Mage and Assassin spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).  
 Note: A character with an Intelligence score of 8 or less is illiterate and cannot use scrolls or most wands regardless of her class.
 
 #### WISDOM
 – Increases AC bonus of Monk, Kensai and Ninja (+1 per 2 points above 10).  
 – Increases number of spells per day that can be cast by Clerics, Paladins, Druids and Rangers.  	 
-
-WIS\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
---- | --- | --- | --- |--- |--- |--- |--- |--- |---
-12-13 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-14-15 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-16-17 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0
-18-19 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 0
-20-21 | 2 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0
-22-23 | 2 | 2 | 1 | 1 | 1 | 1 | 0 | 0 | 0
-24-25 | 2 | 2 | 2 | 1 | 1 | 1 | 1 | 0 | 0
-
 – Improves Saving Throws vs. Spells (+1 per 2 points above 9, -1 per 2 points below 10).  
 – Increases Saving Throw penalties for Cleric, Druid, Paladin and Ranger spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).  
 
@@ -115,17 +93,6 @@ WIS\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 – Improves all Paladin, Hexblade and Jester savingthrows (+1 per 2 points above 9 and -1 per 2 points below 10).  
 – Increases number of Lay On Hands uses per day for Paladin or Absorb Health uses per day for Blackguards (+1 per 2 points above 12).  
 – Increases number of spells per day that can be cast by Bards, Hexblades, Sorcerers and Shamans.  
-
-CHA\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
---- | --- | --- | --- |--- |--- |--- |--- |--- |---
-12-13 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-14-15 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0
-16-17 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0
-18-19 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 0
-20-21 | 2 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0
-22-23 | 2 | 2 | 1 | 1 | 1 | 1 | 0 | 0 | 0
-24-25 | 2 | 2 | 2 | 1 | 1 | 1 | 1 | 0 | 0
-
 – Influences reaction of people on your character and prices in stores.  
 – Increases Saving Throw penalties for Bard, Hexblade, Sorcerer and Shaman spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).
 
@@ -188,22 +155,22 @@ Improved Style Mastery (6 stars) - The wielder gets another -1 bonus to AC (to a
 Epic Style Mastery (7 stars) - The wielder gets another -1 bonus to AC (to a total of -7).
 
 ###### Single Weapon Combat
-Style Focus (1 star) - The wielder gets a -1 bonus to AC and THAC0 and inflicts critical damage on an attack roll of 19 - 20.  
-Style Specialization (2 stars) - The wielder gets another -1 bonus to THAC0 (to a total of -2) and inflicts critical damage on an attack roll of 17 - 20.  
-Greater Style Focus (3 stars) - The wielder gets another -1 bonus to AC (to a total of -2) and THAC0 (to a total of -3) and inflicts critical damage on an attack roll of 16 - 20.  
-Greater Style Specialization (4 stars) - The wielder gets another -1 bonus to THAC0 (to a total of -4) and inflicts critical damage on an attack roll of 14 - 20.  
-Style Mastery (5 stars) - The wielder gets another -1 bonus to AC (to a total of -3) and THAC0 (to a total of -5) and inflicts critical damage on an attack roll of 13 - 20.  
-Improved Style Mastery (6 stars) - The wielder gets another -1 bonus to THAC0 (to a total of -6) and inflicts critical damage on an attack roll of 11 - 20.  
-Epic Style Mastery (7 stars) - The wielder gets another -1 bonus to AC (to a total of -4) and THAC0 (to a total of -7) and inflicts critical damage on an attack roll of 10 - 20.
+Style Focus (1 star) - The wielder gets a -1 bonus to THAC0 and inflicts critical damage on an attack roll of 18 - 20.  
+Style Specialization (2 stars) - The wielder gets another -1 bonus to AC and THAC0 (to a total of -2) and inflicts critical damage on an attack roll of 17 - 20.  
+Greater Style Focus (3 stars) - The wielder gets another -1 bonus to THAC0 (to a total of -3) and inflicts critical damage on an attack roll of 15 - 20.  
+Greater Style Specialization (4 stars) - The wielder gets another -1 bonus to AC (to a total of -2) and THAC0 (to a total of -4) and inflicts critical damage on an attack roll of 14 - 20.  
+Style Mastery (5 stars) - The wielder gets another -1 bonus to THAC0 (to a total of -5) and inflicts critical damage on an attack roll of 12 - 20.  
+Improved Style Mastery (6 stars) - The wielder gets another -1 bonus to AC (to a total of -3) and THAC0 (to a total of -6) and inflicts critical damage on an attack roll of 11 - 20.  
+Epic Style Mastery (7 stars) - The wielder gets another -1 bonus to THAC0 (to a total of -7) and inflicts critical damage on an attack roll of 9 - 20.
 
 ###### Two-Weapon Combat
 Style Focus (1 star) - The wielder's penalties are reduced to -2 with the main weapon and with the off-hand weapon.  
 Style Specialization (2 stars) - The wielder's penalties are reduced to 0 with the main weapon and  with the off-hand weapon.  
-Greater Style Focus (3 stars) - The wielder receives a -2 bonus to AC.  
-Greater Style Specialization (4 stars) - The wielder additionally gets -2 bonus to AC to a total of -4.  
-Style Mastery (5 stars)  - The wielder additionally gets another -1 bonus to AC (to a total of -5) and inflicts critical damage on an attack roll of 19 - 20.  
-Improved Style Mastery (6 stars) - he wielder additionally gets another -1 bonus to AC (to a total of -6) and inflicts critical damage on an attack roll of 18 - 20.  
-Epic Style Mastery (7 stars) - The wielder additionally gets another -1 bonus to AC (to a total of -7) and inflicts critical damage on an attack roll of 17 - 20.
+Greater Style Focus (3 stars) - The wielder receives a -1 bonus to AC.  
+Greater Style Specialization (4 stars) - The wielder additionally gets -1 bonus to AC to a total of -2.  
+Style Mastery (5 stars)  - The wielder additionally gets another -1 bonus to AC (to a total of -3) and inflicts critical damage on an attack roll of 19 - 20.  
+Improved Style Mastery (6 stars) - he wielder additionally gets another -1 bonus to AC (to a total of -4) and inflicts critical damage on an attack roll of 18 - 20.  
+Epic Style Mastery (7 stars) - The wielder additionally gets another -1 bonus to AC (to a total of -5) and inflicts critical damage on an attack roll of 17 - 20.
 
 ###### Archery
 Style Focus (1 star) - The character receives Rapid Shot modal ability. While activated the character can make one additional APR with ranged weapons, but all attacks are done with -2 penalty to hit.  
@@ -214,7 +181,7 @@ Style Mastery (5 stars)  - The character inflicts critical damage on an attack r
 Improved Style Mastery (6 stars) - The character receives Hail of Arrows innate ability.
 ```
 Hail of Arrows:
-Hail of arrows greatly speeds up archer's ability to strike at foes with ranged weapons. The ability sets archer's number of attacks per round to 10, but <PRO_HISHER> THAC0 and damage suffer a 4 point penalty. The Hail of Arrows lasts for one round. Can be used once every 2 minutes.
+Hail of arrows greatly speeds up archer's ability to strike at foes with ranged weapons. The ability sets archer's number of attacks per round to 10, but her THAC0 and damage suffer a 4 point penalty. The Hail of Arrows lasts for one round. Can be used once every 2 minutes.
 ```  
 Epic Style Mastery (7 stars) - The character receives Greater Hail of Arrows innate ability.
 ```
@@ -262,7 +229,7 @@ This ability allows the warrior to vanquish foes with a single blow.  For the ne
 ###### Tactics
 Insightful Strike (1 star) - With unarmed strikes, short swords, daggers, long swords, scimitars, clubs, quarterstaves and spears the character may use Intelligence value instead of Strength to determine bonus to damage.  
 NOTE: This damage bonus is not multiplied by 1.5 for two-handed weapons, although if character got additional 0.5 strength bonus from Strength score, it is retained (i.e. if Strength is 14 and Intelligence is 16, the character will get +3 damage bonus from Intelligence and +1 (0.5*2) from Strength to a total of +4 with two-handed weapons).  
-Combat Expertise (2 stars) - The character receives Combat Expertise modal ability. While activated all attacks with melee weapons suffer -3 penalty to THAC0 but character receives +3 bonus to AC.  
+Combat Expertise (2 stars) - The character receives Combat Expertise modal ability. While activated all attacks with melee weapons suffer -3 penalty to THAC0 but character receives +3 bonus to AC, character also suffers additional 15% spell casting failure. Can be used only with melee weapon equipped.  
 Iron Will (3 stars) - The character receives +2 bonus on Saving Throws vs. Spells.  
 Study Opponent (4 stars) - The character receives Study Opponent innate ability which can be used 3 times per day.  
 ```
@@ -274,7 +241,7 @@ Combat Intuition (5 stars) - While wearing light or no armor the character recei
 Critical Strike (6 stars) - The character receives Critical Strike innate ability.
 ```
 Critical Strike:
-A high-level warrior's intimate knowledge of vital spots on opponents allows <PRO_HIMHER> to concentrate all of the attacks in one round to strike a vital area every time. With this ability, every attack roll made in the next round is a natural 20, a critical hit. This ability can be used once every 2 minutes.
+A high-level warrior's intimate knowledge of vital spots on opponents allows her to concentrate all of the attacks in one round to strike a vital area every time. With this ability, every attack roll made in the next round is a natural 20, a critical hit. This ability can be used once every 2 minutes.
 ```
 Premonition (7 stars) - The character receives Premonition innate ability.
 ```
@@ -389,24 +356,41 @@ Half-orcs have the following traits:
 
 ## 4. Classes
 
-All the classes were changed to better correspond to the DND 3.5 Edition counterparts (or Pathfinder ones), some of the kits were completely replaced or completely removed. Dual-classing was disabled (instead humans can now choose any multi-class) since with the feat system it becomes utterly unfair (dual-class characters would gain twice the number of feats). The experience progression of multi-classes were changed so that with same amount of experience they will have the same level as single classes (i.e. a for example with 160 000 experience a single class Fighter will reach level 9, same as Fighter/Mage will reach level 9/9), although the abilities they get were changed so that instead of being almost a direct sum of 2 single classes they now correspond more to Pathfinder approach for  hybrid classes which gain a mix of certain traits of both parent classes as well receiving some unique abilities.
+All the classes were changed to better correspond to the DND 3.5 Edition counterparts (or Pathfinder ones), some of the kits were completely replaced or removed. Dual-classing was disabled (instead humans can now choose any multi-class) since with the feat system it becomes utterly unfair (dual-class characters would gain twice the number of feats). The experience progression of multi-classes were changed so that with same amount of experience they will have the same level as single classes (i.e. a for example with 160 000 experience a single class Fighter will reach level 9, same as Fighter/Mage will reach level 9/9), although the abilities they get were changed so that instead of being almost a direct sum of 2 single classes they now correspond more to Pathfinder approach for  hybrid classes which gain a mix of certain traits of both parent classes as well receiving some unique abilities.
 The number of experience points needed to reach new levels was also changed as follows:
 
 Lvl| Exp Points |
 --- | ---
-1| 0
-2| 2500
-3| 5000
-4| 10000
-5| 19000
-6| 34000
-7| 60000
-8| 100000
-9| 160000
-10|270000
-11|420000
-12|600000
-13+|+300000 per level
+1|       0
+2|    2500
+3|    5000
+4|   10000
+5|   19000
+6|   34000
+7|   60000
+8|  100000
+9|  160000
+10| 270000
+11| 420000
+12| 600000
+13| 840000
+14|1100000
+15|1380000
+16|1680000
+17|2000000
+18|2340000
+19|2700000
+20|3080000
+21|3480000
+22|3900000
+23|4340000
+24|4800000
+25|5280000
+26|5780000
+27|6300000
+28|6840000
+29|7400000
+30|7980000
 
 
 The new description of classes is given below.
@@ -414,7 +398,7 @@ The new description of classes is given below.
 ### FIGHTER
 CLASS FEATURES:  
 – May wear helmets.  
-– May wear any armor and use any weapon.  
+– May wear any armor and use any weapon and shield (including large shield).  
 – May get seven stars in any weapon category.  
 – Gets one bonus feat at level 1 and at every even level.  
 – At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill penalties and maximum dexterity AC bonus values. Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.  
@@ -437,7 +421,7 @@ Advantages:
 – Bonus Feats: at level 1 Berserker receives Warfare (1):Power Attack, at level 4 she receives Warfare (2):Cleave and finally at level 8 - Warfare (3):Great Fortitude.    
 – May use Rage ability once per day. Gains one use at level 1, additional uses at level 4 and every 4 levels thereafter.
 ```
-RAGE: The enraged state lasts for 6 rounds. While enraged, a Berserker gains a bonus of +2 to her attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to her Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
+RAGE: The enraged state lasts for 3 rounds + 1 per 2 points of Berserker's Constitution above 10. While enraged, a Berserker gains a bonus of +2 to her attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to her Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
 At 8th the attack and damage rolls bonus increases to +3 and physical damage resistance bonus to 20%.
 At 16th level the attack and damage rolls bonus increases to +5 and physical damage resistance bonus to 30%.
 ```
@@ -455,7 +439,7 @@ Disadvantages:
 – Can not use ranged weapons.  
 – Does not get bonus feats like trueclass fighters do.  
 – May only put one star in any weapon she can use.  
-– May not wear armor heavier than splint mail.  
+– May not wear armor heavier than splint mail and use larrge shield.  
 – Alignment restricted to any non-lawful.  
 
 ### HEXBLADE (replaces WIZARDSLAYER)
@@ -486,13 +470,14 @@ When this ability is activated for next round Hexblade's casting speed is increa
  ```
 AURA OF UNLUCK:
 When this ability is activated, all enemies within 30 feet of the Hexblade suffer -1 penalty to luck. This penalty increases to -2 at level 16, -3 at level 20 and finally up to -4 at level 24.
+The effect lasts for 3 rounds + 1 round per 2 points of Hexblades's Charisma above 10.
 ```
 
 Disadvantages:  
 – May not be of good alignment.  
 – Does not get bonus feats like trueclass fighters do.  
-– May only put one star in any weapon <PRO_HESHE> can use.  
-– May use only light armor and medium armor.  
+– May only put one star in any weapon she can use.  
+– May use only light armor and medium armor, may not use large shield.  
 
 ### KENSAI
 Advantages:  
@@ -514,14 +499,15 @@ Disadvantages:
 
 ### BARBARIAN
 CLASS FEATURES:  
-– May not wear armor heavier than splint mail.  
+– May not wear armor heavier than splint mail and use large shield.  
 – May only get 1 star with any weapon class.  
 – Moves 2 points faster than other characters.  
 – Immune to sneak attack.  
 – Gets one bonus feat at level 5, 10, 15, 20, 22, 28.  
 – May use the Rage ability once per day. Gains one use at level 1, then at level 4 and an additional use every 4 levels thereafter.  
 ```
-RAGE: The enraged status lasts for 10 rounds and provides a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+RAGE: The character is enraged  which grants <PRO_HIMHER> a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class, and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+The enraged state lasts 3 rounds + 1 round per 2 points of newly modified Constitution above 10.
 At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
 ```
 – 7th level: Gains 5% resistance to crushing, slashing, piercing, and missile damage. An additional 5% is gained every 3 levels thereafter.  
@@ -535,7 +521,11 @@ At the end of the rage, the character loses the rage modifiers and becomes fatig
 Advantages:  
 – May use Defensive Stance once per day. Gains one use at level 1, one use at level 4, and an additional use every 4 levels thereafter.  
 ```
-DEFENSIVE STANCE: For 1 turn, the Dwarven Defender gains +50% resistance to all forms of physical damage, a +2 bonus to Saving Throws, and a 50% movement rate penalty.
+DEFENSIVE STANCE:
+Dwarven Defender gains phenomenal strength and durability, but can move only at 50% of its speed. Dwarven Defender gains +2 to Strength, +2 to Constitution, a +1 bonus on all savingthwrows, and a +2 bonus to AC. A defensive stance lasts for a number of rounds equal to 3 + 1 per 2 points of the character’s (newly improved) Constitution above 10.    
+At the end of the Defensive Stance, the character becomes fatigued (-2 penalty to Strength) for the duration of 5 rounds.
+At 10th level, Dwarven Defender’s bonuses to Strength, Constitution and AC each increase to +4, and bonus on saves increases to +2.
+At 17th level, the character is no longer subject to fatigue effects after Defensive Stance.
 ```
 – Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 3 and every 5 levels thereafter to a maximum of 30% at level 28.  
 – Gets one bonus feat at level 5 and every 5 levels thereafter.  
@@ -549,7 +539,7 @@ Disadvantages:
 ### PALADIN
 CLASS FEATURES:  
 – May wear helmets.  
-– May wear any armor and use any weapon.  
+– May wear any armor and use any weapon and shield (excluding large shield).  
 – May use Lay On Hands ability once per day for every 2 points of Charisma above 10 to heal a target for 2 Hit Points per level of the Paladin.  
 – Starting from level 6 Lay On Hands ability also cures disease.  
 – Starting from level 9 Lay On Hands ability also cures poison.  
@@ -568,11 +558,11 @@ SMITE EVIL: For 10 seconds Paladin receives +1 bonus to her attack roll per 2 po
 – Starting from level 3 may use the Aura of Faith ability once per day. Gains and additional use every 6 levels thereafter.  
 ```
 AURA OF FAITH:
-When this ability is activated, all allies within 30 feet of the Paladin are receiving beneficial effects based on the Paladin's level:
-  3rd - All allies receive a +1 bonus to hit, damage rolls and Armor Class as well as immunity to fear for 1 turn.
-  9th - All allies receive a +2 bonus to hit, damage rolls and Armor Class as well as immunity to fear for 1 turn.
-  15th - All allies receive a +3 bonus to hit, damage rolls and Armor Class as well as immunity to fear for 1 turn.
-  21st - All allies receive a +4 bonus to hit, damage rolls and Armor Class as well as immunity to fear for 1 turn.
+When this ability is activated, all allies within 30 feet receive beneficial effects based on the caster level for 3 rounds + 1 round per 2 points of caster's Charisma above 10:
+  3rd Level: - All allies receive a +1 bonus to hit, damage rolls and Armor Class as well as immunity to fear.
+  9th Level: - All allies receive a +2 bonus to hit, damage rolls and Armor Class as well as immunity to fear.
+  15th Level: - All allies receive a +3 bonus to hit, damage rolls and Armor Class as well as immunity to fear.
+  21st Level: - All allies receive a +4 bonus to hit, damage rolls and Armor Class as well as immunity to fear.
 ```
 – Receives a bonus to all saving throws for every 2 points of Charisma above 9 (i.e. +1 at 11, +2 at 13, etc) and penalty for every 2 points below 10.  
 – Gets one bonus feat at levels 22 and 28.  
@@ -653,11 +643,12 @@ Each successful hit within the next 5 rounds will inject poison into the target.
 – 3rd level: May use the Aura of Despair ability once per day. Gains and additional use every 6 levels thereafter.     
 ```
 AURA OF DESPAIR:
-When this ability is activated, all enemies within 30 feet of the Blackguard suffer ill effects based on the Blackguard's level:
-  3rd - All enemies suffer a -1 penalty to hit and damage rolls and a -2 penalty to Armor Class for 1 turn.
-  6th - All enemies suffer a -2 penalty to hit and damage rolls and a -2 penalty to Armor Class for 1 turn.
-  15th - All enemies suffer a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class for 1 turn; enemies with 8 or fewer Hit Dice are panicked as well.
-  20th - All enemies suffer a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class for 1 turn; enemies with 18 or fewer Hit Dice are panicked as well.
+Targets all enemies within 30 ft. with effects that improve based on the caster's level for 3 rounds + 1 round per 2 points of caster's Charisma above 10:
+  3rd Level: -1 penalty to hit and damage rolls and a -2 penalty to Armor Class.
+  9th Level: -2 penalty to hit and damage rolls and a -2 penalty to Armor Class.
+  15th Level: -4 penalty to hit and damage rolls and a -4 penalty to Armor Class; causes fear in enemies of level 8 or below.
+  21st Level: -4 penalty to hit and damage rolls and a -4 penalty to Armor Class; causes fear in enemies level 18 or below.
+There is no Saving Throw against this ability.
 ```
 
 – May use Smite Good ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.  
@@ -674,7 +665,7 @@ Disadvantages:
 ### RANGER
 CLASS FEATURES:  
 – May wear helmets.  
-– May use any weapon.  
+– May use any weapon and shield (excluding large shield).  
 – May not wear armor heavier than splint mail.  
 – Has Evasion passive ability.  
 ```
@@ -738,7 +729,7 @@ Disadvantages:
 ### CLERIC
 CLASS FEATURES:  
 – May wear helmets.  
-– May wear any armor.  
+– May wear any armor and shield (excluding large shield).  
 – May only use non-bladed, non-piercing weapons (war hammer, club, flail, mace, quarterstaff, sling).  
 – May only become Proficient (one star) in any weapon class.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 1 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 1 plus 1d6 per 2 levels).  
@@ -754,7 +745,7 @@ All hostile living creatures suffer 1d6 points of magical damage per Channel Ene
 ```
 – May cast priest spells.  
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).  
-– At 1st level chooses two domains that grant her access to additional spells, normally not available to Clerics of other domains.  
+– At 1st level chooses two domains that grant her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – Gains access to the following epic spells: Globe of Blades (at level 19), Mass Raise Dead (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Implosion (at level 23) and Summon Deva (at level 24).  
 – Gets one bonus feat at levels 22, 25 and 28.  
 – Hit Die: d8  
@@ -765,7 +756,7 @@ All hostile living creatures suffer 1d6 points of magical damage per Channel Ene
 Advantages:  
 – May use Cleansing Flames starting from level 1 number of times per day equal to 5 plus 1 per 2 points of Charisma above 10.  
 ```
-Cleansing Flames:  Priest creates a burst of cleansing fire that affects all creatures  in a 30-foot radius centered on <PRO_HIMHER>.
+Cleansing Flames:  Priest creates a burst of cleansing fire that affects all creatures  in a 30-foot radius centered on her.
 All allied living creatures are healed for 1d8 hit points per Channel Energy Level of the caster.
 All hostile creatures are blinded for 2 rounds, additionally evil creatures suffer 1d8 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down +2. In which case they receive only half damage and are not subject to blind effect.
 ```
@@ -1002,7 +993,7 @@ Disadvantages:
 ### BARD
 CLASS FEATURES:  
 – May not wear armor heavier than chain mail. (Bardic spells being simpler than those of mages are not subject to casting failure when bard wears light armor.)  
-– May not equip shields larger than bucklers.  
+– May use nay shield (excluding large shield).  
 – Receives one bonus Feat at level 5, 10, 15, 20, 22 and 28.  
 – Thieving abilities: Pick Pockets.  
 – Increased Lore score.  
@@ -1124,7 +1115,7 @@ Song of Requiem (starting from level 24)
 Disadvantages:  
 – Smaller variety of available Bardic performance types and less uses per day.  
 – May only use weapons a wizard can (daggers, quarterstaves, darts, slings, crossbows).  
-– May only wear light armor.    
+– May only wear light armor and use bucklers.    
 
 ### SORCERER
 CLASS FEATURES:  
@@ -1297,26 +1288,26 @@ Gets Armor Training with hide armor and chainmails at level 4, splint mails at l
 ### FIGHTER/CLERIC
 CLASS FEATURES:  
 – May wear helmets.  
-– May wear any armor and use any weapon.  
+– May wear any armor and use any weapon and shield (excluding large shield).  
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.  
 – Can cast two spell per day less than trueclass cleric.  
 – At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill and AC penalties.  
 Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.  
-– Gets one bonus feat at every 5th level up to level 20.  
+– Gets one bonus feat at every 4th level up to level 20.  
 – Gets one bonus feat at levels 22, 25 and 28.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
 – Can use Spontaneous Battlecasting.  
 ```
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
 ```
-– At 1st level chooses two domains that grant her access to additional spells, normally not available to Clerics of other domains.  
+– At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – Hit Die: d9  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
 ### FIGHTER/MAGE
 CLASS FEATURES:  
 – May wear helmets.  
-– May wear any armor and use any weapon.  
+– May wear any armor and use any weapon and shield (excluding large shield).  
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.     
 – Cannot cast spells of 8th and 9th levels.  
 – Gets one bonus feat at every 5th level up to level 20.  
@@ -1339,7 +1330,7 @@ NOTE: Gnomes can choose this class, but become Fighter/Illusionists by default. 
 ### FIGHTER/DRUID
 CLASS FEATURES:  
 – May wear helmets.  
-– May wear light and medium armor and use any weapon.   
+– May wear light and medium armor and use any weapon and shield (excluding large shield).   
 – Can cast two spell per day less than trueclass druid.  
 – Bonus Feats: Fighter/Druid gets Style Focus in Archery for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12, Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.  
 – May spontaneously convert memorized spells to summoning ones.  
@@ -1354,7 +1345,7 @@ CLASS FEATURES:
 ### CLERIC/RANGER
 CLASS FEATURES:	  
 – May wear helmets.  
-– May use any weapon.  
+– May use any weapon and shield (excluding large shield).  
 – May not wear armor heavier than splint mail.  
 – Bonus Feats: Cleric/Ranger gets Style Focus in Two Weapon Fighting for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12, Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.  
 – May select one racial enemy at levels 1, 5 and every 5 levels thereafter which grants a +4 bonus on damage rolls against the selected enemy race.  
@@ -1364,7 +1355,7 @@ CLASS FEATURES:
 – Can spontaneously convert memorized spells into healing ones.  
 – May channel positive energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
 – Eventually can cast low level druidic spells (same as trueclass ranger).  
-– At 1st level chooses two domains that grant her access to additional spells, normally not available to Clerics of other domains.  
+– At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – May call for an animal companion who fights for her side.  
 – Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage résistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.  
 – Gets one bonus feat at level 28.  
@@ -1374,12 +1365,12 @@ CLASS FEATURES:
 
 ### CLERIC/MAGE
 CLASS FEATURES:  
-– May not wear any armor.  
+– May not wear any armor or use shield.  
 – May only use the following weapons: dagger, quarterstaff, dart, sling, crossbow, mace, flail, morning star, war hammer.  
 – May cast both arcane and divine cleric spells.  	  
 – Can cast two arcane spells per day less than trueclass mage.  
 – Can cast three divine spells per day less than trueclass cleric.  
-– At 1st level chooses two domains that grant her access to additional spells, normally not available to Clerics of other domains.  
+– At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).
 – Versatile Spellcasting: starting from level 7 can trade one first level cleric spell slot for a second level wizard spell slot, this exchange is reversible; every two levels thereafter can trade next level cleric spell slot for a wizard spell slot one level higher.  
@@ -1408,7 +1399,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 ```
 SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to her sneak attack damage for next 10 seconds.
 ```
-– At 1st level chooses two domains that grant her access to additional spells, normally not available to Clerics of other domains.  
+– At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – Gets one bonus feat at levels 10, 20, 22, 25 and 28.  
 – Hit Die: d7  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell
@@ -1446,7 +1437,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
 – May use Spontaneous Spell Channeling
 ```
-SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds.
+SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to her sneak attack damage for next 10 seconds.
 ```
 – Gets one bonus feat at levels 10, 20, 22, 25 and 28.  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.  
@@ -1457,7 +1448,7 @@ NOTE: Gnomes can choose this class, but become Fighter/Illusionist/Thieves by de
 ### FIGHTER/MAGE/CLERIC
 CLASS FEATURES:  
 – May wear helmets.  
-– May wear any armor and use any weapons and shields.  
+– May wear any armor and use any weapon and shield (excluding large shield).  
 – May get up to Weapon Specialization (2 stars) in any weapon they can use.  
 – Can cast two arcane spells less per day than trueclass mage.  
 – Cannot cast arcane spells of 8th and 9th levels.  
@@ -1470,9 +1461,9 @@ CLASS FEATURES:
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting arcane spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.  
 – Can use Spontaneous Battlecasting.
 ```
-SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
 ```
-– At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells, normally not available to Clerics of other domains.  
+– At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – Hit Die: d7  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph vs. Breath Weapon, vs. Wand and vs. Spell  
 NOTE: Gnomes can choose this class, but become Fighter/Illusionist/Clerics by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.
@@ -1993,25 +1984,56 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 20|6|6|5|5|5|4|4
 
 
+### Stat dependent bonus spells per day
+
+Stat\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+--- | --- | --- | --- |--- |--- |--- |--- |--- |---
+11-12 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0
+13-14 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0
+15-16 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 0
+17-18 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0 | 0
+19-20 | 2 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0
+21-22 | 2 | 2 | 1 | 1 | 1 | 1 | 0 | 0 | 0
+23-24 | 2 | 2 | 2 | 1 | 1 | 1 | 1 | 0 | 0
+25    | 2 | 2 | 2 | 2 | 1(2)| 1(2) | 1 | 0 |
+
+Note: Since priests can not cast 8th level spells, they receive another 6th and 7th spell slots instead.
+
+
 ### Cleric domain spells
 
-Domain           | Granted Spells
---- | ---
-Elemental (Air)  | Shocking Grasp (1), Lightning Bolt (3), Storm Shield (6)
-Animal           | Animal Summoning I (4), Animal Summoning II (5), Animal Summoning III (6)
-Elemental (Cold) | Chill Touch (1), Fireshield (Blue) (4), Cone of Cold (5)
-Death            | Horror (2), Hold Undead (3), Control Undead (7)
-Destruction      | Melf's Acid Arrow (2), Cloudkill (5), Disintegrate (6)
-Elemental (Earth)| Conjure Lesser Earth Elemental (5), Stoneskin (6), Protection From The Elements (7)
-Elemental (Fire) | Burning Hands (1), Fireball (3), Fireshield (Red) (4)
-Glory            | Exaltation (3), Boon of Diety (6), Mordenkainen's Sword (7)
-Moon             | Blindness (1), Blur (2), Vampiric Touch (3)
-Protection       | Shield (1), Minor Globe of Invulnerability (4), Globe of Invulnerability (6)
-Sun              | Fireshield (Red) (4), Sunfire (5), Prismatic Spray (7)
-Time             | Slow (3), Haste (4), Hold Monster (5)
-Trickery         | Grease (1), Invisibility (2), Confusion (4)
-War              | Seeking Sword (3), Divine Favor (5), Tenser's Transformation (6)
+Domain           | Granted Spells                                                                      |Domain Ability
+--- | ---| ---
+Elemental (Air)  | Shocking Grasp (1), Lightning Bolt (3), Storm Shield (6)                            |25% lightning resistance
+Animal           | Animal Summoning I (4), Animal Summoning II (5), Animal Summoning III (6)           |Charm animals, 10' Radius 1/day
+Elemental (Cold) | Chill Touch (1), Fireshield (Blue) (4), Cone of Cold (5)                            |25% cold resistance
+Death            | Horror (2), Hold Undead (3), Control Undead (7)                                     |Death Touch 1/day
+Destruction      | Melf's Acid Arrow (2), Cloudkill (5), Disintegrate (6)                              |Destructive Smite 1/day
+Elemental (Earth)| Conjure Lesser Earth Elemental (5), Stoneskin (6), Protection From The Elements (7) |25% acid resistance
+Elemental (Fire) | Burning Hands (1), Fireball (3), Fireshield (Red) (4)                               |25% fire resistance
+Glory            | Exaltation (3), Boon of Diety (6), Mordenkainen's Sword (7)                         |Aura of Faith 1/day
+Moon             | Blindness (1), Blur (2), Vampiric Touch (3)                                         |Immunity to blindness
+Protection       | Shield (1), Minor Globe of Invulnerability (4), Globe of Invulnerability (6)        |+1 to all Savingthrows
+Sun              | Fireshield (Red) (4), Sunfire (5), Prismatic Spray (7)                              |Divine Light 1/day
+Time             | Slow (3), Haste (4), Hold Monster (5)                                               |Immunity to sneak attacks
+Trickery         | Grease (1), Invisibility (2), Confusion (4)                                         |Mirror Image 1/day
+War              | Seeking Sword (3), Divine Favor (5), Tenser's Transformation (6)                    |Free weapon focus
+Magic            | Identify (1), Spell Immunity (5), Limited Wish (7)                                  |Dispelling Touch 1/day
 
+
+#### Charm Animal, 10' Radius
+This spell affects all animals in 30-ft radius around the caster. The animals are allowed a Saving Throw vs. Spell to negate the effect with penalty equal to one fourth caster level rounded down.  
+If the spell's recipient fails its Saving Throw, it regards the caster as a trusted friend and ally to be heeded and protected. The caster may give it orders, and the charmed animal will carry them out as quickly as possible.  
+If the caster harms—or attempts to harm—the charmed animal by some overt action, or if a Dispel Magic spell is cast upon the charmed animal, the Charm spell is broken. If two or more Charms simultaneously affect a creature, the most recent Charm takes precedence. Note that the subject will be hostile when the Charm expires, regardless of its original attitude. Also note that you cannot have a charmed creature leave the area where it was charmed.
+
+#### Death Touch
+Touched creature dies if fails Savingthrow vs. Death with penalty equal to one fourth caster level rounded down.
+
+#### Destructive Smite
+For 10 seconds character receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage with every hit.
+
+#### Dispelling Touch
+You remove magical effects from a creature by touching it.
 
 ### Sorcerer bloodline spells
 
@@ -2403,12 +2425,12 @@ Their classes and statistics were changed as follows (stats are given in the for
 
 ### BG 1
 
-#### Ajantis - Paladin (14/ 10/ 14/ 10/ 14/ 16)
+#### Ajantis - Paladin (15/ 10/ 14/ 9/ 13/ 16)
 #### Alora - Thief (10 /20/ 10/ 14/ 9 / 9)
-#### Baeloth - Battle Caster (14/ 16/ 12/ 10/ 10/ 16)
-#### Branwen - Fighter/Cleric (15/ 10/ 14/ 10/ 16/ 12)
+#### Baeloth - Battle Caster (14/ 18/ 12/ 10/ 10/ 18)
+#### Branwen - Fighter/Cleric (16/ 10/ 14/ 10/ 15/ 12)
 #### Coran - Fighter/Thief (14/ 18/ 12/ 14/ 10/ 10)
-#### Dorn - Blackguard (18/ 10/ 12/ 8/ 14/ 15)
+#### Dorn - Blackguard (18/ 10/ 13/ 8/ 13/ 15)
 #### Dynaheir - Sorcerer (12/ 14/ 14/ 10/ 9/ 17)
 #### Edwin - Conjurer (10/ 12/ 14/ 18/ 9 / 10)
 #### Eldoth - Blade (14/ 14/ 14/ 14/ 10/ 14)
@@ -2453,7 +2475,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Anomen - Fighter/Cleric (15/ 10/ 14/ 10/ 16/ 12)
 #### Sarevok - Fighter (16/ 14/ 14/ 14/ 10/ 10)
 #### Rasaad - Sun Soul Monk (14/ 16/ 12/ 10/ 15/ 10)
-#### Dorn - Blackguard (18/ 10/ 12/ 8/ 14/ 15)
+#### Dorn - Blackguard (18/ 10/ 13/ 8/ 13/ 15)
 #### Neera - Wild Mage (9/ 16/ 12/ 17/ 9/ 11)  - as half-elf will receive +2 bonus to any ability score at level 1
 #### Wilson - Grizzly Bear (18/ 10/ 18/ 8/ 8/ 8)
 #### Hexxat - Shadowdancer (16/ 20/ 12/ 18/ 12/ 14)

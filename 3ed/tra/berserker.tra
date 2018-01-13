@@ -1,7 +1,7 @@
 	@001=~Last Berserk~
 	@002=~Last Berserk
 
-The enraged state lasts for 6 rounds. While enraged, a Berserker gains a bonus of +5 to <PRO_HISHER> attack rolls and +15 to <PRO_HISHER> damage rolls as well as 30% physical damage reduction, but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
+The enraged state lasts for 3 rounds + 1 round per 2 points of Constitution above 10. While enraged, a Berserker gains a bonus of +5 to <PRO_HISHER> attack rolls and +15 to <PRO_HISHER> damage rolls as well as 30% physical damage reduction, but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
 
 While in this state the hitpoints of Berserker can not be reduced below 1, but at the end of Last Berserk Berserker receives 15 points of damage which can kill <PRO_HIMHER> if <PRO_HESHE> has fewer hit points..
 
@@ -12,7 +12,7 @@ Last Berserk can not be prolonged and after it ends Berserker can no longer rage
 	
 	@004=~Enrage
 
-The enraged state lasts for 6 rounds. While enraged, a Berserker gains a bonus of +2 to <PRO_HISHER> attack and damage rolls as well as 10% physical damage reduction, but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
+The enraged state lasts for 3 rounds + 1 round per 2 points of Constitution above 10. While enraged, a Berserker gains a bonus of +2 to <PRO_HISHER> attack and damage rolls as well as 10% physical damage reduction, but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
 At 8th the attack and damage rolls bonus increases to +3 and physical damage resistance bonus to 20%.
 At 16th level the attack and damage rolls bonus increases to +5 and physical damage resistance bonus to 30%.
 

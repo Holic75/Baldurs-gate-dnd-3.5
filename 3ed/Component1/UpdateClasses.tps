@@ -73,38 +73,92 @@ END
                                                                        par16 = 166 par26 = 105 //rakshasa
                                                                        par17 = 126 par26 = 105 //ogre mage
                                                                        STR_VAR SmiteName=~SMTMAG~  END //smite mage
-			
+	
+    LAF ADD_SMITE_EVIL_VARIATION INT_VAR name_ref = 009 descr_ref =010 par1 = 0 par2 =0 STR_VAR SmiteName=~SMTDST~ END //destructive smite
     //aura of faith
     WITH_TRA ~%LANGUAGE%\paladin.tra~ BEGIN
         COPY ~3ed/Classes/Paladin/AuraFaith~ ~override~ //copy icons
     
+        
+        OUTER_FOR (cha=10;cha<=25;cha=cha+2) BEGIN
+        
+            OUTER_SET aura_duration = 6*(3 + (cha - 10)/2)
+            OUTER_FOR (i=1;i<=4;i=i+1) BEGIN
+                COPY_EXISTING ~SPPR108.SPL~ ~override/AURF%i%%cha%.SPL~ //use remove fear as base for a spell
+                    WRITE_LONG 0x0008 0 
+                    WRITE_ASCII 0x003a ~AURAFAIC~ #8 //spellbook icon
+                    LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_type = 4 END
+                    LPF ADD_SPELL_EFFECT INT_VAR opcode = 73 target = 2 parameter1 = i resist_dispel = 2 duration = aura_duration END //damage bonus
+                    LPF ADD_SPELL_EFFECT INT_VAR opcode = 278 target = 2 parameter1 = i resist_dispel = 2 duration = aura_duration END //thaco bonus
+                    LPF ADD_SPELL_EFFECT INT_VAR opcode = 0 target = 2 parameter1 = i resist_dispel = 2 duration = aura_duration END //ac bonus
+                    LPF ADD_SPELL_EFFECT INT_VAR opcode = 142 target = 2 parameter2 = 17 resist_dispel = 2 duration = aura_duration END //bless icon       
+                    LPF ALTER_SPELL_EFFECT INT_VAR duration_high = aura_duration  power = 0 resist_dispel = 2 END
+                    LPF ALTER_SPELL_HEADER INT_VAR target = 5 speed = 0 STR_VAR icon = ~AURAFAIB~ END //set to caster only and update icon                              
+            END
+            
+            COPY_EXISTING ~SPPR103.SPL~ ~override/AURD1%cha%.SPL~ //aura of despair
+                WRITE_LONG 0x0008 0 
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 321 END
+                LPF DELETE_SPELL_HEADER INT_VAR header_type = 3 min_level = 6 END
+                LPF DELETE_SPELL_HEADER INT_VAR header_type = 3 min_level = 15 END
+                LPF DELETE_SPELL_HEADER INT_VAR header_type = 3 min_level = 20 END
+                LPF ALTER_SPELL_EFFECT INT_VAR duration_high = aura_duration  power = 0 resist_dispel = 1 END
+                
+            COPY_EXISTING ~SPCL103.SPL~ ~override/AURD2%cha%.SPL~ //aura of despair
+                WRITE_LONG 0x0008 0 
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 321 END
+                LPF DELETE_SPELL_HEADER INT_VAR header_type = 3 min_level = 1 END
+                LPF DELETE_SPELL_HEADER INT_VAR header_type = 3 min_level = 15 END
+                LPF DELETE_SPELL_HEADER INT_VAR header_type = 3 min_level = 20 END
+                LPF ALTER_SPELL_HEADER INT_VAR min_level = 1 END
+                LPF ALTER_SPELL_EFFECT INT_VAR duration_high = aura_duration  power = 0 resist_dispel = 1 END
+                
+            COPY_EXISTING ~SPCL103.SPL~ ~override/AURD3%cha%.SPL~ //aura of despair
+                WRITE_LONG 0x0008 0 
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 321 END
+                LPF DELETE_SPELL_HEADER INT_VAR header_type = 3 min_level = 1 END
+                LPF DELETE_SPELL_HEADER INT_VAR header_type = 3 min_level = 6 END
+                LPF DELETE_SPELL_HEADER INT_VAR header_type = 3 min_level = 20 END
+                LPF ALTER_SPELL_HEADER INT_VAR min_level = 1 END
+                LPF ALTER_SPELL_EFFECT INT_VAR duration_high = aura_duration  power = 0 resist_dispel = 1 END
+                
+             COPY_EXISTING ~SPCL103.SPL~ ~override/AURD4%cha%.SPL~ //aura of despair
+                WRITE_LONG 0x0008 0 
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 321 END
+                LPF DELETE_SPELL_HEADER INT_VAR header_type = 3 min_level = 1 END
+                LPF DELETE_SPELL_HEADER INT_VAR header_type = 3 min_level = 15 END
+                LPF DELETE_SPELL_HEADER INT_VAR header_type = 3 min_level = 6 END
+                LPF ALTER_SPELL_HEADER INT_VAR min_level = 1 END
+                LPF ALTER_SPELL_EFFECT INT_VAR duration_high = aura_duration  power = 0 resist_dispel = 1 END
+        END
+        
+        
         COPY_EXISTING ~SPPR108.SPL~ ~override/AURAFAI.SPL~ //use remove fear as base for a spell
             READ_BYTE 0x001b spell_flags
             SET spell_flags = spell_flags BAND 2
             WRITE_BYTE 0x001b spell_flags
-            
             WRITE_ASCII 0x003a ~AURAFAIC~ #8 //spellbook icon
-            LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_type = 4 END
-            LPF ADD_SPELL_EFFECT INT_VAR opcode = 73 target = 2 parameter1 = 1 resist_dispel = 3 duration = 60 END //damage bonus
-            LPF ADD_SPELL_EFFECT INT_VAR opcode = 278 target = 2 parameter1 = 1 resist_dispel = 3 duration = 60 END //thaco bonus
-            LPF ADD_SPELL_EFFECT INT_VAR opcode = 0 target = 2 parameter1 = 1 resist_dispel = 3 duration = 60 END //ac bonus
-            LPF ADD_SPELL_EFFECT INT_VAR opcode = 142 target = 2 parameter2 = 17 resist_dispel = 3 duration = 60 END //bless icon
-            LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2  resist_dispel = 3  duration = 1 duration = 1 insert_point = 0 STR_VAR resource = ~AURAFAI~ END //remove prev casts
-        
-            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 60 power = 0 END
-        
+            
+            LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_type = 4 END            
             FOR (i=1;i<=3;i=i+1) BEGIN
                 LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
                 LPF ALTER_SPELL_HEADER INT_VAR header=i+1 min_level = 3+i*6 END
-                LPF ALTER_SPELL_EFFECT INT_VAR header=i+1 match_opcode = 73 parameter1 = i+1 END //damage bonus
-                LPF ALTER_SPELL_EFFECT INT_VAR header=i+1 match_opcode = 278 parameter1 = i+1 END //thaco bonus
-                LPF ALTER_SPELL_EFFECT INT_VAR header=i+1 match_opcode = 0 parameter1 = i+1 END //ac bonus
-            END
-                
-            LPF ALTER_SPELL_HEADER INT_VAR target = 5 speed = 0 STR_VAR icon = ~AURAFAIB~ END //set to caster only and update icon
+            END                
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 END
             SAY NAME1 @001
             SAY UNIDENTIFIED_DESC @002
+            LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR target =2 remove_in_effect = 1  n_headers = 4 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 132 resist_dispel = 2 STR_VAR abil_name = ~AURF~ END
+            LPF ALTER_SPELL_HEADER INT_VAR target = 5 speed = 0 STR_VAR icon = ~AURAFAIB~  END
         
+        COPY_EXISTING ~SPCL103.SPL~ ~override/SPCL103.SPL~ //use remove fear as base for a spell
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 END
+            LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 9 END
+            LPF ALTER_SPELL_HEADER INT_VAR header = 4 min_level = 21 END
+            LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR target =2 remove_in_effect = 1 n_headers = 4 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 132 resist_dispel = 1 STR_VAR abil_name = ~AURD~ END
+            LPF ALTER_SPELL_HEADER INT_VAR projectile = 1  END
+            
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @003
 	END
 	//-------------------------inquisitor----------------------
 	//mr bonus (25%+2/level till level 30)
@@ -124,16 +178,31 @@ END
     WITH_TRA ~%LANGUAGE%\hexblade.tra~ BEGIN
     
     //aura of unluck
-        COPY ~3ed/Classes/Hexblade/AURUNLK.SPL~ ~override~
-            LPF ALTER_SPELL_EFFECT INT_VAR power = 0 END
+     OUTER_FOR (cha=10;cha<=25;cha=cha+2) BEGIN
+            OUTER_SET aura_duration = 6*(3 + (cha - 10)/2)
+            OUTER_FOR (i=1;i<=4;i=i+1) BEGIN
+                COPY ~3ed/Classes/Hexblade/AURUNLK.SPL~ ~override/AURU%i%%cha%.SPL~
+                WRITE_LONG 0x0008 0
+                SET parameter1 = 0 - i
+                LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 22 parameter1 END //luck penalty  
+                LPF ALTER_SPELL_EFFECT INT_VAR duration_high = aura_duration power = 0 END
+            END
+    
+     END
+        COPY ~3ed/Classes/Hexblade/AURUNLK.SPL~ ~override/AURUNLK.SPL~
+            
             FOR (i=1;i<=3;i=i+1) BEGIN
+                
                 LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-                LPF ALTER_SPELL_HEADER INT_VAR header=i+1 min_level = 12+i*4 END
-                SET parameter1 = 0 - (i+1)
-                LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i+1 match_opcode = 22 parameter1 END //luck penalty        
+                LPF ALTER_SPELL_HEADER INT_VAR header=i+1 min_level = 12+i*4 END      
             END
             SAY NAME1 @001
             SAY UNIDENTIFIED_DESC @002
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 END
+            LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR target =2 remove_in_effect = 1 n_headers = 4 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 132 resist_dispel = 1 STR_VAR abil_name = ~AURU~ END
+            LPF ALTER_SPELL_HEADER INT_VAR projectile = 1  END                
+            
+            
     
         //hexblade curse
         COPY_EXISTING ~SPPR113.SPL~ ~override/HEXCR.SPL~
@@ -280,6 +349,20 @@ END
 			WRITE_LONG 0x0008 fist_6
 			WRITE_LONG 0x000c fist_6
             
+        //sun soul beam    
+        COPY_EXISTING ~SPCL239A.SPL~ ~override~ //make damage ~1d4 level 
+            FOR (i=1;i<=29;i=i+1) BEGIN
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 1  END
+                LPF ALTER_SPELL_HEADER INT_VAR header = i + 1 min_level =  i+1 END
+            END
+            FOR (i=1;i<=30;i=i+1) BEGIN
+                LPF ALTER_SPELL_EFFECT INT_VAR header = i match_opcode = 12 parameter1 = 2*(i - 2*(i / 2)) dicenumber = i/2 dicesize = 4 END
+                SET savebonus = 0 - (i/4)
+                LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i savebonus END
+            END
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @023
+            
             
         //monk stunning blow and quivering palm
         //create header placeholders
@@ -291,7 +374,9 @@ END
             COPY_EXISTING ~SPCL820.SPL~ ~override~ //quivering palm
                 LPF ADD_SPELL_HEADER INT_VAR copy_header = 1  END 
                 LPF ALTER_SPELL_HEADER INT_VAR header = i + 1 min_level =  4*i END
+
         END
+        
         
       
         OUTER_FOR (i=0;i<=7;i=i+1) BEGIN
@@ -817,52 +902,72 @@ WITH_TRA ~%LANGUAGE%\fighter_thief.tra~ BEGIN
 END
 	
 	//--------------------------------------------------//
-	//barbarian rage update (tireless, mighty) 
+	//barbarian and skald rage update (tireless, mighty) 
 	
 WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN  
 	COPY ~3ed/Classes/Barbarian/Rage/BRBFTG.spl~ ~override~  //after rage fatigue
-	
-	COPY_EXISTING ~SPCL152.SPL~ ~override/BRBRGE.spl~   //rage itself
+	COPY ~3ed/Classes/Barbarian/Rage/BRBFTG.spl~ ~override/SKLDFTG.SPL~  //after rage fatigue for non-barbarians
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 206 STR_VAR resource = ~SKLDRGE~ END
+        
+    OUTER_FOR (con = 10;con<=24;con=con+2) BEGIN
+        OUTER_SET rage_duration = 6*(3 + (con + 4 - 10)/2)
+        COPY_EXISTING ~SPCL152.SPL~ ~override/BRBR1%con%.SPL~
+            WRITE_LONG 0x0008 0
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 321 STR_VAR match_resource = ~SPCL152~ END 
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=146 target=1 parameter1=1 parameter2=1 timing=4 resist_dispel=2 duration=rage_duration STR_VAR resource=~BRBFTG~ END  
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=1 duration=(rage_duration - 1) resist_dispel=2 STR_VAR resource=~BRBRGE~ END //forbid using rage again
+            
+        COPY_EXISTING ~override/BRBR1%con%.SPL~ ~override/SKLR1%con%.SPL~
+            LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource=~BRBFTG~  resource = ~SKLDFTG~ END  
+            LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource=~BRBRGE~  resource = ~SKLDRGE~ END
+        
+        COPY_EXISTING ~override/BRBR1%con%.SPL~ ~override/BRBR2%con%.SPL~
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10 parameter1 = 6 END //constitution bonus
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 44 parameter1 = 6 END //strength bonus
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 37 parameter1 = 3 END //saves bonus
+            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = rage_duration + 6 END
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR duration = rage_duration+5 STR_VAR match_resource=~BRBRGE~ END 
+            
+        COPY_EXISTING ~override/BRBR2%con%.SPL~ ~override/BRBR3%con%.SPL~
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 146 STR_VAR match_resource = ~BRBFTG~ END //remove fatigue
+             
+        COPY_EXISTING ~override/SKLR1%con%.SPL~ ~override/SKLR2%con%.SPL~
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 146 STR_VAR match_resource = ~SKLDFTG~ END //remove fatigue
+                         
+        COPY_EXISTING ~override/BRBR3%con%.SPL~ ~override/BRBR4%con%.SPL~
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10 parameter1 = 8 END //constitution bonus
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 44 parameter1 = 8 END //strength bonus
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 37 parameter1 = 4 END //saves bonus
+            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = rage_duration + 12 END
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR duration = rage_duration+11 STR_VAR match_resource=~BRBRGE~ END 
+    END
+    
+	COPY_EXISTING ~SPCL152.SPL~ ~override/BRBRGE.spl~   //rage itself       
 		LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+        LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 11 END
+        
 		LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+        LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 17 END//tireless rage
+        
 		LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-		
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=146 target=1 power=0 parameter1=1 parameter2=1 timing=4 resist_dispel=2 duration=60 probability1=100 header=1 STR_VAR resource=~BRBFTG~ END
-			
-		LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 11 END
-			LPF ALTER_SPELL_EFFECT INT_VAR header = 2 match_opcode = 10 parameter1 = 6 END //constitution bonus
-			LPF ALTER_SPELL_EFFECT INT_VAR header = 2 match_opcode = 44 parameter1 = 6 END //strength bonus
-			LPF ALTER_SPELL_EFFECT INT_VAR header = 2 match_opcode = 37 parameter1 = 3 END //saves bonus
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=146 target=1 power=0 parameter1=1 parameter2=1 timing=4 resist_dispel=2 duration=60 probability1=100 header=2 STR_VAR resource=~BRBFTG~ END
-		LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 17 END//tireless rage
-			LPF ALTER_SPELL_EFFECT INT_VAR header = 3 match_opcode = 10 parameter1 = 6 END //constitution bonus
-			LPF ALTER_SPELL_EFFECT INT_VAR header = 3 match_opcode = 44 parameter1 = 6 END //strength bonus
-			LPF ALTER_SPELL_EFFECT INT_VAR header = 3 match_opcode = 37 parameter1 = 3 END //saves bonus
 		LPF ALTER_SPELL_HEADER INT_VAR header = 4 min_level = 20 END
-			LPF ALTER_SPELL_EFFECT INT_VAR header = 4 match_opcode = 10 parameter1 = 8 END //constitution bonus
-			LPF ALTER_SPELL_EFFECT INT_VAR header = 4 match_opcode = 44 parameter1 = 8 END //strength bonus
-			LPF ALTER_SPELL_EFFECT INT_VAR header = 4 match_opcode = 37 parameter1 = 4 END //saves bonus	
-	//change duration
-		LPF ALTER_SPELL_EFFECT INT_VAR duration_high=60 END 
-		LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=1 power=0 parameter1=26799 parameter2=0 timing=0 duration=59 probability1=100 STR_VAR resource=~BRBRGE~ END //forbid using rage again
-		
+
+        LPF DELETE_EFFECT INT_VAR check_headers=1 END
+        LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = 4 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 126 STR_VAR abil_name = ~BRBR~ END
+     
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @004
-END	
-	//----------------------------------------------------------//
-	//Skald rage
-	COPY ~3ed/Classes/Barbarian/Rage/BRBFTG.spl~ ~override/SKLDFTG.SPL~  //after rage fatigue
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 206 STR_VAR resource = ~SKLDRGE~ END //constitution bonus
 
-	COPY_EXISTING ~SPCL152.SPL~  ~override/SKALDRGE.spl~  //rage itself
+	COPY_EXISTING ~SPCL152.SPL~  ~override/SKLDRGE.spl~  //rage itself
 		LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-	
-	//change duration
-		LPF ALTER_SPELL_EFFECT INT_VAR duration_high=60 END 
-	//add fatigue for low level rage
-		LPF ADD_SPELL_EFFECT INT_VAR opcode=146 target=1 power=0 parameter1=1 parameter2=1 timing=4 resist_dispel=2 duration=60 probability1=100 header=1 STR_VAR resource=~SKLDFTG~ END
-		LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=1 power=0 parameter1=26799 parameter2=0 timing=0 duration=59 probability1=100 STR_VAR resource=~SKLDRGE~ END //protection from another rage application
-	
+        LPF DELETE_EFFECT INT_VAR check_headers=1 END
+        LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 17 END//tireless rage
+        LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = 2 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 126 STR_VAR abil_name = ~SKLR~ END
+
+
+END	
+
+
 	//----------------------------------------------------------//
 	//swashbuckler luck of heroes and critical hit effects
 	COPY ~3ed/Classes/Swashbuckler~ ~override~
@@ -995,8 +1100,7 @@ END
 	
             //favored of spirits for non bg1
             ACTION_IF !(~%GameId%~ STR_EQ ~Bg1~) BEGIN
-		
-			
+					
                 //making favored of spirits permanent (just heal)
                 COPY_EXISTING ~SPCL941.SPL~ ~override/FVRD_HL.SPL~ //updating heal
                     LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 321 STR_VAR resource = ~FVRD_SP~ END
@@ -1025,101 +1129,169 @@ END
 	 COPY_EXISTING ~SPCL321D.SPL~ ~override~
 		LPF DELETE_EFFECT INT_VAR  match_opcode = 139 END
 	
-	//last berserk
+	//last berserk icon
 	 COPY ~3ed/Classes/Berserker/LSTBRSK.BAM~ ~override~
+     
+     COPY_EXISTING ~SPCL321.SPL~ ~override/SPCL321.SPL~
+        LPF GET_SPELL_EFFECT_VALUES INT_VAR match_opcode = 139 RET HpDmgStrRef = parameter1 END
+     
+     OUTER_SET StrRefProt = RESOLVE_STR_REF(@003)
 	 
 	 WITH_TRA ~%LANGUAGE%\berserker.tra~ BEGIN  
-	 
-		OUTER_SET StrRefProt = RESOLVE_STR_REF(@003)
-		COPY_EXISTING ~SPCL321.SPL~ ~override/LSTBRSK.SPL~
-              WRITE_ASCII 0x003a ~LSTBRSK~ #8 //spellbook icon
-              LPF ALTER_SPELL_HEADER STR_VAR icon = ~LSTBRSK~ END
-			  SAY NAME1 @001
-			  SAY UNIDENTIFIED_DESC @002
-			  LPF ALTER_SPELL_EFFECT INT_VAR duration_high=36 END //duration to 6 rounds
-			  
-			  LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode=208 parameter1 = 1 timing = 0 duration=35 END //min hp to 1 		  
-			  LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=206 duration=2400 parameter1 = StrRefProt END //restore duration of inability to rage	
-			  LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 73 parameter1 = 15 END //damage
-			  LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 278 parameter1 = 5 END //thac0
-              LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 146 END //remove fatigue
-              LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 18 END //hp bonus
-			  //resistances
-			  LPF ADD_SPELL_EFFECT INT_VAR opcode = 86 parameter1 = 30 target = 1 duration = 36 insert_point = 0 END 
-			  LPF ADD_SPELL_EFFECT INT_VAR opcode = 87 parameter1 = 30 target = 1 duration = 36 insert_point = 0 END 
-			  LPF ADD_SPELL_EFFECT INT_VAR opcode = 88 parameter1 = 30 target = 1 duration = 36 insert_point = 0 END 
-			  LPF ADD_SPELL_EFFECT INT_VAR opcode = 89 parameter1 = 30 target = 1 duration = 36 insert_point = 0 END 
-              LPF ADD_SPELL_EFFECT INT_VAR  insert_point = 0 opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPCL321~ END
-			  LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=12 parameter2 = 0 END //damage after berserk
+             
+        OUTER_FOR (con = 10;con<=24;con=con+2) BEGIN
+            OUTER_SET brsrk_duration = 6*(3 + (con - 10)/2)
+            //berserker rage update
+            COPY_EXISTING ~SPCL321.SPL~ ~override/BRSR1%con%.SPL~
+                WRITE_LONG 0x0008 0
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 18 END //removehp bonus
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 12 END //remove damage
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 321 STR_VAR match_resource = ~SPCL321~ END //remove effects removal (will be in external spl)
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 139 END //remove damage string
+                LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 0  parameter1 = ~-2~ END
+                LPF ALTER_SPELL_EFFECT INT_VAR duration_high=brsrk_duration END //duration to 6 rounds
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 206 duration = brsrk_duration+1 STR_VAR match_resource = ~SPCL321~ END //fatigue
+                //resistances
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 86 parameter1 = 10 target = 1 duration = brsrk_duration insert_point = 0 END 
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 87 parameter1 = 10 target = 1 duration = brsrk_duration insert_point = 0 END 
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 88 parameter1 = 10 target = 1 duration = brsrk_duration insert_point = 0 END 
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 89 parameter1 = 10 target = 1 duration = brsrk_duration insert_point = 0 END
 
+                
+            COPY_EXISTING ~BRSR1%con%.SPL~  ~override/BRSR2%con%.SPL~	
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 206 END //remove protection from spell
+                //resistances
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 86 parameter1 = 20 END 
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 87 parameter1 = 20 END 
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 88 parameter1 = 20 END 
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 89 parameter1 = 20 END
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 73 parameter1 = 3 END //damage
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 278 parameter1 = 3 END //thac0
+       					       
+            COPY_EXISTING ~BRSR2%con%.SPL~  ~override/BRSR3%con%.SPL~	
+                //resistances
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 86 parameter1 = 30 END 
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 87 parameter1 = 30 END 
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 88 parameter1 = 30 END 
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 89 parameter1 = 30 END
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 73 parameter1 = 5 END //damage
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 278 parameter1 = 5 END //thac0
+                
+            COPY_EXISTING ~BRSR3%con%.SPL~  ~override/BRSR4%con%.SPL~
+               LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode=208 parameter1 = 1 timing = 0 duration = (brsrk_duration - 1) END //min hp to 1 
+               LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode=12 parameter2 = 0 parameter1 = 15 timing = 4 duration = brsrk_duration resist_dispel = 2 END //damage after berserk 
+               LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 parameter1 = HpDmgStrRef target = 1 duration = 1 insert_point = 0 END //string about hp_damage
+              
+            COPY_EXISTING ~BRSR4%con%.SPL~  ~override/BRSR5%con%.SPL~
+               LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 146 END //remove fatigue
 
-	 //berserker rage update
-	 COPY_EXISTING ~SPCL321.SPL~ ~override~
-		LPF ALTER_SPELL_EFFECT INT_VAR duration_high=36 END //duration to 6 rounds
-        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 206 duration = 37 END //fatigue
-        //resistances
-		LPF ADD_SPELL_EFFECT INT_VAR opcode = 86 parameter1 = 10 target = 1 duration = 36 insert_point = 0 END 
-		LPF ADD_SPELL_EFFECT INT_VAR opcode = 87 parameter1 = 10 target = 1 duration = 36 insert_point = 0 END 
-		LPF ADD_SPELL_EFFECT INT_VAR opcode = 88 parameter1 = 10 target = 1 duration = 36 insert_point = 0 END 
-		LPF ADD_SPELL_EFFECT INT_VAR opcode = 89 parameter1 = 10 target = 1 duration = 36 insert_point = 0 END 
-		LPF ADD_SPELL_EFFECT INT_VAR  insert_point = 0 opcode = 321 target = 1 duration = 1 STR_VAR resource = ~SPCL321~ END
-
-		LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-		LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 8 END
-			  //resistances
-			  LPF ALTER_SPELL_EFFECT INT_VAR header = 2 match_opcode = 86 parameter1 = 20 END 
-			  LPF ALTER_SPELL_EFFECT INT_VAR header = 2 match_opcode = 87 parameter1 = 20 END 
-			  LPF ALTER_SPELL_EFFECT INT_VAR header = 2 match_opcode = 88 parameter1 = 20 END 
-			  LPF ALTER_SPELL_EFFECT INT_VAR header = 2 match_opcode = 89 parameter1 = 20 END
-			  LPF ALTER_SPELL_EFFECT INT_VAR header = 2 match_opcode = 73 parameter1 = 3 END //damage
-			  LPF ALTER_SPELL_EFFECT INT_VAR header = 2 match_opcode = 278 parameter1 = 3 END //thac0
-			 
-		
+            COPY_EXISTING ~BRSR5%con%.SPL~ ~override/LBRSR%con%.SPL~
+               LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 duration = 2400 target =1 STR_VAR resource = ~SPCL321~ END //fatigue	
+               LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 73 parameter1 = 15 END //damage
+			   LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 278 parameter1 = 5 END //thac0
+              
+        END
         
-		LPF ADD_SPELL_HEADER INT_VAR copy_header = 2 END
-		LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 16 END
-			  //resistances
-			  LPF ALTER_SPELL_EFFECT INT_VAR header = 3 match_opcode = 86 parameter1 = 30 END 
-			  LPF ALTER_SPELL_EFFECT INT_VAR header = 3 match_opcode = 87 parameter1 = 30 END 
-			  LPF ALTER_SPELL_EFFECT INT_VAR header = 3 match_opcode = 88 parameter1 = 30 END 
-			  LPF ALTER_SPELL_EFFECT INT_VAR header = 3 match_opcode = 89 parameter1 = 30 END
-			  LPF ALTER_SPELL_EFFECT INT_VAR header = 3 match_opcode = 73 parameter1 = 5 END //damage
-			  LPF ALTER_SPELL_EFFECT INT_VAR header = 3 match_opcode = 278 parameter1 = 5 END //thac0
-		
-		LPF ADD_SPELL_HEADER INT_VAR copy_header = 3 END
-			LPF ALTER_SPELL_HEADER INT_VAR header = 4 min_level = 18 END		
-			  LPF ADD_SPELL_EFFECT INT_VAR header = 4 target = 1 opcode=208 parameter1 = 1 timing = 0 duration=35 END //min hp to 1 
-              LPF ALTER_SPELL_EFFECT INT_VAR header = 4 match_opcode=12 parameter2 = 0 END //damage after berserk 
-
-        LPF ADD_SPELL_HEADER INT_VAR copy_header = 4 END
-            LPF ALTER_SPELL_HEADER INT_VAR header = 5 min_level = 20 END
-        
-       	READ_LONG 0x0050 ~descr_strref~
-		STRING_SET_EVALUATE %descr_strref% @004		
+        COPY_EXISTING ~SPCL321.SPL~ ~override/LSTBRSRK.SPL~
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 END 
+            SAY NAME1 @001
+			SAY UNIDENTIFIED_DESC @002
+            LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = 1 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 126 STR_VAR abil_name = ~LBRSR~ END
+            FOR (con = 10;con<=24;con=con+2) BEGIN  
+                SPRINT resource EVALUATE_BUFFER ~BRSR%i%%con%~
+                LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 target = 1 opcode=321 duration=1 resist_dispel = 2 STR_VAR resource END
+            END 
+             
+        COPY_EXISTING ~SPCL321.SPL~ ~override/SPCL321.SPL~
             
-    COPY_EXISTING ~SPCL321.SPL~ ~override~
-        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 18 END //hp bonus
-        LPF DELETE_EFFECT INT_VAR header = 0 check_headers = 1 match_opcode = 12 END //remove damage
-        LPF DELETE_EFFECT INT_VAR header = 1 check_headers = 1 match_opcode = 12 END //remove damage
-        LPF DELETE_EFFECT INT_VAR header = 2 check_headers = 1 match_opcode = 12 END //remove damage
-        LPF DELETE_EFFECT INT_VAR header = 0 check_headers = 1 match_opcode = 139 END //remove string damage
-        LPF DELETE_EFFECT INT_VAR header = 1 check_headers = 1 match_opcode = 139 END //remove string damage
-        LPF DELETE_EFFECT INT_VAR header = 2 check_headers = 1 match_opcode = 139 END //remove string damage
-        LPF DELETE_EFFECT INT_VAR header = 1 check_headers = 1 match_opcode = 206 END //remove protection from spell
-        LPF DELETE_EFFECT INT_VAR header = 2 check_headers = 1 match_opcode = 206 END //remove protection from spell
-        LPF DELETE_EFFECT INT_VAR header = 3 check_headers = 1 match_opcode = 206 END //remove protection from spell
-        LPF DELETE_EFFECT INT_VAR header = 4 check_headers = 1 match_opcode = 206 END //remove protection from spell
-        LPF DELETE_EFFECT INT_VAR header = 4 check_headers = 1 match_opcode = 146 END //remove fatigue
-	  
-	END
-			  		
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+            LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 8 END
+        
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 2 END
+            LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 16 END
+        
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 3 END
+            LPF ALTER_SPELL_HEADER INT_VAR header = 4 min_level = 18 END	
+        
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 4 END
+            LPF ALTER_SPELL_HEADER INT_VAR header = 5 min_level = 20 END
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 END
+            LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = 5 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 126 STR_VAR abil_name = ~BRSR~ END 
+            
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @004	
+    END               			  		
 	 //---------------------------jester-------------------------------
 	 //mind shield
 	  COPY   ~3ed/Classes/Jester/%GameId%/JSTRIMM.SPL~  ~override~ //immunities !!!!!!!!!!!!!!!!!!!!!!	  	
 	 //--------------------------------------------//	 
 
      
-     //constant vocalize for mage-thiefs
+     //-------------------dwarven defender defensive stance update
+     COPY ~3ed/Classes/Barbarian/Rage/BRBFTG.spl~ ~override/DWDFTG.SPL~  //after stance fatigue
+        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 15 END //remove dex penalty
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 206 STR_VAR resource = ~SPDWD02~ END
+        
+            
+    OUTER_FOR (con = 10;con<=24;con=con+2) BEGIN
+        OUTER_SET stance_duration = 6*(3 + (con - 10 + 2)/2)
+            //berserker rage update
+            COPY_EXISTING ~SPDWD02.SPL~ ~override/DWDS1%con%.SPL~
+                WRITE_LONG 0x0008 0
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 86 END 
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 87 END 
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 88 END 
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 89 END 
+                
+                LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 0  parameter1 = 2 duration =stance_duration END //ac
+                LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 44  parameter1 = 2 duration =stance_duration END //str bonus
+                LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 10  parameter1 = 2 duration =stance_duration END //con bonus
+                FOR (opcode = 33;opcode<=37;opcode = opcode+1) BEGIN
+                   LPF ALTER_SPELL_EFFECT INT_VAR opcode  parameter1 = 1 END //saves
+                END
+
+                LPF ALTER_SPELL_EFFECT INT_VAR duration_high=stance_duration END 
+                LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 206 duration = stance_duration  STR_VAR resource = ~SPDWD02~ END //protection from subsequent application
+                LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 146 timing = 3 duration = stance_duration+1 parameter1 = 1 parameter2 = 1 STR_VAR resource = ~DWDFTG~ END //fatigue
+                               
+            COPY_EXISTING ~DWDS1%con%.SPL~  ~override/DWDS2%con%.SPL~	
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 0  parameter1 = 4 END //ac
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 44  parameter1 = 4 END //str bonus
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10  parameter1 = 4 END //con bonus
+                FOR (opcode = 33;opcode<=37;opcode = opcode+1) BEGIN
+                   LPF ALTER_SPELL_EFFECT INT_VAR opcode  parameter1 = 2 END //saves
+                END                
+                
+                LPF ALTER_SPELL_EFFECT INT_VAR duration_high=stance_duration+6 END 
+             
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 146 duration = stance_duration+7 END //fatigue
+                
+       					       
+            COPY_EXISTING ~DWDS2%con%.SPL~  ~override/DWDS3%con%.SPL~	
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 146 END //remove fatigue
+                                    
+        END
+        
+
+        WITH_TRA ~%LANGUAGE%\berserker.tra~ BEGIN      
+            COPY_EXISTING ~SPDWD02.SPL~ ~override/SPDWD02.SPL~
+            
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+                LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 10 END
+        
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 2 END
+                LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 17 END
+        
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 END
+                LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = 3 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 126 resist_dispel = 0 STR_VAR abil_name = ~DWDS~ END 
+            
+                READ_LONG 0x0050 ~descr_strref~
+                STRING_SET_EVALUATE %descr_strref% @007	 
+        END
+              			  		        
+
+ 
+     //------------------------------------------constant vocalize for mage-thiefs--------------------------------
      COPY_EXISTING ~SPWI219.SPL~ ~override/MT_VOC.SPL~
         LPF DELETE_EFFECT INT_VAR header =0 match_opcode = 50 END
         LPF DELETE_EFFECT INT_VAR header =0 match_opcode = 139 END

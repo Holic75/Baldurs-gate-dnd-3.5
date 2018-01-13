@@ -1,7 +1,7 @@
 	@001=~Combat Expertise~
 	@002=~Combat Expertise
 
-Character receives +3 bonus to AC and -3 penalty to THAC0 while fighting with melee weapons .~
+Character receives +3 bonus to AC and -3 penalty to THAC0 while fighting with melee weapons. The character also suffers additional 15% spellcasting failure. This ability can only be used with melee weapon equipped.~
 
 	@003=~Study Opponent~
 	@004=~Study Opponent

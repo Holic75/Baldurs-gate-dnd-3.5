@@ -164,15 +164,28 @@ WITH_TRA ~%LANGUAGE%\archery.tra~ BEGIN
 	//1 - 7  5% protection/star
 	OUTER_FOR (i=1;i<=7;i=i+1) BEGIN
 		COPY ~3ed/Feats/PermanentAbilities/MagicProtection/MGPTN.SPL~  ~override/MGPTN%i%FT.SPL~
-		LPF ALTER_SPELL_EFFECT INT_VAR  parameter1=5 END //resistance bonus 5% level
+            LPF ALTER_SPELL_EFFECT INT_VAR  parameter1=5*i END //resistance bonus 5*i% level
+            FOR (j=1;j<i;j=j+1) BEGIN
+                SPRINT resource EVALUATE_BUFFER ~MGPTN%j%FT~
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 duration =1 insert_point = 0 STR_VAR resource END
+            END
+
 	END
 
 
 //----------------------------------------------Empower magic
 	//1 - 7 (4 + 2*i) dmg bonus from spells  (6 14 24 36 50 66 84)%
+    OUTER_SET res = 0
 	OUTER_FOR (i=1;i<=7;i=i+1) BEGIN
+        OUTER_SET res = res + (4 + 2*i)
 		COPY ~3ed/Feats/PermanentAbilities/EmpowerMagic/EMPWR.SPL~  ~override/EMPWR%i%FT.SPL~
-		LPF ALTER_SPELL_EFFECT INT_VAR  parameter1=(4 + 2*i) END //spell damage bonus 
+            LPF ALTER_SPELL_EFFECT INT_VAR  parameter1=res END //spell damage bonus
+            FOR (j=1;j<i;j=j+1) BEGIN
+                SPRINT resource EVALUATE_BUFFER ~EMPWR%j%FT~
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 duration =1 insert_point = 0 STR_VAR resource END
+            END
+             
+        
 	END
 
 //------------------------------------------------------------------Extend magic
@@ -184,7 +197,7 @@ WITH_TRA ~%LANGUAGE%\archery.tra~ BEGIN
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource END
 		FOR (j=1;j<i;j=j+1) BEGIN
 			SPRINT resource EVALUATE_BUFFER ~EXTND%j%FT~
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 timing=9 STR_VAR resource END  //remove effects of previous extend
+			LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 timing=9 insert_point = 0 STR_VAR resource END  //remove effects of previous extend
 		END
 	END
 
@@ -192,6 +205,12 @@ WITH_TRA ~%LANGUAGE%\archery.tra~ BEGIN
 	//1- 5  -1 caster speed  per star
 	OUTER_FOR (i=1;i<=5;i=i+1) BEGIN
 		COPY ~3ed/Feats/PermanentAbilities/QuickenMagic/QUICKEN.SPL~  ~override/QUICK%i%FT.SPL~
+            LPF ALTER_SPELL_EFFECT INT_VAR  parameter1=i END
+            FOR (j=1;j<i;j=j+1) BEGIN
+                SPRINT resource EVALUATE_BUFFER ~QUICK%i%FT~
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 duration =1 insert_point = 0  STR_VAR resource END
+            END
+
 	END
 	
 	//6 - 7 uses of improved alacrity 

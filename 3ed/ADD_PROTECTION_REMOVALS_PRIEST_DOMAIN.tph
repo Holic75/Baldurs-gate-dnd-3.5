@@ -8,7 +8,8 @@ DEFINE_ACTION_FUNCTION ~ADD_PROTECTION_REMOVALS_PRIEST_DOMAIN~
 		COPY_EXISTING ~%domain_file_2DA%.2DA~ ~override~ //get list of spells 
 			COUNT_2DA_ROWS 1 n_rows
 			
-			FOR (i=1;i<n_rows;i=i+1) BEGIN				
+			FOR (i=2;i<n_rows;i=i+1) BEGIN	
+                SET i1 = i - 1
 				READ_2DA_ENTRY %i% 0 1 spl_file //spell name without spl extension
 				INNER_ACTION BEGIN
 										
@@ -16,7 +17,7 @@ DEFINE_ACTION_FUNCTION ~ADD_PROTECTION_REMOVALS_PRIEST_DOMAIN~
 						READ_SHORT 0x001c spell_type
 						
 					ACTION_IF (spell_type!=2) BEGIN //if it is not a priest spell
-						OUTER_SPRINT new_spell EVALUATE_BUFFER ~%domain_file_2DA%%i%~
+						OUTER_SPRINT new_spell EVALUATE_BUFFER ~%domain_file_2DA%%i1%~
 						OUTER_SPRINT original_spell EVALUATE_BUFFER ~%spl_file%~
 						
 						LAF ADD_PROTECTION_REMOVALS STR_VAR new_spell original_spell END

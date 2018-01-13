@@ -104,6 +104,14 @@ DEFINE_PATCH_FUNCTION ~PTCH_WPN~
             
                 READ_LONG 0x0060 current_enchantment               
                 SET current_enchantment = current_enchantment > 5 ? 5 : current_enchantment
+                
+                PATCH_IF (~%SOURCE_RES%~ STR_EQ ~BLUN12~) BEGIN //mace of disruption +1
+                    SET current_enchantment = 1
+                END
+                
+                PATCH_IF (~%SOURCE_RES%~ STR_EQ ~BLUN25~) BEGIN //mace of disruption +2
+                    SET current_enchantment = 2
+                END
            
                 FOR (k = 1; k<=current_enchantment;k = k + 1) BEGIN
                     //attack bonus

@@ -19,7 +19,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   READ_SHORT 0x001c "category"
   
 
-  LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~mage~  RET usable_by_thief = result END
+  LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~thief~  RET usable_by_thief = result END
   LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter~  RET usable_by_fighter = result END  
   LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~druid~  RET usable_by_druid = result END 
   LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~mage~  RET usable_by_mage = result END
@@ -41,9 +41,14 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
                              
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~bard~ END
 	
-  END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~PLAT18~ OR ~%SOURCE_RES%~ STR_EQ ~PLAT20~) BEGIN //red dragon scale -> splint (allow barbarian)
+  END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~PLAT18~) BEGIN //red dragon scale -> splint (allow barbarian)
 	
 	LPF UPDATE_ARMOR INT_VAR spell_failure = 30 max_dex = 14 skill_penalty = 14 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 15 END
+	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~ END
+
+  END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~PLAT20~) BEGIN //blue dragon scale -> splint (allow barbarian)
+	
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 30 max_dex = 14 skill_penalty = 14 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 15 update_unid_string = 0 END
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~ END
 	
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~CDSCALE~) BEGIN //white dragon scale iwd -> chain mail (dissallow thief)
@@ -197,42 +202,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	
   END 
   
-  ELSE PATCH_IF (~%unid_name%~ STR_EQ ~%MediumShieldStr%~) OR (~%unid_name%~ STR_EQ ~%AnomenShieldStr%~) BEGIN
-  
-    LPF GET_SPELL_EFFECT_VALUES INT_VAR header =0 match_opcode = 0 match_parameter2 = 0 RET ac_bonus = parameter1 found = found_match END
-          
-    SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%1~
-    SPRINT new_substring EVALUATE_BUFFER ~%AcShieldStr%2~
-      
-    LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
-    
-    SET NewAcBonus = ac_bonus + 1    
-    LPF ALTER_EFFECT INT_VAR  check_headers = 0 match_opcode = 0 match_parameter2 = 0 parameter1 = NewAcBonus  END   
-    SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%%ac_bonus%~
-    SPRINT new_substring EVALUATE_BUFFER ~%AcShieldStr%%NewAcBonus%~
-    
-    LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
-  END  ELSE PATCH_IF (~%unid_name%~ STR_EQ ~%LargeShieldStr%~) BEGIN
-  
-    LPF GET_SPELL_EFFECT_VALUES INT_VAR header =0 match_opcode = 0 match_parameter2 = 0 RET ac_bonus = parameter1 found = found_match END
-          
-    SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%1~
-    SPRINT new_substring EVALUATE_BUFFER ~%THAC0ShieldStr%%AcShieldStr%4~
-      
-    LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
-    
-    SET NewAcBonus = ac_bonus + 3    
-    LPF ALTER_EFFECT INT_VAR  check_headers = 0 match_opcode = 0 match_parameter2 = 0 parameter1 = NewAcBonus  END 
-    LPF CLONE_EFFECT INT_VAR  check_headers = 0 match_opcode = 0 match_parameter2 = 0 opcode = 278 parameter1 = 100 multi_match = 1 END 
 
-    SET parameter1 = 0 - 2    
-    LPF ALTER_SPELL_EFFECT_EX INT_VAR  header = 0 match_opcode = 278 match_parameter1 = 100 parameter1  END 
-    
-    SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%%ac_bonus%~
-    SPRINT new_substring EVALUATE_BUFFER ~%THAC0ShieldStr%%AcShieldStr%%NewAcBonus%~
-    
-    LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
-  END
   
   
   PATCH_IF (category = HelmsCategory) BEGIN//helms - remove critical hit protection
@@ -243,7 +213,8 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
 	LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
 	
-  END ELSE PATCH_IF (category = ShieldsCategory ) BEGIN//shields ->supress effects of shield spell // move to spells section
+  END ELSE PATCH_IF (category = ShieldsCategory ) BEGIN
+    //shields ->supress effects of shield spell // move to spells section
   
 	LPF GET_SPELL_EFFECT_VALUES INT_VAR header =0 match_opcode = 0 match_parameter2 = 0 RET ac_bonus = parameter1 found = found_match END
 	
@@ -256,6 +227,60 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource END
 		END
 	END
+    //update shield bonuses, allow bards (except jesters who can use only bucklers) to use all shields, dissalow everyone except fighter to use shields
+    LPF SET_ITEM_USABILITY INT_VAR value = 1 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~bard~ END
+    LPF SET_ITEM_USABILITY INT_VAR value = usable_by_thief STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~jester~ END
+    PATCH_IF (~%unid_name%~ STR_EQ ~%MediumShieldStr%~) OR (~%unid_name%~ STR_EQ ~%AnomenShieldStr%~) BEGIN
+  
+        LPF GET_SPELL_EFFECT_VALUES INT_VAR header =0 match_opcode = 0 match_parameter2 = 0 RET ac_bonus = parameter1 found = found_match END
+          
+        SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%1~
+        SPRINT new_substring EVALUATE_BUFFER ~%AcShieldStr%2~
+      
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
+    
+        SET NewAcBonus = ac_bonus + 1    
+        LPF ALTER_EFFECT INT_VAR  check_headers = 0 match_opcode = 0 match_parameter2 = 0 parameter1 = NewAcBonus  END   
+        SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%%ac_bonus%~
+        SPRINT new_substring EVALUATE_BUFFER ~%AcShieldStr%%NewAcBonus%~
+    
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
+    END  ELSE PATCH_IF (~%unid_name%~ STR_EQ ~%LargeShieldStr%~) BEGIN
+  
+        LPF GET_SPELL_EFFECT_VALUES INT_VAR header =0 match_opcode = 0 match_parameter2 = 0 RET ac_bonus = parameter1 found = found_match END
+          
+        SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%1~
+        SPRINT new_substring EVALUATE_BUFFER ~%THAC0ShieldStr%%AcShieldStr%4~
+      
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
+    
+        SET NewAcBonus = ac_bonus + 3    
+        LPF ALTER_EFFECT INT_VAR  check_headers = 0 match_opcode = 0 match_parameter2 = 0 parameter1 = NewAcBonus  END 
+        LPF CLONE_EFFECT INT_VAR  check_headers = 0 match_opcode = 0 match_parameter2 = 0 opcode = 278 parameter1 = 100 multi_match = 1 END 
+
+        SET parameter1 = 0 - 2    
+        LPF ALTER_SPELL_EFFECT_EX INT_VAR  header = 0 match_opcode = 278 match_parameter1 = 100 parameter1  END 
+    
+        SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%%ac_bonus%~
+        SPRINT new_substring EVALUATE_BUFFER ~%THAC0ShieldStr%%AcShieldStr%%NewAcBonus%~
+    
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
+       
+        //allow only fighters to use large shields
+        LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~ END
+        LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~wizardslayer~ END
+        LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~berserker~ END
+        LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~cleric~ END
+        LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~paladin~ END
+        LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~ranger~ END
+        LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_mage~ END
+        LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_thief~ END
+        LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~bard~ END
+        LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_cleric~ END
+        LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_druid~ END
+        LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_mage_cleric~ END
+    
+    END
 	
   END ELSE PATCH_IF (category = ArmorCategory AND usable_by_mage) BEGIN//robes (category from armor to cloak and robes)
   

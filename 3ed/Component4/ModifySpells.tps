@@ -713,7 +713,9 @@
     
     //add half damage at failed saves on reflex to glyph of warding    
     COPY_EXISTING ~SPPR304.SPL~ ~override~
-        LPF ALTER_SPELL_EFFECT INT_VAR special = 256 END 
+        SET savingthrow = 1 << 24
+        LPF CLONE_EFFECT INT_VAR match_opcode = 12 savingthrow END 
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 12 dicesize = 2 END
         READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @063
     
@@ -862,5 +864,6 @@
         FOR (i=1;i<=Nheaders;i=i+1) BEGIN
             LPF ALTER_SPELL_EFFECT INT_VAR duration = i*30 END
         END
+        WRITE_BYTE 0x0021 (0b01000000)	//dissalow cleric casting it 
         READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @308

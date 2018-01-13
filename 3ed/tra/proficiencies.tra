@@ -73,23 +73,23 @@
 
 	@131=~Single-Weapon Combat~
 	@132=~This fighting style is for characters who do not wish to use a shield but want some bonus when using a one-handed melee weapon.~
-	@133=~The wielder gets a -1 bonus to AC and THAC0 and inflicts critical damage on an attack roll of 19 - 20.~
-	@134=~The wielder gets another -1 bonus to THAC0 (to a total of -2) and inflicts critical damage on an attack roll of 17 - 20.~
-	@135=~The wielder gets another -1 bonus to AC (to a total of -2) and THAC0 (to a total of -3) and inflicts critical damage on an attack roll of 16 - 20.~
-	@136=~The wielder gets another -1 bonus to THAC0 (to a total of -4) and inflicts critical damage on an attack roll of 14 - 20.~
-	@137=~The wielder gets another -1 bonus to AC (to a total of -3) and THAC0 (to a total of -5) and inflicts critical damage on an attack roll of 13 - 20.~
-	@138=~The wielder gets another -1 bonus to THAC0 (to a total of -6) and inflicts critical damage on an attack roll of 11 - 20.~
-	@139=~The wielder gets another -1 bonus to AC (to a total of -4) and THAC0 (to a total of -7) and inflicts critical damage on an attack roll of 10 - 20.~
+	@133=~The wielder gets a -1 bonus to THAC0 and inflicts critical damage on an attack roll of 18 - 20.~
+	@134=~The wielder gets another -1 bonus to AC and THAC0 (to a total of -2) and inflicts critical damage on an attack roll of 17 - 20.~
+	@135=~The wielder gets another -1 bonus to THAC0 (to a total of -3) and inflicts critical damage on an attack roll of 15 - 20.~
+	@136=~The wielder gets another -1 bonus to AC (to a total of -2) and THAC0 (to a total of -4) and inflicts critical damage on an attack roll of 14 - 20.~
+	@137=~The wielder gets another -1 bonus to THAC0 (to a total of -5) and inflicts critical damage on an attack roll of 12 - 20.~
+	@138=~The wielder gets another -1 bonus to AC (to a total of -3) and THAC0 (to a total of -6) and inflicts critical damage on an attack roll of 11 - 20.~
+	@139=~The wielder gets another -1 bonus to THAC0 (to a total of -7) and inflicts critical damage on an attack roll of 9 - 20.~
 
 	@141=~Two-Weapon Combat~
 	@142=~This fighting style allows the character to use two melee weapons at the same time with fewer penalties. A character wielding two weapons without a star in this fighting style would incur a -4 penalty to attack rolls with the main weapon and a -4 penalty with the off-hand weapon.~
 	@143=~The wielder's penalties are reduced to -2 with the main weapon and with the off-hand weapon.~
 	@144=~The wielder's penalties are reduced to 0 with the main weapon and  with the off-hand weapon.~
-	@145=~The wielder receives a -2 bonus to AC.~
-	@146=~The wielder additionally gets -2 bonus to AC to a total of -4.~
-	@147=~The wielder additionally gets another -1 bonus to AC (to a total of -5) and inflicts critical damage on an attack roll of 19 - 20.~
-	@148=~The wielder additionally gets another -1 bonus to AC (to a total of -6) and inflicts critical damage on an attack roll of 18 - 20.~
-	@149=~The wielder additionally gets another -1 bonus to AC (to a total of -7) and inflicts critical damage on an attack roll of 17 - 20.~
+	@145=~The wielder receives a -1 bonus to AC.~
+	@146=~The wielder additionally gets -1 bonus to AC to a total of -2.~
+	@147=~The wielder additionally gets another -1 bonus to AC (to a total of -3) and inflicts critical damage on an attack roll of 19 - 20.~
+	@148=~The wielder additionally gets another -1 bonus to AC (to a total of -4) and inflicts critical damage on an attack roll of 18 - 20.~
+	@149=~The wielder additionally gets another -1 bonus to AC (to a total of -5) and inflicts critical damage on an attack roll of 17 - 20.~
 
 	@151=~Archery~
 	@152=~This fighting style allows character to use ranged weapons with higher efficiency.~
@@ -174,7 +174,7 @@ This ability allows the warrior to vanquish foes with a single blow.  For the ne
 	@210=~With unarmed strikes, short swords, daggers, long swords, scimitars, clubs, quarterstaves and spears the character may use Intelligence value instead of Strength to determine bonus to damage.
 	NOTE: This damage bonus is not multiplied by 1.5 for two-handed weapons, although if character got additional 0.5 strength bonus from Strength score, it is retained (i.e. if Strength is 14 and Intelligence is 16, the character will get +3 damage bonus from Intelligence and +1 (0.5*2) from Strength to a total of +4 with two-handed weapons).~
 
-	@211=~The character receives Combat Expertise modal ability. While activated all attacks with melee weapons suffer -3 penalty to THAC0 but character receives +3 bonus to AC.~
+	@211=~The character receives Combat Expertise modal ability. While activated all attacks with melee weapons suffer -3 penalty to THAC0 but character receives +3 bonus to AC. The character also suffers additional 15% spellcasting failure. This ability can only be used with melee weapon equipped.~
 	@212=~The character receives +2 bonus on Saving Throws vs. Spells.~
 	@213=~The character receives Study Opponent innate ability which can be used 3 times per day.
 
@@ -355,3 +355,14 @@ At level 1 character can put at most one star into any proficiency. Second star 
 	@2020=~Proficiency Type: Sling~
 
 	@2050=~Strength~ //replacement attribute for composite bows
+    
+    
+    @10001 = ~Select Favored Weapon Category. 
+At level 1 priest of War domain  gets for free Weapon Focus with this category.~
+    @10003 = ~Select new combat feat.~
+    @10004 = ~Select new magic feat.~
+    @10007 = ~Select new feat.~    
+    
+    
+    @10010 = ~Select Signature Weapon Category. 
+At level 1 kensai gets for free Weapon Focus with this category, at level 4 - Weapon Specilization, at level 8 - Improved Weapon Focus, at level 12 - Improved Weapon Specialization, at level 16 - Weapon Mastery, at level 21 - Epic Weapon Focus and finally at level 24 - Epic Weapon Specialization.~

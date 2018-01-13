@@ -15,8 +15,8 @@
 	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=0 
 						STR_VAR clab=~CLABFI04\.2DA~ feat_type_file=~FFTCRE~ caption=~FTREPCFT~ END
 
-//add bonus feats to ftr/cleric every at level 5, 10, 15, 20l  22, 25 and 28
-	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000100001000010000 
+//add bonus feats to ftr/cleric at level 4, 8, 12, 16, 20,  22, 25 and 28
+	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010001000100010001000 
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFC.SPL~ feat_type_file=~SFTCRE~ caption=~F_CBONFT~ END
 						
 //set delay to 1 second (to avoid hangup on 1st level character creation)

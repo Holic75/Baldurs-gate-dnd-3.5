@@ -1,0 +1,21 @@
+	@001=~Charm Animal, 10' Radius ~ 
+	@002=~Charm Animal, 10' Radius 
+    
+This spell affects all animals in 30-ft radius around the caster. The animals are allowed a Saving Throw vs. Spell to negate the effect with penalty equal to one fourth caster level rounded down.
+
+If the spell's recipient fails its Saving Throw, it regards the caster as a trusted friend and ally to be heeded and protected. The caster may give it orders, and the charmed animal will carry them out as quickly as possible.
+
+If the caster harms—or attempts to harm—the charmed animal by some overt action, or if a Dispel Magic spell is cast upon the charmed animal, the Charm spell is broken. If two or more Charms simultaneously affect a creature, the most recent Charm takes precedence. Note that the subject will be hostile when the Charm expires, regardless of its original attitude. Also note that you cannot have a charmed creature leave the area where it was charmed.~
+
+
+//-----------------------------------
+    @003=~Death Touch~
+    @004=~Death Touch
+
+Touched creature dies if fails Savingthrow vs. Death with penalty equal to one fourth caster level rounded down.~
+//-----------------------------------
+  
+    @007=~Dispelling Touch~
+    @008=~Dispelling Touch
+
+You remove magical effects from a creature by touching it.~
