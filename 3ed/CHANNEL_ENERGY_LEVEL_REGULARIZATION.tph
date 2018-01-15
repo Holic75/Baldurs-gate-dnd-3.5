@@ -36,9 +36,9 @@ DEFINE_ACTION_FUNCTION ~CHANNEL_ENERGY_LEVEL_REGULARIZATION~
             
 			SET multi_class_level = i - (i+2)/4 + 1
             SET no_ce_lvl = i+1
-			PATCH_IF (multi_class_level>max_multi_class_channel_lvl) BEGIN
-				SET multi_class_level=max_multi_class_channel_lvl
-			END
+			//PATCH_IF (multi_class_level>max_multi_class_channel_lvl) BEGIN
+			//	SET multi_class_level=max_multi_class_channel_lvl
+			//END
 			
             //SPRINT resource EVALUATE_BUFFER ~CE_LVL%no_ce_lvl%~
 			//LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=18 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric ranger (no ce)
