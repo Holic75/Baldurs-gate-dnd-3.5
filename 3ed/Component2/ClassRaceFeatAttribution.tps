@@ -1,5 +1,5 @@
 //-------------------------------------------------class-specific bonus feats---------------------------------------------					
-//archery feats tree for archer and ftr/druid
+//archery feats tree for archer
     COPY ~3ed/Feats/FeatAttribution/SFTCRE_E.SPL~ ~override/ARCHFT.SPL~
 		FOR (i=1;i<=7;i=i+1) BEGIN
 			SET lvl=4*(i - 1)
@@ -12,10 +12,10 @@
 			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=lvl speed=0 END
 				SPRINT resource EVALUATE_BUFFER ~SFT115_%i%~
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=12 parameter2=105 timing=0 duration=1 STR_VAR resource END // ranger
-				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=16 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/druid
+				//LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=16 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/druid
 		END		
 	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=16 d_level=4 add_at_level1=1 
-						STR_VAR clab=~\(CLABFI01\)\|\(CLABRN02\)\.2DA~
+						STR_VAR clab=~CLABRN02\.2DA~
 							mask_file=~~ feat_type_file=~~ caption=~ARCHFT~ END	
 //2 weapon fighting for ranger and ranger/cleric
     COPY ~3ed/Feats/FeatAttribution/SFTCRE_E.SPL~ ~override/TWFFT.SPL~
@@ -69,7 +69,15 @@
 							mask_file=~~ feat_type_file=~~ caption=~ARMARCFT~ END	
                             
 //armored training (ftr, ftr-thief, ftr - cleric)
-	COPY ~3ed/Feats/ArmorTraining~ ~override~
+    OUTER_FOR (k=1;k<=5;k=k+1) BEGIN
+        COPY ~3ed/Feats/ArmorTraining/ARMTR.SPL~ ~override/ARMTR%k%.SPL~   
+           SPRINT resource EVALUATE_BUFFER ~ARMACP%k%~
+           LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 9 duration = 1 STR_VAR resource END //dex ac penalty
+           SPRINT resource EVALUATE_BUFFER ~ARMSKL%k%~
+           LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 9 duration = 1 STR_VAR resource END //skill penalty
+    END
+    
+   
     COPY ~3ed/Feats/FeatAttribution/SFTCRE_E.SPL~ ~override/ARMTRFT.SPL~
 		FOR (i=1;i<=5;i=i+1) BEGIN
 			SET lvl=4*(i - 1)

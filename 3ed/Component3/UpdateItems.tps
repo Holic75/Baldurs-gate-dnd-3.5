@@ -216,6 +216,13 @@ ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
     COPY_EXISTING ~SHLD31.ITM~ ~override~
         LPF REPLACE_SUBSTRING INT_VAR  strref_offset=0x0054   substring_to_replace_ref = 501 new_substring_ref = 50 END
         
-
-    
+//yoshimo's katana -> yoshimo's wakizhashi
+COPY_EXISTING ~NPSW02.ITM~ ~override~ 
+        LPF UPDATE_WEAPON_DMG INT_VAR match_dice_number = 1 match_dice_size = 10 target_dice_number = 1 target_dice_size = 8 END 
+        WRITE_SHORT 0x0022 0x3153 //animation
+        WRITE_BYTE 0x0031 0x5f
+        READ_LONG 0x000c ~id_name_strref~		
+		READ_LONG 0x0054 ~id_descr_strref~
+        STRING_SET_EVALUATE %id_name_strref% @54
+		STRING_SET_EVALUATE %id_descr_strref% @55
 END

@@ -401,7 +401,7 @@ CLASS FEATURES:
 – May wear any armor and use any weapon and shield (including large shield).  
 – May get seven stars in any weapon category.  
 – Gets one bonus feat at level 1 and at every even level.  
-– At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill penalties and maximum dexterity AC bonus values. Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.  
+– At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 at level 4 and every 4 levels thereafter (up to a maximum of +5 at level 16).  
 – Can use Hardiness once per day starting from level 21, gains an additional use at level 26.
 ```
 HARDINESS:
@@ -854,7 +854,7 @@ Disadvantages:
 CLASS FEATURES:  
 – May not wear any armor.  
 – May only use the following weapons: dagger, quarterstaff, dart, sling, crossbow.  
-– Receives one bonus Feat at level 5, 10, 15, 20, 22 and 28.  
+– Receives one bonus magic Feat at level 5, 10, 15, 20, 22 and 28.  
 – May cast arcane spells.  
 – Gains access to the following epic spells: Comet (at level 21), Energy Blades (at level 22), Dragon's Breath (at level 23) and Summon Planetar (at level 24).  
 – Hit Die: d4  
@@ -1122,7 +1122,7 @@ CLASS FEATURES:
 – May not wear any armor.  
 – May only use the following weapons: dagger, quarterstaff, dart, sling, crossbow.  
 – May cast arcane spells.  
-– Receives one bonus Feat at level 5, 10, 15, 20, 22 and 28.  
+– Receives one bonus magic Feat at level 5, 10, 15, 20, 22 and 28.  
 – May not scribe spells into their spellbooks as Mages do. Instead, Sorcerers learn a small number of spells at each level, which they can cast daily without memorization.  
 – At 1st level chooses a bloodline which grants access to 9 spells (1 per spell level) in addition to those gained normally.  
 – Gains access to the following epic spells: Comet (at level 21), Energy Blades (at level 22), Dragon's Breath (at level 23) and Summon Planetar (at level 24).  
@@ -1132,7 +1132,8 @@ CLASS FEATURES:
 ### BATTLE CASTER (replaces DRAGON DISCIPLE)
 Advantages:  
 – May wear light armor.  
-– May equip bucklers.  
+– May equip bucklers.
+– Receives one bonus Feat at level 5, 10, 15, 20, 22 and 28 (can choose any feat, not only magic ones)  
 – May use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.    
 – At first level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.  
 – Hit Die: d6  
@@ -1277,8 +1278,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May distribute 16 skill points per level among thieving skills (24 points at level 1).  
 – Gets one bonus feat at level 1 and every 3 levels thereafter.  
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.  
-– At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill and AC penalties.  
-Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.  
+– At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1 and reduces penalty to thieving skills by 10%. Max dexterity AC bonus is further increased by 1 at and skill penalties are reduced by 10% at level 4 and every 4 levels thereafter (up to a maximum of +5 increase in max AC bonus and -50% decrease of thieving skill penalty at level 16).  
 – Starting from level 5 every hit of Fighter/Thief has 10% chance to slow the target for 1d4 rounds.
 – Starting from level 10 every hit of Fighter/Thief has additional 10% chance to blind the target for 1d4 rounds.
 – Starting from level 15 every hit of Fighter/Thief has additional 10% chance to make the target Sickened for 1d4 rounds (-2 to THAC0, Damage and all Savingthorws).
@@ -1291,9 +1291,8 @@ CLASS FEATURES:
 – May wear any armor and use any weapon and shield (excluding large shield).  
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.  
 – Can cast two spell per day less than trueclass cleric.  
-– At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill and AC penalties.  
-Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.  
-– Gets one bonus feat at every 4th level up to level 20.  
+– At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 at level 4 and every 4 levels thereafter (up to a maximum of +5 at level 16).  
+– Gets one bonus combat feat at every 4th level up to level 20.  
 – Gets one bonus feat at levels 22, 25 and 28.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
 – Can use Spontaneous Battlecasting.  
@@ -1332,12 +1331,12 @@ CLASS FEATURES:
 – May wear helmets.  
 – May wear light and medium armor and use any weapon and shield (excluding large shield).   
 – Can cast two spell per day less than trueclass druid.  
-– Bonus Feats: Fighter/Druid gets Style Focus in Archery for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12, Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.  
+– Gets one bonus combat feat at every 4th level up to level 20.  
 – May spontaneously convert memorized spells to summoning ones.  
 – May select one racial enemy at levels 1, 5 and every 5 levels thereafter, which grants a +4 bonus on damage rolls against the selected enemy race.  
 – May call for an animal companion who fights for her side.  
 – Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage résistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.  
-– Gets one bonus feat at level 28.  
+– Gets one bonus feat at levels 22, 25 and 28.  
 – Hit Die: d9  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -2074,18 +2073,18 @@ Greater Earth Elemental | 25 | 8 | 21 | 0 | 2 | 2d12 crushing| strikes as +4 wea
 Like in DnD 3.5 it is now possible to cast arcane spells and use thieving skills in any armor, although depending on the armor characters may receive a penalty
  to their thieving abilities and/or suffer a chance of spell casting failure. All armors also restrict a maximum dexterity bonus to AC.
 
-Armor Type| Spell Casting Failure | Max Dex AC Bonus | Hide in Shadows| Move Silently | Pick Pockets |Open Locks |Find Traps|
+Armor Type| Spell Casting Failure | Max Dex AC Bonus | Thieving skills
 ---   | --- | --- | --- | ---    | --- |---    | ---   
-Leather Armor          | 10% | +5 | -   |  - | - |  - | -
-Studded Leather Armor  | 15% | +4 | -10%|-10%|-5% | -5%| -5%
-Hide Armor             | 20% | +3 | -20%|-20%|-10%|-10%|-10%
-Chain Mail            | 20% | +3 | -30%|-30%|-20%|-20%|-20%
-Splint Mail            | 30% | +2 | -40%|-40%|-30%|-30%|-30%
-Plate Mail             | 40% | +1 | -50%|-50%|-40%|-40%|-40%
-Full Plate Armor       | 50% | +0 | -60%|-60%|-50%|-50%|-50%
-Elven Chain Mail       | 0%  | +4 | -10%|-10%|-5% |-5% |-5%
-Mithral Chain Mail     | 0%  | +4 | -10%|-10%|-5% |-5% |-5%
-Ankheg Plate Mail      | 20% | +3 | -30%|-30%|-20%|-20%|-20%
+Leather Armor          | 10% | +5 | -   
+Studded Leather Armor  | 15% | +4 | -10%
+Hide Armor             | 20% | +3 | -20%
+Chain Mail             | 20% | +3 | -30%
+Splint Mail            | 30% | +2 | -40%
+Plate Mail             | 40% | +1 | -50%
+Full Plate Armor       | 50% | +0 | -60%
+Elven Chain Mail       | 0%  | +4 | -10%
+Mithral Chain Mail     | 0%  | +4 | -10%
+Ankheg Plate Mail      | 20% | +3 | -30%
 
 
 ### Other Changes
@@ -2128,7 +2127,7 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Barkskin now gives +3 bonus to AC (+4 at level 7, +5 at level 13) which is cumulative with everything else and +1 bonus to saving throws (except vs. Spell)    
 - Flame Blade spell was removed, it is now replaced with druid only Flame Weapon spell which makes target deal +1d6 fire damage bonus on every attack for the duration of the spell  
 - Goodberries now heal 3 HP each when eaten  
-- Spiritual Hammer is now a throwing weapon with +1 enchnatment, THAC0 and Damage bonus per 3 caster levels (up to +5 at lvl 15)  
+- Spiritual Hammer is now a throwing weapon with +1 enchantment, THAC0 and Damage bonus per 3 caster levels (up to +5 at lvl 15)  
 - Draw Upon Holy Might now gives 1+1/per 5 caster level bonus to STR, DEX and CON (up to +5 at level 20)  
 - Aid's +1 THACO bonus is now cumulative with bless, also bonus HP are increased to +5 +1/caster level (up to 15)  
 - Seeking sword now gives only +1 APR (instead of 2) and is now 3rd level War Domain Spell  
@@ -2145,6 +2144,8 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Cause Critical Wounds is now a close range spell dealing 32 points of damage  (with savingthrow vs. Spell for half)
 - Cure Critical wounds now heal 32 HP  
 - Divine favor now lasts 4 rounds (it is now a 5th level War Domain Spell)  
+- Sol's Searing Orb is now a ranged spell in Bg1 and Bg2 (instead creating item)  and deals 6d12 damage (double to undead) with savingthrow vs Breath Weapon for half
+- Damage of Bolt of glory against primes/elementals/undead/demons was increased to 4d12/3d8/8d12/10d12 respectivelyy
 - Harm is now a close range spell instead of a weapon  
 - Boon of Lathander was renamed to Boon of Deity (it is now a 6th level Glory Domain Spell)  
 - Finger of Death now deals 6d8 points of damage to the target if it succeeds on a Saving Throw vs. Death  
@@ -2428,7 +2429,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Ajantis - Paladin (15/ 10/ 14/ 9/ 13/ 16)
 #### Alora - Thief (10 /20/ 10/ 14/ 9 / 9)
 #### Baeloth - Battle Caster (14/ 18/ 12/ 10/ 10/ 18)
-#### Branwen - Fighter/Cleric (16/ 10/ 14/ 10/ 15/ 12)
+#### Branwen - Fighter/Cleric (15/ 14/ 14/ 10/ 15/ 10)
 #### Coran - Fighter/Thief (14/ 18/ 12/ 14/ 10/ 10)
 #### Dorn - Blackguard (18/ 10/ 13/ 8/ 13/ 15)
 #### Dynaheir - Sorcerer (12/ 14/ 14/ 10/ 9/ 17)
@@ -2440,7 +2441,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Jaheira - Fighter/Druid (14/ 14/ 14/ 10/ 16/ 10) - as half-elf will receive +2 bonus to any ability score at level 1
 #### Kagain - Dwarven Defender (16/ 10/ 19/ 10/ 11/ 8)
 #### Khalid - Fighter/Thief (14/ 16/ 14/ 15/ 9/ 9) - as half-elf will receive +2 bonus to any ability score at level 1
-#### Kivan - Archer (14/ 18/ 12/ 10/ 14/ 10)
+#### Kivan - Archer (15/ 18/ 12/ 10/ 13/ 9)
 #### Minsc - Barbarian (18/ 14/ 16/ 8/ 8/ 8)
 #### Montaron - Assassin (10/ 18/ 14/ 16/ 9/ 9)
 #### Neera - Wild Mage (9/ 16/ 12/ 17/ 9/ 11)  - as half-elf will receive +2 bonus to any ability score at level 1
@@ -2463,7 +2464,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Viconia - Cleric/Thief (10/ 18/ 10/ 16/ 14/ 14)
 #### Imoen - Fighter/Mage/Thief (9/ 16/ 12/ 16/ 11/ 10)  
 #### Yoshimo - Fighter/Thief (14/ 16/ 14/ 14/ 10/ 10)
-#### Valygar - Stalker (14/ 16/ 14/ 10/ 14/ 10)
+#### Valygar - Stalker (16/ 16/ 12/ 10/ 13/ 9)
 #### Nalia - Bard (9/ 16/ 12/ 14/ 9/ 16)
 #### Mazzy - Kensai (12/ 18/ 14/ 10/ 14/ 10)
 #### Keldorn - Inquisitor (16/ 10/ 14/ 10/ 10/ 16)
@@ -2472,7 +2473,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Haerdalis - Blade (14/ 16/ 10/ 16/ 10/ 14)
 #### Cernd - Shapeshifter (10/ 14/ 12/ 10/ 18/ 10)
 #### Aerie - Cleric/Mage (10/ 18/ 10/ 16/ 16/ 12)
-#### Anomen - Fighter/Cleric (15/ 10/ 14/ 10/ 16/ 12)
+#### Anomen - Fighter/Cleric (15/ 14/ 14/ 10/ 15/ 10)
 #### Sarevok - Fighter (16/ 14/ 14/ 14/ 10/ 10)
 #### Rasaad - Sun Soul Monk (14/ 16/ 12/ 10/ 15/ 10)
 #### Dorn - Blackguard (18/ 10/ 13/ 8/ 13/ 15)

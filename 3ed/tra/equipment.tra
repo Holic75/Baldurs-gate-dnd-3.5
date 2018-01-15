@@ -35,9 +35,9 @@
 	@12=~Equipped abilities:
 – Max Dexterity AC Bonus: 4
 – Arcane Spell Casting Failure: 15%
-– Open Locks: -5%
-– Find Traps: -5%
-– Pick Pockets: -5% 
+– Open Locks: -10%
+– Find Traps: -10%
+– Pick Pockets: -10% 
 – Move Silently: -10%
 – Hide In Shadows: -10%~
 
@@ -61,38 +61,39 @@
 
 	@132=~– Max Dexterity AC Bonus: 3
 – Arcane Spell Casting Failure: 20%
-– Hide In Shadows: -20%
-– Open Locks: -10%
-– Find Traps: -10%
-– Pick Pockets: -10%
-– Move Silently: -20%~
+– Open Locks: -20%
+– Find Traps: -20%
+– Pick Pockets: -20%
+– Move Silently: -20%
+– Hide In Shadows: -20%~
+
 
 
 //chainmail
 	@14=~Equipped abilities:
 – Max Dexterity AC Bonus: 3
 – Arcane Spell Casting Failure: 20%
-– Open Locks: -20%
-– Find Traps: -20%
-– Pick Pockets: -20% 
+– Open Locks: -30%
+– Find Traps: -30%
+– Pick Pockets: -30% 
 – Move Silently: -30%
 – Hide In Shadows: -30%~
 
 
 //elven chain armor
 	@141=~– Max Dexterity AC Bonus: 4
-– Open Locks: -5%
-– Find Traps: -5%
-– Pick Pockets: -5% 
+– Open Locks: -10%
+– Find Traps: -10%
+– Pick Pockets: -10% 
 – Move Silently: -10%
 – Hide In Shadows: -10%~
 	
 //drizzt mithril armor
 	@142=~Equipped abilities:
 – Max Dexterity AC Bonus: 4
-– Open Locks: -5%
-– Find Traps: -5%
-– Pick Pockets: -5% 
+– Open Locks: -10%
+– Find Traps: -10%
+– Pick Pockets: -10% 
 – Move Silently: -10%
 – Hide In Shadows: -10%~
 
@@ -100,9 +101,9 @@
 	@15=~Equipped abilities:
 – Max Dexterity AC Bonus: 2
 – Arcane Spell Casting Failure: 30%
-– Open Locks: -30%
-– Find Traps: -30%
-– Pick Pockets: -30% 
+– Open Locks: -40%
+– Find Traps: -40%
+– Pick Pockets: -40% 
 – Move Silently: -40%
 – Hide In Shadows: -40%~
 
@@ -110,9 +111,9 @@
 	@16=~Equipped abilities:
 – Max Dexterity AC Bonus: 1
 – Arcane Spell Casting Failure: 40%
-– Open Locks: -40%
-– Find Traps: -40%
-– Pick Pockets: -40% 
+– Open Locks: -50%
+– Find Traps: -50%
+– Pick Pockets: -50% 
 – Move Silently: -50%
 – Hide In Shadows: -50%~
 
@@ -120,19 +121,19 @@
 	@17=~Equipped abilities:
 – Max Dexterity AC Bonus: 0
 – Arcane Spell Casting Failure: 50%
-– Open Locks: -50%
-– Find Traps: -50%
-– Pick Pockets: -50% 
+– Open Locks: -60%
+– Find Traps: -60%
+– Pick Pockets: -60% 
 – Move Silently: -60%
 – Hide In Shadows: -60%~
 
 
 @18=~– Spellcasting, stealth, and thieving abilities disabled~
 @181=~– Max Dexterity AC Bonus: 0
-– Arcane Spell Casting Failure: 50%
-– Open Locks: -50%
-– Find Traps: -50%
-– Pick Pockets: -50% 
+– Arcane Spell Casting Failure: 60%
+– Open Locks: -60%
+– Find Traps: -60%
+– Pick Pockets: -60% 
 – Move Silently: -60%
 – Hide In Shadows: -60%~
 
@@ -143,6 +144,20 @@
 @51 = ~Medium Shield~
 @52 = ~Large Shield~
 @53 = ~Delryn Family Shield~
+@54 = ~Yoshimo's Ninja-To +1~
+@55 = ~This blade, although only lightly enchanted, has achieved a semblance of awareness, enough so that it allows only the thief known as Yoshimo to wield it. Any other than he cannot use this flawless ninjatō in battle.
+
+STATISTICS:
+
+THAC0: +1
+Damage: 1d8+1 (slashing)
+Speed Factor: 3
+Proficiency Type: Scimitar/Wakizashi/Ninjatō
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 5~
 
 	@101 = ~– 2 attacks per round~
 	@102 = ~– 3 attacks per round~
@@ -167,12 +182,10 @@ STATISTICS:
 
 Equipped abilities:
 – Max Dexterity AC Bonus: 4
-– Arcane Spell Casting Failure: 15%
 – Open Locks: -5%
 – Find Traps: -5%
-– Pick Pockets: -5% 
+– Pick Pockets: -20%
 – Move Silently: -10%
-– Hide In Shadows: -10%
 – Immunity to charm
 – Fire Resistance: +25%
 – Acid Resistance: +25%

@@ -30,30 +30,30 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   //unique armors
   PATCH_IF ((~%SOURCE_RES%~ STR_EQ ~PLAT06~) OR (~%SOURCE_RES%~ STR_EQ ~KING~)) BEGIN //ankheg or ice king plate mail -> chain mail (allow beastmaster)
 	WRITE_SHORT 0x0026 8 //str req to 8 
-	LPF UPDATE_ARMOR INT_VAR is_light = 0 spell_failure = 20 max_dex = 16 skill_penalty = 16  string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 14 END	
+	LPF UPDATE_ARMOR INT_VAR is_light = 0 spell_failure = 20 max_dex = 16 skill_penalty = 3  string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 14 END	
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~beastmaster~ END
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~ END
 	
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~CHAN17~) BEGIN //ashen scales +2 -> chain mail (allow bard)
   
-	LPF UPDATE_ARMOR INT_VAR is_light = 0 spell_failure = 20 max_dex = 16 skill_penalty = 16  string_to_replace_ref_match = 9 string_to_replace_ref = 10 
+	LPF UPDATE_ARMOR INT_VAR is_light = 0 spell_failure = 20 max_dex = 16 skill_penalty = 3  string_to_replace_ref_match = 9 string_to_replace_ref = 10 
                              new_string_to_add_ref = 14 update_unid_string = 0 END
                              
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~bard~ END
 	
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~PLAT18~) BEGIN //red dragon scale -> splint (allow barbarian)
 	
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 30 max_dex = 14 skill_penalty = 14 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 15 END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 30 max_dex = 14 skill_penalty = 4 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 15 END
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~ END
 
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~PLAT20~) BEGIN //blue dragon scale -> splint (allow barbarian)
 	
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 30 max_dex = 14 skill_penalty = 14 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 15 update_unid_string = 0 END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 30 max_dex = 14 skill_penalty = 4 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 15 update_unid_string = 0 END
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~ END
 	
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~CDSCALE~) BEGIN //white dragon scale iwd -> chain mail (dissallow thief)
 	
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 30 max_dex = 16 skill_penalty = 16 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 14 END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 3 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 14 END
 	
 	LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~thief~ END
 	LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~mage_thief~ END
@@ -61,7 +61,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~CHAN20~) BEGIN //white dragon scale bg2-> chain mail
 	
-	LPF UPDATE_ARMOR INT_VAR is_light = 0 spell_failure = 20 max_dex = 16 skill_penalty = 16  string_to_replace_ref_match = 9 string_to_replace_ref = 10 
+	LPF UPDATE_ARMOR INT_VAR is_light = 0 spell_failure = 20 max_dex = 16 skill_penalty = 3  string_to_replace_ref_match = 9 string_to_replace_ref = 10 
                              new_string_to_add_ref = 14 update_unid_string = 0 END
                              
 	LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~thief~ END
@@ -69,18 +69,24 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
     LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_mage_thief~ END
 	LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/KitUsabilityValues.tps~    id_string = ~stalker~ END
     
-  END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~NPCHAN~) BEGIN //valygar armor (remove requirements) - >studded leather
-	
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 15 max_dex = 18 skill_penalty = 18 is_light = 1 string_to_replace_ref_match = 0 string_to_replace_ref = 10 new_string_to_add_ref = 1001 END	
+  END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~NPCHAN~) BEGIN //valygar armor (remove requirements) - >elven chain mail
+	   
+    LPF UPDATE_ARMOR INT_VAR spell_failure = 0 max_dex = 18 skill_penalty = 1 is_light = 1 clear_thief_penalty = 1 string_to_replace_ref_match = 0 string_to_replace_ref = 10 new_string_to_add_ref = 1001 END
+	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~beastmaster~ END
+	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~stalker~ END
+	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~archer~ END
+	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~kensai~ END
+    LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~ END	
+
 	WRITE_BYTE 0x002c 0 //dex
 	WRITE_BYTE 0x002e 0 //wis
-	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~ END	
+
 	SAY IDENTIFIED_DESC @1001
 	SAY UNIDENTIFIED_DESC @1001
 	
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~OHDARMOR~) BEGIN //silver dragon scale  - >splint mail (allow barbarian, rangers, berserker)
 	
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 14 max_dex = 14 skill_penalty = 14 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 15 END	
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 14 max_dex = 14 skill_penalty = 4 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 15 END	
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~ END
 	
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~ELFCHAN~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN12~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN13~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN14~) 
@@ -100,7 +106,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
     PATCH_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
         string_to_replace_ref_match = 81
     END
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 0 max_dex = 18 skill_penalty = 18 is_light = 1 clear_thief_penalty = 1 string_to_replace_ref_match string_to_replace_ref = 10 new_string_to_add_ref = 141 update_unid_string END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 0 max_dex = 18 skill_penalty = 1 is_light = 1 clear_thief_penalty = 1 string_to_replace_ref_match string_to_replace_ref = 10 new_string_to_add_ref = 141 update_unid_string END
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~beastmaster~ END
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~stalker~ END
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~archer~ END
@@ -122,7 +128,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~NPPLAT~) BEGIN //keldorn full plate, remove requirements
   
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 50 max_dex = 10 skill_penalty = 10 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 17 END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 50 max_dex = 10 skill_penalty = 6 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 17 END
 	WRITE_BYTE 0x0026 14 //str
 	WRITE_BYTE 0x002e 0 //wis
 	WRITE_BYTE 0x0030 0 //con
@@ -130,16 +136,16 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~SHARK3~) OR  (~%SOURCE_RES%~ STR_EQ ~UMHULK~) BEGIN //sahaguin and umberhulk plate armor
   
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 40 max_dex = 12 skill_penalty = 12 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 16 END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 40 max_dex = 12 skill_penalty = 5 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 16 END
 	
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~SHARK2~) OR  (~%SOURCE_RES%~ STR_EQ ~DRAGARM~) BEGIN //sahaguin and black dragon scale => studded leather
   
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 15 max_dex = 18 skill_penalty = 18 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 12 END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 15 max_dex = 18 skill_penalty = 1 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 12 END
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~kensai~ END
 	
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~PLAT04~)  BEGIN//mithral field plate armor => full plate
   
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 50 max_dex = 10 skill_penalty = 10 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 17 END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 50 max_dex = 10 skill_penalty = 6 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 17 END
 	WRITE_BYTE 0x0026 14 //str
 	
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~SHARK~) BEGIN//sahaguin leather armor
@@ -149,7 +155,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~cdharmor~) BEGIN//yeti hide leather armor
   
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 17 keep_old_string = 0 clear_thief_penalty = 1 string_to_replace_ref_match = 131 string_to_replace_ref = 10 new_string_to_add_ref = 132 update_unid_string = 0 END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 2 keep_old_string = 0 clear_thief_penalty = 1 string_to_replace_ref_match = 131 string_to_replace_ref = 10 new_string_to_add_ref = 132 update_unid_string = 0 END
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_fighter STR_VAR  values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~kensai~ END
 
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~NPARM~) BEGIN//jan's lether armor (remove requirements)
@@ -161,7 +167,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 		
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~SECRET05~) BEGIN//combined pantalons 
   
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 50 max_dex = 10 skill_penalty = 10 is_light = 0 string_to_replace_ref_match = 18 string_to_replace_ref = 10 new_string_to_add_ref = 181 update_unidstring = 0 END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 50 max_dex = 10 skill_penalty = 6 is_light = 0 string_to_replace_ref_match = 18 string_to_replace_ref = 10 new_string_to_add_ref = 181 update_unidstring = 0 END
 
 				
 	//general armors
@@ -172,33 +178,33 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 		
   END  ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~%StuddedLeatherArmorStr%~) BEGIN //Studded Leather Armor
   
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 15 max_dex = 18 skill_penalty = 18 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 12 END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 15 max_dex = 18 skill_penalty = 1 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 12 END
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_fighter STR_VAR  values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~kensai~ END
 				
   END ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~%HideArmorStr%~) BEGIN //Hide Armor
   
 	PATCH_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
-		LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 17 keep_old_string = 0 clear_thief_penalty = 1 string_to_replace_ref_match = 131 string_to_replace_ref = 10 new_string_to_add_ref = 132 END
+		LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 2 keep_old_string = 0 clear_thief_penalty = 1 string_to_replace_ref_match = 131 string_to_replace_ref = 10 new_string_to_add_ref = 132 END
 	END ELSE BEGIN
-		LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 17 keep_old_string = 0 clear_thief_penalty = 1 string_to_replace_ref_match = 133 string_to_replace_ref = 10 new_string_to_add_ref = 132 END
+		LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 2 keep_old_string = 0 clear_thief_penalty = 1 string_to_replace_ref_match = 133 string_to_replace_ref = 10 new_string_to_add_ref = 132 END
 	END
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_fighter STR_VAR  values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~kensai~ END
  			
   END  ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~%ChainMailStr%~) BEGIN //Chain Mail 
   
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 16  is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 14 END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 3  is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 14 END
 	
   END  ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~%SplintMailStr%~) BEGIN //Splint Mail
   
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 30 max_dex = 14 skill_penalty = 14 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 15 END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 30 max_dex = 14 skill_penalty = 4 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 15 END
 	
   END  ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~%PlateMailStr%~) BEGIN //Plate Mail
   
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 40 max_dex = 12 skill_penalty = 12 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 16 END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 40 max_dex = 12 skill_penalty = 5 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 16 END
   	
   END  ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~%FullPlateStr%~ ) OR (~%unid_name%~ STRING_EQUAL ~%FullPlateMailStr%~ ) BEGIN //Full Plate
 	
-	LPF UPDATE_ARMOR INT_VAR spell_failure = 50 max_dex = 10 skill_penalty = 10 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 17 END
+	LPF UPDATE_ARMOR INT_VAR spell_failure = 50 max_dex = 10 skill_penalty = 6 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 17 END
 	
   END 
   
@@ -266,7 +272,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
     
         LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
        
-        //allow only fighters to use large shields
+        //allow only fighters and dwarven defenders to use large shields
         LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~ END
         LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~wizardslayer~ END
         LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~berserker~ END

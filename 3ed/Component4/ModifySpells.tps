@@ -633,21 +633,59 @@
 		COPY_EXISTING ~SPPR614.SPL~ ~override~
 			LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 326 END
 			
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 parameter2 = 524288  target = 2 power =6 timing = 1 resist_dispel = 1 savingthrow = 2  dicesize = 12 dicenumber = 3 END
+			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 parameter2 = 524288  target = 2 power =6 timing = 1 resist_dispel = 1 savingthrow = 1  dicesize = 12 dicenumber = 3 END
 			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 parameter2 = 524288  target = 2 power =6 timing = 1 resist_dispel = 1 dicesize = 12 dicenumber = 3 END
 			LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 parameter2 = 2  target = 2 power =6  resist_dispel = 1  END //protection to non-undead
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 parameter2 = 524288  target = 2 power =6 timing = 1 resist_dispel = 1 savingthrow = 2  dicesize = 12 dicenumber = 3 END
+			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 parameter2 = 524288  target = 2 power =6 timing = 1 resist_dispel = 1 savingthrow = 1  dicesize = 12 dicenumber = 3 END
 			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 parameter2 = 524288  target = 2 power =6 timing = 1 resist_dispel = 1 dicesize = 12 dicenumber = 3 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 power =6 parameter1 = BlindStrRef timing = 1 resist_dispel = 1 savingthrow = 2 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 142 target = 2 power =6 parameter2 = 8 duration = 18 resist_dispel = 1 savingthrow = 2 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 74 target = 2 power =6 duration = 18 resist_dispel = 1 savingthrow = 2 END
+			LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 power =6 parameter1 = BlindStrRef timing = 1 resist_dispel = 1 savingthrow = 1 END
+			LPF ADD_SPELL_EFFECT INT_VAR opcode = 142 target = 2 power =6 parameter2 = 8 duration = 18 resist_dispel = 1 savingthrow = 1 END
+			LPF ADD_SPELL_EFFECT INT_VAR opcode = 74 target = 2 power =6 duration = 18 resist_dispel = 1 savingthrow = 1 END
 
 	//modify chromatic orb to be like in bg
 		COPY_EXISTING ~SPWI118.SPL~ ~override~
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 12 savingthrow = 0 END
 			LPF ALTER_SPELL_EFFECT INT_VAR savebonus = 6 END 
 	END	
-	
+    ELSE BEGIN
+        //make sol searing orb non-item spell 
+        COPY_EXISTING ~SPPR614.SPL~ ~override~
+            //get string refrences
+            READ_LONG 0x0008 SpellName
+            READ_LONG 0x0050 SpellDescr
+        
+        COPY_EXISTING ~SORB.ITM~ ~override~
+            LPF GET_SPELL_EFFECT_VALUES INT_VAR match_opcode = 139 RET BlindStrRef = parameter2 END
+
+        COPY ~3ed/Spells/SolSearingOrb/SORB.SPL~ ~override/SPPR614.SPL~
+            WRITE_LONG 0x0008 SpellName
+            WRITE_LONG 0x0050 SpellDescr   
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 139 parameter2 =  BlindStrRef END
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 12 dicesize = 12 END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 parameter2 = 2  target = 2 power =6  resist_dispel = 1  END //protection to non-undead
+			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 parameter2 = 524288  target = 2 power =6 timing = 1 resist_dispel = 1 savingthrow = 1  dicesize = 12 dicenumber = 3 END
+			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 parameter2 = 524288  target = 2 power =6 timing = 1 resist_dispel = 1 dicesize = 12 dicenumber = 3 END
+        
+        COPY_EXISTING ~SPPR614.SPL~ ~override/SPPR614.SPL~        
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @064    
+    END
+    
+    //upgrade bolt of glory damage
+    COPY_EXISTING ~BOLTPRIM.EFF~ ~override~
+        LPF ALTER_EFF INT_VAR dicesize = 12 dicenumber = 4 END
+    COPY_EXISTING ~BOLTUND.EFF~ ~override~
+        LPF ALTER_EFF INT_VAR dicesize = 12 END        
+    COPY_EXISTING ~BOLTELEM.EFF~ ~override~
+        LPF ALTER_EFF INT_VAR dicesize = 8 END 	
+    COPY_EXISTING ~BOLTDEM.EFF~ ~override~
+        LPF ALTER_EFF INT_VAR dicesize = 12 END 
+        
+    COPY_EXISTING ~SPPR612.SPL~ ~override~ 
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset = 0x0050  STR_VAR substring_to_replace = ~6d6~ new_substring  = ~4d12~ END
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset = 0x0050  STR_VAR substring_to_replace = ~8d6~ new_substring  = ~8d12~ END
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset = 0x0050  STR_VAR substring_to_replace = ~3d4~ new_substring  = ~3d8~ END
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset = 0x0050  STR_VAR substring_to_replace = ~10d6~ new_substring  = ~10d12~ END
 
    
     //update regeneration   
@@ -867,3 +905,15 @@
         WRITE_BYTE 0x0021 (0b01000000)	//dissalow cleric casting it 
         READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @308
+        
+        
+    //fix power for blade barrier effect
+    COPY_EXISTING ~SPPR603D.SPL~ ~override~
+        LPF ALTER_SPELL_EFFECT INT_VAR power = 6 END
+        
+        
+
+
+
+        
+    

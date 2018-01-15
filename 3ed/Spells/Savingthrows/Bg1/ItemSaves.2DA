@@ -19,4 +19,5 @@ WAND05   wand_fire              0		8          1
 WAND06   wand_cold              0		8          1
 WAND07   wand_lightning         0		2          1
 WAND13   wand_cloudkill         1		4          0
+SORB     SolSearingOrb          1       2          1
 

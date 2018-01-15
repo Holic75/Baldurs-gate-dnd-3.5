@@ -55,19 +55,19 @@ WITH_TRA ~%LANGUAGE%\warfare.tra~ BEGIN
 	LAF ADD_ACT_FEAT STR_VAR ability_name=~PWRATI~ game_name game_description  END //improved power attack (+5 dmg, -3 thaco)
 	//add removal of standard power attack
 		COPY_EXISTING ~PWRATIFT.SPL~ ~override~
-		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource=~PWRATIBN~ END 
-		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATI1~ END
-		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATI1~ END
-		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATI0~ END
+		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource=~PWRATKBN~ END 
+		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATK1~ END
+		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATK1~ END
+		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATK0~ END
 	
 	OUTER_SPRINT game_name @009  OUTER_SPRINT game_description @010
 	LAF ADD_ACT_FEAT STR_VAR ability_name=~PWRATS~ game_name game_description  END //supreme power attack (+6 dmg, -3 thaco)
 	//add removal of standard power attack
 		COPY_EXISTING ~PWRATSFT.SPL~ ~override~
-		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource=~PWRATSBN~ END 
-		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATS1~ END
-		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATS1~ END
-		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATS0~ END	
+		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource=~PWRATIBN~ END 
+		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATI1~ END
+		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATI1~ END
+		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATI0~ END	
 END
 //------------------------------------------combat prowess
 WITH_TRA ~%LANGUAGE%\combat_prowess.tra~ BEGIN

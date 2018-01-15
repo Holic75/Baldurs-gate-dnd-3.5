@@ -31,10 +31,17 @@ DEFINE_PATCH_FUNCTION ~UPDATE_ARMOR~
 			
 		END
 		
-		PATCH_IF (skill_penalty) BEGIN
-			SPRINT resource EVALUATE_BUFFER ~ARMSKL%skill_penalty%~
-			LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0   duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource END			
-		END
+		//PATCH_IF (skill_penalty) BEGIN
+		//	SPRINT resource EVALUATE_BUFFER ~ARMSKL%skill_penalty%~
+		//	LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0   duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource END			
+		//END
+        
+        FOR (k=1;k<=skill_penalty;k=k+1) BEGIN
+		    SPRINT resource EVALUATE_BUFFER ~ARMSKL%k%~
+		    LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0   duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource END			
+        
+        
+        END
 		
 		PATCH_IF (NOT is_light) BEGIN
         

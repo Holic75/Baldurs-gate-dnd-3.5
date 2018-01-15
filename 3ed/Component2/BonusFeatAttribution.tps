@@ -15,13 +15,20 @@
 	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=0 
 						STR_VAR clab=~CLABFI04\.2DA~ feat_type_file=~FFTCRE~ caption=~FTREPCFT~ END
 
-//add bonus feats to ftr/cleric at level 4, 8, 12, 16, 20,  22, 25 and 28
-	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010001000100010001000 
-						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFC.SPL~ feat_type_file=~SFTCRE~ caption=~F_CBONFT~ END
+//add bonus feats to ftr/cleric at level 4, 8, 12, 16, 20
+	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=20 d_level=4 add_at_level1=0
+						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFC.SPL~ feat_type_file=~FFTCRE~ caption=~F_CBONFT~ END
+                        
+//add bonus feats to ftr/druid at level 4, 8, 12, 16, 20
+	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=20 d_level=4 add_at_level1=0
+						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFD.SPL~ feat_type_file=~FFTCRE~ caption=~F_DBONFT~ END
 						
 //set delay to 1 second (to avoid hangup on 1st level character creation)
-	COPY_EXISTING ~F_CBONFT.SPL~ ~override~
-		LPF  ALTER_SPELL_EFFECT INT_VAR duration  =1 timing =3  END
+//	COPY_EXISTING ~F_CBONFT.SPL~ ~override~
+//		LPF  ALTER_SPELL_EFFECT INT_VAR duration  =1 timing =3  END
+//set delay to 1 second (to avoid hangup on 1st level character creation)
+//	COPY_EXISTING ~F_DBONFT.SPL~ ~override~
+//		LPF  ALTER_SPELL_EFFECT INT_VAR duration  =1 timing =3  END
 	
 //same for ftr/mage
 	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000100001000010000  
@@ -74,7 +81,7 @@
                         
 //epic feats to mage - cleric
 	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=3 add_at_level1=0 
-						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRECM.SPL~ feat_type_file=~MFTCRE~ caption=~MCEPCFT~ END    
+						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRECM.SPL~ feat_type_file=~SFTCRE~ caption=~MCEPCFT~ END    
                         
 //feats to cleric - thief (10,20,22,25,28)
 	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000000001000000000  
@@ -89,8 +96,11 @@
 						STR_VAR clab=~CLABDR+.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRED.SPL~ feat_type_file=~SFTCRE~ caption=~DEPCCFT~ END
 	
 //epic feat to fighter-druid
-	LAF ADD_BONUS_FEATS INT_VAR min_level=28 max_level=28 d_level=1 add_at_level1=0 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=3 add_at_level1=0 
 						STR_VAR clab=~CLABDR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFD.SPL~ feat_type_file=~SFTCRE~ caption=~FDEPCFT~ END
+//epic feat to fighter-cleric
+	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=3 add_at_level1=0 
+						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFC.SPL~ feat_type_file=~SFTCRE~ caption=~FCEPCFT~ END
                         
 //epic feats to rangers and archers
 	LAF ADD_BONUS_FEATS INT_VAR min_level=28 max_level=28 d_level=1 add_at_level1=0 
@@ -110,7 +120,7 @@
 
 //epic feats to shaman
 	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=0 
-						STR_VAR clab=~CLABSH+.*\.2DA~ feat_type_file=~MFTCRE~ caption=~SEPCCFT~ END	
+						STR_VAR clab=~CLABSH+.*\.2DA~ feat_type_file=~SFTCRE~ caption=~SEPCCFT~ END	
 						
 //add bonus feat to humans at lvl1
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 

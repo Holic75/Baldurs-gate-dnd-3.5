@@ -1,7 +1,7 @@
 
     ACTION_IF (~%GameId%~ STR_EQ ~Bg1~) BEGIN
 
-    	LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 18 Con = 12 Int = 10 Wis = 14 Cha = 10 
+    	LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 15 Dex = 18 Con = 12 Int = 10 Wis = 13 Cha = 9 
             STR_VAR NpcName = ~KIVAN~ ScriptName = ~KIVAN~ ClassName = ~RANGER~ KitName=~FERALAN~  END        
                    
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 20 Con = 10 Int = 14 Wis = 9 Cha = 9  PickPockets = 5 HideInShadows = 5
@@ -41,7 +41,7 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 14 Con = 14 Int = 10 Wis = 16 Cha = 10
                                   STR_VAR NpcName = ~FALDOR~ ScriptName = ~FALDORN~ ClassName = ~DRUID~ KitName = ~BEASTFRIEND~ END 
                 
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 10 Con = 14 Int = 10 Wis = 15 Cha = 12  
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 15 Dex = 14 Con = 14 Int = 10 Wis = 15 Cha = 10  
                                   STR_VAR NpcName = ~BRANWE~ ScriptName = ~BRANWEN~ ClassName = ~FIGHTER_CLERIC~ END    
         COPY_EXISTING ~BRANWE.CRE~ ~override~
             //return spiritual hammer
@@ -153,11 +153,11 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 9 Dex = 16 Con = 12 Int = 16 Wis = 11 Cha = 10  Lockpick = 4 FindTraps = 4 RemoveKnownSpells = 0 InitialXp = 89000
                                   STR_VAR NpcName = ~IMOEN2+.*~ ScriptName = ~IMOEN2~ ClassName = ~FIGHTER_MAGE_THIEF~  END   
                                   
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 16 Con = 14 Int = 14 Wis = 10 Cha = 10  Lockpick = 4 FindTraps = 4
-                                  STR_VAR NpcName = ~YOSHI+.*~ ScriptName = ~YOSHIMO~ ClassName = ~FIGHTER_THIEF~ END    
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 12 Int = 14 Wis = 10 Cha = 10  Lockpick = 5 FindTraps = 5
+                                  STR_VAR NpcName = ~YOSHI+.*~ ScriptName = ~YOSHIMO~ ClassName = ~THIEF~ KitName = ~THIEF_BASE~ END    
 
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 16 Con = 14 Int = 10 Wis = 14 Cha = 10  
-                                  STR_VAR NpcName = ~VALYG+.*~ ScriptName = ~VALYGAR~ ClassName = ~RANGER~ KitName = ~STALKER~ END     
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 16 Con = 12 Int = 10 Wis = 13 Cha = 9  
+                                  STR_VAR NpcName = ~VALYG+.*~ ScriptName = ~VALYGAR~ ClassName = ~RANGER~  KitName = ~Stalker~ END     
 
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 9 Dex = 16 Con = 12 Int = 14 Wis = 9 Cha = 16  RemoveKnownSpells = 0
@@ -188,7 +188,7 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 14 Con = 12 Int = 10 Wis = 18 Cha = 10  
                                   STR_VAR NpcName = ~CERND+.*~ ScriptName = ~CERND~ ClassName = ~DRUID~ KitName = ~SHAPESHIFTER~ END    
 
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 10 Con = 14 Int = 10 Wis = 15 Cha = 12  
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 15 Dex = 14 Con = 14 Int = 10 Wis = 15 Cha = 10  
                                   STR_VAR NpcName = ~ANOMEN+.*~ ScriptName = ~ANOMEN~ ClassName = ~FIGHTER_CLERIC~ END    
                 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 10 Int = 16 Wis = 16 Cha = 12  RemoveKnownSpells = 0  HpTotal = 5

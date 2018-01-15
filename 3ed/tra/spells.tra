@@ -779,6 +779,21 @@ Saving Throw: 1/2
 A Glyph of Warding is a powerful inscription magically drawn to prevent unauthorized or hostile creatures from passing, entering, or opening. It can be used to guard a small bridge, to ward an entry, or as a trap on a chest or box. Any creature violating the warded area is subject to the magic it stores, although a successful Saving Throw vs. Breath Weapon enables the creature to partially escape the effects of the glyph and receive only have the damage. When the spell is cast, the priest weaves a tracery of faintly glowing lines around the warding sigil. When the glyph is activated, it deals 1d4 points of electrical damage per level of the caster.~
 
 //-----------------------------------------------------------------------------------------------------
+
+    @064 =~Sol's Searing Orb
+(Invocation)
+
+Level: 6
+Sphere: Sun
+Range: 90 ft.
+Duration: Instant
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: Special
+
+When the spell is completed, it creates a glowing stone which is immediately thrown at the target.
+
+When it hits, the gem bursts with a brilliant, searing flash that causes 6d12 points of fire damage to the target and blinds <PRO_HIMHER> for 1d6 rounds. The victim is allowed a Saving Throw vs. Spell for half damage and to avoid being blinded. Undead creatures suffer 12d12 points of fire damage and are blinded for 12 rounds (if applicable) upon a failed Saving Throw; otherwise, they receive 6d12 points of damage and are blinded for 6 rounds.~
 //----------------------------------------------------------------------------------------------------------------------------------------------
 
 	@101=~Exaltation
@@ -819,7 +834,7 @@ Casting Time: 1
 Area of Effect: Caster
 Saving Throw: None
 
-This spell grants the caster a +1 bonus to hit and damage rolls every 3 levels of the caster. The spell lasts for 4 rounds.~
+This spell grants the caster a +1 bonus to hit and damage rolls for every 3 levels of the caster. The spell lasts for 4 rounds.~
 //--------------------------------------------------------------------------------------------------
 	@105=~Seeking Sword
 (Invocation)

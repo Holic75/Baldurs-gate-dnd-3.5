@@ -8,7 +8,7 @@ CLASS FEATURES:
 – May wear any armor and use any weapon and shield (including large shield).
 – May get seven stars in any weapon category.
 – Gets one bonus feat at level 1 and at every even level.
-– At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill and AC penalties. Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.
+– At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 at level 4 and every 4 levels thereafter (up to a maximum of +5 at level 16).
 - Can use Hardiness once per day starting from level 21, gains an additional use at level 26.
 
 HARDINESS:
@@ -43,7 +43,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May distribute 16 skill points per level among thieving skills (24 points at level 1).
 – Gets one bonus feat at level 1 and every 3 levels thereafter.
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.
-– At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill and AC penalties. Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.
+– At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1 and reduces penalty to thieving skills by 10%. Max dexterity AC bonus is further increased by 1 at and skill penalties are reduced by 10% at level 4 and every 4 levels thereafter (up to a maximum of +5 increase in max AC bonus and -50% decrease of thieving skill penalty at level 16).
 – Hit Die: d8
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon and vs. Wand
 ~
@@ -56,14 +56,14 @@ CLASS FEATURES:
 – May wear any armor and use any weapon and shield (excluding large shield).
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
 – Can cast two spell per day less than trueclass cleric.
-– Gets one bonus feat at every 4th level up to level 20.
+– Gets one bonus combat feat at every 4th level up to level 20.
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels thereafter).
 – Can use Spontaneous Battlecasting.
 
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
 
 – At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
-– At 1st level gets Armor Training with leather and studded leather armor passive feat that allows to ignore armor skill and AC penalties. Gets Armor Training with hide armor and chainmails at level 4, splint mails at level 8, plate mails at level 12 and finally full plate mails at level 16.
+– At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 at level 4 and every 4 levels thereafter (up to a maximum of +5 at level 16).
 – Gets one bonus feat at levels 22, 25 and 28.
 – Hit Die: d9
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
@@ -132,12 +132,12 @@ CLASS FEATURES:
 – May wear helmets.
 – May wear light and medium armor and use any weapon and shield (excluding large shield).
 – Can cast two spell per day less than trueclass druid.
-– Bonus Feats: Fighter/Druid gets Style Focus in Archery for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12, Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.
+– Gets one bonus combat feat at every 4th level up to level 20.
 – May spontaneously convert memorized spells to summoning ones.
 – May select one racial enemy at levels 1, 5 and every 5 levels thereafter, which grants a +4 bonus on damage rolls against the selected enemy race.
 – May call for an animal companion who fights for <PRO_HISHER> side.
 – Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.
-– Gets one bonus feat at level 28.
+– Gets one bonus feat at levels 22, 25 and 28.
 – Hit Die: d9
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 ~
@@ -163,7 +163,7 @@ CLASS FEATURES:
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
 
 – At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
-– Gets one bonus feat at levels 22, 25 and 28.
+– Gets one bonus magic feat at levels 22, 25 and 28.
 – Hit Die: d7
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -736,7 +736,7 @@ CLASS FEATURES:
 
 – May not wear any armor.
 – May only use the following weapons: dagger, quarterstaff, dart, sling, crossbow.
-– Receives one bonus Feat at level 5, 10, 15, 20, 22 and 28.
+– Receives one bonus magic feat at levels 5, 10, 15, 20, 22 and 28.
 – May cast arcane spells.
 – Gains access to the following epic spells: Comet (at level 21), Energy Blades (at level 22), Dragon's Breath (at level 23) and Summon Planetar (at level 24).
 – Hit Die: d4
@@ -1051,7 +1051,7 @@ CLASS FEATURES:
 – May not wear any armor.
 – May only use the following weapons: dagger, quarterstaff, dart, sling, crossbow.
 – May cast arcane spells.
-– Receives one bonus Feat at level 5, 10, 15, 20, 22 and 28.
+– Receives one bonus magic feat at level 5, 10, 15, 20, 22 and 28.
 – May not scribe spells into their spellbooks as Mages do. Instead, Sorcerers learn a small number of spells at each level, which they can cast daily without memorization.
 – At 1st level chooses a bloodline which grants access to 9 spells (1 per spell level) in addition to those gained normally.
 – Gains access to the following epic spells: Comet (at level 21), Energy Blades (at level 22), Dragon's Breath (at level 23) and Summon Planetar (at level 24).
@@ -1067,6 +1067,7 @@ Advantages:
 – May wear light armor.
 – May equip bucklers.
 – May use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.
+– Receives one bonus feat at level 5, 10, 15, 20, 22 and 28 (can select any feat and not only magic ones unlike trueclass sorcerers).
 – Have THAC0 and APR progression of a cleric.
 – At first level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.
 – Hit Die: d6

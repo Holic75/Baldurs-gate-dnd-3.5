@@ -26,7 +26,8 @@ STAF11   staff_magi             1       2
 STAF12   staff_magi             1       2
 STAF13   staff_magi             1       2 
 WAND02   wand_fear              1		8         
-WAND13   wand_cold              1		4    
+WAND13   wand_cold              1		4
+SORB     SolSearingOrb          1       2    
      
         
 
