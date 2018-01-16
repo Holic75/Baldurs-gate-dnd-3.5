@@ -2074,7 +2074,7 @@ Like in DnD 3.5 it is now possible to cast arcane spells and use thieving skills
  to their thieving abilities and/or suffer a chance of spell casting failure. All armors also restrict a maximum dexterity bonus to AC.
 
 Armor Type| Spell Casting Failure | Max Dex AC Bonus | Thieving skills
----   | --- | --- | --- | ---    | --- |---    | ---   
+---   | --- | --- | --- 
 Leather Armor          | 10% | +5 | -   
 Studded Leather Armor  | 15% | +4 | -10%
 Hide Armor             | 20% | +3 | -20%
