@@ -322,9 +322,10 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   
   //usability for armors
  
-  PATCH_IF (category=ArmorCategory OR category=ShieldsCategory) BEGIN
+  PATCH_IF (category=ArmorCategory OR category=ShieldsCategory OR category = HelmsCategory) BEGIN
   
   //ranger, berserker, wizardslayer <- barbarian
+    LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~bard~  RET usable_by_bard = result END
 	LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~  RET usable_by_barbarian = result END
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_barbarian STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~berserker~ END
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_barbarian STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~ranger~ END
@@ -337,8 +338,10 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	
 	LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~ranger~  RET usable_by_ranger = result END
 	
-	//ftr_druid  <- ranger or druid
-	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_ranger OR usable_by_druid STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_druid~ END
+	//ftr_druid  <- only druid armor
+    PATCH_IF (category=ArmorCategory) BEGIN
+        LPF SET_ITEM_USABILITY INT_VAR value = usable_by_druid STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_druid~ END
+    END
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_druid STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~avenger~ END
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_druid STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~shapeshifter~ END
 	
@@ -348,12 +351,16 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_ranger STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~cleric_ranger~ END
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_thief STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~cleric_thief~ END
+    PATCH_IF (category!=ShieldsCategory) BEGIN //medium armor and helms for cleric/thiefs and bards
+        LPF SET_ITEM_USABILITY INT_VAR value = usable_by_ranger OR usable_by_thief STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~cleric_thief~ END
+        LPF SET_ITEM_USABILITY INT_VAR value = usable_by_ranger OR usable_by_bard STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~bard~ END
+    END
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_mage STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~cleric_mage~ END
 	
     
     //allow jesters only to wear light armors
     PATCH_IF (category=ArmorCategory) BEGIN
-        LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~bard~  RET usable_by_bard = result END
+        
         LPF SET_ITEM_USABILITY INT_VAR value = (usable_by_bard AND usable_by_thief) STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~jester~ END
     END
 	//disallow ninjas to use armor (same as monks)

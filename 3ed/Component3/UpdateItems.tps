@@ -219,6 +219,9 @@ ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
 //yoshimo's katana -> yoshimo's wakizhashi
 COPY_EXISTING ~NPSW02.ITM~ ~override~ 
         LPF UPDATE_WEAPON_DMG INT_VAR match_dice_number = 1 match_dice_size = 10 target_dice_number = 1 target_dice_size = 8 END 
+        LPF SET_ITEM_USABILITY  STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~assassin~ END
+        LPF SET_ITEM_USABILITY  STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~swashbuckler~ END
+        
         WRITE_SHORT 0x0022 0x3153 //animation
         WRITE_BYTE 0x0031 0x5f
         READ_LONG 0x000c ~id_name_strref~		

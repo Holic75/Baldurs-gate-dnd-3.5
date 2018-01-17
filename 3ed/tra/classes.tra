@@ -43,7 +43,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May distribute 16 skill points per level among thieving skills (24 points at level 1).
 – Gets one bonus feat at level 1 and every 3 levels thereafter.
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.
-– At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1 and reduces penalty to thieving skills by 10%. Max dexterity AC bonus is further increased by 1 at and skill penalties are reduced by 10% at level 4 and every 4 levels thereafter (up to a maximum of +5 increase in max AC bonus and -50% decrease of thieving skill penalty at level 16).
+– At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1 and reduces penalty to thieving skills by 5%. Max dexterity AC bonus is further increased by 1 at and skill penalties are reduced by 10% at level 4 and every 4 levels thereafter (up to a maximum of +5 increase in max AC bonus and -25% decrease of thieving skill penalty at level 16).
 – Hit Die: d8
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon and vs. Wand
 ~
@@ -60,7 +60,7 @@ CLASS FEATURES:
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels thereafter).
 – Can use Spontaneous Battlecasting.
 
-SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 
 – At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
 – At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 at level 4 and every 4 levels thereafter (up to a maximum of +5 at level 16).
@@ -83,7 +83,7 @@ CLASS FEATURES:
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.
 – Can use Spontaneous Battlecasting.
 
-SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 
 - Can use Resist Magic once per day starting from level 23, gains an additional use at level 28.
 
@@ -99,10 +99,10 @@ NOTE: Gnomes can choose this class, but become Fighter/Illusionists by default. 
 @005=~FIGHTER/MAGE/THIEF: This is a hybrid class that can use the abilities of a Fighter, a Mage and a Thief.
 
 CLASS FEATURES:
-
-– May not wear armor heavier than studded leather.
+– May wear helmets. 
+– May not wear armor heavier than splint mail.
 – May not equip shields larger than bucklers.
-– May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.
+– May use any weapon.
 – May get up to Weapon Specialization (2 stars) in any weapon they can use.
 – Immune to sneak attack.
 – Has Evasion passive ability.
@@ -116,9 +116,13 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.
 – May use Spontaneous Spell Channeling
 
-SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds.
+SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 
-– At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.
+– May use Spontaneous Battlecasting.
+
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
+
+– At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, and finally at level 12 Armored Arcana: Splint Mail Casting.
 – Gets one bonus feat at levels 10, 20, 22, 25 and 28.
 – Hit Die: d6
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph vs. Breath Weapon, vs. Wand and vs. Spell
@@ -130,7 +134,7 @@ NOTE: Gnomes can choose this class, but become Fighter/Illusionist/Thieves by de
 CLASS FEATURES:
 
 – May wear helmets.
-– May wear light and medium armor and use any weapon and shield (excluding large shield).
+– May wear any armor a druid can and use any weapon and shield (excluding large shield).
 – Can cast two spell per day less than trueclass druid.
 – Gets one bonus combat feat at every 4th level up to level 20.
 – May spontaneously convert memorized spells to summoning ones.
@@ -160,7 +164,7 @@ CLASS FEATURES:
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.
 – Can use Spontaneous Battlecasting.
 
-SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 
 – At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
 – Gets one bonus magic feat at levels 22, 25 and 28.
@@ -590,7 +594,7 @@ NOTE: Gnomes can choose this hybrid class, but become Cleric/Illusionists by def
 
 CLASS FEATURES:
 
-– May not wear armor heavier than studded leather.
+– May not wear armor heavier than splint mail.
 – May not equip shields larger than bucklers.
 – May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling, mace, flail, morning star, war hammer.
 – Immune to sneak attack.
@@ -605,7 +609,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).
 – May use Spontaneous Spell Channeling
 
-SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 10 seconds.
+SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 
 – At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
 – Gets one bonus feat at levels 10, 20, 22, 25 and 28.
@@ -910,13 +914,14 @@ Disadvantages:
 
 CLASS FEATURES:
 
-– May not wear armor heavier than chain mail. (Bardic spells being simpler than those of mages are not subject to casting failure when bard wears light armor.)
+– May wear helmets. 
+– May not wear armor heavier than splint mail.
 – May use any shield (excluding large shield).
 – Receives one bonus Feat at level 5, 10, 15, 20, 22 and 28.
 – Thieving abilities: Pick Pockets.
 – Increased Lore score.
 – May cast arcane spells up to level 6.
-– Starting from level 6 may cast arcane spells without suffering spellcasting failure chance while wearing chain mail.
+– At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, and finally at level 12 Armored Arcana: Splint Mail Casting.
 – Bardic Performance: a bard is trained to perform to create magical effects on those around <PRO_HIMHER>. Bard can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each even level a bard can use bardic performance one more time per day.
 List of Bardic Performances:
 

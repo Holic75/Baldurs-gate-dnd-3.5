@@ -75,6 +75,8 @@ Range:~
 		OUTER_SPRINT DescriptionString EVALUATE_BUFFER ~%DescriptionString%.
         
 Domain ability: %DomainAbilityDescription%.~
+
+        OUTER_SET DescriptionStringRef = RESOLVE_STR_REF (~%DescriptionString%~) 
 					
 		OUTER_SPRINT domain_str EVALUATE_BUFFER
 			
@@ -86,13 +88,15 @@ Domain ability: %DomainAbilityDescription%.~
 		OUTER_SPRINT domain_description_str EVALUATE_BUFFER
 			
 ~~~~~IF ~~ THEN BEGIN %domain_id%
-	SAY ~%DescriptionString%~
+	SAY #%DescriptionStringRef%
 	IF ~!Global("CHOSEN","LOCALS",1)
 Class(LastSummonerOf(Myself),CLERIC)~ THEN REPLY #%yes_response% DO 
 	~ApplySpellRES("%domain_file_2DA%S",LastSummonerOf(Myself))
 	 SetGlobal("CHOSEN","LOCALS",1)
 	 SetGlobal("DOM%domain_id%","LOCALS",1)~ GOTO 1000
 	IF ~Global("CHOSEN","LOCALS",1)~ THEN REPLY #%yes_response% DO
+	~ApplySpellRES("%domain_file_2DA%S",LastSummonerOf(Myself))~ EXIT
+	IF ~!Class(LastSummonerOf(Myself),CLERIC)~ THEN REPLY #%yes_response% DO
 	~ApplySpellRES("%domain_file_2DA%S",LastSummonerOf(Myself))~ EXIT
 	IF ~True()~ THEN REPLY #%no_response% GOTO 0
 END	

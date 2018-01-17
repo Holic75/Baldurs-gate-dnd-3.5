@@ -992,13 +992,14 @@ Disadvantages:
 
 ### BARD
 CLASS FEATURES:  
-– May not wear armor heavier than chain mail. (Bardic spells being simpler than those of mages are not subject to casting failure when bard wears light armor.)  
+– May wear helmets.   
+– May not wear armor heavier than splint mail.    
 – May use nay shield (excluding large shield).  
 – Receives one bonus Feat at level 5, 10, 15, 20, 22 and 28.  
 – Thieving abilities: Pick Pockets.  
 – Increased Lore score.  
 – May cast arcane spells up to level 6.  
-– Starting from level 6 may cast arcane spells without suffering spellcasting failure chance while wearing chain mail.  
+– At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, and finally at level 12 Armored Arcana: Splint Mail Casting.  
 – Bardic Performance: a bard is trained to perform to create magical effects on those around her. Bard can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each even level a bard can use bardic performance one more time per day.  
 – Medium THAC0/APR progression, High Savingthrows vs. Breath Weapon vs. Wand, and vs. Spell
 
@@ -1297,7 +1298,7 @@ CLASS FEATURES:
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
 – Can use Spontaneous Battlecasting.  
 ```
-SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 ```
 – At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – Hit Die: d9  
@@ -1314,7 +1315,7 @@ CLASS FEATURES:
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.  
 – Can use Spontaneous Battlecasting.  
 ```
-SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 ```
 – Can use Resist Magic once per day starting from level 23, gains an additional use at level 28.
 ```
@@ -1329,7 +1330,7 @@ NOTE: Gnomes can choose this class, but become Fighter/Illusionists by default. 
 ### FIGHTER/DRUID
 CLASS FEATURES:  
 – May wear helmets.  
-– May wear light and medium armor and use any weapon and shield (excluding large shield).   
+– May wear any armor a druid can and use any weapon and shield (excluding large shield).   
 – Can cast two spell per day less than trueclass druid.  
 – Gets one bonus combat feat at every 4th level up to level 20.  
 – May spontaneously convert memorized spells to summoning ones.  
@@ -1381,7 +1382,8 @@ NOTE: Gnomes can choose this hybrid class, but become Cleric/Illusionists by def
 
 ### CLERIC/THIEF
 CLASS FEATURES:  
-– May not wear armor heavier than studded leather.  
+– May wear helmets.  
+– May not wear armor heavier than splint mail.  
 – May not equip shields larger than bucklers.  
 – May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling, mace, flail, morning star, war hammer.  	  
 – Immune to sneak attack.    
@@ -1396,7 +1398,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
 – May use Spontaneous Spell Channeling
 ```
-SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to her sneak attack damage for next 10 seconds.
+SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to her sneak attack damage for next 3 rounds.
 ```
 – At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – Gets one bonus feat at levels 10, 20, 22, 25 and 28.  
@@ -1420,9 +1422,10 @@ NOTE: Gnomes can choose this hybrid class, but become Illusionist/Thieves by def
 
 ### FIGHTER/MAGE/THIEF
 CLASS FEATURES:  
-– May not wear armor heavier than studded leather.  
+– May wear helmets.  
+– May not wear armor heavier than splint mail.  
 – May not equip shields larger than bucklers.  
-– May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.   
+– May use any weapon.   
 – Immune to sneak attack.    
 – Has Evasion passive ability.  
 ```
@@ -1436,10 +1439,14 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
 – May use Spontaneous Spell Channeling
 ```
-SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to her sneak attack damage for next 10 seconds.
+SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to her sneak attack damage for next 3 seconds.
+```
+– May use Spontaneous Battlecasting.
+```
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 ```
 – Gets one bonus feat at levels 10, 20, 22, 25 and 28.  
-– At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.  
+– At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, and finally at level 12 Armored Arcana: Splint Mail Casting.  
 – Hit Die: d6  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph vs. Breath Weapon, vs. Wand and vs. Spell  
 NOTE: Gnomes can choose this class, but become Fighter/Illusionist/Thieves by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.
@@ -1460,7 +1467,7 @@ CLASS FEATURES:
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting arcane spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.  
 – Can use Spontaneous Battlecasting.
 ```
-SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to get +1 on to hit and damage rolls per level of sacrificed spell for 10 seconds.
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 ```
 – At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – Hit Die: d7  
@@ -2074,17 +2081,17 @@ Like in DnD 3.5 it is now possible to cast arcane spells and use thieving skills
  to their thieving abilities and/or suffer a chance of spell casting failure. All armors also restrict a maximum dexterity bonus to AC.
 
 Armor Type| Spell Casting Failure | Max Dex AC Bonus | Thieving skills
----   | --- | --- | --- 
+---   | --- | --- | ---
 Leather Armor          | 10% | +5 | -   
-Studded Leather Armor  | 15% | +4 | -10%
-Hide Armor             | 20% | +3 | -20%
-Chain Mail             | 20% | +3 | -30%
-Splint Mail            | 30% | +2 | -40%
-Plate Mail             | 40% | +1 | -50%
-Full Plate Armor       | 50% | +0 | -60%
-Elven Chain Mail       | 0%  | +4 | -10%
-Mithral Chain Mail     | 0%  | +4 | -10%
-Ankheg Plate Mail      | 20% | +3 | -30%
+Studded Leather Armor  | 15% | +4 | -5%
+Hide Armor             | 20% | +3 | -10%
+Chain Mail             | 20% | +3 | -15%
+Splint Mail            | 30% | +2 | -20%
+Plate Mail             | 40% | +1 | -25%
+Full Plate Armor       | 50% | +0 | -30%
+Elven Chain Mail       | 0%  | +4 | -5%
+Mithral Chain Mail     | 0%  | +4 | -5%
+Ankheg Plate Mail      | 20% | +3 | -15%
 
 
 ### Other Changes

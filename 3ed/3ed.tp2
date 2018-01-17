@@ -39,7 +39,7 @@ BEGIN @1
     INCLUDE ~3ed/TRANSFER_PROTECTION_FROM_DISPLAY_STRING.tph~
     INCLUDE ~3ed/UPDATE_SPELL_SAVES.tph~
     INCLUDE ~3ed/ADD_ABILITY_DEPENDENT_EFFECTS.tph~
-    
+
 	
 	COPY ~3ed/Core/Clab~ ~override~ 
 	
@@ -241,6 +241,7 @@ WITH_TRA ~%LANGUAGE%\equipment.tra~ BEGIN
 END
 	
     INCLUDE ~3ed/Component3/TripleMultiClassUsability.tps~
+    INCLUDE ~3ed/Component3/SneakAttackAllWeapons.tps~
     
 	INCLUDE ~3ed/Component3/MakeRobesSellableAgain.tps~
    

@@ -60,8 +60,9 @@
 		COPY ~3ed/SpontaneousCasting/BattleCasting/BCST.SPL~ ~override/BCST%i%.SPL~
 			WRITE_LONG 0x0034 i //spell level
 			LPF ALTER_SPELL_EFFECT INT_VAR power=i END
-			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=73 parameter1=i END //damage bonus
-			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=278 parameter1=i END //thac0
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=73 parameter1=(i+1)/2 END //damage bonus
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=278 parameter1=(i+1)/2 END //thac0
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=0 parameter1=i/2 END //thac0
 			FOR (k=1;k<=7;k=k+1) BEGIN
 				SPRINT resource EVALUATE_BUFFER ~BCST%k%~
 				LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 power=i duration=1 timing=0 STR_VAR resource END //remove previous casts
