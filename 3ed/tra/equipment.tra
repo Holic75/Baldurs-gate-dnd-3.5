@@ -159,20 +159,20 @@ Requires:
 
 Weight: 5~
 
-	@101 = ~– 2 attacks per round~
-	@102 = ~– 3 attacks per round~
-	@103 = ~– Sets attacks per round to 5~
+	@101 = ~2 attacks per round~
+	@102 = ~3 attacks per round~
+	@103 = ~Sets attacks per round to 5~
 	
-	@105 = ~– 1.5 attacks per round~
-	@106 = ~– 2.5 attacks per round~
+	@105 = ~1.5 attacks per round~
+	@106 = ~2.5 attacks per round~
 
-	@108 = ~– Sets attacks per round to 4~
+	@108 = ~Sets attacks per round to 4~
 	
-	@201 =~– Wielder can throw up to five of Zilzanzer's darts in a single round regardless of class~
-	@202 =~– Wielder can throw up to four of Zilzanzer's darts in a single round regardless of class~
+	@201 =~Wielder can throw up to five of Zilzanzer's darts in a single round regardless of class~
+	@202 =~Wielder can throw up to four of Zilzanzer's darts in a single round regardless of class~
 	
-	@301 =~– 3 shots per round~
-	@302 =~– 2 shots per round~
+	@301 =~3 shots per round~
+	@302 =~2 shots per round~
 //-------------------------------------------------------//
 //-------------------------------------------------------//
 //-------------------------------------------------------//

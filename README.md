@@ -52,9 +52,9 @@ The effects of abilities were also changed as follows:
 – Determines Weight Allowance.  
 
 STR | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 |
---- | --- | --- | --- |--- |--- |--- |--- |--- |---|--- | --- | --- | --- |--- |--- |--- |--- |--- |---|--- | --- | --- | --- |--- |--- |
-Weight Allowance| 1 | 3 | 5 | 15 | 15 | 30 | 30 | 50 | 50 | 70 |100 | 120 | 160 | 200 | 250 | 300 | 350 | 400 | 500 | 600 | 700 | 800 | 1000 | 1200 | 1600 |
-Bash| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |13 | 16 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 55 | 60 | 65 | 70 | 75 | 80 |
+--- | --- | --- | --- |--- |--- |--- |--- |--- |---|--- | --- | --- | --- |--- |--- |--- |--- |--- |---|--- | --- | --- | --- |--- |---
+Weight Allowance| 1 | 3 | 5 | 15 | 15 | 30 | 30 | 50 | 50 | 70 |100 | 120 | 160 | 200 | 250 | 300 | 350 | 400 | 500 | 600 | 700 | 800 | 1000 | 1200 | 1600
+Bash| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |13 | 16 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 55 | 60 | 65 | 70 | 75 | 80
 
 Note: two-handed weapons receive 1.5 damage bonus from STRENGTH.
 
@@ -72,15 +72,20 @@ Note: wearing heavy armor may restrict maximum dexterity bonus to AC a character
 – Improves Saving Throws vs. Paralysis/Poison/Death and vs. Petrification/Polymorph (+1 per 2 points above 9, -1 per 2 points below 10).  
 
 #### INTELLIGENCE
-– Determines the maximum level of spell that can be cast by Bards and Mages.  
 – Determines number of spells per level that can be learned by Bards and Mages.  
 – Determines chance to learn a spell by Bards and Mages.  
 – Determines bonus to Lore (+3 per point above 10, -3 per point below 8).  
 – Gives combat bonuses with certain feats, weapons and armors.  
 – Increases all thieving skills (+5% of base value for every point above 10 and -5% for every point below 10, i.e. if the base value of your skill is 50 and you have 18 INT the effective base value will become 50*(100%+8 x 5%) = 50 x 140% = 70).    
-– Increases number of spells per day that can be cast by Mages and Assassins.
+– Increases number of spells per day that can be cast by Mages and Assassins.  
 – Increases Saving Throw penalties for Mage and Assassin spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).  
+– Determines the duration of the effect of Maze spell cast on character.     
 Note: A character with an Intelligence score of 8 or less is illiterate and cannot use scrolls or most wands regardless of her class.
+
+STR | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 |
+--- | --- | --- | --- |--- |--- |--- |--- |--- |---|--- | --- | --- | --- |--- |--- |--- |--- |--- |---|--- | --- | --- | --- |--- |--- 
+Chance to learn spell| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 20 | 30 |40 | 50 | 60 | 70 | 80 | 90 | 95 | 99 | 99 | 99 | 99 | 99 | 99 | 99 | 99
+Number of spells per level| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 4 |6 | 8 | 10 | 12 | 14 | 16 | 18 | 20 | All | All | All | All | All | All | All
 
 #### WISDOM
 – Increases AC bonus of Monk, Kensai and Ninja (+1 per 2 points above 10).  

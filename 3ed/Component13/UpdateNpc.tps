@@ -157,14 +157,15 @@
                                   STR_VAR NpcName = ~YOSHI+.*~ ScriptName = ~YOSHIMO~ ClassName = ~THIEF~ KitName = ~THIEF_BASE~ END    
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 16 Con = 12 Int = 10 Wis = 13 Cha = 9  
-                                  STR_VAR NpcName = ~VALYG+.*~ ScriptName = ~VALYGAR~ ClassName = ~RANGER~  KitName = ~Stalker~ END     
+                                  STR_VAR NpcName = ~VALYG+.*~ ScriptName = ~VALYGAR~ ClassName = ~RANGER~  KitName = ~STALKER~ END     
 
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 9 Dex = 16 Con = 12 Int = 14 Wis = 9 Cha = 16  RemoveKnownSpells = 0
                                   STR_VAR NpcName = ~Nalia[0-9]+.*~ ScriptName = ~NALIA~ ClassName = ~BARD~   END                                    
                                   
         COPY_EXISTING_REGEXP ~Nalia[0-9]+.*\.CRE~ ~override~
-             WRITE_LONG 0x0028 25360 // change animation to bard    
+             WRITE_LONG 0x0028 25360 // change animation to bard
+             REMOVE_KNOWN_SPELL ~SPWI703~ //remove project image
                                   
                                   
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 12 Dex = 18 Con = 14 Int = 10 Wis = 14 Cha = 10  RemoveKnownSpells = 0 RemoveMemorizedSpells = 0

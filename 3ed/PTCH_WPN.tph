@@ -11,12 +11,14 @@ DEFINE_PATCH_FUNCTION ~PTCH_WPN~
 		proficiency_id=0
 	BEGIN
 			PATCH_IF (replace_label>0 AND wpn_class_label>0 AND caption_label>0) BEGIN
-				SPRINT substring_to_replace (AT "replace_label")
-				SPRINT wpn_class_string  (AT "wpn_class_label")
-				SPRINT new_substring  (AT "caption_label")
-				SPRINT new_substring EVALUATE_BUFFER ~%new_substring%: %wpn_class_string%~
-				LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
-				LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
+                PATCH_WITH_TRA ~%LANGUAGE%\proficiencies.tra~ BEGIN	
+                    SPRINT substring_to_replace (AT "replace_label")
+                    SPRINT wpn_class_string  (AT "wpn_class_label")
+                    SPRINT new_substring  (AT "caption_label")
+                    SPRINT new_substring EVALUATE_BUFFER ~%new_substring%: %wpn_class_string%~
+                    LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
+                    LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
+                END
 			END
 			
 			PATCH_IF (NOT is_melee) BEGIN

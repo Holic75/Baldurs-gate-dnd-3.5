@@ -30,10 +30,10 @@
 //	COPY_EXISTING ~F_DBONFT.SPL~ ~override~
 //		LPF  ALTER_SPELL_EFFECT INT_VAR duration  =1 timing =3  END
 	
-//same for ftr/mage
+// ftr/mage (5,10,15,20, 22, 25 ,28)
 	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000100001000010000  
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFM.SPL~ feat_type_file=~SFTCRE~ caption=~F_MBONFT~ END
-//same for ftr/mage/thief (10,20, 22, 25 ,28)
+// ftr/mage/thief (10,20, 22, 25 ,28)
 	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000000001000000000  
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRFMT.SPL~ feat_type_file=~SFTCRE~ caption=~FMTBONFT~ END
                         

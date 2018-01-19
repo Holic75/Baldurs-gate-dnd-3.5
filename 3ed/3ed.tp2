@@ -229,7 +229,7 @@ WITH_TRA ~%LANGUAGE%\equipment.tra~ BEGIN
 	OUTER_SET cleric_mage_strref=RESOLVE_STR_REF (@2005)
 END
 
-WITH_TRA ~%LANGUAGE%\proficiencies.tra~ BEGIN
+WITH_TRA ~%LANGUAGE%\equipment.tra~ BEGIN
 	//---------------------------------------------weapons overhaul  (2h weapons bonus, change proficiency to categories, restrict jester usage of weapons, dissalow berserker to use ranged weapons)
 	INCLUDE ~3ed/Component3/WeaponsOverhaul.tps~
 END

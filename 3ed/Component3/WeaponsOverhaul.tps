@@ -185,6 +185,7 @@
 			PATCH_IF ((~%SOURCE_FILE%~ STR_EQ ~MELFMET.ITM~) ) BEGIN
 				LPF ALTER_ITEM_EFFECT INT_VAR check_globals=1 match_opcode=1 parameter1=4 END  //melf meteors
 				LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = APR5d_ref new_substring_ref = APR4d_ref END
+                LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 substring_to_replace_ref = APR5d_ref new_substring_ref = APR4d_ref END
 			END 
 			ELSE PATCH_IF ((~%SOURCE_FILE%~ STR_EQ ~DARTZIL.ITM~) ) BEGIN
 				LPF ALTER_ITEM_EFFECT INT_VAR check_globals=1 match_opcode=1 parameter1=4 END  //zilzaners dart
