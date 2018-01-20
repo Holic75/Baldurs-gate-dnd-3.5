@@ -117,6 +117,9 @@ A 1st level blade or skald can use <PRO_HISHER> performance to inspire courage i
 Inspire Greatness
 A blade or skald of 9th level or higher can use <PRO_HISHER> performance to inspire greatness in all <PRO_HISHER> allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the bard. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Throws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12. Every 6 levels thereafter the bonus Hit Points increase by +5 and THAC0 and Saving Throws vs. Death bonus increases by 1.
 
+Soothing Performance
+A blade or skald of 12th level or higher can use <PRO_HISHER> performance to create an effect equivalent to the mass cure light wounds, using the bard’s level as the caster level.
+
 Inspire Heroics
 A blade or skald of 15th level or higher can inspire tremendous heroism in all <PRO_HISHER> allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the bard. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds. These bonuses increase to +5 at level 24, and +6 at level 30.
 
@@ -129,6 +132,11 @@ Jester's Song
 The jester is the master of the verbal put down, the hilarious joke, or the savage verbal lashing. Starting from level 1 <PRO_HISHER> words can inspire dread and outrage in <PRO_HISHER> enemies making them confused for next 4 rounds. The target creatures receive a Saving Throw vs. Spell with +2 bonus to avoid this effect.
 At level 5 the enemies no longer receive a bonus to their Saving Throws.
 At level 10 they receive a -2 penalty instead, which increases further to -3 at level 15, -4 at level 20, -5 at level 25 and -6 at level 30.
+
+Fascinate
+At 1st level, a jester can use <PRO_HISHER> performance to cause one creature to become fascinated with <PRO_HIMHER>. Creature must be able to see and hear the bard, and capable of paying attention to him. The bard must also be able to see the creatures affected. If creatures fails saving throw vs. Spell the creature sits quietly and observes the performance for next 4 rounds. Any obvious threat, such as someone drawing a weapon, casting a spell, or aiming a weapon at the target, automatically breaks the effect.
+Target creatures receives -1 penalty to Saving throws to resist Fascinate per 5 levels of the bard to a maximum of -6 at level 30.
+At 8th level jester fascinates all creatures around <PRO_HIMHER> in 30ft radius instead.
 
 Dirge of Doom
 A jester of 8th level or higher can use <PRO_HISHER> performance to foster a sense of growing dread in <PRO_HISHER> enemies, causing them to become shaken and receive -2 penalty to their attack rolls, Armor Class and Saving throws. To be affected, an enemy must be within 30 feet and able to see and hear the jester’s performance. The effect persists for 4 rounds. There is no Saving throw against this ability.

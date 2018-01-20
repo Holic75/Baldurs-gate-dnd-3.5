@@ -67,10 +67,10 @@
 	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000100001000010000
 						STR_VAR clab=~CLABSO01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRES.SPL~ feat_type_file=~SFTCRE~ caption=~BCSBONFT~ END
 
-//bards
-	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1000001010000100001000010000 
+//epic feats for bards
+	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=0
 						STR_VAR clab=~CLABBA+.*\.2DA~ mask_file=~~ caption=~SFTCRE~ END		
-
+	                        
 //epic feats to cleric
 	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=3 add_at_level1=0 
 						STR_VAR clab=~CLABPR+.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREC.SPL~ feat_type_file=~MFTCRE~ caption=~CEPCCFT~ END

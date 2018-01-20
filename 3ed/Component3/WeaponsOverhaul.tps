@@ -12,6 +12,7 @@
 	
 	OUTER_SET APR3s_ref =301
 	OUTER_SET APR2s_ref =302
+    OUTER_SPRINT CompositeBowStr @401
 
 	COPY ~3ed/2HSTRBonus~ ~override~ //2h weapon bonuses
      
@@ -19,6 +20,7 @@
    
 	//change description for weapons and apply protections from feats
 	COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
+        READ_STRREF 0x0008 "unid_name"
 		READ_BYTE  0x0031 "proficiency"
 		READ_SHORT 0x0038 "stack"   // to diffirintiate between throwing melee versions
 		READ_SHORT 0x001c "category" //=28 for fist weapons, =2 -armor, 68 -robes
@@ -164,6 +166,7 @@
 			ELSE BEGIN
 				LPF DELETE_EFFECT INT_VAR match_opcode = 1 match_parameter1=2 match_parameter2=1 END //remove additional attacks
 			END
+                        
 			LPF PTCH_WPN INT_VAR replace_label=2017 wpn_class_label=035 caption_label=2000 is_melee=0 END	
 			LPF SET_ITEM_USABILITY INT_VAR value=usable_by_mage STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~jester~ END
 		END    		
@@ -176,7 +179,9 @@
 			ELSE BEGIN
 				LPF DELETE_EFFECT INT_VAR match_opcode = 1 match_parameter1=2 match_parameter2=1 END //remove additional attacks
 			END
-			LPF PTCH_WPN INT_VAR replace_label=2018 wpn_class_label=035 caption_label=2000 is_melee=0 END
+            
+            is_2h = (~%unid_name%~ STR_EQ ~%CompositeBowStr%~)
+			LPF PTCH_WPN INT_VAR replace_label=2018 wpn_class_label=035 caption_label=2000 is_melee=0 is_2h END
 			LPF SET_ITEM_USABILITY INT_VAR value=usable_by_mage STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~jester~ END
 
 		END 

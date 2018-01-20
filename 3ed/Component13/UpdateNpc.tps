@@ -32,7 +32,7 @@
                                   STR_VAR NpcName = ~JAHEIR~ ScriptName = ~JAHEIRA~ ClassName = ~FIGHTER_DRUID~ END    
 
                                   
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 16 Con = 14 Int = 14 Wis = 10 Cha = 14 RemoveKnownSpells = 0
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 12 Dex = 16 Con = 12 Int = 13 Wis = 9 Cha = 15 RemoveKnownSpells = 0
                                   STR_VAR NpcName = ~GARRIC~ ScriptName = ~GARRICK~ ClassName = ~BARD~  END  
                                   
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 11 Dex = 16 Con = 14 Int = 16 Wis = 9 Cha = 10  Lockpick = 4 FindTraps = 4 RemoveKnownSpells = 0 RemoveMemorizedSpells = 0
@@ -67,7 +67,7 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 10 Int = 16 Wis = 8 Cha = 10  HideInShadows = 4 MoveSilently = 4
                                   STR_VAR NpcName = ~SKIE~ ScriptName = ~SKIE~ ClassName = ~THIEF~ KitName = ~SHADOWDANCER~   END                           
                 
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 14 Con = 14 Int = 14 Wis = 10 Cha = 14  RemoveKnownSpells = 0 
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 14 Con = 14 Int = 13 Wis = 9 Cha = 15  RemoveKnownSpells = 0 
                                   STR_VAR NpcName = ~ELDOTH~ ScriptName = ~ELDOTH~ ClassName = ~BARD~ KitName = ~BLADE~ END     
         COPY_EXISTING ~ELDOTH.CRE~ ~override~
             ADD_MEMORIZED_SPELL ~SPIN116~ #0 ~innate~ //give back poison arrows
@@ -160,7 +160,7 @@
                                   STR_VAR NpcName = ~VALYG+.*~ ScriptName = ~VALYGAR~ ClassName = ~RANGER~  KitName = ~STALKER~ END     
 
 
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 9 Dex = 16 Con = 12 Int = 14 Wis = 9 Cha = 16  RemoveKnownSpells = 0
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 12 Dex = 15 Con = 12 Int = 13 Wis = 9 Cha = 16  RemoveKnownSpells = 0
                                   STR_VAR NpcName = ~Nalia[0-9]+.*~ ScriptName = ~NALIA~ ClassName = ~BARD~   END                                    
                                   
         COPY_EXISTING_REGEXP ~Nalia[0-9]+.*\.CRE~ ~override~
@@ -183,7 +183,7 @@
         COPY_EXISTING_REGEXP ~JAN[0-9]+.*\.CRE~ ~override~ //put innate for creating ammo back
             ADD_MEMORIZED_SPELL ~SPIN829~ #0 ~innate~
             
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 16 Con = 10 Int = 16 Wis = 10 Cha = 14  RemoveKnownSpells = 0 
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 16 Con = 12 Int = 14 Wis = 10 Cha = 14  RemoveKnownSpells = 0 
                                   STR_VAR NpcName = ~HAER+.*~ ScriptName = ~HAERDALI~ ClassName = ~BARD~ KitName = ~BLADE~ END  
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 14 Con = 12 Int = 10 Wis = 18 Cha = 10  

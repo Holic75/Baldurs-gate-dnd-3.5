@@ -56,7 +56,8 @@ STR | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 
 Weight Allowance| 1 | 3 | 5 | 15 | 15 | 30 | 30 | 50 | 50 | 70 |100 | 120 | 160 | 200 | 250 | 300 | 350 | 400 | 500 | 600 | 700 | 800 | 1000 | 1200 | 1600
 Bash| 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |13 | 16 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 55 | 60 | 65 | 70 | 75 | 80
 
-Note: two-handed weapons receive 1.5 damage bonus from STRENGTH.
+Note: two-handed weapons receive 1.5 damage bonus from STRENGTH.  
+Note: Composite longbows also receive 0.5 damage bonus from STRENGTH.  
 
 #### DEXTERITY:
 – Determines to hit bonus with ranged weapons (+1 per 2 points above 9, -1 per 2 points below 10).  
@@ -82,8 +83,8 @@ Note: wearing heavy armor may restrict maximum dexterity bonus to AC a character
 – Determines the duration of the effect of Maze spell cast on character.     
 Note: A character with an Intelligence score of 8 or less is illiterate and cannot use scrolls or most wands regardless of her class.
 
-STR | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 |
---- | --- | --- | --- |--- |--- |--- |--- |--- |---|--- | --- | --- | --- |--- |--- |--- |--- |--- |---|--- | --- | --- | --- |--- |--- 
+INT | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 |
+--- | --- | --- | --- |--- |--- |--- |--- |--- |---|--- | --- | --- | --- |--- |--- |--- |--- |--- |---|--- | --- | --- | --- |--- |---
 Chance to learn spell| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 20 | 30 |40 | 50 | 60 | 70 | 80 | 90 | 95 | 99 | 99 | 99 | 99 | 99 | 99 | 99 | 99
 Number of spells per level| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 4 |6 | 8 | 10 | 12 | 14 | 16 | 18 | 20 | All | All | All | All | All | All | All
 
@@ -829,7 +830,8 @@ Advantages:
 – Moves 2 points faster than other characters.  
 – Can use Rage ability (starts with one use at level 1 then get another one at level 5 and every 5 levels thereafter), though Avenger never gets benefits of Greater or Mighty Rage.  
 ```
-RAGE: The enraged status lasts for 10 rounds and provides a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+RAGE: The character is enraged  which grants <PRO_HIMHER> a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class, and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+The enraged state lasts 3 rounds + 1 round per 2 points of newly modified Constitution above 10.
 At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
 ```
 – 17th level: Tireless Rage: Avenger is no longer fatigued after the rage ends.  
@@ -1000,7 +1002,7 @@ CLASS FEATURES:
 – May wear helmets.   
 – May not wear armor heavier than splint mail.    
 – May use nay shield (excluding large shield).  
-– Receives one bonus Feat at level 5, 10, 15, 20, 22 and 28.  
+– Receives one bonus Feat at levels 22 and 28.  
 – Thieving abilities: Pick Pockets.  
 – Increased Lore score.  
 – May cast arcane spells up to level 6.  
@@ -1072,6 +1074,7 @@ DEFENSIVE SPIN: During the next 4 rounds, the Blade is rooted to the spot and ga
 List of Bardic Performances:  
 Inspire Courage (staring from level 1)  
 Inspire Greatness (starting from level 9)  
+Soothing Performance (starting from level 12)  
 Inspire Heroics (starting from level 15)  
 Song of Requiem (starting from level 24)  
 
@@ -1081,10 +1084,11 @@ Disadvantages:
 
 ### SKALD
 Advantages:  
-– +1 bonus to hit and damage rolls.  
+– Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 9 and every 5 levels thereafter to a maximum of 25% at level 29.  
 – Can use Rage (starts with one use at level 2 then gets another every 4 levels thereafter), though Skald never gets benefits of Greater or Mighty Rage.  
 ```
-RAGE: The enraged status lasts for 10 rounds and provides a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+RAGE: The character is enraged  which grants <PRO_HIMHER> a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class, and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+The enraged state lasts 3 rounds + 1 round per 2 points of newly modified Constitution above 10.
 At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
 ```
 – 17th level: Tireless Rage: Skald is no longer fatigued after the rage ends.  
@@ -1092,6 +1096,7 @@ At the end of the rage, the character loses the rage modifiers and becomes fatig
 List of Bardic Performances:  
 Inspire Courage (staring from level 1)  
 Inspire Greatness (starting from level 9)  
+Soothing Performance (starting from level 12)  
 Inspire Heroics (starting from level 15)  
 Song of Requiem (starting from level 24)  
 
@@ -1114,6 +1119,7 @@ The jester is the master of the verbal put down, the hilarious joke, or the sava
 At level 5 the enemies no longer receive a bonus to their Saving Throws.
 At level 10 they receive a -2 penalty instead, which increases further to -3 at level 15, -4 at level 20, -5 at level 25 and -6 at level 30.
 ```
+Fascinate (starting from level 1)
 Dirge of Doom (starting from level 8)  
 Frightening Tune (starting from level 14)  
 Song of Requiem (starting from level 24)  
@@ -2446,9 +2452,9 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Dorn - Blackguard (18/ 10/ 13/ 8/ 13/ 15)
 #### Dynaheir - Sorcerer (12/ 14/ 14/ 10/ 9/ 17)
 #### Edwin - Conjurer (10/ 12/ 14/ 18/ 9 / 10)
-#### Eldoth - Blade (14/ 14/ 14/ 14/ 10/ 14)
+#### Eldoth - Blade (14/ 14/ 14/ 13/ 9/ 15)
 #### Faldorn - Avenger (14/ 14/ 14/ 10/ 16/ 10)
-#### Garrick - Bard (10/ 16/ 14/ 14/ 10/ 14)
+#### Garrick - Bard (12/ 16/ 12/ 13/ 9/ 15)
 #### Imoen - Fighter/Mage/Thief (9/ 16/ 12/ 16/ 11/ 10)
 #### Jaheira - Fighter/Druid (14/ 14/ 14/ 10/ 16/ 10) - as half-elf will receive +2 bonus to any ability score at level 1
 #### Kagain - Dwarven Defender (16/ 10/ 19/ 10/ 11/ 8)
@@ -2477,12 +2483,12 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Imoen - Fighter/Mage/Thief (9/ 16/ 12/ 16/ 11/ 10)  
 #### Yoshimo - Fighter/Thief (14/ 16/ 14/ 14/ 10/ 10)
 #### Valygar - Stalker (16/ 16/ 12/ 10/ 13/ 9)
-#### Nalia - Bard (9/ 16/ 12/ 14/ 9/ 16)
+#### Nalia - Bard (12/ 15/ 12/ 13/ 9/ 16)
 #### Mazzy - Kensai (12/ 18/ 14/ 10/ 14/ 10)
 #### Keldorn - Inquisitor (16/ 10/ 14/ 10/ 10/ 16)
 #### Korgan - Berserker (18/ 12/ 18/ 8/ 8/ 8)
 #### Jan - Mage/Thief (10/ 16/ 16/ 16/ 9/ 9)
-#### Haerdalis - Blade (14/ 16/ 10/ 16/ 10/ 14)
+#### Haerdalis - Blade (14/ 16/ 12/ 14/ 10/ 14)
 #### Cernd - Shapeshifter (10/ 14/ 12/ 10/ 18/ 10)
 #### Aerie - Cleric/Mage (10/ 18/ 10/ 16/ 16/ 12)
 #### Anomen - Fighter/Cleric (15/ 14/ 14/ 10/ 15/ 10)
