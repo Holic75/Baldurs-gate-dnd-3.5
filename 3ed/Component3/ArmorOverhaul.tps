@@ -220,19 +220,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
 	
   END ELSE PATCH_IF (category = ShieldsCategory ) BEGIN
-    //shields ->supress effects of shield spell // move to spells section
-  
-	LPF GET_SPELL_EFFECT_VALUES INT_VAR header =0 match_opcode = 0 match_parameter2 = 0 RET ac_bonus = parameter1 found = found_match END
-	
-	PATCH_IF (found) BEGIN
-	
-		ac_bonus = (ac_bonus<=4)*ac_bonus + 4*(ac_bonus>4)
-		FOR (i=1;i<=ac_bonus;i=i+1) BEGIN
-			SPRINT resource EVALUATE_BUFFER ~SHLD_AC%i%~
-			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource END
-			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource END
-		END
-	END
+
     //update shield bonuses, allow bards (except jesters who can use only bucklers) to use all shields, dissalow everyone except fighter to use shields
     LPF SET_ITEM_USABILITY INT_VAR value = 1 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~bard~ END
     LPF SET_ITEM_USABILITY INT_VAR value = usable_by_thief STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~jester~ END
@@ -287,6 +275,20 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
         LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_mage_cleric~ END
     
     END
+    
+    //shields ->supress effects of shield spell // move to spells section
+  
+	LPF GET_SPELL_EFFECT_VALUES INT_VAR header =0 match_opcode = 0 match_parameter2 = 0 RET ac_bonus = parameter1 found = found_match END
+	
+	PATCH_IF (found) BEGIN
+	
+		ac_bonus = (ac_bonus<=4)*ac_bonus + 4*(ac_bonus>4)
+		FOR (i=1;i<=ac_bonus;i=i+1) BEGIN
+			SPRINT resource EVALUATE_BUFFER ~SHLD_AC%i%~
+			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource END
+			LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource END
+		END
+	END
 	
   END ELSE PATCH_IF (category = ArmorCategory AND usable_by_mage) BEGIN//robes (category from armor to cloak and robes)
   

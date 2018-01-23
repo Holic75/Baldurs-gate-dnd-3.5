@@ -60,11 +60,11 @@ OUTER_FOR (player_id=1;player_id<=6;player_id=player_id+1) BEGIN
 		//saves
         
 
-		WRITE_BYTE   0x0054   14 - lvl_i / 3 //Death
+		WRITE_BYTE   0x0054   12 - lvl_i / 2 //Death
 		WRITE_BYTE   0x0055   12 - lvl_i / 2//Wand
-		WRITE_BYTE   0x0056   14 - lvl_i / 3 //Polymorph
+		WRITE_BYTE   0x0056   12 - lvl_i / 2 //Polymorph
 		WRITE_BYTE   0x0057   12 - lvl_i / 2 //Breath
-		WRITE_BYTE   0x0058   14 - lvl_i / 2 //Spells
+		WRITE_BYTE   0x0058   14 - lvl_i / 3 //Spells
 	
 		WRITE_BYTE   0x0234   i //level
 		WRITE_BYTE   0x0238   13+i/4 //Str

@@ -114,11 +114,11 @@ END
 
 ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
 	COPY_EXISTING ~BDHELM11.ITM~ ~override~  //bard's hat
-		LPF ALTER_ITEM_EFFECT INT_VAR check_globals = 1 match_opcode = 99  opcode =6 parameter1 =2 parameter2 = 0 END
+		LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 99  opcode =6 parameter1 =2 parameter2 = 0 END
 		READ_LONG 0x0054 ~id_descr_strref~
 		STRING_SET_EVALUATE %id_descr_strref% @3002
-	COPY_EXISTING ~BDHELM11.ITM~ ~override~  //circlet of lost souls
-		LPF ALTER_ITEM_EFFECT INT_VAR check_globals = 1 match_opcode = 191  opcode =6 parameter1 =2 parameter2 = 0 END
+	COPY_EXISTING ~BDHELM16.ITM~ ~override~  //circlet of lost souls
+		LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 191  opcode =6 parameter1 =2 parameter2 = 0 END
 		READ_LONG 0x0054 ~id_descr_strref~
 		STRING_SET_EVALUATE %id_descr_strref% @3003
 END

@@ -207,7 +207,7 @@ WITH_TRA ~%LANGUAGE%\archery.tra~ BEGIN
 		COPY ~3ed/Feats/PermanentAbilities/QuickenMagic/QUICKEN.SPL~  ~override/QUICK%i%FT.SPL~
             LPF ALTER_SPELL_EFFECT INT_VAR  parameter1=i END
             FOR (j=1;j<i;j=j+1) BEGIN
-                SPRINT resource EVALUATE_BUFFER ~QUICK%i%FT~
+                SPRINT resource EVALUATE_BUFFER ~QUICK%j%FT~
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 duration =1 insert_point = 0  STR_VAR resource END
             END
 

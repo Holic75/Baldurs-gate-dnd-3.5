@@ -171,6 +171,8 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 12 Dex = 18 Con = 14 Int = 10 Wis = 14 Cha = 10  RemoveKnownSpells = 0 RemoveMemorizedSpells = 0
                                   STR_VAR NpcName = ~MAZZY+.*~ ScriptName = ~MAZZY~ ClassName = ~FIGHTER~ KitName= ~KENSAI~   END                                         
          //STRING_SET 11569  @002 //change biography (remove line about not being paladin)
+        COPY_EXISTING_REGEXP ~MAZZY+.*\.CRE~ ~override~ //replace chainmail with studded leather + 2
+            	REPLACE_CRE_ITEM ~LEAT05~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~
          
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 18 Dex = 12 Con = 18 Int = 8 Wis = 8 Cha = 8  
                                   STR_VAR NpcName = ~KORGAN+.*~ ScriptName = ~KORGAN~ ClassName = ~FIGHTER~ KitName = ~BERSERKER~ END      
