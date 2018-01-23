@@ -1,7 +1,33 @@
 
-//---------------------------------------------update enemy profciencies and saves/dcs
+//---------------------------------------------update enemy stats, profciencies and saves/dcs
 
+        OUTER_SET row_size = 10
+		COPY ~3ed/Classes/Enemies/ClassStats.2DA~ ~override~ 
+			COUNT_2DA_ROWS row_size n_rows			
+			FOR (i=1;i<n_rows;i=i+1) BEGIN
+				READ_2DA_ENTRY %i% 1 row_size class_name
+                READ_2DA_ENTRY %i% 2 row_size str
+                READ_2DA_ENTRY %i% 3 row_size dex
+                READ_2DA_ENTRY %i% 4 row_size con
+                READ_2DA_ENTRY %i% 5 row_size int
+                READ_2DA_ENTRY %i% 6 row_size wis
+                READ_2DA_ENTRY %i% 7 row_size cha
+                READ_2DA_ENTRY %i% 8 row_size fort
+                READ_2DA_ENTRY %i% 9 row_size ref
+                READ_2DA_ENTRY %i% 10 row_size will
+               
+				DEFINE_ASSOCIATIVE_ARRAY ClassStr BEGIN  "%class_name%" => "%str%" END
+                DEFINE_ASSOCIATIVE_ARRAY ClassDex BEGIN  "%class_name%" => "%dex%" END
+                DEFINE_ASSOCIATIVE_ARRAY ClassCon BEGIN  "%class_name%" => "%con%" END
+                DEFINE_ASSOCIATIVE_ARRAY ClassInt BEGIN  "%class_name%" => "%int%" END
+                DEFINE_ASSOCIATIVE_ARRAY ClassWis BEGIN  "%class_name%" => "%wis%" END
+                DEFINE_ASSOCIATIVE_ARRAY ClassCha BEGIN  "%class_name%" => "%cha%" END
+                DEFINE_ASSOCIATIVE_ARRAY ClassFort BEGIN  "%class_name%" => "%fort%" END
+                DEFINE_ASSOCIATIVE_ARRAY ClassRef BEGIN  "%class_name%" => "%ref%" END
+                DEFINE_ASSOCIATIVE_ARRAY ClassWill BEGIN  "%class_name%" => "%will%" END
+			END
 
+    
     ACTION_DEFINE_ASSOCIATIVE_ARRAY ProfRemapCre BEGIN
         90 => 89
         91 => 89
@@ -58,6 +84,52 @@
         
         READ_BYTE 0x0271 general_id
         READ_BYTE 0x0272 race_id
+        READ_BYTE 0x0273 class_id
+        LOOKUP_IDS_SYMBOL_OF_INT class_name ~class~ ~%class_id%~
+        
+        READ_BYTE 0x0238 CurrentStr
+        READ_BYTE 0x023a CurrentInt
+        READ_BYTE 0x023b CurrentWis
+        READ_BYTE 0x023c CurrentDex
+        READ_BYTE 0x023d CurrentCon
+        READ_BYTE 0x023e CurrentCha 
+        
+        READ_BYTE 0x0054 CurrentDeath
+        READ_BYTE 0x0055 CurrentWands
+        READ_BYTE 0x0056 CurrentPoly
+        READ_BYTE 0x0057 CurrentBreath
+        READ_BYTE 0x0058 CurrentSpell
+        
+        READ_BYTE 0x0234 Level
+              
+        PATCH_TRY		//try to update stats
+            SET lvl_saves = Level<=20 ? Level : 20
+			SET TargetStr =  $ClassStr(~%class_name%~)
+            SET TargetDex =  $ClassDex(~%class_name%~)
+            SET TargetCon =  $ClassCon(~%class_name%~)
+            SET TargetInt =  $ClassInt(~%class_name%~)
+            SET TargetWis =  $ClassWis(~%class_name%~)
+            SET TargetCha =  $ClassCha(~%class_name%~)
+            SET TargetFort = ($ClassFort(~%class_name%~) == 1)	? (12 - lvl_saves/2) : (14 - lvl_saves/3)
+            SET TargetRef =  ($ClassRef(~%class_name%~) == 1)	? (12 - lvl_saves/2) : (14 - lvl_saves/3)
+            SET TargetWill =  ($ClassWill(~%class_name%~) == 1) ? (12 - lvl_saves/2) : (14 - lvl_saves/3)
+            WRITE_BYTE 0x0238 (CurrentStr < TargetStr) ? TargetStr : CurrentStr
+            WRITE_BYTE 0x023a (CurrentInt < TargetInt) ? TargetInt : CurrentInt
+            WRITE_BYTE 0x023b (CurrentWis < TargetWis) ? TargetWis : CurrentWis
+            WRITE_BYTE 0x023c (CurrentDex < TargetDex) ? TargetDex : CurrentDex
+            WRITE_BYTE 0x023d (CurrentCon < TargetCon) ? TargetCon : CurrentCon
+            WRITE_BYTE 0x023e (CurrentCha < TargetCha) ? TargetCha : CurrentCha
+        
+            WRITE_BYTE 0x0054 (CurrentDeath > TargetFort) ? TargetFort : CurrentDeath
+            WRITE_BYTE 0x0055 (CurrentWands > TargetRef) ? TargetRef : CurrentWands
+            WRITE_BYTE 0x0056 (CurrentPoly > TargetFort) ? TargetFort : CurrentPoly
+            WRITE_BYTE 0x0057 (CurrentBreath > TargetRef) ? TargetRef : CurrentWands
+            WRITE_BYTE 0x0058 (CurrentSpell  > TargetWill) ? TargetWill : CurrentSpell
+	
+		WITH		
+			DEFAULT
+					
+		END
     
         PATCH_IF (race_id == race_dragon_id) BEGIN //remove backstab immunity from dragons
             LPF DELETE_EFFECT INT_VAR match_opcode = 292 END           

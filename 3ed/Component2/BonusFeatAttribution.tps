@@ -38,8 +38,8 @@
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRFMT.SPL~ feat_type_file=~SFTCRE~ caption=~FMTBONFT~ END
                         
                         
-//same for ftr/mage/cleric
-	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000100001000010000  
+//same for ftr/mage/cleric (10,20,22,28)
+	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001000000100001000000000  
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRFMC.SPL~ feat_type_file=~SFTCRE~ caption=~FMCBONFT~ END
 						
 //add bonus feats to ftr/thief every 3 levels starting from lvl1

@@ -911,8 +911,40 @@
     COPY_EXISTING ~SPPR603D.SPL~ ~override~
         LPF ALTER_SPELL_EFFECT INT_VAR power = 6 END
         
-        
+    //fix mislead, project image     and simulacrum
+	COPY_EXISTING ~SPWI607.SPL~ ~override~
+		//spell starts from lvl 12 we need to start it from level 9
+		LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 insert_point=1 END
+		LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 insert_point=1 END
+		LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 insert_point=1 END
+		
+		FOR (i=1;i<=4;i=i+1) BEGIN
+			SET lvl = 1+ (7+i)*(i>1)
+			LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = lvl END
+			LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high = (i + 8)*6 END
+		END
 
+    COPY_EXISTING ~MISLEAD.SPL~ ~override~    
+        //dissalow attacks to caster
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 1 target = 1 timing = 9 duration = 1 END
+        SET parameter1 = 0 - 150994945 
+        LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 1 match_parameter2 = 1 parameter1  END
+        
+    COPY_EXISTING    ~SIMULACR.SPL~ ~override~
+        //disallow using items
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 6 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 8 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 9 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 10 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 11 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 12 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 1   parameter1 = 50 parameter2 = 2 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        
+    COPY_EXISTING ~PROJIMAG.SPL~ ~override~    
+        //dissalow attacks to caster
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 1 target = 1 timing = 9 duration = 1 END
+        SET parameter1 = 0 - 150994945 
+        LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 1 match_parameter2 = 1 parameter1  END           
 
 
         

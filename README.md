@@ -975,17 +975,17 @@ Disadvantages:
 Advantages:  
 – +10% bonus to Hide In Shadows and Move Silently.  
 – Hide In Plain Sight: A Shadowdancer may hide in shadows even while being observed.  
-– May cast Shadowstep once per day. Gains one use at level 1, then at level 5 and an additional use every 5 levels thereafter.  
+– May cast Shadowstep once per day starting from level 4. Gains an additional use every 5 levels thereafter.  
 ```
 SHADOWSTEP: Step into the Shadow Plane and move for 7 seconds while others are frozen in time. The Shadowdancer cannot attack or cast spells while in the Shadow Plane.
 ```
-– May cast Shadowform once per day starting from level 6. Gains an additional use every 5 levels thereafter.
+– May cast Shadowform once per day starting from level 7. Gains an additional use every 6 levels thereafter.
 ```
 SHADOW FORM:
 This ability temporarily transposes some of the user's tissue with shadow-material, making the subject partially incorporeal. For the next 5 rounds, all physical attacks directed against the Shadowdancer only deal 50% of their normal damage. During this time, the Shadowdancer is also under the effects of Improved Invisibility and cannot be directly targeted by spells.
 ```
-– May cast Mislead once per day starting from level 9. Gains an additional use every 5 levels thereafter.  
-– Slippery Mind: +1 bonus to Saving Throws.  
+– May cast Simulacrum once per day starting from level 10. Gains an additional use every 5 levels thereafter.  
+– Slippery Mind: +1 bonus to Saving Throws vs. Spell.  
 – May use Shadow Maze ability once per day starting from level 21. Gains an additional use at level 26.  
 ```
 SHADOW MAZE:
@@ -1470,10 +1470,9 @@ CLASS FEATURES:
 – Can cast two arcane spells less per day than trueclass mage.  
 – Cannot cast arcane spells of 8th and 9th levels.  
 – Can cast three divine spells less per day than trueclass cleric.  
-– Cannot cast divine spells of 6th and 7th levels.  
-– Gets one bonus feat at level 5 and every 5 levels thereafter up to level 20.  
+– Cannot cast divine spells of 6th and 7th levels.    
 – Versatile Spellcasting: starting from level 7 can trade one first level cleric spell slot for a second level wizard spell slot, this exchange is reversible; every three levels thereafter can trade next level cleric spell slot for a wizard spell slot one level higher.  
-– Gets one bonus feat at levels 22, 25 and 28.  
+– Gets one bonus feat at levels 10, 20, 22, 25 and 28.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels thereafter).  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting arcane spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.  
 – Can use Spontaneous Battlecasting.
@@ -2012,9 +2011,9 @@ Stat\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 19-20 | 2 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0
 21-22 | 2 | 2 | 1 | 1 | 1 | 1 | 0 | 0 | 0
 23-24 | 2 | 2 | 2 | 1 | 1 | 1 | 1 | 0 | 0
-25    | 2 | 2 | 2 | 2 | 1(2)| 1(2) | 1 | 0 |
+25    | 2 | 2 | 2 | 2 | 1(2)| 1(2) | 1 | 0 
 
-Note: Since priests can not cast 8th level spells, they receive another 6th and 7th spell slots instead.
+Note: Since priests can not cast 8th level spells, they receive another 6th and 7th level spell slots instead when corresponding stat is 25.
 
 
 ### Cleric domain spells
@@ -2050,7 +2049,7 @@ Touched creature dies if fails Savingthrow vs. Death with penalty equal to one f
 For 10 seconds character receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage with every hit.
 
 #### Dispelling Touch
-You remove magical effects from a creature by touching it.
+You remove magical effects from a creature by touching it with the probability equal to 60% + 2% per caster level.
 
 ### Sorcerer bloodline spells
 

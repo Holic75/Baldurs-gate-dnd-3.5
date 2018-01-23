@@ -4,6 +4,7 @@ THEN
 	RESPONSE #100
 		ChangeEnemyAlly(Myself,CONTROLLED)
 		MakeGlobal()
+        SetGlobal("ANM_CMP_SUM%player_id%","GLOBAL",1)
 		Continue()
 END
 
@@ -33,6 +34,7 @@ IF
 		PartyRested()
 THEN
 	RESPONSE #100
+        Kill(Myself)
 		DestroySelf()
 END
 

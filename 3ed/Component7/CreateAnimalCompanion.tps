@@ -103,6 +103,7 @@ OUTER_FOR (player_id=1;player_id<=6;player_id=player_id+1) BEGIN
 	//string for baldur.bcs
 	OUTER_SPRINT kill_string EVALUATE_BUFFER 
 	~%kill_string%
+    ActionOverride("%script_name%",Kill(Myself))
 	ActionOverride("%script_name%",DestroySelf())~
 	
 	//companion script

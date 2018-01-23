@@ -776,21 +776,28 @@ END
 	// ---------------------------------------- shadowdancer special abilities (mislead and shadow form)
 	COPY ~3ed/Classes/Shadowdancer~ ~override~
 	
-	COPY_EXISTING ~SPWI607.SPL~ ~override~
-		//spell starts from lvl 12 we need to start it from level 9
-		LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 insert_point=1 END
-		LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 insert_point=1 END
-		LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 insert_point=1 END
+    COPY_EXISTING ~SPSD01.SPL~ ~override~ //remove bonus from non spell saves
+        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 33 END 
+        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 34 END
+        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 35 END
+        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 36 END
+    //add levels to simulacrum   
+	COPY_EXISTING ~SPWI804.SPL~ ~override~
+		//spell starts from lvl 16 we need to start it from level 9
+        FOR (i=1;i<16;i=i+1) BEGIN
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 insert_point=1 END
+        END
 		
-		FOR (i=1;i<=4;i=i+1) BEGIN
+		FOR (i=1;i<=16;i=i+1) BEGIN
 			SET lvl = 1+ (7+i)*(i>1)
 			LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = lvl END
 			LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high = (i + 8)*6 END
 		END
+
 	
-	
-	COPY_EXISTING ~SPWI607.SPL~ ~override\SH_MSLD.SPL~
+	COPY_EXISTING ~SPWI804.SPL~ ~override\SH_COPY.SPL~
 		LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_type = 4 END //make it innate
+        LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~SPWI804~ resource = ~SH_COPY~ END
 	
 	//add shadow form if it is not there
 	ACTION_IF NOT (~%GameId%~ STR_EQ ~Bg2~) BEGIN
