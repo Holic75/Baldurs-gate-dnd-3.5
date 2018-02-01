@@ -9,6 +9,7 @@ CLASS FEATURES:
 – May get seven stars in any weapon category.
 – Gets one bonus feat at level 1 and at every even level.
 – At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 at level 4 and every 4 levels thereafter (up to a maximum of +5 at level 16).
+– At 9th level receives +1 to hit and damage bonus with all weapon categories, this bonus is increased to +2 at level 17 and +3 at level 25. 
 - Can use Hardiness once per day starting from level 21, gains an additional use at level 26.
 
 HARDINESS:
@@ -123,7 +124,7 @@ SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrific
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, and finally at level 12 Armored Arcana: Splint Mail Casting.
-– Gets one bonus feat at levels 10, 20, 22, 25 and 28.
+– Gets one bonus feat at levels 8, 14, 20, 22, 25 and 28.
 – Hit Die: d6
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph vs. Breath Weapon, vs. Wand and vs. Spell
 
@@ -136,9 +137,10 @@ CLASS FEATURES:
 – May wear helmets.
 – May wear any armor a druid can and use any weapon and shield (excluding large shield).
 – Can cast two spell per day less than trueclass druid.
+– May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
 – Gets one bonus combat feat at every 4th level up to level 20.
 – May spontaneously convert memorized spells to summoning ones.
-– May select one racial enemy at levels 1, 5 and every 5 levels thereafter, which grants a +4 bonus on damage rolls against the selected enemy race.
+– May select one racial enemy at levels 1, 10, 20 and 30 which grants a +2 bonus on to hit and damage rolls against the selected enemy race. These bonuses increase by 1 at every 10th level.
 – May call for an animal companion who fights for <PRO_HISHER> side.
 – Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.
 – Gets one bonus feat at levels 22, 25 and 28.
@@ -167,7 +169,6 @@ CLASS FEATURES:
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 
 – At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
-– Gets one bonus magic feat at levels 22, 25 and 28.
 – Hit Die: d7
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -289,7 +290,7 @@ Advantages:
 – Immune to sneak attack.
 – May use Defensive Stance once per day. Gains one use at level 1, one use at level 4, and an additional use every 4 levels thereafter.
 
-DEFENSIVE STANCE: When <PRO_HESHE> adopts a defensive stance, a Dwarven Defender gains phenomenal strength and durability, but can move only at 50% of its speed. Dwarven Defender gains +2 to Strength, +2 to Constitution, a +1 bonus on all savingthwrows, and a +2 dodge to AC. A defensive stance lasts for a number of rounds equal to 3 + 1 per 2 points of the character’s (newly improved) Constitution above 10.    
+DEFENSIVE STANCE: When <PRO_HESHE> adopts a defensive stance, a Dwarven Defender gains phenomenal strength and durability, but can move only at 50% of its speed. Dwarven Defender gains +2 to Strength, +2 to Constitution, a +1 bonus on all savingthrows, and a +2 dodge to AC. A defensive stance lasts for a number of rounds equal to 3 + 1 per 2 points of the character’s (newly improved) Constitution above 10.    
 At the end of the Defensive Stance, the character becomes fatigued (-2 penalty to Strength) for the duration of 5 rounds.
 At 10th level, Dwarven Defender’s bonuses to Strength, Constitution and AC each increase to +4, and bonus on saves increases to +2. 
 At 17th level, the character is no longer subject to fatigue effects after Defensive Stance.
@@ -448,7 +449,7 @@ CLASS FEATURES:
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
 
 – Bonus Feats: Ranger gets Style Focus in Two Weapon Fighting for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12, Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.
-– May select one racial enemy at levels 1, 5 and every 5 levels thereafter which grants a +4 bonus on damage rolls against the selected enemy race.
+– May select one racial enemy at levels 1, 5 and every 5 levels thereafter which grants a +2 bonus on to hit and damage rolls against the selected enemy race. These bonuses increase by 1 at every 5th level.
 – May use the Charm Animal ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.
 – May use the Hide In Shadows ability.
 – May call for an animal companion who fights for <PRO_HISHER> side.
@@ -467,8 +468,12 @@ CLASS FEATURES:
 – May wear helmets.
 – May use any weapon and shield (excluding large shield).
 – May not wear armor heavier than splint mail.
-– Bonus Feats: Cleric/Ranger gets Style Focus in Two Weapon Fighting for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12, Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.
-– May select one racial enemy at levels 1, 5 and every 5 levels thereafter which grants a +4 bonus on damage rolls against the selected enemy race.
+– Has Evasion passive ability.
+
+EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
+
+
+– May select one racial enemy at levels 1, 10, 20 and 30 which grants a +2 bonus on to hit and damage rolls against the selected enemy race. These bonuses increase by 1 at every 10th level.
 – May use the Charm Animal ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.
 – May use the Hide In Shadows ability.
 – Can cast two spells per day less than trueclass clerics.
@@ -485,7 +490,7 @@ All hostile undead creatures suffer 1d6 points of magical damage per Channel Ene
 – Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.
 – At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
 – Alignment restricted to good.
-– Gets one bonus feat at level 28.
+– Gets one bonus feat at levels 22 and 28.
 – Hit Die: d9
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell
 ~
@@ -494,7 +499,7 @@ All hostile undead creatures suffer 1d6 points of magical damage per Channel Ene
 
 Advantages:
 – Bonus Feats: Archer gets Style Focus in Archery for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12 Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.
-– Once per day can create 40 arrows (starts with normal arrows at level 1, which become +1 at lvl 5, +2 at lvl 10, +3 at lvl 15 and +4 at lvl 20).
+– Once per day can create 40 arrows (starts with normal arrows at level 1, which become +1 at level 5, +2 at level 10, +3 at level 15 and +4 at level 20).
 – May use the Called Shot ability once per day. Gains one use at level 4 and an additional use every 2 levels thereafter.
 
 CALLED SHOT: All successful ranged attacks within the next 10 seconds have the following cumulative effects besides normal damage, according to the level of the Archer:
@@ -512,7 +517,7 @@ Disadvantages:
 
 Advantages:
 – +15% to Move Silently and Hide In Shadows.
-– Has a telepathic link with his animal companion which allows them to fight as one. When fighting close to each other Beast master and his animal companion get +1 To Hit, Damage, AC and Saving Throws. These bonuses increase to +2 at level 7,  +3 at level 13 and +4 at level 19, +5 at level 25 and +6 at level 30.
+– Has a telepathic link with his animal companion which allows them to fight as one. When fighting close to each other Beast master and <PRO_HISHER> animal companion get +1 To Hit, Damage, AC and Saving Throws. These bonuses increase to +2 at level 6,  +3 at level 12 and +4 at level 18, +5 at level 24 and +6 at level 30.
 – Gets one more bonus feat at level 22.
 – Hit Die: d12.
 
@@ -525,8 +530,14 @@ Disadvantages:
 
 Advantages:
 – +20% to Move Silently and Hide In Shadows.
-– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.
-– Racial Enemy is replaced with Improved Racial Enemy which gives Stalkers +4 bonus on to hit and damage rolls and +2 bonus to AC and savingthrows vs selected races.
+– Racial Enemy is replaced with Improved Racial Enemy.
+
+IMPROVED RACIAL ENEMY: At 1st level, a stalker may select a type of creature from among the list for which <PRO_HESHE> gets +2 bonus on to hit and damage rolls as well as +2 bonus to AC and savingthrows. At every 5th level to hit bonus is increased by 1 and damage bonus is increased by 2 and stalker can select an additional racial enemy.
+
+– May use Smite Racial Enemy ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.
+
+SMITE RACIAL ENEMY: For 10 seconds Stalker receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Wisdom above 10 and deals 1 extra point of damage per level against racial enemies.
+
 – May be of any alignment.
 – Gets one more bonus feat at level 22.
 
@@ -557,7 +568,7 @@ All hostile living creatures suffer 1d6 points of magical damage per Channel Ene
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).
 – At 1st level chooses two domains that grant <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
 – Gains access to the following epic spells: Globe of Blades (at level 19), Mass Raise Dead (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Implosion (at level 23) and Summon Deva (at level 24).
-– Gets one bonus feat at levels 22, 25 and 28.
+– Gets one bonus feat at levels 22 and 28.
 – Hit Die: d8
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 ~
@@ -584,7 +595,7 @@ All hostile living creatures suffer 1d6 points of magical damage per Channel Ene
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).
 – At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
 – Versatile Spellcasting: starting from level 7 can trade one first level cleric spell slot for a second level wizard spell slot, this exchange is reversible; every two levels thereafter can trade next level cleric spell slot for a wizard spell slot one level higher.
-– Gets one bonus feat at levels 22, 25 and 28.
+– Gets one bonus magic feat at levels 22, 25 and 28.
 – Hit Die: d6
 – Low THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -685,7 +696,6 @@ CLASS FEATURES:
 – 8th level: While using Shapeshift ability a Druid can alternatively transform into fire salamander, sword spider or baby wyvern.
 – 15th level: Becomes immune to poison.
 – 16th level: While using Shapeshift ability a Druid can alternatively take form of large fire or earth elementals.
-– 18th level: Gains 10% resistance to cold, fire, electricity, and acid; gains a further 10% resistance at levels 21 and 24.
 – 20th level: While using Shapeshift ability a Druid can alternatively take form of greater fire or earth elementals.
 – 21th level: May call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.
 – Gains access to the following epic spells: Elemental Summoning (at level 19), Aura of Flaming Death (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Greater Elemental Summoning (at level 23) and Nature's Avatar (at level 24).
@@ -847,7 +857,7 @@ Disadvantages:
 
 Advantages:
 – +1 bonus to Armor Class at 1st level, plus an additional +1 bonus every 5 levels.
-– THAC0 and APR progression of a FIGHTER.
+– High THAC0/APR progression.
 – At first level receives for free Combat Prowess(1):Weapon Finesse and Tactics(1):Insightful Strike feats.
 – At 11th level Swashbuckler receives +1 bonus to all savingthrows.
 – At 14th level each critical hit of Swashbuckler reduces target's Strength by 2 points for 10 rounds (cumulatively).
@@ -875,12 +885,12 @@ Advantages:
   Starting from level 16 ninja can alternatively spend one point from ki pool to place <PRO_HIMHER>self under the effect of Improved Invisibility spell or use True Sight ability for 10 seconds.
   Starting from level 19 ninja can alternatively spend one point from ki pool to place <PRO_HIMHER>self under the effect of Improved Haste spell for 10 seconds.
 
-– Gets one bonus feat at levels 22 and 28.
+
 
 Disadvantages:
 – May not wear any armor or use shields.
 – May only distribute 16 skill points per level among thieving skills (24 points at level 1).
-– Do not gain bonus feats as trueclass thieves do.~
+– Do not gain bonus feats at levels 13, 16 and 25 as trueclass thieves do.~
 
 	@0410001=~ninja~
 	@0410002=~Ninja~
@@ -967,11 +977,14 @@ A bard of 24th level or higher can use this epic performance drains the very lif
 @044=~BLADE: The Blade is an expert fighter and adventurer whose bardic acting abilities make <PRO_HIMHER> appear more intimidating and fearsome. This Bard's fighting style is flashy and entertaining, but is also lethally dangerous.
 
 Advantages:
-– May use the Offensive Spin and Defensive Spin abilities once per day. Gains one use each at level 2  and an additional use every 4 levels thereafter.
+– May use the Battle Dance ability once per day. Gains one use at level 2  and an additional use every 4 levels thereafter.
+
+BATTLE DANCE:
+A blade is trained to use <PRO_HISHER> performance to improve <PRO_HISHER> battle skills. A blade can enter either offensive or defensive spin.
 
 OFFENSIVE SPIN: During the next 4 rounds, the Blade's movement rate doubles and <PRO_HESHE> gains a +2 bonus to hit and damage rolls as well as an extra attack per round. All attacks deal maximum damage for the duration. Offensive Spin may not be used in conjunction with the Haste or Improved Haste spells.
 
-DEFENSIVE SPIN: During the next 4 rounds, the Blade is rooted to the spot and gains a +1 bonus to Armor Class per level, up to a maximum of +10.
+DEFENSIVE SPIN: During the next 4 rounds, the Blade is rooted to the spot and gains a +1 bonus to Armor Class per 2 levels, up to a maximum of +10.
 
 – Bardic Performance: a blade is trained to perform to create magical effects on those around <PRO_HIMHER>. Blade can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each fourth level a blade can use bardic performance one more time per day.
 List of Bardic Performances:
@@ -1085,7 +1098,6 @@ Advantages:
 – May equip bucklers.
 – May use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.
 – Receives one bonus feat at level 5, 10, 15, 20, 22 and 28 (can select any feat and not only magic ones unlike trueclass sorcerers).
-– Have THAC0 and APR progression of a cleric.
 – At first level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.
 – Hit Die: d6
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
@@ -1185,7 +1197,7 @@ GREATER SUN: The Sun Soul Monk wreathes <PRO_HIMHER>self in flames that act as a
 – 10th level: Gains an additional use of Sun Soulray.
 – 13th level: May cast Soul Sunbeam once per day.
 
-SUN SOULBEAM: The Sun Soul Monk emits a dazzling burst of light that strikes at all other creatures within a 30-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the Monk's current THAC0 (+3 to hit vs. undead). Struck creatures suffer 9d6 points of fire damage (9d6+3 if undead), unless they save vs. Spell for half. In addition, all creatures except the Monk must save vs. Spell or be blinded for 2 hours.
+SUN SOULBEAM: The character emits a dazzling burst of light that strikes at all hostile creatures within a 30-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the character's current THAC0 (+3 to hit vs. undead). Struck creatures suffer 1d4 points of fire damage per monk level, unless they save vs. Spell for half with penalty equal to one fourth of monk level rounded down. In addition, all targets must save vs. Spell or be blinded for 2 hours.
 
 – 15th level: Gains an additional use of Sun Soulray.
 

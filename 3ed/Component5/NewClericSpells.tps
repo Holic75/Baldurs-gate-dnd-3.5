@@ -98,7 +98,7 @@
 			LPF ADD_SPELL_EFFECT INT_VAR  opcode = 321 power=1 target=2  duration=1 timing=0 resist_dispel=3 insert_point=0 STR_VAR resource END //remove effects of mass aid from recipient of simple aid
 			
 			
-	//Disallow clerics to cast animal summoning 1,2,3 and poison
+	//Disallow clerics to cast animal summoning 1,2,3, conjure animals and poison
 	COPY_EXISTING ~SPPR402.SPL~ ~override~ // animal summoning 1
 		READ_BYTE 0x0021 ~cleric_usability~
 		WRITE_BYTE 0x0021 (cleric_usability BOR 0b01000000)
@@ -108,10 +108,12 @@
 	COPY_EXISTING ~SPPR501.SPL~ ~override~ // animal summoning 2
 		READ_BYTE 0x0021 ~cleric_usability~
 		WRITE_BYTE 0x0021 (cleric_usability BOR 0b01000000)
-	COPY_EXISTING ~SPPR602.SPL~ ~override~ // animal summoning 1
+	COPY_EXISTING ~SPPR602.SPL~ ~override~ // animal summoning 3
 		READ_BYTE 0x0021 ~cleric_usability~
 		WRITE_BYTE 0x0021 (cleric_usability BOR 0b01000000)		
-		
+	COPY_EXISTING ~SPPR604.SPL~ ~override~ // conjure animals
+		READ_BYTE 0x0021 ~cleric_usability~
+		WRITE_BYTE 0x0021 (cleric_usability BOR 0b01000000)				
 		
 	ACTION_IF NOT (~%GamedId%~ STR_EQ ~Iwd~) BEGIN
 		//Cure moderate wounds

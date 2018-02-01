@@ -14,5 +14,6 @@ IF
 THEN
 	RESPONSE #100
         ApplySpellRES("FE_RMV",LastSummonerOf(Myself))
+        ActionOverride(LastSummonerOf(Myself),ReallyForceSpellRES("FE_APP", Myself))
 		DestroySelf()
 END

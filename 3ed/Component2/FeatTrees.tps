@@ -87,7 +87,7 @@ WITH_TRA ~%LANGUAGE%\combat_prowess.tra~ BEGIN
 	//5 - elegant strike (dex bonus to damage with light weapons)
 	LAF ADD_PSB_FEAT INT_VAR min_val=12 max_val=25 step=2 par1=122 STR_VAR ability_name=~ELTSTK~ END 
 		
-	//6 - whirlwind (10 apr for 1 round, -4 to hit, -4 dmg - once every 2 minutes)
+	//6 - whirlwind (10 apr for 1 round, -4 to hit, -4 dmg - once every 5 minutes)
 	OUTER_SPRINT game_name @003  OUTER_SPRINT game_description @004
 	LAF ADD_LUA_FEAT INT_VAR n_uses=1 copy_icons = 0 STR_VAR ability_name=~WHIRLN~ game_name game_description  END
 
@@ -117,11 +117,11 @@ WITH_TRA ~%LANGUAGE%\tactics.tra~ BEGIN
 	//5 - combat intuition (int bonus to ac with light armor)
 	LAF ADD_PSB_FEAT INT_VAR min_val=12 max_val=25 step=2 par1=128 STR_VAR ability_name=~CMBINT~ END 
 	
-	//6 - critical strike (all hits - critical for 1 round - every 2 minutes)
+	//6 - critical strike (all hits - critical for 1 round - every 5 minutes)
 	OUTER_SPRINT game_name @005  OUTER_SPRINT game_description @006
 	LAF ADD_LUA_FEAT INT_VAR n_uses=1 copy_icons = 0 STR_VAR ability_name=~EPCCRT~ game_name game_description  END	
 	
-	//7 - premonition (+6 ac, +3 saves immunity to normal projectiles, faster movement for 5 rounds once every 5 minutes)
+	//7 - premonition (+6 ac, +3 saves immunity to normal projectiles, faster movement for 5 rounds once every 2 minutes)
 	OUTER_SPRINT game_name @007  OUTER_SPRINT game_description @008
 	LAF ADD_LUA_FEAT INT_VAR n_uses=1 copy_icons = 0 STR_VAR ability_name=~EPCEVS~ game_name game_description  END	
 END	
@@ -149,7 +149,7 @@ WITH_TRA ~%LANGUAGE%\archery.tra~ BEGIN
 	//5 - Ranged Critical (Precise shot)
 	COPY ~3ed/Feats/PermanentAbilities/RangedCritical/RNGCRTFT.SPL~  ~override~
 	
-	//6 - hail of arrows (10 apr for 1 round, -4 to hit, -4 dmg - once every 2 minutes)
+	//6 - hail of arrows (10 apr for 1 round, -4 to hit, -4 dmg - once every 5 minutes)
 	OUTER_SPRINT game_name @005  OUTER_SPRINT game_description @006
 	LAF ADD_LUA_FEAT INT_VAR n_uses=1 copy_icons = 0 STR_VAR ability_name=~HAILAN~ game_name game_description  END
 
@@ -164,7 +164,7 @@ WITH_TRA ~%LANGUAGE%\archery.tra~ BEGIN
 	//1 - 7  5% protection/star
 	OUTER_FOR (i=1;i<=7;i=i+1) BEGIN
 		COPY ~3ed/Feats/PermanentAbilities/MagicProtection/MGPTN.SPL~  ~override/MGPTN%i%FT.SPL~
-            LPF ALTER_SPELL_EFFECT INT_VAR  parameter1=5*i END //resistance bonus 5*i% level
+            LPF ALTER_SPELL_EFFECT INT_VAR  parameter1=5*(i+1) END //resistance bonus 5*(i+1)% level
             FOR (j=1;j<i;j=j+1) BEGIN
                 SPRINT resource EVALUATE_BUFFER ~MGPTN%j%FT~
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 duration =1 insert_point = 0 STR_VAR resource END
@@ -174,10 +174,10 @@ WITH_TRA ~%LANGUAGE%\archery.tra~ BEGIN
 
 
 //----------------------------------------------Empower magic
-	//1 - 7 (4 + 2*i) dmg bonus from spells  (6 14 24 36 50 66 84)%
+	//20,30,40,50,60,80,100%
     OUTER_SET res = 0
 	OUTER_FOR (i=1;i<=7;i=i+1) BEGIN
-        OUTER_SET res = res + (4 + 2*i)
+        OUTER_SET res = (i<=5) ? 10*(i+1) : 60 +20*(i - 5)
 		COPY ~3ed/Feats/PermanentAbilities/EmpowerMagic/EMPWR.SPL~  ~override/EMPWR%i%FT.SPL~
             LPF ALTER_SPELL_EFFECT INT_VAR  parameter1=res END //spell damage bonus
             FOR (j=1;j<i;j=j+1) BEGIN
@@ -189,10 +189,10 @@ WITH_TRA ~%LANGUAGE%\archery.tra~ BEGIN
 	END
 
 //------------------------------------------------------------------Extend magic
-	// 1- 7  (11 24 39 56 75 96 119)
+	// 30,45,60,75,90,120,150
 	OUTER_FOR (i=1;i<=7;i=i+1) BEGIN
 		COPY ~3ed/Feats/PermanentAbilities/ExtendMagic/EXTND.SPL~  ~override/EXTND%i%FT.SPL~
-		LPF ALTER_SPELL_EFFECT INT_VAR  parameter1=100+i*(10+i) END //spell duration
+		LPF ALTER_SPELL_EFFECT INT_VAR  parameter1=100+15*(i+1)+(i>5)*(i - 5)*15 END //spell duration
 		SPRINT resource EVALUATE_BUFFER ~EXTND%i%FT~
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource END
 		FOR (j=1;j<i;j=j+1) BEGIN

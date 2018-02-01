@@ -102,12 +102,12 @@
 
 Hail of Arrows:
 
-Hail of arrows greatly speeds up archer's ability to strike at foes with ranged weapons. The ability sets archer's number of attacks per round to 10, but <PRO_HISHER> THAC0 and damage suffer a 4 point penalty. The Hail of Arrows lasts for one round. Can be used once every 2 minutes.~
+Hail of arrows greatly speeds up archer's ability to strike at foes with ranged weapons. The ability sets archer's number of attacks per round to 10, but <PRO_HISHER> THAC0 and damage suffer a 4 point penalty. The Hail of Arrows lasts for one round. Can be used once every 5 minutes.~
 	@159=~The character receives Greater Hail of Arrows innate ability.
 
 Greater Hail of Arrows:
 
-Greater Hail of arrows greatly speeds up archer's ability to strike at foes with ranged weapons. The ability sets archer's number of attacks per round to 10. The Greater Hail of Arrows lasts for one round. Can be used once every 2 minutes.~
+Greater Hail of arrows greatly speeds up archer's ability to strike at foes with ranged weapons. The ability sets archer's number of attacks per round to 10. The Greater Hail of Arrows lasts for one round. Can be used once every 5 minutes.~
 
 	@161=~Combat Prowess~
 	@162=~This group covers usage of character's agility in combat.~
@@ -127,12 +127,12 @@ Greater Hail of arrows greatly speeds up archer's ability to strike at foes with
 
 Whirlwind Attack:
 
-This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10, but one's THAC0 and damage suffer a 4 point penalty. The Whirlwind Attack lasts for one round. Can be used once every 2 minutes.~
+This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10, but one's THAC0 and damage suffer a 4 point penalty. The Whirlwind Attack lasts for one round. Can be used once every 5 minutes.~
 	@176=~The character receives Greater Whirlwind Attack innate ability.
 
 Greater Whirlwind Attack:
 
-This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10. The Greater Whirlwind Attack lasts for one round. Can be used once every 2 minutes.~
+This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10. The Greater Whirlwind Attack lasts for one round. Can be used once every 5 minutes.~
 
 
 	@181=~Warfare~
@@ -148,12 +148,12 @@ This ability allows the warrior to unleash a flurry of super-fast blows. The abi
 	@191=~Once per round, if the character slays an enemy in melee, <PRO_HESHE> gains one additional APR till end of round.~
 	@192=~The character receives +2 bonus on Saving Throws vs. Paralysis/Poison/Death and vs. Petrification/Polymorph.~
 	@193=~The effects of Cleave feat can be applied to the character any number of times per round whenever <PRO_HESHE> slays an enemy with melee weapon.~
-	@194=~The character receives +30 bonus HP.~
+	@194=~The character regenerates 3 Hit Points per round.~
 	@195=~The character receives Stunning Attack innate ability.
 
 Stunning Attack:
 
-Stunning Attack allows the warrior to strike blows so forceful that they stun an opponent for 2 rounds if the opponent fails a Save vs. Death at a -6 penalty. The ability lasts for 2 rounds and can be used once every 2 minutes.~
+Stunning Attack allows the warrior to strike blows so forceful that they stun an opponent for 2 rounds if the opponent fails a Save vs. Death at a -6 penalty. The ability lasts for 2 rounds and can be used once every 5 minutes.~
 	@196=~The character receives Deathblow innate ability.
 
 Deathblow:
@@ -187,12 +187,12 @@ This is an extraordinary ability and thus is not subject to magic resistance or 
 
 Critical Strike:
 
-A high-level warrior's intimate knowledge of vital spots on opponents allows <PRO_HIMHER> to concentrate all of the attacks in one round to strike a vital area every time. With this ability, every attack roll made in the next round is a natural 20, a critical hit. This ability can be used once every 2 minutes.~
+A high-level warrior's intimate knowledge of vital spots on opponents allows <PRO_HIMHER> to concentrate all of the attacks in one round to strike a vital area every time. With this ability, every attack roll made in the next round is a natural 20, a critical hit. This ability can be used once every 5 minutes.~
 	@216=~The character receives Premonition innate ability.
 
 Premonition:
 
-Premonition allows character to use his experience and mastery of combat to predict where a next blow will land and physically avoid being in that place. This ability improves Armor Class by 6 and Saving Throws by 3. Also to everyone else character seem to move so quickly that <PRO_HISHER> movement rate is increased by 2 (base is 10) and normal missiles have no chance of striking <PRO_HIMHER>. This ability lasts for 5 rounds. Can be used once every 5 minutes.~
+Premonition allows character to use his experience and mastery of combat to predict where a next blow will land and physically avoid being in that place. This ability improves Armor Class by 6 and Saving Throws by 3. Also to everyone else character seem to move so quickly that <PRO_HISHER> movement rate is increased by 2 (base is 10) and normal missiles have no chance of striking <PRO_HIMHER>. This ability lasts for 2 rounds. Can be used once every 5 minutes.~
 
 
 
@@ -234,54 +234,54 @@ Premonition allows character to use his experience and mastery of combat to pred
 
 	@261=~Empower Magic~
 	@262=~Techniques used for increasing direct damage of spells.~
-	@263=~6%~
-	@264=~14%~
-	@265=~24%~
-	@266=~36%~
-	@267=~50%~
-	@268=~66%~
-	@269=~84%~
-	@270=~Character's spells deal 6 % more damage.~
-	@271=~Character's spells deal 14 % more damage.~
-	@272=~Character's spells deal 24 % more damage.~
-	@273=~Character's spells deal 36 % more damage.~
-	@274=~Character's spells deal 50 % more damage.~
-	@275=~Character's spells deal 66 % more damage.~
-	@276=~Character's spells deal 84 % more damage.~
+	@263=~20%~
+	@264=~30%~
+	@265=~40%~
+	@266=~50%~
+	@267=~60%~
+	@268=~80%~
+	@269=~100%~
+	@270=~Character's spells deal 20 % more damage.~
+	@271=~Character's spells deal 30 % more damage.~
+	@272=~Character's spells deal 40 % more damage.~
+	@273=~Character's spells deal 50 % more damage.~
+	@274=~Character's spells deal 60 % more damage.~
+	@275=~Character's spells deal 80 % more damage.~
+	@276=~Character's spells deal 100 % more damage.~
 
 	@281=~Extend Magic~
 	@282=~Techniques used for increasing duration of spells.~
-	@283=~11%~
-	@284=~24%~
-	@285=~39%~
-	@286=~56%~
-	@287=~75%~
-	@288=~96%~
-	@289=~119%~
-	@290=~Character's spells last 11% longer.~
-	@291=~Character's spells last 24% longer.~
-	@292=~Character's spells last 39% longer.~
-	@293=~Character's spells last 56% longer.~
-	@294=~Character's spells last 75% longer.~
-	@295=~Character's spells last 96% longer.~
-	@296=~Character's spells last 119% longer.~
+	@283=~30%~
+	@284=~45%~
+	@285=~60%~
+	@286=~75%~
+	@287=~90%~
+	@288=~120%~
+	@289=~150%~
+	@290=~Character's spells last 30% longer.~
+	@291=~Character's spells last 45% longer.~
+	@292=~Character's spells last 60% longer.~
+	@293=~Character's spells last 75% longer.~
+	@294=~Character's spells last 90% longer.~
+	@295=~Character's spells last 120% longer.~
+	@296=~Character's spells last 150% longer.~
 
 	@301=~Endure Magic~
 	@302=~Ability to withstand magical attacks.~
-	@303=~5%~
-	@304=~10%~
-	@305=~15%~
-	@306=~20%~
-	@307=~25%~
-	@308=~30%~
-	@309=~35%~
-	@310=~The character gains 5% resistance against Fire, Lightning, Acid, Cold and Magical damage.~
-	@311=~The character gains another 5% resistance (to a total of 10%) against Fire, Lightning, Acid, Cold and Magical damage.~
-	@312=~The character gains another 5% resistance (to a total of 15%) against Fire, Lightning, Acid, Cold and Magical damage.~
-	@313=~The character gains another 5% resistance (to a total of 20%) against Fire, Lightning, Acid, Cold and Magical damage.~
-	@314=~The character gains another 5% resistance (to a total of 25%) against Fire, Lightning, Acid, Cold and Magical damage.~
-	@315=~The character gains another 5% resistance (to a total of 30%) against Fire, Lightning, Acid, Cold and Magical damage.~
-	@316=~The character gains another 5% resistance (to a total of 35%) against Fire, Lightning, Acid, Cold and Magical damage.~
+	@303=~10%~
+	@304=~15%~
+	@305=~20%~
+	@306=~25%~
+	@307=~30%~
+	@308=~35%~
+	@309=~40%~
+	@310=~The character gains 10% resistance against Fire, Lightning, Acid, Cold and Magical damage.~
+	@311=~The character gains another 5% resistance (to a total of 15%) against Fire, Lightning, Acid, Cold and Magical damage.~
+	@312=~The character gains another 5% resistance (to a total of 20%) against Fire, Lightning, Acid, Cold and Magical damage.~
+	@313=~The character gains another 5% resistance (to a total of 25%) against Fire, Lightning, Acid, Cold and Magical damage.~
+	@314=~The character gains another 5% resistance (to a total of 30%) against Fire, Lightning, Acid, Cold and Magical damage.~
+	@315=~The character gains another 5% resistance (to a total of 35%) against Fire, Lightning, Acid, Cold and Magical damage.~
+	@316=~The character gains another 5% resistance (to a total of 40%) against Fire, Lightning, Acid, Cold and Magical damage.~
 
 
 	@321=~Quicken Magic~

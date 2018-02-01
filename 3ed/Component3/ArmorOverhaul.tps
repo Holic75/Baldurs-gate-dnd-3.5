@@ -358,7 +358,14 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
         LPF SET_ITEM_USABILITY INT_VAR value = usable_by_ranger OR usable_by_bard STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~bard~ END
     END
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_mage STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~cleric_mage~ END
-	
+
+	//allow sorcerors to use equipment of thieves (except thief specific items)
+	//through allowing it to mages and adding restirct item effect on them	
+    PATCH_IF (usable_by_fighter AND usable_by_thief AND NOT(usable_by_mage))  BEGIN
+        LPF SET_ITEM_USABILITY INT_VAR value = 1 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~mage~   END
+        LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 319 target = 1  power = 0  parameter1 = 1   parameter2 = 5  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  special = mage_strref  END
+    END
+
     
     //allow jesters only to wear light armors
     PATCH_IF (category=ArmorCategory) BEGIN

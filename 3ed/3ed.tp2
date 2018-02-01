@@ -1,8 +1,8 @@
 
 
 BACKUP ~3ed/backup~
-AUTHOR ~denis.holic@gmail.com~
-VERSION ~v2.09~
+AUTHOR ~holic.denis@gmail.com~
+VERSION ~v2.10~
 
 
 ALWAYS
@@ -213,7 +213,7 @@ INCLUDE ~3ed/Component3/CreateArmorDexPenalty.tps~
 	OUTER_SET ArmorCategory = 2
 	OUTER_SET BoltsCategory = 0x001f
 	OUTER_SET FistCategory = 28
-	OUTER_SET RobesCategory = 68
+	OUTER_SET RobesCategory = 67
 	OUTER_SET ShieldsCategory = 0x000c
 	OUTER_SET HelmsCategory = 0x0007
 	OUTER_SET ScrollsCategory = 0x000b
@@ -230,13 +230,16 @@ WITH_TRA ~%LANGUAGE%\equipment.tra~ BEGIN
 END
 
 WITH_TRA ~%LANGUAGE%\equipment.tra~ BEGIN
+
 	//---------------------------------------------weapons overhaul  (2h weapons bonus, change proficiency to categories, restrict jester usage of weapons, dissalow berserker to use ranged weapons)
 	INCLUDE ~3ed/Component3/WeaponsOverhaul.tps~
+	//---------------------------------------------armor overhaul  (apply armor penalties, change requirements for npc armors,change usability)
+	INCLUDE ~3ed/Component3/ArmorOverhaul.tps~
+
 END
 	
 WITH_TRA ~%LANGUAGE%\equipment.tra~ BEGIN
-	//---------------------------------------------armor overhaul  (apply armor penalties, change requirements for npc armors,change usability)
-	INCLUDE ~3ed/Component3/ArmorOverhaul.tps~
+
 
 END
 	
@@ -283,6 +286,7 @@ END
 // New spells
 BEGIN @5
 
+INCLUDE ~3ed/ALTER_CREATURE.tph~
 INCLUDE ~3ed/REMOVE_SUBSTRING.tph~
 INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
 INCLUDE ~3ed/GET_SPELL_EFFECT_VALUES.tph~
@@ -389,6 +393,7 @@ BEGIN @6
 BEGIN @7
 
 	INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
+    
        
     WITH_TRA ~%LANGUAGE%\animal_companion.tra~ BEGIN
     
@@ -403,6 +408,7 @@ BEGIN @7
 BEGIN @8
     INCLUDE ~3ed/ADD_BONUS_FEATS.tph~
     INCLUDE ~3ed/UPDATE_TLK_ENTRIES.tph~
+    INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
 
     
     WITH_TRA ~%LANGUAGE%\racial_enemies.tra~ BEGIN

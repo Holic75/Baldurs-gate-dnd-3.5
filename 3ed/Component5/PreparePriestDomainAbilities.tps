@@ -2,23 +2,27 @@
 //air - 25% protection from lightning
 
     COPY_EXISTING ~SPPR407.SPL~  ~override/LTNGPR.SPL~
+        LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_type = 4 END
         LPF DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST END
-        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_timing = 4 END
-        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_timing = 142 END
-        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 29 parameter1 = 0 parameter2 = 25 END
-        LPF ALTER_SPELL_EFFECT INT_VAR timing = 1 duration = 1 resist_dispel = 0 END
-    
+        LPF ALTER_SPELL_EFFECT INT_VAR timing = 0 END
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 29 parameter2 = 0 parameter1 = 25 timing = 1 duration = 1 resist_dispel = 0 END
+        
+    COPY_EXISTING ~LTNGPR.SPL~  ~override~
+         LPF DELETE_EFFECT INT_VAR check_headers = 1 match_timing = 0 END
+         
     ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN ~AirD~ => ~LTNGPR~ END
     
 //fire - 25% protection from fire
 
     COPY_EXISTING ~SPPR306.SPL~  ~override/FIREPR.SPL~
+        LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_type = 4 END
         LPF DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST END
-        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_timing = 4 END
-        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_timing = 142 END
-        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 84 parameter1 = 0 parameter2 = 25 END
-        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 30 parameter1 = 0 parameter2 = 25 END
-        LPF ALTER_SPELL_EFFECT INT_VAR timing = 1 duration = 1 resist_dispel = 0 END
+        LPF ALTER_SPELL_EFFECT INT_VAR timing = 0 END
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 84 parameter2 = 0 parameter1 = 25 timing = 1 duration = 1 resist_dispel = 0 END
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 30 parameter2 = 0 parameter1 = 25 timing = 1 duration = 1 resist_dispel = 0 END
+        
+     COPY_EXISTING ~FIREPR.SPL~  ~override~
+         LPF DELETE_EFFECT INT_VAR check_headers = 1 match_timing = 0 END       
         
     ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~FireD~ => ~FIREPR~ END
     
@@ -26,23 +30,28 @@
 //cold - 25% protection from cold
 
     COPY_EXISTING ~SPWI320.SPL~  ~override/COLDPR.SPL~
+        LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_type = 4 END
         LPF DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST END
-        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_timing = 4 END
-        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_timing = 142 END
-        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 28 parameter1 = 0 parameter2 = 25 END
-        LPF ALTER_SPELL_EFFECT INT_VAR timing = 1 duration = 1 resist_dispel = 0 END
+        LPF ALTER_SPELL_EFFECT INT_VAR timing = 0 END
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 28 parameter2 = 0 parameter1 = 25 timing = 1 duration = 1 resist_dispel = 0 END
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 85 parameter2 = 0 parameter1 = 25 timing = 1 duration = 1 resist_dispel = 0 END
         
+     COPY_EXISTING ~COLDPR.SPL~  ~override~
+         LPF DELETE_EFFECT INT_VAR check_headers = 1 match_timing = 0 END 
+         
     ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~ColdD~ => ~COLDPR~ END
     
 //earth - 25% protection from acid
 
     COPY_EXISTING ~SPWI517.SPL~  ~override/ACIDPR.SPL~
+        LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_type = 4 END
         LPF DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST END
-        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_timing = 4 END
-        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_timing = 142 END
-        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 27 parameter1 = 0 parameter2 = 25 END
-        LPF ALTER_SPELL_EFFECT INT_VAR timing = 1 duration = 1 resist_dispel = 0 END
-        
+        LPF ALTER_SPELL_EFFECT INT_VAR timing = 0 END
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 27 parameter2 = 0 parameter1 = 25 timing = 1 duration = 1 resist_dispel = 0 END
+ 
+     COPY_EXISTING ~ACIDPR.SPL~  ~override~
+         LPF DELETE_EFFECT INT_VAR check_headers = 1 match_timing = 0 END  
+         
     ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~EarthD~ => ~ACIDPR~ END
     
 //time - immunity to sneak attack

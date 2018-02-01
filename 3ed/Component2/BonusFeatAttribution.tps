@@ -33,13 +33,13 @@
 // ftr/mage (5,10,15,20, 22, 25 ,28)
 	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000100001000010000  
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFM.SPL~ feat_type_file=~SFTCRE~ caption=~F_MBONFT~ END
-// ftr/mage/thief (10,20, 22, 25 ,28)
-	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000000001000000000  
+// ftr/mage/thief (8, 14, 20, 22, 25 ,28)
+	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000010000010000000  
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRFMT.SPL~ feat_type_file=~SFTCRE~ caption=~FMTBONFT~ END
                         
                         
-//same for ftr/mage/cleric (10,20,22,28)
-	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001000000100001000000000  
+//same for ftr/mage/cleric (10,20,22,25,28)
+	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000000001000000000  
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRFMC.SPL~ feat_type_file=~SFTCRE~ caption=~FMCBONFT~ END
 						
 //add bonus feats to ftr/thief every 3 levels starting from lvl1
@@ -50,11 +50,16 @@
 	LAF ADD_BONUS_FEATS INT_VAR min_level=10 max_level=30 d_level=3 add_at_level1=0 
 						STR_VAR clab=~\(CLABTH01\)\|\(CLABTH04\)\|\(CLABTH05\)\.2DA~
 							mask_file=~3ed/Feats/FeatAttribution/SFTCRET.SPL~ feat_type_file=~FFTCRE~ caption=~THFBONFT~ END	
-							
-//add bonus feats to assasin and ninja
+
+//add bonus feats to assassin
 	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=0 
-						STR_VAR clab=~\(CLABTH02\)\|\(CLABTH03\)\.2DA~
-							mask_file=~3ed/Feats/FeatAttribution/SFTCRET.SPL~ feat_type_file=~FFTCRE~ caption=~THFEPCFT~ END	
+						STR_VAR clab=~CLABTH02\.2DA~
+							mask_file=~3ed/Feats/FeatAttribution/SFTCRET.SPL~ feat_type_file=~FFTCRE~ caption=~ASNEPCFT~ END
+							
+//add bonus feats to ninja
+	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1000001001000000001000000000  
+						STR_VAR clab=~CLABTH03\.2DA~
+							mask_file=~3ed/Feats/FeatAttribution/SFTCRET.SPL~ feat_type_file=~FFTCRE~ caption=~NINBONFT~ END	
  				
 //same for mage thief (10,20,22, 25, 28)
 	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000000001000000000 
@@ -72,8 +77,8 @@
 						STR_VAR clab=~CLABBA+.*\.2DA~ mask_file=~~ caption=~SFTCRE~ END		
 	                        
 //epic feats to cleric
-	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=3 add_at_level1=0 
-						STR_VAR clab=~CLABPR+.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREC.SPL~ feat_type_file=~MFTCRE~ caption=~CEPCCFT~ END
+	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=0 
+						STR_VAR clab=~CLABPR+.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREC.SPL~ feat_type_file=~SFTCRE~ caption=~CEPCCFT~ END
 	
 //bonus combat feats to priest of helm
 	LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=20 d_level=5 add_at_level1=0 
@@ -81,14 +86,14 @@
                         
 //epic feats to mage - cleric
 	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=3 add_at_level1=0 
-						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRECM.SPL~ feat_type_file=~SFTCRE~ caption=~MCEPCFT~ END    
+						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRECM.SPL~ feat_type_file=~MFTCRE~ caption=~MCEPCFT~ END    
                         
 //feats to cleric - thief (10,20,22,25,28)
 	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000000001000000000  
 						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRECT.SPL~ feat_type_file=~SFTCRE~ caption=~CTEPCFT~ END 
                         
 //epic feats to cleric - ranger
-	LAF ADD_BONUS_FEATS INT_VAR min_level=28 max_level=28 d_level=1 add_at_level1=0 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=0 
 						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRERC.SPL~ feat_type_file=~SFTCRE~ caption=~RCEPCFT~ END
                         
 //epic feats to druid

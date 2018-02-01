@@ -2,10 +2,10 @@
 
 
     @001=~Racial Enemy~
-    @002=~Character gains +4 bonus on damage rolls against~
+    @002=~Character gains +2 bonus on to hit and damage rolls against~
 
     @003=~Improved Racial Enemy~
-    @004=~Character gains +4 bonus on to hit and damage rolls as well +2 bonus to AC and saving throws against~
+    @004=~Character gains +2 bonus on to hit and damage rolls as well +2 bonus to AC and saving throws against~
 
 
     @005 =~Select this racial enemy~
@@ -20,10 +20,22 @@ This ability displays the list of selected racial enemies.~
 	@009=~Multiple Racial Enemies~
 	@010=~Racial Enemy
 
-At 1st level, a ranger may select a type of creature from among the list for which he gets +4 bonus on damage rolls. Ranger can select another racial enemy at levels 5, 10, 15 and 20.
-Stalker instead chooses an Improved Racial Enemy against which <PRO_HESHE> gets +4 bonus on to hit and damage rolls and +2 AC and savingthrows bonus.
+At 1st level, a ranger may select a type of creature from among the list for which <PRO_HESHE> gets +2 bonus on to hit and damage rolls. At every 5th level these bonuses are incresed by 1 and ranger can select an addtional racial enemy.
+Stalker instead chooses an Improved Racial Enemy against which <PRO_HESHE> additionally gets +2 AC and savingthrows bonus.
 
 Note: the selection is done in game through special abilities menu.~
-	@011=~In their role as protectors of good, Rangers tend to focus their efforts against some particular creatures, usually ones that marauds their homeland. Rangers choose one racial enemy at levels 1, 5, 10, 15 and 20. Thereafter, whenever the Ranger encounters these enemies, <PRO_HESHE> gains bonuses to <PRO_HISHER> against them. Make your selection based on what would be an appropriate match for your character concept.
+	@011=~In their role as protectors of good, Rangers tend to focus their efforts against some particular creatures, usually ones that marauds their homeland. Rangers choose one racial enemy at levels 1, 5, 10, 15, 20, 25 and 30. Thereafter, whenever the Ranger encounters these enemies, <PRO_HESHE> gains bonuses to <PRO_HISHER> against them. Make your selection based on what would be an appropriate match for your character concept.
 
-EFFECTS: +4 bonus to damage rolls vs. racial enemy. Additionally Stalkers receive +4 bonus on to hit rolls and +2 AC and savingthrows bonus vs their racial enemies.~
+EFFECTS: +2 bonus to hit and damage rolls vs. racial enemy (+1 at every 5th level). Additionally Stalkers receive +2 AC and savingthrows bonus vs their racial enemies.~
+
+    @012 = ~Smite Racial Enemy ~
+    @013 = ~Smite Racial Enemy 
+    
+For 10 seconds Stalker receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Wisdom above 10 and deals 1 extra point of damage per level against racial enemies.~
+    
+
+    @101 = ~Racial Enemy: At 1st level, a ranger may select a type of creature from among the list for which <PRO_HESHE> gets +2 bonus on to hit and damage rolls. At every 5th level these bonuses are incresed by 1 and ranger can select an addtional racial enemy.~
+    @102 = ~Improved Racial Enemy: At 1st level, a stalker may select a type of creature from among the list for which <PRO_HESHE> gets +2 bonus on to hit and damage rolls as well as +2 bonus to AC and savingthrows. At every 5th level to hit bonus is incresed by 1 and damage bonus is increased by 2 and stalker can select an addtional racial enemy.~
+    @103 = ~Racial Enemy: At 1st level, cleric/ranger or fighter/druid may select a type of creature from among the list for which <PRO_HESHE> gets +2 bonus on to hit and damage rolls. At every 10th level these bonuses are incresed by 1 and character can select an addtional racial enemy.~
+    
+    

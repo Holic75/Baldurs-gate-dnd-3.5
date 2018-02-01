@@ -3,9 +3,9 @@ DEFINE_PATCH_FUNCTION ~DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST~
 BEGIN
   
   READ_SHORT 0x0068 Nheaders
-  
-  FOR (i=2;i<Nheaders;i=i+1) BEGIN 
-        LPF DELETE_SPELL_HEADER INT_VAR header = i END
+  SET header_type = 0 - 1
+  FOR (i=255;i>1;i=i - 1) BEGIN 
+        LPF DELETE_SPELL_HEADER INT_VAR header_type min_level = i END
   END
   
 END// end of function

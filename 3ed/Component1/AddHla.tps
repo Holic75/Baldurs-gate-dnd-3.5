@@ -30,7 +30,7 @@
 		LAF ADD_BONUS_FEATS INT_VAR mask = 0b101011010100000000000000000000  
 						STR_VAR clab=~\(CLABTH01\)\|\(CLABTH02\)\|\(CLABTH03\)\|\(CLABTH04\)\.2DA~ caption=~THF_EPIC~ END	
 							
-		//pure class wizard/sorceror epic spells							
+		//pure class wizard/sorcerer epic spells							
         COPY_EXISTING ~WIZ_EPC.SPL~ ~override~
             LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 318 target = 2 parameter2 = 105 parameter1 = 7 duration = 1 STR_VAR resource =~WIZ_EPC~ END //ftr_mage
             LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 318 target = 2 parameter2 = 105 parameter1 = 14 duration = 1 STR_VAR resource =~WIZ_EPC~ END //cleric_mage
@@ -50,7 +50,7 @@
         COPY_EXISTING ~DRD_EPC.SPL~ ~override~
             LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 318 target = 2 parameter2 = 115 parameter1 = 11 duration = 1 STR_VAR resource =~DRD_EPC~ END 
             
-		LAF ADD_BONUS_FEATS INT_VAR mask = 0b111111100100000000000000
+		LAF ADD_BONUS_FEATS INT_VAR mask = 0b111111000100000000000000
 						STR_VAR clab=~\(CLABDR+.*\)\|\(OHTYR\)\.2DA~ caption=~DRD_EPIC~ END	
 						
 						

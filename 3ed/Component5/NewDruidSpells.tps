@@ -40,6 +40,14 @@
 	//disallow druid to cast defensive harmony
 	COPY_EXISTING ~SPPR406.SPL~ ~override~ 
 		WRITE_BYTE 0x0021 0b10000000
+        
+        
+	//Disallow druid  to cast heal and harm
+	COPY_EXISTING ~SPPR607.SPL~ ~override~ //heal
+		WRITE_BYTE 0x0021 0b10000000
+	COPY_EXISTING ~SPPR608.SPL~ ~override~ //heal
+		WRITE_BYTE 0x0021 0b10000000
+        
 
 				
 	//allow druid to cast hold monster as 4-th level spell	
@@ -54,8 +62,6 @@
 			DEFINE_ASSOCIATIVE_ARRAY extended_spell_list BEGIN  "%DEST_RES%" => "SPWI507" END
             
 	//allow druid to cast ice storm as 4-th level spell
-    
-
 	COPY_EXISTING ~SPWI404.SPL~ ~override/DRDIST.SPL~
 		WRITE_BYTE 0x0021 (0b01000000)	//dissalow cleric casting it 
 		WRITE_BYTE 0x001F (0b00000000)  //clear invoker flag	
@@ -103,6 +109,10 @@
 		SAY NAME1 @209
 		SAY UNIDENTIFIED_DESC @210
 		ADD_SPELL "override/rgspc01.spl" 1  1 DRUID_LESSER_SUMMONING_1
+        
+    COPY_EXISTING ~dogwasu.cre~ ~override/rgdogsu.cre~
+        LPF ALTER_CREATURE INT_VAR Level1 = 1 CurrentHp = 8 MaxHp = 8 THAC0 = 20 END 
+        REPLACE_CRE_ITEM ~P1-4~ #0 #0 #0 ~IDENTIFIED~ ~weapon1~
 	
 	//Lesser animal summoning 2
 	COPY ~3ed/Spells/AnimalSum2~ ~override~
@@ -110,13 +120,22 @@
 		SAY NAME1 @211
 		SAY UNIDENTIFIED_DESC @212	
 		ADD_SPELL "override/rgspc02.spl" 1  2 DRUID_LESSER_SUMMONING_2
-	
+        
+    COPY_EXISTING ~wolfsu.cre~ ~override/rgwolfsu.cre~
+        LPF ALTER_CREATURE INT_VAR Level1 = 3 CurrentHp = 18 MaxHp = 18 THAC0 = 18 APR = 1 END 
+        REPLACE_CRE_ITEM ~P1-6~ #0 #0 #0 ~IDENTIFIED~ ~weapon1~
+        
 	//Lesser animal summoning 3
 	COPY ~3ed/Spells/AnimalSum3~ ~override~
 	COPY_EXISTING ~rgspc03.spl~ ~override~
 		SAY NAME1 @213
 		SAY UNIDENTIFIED_DESC @214
 		ADD_SPELL "override/rgspc03.spl" 1  3 DRUID_LESSER_SUMMONING_3
+        
+        
+    //make animal summoning I a bit stonger
+    COPY_EXISTING ~SPANIM1.EFF~ ~override~
+        WRITE_LONG 0x001c 20 //change power level from 14 to 20
 
         
     //add false down to druid's spellbook
@@ -203,5 +222,6 @@
         SPRINT resource EVALUATE_BUFFER ~%DEST_RES%~		
 			LPF ADD_SPELL_EFFECT INT_VAR  opcode = 321 power=7 target=2  duration=1 timing=0  insert_point=0 STR_VAR resource END //remove effects from previous cast
 
-         
+   
+
     

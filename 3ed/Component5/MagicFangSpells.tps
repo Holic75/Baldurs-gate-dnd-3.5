@@ -98,8 +98,8 @@ SET Color = 256*222+164*256*256+55*256*256*256
 	SAY NAME1 @005
 	SAY UNIDENTIFIED_DESC @006
 	
-COPY_EXISTING ~DRD_EPC.SPL~ ~override~ //give nature's avatar as level 24 epic druid spell
+/*COPY_EXISTING ~DRD_EPC.SPL~ ~override~ //give nature's avatar as level 24 epic druid spell
 	LPF ADD_SPELL_HEADER  INT_VAR  copy_header = 5 END
 	LPF ALTER_SPELL_HEADER  INT_VAR  header = 6 min_level = 24 END
-	LPF ALTER_SPELL_EFFECT INT_VAR header = 6 STR_VAR resource = ~NATAV~ END
+	LPF ALTER_SPELL_EFFECT INT_VAR header = 6 STR_VAR resource = ~NATAV~ END*/
 	

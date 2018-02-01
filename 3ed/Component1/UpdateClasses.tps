@@ -64,6 +64,10 @@ END
 	LAF ADD_SMITE_EVIL_VARIATION INT_VAR name_ref = 001 descr_ref =002 par1 = 0 par2 =37 STR_VAR SmiteName=~SMTEVL~ END //smite evil
 	LAF ADD_SMITE_EVIL_VARIATION INT_VAR name_ref = 003 descr_ref =004 par1 = 0 par2 =1 STR_VAR SmiteName=~SMTUND~  END //smite undead
 	LAF ADD_SMITE_EVIL_VARIATION INT_VAR name_ref = 005 descr_ref =006 par1 = 0 par2 =36 STR_VAR SmiteName=~SMTGUD~  END //smite good
+    
+    COPY_EXISTING ~SMTGUD.SPL~ ~override~
+        LPF ALTER_SPELL_HEADER INT_VAR projectile = 195 END //red holy might
+    
 	LAF ADD_SMITE_EVIL_VARIATION INT_VAR name_ref = 007 descr_ref =008 par1 = 202 par2 =105 //mage_all 
                                                                        par11 = 19 par21 = 105 //sorcerer
                                                                        par12 = 5 par22 = 105 //bard
@@ -350,7 +354,7 @@ END
 			WRITE_LONG 0x000c fist_6
             
         //sun soul beam    
-        COPY_EXISTING ~SPCL239A.SPL~ ~override~ //make damage ~1d4 level 
+        COPY_EXISTING ~SPCL239A.SPL~ ~override~ //make damage ~1d4 level             
             FOR (i=1;i<=29;i=i+1) BEGIN
                 LPF ADD_SPELL_HEADER INT_VAR copy_header = 1  END
                 LPF ALTER_SPELL_HEADER INT_VAR header = i + 1 min_level =  i+1 END
@@ -360,6 +364,12 @@ END
                 SET savebonus = 0 - (i/4)
                 LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i savebonus END
             END
+        COPY_EXISTING ~SPCL239A.SPL~ ~override~ 
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 177 END //remove +3 undead damage
+            
+        //update description 
+        COPY_EXISTING ~SPCL239.SPL~ ~override~
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 206 target = 3 END //protect party
             READ_LONG 0x0050 ~descr_strref~
             STRING_SET_EVALUATE %descr_strref% @023
             
@@ -1311,7 +1321,16 @@ END
         STR_VAR mask_file=~3ed/Feats/FeatAttribution/SFTCREMT.SPL~ clab=~CLABTH01\.2DA~ feat_type_file = ~MT_VOC~ caption=~VOC_MT~ END	
         
         
-        
+    //---------------------------------------blade defensive spin update to give +1 ac per 2 levels-------------
+    WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN 
+        COPY_EXISTING ~SPCL522.SPL~ ~override~
+            READ_SHORT 0x0068 Nheaders
+            FOR (i=2;i<=Nheaders;i=i+1) BEGIN
+                LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = 2*i END         
+            END
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @008   
+        END
         
 
 

@@ -1,6 +1,6 @@
 IF
 	OnCreation()
-	Range(Player%player_id%,5)
+	Range(Player%player_id%,7)
 	LevelLT(LastSummonerOf(Myself),7)
 	CheckStat(Player%player_id%,%player_id%,EXTRAPROFICIENCY20)
 	
@@ -13,9 +13,9 @@ END
 
 IF
 	OnCreation()
-	Range(Player%player_id%,5)
-	LevelGT(LastSummonerOf(Myself),6)
-	LevelLT(LastSummonerOf(Myself),13)
+	Range(Player%player_id%,7)
+	LevelGT(LastSummonerOf(Myself),5)
+	LevelLT(LastSummonerOf(Myself),12)
 	CheckStat(Player%player_id%,%player_id%,EXTRAPROFICIENCY20)
 	
 THEN
@@ -28,9 +28,9 @@ END
 
 IF
 	OnCreation()
-	Range(Player%player_id%,5)
-	LevelGT(LastSummonerOf(Myself),12)
-	LevelLT(LastSummonerOf(Myself),19)
+	Range(Player%player_id%,7)
+	LevelGT(LastSummonerOf(Myself),11)
+	LevelLT(LastSummonerOf(Myself),18)
 	CheckStat(Player%player_id%,%player_id%,EXTRAPROFICIENCY20)
 	
 THEN
@@ -43,9 +43,9 @@ END
 
 IF
 	OnCreation()
-	Range(Player%player_id%,5)
-	LevelGT(LastSummonerOf(Myself),18)
-	LevelLT(LastSummonerOf(Myself),25)
+	Range(Player%player_id%,7)
+	LevelGT(LastSummonerOf(Myself),17)
+	LevelLT(LastSummonerOf(Myself),24)
 	CheckStat(Player%player_id%,%player_id%,EXTRAPROFICIENCY20)
 	
 THEN
@@ -57,8 +57,8 @@ END
 
 IF
 	OnCreation()
-	Range(Player%player_id%,5)
-	LevelGT(LastSummonerOf(Myself),24)
+	Range(Player%player_id%,7)
+	LevelGT(LastSummonerOf(Myself),23)
 	LevelLT(LastSummonerOf(Myself),30)
 	CheckStat(Player%player_id%,%player_id%,EXTRAPROFICIENCY20)
 	
@@ -71,7 +71,7 @@ END
 
 IF
 	OnCreation()
-	Range(Player%player_id%,5)
+	Range(Player%player_id%,7)
 	LevelGT(LastSummonerOf(Myself),29)
 	CheckStat(Player%player_id%,%player_id%,EXTRAPROFICIENCY20)
 	

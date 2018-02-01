@@ -597,12 +597,7 @@
         COPY_EXISTING ~SPPR301.SPL~ ~override~
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @0511
-        
-        COPY_EXISTING ~SPPR501.SPL~ ~override~
-		READ_LONG 0x0050 ~descr_strref~
-		STRING_SET_EVALUATE %descr_strref% @051
-
-
+       
 
 	//make absorb health a melee spell
 	COPY_EXISTING ~SPCL102.SPL~ ~override~ 

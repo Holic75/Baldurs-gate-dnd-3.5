@@ -17,7 +17,7 @@
 
 
 
-# Baldurs-gate-dnd-3.5 v2.09
+# Baldurs-gate-dnd-3.5 v2.10
 This is a WeiDu mod for BG:Enhanced edition and BG2:Enhanced edition that changes 2ed ADnD rules to DnD 3.5 with some elements taken from Pathfinder.  
 It changes game mechanics (i.e. classes, spells, abilities, etc...) to that of 3.5 edition (to the extent that game engine allows).
 
@@ -71,6 +71,7 @@ Note: wearing heavy armor may restrict maximum dexterity bonus to AC a character
 – Determines bonus HP that characters receives per level (+1 per 2 points above 10).  
 – For values greater than 19 gives slow HP regeneration over time.  
 – Improves Saving Throws vs. Paralysis/Poison/Death and vs. Petrification/Polymorph (+1 per 2 points above 9, -1 per 2 points below 10).  
+- Increases duration of Skald, Avenger and Barbarian Rage, Berserker Enrage and Dwarven Defender Defensive Stance.  
 
 #### INTELLIGENCE
 – Determines number of spells per level that can be learned by Bards and Mages.  
@@ -90,7 +91,7 @@ Number of spells per level| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 4 |6 | 8 | 10 | 
 
 #### WISDOM
 – Increases AC bonus of Monk, Kensai and Ninja (+1 per 2 points above 10).  
-– Increases number of spells per day that can be cast by Clerics, Paladins, Druids and Rangers.  	 
+– Increases number of spells per day that can be cast by Clerics, Paladins, Druids and Rangers.  
 – Improves Saving Throws vs. Spells (+1 per 2 points above 9, -1 per 2 points below 10).  
 – Increases Saving Throw penalties for Cleric, Druid, Paladin and Ranger spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).  
 
@@ -98,6 +99,8 @@ Number of spells per level| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 4 |6 | 8 | 10 | 
 – Increases number of Channel Energy uses per day for Paladins and Clerics (+1 per 2 points above 10).  
 – Improves all Paladin, Hexblade and Jester savingthrows (+1 per 2 points above 9 and -1 per 2 points below 10).  
 – Increases number of Lay On Hands uses per day for Paladin or Absorb Health uses per day for Blackguards (+1 per 2 points above 12).  
+– Increases number of uses per day and Saving Throw penalties for Bardic Performance.   
+– Increases duration of Paladin and Hexblade auras.     
 – Increases number of spells per day that can be cast by Bards, Hexblades, Sorcerers and Shamans.  
 – Influences reaction of people on your character and prices in stores.  
 – Increases Saving Throw penalties for Bard, Hexblade, Sorcerer and Shaman spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).
@@ -206,12 +209,12 @@ Elegant Strike (5 stars) - With unarmed strikes, short swords, daggers, long swo
 Whirlwind Attack (6 stars) - The character receives Whirlwind Attack innate ability.
 ```
 Whirlwind Attack:
-This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10, but one's THAC0 and damage suffer a 4 point penalty. The Whirlwind Attack lasts for one round. Can be used once every 2 minutes.
+This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10, but one's THAC0 and damage suffer a 4 point penalty. The Whirlwind Attack lasts for one round. Can be used once every 5 minutes.
 ```  
 Whirlwind Attack (7 stars) - The character receives Greater Whirlwind Attack innate ability.
 ```
 Greater Whirlwind Attack:
-This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10. The Greater Whirlwind Attack lasts for one round. Can be used once every 2 minutes.
+This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10. The Greater Whirlwind Attack lasts for one round. Can be used once every 5 minutes.
 ```  
 
 ###### Warfare
@@ -223,7 +226,7 @@ Toughness (5 stars) - The character receives +30 bonus HP.
 Stunning Attack (6 stars) - The character receives Stunning Attack innate ability.
 ```
 Stunning Attack:
-Stunning Attack allows the warrior to strike blows so forceful that they stun an opponent for 2 rounds if the opponent fails a Save vs. Death at a -6 penalty. The ability lasts for 2 rounds and can be used once every 2 minutes.
+Stunning Attack allows the warrior to strike blows so forceful that they stun an opponent for 2 rounds if the opponent fails a Save vs. Death at a -6 penalty. The ability lasts for 2 rounds and can be used once every 5 minutes.
 ```  
 Deathblow (7 stars) - The character receives Deathblow innate ability.
 ```
@@ -252,7 +255,7 @@ A high-level warrior's intimate knowledge of vital spots on opponents allows her
 Premonition (7 stars) - The character receives Premonition innate ability.
 ```
 Premonition:
-Premonition allows character to use his experience and mastery of combat to predict where a next blow will land and physically avoid being in that place. This ability improves Armor Class by 6 and Saving Throws by 3. Also to everyone else character seem to move so quickly that her movement rate is increased by 2 (base is 10) and normal missiles have no chance of striking her. This ability lasts for 5 rounds. Can be used once every 5 minutes.
+Premonition allows character to use his experience and mastery of combat to predict where a next blow will land and physically avoid being in that place. This ability improves Armor Class by 6 and Saving Throws by 3. Also to everyone else character seem to move so quickly that her movement rate is increased by 2 (base is 10) and normal missiles have no chance of striking her. This ability lasts for 2 rounds. Can be used once every 5 minutes.
 ```
 
 ###### Bonus Priest Spell
@@ -274,31 +277,31 @@ Premonition allows character to use his experience and mastery of combat to pred
 (7 stars) - The character can cast one more wizard spell of each level per day.
 
 ###### Empower Magic
-(1 star) - Character's spells deal 6 % more damage.  
-(2 stars) - Character's spells deal 14 % more damage.  
-(3 stars) - Character's spells deal 24 % more damage.  
-(4 stars) - Character's spells deal 36 % more damage.  
-(5 stars) - Character's spells deal 50 % more damage.  
-(6 stars) - Character's spells deal 66 % more damage.  
-(7 stars) - Character's spells deal 84 % more damage.
+(1 star) - Character's spells deal 20 % more damage.  
+(2 stars) - Character's spells deal 30 % more damage.  
+(3 stars) - Character's spells deal 40 % more damage.  
+(4 stars) - Character's spells deal 50 % more damage.  
+(5 stars) - Character's spells deal 60 % more damage.  
+(6 stars) - Character's spells deal 80 % more damage.  
+(7 stars) - Character's spells deal 100 % more damage.
 
 ###### Extend Magic
-(1 star) - Character's spells last 11% longer.  
-(2 stars) - Character's spells last 24% longer.  
-(3 stars) - Character's spells last 39% longer.  
-(4 stars) - Character's spells last 56% longer.  
-(5 stars) - Character's spells last 75% longer.  
-(6 stars) - Character's spells last 96% longer.  
-(7 stars) - Character's spells last 119% longer.
+(1 star) - Character's spells last 30% longer.  
+(2 stars) - Character's spells last 45% longer.  
+(3 stars) - Character's spells last 60% longer.  
+(4 stars) - Character's spells last 75% longer.  
+(5 stars) - Character's spells last 90% longer.  
+(6 stars) - Character's spells last 120% longer.  
+(7 stars) - Character's spells last 150% longer.
 
 ###### Endure Magic
-(1 star) - The character gains 5% resistance against Fire, Lightning, Acid, Cold and Magical damage.  
-(2 stars) - The character gains another 5% resistance (to a total of 10%) against Fire, Lightning, Acid, Cold and Magical damage.  
-(3 stars) - The character gains another 5% resistance (to a total of 15%) against Fire, Lightning, Acid, Cold and Magical damage.  
-(4 stars) - The character gains another 5% resistance (to a total of 20%) against Fire, Lightning, Acid, Cold and Magical damage.  
-(5 stars) - The character gains another 5% resistance (to a total of 25%) against Fire, Lightning, Acid, Cold and Magical damage.  
-(6 stars) - The character gains another 5% resistance (to a total of 30%) against Fire, Lightning, Acid, Cold and Magical damage.  
-(7 stars) - The character gains another 5% resistance (to a total of 35%) against Fire, Lightning, Acid, Cold and Magical damage.  
+(1 star) - The character gains 10% resistance against Fire, Lightning, Acid, Cold and Magical damage.  
+(2 stars) - The character gains another 5% resistance (to a total of 15%) against Fire, Lightning, Acid, Cold and Magical damage.  
+(3 stars) - The character gains another 5% resistance (to a total of 20%) against Fire, Lightning, Acid, Cold and Magical damage.  
+(4 stars) - The character gains another 5% resistance (to a total of 25%) against Fire, Lightning, Acid, Cold and Magical damage.  
+(5 stars) - The character gains another 5% resistance (to a total of 30%) against Fire, Lightning, Acid, Cold and Magical damage.  
+(6 stars) - The character gains another 5% resistance (to a total of 35%) against Fire, Lightning, Acid, Cold and Magical damage.  
+(7 stars) - The character gains another 5% resistance (to a total of 40%) against Fire, Lightning, Acid, Cold and Magical damage.  
 
 ###### Quicken magic
 (1 star) - Spell casting time for all spells is reduced by 1.   
@@ -322,6 +325,13 @@ Unless stated otherwise characters get a new Feat at level 1, level 3 and every 
 Humans have the following traits:  
 – Receive one bonus feat at level 1.  
 – +5% to all thieving skills.  
+
+### HALF-ELVES
+Half-elves have the following traits:  
+– 30% resistance against charm and sleep magics.  
+– At first level receive +2 bonus to any chosen ability score.  
+– Infravision.  
+– +10% Pick Pockets, +5% Hide in Shadows.  
 
 ### ELVES
 Elves have the following traits:  
@@ -408,6 +418,7 @@ CLASS FEATURES:
 – May get seven stars in any weapon category.  
 – Gets one bonus feat at level 1 and at every even level.  
 – At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 at level 4 and every 4 levels thereafter (up to a maximum of +5 at level 16).  
+– At 9th level receives +1 to hit and damage bonus with all weapon categories, this bonus is increased to +2 at level 17 and +3 at level 25.     
 – Can use Hardiness once per day starting from level 21, gains an additional use at level 26.
 ```
 HARDINESS:
@@ -488,7 +499,7 @@ Disadvantages:
 ### KENSAI
 Advantages:  
 – Gains +1 bonus to AC for every 2 points of Wisdom above 10.  
-–  Signature Weapon Category: At level 1 Kensai chooses one weapon category which becomes his Signature Weapon Category. At level 1 Kensai gets for free Weapon Focus with this category, at level 4 - Weapon Specialization, at level 8 - Improved Weapon Focus, at level 12 - Improved Weapon Specialization, at level 16 - Weapon Mastery, at level 21 - Epic Weapon Focus, at level 24 - Epic Weapon Specialization.  
+–  Signature Weapon Category: At level 1 Kensai chooses one weapon category which becomes his Signature Weapon Category. At level 1 Kensai gets for free Weapon Focus with this category, at level 4 - Weapon Specialization, at level 8 - Greater Weapon Focus, at level 12 - Greater Weapon Specialization, at level 16 - Weapon Mastery, at level 21 - Epic Weapon Focus, at level 24 - Epic Weapon Specialization.  
 – +1 to hit and damage rolls with Signature weapon category every 4 levels (starting from level 4).  
 – May use the Kai ability once per day. Gains one use at level 1 then at level 5 and an additional use every 5 levels thereafter.  
 ```
@@ -512,7 +523,7 @@ CLASS FEATURES:
 – Gets one bonus feat at level 5, 10, 15, 20, 22, 28.  
 – May use the Rage ability once per day. Gains one use at level 1, then at level 4 and an additional use every 4 levels thereafter.  
 ```
-RAGE: The character is enraged  which grants <PRO_HIMHER> a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class, and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+RAGE: The character is enraged  which grants her a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class, and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
 The enraged state lasts 3 rounds + 1 round per 2 points of newly modified Constitution above 10.
 At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
 ```
@@ -667,6 +678,7 @@ Disadvantages:
 – May not cast Detect Evil.  
 – May not use the Lay on Hands ability.  
 – May not use Smite Evil ability.  
+– May not use Aura of Faith ability.  
 
 ### RANGER
 CLASS FEATURES:  
@@ -678,7 +690,7 @@ CLASS FEATURES:
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
 ```
 – Bonus Feats: Ranger gets Style Focus in Two Weapon Fighting for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12, Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.  
-– May select one racial enemy at levels 1, 5 and every 5 levels thereafter which grants a +4 bonus on damage rolls against the selected enemy race.  
+– May select one racial enemy at levels 1, 5 and every 5 levels thereafter which grants a +2 bonus on to hit and damage rolls against the selected enemy race. These bonuses increase by 1 at every 5th level.  
 – May use the Charm Animal ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.  
 – May use the Hide In Shadows ability.   
 – May call for an animal companion who fights for her side.  
@@ -693,7 +705,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 ### ARCHER
 Advantages:  
 – Bonus Feats: Archer gets Style Focus in Archery for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12 Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.  
-– Once per day can create 40 arrows (starts with normal arrows at level 1, which become +1 at lvl 5, +2 at lvl 10, +3 at lvl 15 and +4 at lvl 20).  
+– Once per day can create 40 arrows (starts with normal arrows at level 1, which become +1 at level 5, +2 at levle 10, +3 at level 15 and +4 at level 20).  
 – May use the Called Shot ability once per day. Gains one use at level 4 and an additional use every 2 levels thereafter.  
 ```
 CALLED SHOT: All successful ranged attacks within the next 10 seconds have the following cumulative effects besides normal damage, according to the level of the Archer:
@@ -710,7 +722,7 @@ Disadvantages:
 ### BEAST MASTER
 Advantages:  
 – +15% to Move Silently and Hide In Shadows.  
-– Has a telepathic link with his animal companion which allows them to fight as one. When fighting close to each other Beast master and his animal companion get +1 To Hit, Damage, AC and Saving Throws. These bonuses increase to +2 at level 7,  +3 at level 13 and +4 at level 19, +5 at level 25 and +6 at level 30.  
+– Has a telepathic link with his animal companion which allows them to fight as one. When fighting close to each other Beast master and his animal companion get +1 To Hit, Damage, AC and Saving Throws. These bonuses increase to +2 at level 6,  +3 at level 12 and +4 at level 18, +5 at level 24 and +6 at level 30.  
 – Gains additional bonus feat at level 22.  
 – Hit Die: d12.  
 
@@ -723,7 +735,14 @@ Disadvantages:
 Advantages:  
 – +20% to Move Silently and Hide In Shadows.  
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.  
-– Racial Enemy is replaced with Improved Racial Enemy which gives Stalkers +4 bonus on to hit and damage rolls and +2 bonus to AC and savingthrows vs selected races.  
+– Racial Enemy is replaced with Improved Racial Enemy.  
+```
+IMPROVED RACIAL ENEMY: At 1st level, a stalker may select a type of creature from among the list for which she gets +2 bonus on to hit and damage rolls as well as +2 bonus to AC and savingthrows. At every 5th level to hit bonus is increased by 1 and damage bonus is increased by 2 and stalker can select an additional racial enemy.
+```
+– May use Smite Racial Enemy ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.  
+```
+SMITE RACIAL ENEMY: For 10 seconds Stalker receives +1 bonus to her attack roll per 2 points of Wisdom above 10 and deals 1 extra point of damage per level against racial enemies.
+```
 – May be of any alignment.  
 – Gains additional bonus feat at level 22.  
 
@@ -812,11 +831,10 @@ CLASS FEATURES:
 – May use the Charm Animal ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.  
 – May spontaneously convert memorized spells to summoning ones.  
 – May call for an animal companion who fights for her side.  
-– 5th level: Gains Shapeshift ability which allows to transform  into a wolf, black bear, or brown bear once per day, gains additional uses at levels 6, 7, 10, and every 4 levels thereafter. While shapechanged druid can not use any weapons or shields but continues to benefit from bonuses from all the other equipment.
+– 5th level: Gains Shapeshift ability which allows to transform  into a wolf, black bear, or brown bear once per day, gains additional uses at levels 6, 7, 10, and every 4 levels thereafter. While shapechanged druid can not use any weapons or shields but continues to benefit from bonuses from all the other equipment.  
 – 8th level: While using Shapeshift ability a Druid can alternatively transform into fire salamander, sword spider or baby wyvern.  
 – 15th level: Becomes immune to poison.  
-– 16th level: While using Shapeshift ability a Druid can alternatively take form of large fire or earth elementals.
-– 18th level: Gains 10% resistance to cold, fire, electricity, and acid; gains a further 10% resistance at levels 21 and 24.  
+– 16th level: While using Shapeshift ability a Druid can alternatively take form of large fire or earth elementals.    
 – 20th level: While using Shapeshift ability a Druid can alternatively take form of greater fire or earth elementals.  
 – 21th level: May call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.  
 – Gains access to the following epic spells: Elemental Summoning (at level 19), Aura of Flaming Death (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Greater Elemental Summoning (at level 23) and Nature's Avatar (at level 24).  
@@ -830,7 +848,7 @@ Advantages:
 – Moves 2 points faster than other characters.  
 – Can use Rage ability (starts with one use at level 1 then get another one at level 5 and every 5 levels thereafter), though Avenger never gets benefits of Greater or Mighty Rage.  
 ```
-RAGE: The character is enraged  which grants <PRO_HIMHER> a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class, and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+RAGE: The character is enraged  which grants her a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class, and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
 The enraged state lasts 3 rounds + 1 round per 2 points of newly modified Constitution above 10.
 At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
 ```
@@ -965,11 +983,10 @@ Advantages:
   Starting from level 16 ninja can alternatively spend one point from ki pool to place herself under the effect of Improved Invisibility spell or use True Sight ability for 10 seconds.  
   Starting from level 19 ninja can alternatively spend one point from ki pool to place herself under the effect of Improved Haste spell for 10 seconds.  
 
-– Gets one bonus feat at levels 22 and 28.  
 Disadvantages:  
 – May not wear any armor or use shields.   
 – May only distribute 16 skill points per level among thieving skills (24 points at level 1).  
-– Do not gain bonus feats as trueclass thieves do.  
+– Do not gain bonus feats at levels 16, 19 and 25 as trueclass thieves do.  
 
 ### SHADOWDANCER
 Advantages:  
@@ -1063,12 +1080,14 @@ A bard of 24th level or higher can use this epic performance drains the very lif
 
 ### BLADE
 Advantages:  
-– May use the Offensive Spin and Defensive Spin abilities once per day. Gains one use each at level 2  and an additional use every 4 levels thereafter.  
+– May use the Battle Dance ability once per day. Gains one use at level 2  and an additional use every 4 levels thereafter.  
 ```
-OFFENSIVE SPIN: During the next 4 rounds, the Blade's movement rate doubles and she gains a +2 bonus to hit and damage rolls as well as an extra attack per round. All attacks deal maximum damage for the duration. Offensive Spin may not be used in conjunction with the Haste or Improved Haste spells.
-```
-```
-DEFENSIVE SPIN: During the next 4 rounds, the Blade is rooted to the spot and gains a +1 bonus to Armor Class per level, up to a maximum of +10.
+Battle Dance:
+A blade is trained to use her performance to improve <PRO_HISHER> battle skills. A blade can enter either offensive or defensive spin.
+
+Offensive Spin: During the next 4 rounds, the Blade's movement rate doubles and she gains a +2 bonus to hit and damage rolls as well as an extra attack per round. All attacks deal maximum damage for the duration. Offensive Spin may not be used in conjunction with the Haste or Improved Haste spells.
+
+Defensive: During the next 4 rounds, the Blade is rooted to the spot and gains a +1 bonus to Armor Class per 2 levels, up to a maximum of +10.
 ```
 – Bardic Performance: a blade is trained to perform to create magical effects on those around her. Blade can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each fourth level a blade can use bardic performance one more time per day.  
 List of Bardic Performances:  
@@ -1087,7 +1106,7 @@ Advantages:
 – Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 9 and every 5 levels thereafter to a maximum of 25% at level 29.  
 – Can use Rage (starts with one use at level 2 then gets another every 4 levels thereafter), though Skald never gets benefits of Greater or Mighty Rage.  
 ```
-RAGE: The character is enraged  which grants <PRO_HIMHER> a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class, and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+RAGE: The character is enraged  which grants her a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class, and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
 The enraged state lasts 3 rounds + 1 round per 2 points of newly modified Constitution above 10.
 At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
 ```
@@ -1242,7 +1261,7 @@ GREATER SUN: The Sun Soul Monk wreathes herself in flames that act as a Fireshie
 – 10th level: Gains an additional use of Sun Soulray.  
 – 13th level: May cast Soul Sunbeam once per day.  
 ```
-SUN SOULBEAM: The Sun Soul Monk emits a dazzling burst of light that strikes at all other creatures within a 30-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the Monk's current THAC0 (+3 to hit vs. undead). Struck creatures suffer 9d6 points of fire damage (9d6+3 if undead), unless they save vs. Spell for half. In addition, all creatures except the Monk must save vs. Spell or be blinded for 2 hours.
+SUN SOULBEAM: The character emits a dazzling burst of light that strikes at all hostile creatures within a 30-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the character's current THAC0 (+3 to hit vs. undead). Struck creatures suffer 1d4 points of fire damage per monk level, unless they save vs. Spell for half with penalty equal to one fourth of monk level rounded down. In addition, all targets must save vs. Spell or be blinded for 2 hours.
 ```
 – 15th level: Gains an additional use of Sun Soulray.  
 
@@ -1456,7 +1475,7 @@ SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrific
 ```
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 ```
-– Gets one bonus feat at levels 10, 20, 22, 25 and 28.  
+– Gets one bonus feat at levels 8, 14, 20, 22, 25 and 28.  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, and finally at level 12 Armored Arcana: Splint Mail Casting.  
 – Hit Die: d6  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph vs. Breath Weapon, vs. Wand and vs. Spell  
@@ -1670,7 +1689,7 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 19|4|4|4|4|4|4|4|3|3
 20|4|4|4|4|4|4|4|4|4
 
-Note: Specialist Mages may cast one spell per level per day
+Note: Specialist Mages may cast one more spell per level per day
 
 ### Mage/Thief spell slots per day
 
@@ -1697,7 +1716,7 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 19|3|3|3|3|3|3|3|2|2
 20|3|3|3|3|3|3|3|3|3
 
-Note: Specialist Mages may cast one spell per level per day
+Note: Specialist Mages may cast one more spell per level per day
 
 ### Fighter/Cleric, Fighter/Druid, Cleric/Ranger, Cleric/Thief, Priest of Lathander and Priest of Helm spell slots per day
 
@@ -2011,7 +2030,7 @@ Stat\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 19-20 | 2 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0
 21-22 | 2 | 2 | 1 | 1 | 1 | 1 | 0 | 0 | 0
 23-24 | 2 | 2 | 2 | 1 | 1 | 1 | 1 | 0 | 0
-25    | 2 | 2 | 2 | 2 | 1(2)| 1(2) | 1 | 0 
+25    | 2 | 2 | 2 | 2 | 1(2)| 1(2) | 1 | 0
 
 Note: Since priests can not cast 8th level spells, they receive another 6th and 7th level spell slots instead when corresponding stat is 25.
 
@@ -2026,10 +2045,10 @@ Elemental (Cold) | Chill Touch (1), Fireshield (Blue) (4), Cone of Cold (5)     
 Death            | Horror (2), Hold Undead (3), Control Undead (7)                                     |Death Touch 1/day
 Destruction      | Melf's Acid Arrow (2), Cloudkill (5), Disintegrate (6)                              |Destructive Smite 1/day
 Elemental (Earth)| Conjure Lesser Earth Elemental (5), Stoneskin (6), Protection From The Elements (7) |25% acid resistance
-Elemental (Fire) | Burning Hands (1), Fireball (3), Fireshield (Red) (4)                               |25% fire resistance
+Elemental (Fire) | Burning Hands (1), Fireball (3), Delayed Blast Fireball (7)                         |25% fire resistance
 Glory            | Exaltation (3), Boon of Diety (6), Mordenkainen's Sword (7)                         |Aura of Faith 1/day
 Moon             | Blindness (1), Blur (2), Vampiric Touch (3)                                         |Immunity to blindness
-Protection       | Shield (1), Minor Globe of Invulnerability (4), Globe of Invulnerability (6)        |+1 to all Savingthrows
+Protection       | Shield (1), Minor Globe of Invulnerability (4), Protection From Magical Weapons (6) |+1 to all Savingthrows
 Sun              | Fireshield (Red) (4), Sunfire (5), Prismatic Spray (7)                              |Divine Light 1/day
 Time             | Slow (3), Haste (4), Hold Monster (5)                                               |Immunity to sneak attacks
 Trickery         | Grease (1), Invisibility (2), Confusion (4)                                         |Mirror Image 1/day
@@ -2046,10 +2065,14 @@ If the caster harms—or attempts to harm—the charmed animal by some overt act
 Touched creature dies if fails Savingthrow vs. Death with penalty equal to one fourth caster level rounded down.
 
 #### Destructive Smite
-For 10 seconds character receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage with every hit.
+For 10 seconds character receives +1 bonus to her attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage with every hit.
 
 #### Dispelling Touch
 You remove magical effects from a creature by touching it with the probability equal to 60% + 2% per caster level.
+
+#### Divine Light
+The character emits a dazzling burst of light that strikes at all undead creatures within a 30-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the character's current THAC0 +3. Struck creatures suffer 1d4 points of fire damage per caster level.  
+
 
 ### Sorcerer bloodline spells
 
@@ -2107,7 +2130,7 @@ Ankheg Plate Mail      | 20% | +3 | -15%
 ### Other Changes
  - Certain robes can now be worn by any class, even monks  
  - Strength requirement for Full Plate Mail was reduced to 14   
- - Strength requirement for Composite Longbows were reduced to 14  
+ - Strength requirement for Composite Longbows were reduced to 14, they also 0.5 damage bonus from strength  
  - Damage of Bastard Swords was changed to 1d10  
  - Damage of Two-Handed Swords was changed to 2d6  
  - Damage of Halberds was changed to 1d12  

@@ -195,4 +195,9 @@
 		LPF ADD_SPELL_EFFECT INT_VAR header=1 opcode=144 target=2 parameter1=0 parameter2=10 timing=1 duration=1 END //disable bardic music button
 		
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
-						STR_VAR clab=~CLABBA+.*\.2DA~ mask_file=~~ caption=~DSBLSNG~ END	
+						STR_VAR clab=~CLABBA+.*\.2DA~ mask_file=~~ caption=~DSBLSNG~ END
+
+    COPY ~3ed/BardSongs/BattleDance~ ~override~
+    COPY_EXISTING ~BLADDNC.SPL~ ~override~
+		SAY NAME1 @035
+		SAY UNIDENTIFIED_DESC @036        

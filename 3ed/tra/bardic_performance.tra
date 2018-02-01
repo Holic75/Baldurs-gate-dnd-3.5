@@ -146,3 +146,17 @@ A jester of 14th level or higher can use <PRO_HISHER> performance to cause fear 
 
 Song of Requiem
 A jester of 24th level or higher can use this epic performance to drain the very life force of <PRO_HISHER> all enemies within 30 feet, causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds.~
+
+
+    @035 = ~Battle Dance~
+    
+    @036 = ~Battle Dance
+    
+A blade is trained to use <PRO_HISHER> performance to improve <PRO_HISHER> battle skills. While using this ability a blade can enter either offensive or defensive spin.
+
+Offensive Spin
+During the next 4 rounds, the Blade's movement rate doubles and <PRO_HESHE> gains a +2 bonus to hit and damage rolls as well as an extra attack per round. All attacks deal maximum damage for the duration. Offensive Spin may not be used in conjunction with the Haste or Improved Haste spells.
+
+Defensive Spin
+During the next 4 rounds, the Blade is rooted to the spot and gains a +1 bonus to Armor Class per 2 levels, up to a maximum of +10.~
+   
