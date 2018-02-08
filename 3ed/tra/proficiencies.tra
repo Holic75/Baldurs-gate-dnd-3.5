@@ -144,10 +144,10 @@ This ability allows the warrior to unleash a flurry of super-fast blows. The abi
 	@187=~Toughness~
 	@188=~Stunning Attack~
 	@189=~Deathblow~
-	@190=~The character receives Power Attack modal ability. While activated all attacks with melee weapons are done with +3 bonus to damage but suffer -3 penalty to hit.~
+	@190=~The character receives Power Attack modal ability. While activated all attacks with melee weapons are done with +3 bonus to damage (+4 with two-handed weapons) but suffer -3 penalty to hit.~
 	@191=~Once per round, if the character slays an enemy in melee, <PRO_HESHE> gains one additional APR till end of round.~
 	@192=~The character receives +2 bonus on Saving Throws vs. Paralysis/Poison/Death and vs. Petrification/Polymorph.~
-	@193=~The effects of Cleave feat can be applied to the character any number of times per round whenever <PRO_HESHE> slays an enemy with melee weapon.~
+	@193=~The character receives an additional 1/2 APR till end of round whenever <PRO_HESHE> hits an enemy in melee (and not necessarily kills it).~
 	@194=~The character regenerates 3 Hit Points per round.~
 	@195=~The character receives Stunning Attack innate ability.
 
@@ -176,11 +176,11 @@ This ability allows the warrior to vanquish foes with a single blow.  For the ne
 
 	@211=~The character receives Combat Expertise modal ability. While activated all attacks with melee weapons suffer -3 penalty to THAC0 but character receives +3 bonus to AC. The character also suffers additional 15% spellcasting failure. This ability can only be used with melee weapon equipped.~
 	@212=~The character receives +2 bonus on Saving Throws vs. Spells.~
-	@213=~The character receives Study Opponent innate ability which can be used 3 times per day.
+	@213=~The character receives Study Opponent innate ability which can be used at will.
 
 Study Opponent:
 
-Character can spend one round studying enemy and getting insight about its weaknesses and share them to the party. The target receives a -3 penalty to AC, saving throws and THAC0.
+Character can spend one round studying enemy and getting insight about its weaknesses and share them to the party. The target receives a -3 penalty to AC, saving throws and THAC0 for next 10 seconds.
 This is an extraordinary ability and thus is not subject to magic resistance or savingthrows, neither can be dispelled.~
 	@214=~While wearing light or no armor, the character receives +1 bonus to AC for every 2 points of Intelligence above 10.~
 	@215=~The character receives Critical Strike innate ability.

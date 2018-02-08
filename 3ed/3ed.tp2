@@ -444,17 +444,16 @@ BEGIN @13
 	//update npc stats and set their lvl to 0
     INCLUDE ~3ed/ALTER_CREATURE.tph~
     INCLUDE ~3ed/SET_DEFAULT_NPC_STATS.tph~
-
-    
-    
-    
-
-	
+   	
     WITH_TRA ~%LANGUAGE%\npc.tra~ BEGIN
          INCLUDE ~3ed/Component13/UpdateNpc.tps~
     END
 
 
+BEGIN @14	
+	//rest once in 8 hours
+
+    INCLUDE ~3ed/Component14/Rest8.tps~
 
 
 

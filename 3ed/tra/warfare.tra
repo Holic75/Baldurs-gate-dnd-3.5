@@ -1,7 +1,7 @@
 	@001=~Power Attack~ 
 	@002=~Power Attack
 	
-Character receives +3 on damage rolls and -3 penalty to THAC0 while fighting with melee weapons (and throwing axes).~
+Character receives +3 on damage rolls (+4 with two-handed weapons) and -3 penalty to THAC0 while fighting with melee weapons (and throwing axes).~
 
 
 	@003=~Stunning Attack~
@@ -18,9 +18,9 @@ This ability allows the warrior to vanquish foes with a single blow.  For the ne
 	@007=~Improved Power Attack~ 
 	@008=~Improved Power Attack
 	
-Character receives +5 on damage rolls and -3 penalty to THAC0 while fighting with melee weapons (and throwing axes).~
+Character receives +5 on damage rolls (+7 with two-handed weapons) and -3 penalty to THAC0 while fighting with melee weapons (and throwing axes).~
 
 	@009=~Supreme Power Attack~ 
 	@010=~Supreme Power Attack
 	
-Character receives +6 on damage rolls and -3 penalty to THAC0 while fighting with melee weapons (and throwing axes).~
+Character receives +6 on damage rolls (+9 with two-handed weapons) and -3 penalty to THAC0 while fighting with melee weapons (and throwing axes).~

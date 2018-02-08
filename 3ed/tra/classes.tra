@@ -41,7 +41,7 @@ CLASS FEATURES:
 
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
 
-– May distribute 16 skill points per level among thieving skills (24 points at level 1).
+– May distribute 15 skill points per level among thieving skills (25 points at level 1).
 – Gets one bonus feat at level 1 and every 3 levels thereafter.
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.
 – At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1 and reduces penalty to thieving skills by 5%. Max dexterity AC bonus is further increased by 1 at and skill penalties are reduced by 10% at level 4 and every 4 levels thereafter (up to a maximum of +5 increase in max AC bonus and -25% decrease of thieving skill penalty at level 16).
@@ -112,7 +112,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 
 – Can cast one spell less per day than trueclass mage.
 – Cannot cast spells of 8th and 9th levels.
-– May distribute 12 skill points per level among thieving skills (20 points at level 1).
+– May distribute 10 skill points per level among thieving skills (20 points at level 1).
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.
 – May use Spontaneous Spell Channeling
@@ -358,8 +358,8 @@ Disadvantages:
 @015=~INQUISITOR: The Inquisitor has dedicated <PRO_HISHER> life to finding and eliminating practitioners of evil magic and defeating the forces of darkness, and <PRO_HISHER> god has provided <PRO_HIMHER> with special abilities toward that end.
 
 Advantages:
-– May cast Dispel Magic once per day. Gains one use at level 1 and an additional use every 4 levels thereafter. The spell is cast at Speed Factor 1 and acts at twice the Inquisitor's character level.
-– May cast True Sight once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
+– May cast Dispel Magic once per day. Gains one use at level 4 and an additional use every 4 levels thereafter. The spell is cast at Speed Factor 1 and acts at twice the Inquisitor's character level.
+– May cast True Sight once per day. Gains one use at level 4 and an additional use every 4 levels thereafter.
 – Immune to hold and charm.
 – Each successful hit bestows a 25% cumulative chance of spell failure on the target.
 – Magic Resistance: 25% +2% per level to a maximum of 85% at level 30.
@@ -614,7 +614,7 @@ CLASS FEATURES:
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
 
 – Can cast two spell per day less than trueclass clerics.
-– May distribute 12 skill points per level among thieving skills (20 points at level 1).
+– May distribute 10 skill points per level among thieving skills (20 points at level 1).
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).
@@ -767,7 +767,7 @@ CLASS FEATURES:
 – May not equip shields larger than bucklers.
 – May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.
 – Can cast one arcane spell per day less than trueclass mage.
-– May distribute 12 skill points per level among thieving skills (20 points at level 1).
+– May distribute 10 skill points per level among thieving skills (20 points at level 1).
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.
 – Starting from level 8 can cast spells in complete silence (as being always under constant effect of Vocalize).
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.
@@ -851,7 +851,7 @@ Fourth level spells: starting from level 13 Assassin gets access to the followin
 – Gets one bonus feat at levels 22 and 28.
 Disadvantages:
 – Do not receive Bonus Feats as trueclass thieves do.
-– May only distribute 12 skill points per level among thieving skills (20 points at level 1).~
+– May only distribute 10 skill points per level among thieving skills (20 points at level 1).~
 //--------------------------------------------------------------------------------------------------//
 @040=~SWASHBUCKLER: This rogue is part acrobat, part swords<PRO_MANWOMAN>, and part wit: the epitome of charm and grace.
 
@@ -865,7 +865,7 @@ Advantages:
 
 Disadvantages:
 – May not use Sneak attack.
-– May only distribute 16 skill points per level among thieving skills (24 points at level 1).~
+– May only distribute 15 skill points per level among thieving skills (25 points at level 1).~
 
 @0410001 = ~ninja~
 @0410002 = ~Ninja~
@@ -889,7 +889,7 @@ Advantages:
 
 Disadvantages:
 – May not wear any armor or use shields.
-– May only distribute 16 skill points per level among thieving skills (24 points at level 1).
+– May only distribute 15 skill points per level among thieving skills (25 points at level 1).
 – Do not gain bonus feats at levels 13, 16 and 25 as trueclass thieves do.~
 
 	@0410001=~ninja~
@@ -917,7 +917,7 @@ This ability opens a temporary gateway to a small pocket within the Plane of Sha
 Disadvantages:
 – Alignment restricted to any non-lawful.
 – Worse Sneak attack progression: 1d6 at level 1 + 1d6 every 3 levels thereafter.
-– May only distribute 16 skill points per level (24 at level 1) among thieving skills.
+– May only distribute 15 skill points per level (25 at level 1) among thieving skills.
 – May not use the Set Snare ability.~
 //---------------------------------------------------------------------------------------------------//
 @043=~BARD: The Bard is a rogue, but <PRO_HESHE> is very different from the Thief. The Bard's strength is <PRO_HISHER> pleasant and charming personality. With it and <PRO_HISHER> wits, <PRO_HESHE> makes <PRO_HISHER> way through the world. A Bard is a talented musician and a walking storehouse of gossip, tall tales, and lore; <PRO_HESHE> learns a little bit about everything that crosses <PRO_HISHER> path and is a jack-of-all-trades but master of none. While many Bards are scoundrels, their stories and songs are welcome almost everywhere.

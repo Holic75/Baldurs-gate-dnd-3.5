@@ -8,7 +8,7 @@ THIEF                   1               3
 BARD                    1               3
 PALADIN                 1               3
 DRUID                   1               3
-RANGER                  1               3
+RANGER                  0               3
 FIGHTER_MAGE            1               3
 FIGHTER_CLERIC          1               3
 FIGHTER_THIEF           1               3
@@ -18,7 +18,7 @@ CLERIC_MAGE             1               3
 CLERIC_THIEF            1               3
 FIGHTER_DRUID           1               3
 FIGHTER_MAGE_CLERIC     1               3
-CLERIC_RANGER           1               3
+CLERIC_RANGER           0               3
 SORCERER                1               3
 MONK                    1               3
 SHAMAN                  1               3

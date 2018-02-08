@@ -27,7 +27,17 @@ DEFINE_PATCH_FUNCTION ~PTCH_WPN~
 				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~CLEAVE2~ END
 				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~CLEAVE2~ END
 				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~PWRATKBN~ END
-				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~PWRATKBN~ END				
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~PWRATKBN~ END
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~PWRATIBN~ END
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~PWRATIBN~ END
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~PWRATSBN~ END
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~PWRATSBN~ END
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~PW2ATKBN~ END
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~PW2ATKBN~ END
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~PW2ATIBN~ END
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~PW2ATIBN~ END
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~PW2ATSBN~ END
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~PW2ATSBN~ END				
 				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~CMBEXPBN~ END
 				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~CMBEXPBN~ END	
 				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~WHIRLG1~ END
@@ -84,6 +94,12 @@ DEFINE_PATCH_FUNCTION ~PTCH_WPN~
 				LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 326 target = 1  power = 0  parameter1 = 0  parameter2 = 0  timing = 0  resist_dispel = 0  duration = 2 probability1 = 100  probability2 = 0  STR_VAR  resource = ~2HSTRDM~  END
 			END
 			ELSE BEGIN
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~PW2ATKBN~ END
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~PW2ATKBN~ END
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~PW2ATIBN~ END
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~PW2ATIBN~ END
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~PW2ATSBN~ END
+				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~PW2ATSBN~ END
 				LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource=~2HSTRDMB~ END
 				//LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource=~2HSTRDM~ END			
 			END

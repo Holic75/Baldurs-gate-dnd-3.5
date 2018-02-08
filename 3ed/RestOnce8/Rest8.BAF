@@ -1,0 +1,7 @@
+IF
+	PartyRested()
+THEN
+	RESPONSE #100
+		ApplySpellRES("DIS_REST",Player1)  
+		Continue()
+END

@@ -78,6 +78,9 @@
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //cleric mage
 	COPY ~3ed/Feats/FeatAttribution/SFTCRFMC.SPL~ ~override/CE_FMC1.SPL~
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //fighter_cleric mage
+	COPY ~3ed/Feats/FeatAttribution/SFTCRERC.SPL~ ~override/CE_RC1.SPL~
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //cleric_ranger
+        
 		
 	//script for giving channel abilities	
 	OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN

@@ -218,11 +218,11 @@ This ability allows the warrior to unleash a flurry of super-fast blows. The abi
 ```  
 
 ###### Warfare
-Power Attack (1 star) - The character receives Power Attack modal ability. While activated all attacks with melee weapons are done with +3 bonus to damage but suffer -3 penalty to hit.  
+Power Attack (1 star) - The character receives Power Attack modal ability. While activated all attacks with melee weapons are done with +3 bonus to damage (+4 for two-handed weapons) but suffer -3 penalty to hit.  
 Cleave (2 stars) - Once per round, if the character slays an enemy in melee, she gains one additional APR till end of round.  
 Great Fortitude (3 stars) - The character receives +2 bonus on Saving Throws vs. Paralysis/Poison/Death and vs. Petrification/Polymorph.  
-Greater Cleave (4 stars) - The effects of Cleave feat can be applied to the character any number of times per round whenever she slays an enemy with melee weapon.  
-Toughness (5 stars) - The character receives +30 bonus HP.  
+Greater Cleave (4 stars) - Once per round, if character hits a target she receives +1/2 additional APR till end of round.  
+Toughness (5 stars) - The character regenerates 3 Hit points per round.  
 Stunning Attack (6 stars) - The character receives Stunning Attack innate ability.
 ```
 Stunning Attack:
@@ -443,8 +443,8 @@ At 8th the attack and damage rolls bonus increases to +3 and physical damage res
 At 16th level the attack and damage rolls bonus increases to +5 and physical damage resistance bonus to 30%.
 ```
 – 8th level: Endless Berserk: Berserker can prolong her rage if the combat lasts too long, while enraged she can spend an extra use of her Rage to prolong it for a new full duration, she does not feel the tiring effects until the end of this new Rage, she can continue to prolong the Rage as long as she has Rages.  
-– 12th level: Improved Power Attack: Power attack damage bonus is increased to +5.  
-– 16th level: Supreme Power Attack:  Power attack damage bonus is further increased to +6.  
+– 12th level: Improved Power Attack: Power attack damage bonus is increased to +5 (+7 for two-handed weapons).  
+– 16th level: Supreme Power Attack:  Power attack damage bonus is further increased to +6 (+9 for two-handed weapons).  
 – 18th level: Immortal Berserker: The hit points of enraged Berserker can not be reduced below 1, but at the end of Rage Berserker receives 15 points of damage which can kill her if she has fewer hit points.   
 Note: although her hit points can not be reduced below 1, Berserker can still be killed by spells like Slay Living, Disintegrate and others.  
 – 20th level: Tireless Berserk: Berserker is no longer winded after Rage.  
@@ -600,8 +600,8 @@ Disadvantages:
 
 ### INQUISITOR
 Advantages:  
-– May cast Dispel Magic once per day. Gains one use at level 1 and an additional use every 4 levels thereafter. The spell is cast at Speed Factor 1 and acts at twice the Inquisitor's character level.   
-– May cast True Sight once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.  
+– May cast Dispel Magic once per day. Gains one use at level 4 and an additional use every 4 levels thereafter. The spell is cast at Speed Factor 1 and acts at twice the Inquisitor's character level.   
+– May cast True Sight once per day. Gains one use at level 4 and an additional use every 4 levels thereafter.  
 – Immune to hold and charm.  
 – Each successful hit bestows a 25% cumulative chance of spell failure on the target.  
 – Magic Resistance: 25% +2% per level to a maximum of 85% at level 30.  
@@ -954,7 +954,7 @@ Fourth level spells: starting from level 13 Assassin gets access to the followin
 – Gets one bonus feat at levels 22 and 28.  
 Disadvantages:  
 – Do not receive Bonus Feats as trueclass thieves do.  
-– May only distribute 12 skill points per level among thieving skills (20 points at level 1)  
+– May only distribute 10 skill points per level among thieving skills (20 points at level 1)  
 
 ### SWASHBUCKLER
 Advantages:  
@@ -967,7 +967,7 @@ Advantages:
 
 Disadvantages:  
 – May not use Sneak attack.  
-– May only distribute 16 skill points per level among thieving skills (24 points at level 1)  
+– May only distribute 15 skill points per level among thieving skills (25 points at level 1)  
 
 ### NINJA  (replaces BOUNTY HUNTER)
 Advantages:  
@@ -985,7 +985,7 @@ Advantages:
 
 Disadvantages:  
 – May not wear any armor or use shields.   
-– May only distribute 16 skill points per level among thieving skills (24 points at level 1).  
+– May only distribute 15 skill points per level among thieving skills (25 points at level 1).  
 – Do not gain bonus feats at levels 16, 19 and 25 as trueclass thieves do.  
 
 ### SHADOWDANCER
@@ -1011,7 +1011,7 @@ This ability opens a temporary gateway to a small pocket within the Plane of Sha
 Disadvantages:  
 – Alignment restricted to any non-lawful.  
 – Worse Sneak attack progression: 1d6 at level 1 + 1d6 every 3 levels thereafter.  
-– May only distribute 16 skill points per level (24 at level 1) among thieving skills.  
+– May only distribute 15 skill points per level (25 at level 1) among thieving skills.  
 – May not use the Set Snare ability.  
 
 ### BARD
@@ -1306,7 +1306,7 @@ CLASS FEATURES:
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
 ```
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.  
-– May distribute 16 skill points per level among thieving skills (24 points at level 1).  
+– May distribute 15 skill points per level among thieving skills (25 points at level 1).  
 – Gets one bonus feat at level 1 and every 3 levels thereafter.  
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.  
 – At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1 and reduces penalty to thieving skills by 10%. Max dexterity AC bonus is further increased by 1 at and skill penalties are reduced by 10% at level 4 and every 4 levels thereafter (up to a maximum of +5 increase in max AC bonus and -50% decrease of thieving skill penalty at level 16).  
@@ -1422,7 +1422,7 @@ CLASS FEATURES:
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
 ```
 – Can cast two spell per day less than trueclass clerics.  
-– May distribute 12 skill points per level among thieving skills (20 points at level 1).  
+– May distribute 10 skill points per level among thieving skills (20 points at level 1).  
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.  
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
@@ -1441,7 +1441,7 @@ CLASS FEATURES:
 – May not equip shields larger than bucklers.  
 – May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.   
 – Can cast one arcane spell per day less than trueclass mage.   
-– May distribute 12 skill points per level among thieving skills (20 points at level 1).  
+– May distribute 10 skill points per level among thieving skills (20 points at level 1).  
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.  
 – Starting from level 8 can cast spells in complete silence (as being always under constant effect of Vocalize).
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
@@ -1464,7 +1464,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May get up to Weapon Specialization (2 stars) in any weapon they can use.  
 – Can cast one spell less per day than trueclass mage.  
 – Cannot cast spells of 8th and 9th levels.  
-– May distribute 12 skill points per level among thieving skills (20 points at level 1).  
+– May distribute 10 skill points per level among thieving skills (20 points at level 1).  
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.   
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
 – May use Spontaneous Spell Channeling

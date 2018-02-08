@@ -93,9 +93,12 @@
 						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRECT.SPL~ feat_type_file=~SFTCRE~ caption=~CTEPCFT~ END 
                         
 //epic feats to cleric - ranger
-	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=0 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=1 //replacement feat at level 1 
 						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRERC.SPL~ feat_type_file=~SFTCRE~ caption=~RCEPCFT~ END
-                        
+
+    COPY_EXISTING ~RCEPCFT.SPL~ ~override~ //delay to 5 seconds
+		LPF  ALTER_SPELL_EFFECT INT_VAR duration  = 5 timing = 3  END 
+        
 //epic feats to druid
 	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=0 
 						STR_VAR clab=~CLABDR+.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRED.SPL~ feat_type_file=~SFTCRE~ caption=~DEPCCFT~ END
@@ -108,11 +111,11 @@
 						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFC.SPL~ feat_type_file=~SFTCRE~ caption=~FCEPCFT~ END
                         
 //epic feats to rangers and archers
-	LAF ADD_BONUS_FEATS INT_VAR min_level=28 max_level=28 d_level=1 add_at_level1=0 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=28 max_level=28 d_level=1 add_at_level1=1 //replacement feat at level 1 
 						STR_VAR clab=~CLABRN0[1-2]\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRER.SPL~ feat_type_file=~SFTCRE~ caption=~REPCCFT~ END
 
 //epic feats to beastmasters and stalkers
-	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=0 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=1 //replacement feat at level 1 
 						STR_VAR clab=~CLABRN0[3-4]\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRER.SPL~ feat_type_file=~SFTCRE~ caption=~REPCFT2~ END
                         
 //epic feats to paladin
@@ -130,3 +133,4 @@
 //add bonus feat to humans at lvl1
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
 						STR_VAR clab=~\(CLAB+.*\)\|\(OHTYR\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREH.SPL~ feat_type_file=~SFTCRE~ caption=~HUMBONFT~ END
+                        

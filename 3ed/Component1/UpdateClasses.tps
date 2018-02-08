@@ -783,9 +783,16 @@ END
 		EXTEND_TOP ~BALDUR.BCS~ ~3ed/Classes/Assassin/Spells/ASN.baf~
 			EVALUATE_BUFFER			
 	END
-	// ---------------------------------------- shadowdancer special abilities (mislead and shadow form)
+	// ---------------------------------------- shadowdancer special abilities (simulacrum and shadow form)
 	COPY ~3ed/Classes/Shadowdancer~ ~override~
 	
+    //fix shadow step to not get bonus attacks from rapid shot and flurry of strikes
+    COPY_EXISTING ~SPSD02.SPL~ ~override~ 
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~FLRSTKBN~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 insert_point = 0 STR_VAR resource = ~FLRSTKBN~ END        
+    
     COPY_EXISTING ~SPSD01.SPL~ ~override~ //remove bonus from non spell saves
         LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 33 END 
         LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 34 END

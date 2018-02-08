@@ -35,7 +35,7 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 12 Dex = 16 Con = 12 Int = 13 Wis = 9 Cha = 15 RemoveKnownSpells = 0
                                   STR_VAR NpcName = ~GARRIC~ ScriptName = ~GARRICK~ ClassName = ~BARD~  END  
                                   
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 11 Dex = 16 Con = 14 Int = 16 Wis = 9 Cha = 10  Lockpick = 4 FindTraps = 4 RemoveKnownSpells = 0 RemoveMemorizedSpells = 0
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 11 Dex = 16 Con = 14 Int = 16 Wis = 9 Cha = 10  Lockpick = 5 FindTraps = 5 RemoveKnownSpells = 0 RemoveMemorizedSpells = 0
                                   STR_VAR NpcName = ~SAFANA~ ScriptName = ~SAFANA~ ClassName = ~THIEF~ KitName = ~SWASHBUCKLER~  END   
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 14 Con = 14 Int = 10 Wis = 16 Cha = 10
@@ -64,7 +64,7 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 16 Con = 12 Int = 16 Wis = 10 Cha = 10  RemoveKnownSpells = 0
                                   STR_VAR NpcName = ~XAN~ ScriptName = ~XAN~ ClassName = ~FIGHTER_MAGE~ END          
 
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 10 Int = 16 Wis = 8 Cha = 10  HideInShadows = 4 MoveSilently = 4
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 10 Int = 16 Wis = 8 Cha = 10  HideInShadows = 5 MoveSilently = 5
                                   STR_VAR NpcName = ~SKIE~ ScriptName = ~SKIE~ ClassName = ~THIEF~ KitName = ~SHADOWDANCER~   END                           
                 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 14 Con = 14 Int = 13 Wis = 9 Cha = 15  RemoveKnownSpells = 0 
@@ -75,7 +75,7 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 14 Con = 12 Int = 18 Wis = 9 Cha = 9 RemoveKnownSpells = 0
                                   STR_VAR NpcName = ~XZAR~ ScriptName = ~XZAR~ ClassName = ~MAGE~ KitName = ~MAGESCHOOL_NECROMANCER~ END       
         
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 14 Int = 16 Wis = 9 Cha = 9  MoveSilently = 4 FindTraps = 4
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 14 Int = 16 Wis = 9 Cha = 9  MoveSilently = 5 FindTraps = 5
                                   STR_VAR NpcName = ~MONTAR~ ScriptName = ~MONTARON~ ClassName = ~THIEF~ KitName = ~ASSASIN~   END   
 
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 12 Dex = 10 Con = 16 Int = 16 Wis = 14 Cha = 10
@@ -103,10 +103,10 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 12 Con = 14 Int = 18 Wis = 9 Cha = 10 RemoveKnownSpells = 0
                                   STR_VAR NpcName = ~EDWIN~ ScriptName = ~EDWIN~ ClassName = ~MAGE~ KitName = ~MAGESCHOOL_CONJURER~ END
 
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 10 Int = 16 Wis = 14 Cha = 14 MoveSilently = 4 HideInShadows = 4
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 10 Int = 16 Wis = 14 Cha = 14 MoveSilently = 5 HideInShadows = 5
                                   STR_VAR NpcName = ~VICONI~ ScriptName = ~VICONIA~ ClassName = ~CLERIC_THIEF~ END   
                                   
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 9 Dex = 16 Con = 12 Int = 16 Wis = 11 Cha = 10 Lockpick = 4 FindTraps = 4
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 9 Dex = 16 Con = 12 Int = 16 Wis = 11 Cha = 10 Lockpick = 5 FindTraps = 5
                                   STR_VAR NpcName = ~IMOEN+.*~ ScriptName = ~IMOEN~ ClassName = ~FIGHTER_MAGE_THIEF~ END   
         COPY_EXISTING_REGEXP ~IMOEN+.*\.CRE~ ~override~    
             //add few wizard spells
@@ -144,13 +144,13 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 12 Con = 14 Int = 18 Wis = 9 Cha = 10 RemoveKnownSpells = 0
                                   STR_VAR NpcName = ~EDWIN+.*~ ScriptName = ~EDWIN~ ClassName = ~MAGE~ KitName = ~MAGESCHOOL_CONJURER~ END
                                   
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 10 Int = 16 Wis = 14 Cha = 14 MoveSilently = 4 HideInShadows = 4
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 10 Int = 16 Wis = 14 Cha = 14 MoveSilently = 5 HideInShadows = 5
                                   STR_VAR NpcName = ~VICONI+.*~ ScriptName = ~VICONIA~ ClassName = ~CLERIC_THIEF~ END       
                                   
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 9 Dex = 16 Con = 12 Int = 16 Wis = 11 Cha = 10 Lockpick = 4 FindTraps = 4 RemoveKnownSpells = 0 InitialXp = 89000
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 9 Dex = 16 Con = 12 Int = 16 Wis = 11 Cha = 10 Lockpick = 5 FindTraps = 5 RemoveKnownSpells = 0 InitialXp = 89000
                                   STR_VAR NpcName = ~IMOEN1+.*~ ScriptName = ~IMOEN~ ClassName = ~FIGHTER_MAGE_THIEF~ END  
                                   
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 9 Dex = 16 Con = 12 Int = 16 Wis = 11 Cha = 10  Lockpick = 4 FindTraps = 4 RemoveKnownSpells = 0 InitialXp = 89000
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 9 Dex = 16 Con = 12 Int = 16 Wis = 11 Cha = 10  Lockpick = 5 FindTraps = 5 RemoveKnownSpells = 0 InitialXp = 89000
                                   STR_VAR NpcName = ~IMOEN2+.*~ ScriptName = ~IMOEN2~ ClassName = ~FIGHTER_MAGE_THIEF~  END   
                                   
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 12 Int = 14 Wis = 10 Cha = 10  Lockpick = 5 FindTraps = 5
@@ -180,7 +180,7 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 10 Con = 14 Int = 10 Wis = 10 Cha = 16  
                                   STR_VAR NpcName = ~KELDOR+.*~ ScriptName = ~KELDORN~ ClassName = ~PALADIN~ KitName = ~INQUISITOR~ END       
 
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 16 Con = 16 Int = 16 Wis = 9 Cha = 9  Lockpick = 4 FindTraps = 4 RemoveKnownSpells = 0 
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 16 Con = 16 Int = 16 Wis = 9 Cha = 9  Lockpick = 5 FindTraps = 5 RemoveKnownSpells = 0 
                                   STR_VAR NpcName = ~JAN[0-9]+.*~ ScriptName = ~JAN~ ClassName = ~MAGE_THIEF~ KitName = ~MAGESCHOOL_ILLUSIONIST~ END                 
         COPY_EXISTING_REGEXP ~JAN[0-9]+.*\.CRE~ ~override~ //put innate for creating ammo back
             ADD_MEMORIZED_SPELL ~SPIN829~ #0 ~innate~
@@ -218,7 +218,7 @@
         LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 12 Dex = 16 Con = 12 Int = 16 Wis = 10 Cha = 10  Lockpick = 5 FindTraps = 5
                                   STR_VAR NpcName = ~ohhfak+.*~ ScriptName = ~OHHFAK~ ClassName = ~THIEF~  KitName = ~THIEF_BASE~  END          
 
-        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 20 Con = 12 Int = 18 Wis = 12 Cha = 14  HideInShadows = 4 FindTraps = 4 RemoveKnownSpells = 0 RemoveMemorizedSpells = 0
+        LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 20 Con = 12 Int = 18 Wis = 12 Cha = 14  HideInShadows = 5 FindTraps = 5 RemoveKnownSpells = 0 RemoveMemorizedSpells = 0
                                   STR_VAR NpcName = ~ohhex+.*~ ScriptName = ~HEXXAT~ ClassName = ~THIEF~ KitName = ~SHADOWDANCER~   END                      
     END
     

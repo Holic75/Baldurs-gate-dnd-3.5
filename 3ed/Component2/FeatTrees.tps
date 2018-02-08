@@ -5,7 +5,7 @@
 WITH_TRA ~%LANGUAGE%\warfare.tra~ BEGIN
 	//1 - power attack (+3dmg, -3 to hit for melee weapons)
 	OUTER_SPRINT game_name @001  OUTER_SPRINT game_description @002
-	LAF ADD_ACT_FEAT STR_VAR ability_name=~PWRATK~ game_name game_description  END 
+	LAF ADD_ACT_FEAT STR_VAR ability_name=~PWRATK~ game_name game_description  ability_name2 = ~PW2ATK~ END 
 	
 	//2 - cleave
 	COPY ~3ed/Feats/PermanentAbilities/Cleave~  ~override~
@@ -16,9 +16,9 @@ WITH_TRA ~%LANGUAGE%\warfare.tra~ BEGIN
 	
 	//4 - Greater Cleave
 	COPY ~3ed/Feats/PermanentAbilities/GreaterCleave~  ~override~
-	COPY_EXISTING ~CLEAV2FT.SPL~ ~override~
-		LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 timing=9 STR_VAR resource=~CLEAV1FT~ END  //remove effects of previous cleave
-		LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 timing=9 STR_VAR resource=~CLEAVE1~ END  //remove effects of previous cleave
+	//COPY_EXISTING ~CLEAV2FT.SPL~ ~override~
+	//	LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 timing=9 STR_VAR resource=~CLEAV1FT~ END  //remove effects of previous cleave
+	//	LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 timing=9 STR_VAR resource=~CLEAVE1~ END  //remove effects of previous cleave
 		
 	//5 - Toughness
 	COPY ~3ed/Feats/PermanentAbilities/Toughness/TOUGHSFT.SPL~  ~override~	
@@ -52,19 +52,21 @@ WITH_TRA ~%LANGUAGE%\warfare.tra~ BEGIN
 	
 	//improved and supreme power attack of berzerker (technically not a part of the tree but  replace the power attack so is also defined here
 	OUTER_SPRINT game_name @007  OUTER_SPRINT game_description @008
-	LAF ADD_ACT_FEAT STR_VAR ability_name=~PWRATI~ game_name game_description  END //improved power attack (+5 dmg, -3 thaco)
+	LAF ADD_ACT_FEAT STR_VAR ability_name=~PWRATI~ game_name game_description  ability_name2 = ~PW2ATI~ END //improved power attack (+5 dmg, -3 thaco)
 	//add removal of standard power attack
 		COPY_EXISTING ~PWRATIFT.SPL~ ~override~
-		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource=~PWRATKBN~ END 
+		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource=~PWRATKBN~ END
+        LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource=~PW2ATKBN~ END
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATK1~ END
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATK1~ END
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATK0~ END
 	
 	OUTER_SPRINT game_name @009  OUTER_SPRINT game_description @010
-	LAF ADD_ACT_FEAT STR_VAR ability_name=~PWRATS~ game_name game_description  END //supreme power attack (+6 dmg, -3 thaco)
+	LAF ADD_ACT_FEAT STR_VAR ability_name=~PWRATS~ game_name game_description  ability_name2 = ~PW2ATS~ END //supreme power attack (+6 dmg, -3 thaco)
 	//add removal of standard power attack
 		COPY_EXISTING ~PWRATSFT.SPL~ ~override~
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource=~PWRATIBN~ END 
+        LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource=~PW2ATIBN~ END
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATI1~ END
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATI1~ END
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATI0~ END	
@@ -110,9 +112,9 @@ WITH_TRA ~%LANGUAGE%\tactics.tra~ BEGIN
 	//3 - Iron Will
 	COPY ~3ed/Feats/PermanentAbilities/IronWill/IRONWLFT.SPL~  ~override~
 	
-	//4 - Study Oponent (-3 AC, thac0 and saves to one enemy, 3 times per day)
+	//4 - Study Oponent (-3 AC, thac0 and saves to one enemy)
 	OUTER_SPRINT game_name @003  OUTER_SPRINT game_description @004
-	LAF ADD_LUA_FEAT INT_VAR n_uses=3 STR_VAR ability_name=~STUDOP~ game_name game_description  END 
+	LAF ADD_LUA_FEAT INT_VAR n_uses=1 STR_VAR ability_name=~STUDOP~ game_name game_description  END 
 	
 	//5 - combat intuition (int bonus to ac with light armor)
 	LAF ADD_PSB_FEAT INT_VAR min_val=12 max_val=25 step=2 par1=128 STR_VAR ability_name=~CMBINT~ END 

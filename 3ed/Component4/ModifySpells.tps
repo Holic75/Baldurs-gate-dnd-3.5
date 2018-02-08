@@ -1,8 +1,20 @@
-	//make creatures wake up on sleep
+	//make creatures wake up on sleep, and emotion hopelessness
 	COPY_EXISTING ~SPWI116.SPL~ ~override~ //same for all games 
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=39 parameter2=0 END
 	
-
+	ACTION_IF NOT (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+        COPY_EXISTING ~SPWI411.SPL~ ~override~ 
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=39 parameter2=0 END
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @314
+    END
+    ELSE BEGIN //replace stun with sleep effect
+        COPY_EXISTING ~SPWI411.SPL~ ~override~ 
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=45 opcode = 39 parameter2=0 END   
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @315	    
+    END
+    
 		//change finger of death to make 8d6 damage in case of failure independent of level
 	COPY_EXISTING ~SPWI713.SPL~ ~override~
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 12 dicenumber = 8 dicesize = 6  parameter1 = 0 END
@@ -924,6 +936,10 @@
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 1 target = 1 timing = 9 duration = 1 END
         SET parameter1 = 0 - 150994945 
         LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 1 match_parameter2 = 1 parameter1  END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~FLRSTKBN~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 insert_point = 0 STR_VAR resource = ~FLRSTKBN~ END   
         
     COPY_EXISTING    ~SIMULACR.SPL~ ~override~
         //disallow using items
@@ -934,6 +950,10 @@
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 11 target = 1 timing = 9 duration = 1 insert_point = 0 END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 12 target = 1 timing = 9 duration = 1 insert_point = 0 END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 1   parameter1 = 50 parameter2 = 2 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~FLRSTKBN~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 insert_point = 0 STR_VAR resource = ~FLRSTKBN~ END   
         
     COPY_EXISTING ~PROJIMAG.SPL~ ~override~    
         //dissalow attacks to caster
@@ -942,5 +962,6 @@
         LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 1 match_parameter2 = 1 parameter1  END           
 
 
+        
         
     
