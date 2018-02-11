@@ -6,7 +6,7 @@ Character receives +3 bonus to AC and -3 penalty to THAC0 while fighting with me
 	@003=~Study Opponent~
 	@004=~Study Opponent
 
-Character can spend one round studying enemy and getting insight about its weaknesses and share it the party. The target receives a -3 penalty to AC, saving throws and THAC0.
+Character can spend one round studying enemy and getting insight about its weaknesses and share them to the party. The target receives a -3 penalty to AC, saving throws and THAC0 for next 10 seconds.
 This is an extraordinary ability and thus is not subject to magic resistance or savingthrows, neither can be dispelled.~
 
 	@005=~Critical Strike~

@@ -240,11 +240,11 @@ Insightful Strike (1 star) - With unarmed strikes, short swords, daggers, long s
 NOTE: This damage bonus is not multiplied by 1.5 for two-handed weapons, although if character got additional 0.5 strength bonus from Strength score, it is retained (i.e. if Strength is 14 and Intelligence is 16, the character will get +3 damage bonus from Intelligence and +1 (0.5*2) from Strength to a total of +4 with two-handed weapons).  
 Combat Expertise (2 stars) - The character receives Combat Expertise modal ability. While activated all attacks with melee weapons suffer -3 penalty to THAC0 but character receives +3 bonus to AC, character also suffers additional 15% spell casting failure. Can be used only with melee weapon equipped.  
 Iron Will (3 stars) - The character receives +2 bonus on Saving Throws vs. Spells.  
-Study Opponent (4 stars) - The character receives Study Opponent innate ability which can be used 3 times per day.  
+Study Opponent (4 stars) - The character receives Study Opponent innate ability which can be used at will.    
 ```
 Study Opponent:
-Character can spend one round studying enemy and getting insight about its weaknesses and share them to the party. The target receives a -3 penalty to AC, saving throws and THAC0.
-This is an extraordinary ability and thus is not subject to magic resistance or savingthrows, neither can be dispelled.
+CCharacter can spend one round studying enemy and getting insight about its weaknesses and share them to the party. The target receives a -3 penalty to AC, saving throws and THAC0 for next 10 seconds.
+This is an extraordinary ability and thus is not subject to magic resistance or savingthrows, neither can be dispelled.  
 ```
 Combat Intuition (5 stars) - While wearing light or no armor the character receives +1 bonus to AC for every 2 points of Intelligence above 10.  
 Critical Strike (6 stars) - The character receives Critical Strike innate ability.
