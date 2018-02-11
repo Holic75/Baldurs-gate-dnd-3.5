@@ -23,7 +23,7 @@ It changes game mechanics (i.e. classes, spells, abilities, etc...) to that of 3
 
 # Installation
 
-Put all files to Game folder (the one which contains Baldur.exe) and run Setup-3ed.exe, choose to install ALL components (you can optionally skip Component [More powerful enemies] and Component [Point buy system]).
+Put all files to Game folder (the one which contains Baldur.exe) and run Setup-3ed.exe, choose to install ALL components (you can optionally skip Component [More powerful enemies] , Component [Point buy system] and Component [Rest once in 8 hours]).
 In C:\Users\UserName\Documents\Baldur's Gate (II) - Enhanced Edition folder find file Baldur.lua and add the string
 ```
 SetPrivateProfileString('Game Options','3E Thief Sneak Attack','1')
@@ -2039,19 +2039,19 @@ Note: Since priests can not cast 8th level spells, they receive another 6th and 
 
 Domain           | Granted Spells                                                                      |Domain Ability
 --- | ---| ---
-Elemental (Air)  | Shocking Grasp (1), Lightning Bolt (3), Storm Shield (6)                            |25% lightning resistance
+Elemental (Air)  | Shocking Grasp (1), Lightning Bolt (3), Storm Shield (6)                            |50% lightning resistance
 Animal           | Animal Summoning I (4), Animal Summoning II (5), Animal Summoning III (6)           |Charm animals, 10' Radius 1/day
-Elemental (Cold) | Chill Touch (1), Fireshield (Blue) (4), Cone of Cold (5)                            |25% cold resistance
+Elemental (Cold) | Chill Touch (1), Fireshield (Blue) (4), Cone of Cold (5)                            |50% cold resistance
 Death            | Horror (2), Hold Undead (3), Control Undead (7)                                     |Death Touch 1/day
 Destruction      | Melf's Acid Arrow (2), Cloudkill (5), Disintegrate (6)                              |Destructive Smite 1/day
-Elemental (Earth)| Conjure Lesser Earth Elemental (5), Stoneskin (6), Protection From The Elements (7) |25% acid resistance
-Elemental (Fire) | Burning Hands (1), Fireball (3), Delayed Blast Fireball (7)                         |25% fire resistance
+Elemental (Earth)| Conjure Lesser Earth Elemental (5), Stoneskin (6), Protection From The Elements (7) |50% acid resistance
+Elemental (Fire) | Burning Hands (1), Fireball (3), Delayed Blast Fireball (7)                         |50% fire resistance
 Glory            | Exaltation (3), Boon of Diety (6), Mordenkainen's Sword (7)                         |Aura of Faith 1/day
 Moon             | Blindness (1), Blur (2), Vampiric Touch (3)                                         |Immunity to blindness
 Protection       | Shield (1), Minor Globe of Invulnerability (4), Protection From Magical Weapons (6) |+1 to all Savingthrows
 Sun              | Fireshield (Red) (4), Sunfire (5), Prismatic Spray (7)                              |Divine Light 1/day
 Time             | Slow (3), Haste (4), Hold Monster (5)                                               |Immunity to sneak attacks
-Trickery         | Grease (1), Invisibility (2), Confusion (4)                                         |Mirror Image 1/day
+Trickery         | Grease (1), Confusion (4), Shadow Door (5)                                          |Mirror Image 1/day
 War              | Seeking Sword (3), Divine Favor (5), Tenser's Transformation (6)                    |Free weapon focus
 Magic            | Identify (1), Spell Immunity (5), Limited Wish (7)                                  |Dispelling Touch 1/day
 
@@ -2110,7 +2110,7 @@ Greater Earth Elemental | 25 | 8 | 21 | 0 | 2 | 2d12 crushing| strikes as +4 wea
 
 ### Armors
 
-Like in DnD 3.5 it is now possible to cast arcane spells and use thieving skills in any armor, although depending on the armor characters may receive a penalty
+Like in DnD 3.5 it is now possible to cast arcane spells and use thieving skills in any armor, although depending on the armor, characters may receive a penalty
  to their thieving abilities and/or suffer a chance of spell casting failure. All armors also restrict a maximum dexterity bonus to AC.
 
 Armor Type| Spell Casting Failure | Max Dex AC Bonus | Thieving skills
@@ -2129,15 +2129,15 @@ Ankheg Plate Mail      | 20% | +3 | -15%
 
 ### Other Changes
  - Certain robes can now be worn by any class, even monks  
- - Strength requirement for Full Plate Mail was reduced to 14   
- - Strength requirement for Composite Longbows were reduced to 14, they also 0.5 damage bonus from strength  
+ - Strength requirements for Full Plate Mail were reduced to 14   
+ - Strength requirements for Composite Longbows were reduced to 14, they also receive 0.5 damage bonus from strength  
  - Damage of Bastard Swords was changed to 1d10  
  - Damage of Two-Handed Swords was changed to 2d6  
  - Damage of Halberds was changed to 1d12  
  - Damage of Spears was changed to 1d8  
  - AC bonus of Medium Shields was increased to +2  
  - AC bonus of Large Shields was increased to +4, but they also now give -2 THAC0 penalty       
- - Initial number of attacks per rounds for all ranged weapons was set to 1, except for slings and crossbows for which it was set to 0.5; it increases at normal character APR progression and Rapid Shot feat also gives +1 APR with ranged weapons    
+ - Initial number of attacks per rounds for all ranged weapons was set to 1, except for slings and crossbows for which it was set to 0.5; it increases at normal character APR progression and Rapid Shot feat also gives +1 APR with ranged weapons (except throwing axes and hammers)   
  - Moonblade type was changed to longsword (do not worry, Xan can still use it)
 
 ## 6. Spells

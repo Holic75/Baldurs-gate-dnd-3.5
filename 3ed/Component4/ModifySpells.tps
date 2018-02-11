@@ -962,6 +962,8 @@
         LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 1 match_parameter2 = 1 parameter1  END           
 
 
-        
+    //change protection from the elements to SET resistances
+    COPY_EXISTING ~SPWI702.SPL~ ~override~
+        LPF ALTER_SPELL_EFFECT_EX INT_VAR match_parameter1 = 75 parameter2 = 1 END
         
     
