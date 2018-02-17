@@ -78,6 +78,7 @@
  WITH_TRA ~%LANGUAGE%\domain_abilities.tra~ BEGIN
     COPY_EXISTING ~SPIN108.SPL~ ~override/ANIM10.SPL~
         LPF ALTER_SPELL_HEADER INT_VAR projectile = 178 target = 5 END
+        LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 1200 END
         SAY NAME1 @001
         SAY UNIDENTIFIED_DESC @002
 END    
@@ -112,10 +113,16 @@ END
     
     ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~DeathD~ => ~DTHFT~ END
 
-//trickery - mirror image (from dark moon monk)
- 
+//trickery - mirror image       
 	COPY ~3ed/Feats/LimitedUseAbilities/Template/LUAFT.SPL~  ~override/TRCKFT.SPL~
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=2 timing=9 duration=1 STR_VAR resource = ~SPDM106~ END
+        //thieving skill bonuses
+        LPF ADD_SPELL_EFFECT INT_VAR opcode =90 target = 2 parameter1 = 5 timing = 9 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode =91 target = 2 parameter1 = 5 timing = 9 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode =92 target = 2 parameter1 = 5 timing = 9 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode =59 target = 2 parameter1 = 5  timing = 9 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode =275 target = 2 parameter1 = 5 timing = 9 END 
+        LPF ADD_SPELL_EFFECT INT_VAR opcode =276 target = 2 parameter1 = 5 timing = 9 END
         
     ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~TrickD~ => ~TRCKFT~ END
 
@@ -156,7 +163,7 @@ END
 //protection - +1 bonus to saving throws
     ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~PrtctD~ => ~LKHRS~  END  
 
-//magic - dispelling touch
+//magic - dispelling touch 3 times/day
 WITH_TRA ~%LANGUAGE%\domain_abilities.tra~ BEGIN
     COPY_EXISTING ~SPCL231.SPL~ ~override/DSPTCH.SPL~ //using inquistors dispel as template
         LPF ALTER_SPELL_HEADER INT_VAR target = 1 projectile = 1 range = 1 END
@@ -165,5 +172,7 @@ WITH_TRA ~%LANGUAGE%\domain_abilities.tra~ BEGIN
 END        
 	COPY ~3ed/Feats/LimitedUseAbilities/Template/LUAFT.SPL~  ~override/MAGDOFT.SPL~
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=2 timing=9 duration=1 STR_VAR resource = ~DSPTCH~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=2 timing=9 duration=1 STR_VAR resource = ~DSPTCH~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=2 timing=9 duration=1 STR_VAR resource = ~DSPTCH~ END
         
     ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~MagicD~ => ~MAGDOFT~ END  

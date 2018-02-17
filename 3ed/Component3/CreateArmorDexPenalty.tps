@@ -31,12 +31,12 @@ END
 
 
 //making thief skill penalty depending on armor
-// 5 - studded leather, 10 - hide, 15 - chain ,20 - splint , 25 - plate, 30 - full plate
+// 10 - studded leather, 20 - hide, 30 - chain ,40 - splint , 50 - plate, 60 - full plate
 OUTER_FOR (k=1;k<=6;k=k+1) BEGIN
     COPY_EXISTING ~ARMSKL.SPL~ ~override/ARMSKL%k%.SPL~
        SPRINT resource EVALUATE_BUFFER ~ARMSKL%k%~ 
        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 321 STR_VAR resource END //remove itself
-       SET parameter1 = 0 - 5
+       SET parameter1 = 0 - 10
        LPF ALTER_SPELL_EFFECT_EX INT_VAR match_parameter1 = 100 parameter1 END // set penalty to all skills -10
        
     COPY_EXISTING ~ARMSKL.EFF~ ~override/ARMSKL%k%.EFF~

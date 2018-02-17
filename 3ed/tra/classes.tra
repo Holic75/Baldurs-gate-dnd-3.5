@@ -44,7 +44,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May distribute 15 skill points per level among thieving skills (25 points at level 1).
 – Gets one bonus feat at level 1 and every 3 levels thereafter.
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.
-– At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1 and reduces penalty to thieving skills by 5%. Max dexterity AC bonus is further increased by 1 at and skill penalties are reduced by 10% at level 4 and every 4 levels thereafter (up to a maximum of +5 increase in max AC bonus and -25% decrease of thieving skill penalty at level 16).
+– At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1 and reduces penalty to thieving skills by 10%. Max dexterity AC bonus is further increased by 1 at and skill penalties are reduced by another 10% at level 4 and every 4 levels thereafter (up to a maximum of +5 increase in max AC bonus and -50% decrease of thieving skill penalty at level 16).
 – Hit Die: d8
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon and vs. Wand
 ~
@@ -451,7 +451,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – Bonus Feats: Ranger gets Style Focus in Two Weapon Fighting for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12, Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.
 – May select one racial enemy at levels 1, 5 and every 5 levels thereafter which grants a +2 bonus on to hit and damage rolls against the selected enemy race. These bonuses increase by 1 at every 5th level.
 – May use the Charm Animal ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.
-– May use the Hide In Shadows ability.
+– May use the Hide In Shadows and Move Silently skills (15% at level 1, +5% at every next level).
 – May call for an animal companion who fights for <PRO_HISHER> side.
 – Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.
 – May cast druidic spells starting at level 4.
@@ -928,7 +928,7 @@ CLASS FEATURES:
 – May not wear armor heavier than splint mail.
 – May use any shield (excluding large shield).
 – Receives one bonus Feat at levels 22 and 28.
-– Thieving abilities: Pick Pockets.
+– Thieving abilities: Pick Pockets (15% at level 1, +5% at evey next level).
 – Increased Lore score.
 – May cast arcane spells up to level 6.
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, and finally at level 12 Armored Arcana: Splint Mail Casting.
@@ -1153,7 +1153,7 @@ QUIVERING PALM: The next successful attack forces the opponent to save vs. Death
 
 – 14th level: Gains 3% Magic Resistance per level (starting with 42% at 14th level).
 – 20th level: Becomes immune to non-magical weapons.
-– Thieving abilities: Move Silently, Hide In Shadows, Find Traps (but not disarm) and Detect Illusion. Monks can distribute 10 skill points per level.
+– Thieving abilities: Move Silently, Hide In Shadows, Find Traps (but not disarm) and Detect Illusion. Monks can distribute 10 skill points per level (20 at level 1).
 - Gets one bonus feat at levels 22 and 28.
 – Alignment restricted to lawful.
 – Hit Die: d8

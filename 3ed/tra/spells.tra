@@ -183,7 +183,7 @@ Casting Time: 7
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell is a more potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hand upon a creature and heals 26 points of wound or other injury damage to the creature's body. This healing cannot affect noncorporeal, nonliving, or extraplanar creatures.~
+This spell is a more potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hand upon a creature and heals 28 points of wound or other injury damage to the creature's body. This healing cannot affect noncorporeal, nonliving, or extraplanar creatures.~
 //--------------------------------------------------------------------------------------------------
 	@018=~Cure Critical Wounds
 (Necromancy)
@@ -196,7 +196,7 @@ Casting Time: 8
 Area of Effect: 1 creature
 Saving Throw: None
 
-The Cure Critical Wounds spell is a very potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hands upon a creature and heals 32 points of damage from wounds or other injuries. The spell does not affect creatures without corporeal bodies, those of extraplanar origin, or those not living.~
+The Cure Critical Wounds spell is a very potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hands upon a creature and heals 36 points of damage from wounds or other injuries. The spell does not affect creatures without corporeal bodies, those of extraplanar origin, or those not living.~
 //------------------------------------------------------------------------------------------------
 	@019=~Cause Light Wounds~
 
@@ -250,9 +250,9 @@ Range: Touch
 Duration: Permanent
 Casting Time: 3
 Area of Effect: 1 creature
-Saving Throw: None
+Saving Throw: 1/2
 
-This spell is the reverse of Cure Serious Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 26 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.~
+This spell is the reverse of Cure Serious Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 28 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.~
 //--------------------------------------------------------------------------------------------------
 	@026=~Cause Critical Wounds
 (Necromancy)
@@ -263,9 +263,9 @@ Range: Touch
 Duration: Permanent
 Casting Time: 3
 Area of Effect: 1 creature
-Saving Throw: None
+Saving Throw: 1/2
 
-This spell is the reverse of Cure Critical Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 32 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.~
+This spell is the reverse of Cure Critical Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 36 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.~
 //--------------------------------------------------------------------------------------------------
 	@027=~Slay Living
 (Necromancy)
@@ -289,9 +289,9 @@ Range: Touch
 Duration: Permanent
 Casting Time: 9
 Area of Effect: 1 creature
-Saving Throw: None
+Saving Throw: 1/2
 
-This spell is the reverse of Heal. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell reduces the target to 1d4 Hit Point. There is no Saving Throw.~
+This spell is the reverse of Heal. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell deals 150 damage (75 if target succeeds on Savingthrow vs. Spell). Harm cannot reduce the target’s hit points to less than 1. ~
 //--------------------------------------------------------------------------------------------------
 	@029=~Chill Touch
 (Necromancy)
@@ -1266,6 +1266,19 @@ Saving Throw: Neg.
 
 This spell creates the emotion of hopelessness within the area of effect. All enemies who fail to save vs. Spell just lie on the ground and do nothing for 1 turn. If they are attacked the spell effect ends.~
   
+//
+    @316 = ~Heal
+(Necromancy)
+
+Level: 6
+Sphere: Healing 
+Range: Touch
+Duration: Permanent
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+The very potent Heal spell enables the priest to wipe away disease and injury in the creature who receives the benefits of the spell. It completely cures all disease and blindness in the recipient and heals up to 150 points of damage suffered due to wounds or injury. It also dispels a Feeblemind spell and cures those mental disorders caused by spells or injury to the brain. Naturally, the effects can be negated by later wounds, injuries, and diseases.~
 //----------------------------------------------------------------------------------
 	@1000 =~vs. None~
 	@1001 =~vs. Spell~

@@ -51,14 +51,19 @@
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @016
 	COPY_EXISTING ~SPPR401.SPL~ ~override~ 
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 17 parameter1 = 26  END
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 17 parameter1 = 28  END
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @017
 
 	COPY_EXISTING ~SPPR502.SPL~ ~override~
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 17 parameter1 = 32  END
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 17 parameter1 = 36  END
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @018	
+        
+    COPY_EXISTING ~SPPR607.SPL~ ~override~ //make heal restore 150 hp max
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 17 parameter1 = 150 parameter2 = 0  END
+		READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @316	
 
 		
 	//update harm spells
@@ -74,12 +79,12 @@
 			STRING_SET_EVALUATE %descr_strref% @024			
 
 		COPY_EXISTING ~SPPR414.SPL~ ~override~ 
-			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 12 parameter1 = 13  END //damage to 2*13
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 12 parameter1 = 14  END //damage to 2*14
 			READ_LONG 0x0050 ~descr_strref~
 			STRING_SET_EVALUATE %descr_strref% @025		
 
 		COPY_EXISTING ~SPPR510.SPL~ ~override~ 
-			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 12 parameter1 = 16  END //damage to 2*16
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 12 parameter1 = 18  END //damage to 2*18
 			READ_LONG 0x0050 ~descr_strref~
 			STRING_SET_EVALUATE %descr_strref% @026	
 			
@@ -92,8 +97,12 @@
 			STRING_SET_EVALUATE %descr_strref% @027
 			
 		COPY_EXISTING ~SPPR608.SPL~ ~override~ //harm 
-
+            LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 12 END
 			LPF ALTER_SPELL_EFFECT INT_VAR  savingthrow = 0 END //no save against harm
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 208 target = 2 power = 6 parameter1 = 1  duration = 1 resist_dispel = 1 probability1 = 100 END //set min hp to 1 for 1 second				
+            //150 dmg (75 if save)
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 6 parameter1 = 75 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 6 parameter1 = 75 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 savingthrow = 1 END
 
 			READ_LONG 0x0050 ~descr_strref~
 			STRING_SET_EVALUATE %descr_strref% @028			
@@ -102,16 +111,16 @@
 		COPY_EXISTING ~SPPR414.SPL~ ~override~ 
 			LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 0 - 1 END
 			LPF ALTER_SPELL_HEADER INT_VAR speed = 5 target = 1 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 4 parameter1 = 13 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 4 parameter1 = 13 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 savingthrow = 1 END
+			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 4 parameter1 = 14 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 END
+			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 4 parameter1 = 14 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 savingthrow = 1 END
 			LPF ADD_SPELL_EFFECT INT_VAR opcode = 215 target = 2 power = 4 parameter2 = 1 timing = 0 resist_dispel = 1 probability1 = 100 STR_VAR resource = ~ICMAGICH~ END
 			READ_LONG 0x0050 ~descr_strref~
 			STRING_SET_EVALUATE %descr_strref% @025	
 		COPY_EXISTING ~SPPR510.SPL~ ~override~ 
 			LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 0 - 1 END
 			LPF ALTER_SPELL_HEADER INT_VAR speed = 5 target = 1 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 4 parameter1 = 16 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 4 parameter1 = 16 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 savingthrow = 1 END
+			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 4 parameter1 = 18 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 END
+			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 4 parameter1 = 18 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 savingthrow = 1 END
 			LPF ADD_SPELL_EFFECT INT_VAR opcode = 215 target = 2 power = 4 parameter2 = 1 timing = 0 resist_dispel = 1 probability1 = 100 STR_VAR resource = ~ICMAGICH~ END
 			READ_LONG 0x0050 ~descr_strref~
 			STRING_SET_EVALUATE %descr_strref% @026	
@@ -130,12 +139,11 @@
 				
 			COPY_EXISTING ~SPPR608.SPL~ ~override~ //harm
 				LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 0 - 1 END
-				LPF ALTER_SPELL_HEADER INT_VAR speed = 9 target = 1 END	
-				//1d4 damage
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 6 parameter1 = 1 parameter2 = 4194305 timing = 1 resist_dispel = 1 probability1 = 25 END
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 6 parameter1 = 2 parameter2 = 4194305 timing = 1 resist_dispel = 1 probability2 = 26 probability1 = 50 END
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 6 parameter1 = 3 parameter2 = 4194305 timing = 1 resist_dispel = 1 probability2 = 51 probability1 = 75 END
-				LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 6 parameter1 = 4 parameter2 = 4194305 timing = 1 resist_dispel = 1 probability2 = 76 probability1 = 100 END
+				LPF ALTER_SPELL_HEADER INT_VAR speed = 9 target = 1 END
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 208 target = 2 power = 6 parameter1 = 1  duration = 1 resist_dispel = 1 probability1 = 100 END //set min hp to 1 for 1 second				
+                //150 dmg (75 if save)
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 6 parameter1 = 75 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 END
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 6 parameter1 = 75 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 savingthrow = 1 END                
 				
 				LPF ADD_SPELL_EFFECT INT_VAR opcode = 215 target = 2 power = 6 parameter2 = 1 timing = 0 resist_dispel = 1 probability1 = 100 STR_VAR resource = ~ICMAGICH~ END //lightning effects
 				READ_LONG 0x0050 ~descr_strref~

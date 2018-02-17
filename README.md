@@ -35,7 +35,9 @@ Also it is strongly advised that you make a backup of your dialog.tlk file befor
 This mod was only tested with clean BG:ENHANCED EDITION 2.3 install (Non Sod) and BG 2:ENHANCED EDITION 2.3 and might not be compatible with any other mods.
 At current state it may be installed along IWD:EE but due to certain effects not supported by the engine (mostly related to opcode 326) abilities depending on character stats do not work (may be it will be fixed by Beamdog in the upcoming 2.5 patch)
 
-
+I also strongly suggest to use a mod Colorful Specialist Slots made by kjeron ( https://us.v-cdn.net/5019558/uploads/editor/nn/cv0dplebsnjj.rar) which forces specialist mages to 
+spend 1 or 2 slots (I suggest to use 2 as per Pathfidner rules). It should be installed after DND3.5 mod.  
+ 
 #### Due to big amount of content it is very difficult to test everything, so I would really appreciate if you could send information on the bugs and inconsistencies you found to holic.denis@gmail.com or post them on the issues page. Any critics and suggestions are also more than welcome.
 
 # Rule Changes
@@ -63,7 +65,7 @@ Note: Composite longbows also receive 0.5 damage bonus from STRENGTH.
 – Determines to hit bonus with ranged weapons (+1 per 2 points above 9, -1 per 2 points below 10).  
 – Determines AC bonus (+1 per 2 points above 10, -1 per 2 points below 11).  
 – Gives combat bonuses with certain feats, weapons and armors.  
-– Determines bonus to all base thieving skill values, except detect illusions (+2.5% per point above 10, -2.5% per point below 8).  
+– Determines bonus to Hide In Shadows, Move Silently and Pickpocket skills (+5% per point above 10, -5% per point below).    
 – Improves Saving Throws vs. Rod/Staff/Wand and vs. Breath Weapon (+1 per 2 points above 9, -1 per 2 points below 10).  
 Note: wearing heavy armor may restrict maximum dexterity bonus to AC a character can have.  
 
@@ -78,7 +80,7 @@ Note: wearing heavy armor may restrict maximum dexterity bonus to AC a character
 – Determines chance to learn a spell by Bards and Mages.  
 – Determines bonus to Lore (+3 per point above 10, -3 per point below 8).  
 – Gives combat bonuses with certain feats, weapons and armors.  
-– Increases all thieving skills (+5% of base value for every point above 10 and -5% for every point below 10, i.e. if the base value of your skill is 50 and you have 18 INT the effective base value will become 50*(100%+8 x 5%) = 50 x 140% = 70).    
+– Determines bonus to Find Traps, Open Lock and Set Traps skills (+5% per point above 10, -5% per point below).  
 – Increases number of spells per day that can be cast by Mages and Assassins.  
 – Increases Saving Throw penalties for Mage and Assassin spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).  
 – Determines the duration of the effect of Maze spell cast on character.     
@@ -91,7 +93,8 @@ Number of spells per level| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 4 |6 | 8 | 10 | 
 
 #### WISDOM
 – Increases AC bonus of Monk, Kensai and Ninja (+1 per 2 points above 10).  
-– Increases number of spells per day that can be cast by Clerics, Paladins, Druids and Rangers.  
+– Increases number of spells per day that can be cast by Clerics, Paladins, Druids and Rangers. 
+– Determines bonus to Detect Illusion skill (+5% per point above 10, -5% per point below).   
 – Improves Saving Throws vs. Spells (+1 per 2 points above 9, -1 per 2 points below 10).  
 – Increases Saving Throw penalties for Cleric, Druid, Paladin and Ranger spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).  
 
@@ -211,7 +214,7 @@ Whirlwind Attack (6 stars) - The character receives Whirlwind Attack innate abil
 Whirlwind Attack:
 This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10, but one's THAC0 and damage suffer a 4 point penalty. The Whirlwind Attack lasts for one round. Can be used once every 5 minutes.
 ```  
-Whirlwind Attack (7 stars) - The character receives Greater Whirlwind Attack innate ability.
+Greater Whirlwind Attack (7 stars) - The character receives Greater Whirlwind Attack innate ability.
 ```
 Greater Whirlwind Attack:
 This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10. The Greater Whirlwind Attack lasts for one round. Can be used once every 5 minutes.
@@ -692,7 +695,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – Bonus Feats: Ranger gets Style Focus in Two Weapon Fighting for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12, Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.  
 – May select one racial enemy at levels 1, 5 and every 5 levels thereafter which grants a +2 bonus on to hit and damage rolls against the selected enemy race. These bonuses increase by 1 at every 5th level.  
 – May use the Charm Animal ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.  
-– May use the Hide In Shadows ability.   
+– May use the Hide In Shadows and Move Silently skills (15% at level 1, +5% at every next level).   
 – May call for an animal companion who fights for her side.  
 – Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.  
 – May cast druidic spells starting at level 4.  
@@ -1020,7 +1023,7 @@ CLASS FEATURES:
 – May not wear armor heavier than splint mail.    
 – May use nay shield (excluding large shield).  
 – Receives one bonus Feat at levels 22 and 28.  
-– Thieving abilities: Pick Pockets.  
+– Thieving abilities: Pick Pockets (15% at level 1, +5% at every next level).  
 – Increased Lore score.  
 – May cast arcane spells up to level 6.  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, and finally at level 12 Armored Arcana: Splint Mail Casting.  
@@ -1220,7 +1223,7 @@ QUIVERING PALM: The next successful attack forces the opponent to save vs. Death
 ```
 – 14th level: Gains 3% Magic Resistance per level (starting with 42% at 14th level).  
 – 20th level: Becomes immune to non-magical weapons.  
-– Thieving abilities: Move Silently, Hide In Shadows, Find Traps (but not disarm) and Detect Illusion. Monks can distribute 10 skill points per level.  
+– Thieving abilities: Move Silently, Hide In Shadows, Find Traps (but not disarm) and Detect Illusion. Monks can distribute 10 skill points per level (20 points at level 1).  
 - Gets one bonus feat at levels 22 and 28.  
 – Alignment restricted to lawful.  
 – Hit Die: d8   
@@ -2051,14 +2054,15 @@ Moon             | Blindness (1), Blur (2), Vampiric Touch (3)                  
 Protection       | Shield (1), Minor Globe of Invulnerability (4), Protection From Magical Weapons (6) |+1 to all Savingthrows
 Sun              | Fireshield (Red) (4), Sunfire (5), Prismatic Spray (7)                              |Divine Light 1/day
 Time             | Slow (3), Haste (4), Hold Monster (5)                                               |Immunity to sneak attacks
-Trickery         | Grease (1), Confusion (4), Shadow Door (5)                                          |Mirror Image 1/day
+Trickery         | Grease (1), Confusion (4), Shadow Door (5)                                          |Mirror Image 1/day, +5% bonus to all thieving skills
 War              | Seeking Sword (3), Divine Favor (5), Tenser's Transformation (6)                    |Free weapon focus
-Magic            | Identify (1), Spell Immunity (5), Limited Wish (7)                                  |Dispelling Touch 1/day
+Magic            | Identify (1), Spell Immunity (5), Limited Wish (7)                                  |Dispelling Touch 3/day
 
 
 #### Charm Animal, 10' Radius
-This spell affects all animals in 30-ft radius around the caster. The animals are allowed a Saving Throw vs. Spell to negate the effect with penalty equal to one fourth caster level rounded down.  
+This spell affects all animals in 10-ft radius around the caster. The animals are allowed a Saving Throw vs. Spell to negate the effect with penalty equal to one fourth caster level rounded down.  
 If the spell's recipient fails its Saving Throw, it regards the caster as a trusted friend and ally to be heeded and protected. The caster may give it orders, and the charmed animal will carry them out as quickly as possible.  
+The effect lasts for 4 hours.
 If the caster harms—or attempts to harm—the charmed animal by some overt action, or if a Dispel Magic spell is cast upon the charmed animal, the Charm spell is broken. If two or more Charms simultaneously affect a creature, the most recent Charm takes precedence. Note that the subject will be hostile when the Charm expires, regardless of its original attitude. Also note that you cannot have a charmed creature leave the area where it was charmed.
 
 #### Death Touch
@@ -2111,20 +2115,20 @@ Greater Earth Elemental | 25 | 8 | 21 | 0 | 2 | 2d12 crushing| strikes as +4 wea
 ### Armors
 
 Like in DnD 3.5 it is now possible to cast arcane spells and use thieving skills in any armor, although depending on the armor, characters may receive a penalty
- to their thieving abilities and/or suffer a chance of spell casting failure. All armors also restrict a maximum dexterity bonus to AC.
+ to their thieving abilities (Hide In Shadows, Move Silently and Pick Pockets) and/or suffer a chance of spell casting failure. All armors also restrict a maximum dexterity bonus to AC.
 
 Armor Type| Spell Casting Failure | Max Dex AC Bonus | Thieving skills
 ---   | --- | --- | ---
 Leather Armor          | 10% | +5 | -   
-Studded Leather Armor  | 15% | +4 | -5%
-Hide Armor             | 20% | +3 | -10%
-Chain Mail             | 20% | +3 | -15%
-Splint Mail            | 30% | +2 | -20%
-Plate Mail             | 40% | +1 | -25%
-Full Plate Armor       | 50% | +0 | -30%
-Elven Chain Mail       | 0%  | +4 | -5%
-Mithral Chain Mail     | 0%  | +4 | -5%
-Ankheg Plate Mail      | 20% | +3 | -15%
+Studded Leather Armor  | 15% | +4 | -10%
+Hide Armor             | 20% | +3 | -20%
+Chain Mail             | 20% | +3 | -30%
+Splint Mail            | 30% | +2 | -40%
+Plate Mail             | 40% | +1 | -50%
+Full Plate Armor       | 50% | +0 | -60%
+Elven Chain Mail       | 0%  | +4 | -10%
+Mithral Chain Mail     | 0%  | +4 | -10%
+Ankheg Plate Mail      | 20% | +3 | -30%
 
 
 ### Other Changes
@@ -2176,17 +2180,18 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Cloak of fear radius was increased to 5 ft  
 - Holy Power now sets caster's THAC0 to that of a fighter of the same level, gives +1/2 APR and +2 bonus to strength  
 - Cause Serious Wounds is now a close range spell dealing 26 points of damage  (with saveigthrow vs. Spell for half)
-- Cure Serious wounds now heal 26 HP  
+- Cure Serious wounds now heal 28 HP  
 - Slay Living now deals 2d6+9 damage to target if it succeeds on Save vs. Death  
 - Flame Strike is now and AOE spell with 5 ft radius
 - Champion's Strength is now applied only to caster. It sets its THAC0 to that of a  fighter, gives + 1/2 APR and + 4 strength bonus, the duration is three times that of Holy Power  
 - Righteous Magic now gives + 1 HP per level, +2 AC, and +1 STR and 5% physical damage resistance per 3 caster levels  
-- Cause Critical Wounds is now a close range spell dealing 32 points of damage  (with savingthrow vs. Spell for half)
-- Cure Critical wounds now heal 32 HP  
+- Cause Critical Wounds is now a close range spell dealing 36 points of damage  (with savingthrow vs. Spell for half)
+- Cure Critical wounds now heal 36 HP  
+- Heal now heals up to 150 HP  
 - Divine favor now lasts 4 rounds (it is now a 5th level War Domain Spell)  
 - Sol's Searing Orb is now a ranged spell in Bg1 and Bg2 (instead creating item)  and deals 6d12 damage (double to undead) with savingthrow vs Breath Weapon for half
 - Damage of Bolt of glory against primes/elementals/undead/demons was increased to 4d12/3d8/8d12/10d12 respectivelyy
-- Harm is now a close range spell instead of a weapon  
+- Harm is now a close range spell instead of a weapon dealing 150 damage (75 if Save vs. Spell), but always leaves target with at least 1 HP    
 - Boon of Lathander was renamed to Boon of Deity (it is now a 6th level Glory Domain Spell)  
 - Finger of Death now deals 6d8 points of damage to the target if it succeeds on a Saving Throw vs. Death  
 - Damage of Chain Lightning is now fixed at 12d6

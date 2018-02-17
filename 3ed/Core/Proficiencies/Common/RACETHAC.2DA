@@ -1,9 +1,9 @@
 2DA                      V1.0
 0
                          LABEL                    HUMAN                    DWARF                    ELF                      GNOME                    HALF_ELF                 HALFLING                 HALFORC
-89                       BASTARDSWORD             0                        0                        1                        0                        0                        0                        0
+89                       BASTARDSWORD             0                        0                        1                        0                        0                        0                        1
 90                       LONGSWORD                0                        0                        1                        0                        0                        0                        0
-91                       SHORTSWORD               0                        0                        0                        0                        0                        0                        0
+91                       SHORTSWORD               0                        0                        0                        0                        0                        0                        1
 92                       AXE                      0                        0                        0                        0                        0                        0                        0
 93                       TWOHANDEDSWORD           0                        0                        0                        0                        0                        0                        0
 94                       KATANA                   0                        0                        0                        0                        0                        0                        0

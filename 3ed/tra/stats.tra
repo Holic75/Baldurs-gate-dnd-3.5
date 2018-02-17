@@ -18,7 +18,7 @@ Maximum: <MAXIMUM>~
 – Determines chance to learn a spell by Bards and Mages.
 – Determines bonus to Lore.
 – Gives combat bonuses with certain feats, weapons and armors.
-– Increases all thieving skills (+5% of base value for every point above 10 and -5% for every point below 10).
+– Determines bonus to Find Traps, Open Lock and Set Traps skills (+5% per point above 10, -5% per point below).
 – Increases number of spells per day that can be cast by Mages.
 – Increases Saving Throw penalties for Wizard spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).
 
@@ -32,6 +32,7 @@ Maximum: <MAXIMUM>~
 
 – Increases AC bonus of Monk, Kensai and Ninja (+1 per 2 points above 10).
 – Increases number of spells per day that can be cast by Clerics, Paladins, Druids and Rangers.
+– Determines bonus to Detect Illusion skill (+5% per point above 10, -5% per point below).
 – Improves Saving Throws vs. Spells (+1 per 2 points above 9, -1 per 2 points below 10).
 – Increases Saving Throw penalties for Cleric, Druid, Paladin and Ranger spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).
 
@@ -43,7 +44,7 @@ Maximum: <MAXIMUM>~
 – Determines to hit bonus with ranged weapons (+1 per 2 points above 9, -1 per 2 points below 8).
 – Determines AC bonus (+1 per 2 points above 10, -1 per 2 points below 9).
 – Gives combat bonuses with certain feats, weapons and armors.
-– Determines bonus to all base thieving skill values, except detect illusions (+2.5% per point above 10, -2.5% per point below 8).
+– Determines bonus to Hide In Shadows, Move Silently and Pickpocket skills (+5% per point above 10, -5% per point below).
 – Improves Saving Throws vs. Rod/Staff/Wand and vs. Breath Weapon (+1 per 2 points above 9, -1 per 2 points below 10).
 
 Note: wearing heavy armor may restrict maximum dexterity bonus to AC a character can have.

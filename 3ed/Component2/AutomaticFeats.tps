@@ -16,9 +16,10 @@
 	COPY_EXISTING ~CONSAVFT.SPL~ ~override~ 
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 timing=9 STR_VAR resource=~CONSAVFT~ END 
         
-        
-    LAF ADD_PSEPB_FEAT INT_VAR min_val = 1 max_val = 25 step = 1 abi_g = 128 min_bonus_val = 55 bonus_step = 5 STR_VAR ability_name=~INTSK~ END //int skill bonuses for thieving skills 
-
+    OUTER_SET min_bonus_val = 0 - 45
+    LAF ADD_PSEPB_FEAT INT_VAR min_val = 1 max_val = 25 step = 1 abi_g = 128 min_bonus_val bonus_step = 5 STR_VAR ability_name=~INTSK~ END //int skill bonuses for find traps, open locks and set traps 
+    LAF ADD_PSEPB_FEAT INT_VAR min_val = 1 max_val = 25 step = 1 abi_g = 130 min_bonus_val bonus_step = 5 STR_VAR ability_name=~WISSK~ END //wis skill bonuses for detect illusions 
+    
 WITH_TRA ~%LANGUAGE%\monk.tra~ BEGIN		
 //wisdom ac bonus for monks/kensai/ninja
 	LAF ADD_PSB_FEAT INT_VAR min_val=12 max_val=25 step=2 par1=130 STR_VAR ability_name=~WISDAC~ END //monk/kensai wisdom bonus to ac with light or no armor 
