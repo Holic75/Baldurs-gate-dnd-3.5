@@ -36,91 +36,192 @@
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @013
 		
+
+	//update cure/harm spells
+    
+    //heal
+    OUTER_FOR (i=1;i<=30;i=i+1) BEGIN
+        OUTER_SET hl  = 2*i
+        COPY ~3ed/Classes/TurnUndead/EN_HL.SPL~ ~override/EN_CU%hl%.SPL~
+            LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = 0 dicesize = 0 parameter1 = hl END
+            
+        COPY ~3ed/Classes/TurnUndead/EN_HL.SPL~ ~override/EN_C1%i%.SPL~ //1d8+i  //cure light
+            LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = 1 dicesize = 8 parameter1 = i END
+        COPY ~3ed/Classes/TurnUndead/EN_HL.SPL~ ~override/EN_C3%i%.SPL~ //3d8+i  //cure medium
+            LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = 3 dicesize = 8 parameter1 = i END
+        COPY ~3ed/Classes/TurnUndead/EN_HL.SPL~ ~override/EN_C5%i%.SPL~ //5d8+i  //cure serious
+            LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = 5 dicesize = 8 parameter1 = i END
+    END
+    COPY ~3ed/Classes/TurnUndead/EN_HL.SPL~ ~override/EN_CU150.SPL~    
+        LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = 0 dicesize = 0 parameter1 = 150 END
+    
+    //damage
+    OUTER_FOR (i=1;i<=30;i=i+1) BEGIN
+        OUTER_SET dm  = 2*i
+        COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_AB%dm%.SPL~ //absorb
+            LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = 0 dicesize = 0 parameter1 = dm special = 1  END
+        COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR%dm%.SPL~ //harm
+            LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = 0 dicesize = 0 parameter1 = dm END
+            
+        COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_H1%i%.SPL~ //1d8+i  //cause light
+            LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = 1 dicesize = 4 parameter1 = i END
+        COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_H3%i%.SPL~ //3d8+i  //cause medium
+            LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = 3 dicesize = 4 parameter1 = i END
+        COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_H5%i%.SPL~ //5d8+i  //cause serious
+            LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = 5 dicesize = 4 parameter1 = i END
+    END    
+   
+    COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR7.SPL~
+        LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = 0 dicesize = 0 parameter1  = 7 END
+
+COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
+        LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = 0 dicesize = 0 parameter1  = 75 END
+
+
 		
+
 	//update cure spells
-	
 	ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
 		COPY_EXISTING ~SPPR217.SPL~ ~override~ 
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 17 parameter1 = 14  END
-		READ_LONG 0x0050 ~descr_strref~
-		STRING_SET_EVALUATE %descr_strref% @015	
+            LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 324 END
+            LPF FIX_HEAL_3ED INT_VAR power = 2 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 14 savingthrow = 1  
+                STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @015	
 	END
 	
+    COPY_EXISTING_REGEXP ~\(SPPR103\.SPL\)\|\(SPIN101\.SPL\)~ ~override~ 
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 324 END
+        LPF FIX_HEAL_3ED INT_VAR power = 1 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1  heal_amount = 8 savingthrow = 1  
+            STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END
+        READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @320	
+    
 	COPY_EXISTING ~SPPR315.SPL~ ~override~ 
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 17 parameter1 = 20  END
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 324 END
+		LPF FIX_HEAL_3ED INT_VAR power = 3 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 20 savingthrow = 1  
+            STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END            
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @016
-	COPY_EXISTING ~SPPR401.SPL~ ~override~ 
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 17 parameter1 = 28  END
+        
+	COPY_EXISTING_REGEXP ~\(SPIN200\.SPL\)\|\(SPPR401\.SPL\)~ ~override~
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 324 END
+		LPF FIX_HEAL_3ED INT_VAR power = 4 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 28 savingthrow = 1  
+            STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @017
 
 	COPY_EXISTING ~SPPR502.SPL~ ~override~
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 17 parameter1 = 36  END
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 324 END
+		LPF FIX_HEAL_3ED INT_VAR power = 5 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 36 savingthrow = 1  
+            STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @018	
         
     COPY_EXISTING ~SPPR607.SPL~ ~override~ //make heal restore 150 hp max
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 17 parameter1 = 150 parameter2 = 0  END
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 324 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 208 target = 2 power = 6 parameter1 = 1  duration = 1 resist_dispel = 0 probability1 = 100 END //set min hp to 1 for 1 second	
+		LPF FIX_HEAL_3ED INT_VAR power = 5 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 150 savingthrow = 1  
+            STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @316	
 
+    //mass cure
+    COPY_EXISTING ~SPPR514.SPL~ ~override~
+         LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 324 END
+        WRITE_LONG 0x001e 0    //allow everyone to cast it (for iwd)     
+        READ_SHORT 0x0068 "Nheaders" //number of headers
+        LPF ALTER_SPELL_HEADER INT_VAR projectile = 149 END
+        FOR (i=0;i<Nheaders;i=i+1) BEGIN
+            LPF FIX_HEAL_3ED INT_VAR header = i+1 power = 5 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = i+9 savingthrow = 1  enemy_ally = 1
+                STR_VAR heal_prefix = ~EN_C1~ harm_prefix = ~EN_H1~ END               
+        END
 		
 	//update harm spells
 	ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+    
+    	COPY_EXISTING ~SPPR114.SPL~ ~override~ 
+            LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 324 END
+            LPF FIX_HARM_3ED INT_VAR power = 1 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 8 savingthrow = 1  
+                STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END
+            READ_LONG 0x0050 ~descr_strref~
+			STRING_SET_EVALUATE %descr_strref% @020		
+            
 		COPY_EXISTING ~SPPR220.SPL~ ~override~ 
-			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 12 parameter1 = 7  END //damage to 2*7
+            LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 324 END
+            LPF FIX_HARM_3ED INT_VAR power = 2 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 14 savingthrow = 1  
+                STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END
 			READ_LONG 0x0050 ~descr_strref~
 			STRING_SET_EVALUATE %descr_strref% @022		
 
 		COPY_EXISTING ~SPPR330.SPL~ ~override~ 
-			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 12 parameter1 = 10  END //damage to 2*10
+            LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 324 END
+            LPF FIX_HARM_3ED INT_VAR power = 3 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 20 savingthrow = 1  
+                STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END
 			READ_LONG 0x0050 ~descr_strref~
 			STRING_SET_EVALUATE %descr_strref% @024			
 
-		COPY_EXISTING ~SPPR414.SPL~ ~override~ 
-			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 12 parameter1 = 14  END //damage to 2*14
+		COPY_EXISTING ~SPPR414.SPL~ ~override~
+            LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 324 END
+            LPF FIX_HARM_3ED INT_VAR power = 4 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 28 savingthrow = 1  
+                STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END
 			READ_LONG 0x0050 ~descr_strref~
 			STRING_SET_EVALUATE %descr_strref% @025		
 
 		COPY_EXISTING ~SPPR510.SPL~ ~override~ 
-			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 12 parameter1 = 18  END //damage to 2*18
+            LPF FIX_HARM_3ED INT_VAR power = 5 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 36 savingthrow = 1  
+                STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END
 			READ_LONG 0x0050 ~descr_strref~
 			STRING_SET_EVALUATE %descr_strref% @026	
 			
 			
-		COPY_EXISTING ~SPPR511.SPL~ ~override~ //slay living 
-			
+		COPY_EXISTING ~SPPR511.SPL~ ~override~ //slay living 			
 			LPF ALTER_SPELL_HEADER INT_VAR speed = 7 END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 2 power = 5 parameter2 = 1  insert_point = 0 STR_VAR resource=~SPPR511~ END //protect undead
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 2 power = 5 parameter2 = 27  insert_point = 0 STR_VAR resource=~SPPR511~ END //protect golem
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 12 parameter1 = 9  END //damage to 2d6 + 9
 			READ_LONG 0x0050 ~descr_strref~
 			STRING_SET_EVALUATE %descr_strref% @027
 			
 		COPY_EXISTING ~SPPR608.SPL~ ~override~ //harm 
+            LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 324 END
             LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 12 END
 			LPF ALTER_SPELL_EFFECT INT_VAR  savingthrow = 0 END //no save against harm
-            LPF ADD_SPELL_EFFECT INT_VAR opcode = 208 target = 2 power = 6 parameter1 = 1  duration = 1 resist_dispel = 1 probability1 = 100 END //set min hp to 1 for 1 second				
-            //150 dmg (75 if save)
-            LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 6 parameter1 = 75 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 END
-            LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 6 parameter1 = 75 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 savingthrow = 1 END
-
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 208 target = 2 power = 6 parameter1 = 1  duration = 1 resist_dispel = 0 probability1 = 100 END //set min hp to 1 for 1 second				
+            LPF FIX_HARM_3ED INT_VAR power = 6 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 150 savingthrow = 1  
+                STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END
 			READ_LONG 0x0050 ~descr_strref~
-			STRING_SET_EVALUATE %descr_strref% @028			
+			STRING_SET_EVALUATE %descr_strref% @028		
+
+
+        //mass cause light
+        COPY_EXISTING ~SPPR525.SPL~ ~override~
+            WRITE_LONG 0x001e 0            //allow everyone to cast it (for iwd)    
+            WRITE_LONG 0x0018 0 //no hostile since it targets directly undead
+            READ_SHORT 0x0068 "Nheaders" //number of headers
+            LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 324 END
+            LPF ALTER_SPELL_HEADER INT_VAR projectile = 149 END
+            FOR (i=0;i<Nheaders;i=i+1) BEGIN
+                LPF FIX_HARM_3ED INT_VAR header = i+1 power = 5 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = i+9 savingthrow = 1  enemy_ally = 1
+                    STR_VAR heal_prefix = ~EN_C1~ harm_prefix = ~EN_H1~ END               
+            END   
+			READ_LONG 0x0050 ~descr_strref~
+			STRING_SET_EVALUATE %descr_strref% @323	            
 	
 	END ELSE BEGIN
 		COPY_EXISTING ~SPPR414.SPL~ ~override~ 
 			LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 0 - 1 END
 			LPF ALTER_SPELL_HEADER INT_VAR speed = 5 target = 1 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 4 parameter1 = 14 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 4 parameter1 = 14 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 savingthrow = 1 END
+            LPF FIX_HARM_3ED INT_VAR power = 4 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 28 savingthrow = 1  
+                STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END
 			LPF ADD_SPELL_EFFECT INT_VAR opcode = 215 target = 2 power = 4 parameter2 = 1 timing = 0 resist_dispel = 1 probability1 = 100 STR_VAR resource = ~ICMAGICH~ END
 			READ_LONG 0x0050 ~descr_strref~
 			STRING_SET_EVALUATE %descr_strref% @025	
 		COPY_EXISTING ~SPPR510.SPL~ ~override~ 
 			LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 0 - 1 END
 			LPF ALTER_SPELL_HEADER INT_VAR speed = 5 target = 1 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 4 parameter1 = 18 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 4 parameter1 = 18 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 savingthrow = 1 END
+            LPF FIX_HARM_3ED INT_VAR power = 5 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 36 savingthrow = 1  
+                STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END
 			LPF ADD_SPELL_EFFECT INT_VAR opcode = 215 target = 2 power = 4 parameter2 = 1 timing = 0 resist_dispel = 1 probability1 = 100 STR_VAR resource = ~ICMAGICH~ END
 			READ_LONG 0x0050 ~descr_strref~
 			STRING_SET_EVALUATE %descr_strref% @026	
@@ -129,6 +230,8 @@
 				SET Color = 179*256+50*256*256+0*256*256*256 
 				LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 0 - 1 END
 				LPF ALTER_SPELL_HEADER INT_VAR speed = 7 target = 1 END		
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 2 power = 5 parameter2 = 1  STR_VAR resource=~SPPR511~ END //protect undead
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 318 target = 2 power = 5 parameter2 = 27  STR_VAR resource=~SPPR511~ END //protect golem
 				LPF ADD_SPELL_EFFECT INT_VAR opcode = 50 target = 2 power = 5 parameter1 = Color parameter2 = 20*256*256 timing = 0 resist_dispel = 1  duration =1 savingthrow = 1 END //color pulse				
 				LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 5 parameter1 = 9 parameter2 = 4194304 timing = 1 resist_dispel = 1 dicesize = 6 dicenumber = 2 END
 				LPF ADD_SPELL_EFFECT INT_VAR opcode = 141 target = 2 power = 5 parameter1 = 0 parameter2 = 39 timing = 1 resist_dispel = 1 savingthrow = 1 END
@@ -141,9 +244,8 @@
 				LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 0 - 1 END
 				LPF ALTER_SPELL_HEADER INT_VAR speed = 9 target = 1 END
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 208 target = 2 power = 6 parameter1 = 1  duration = 1 resist_dispel = 1 probability1 = 100 END //set min hp to 1 for 1 second				
-                //150 dmg (75 if save)
-                LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 6 parameter1 = 75 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 END
-                LPF ADD_SPELL_EFFECT INT_VAR opcode = 12 target = 2 power = 6 parameter1 = 75 parameter2 = 4194304 timing = 1 resist_dispel = 1 probability1 = 100 savingthrow = 1 END                
+                LPF FIX_HARM_3ED INT_VAR power = 6 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 150 savingthrow = 1  
+                    STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END                
 				
 				LPF ADD_SPELL_EFFECT INT_VAR opcode = 215 target = 2 power = 6 parameter2 = 1 timing = 0 resist_dispel = 1 probability1 = 100 STR_VAR resource = ~ICMAGICH~ END //lightning effects
 				READ_LONG 0x0050 ~descr_strref~
@@ -621,7 +723,16 @@
 
 	//make absorb health a melee spell
 	COPY_EXISTING ~SPCL102.SPL~ ~override~ 
-		LPF ALTER_SPELL_HEADER INT_VAR range=1 END
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete  = 146 END
+		LPF ALTER_SPELL_HEADER INT_VAR range=1 END  
+        READ_SHORT 0x0068 "Nheaders" //number of headers
+        FOR (i=1;i<=Nheaders;i=i+1) BEGIN 	
+            LPF FIX_HARM_3ED INT_VAR header = i power = 0 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 2  heal_amount = 2*i savingthrow = 0  
+                STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_AB~ END                  
+        END
+        READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @0521
+
 	
 	//make lay on hands cure disiese starting from level 6, and poison starting from level 9
     COPY_EXISTING ~SPPR404.SPL~ ~override/LAY_PSN.SPL~  //make proxy poison neutralization without hp restoration
@@ -630,12 +741,14 @@
         
 	COPY_EXISTING ~SPCL211.SPL~ ~override~ 
 		READ_SHORT 0x0068 "Nheaders" //number of headers
-		FOR (i=6;i<=Nheaders;i=i+1) BEGIN 			 
-			PATCH_IF (i<9) BEGIN
-                LPF ADD_SPELL_EFFECT INT_VAR  opcode = 326 power=0 target=2  duration=1 timing=0 resist_dispel=3 header = i  STR_VAR resource = ~SPPR317~ END //cure disease				
+		FOR (i=1;i<=Nheaders;i=i+1) BEGIN 	
+            LPF FIX_HEAL_3ED INT_VAR header = i power = 0 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 2  heal_amount = 2*i savingthrow = 0  
+                STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END                 
+			PATCH_IF (i<9 AND i>=6) BEGIN                
+                LPF ADD_SPELL_EFFECT INT_VAR  opcode = 326 power=0 target=2  parameter2 = 2 duration=1 timing=0 resist_dispel=3 header = i  STR_VAR resource = ~SPPR317~ END //cure disease				
 			END
-            ELSE BEGIN
-                LPF ADD_SPELL_EFFECT INT_VAR  opcode = 326 power=0 target=2  duration=1 timing=0 resist_dispel=3 header = i  STR_VAR resource = ~LAY_PSN~ END //cure disease and poison
+            ELSE PATCH_IF (i>=9) BEGIN
+                LPF ADD_SPELL_EFFECT INT_VAR  opcode = 326 power=0 target=2  parameter2 = 2 duration=1 timing=0 resist_dispel=3 header = i  STR_VAR resource = ~LAY_PSN~ END //cure disease and poison
             END
 		END
 		READ_LONG 0x0050 ~descr_strref~
@@ -973,5 +1086,34 @@
     //change protection from the elements to SET resistances
     COPY_EXISTING ~SPWI702.SPL~ ~override~
         LPF ALTER_SPELL_EFFECT_EX INT_VAR match_parameter1 = 75 parameter2 = 1 END
-        
+		
+		
+    //update holy and unholy word spells
+	COPY_EXISTING_REGEXP ~\(\(SPPR710\)\|\(SPPR715\)\)\.SPL~ ~override~
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 177 dicesize = 0 END
+		FOR (i=2;i<=30;i=i+1) BEGIN
+			LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+			LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = i END
+			SET min_level_death = (i>10) ? (i - 10) : 0
+			LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_opcode = 177 match_dicenumber = 3 dicenumber = min_level_death opcode = 577 + (min_level_death==0) END
+			SET min_level_stun = (i>5) ? (i - 5) : 0
+			LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_opcode = 177 match_dicenumber = 7 dicenumber = min_level_stun opcode = 577 + (min_level_stun==0) END
+			SET min_level_slow= (i>1) ? (i - 1) : 0
+			LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_opcode = 177 match_dicenumber = 11 dicenumber = min_level_slow opcode = 577 + (min_level_slow==0) END						
+		END
+        LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 577 opcode = 177 END
+		
+	COPY_EXISTING ~SPPR710.SPL~ ~override~	
+		LPF DELETE_EFFECT STR_VAR match_resource = ~CASFAILM~ END
+		LPF DELETE_EFFECT STR_VAR match_resource = ~CASFAILP~ END
+		LPF DELETE_EFFECT STR_VAR match_opcode = 578 END
+		READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @317
+		
+	COPY_EXISTING ~SPPR715.SPL~ ~override~	
+		LPF DELETE_EFFECT STR_VAR match_resource = ~CASFAILM~ END
+		LPF DELETE_EFFECT STR_VAR match_resource = ~CASFAILP~ END
+		LPF DELETE_EFFECT STR_VAR match_opcode = 578 END
+		READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @318
     

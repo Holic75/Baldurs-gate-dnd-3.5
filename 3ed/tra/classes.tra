@@ -310,7 +310,13 @@ CLASS FEATURES:
 
 – May wear helmets.
 – May wear any armor and use any weapon and shield (excluding large shield).
-– May use Lay On Hands ability once per day for every 2 points of Charisma above 10 to heal a target for 2 Hit Points per level of the Paladin.
+– May use Lay On Hands ability once per day for every 2 points of Charisma above 10.
+
+LAY ON HANDS:
+The character channels positive energy to heal the touched creature of 2 Hit Points per level of the caster.
+Starting from level 6 Paladin also cures touched creature of any disease and starting from level 9 of any poison effects.
+This ability has the reverse effect on undead creatures harming them instead of healing.
+
 – Starting from level 6 Lay On Hands ability also cures disease.
 – Starting from level 9 Lay On Hands ability also cures poison.
 – May cast Detect Evil once per day per level (starts at 1st level with 4 uses).
@@ -401,7 +407,8 @@ All hostile living creatures suffer 1d6 points of magical damage per Channel Ene
 – May use the Absorb Health ability once per day per 2 points of Charisma above 10.
 
 ABSORB HEALTH:
-Deals 2 points of damage per level to an enemy, healing the Blackguard the same number of Hit Points.
+The character steals 2 Hit Points per level from a target creature and transfers them to <PRO_HIMHER>self.
+If applied to undead creatures this ability heals them instead.
 
 – May use the Poison Weapon ability once per day. Gains one use at level 1, one use at level 5, and an additional use every 5 levels thereafter.
 
@@ -956,7 +963,7 @@ Inspire Greatness
 A bard of 9th level or higher can use <PRO_HISHER> performance to inspire greatness in all <PRO_HISHER> allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the bard. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Throws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12. Every 6 levels thereafter the bonus Hit Points increase by +5 and THAC0 and Saving Throws vs. Death bonus increases by 1.
 
 Soothing Performance
-A bard of 12th level or higher can use <PRO_HISHER> performance to create an effect equivalent to the mass cure light wounds, using the bard’s level as the caster level.
+A bard of 12th level or higher can use <PRO_HISHER> performance to heal 1d8 + 1/level Hit Points to all party members.
 
 Frightening Tune
 A bard of 14th level or higher can use <PRO_HISHER> performance to cause fear in <PRO_HISHER> enemies. To be affected, an enemy must be able to hear the bard perform and be within 30 feet. Each enemy within range can make a Saving Throw vs. Spell with -4 (-5 at level 24, -6 at level 30) penalty to negate the effect. If the Saving Throw fails, the target becomes panicked for next 4 rounds.
@@ -996,7 +1003,7 @@ Inspire Greatness
 A blade of 9th level or higher can use <PRO_HISHER> performance to inspire greatness in all <PRO_HISHER> allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the bard. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Thorws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12. Every 6 levels thereafter the bonus Hit Points increase by +5 and THAC0 and Saving Throws vs. Death bonus increases by 1.
 
 Soothing Performance
-A blade of 12th level or higher can use <PRO_HISHER> performance to create an effect equivalent to the mass cure light wounds, using the bard’s level as the caster level.
+A blade of 12th level or higher can use <PRO_HISHER> performance to heal 1d8 + 1/level Hit Points to all party members.
 
 Inspire Heroics
 A blade of 15th level or higher can inspire tremendous heroism in all <PRO_HISHER> allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the bard. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds. These bonuses increase to +5 at level 24, and +6 at level 30.
@@ -1029,7 +1036,7 @@ Inspire Greatness
 A skald of 9th level or higher can use <PRO_HISHER> performance to inspire greatness in all <PRO_HISHER> allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the bard. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Throws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12. Every 6 levels thereafter the bonus Hit Points increase by +5 and THAC0 and Saving Throws vs. Death bonus increases by 1.
 
 Soothing Performance
-A skald of 12th level or higher can use <PRO_HISHER> performance to create an effect equivalent to the mass cure light wounds, using the bard’s level as the caster level.
+A skald of 12th level or higher can use <PRO_HISHER> performance to heal 1d8 + 1/level Hit Points to all party members.
 
 Inspire Heroics
 A skald of 15th level or higher can inspire tremendous heroism in all <PRO_HISHER> allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the bard. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds. These bonuses increase to +5 at level 24, and +6 at level 30.

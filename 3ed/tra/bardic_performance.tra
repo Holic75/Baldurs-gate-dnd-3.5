@@ -37,7 +37,7 @@ A bard of 9th level or higher can use <PRO_HISHER> performance to inspire greatn
 	@013=~Soothing Performance~
 	@014=~Soothing Performance
 
-A bard of 12th level or higher can use <PRO_HISHER> performance to create an effect equivalent to the mass cure light wounds, using the bard’s level as the caster level.~
+A bard of 12th level or higher can use <PRO_HISHER> performance to heal 1d8 + 1/level Hit Points to all party members.~
 //------------------------------------------------
 
 	@015=~Frightening Tune~
@@ -95,7 +95,7 @@ Inspire Greatness
 A bard of 9th level or higher can use <PRO_HISHER> performance to inspire greatness in all <PRO_HISHER> allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the bard. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Throws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12. Every 6 levels thereafter the bonus Hit Points increase by +5 and THAC0 and Saving Throws vs. Death bonus increases by 1.
 
 Soothing Performance
-A bard of 12th level or higher can use <PRO_HISHER> performance to create an effect equivalent to the mass cure light wounds, using the bard’s level as the caster level.
+A bard of 12th level or higher can use <PRO_HISHER> performance to heal 1d8 + 1/level Hit Points to all party members.
 
 Frightening Tune
 A bard of 14th level or higher can use <PRO_HISHER> performance to cause fear in <PRO_HISHER> enemies. To be affected, an enemy must be able to hear the bard perform and be within 30 feet. Each enemy within range can make a Saving Throw vs. Spell with -4 (-5 at level 24, -6 at level 30) penalty to negate the effect. If the Saving Throw fails, the target becomes panicked for next 4 rounds.
@@ -118,7 +118,7 @@ Inspire Greatness
 A blade or skald of 9th level or higher can use <PRO_HISHER> performance to inspire greatness in all <PRO_HISHER> allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the bard. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Throws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12. Every 6 levels thereafter the bonus Hit Points increase by +5 and THAC0 and Saving Throws vs. Death bonus increases by 1.
 
 Soothing Performance
-A blade or skald of 12th level or higher can use <PRO_HISHER> performance to create an effect equivalent to the mass cure light wounds, using the bard’s level as the caster level.
+A blade or skald of 12th level or higher can use <PRO_HISHER> performance to heal 1d8 + 1/level Hit Points to all party members.
 
 Inspire Heroics
 A blade or skald of 15th level or higher can inspire tremendous heroism in all <PRO_HISHER> allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the bard. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds. These bonuses increase to +5 at level 24, and +6 at level 30.

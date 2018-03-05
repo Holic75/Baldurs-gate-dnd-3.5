@@ -119,6 +119,8 @@
 		//Cure moderate wounds
 		COPY ~3ed/Spells/CureModerateWounds~ ~override~
 		COPY_EXISTING ~3ed/Spells/CureModerateWounds/rgspa02.spl~ ~override~
+        	LPF FIX_HEAL_3ED INT_VAR power = 2 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 14 savingthrow = 1  
+                STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END
 			SAY NAME1 @014
 			SAY UNIDENTIFIED_DESC @015
 			ADD_SPELL "override/rgspa02.spl" 1  2 CLERIC_CURE_MODERATE_WOUNDS
@@ -126,6 +128,8 @@
 		//Cause light wounds	
 		COPY ~3ed/Spells/CauseLightWounds~ ~override~
 		COPY_EXISTING ~3ed/Spells/CauseLightWounds/rgspb01.spl~ ~override~
+            LPF FIX_HARM_3ED INT_VAR power = 1 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 8 savingthrow = 1  
+                STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END        
 			SAY NAME1 @019
 			SAY UNIDENTIFIED_DESC @020
 			ADD_SPELL "override/rgspb01.spl" 1  1 CLERIC_CAUSE_LIGHT_WOUNDS
@@ -133,6 +137,8 @@
 		//Cause moderate wounds
 		COPY ~3ed/Spells/CauseModerateWounds~ ~override~
 		COPY_EXISTING ~3ed/Spells/CauseModerateWounds/rgspb02.spl~ ~override~
+            LPF FIX_HARM_3ED INT_VAR power = 2 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 14 savingthrow = 1  
+                STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END
 			SAY NAME1 @021
 			SAY UNIDENTIFIED_DESC @022
 			ADD_SPELL "override/rgspb02.spl" 1  2 CLERIC_CAUSE_MODERATE_WOUNDS
@@ -140,6 +146,8 @@
 		//Cause medium wounds
 		COPY ~3ed/Spells/CauseMediumWounds~ ~override~
 		COPY_EXISTING ~3ed/Spells/CauseMediumWounds/rgspb03.spl~ ~override~
+            LPF FIX_HARM_3ED INT_VAR power = 3 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = 20 savingthrow = 1  
+                STR_VAR heal_prefix = ~EN_CU~ harm_prefix = ~EN_HR~ END
 			SAY NAME1 @023
 			SAY UNIDENTIFIED_DESC @024
 			ADD_SPELL "override/rgspb03.spl" 1  3 CLERIC_CAUSE_MEDIUM_WOUNDS			
@@ -153,27 +161,42 @@
     COPY ~3ed/Spells/MassCure/MSCURE1B.BAM~ ~override~
     COPY ~3ed/Spells/MassCure/MSCURE2B.BAM~ ~override~
     
+    // 3d8 +1/levl heal /dmg
     COPY_EXISTING ~SPPR514.SPL~  ~override/MSCURE1.SPL~
         WRITE_LONG 0x0034 6 //spell level
         WRITE_ASCII 0x003a ~MSCURE1C~ #8 //spellbook icon
-        WRITE_BYTE 0x0021 0b10000000 //remove from cleric spell list
-        LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = 3 END
-        LPF ALTER_SPELL_HEADER STR_VAR icon = ~MSCURE1B~ END
+        WRITE_BYTE 0x0021 0b10000000 //remove from druid spell list
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete  = 326 END
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete  = 318 END       
+        LPF ALTER_SPELL_HEADER INT_VAR projectile = 149 STR_VAR icon = ~MSCURE1B~ END
+        READ_SHORT 0x0068 "Nheaders" //number of headers
+        FOR (i=0;i<Nheaders;i=i+1) BEGIN
+            LPF FIX_HEAL_3ED INT_VAR header = i+1 power = 6 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = i+9 savingthrow = 1  enemy_ally = 1
+                STR_VAR heal_prefix = ~EN_C3~ harm_prefix = ~EN_H3~ END               
+        END       
+        LPF ALTER_SPELL_EFFECT INT_VAR power = 6 END
 		SAY NAME1 @215
 		SAY UNIDENTIFIED_DESC @216
 		ADD_SPELL "override/MSCURE1.SPL" 1  6 CLERIC_MASS_CURE_MEDIUM        
     
-    // mass cure critical wounds
+    // mass cure critical wounds (5d8 + 1/lvl heal/dmg)
     
     COPY_EXISTING ~SPPR514.SPL~  ~override/MSCURE2.SPL~
         WRITE_LONG 0x0034 7 //spell level
         WRITE_ASCII 0x003a ~MSCURE2C~ #8 //spellbook icon
-        WRITE_BYTE 0x0021 0b10000000 //remove from cleric spell list
-        LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = 5 END
-        LPF ALTER_SPELL_HEADER STR_VAR icon = ~MSCURE2B~ END
+        WRITE_BYTE 0x0021 0b10000000 //remove from druid spell list
+        LPF ALTER_SPELL_HEADER INT_VAR projectile = 149 STR_VAR icon = ~MSCURE2B~ END
+        READ_SHORT 0x0068 "Nheaders" //number of headers
+        FOR (i=0;i<Nheaders;i=i+1) BEGIN
+            LPF FIX_HEAL_3ED INT_VAR header = i+1 power = 6 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = i+9 savingthrow = 1  enemy_ally = 1
+                STR_VAR heal_prefix = ~EN_C5~ harm_prefix = ~EN_H5~ END               
+        END        
+        LPF ALTER_SPELL_EFFECT INT_VAR power = 7 END
 		SAY NAME1 @217
 		SAY UNIDENTIFIED_DESC @218
-		ADD_SPELL "override/MSCURE2.SPL" 1  7 CLERIC_MASS_CURE_CRITICAL    
+		ADD_SPELL "override/MSCURE2.SPL" 1  7 CLERIC_MASS_CURE_CRITICAL
+
+
 	
 	//add enchanted weapon as 4th level cleric spell
     COPY_EXISTING ~SPWI417.SPL~ ~override/CLR_EWP.SPL~
@@ -181,6 +204,7 @@
         SAY UNIDENTIFIED_DESC @309
 		WRITE_BYTE 0x0021 0b10000000 //disallow druids to cast it
         WRITE_BYTE 0x001f 0 
+
         ADD_SPELL "override/CLR_EWP.SPL" 1  4 CLERIC_ENCHANTED_WEAPON
         DEFINE_ASSOCIATIVE_ARRAY extended_spell_list BEGIN  "%DEST_RES%" => "SPWI417" END
         
@@ -250,5 +274,73 @@
         ADD_SPELL "override/CLR_MVS.SPL" 1  3 CLERIC_MAGIC_VESTMENT
             SPRINT resource EVALUATE_BUFFER ~%DEST_RES%~		
 			LPF ADD_SPELL_EFFECT INT_VAR  opcode = 321 power=3 target=2  duration=1 timing=0 resist_dispel=3 insert_point=0 STR_VAR resource END //remove effects from previous cast
+    
+
+    //mass cause wounds
+    COPY ~3ed/Spells/MassCause/MSCAUS1C.BAM~ ~override~
+    COPY ~3ed/Spells/MassCause/MSCAUS2C.BAM~ ~override~
+    COPY ~3ed/Spells/MassCause/MSCAUS3C.BAM~ ~override~
+    COPY ~3ed/Spells/MassCause/MSCAUS1B.BAM~ ~override~
+    COPY ~3ed/Spells/MassCause/MSCAUS2B.BAM~ ~override~
+    COPY ~3ed/Spells/MassCause/MSCAUS3B.BAM~ ~override~
+    
+    ACTION_IF NOT (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+        // 1d8 +1/levl heal /dmg
+        COPY_EXISTING ~SPPR514.SPL~  ~override/MSCAUS1.SPL~
+            WRITE_LONG 0x0034 5 //spell level
+            WRITE_ASCII 0x003a ~MSCAUS1C~ #8 //spellbook icon
+            WRITE_BYTE 0x0021 0b10000000 //remove from druid spell list
+            LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete  = 326 END
+            LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete  = 318 END       
+            LPF ALTER_SPELL_HEADER INT_VAR projectile = 149 STR_VAR icon = ~MSCAUS1B~ END
+            READ_SHORT 0x0068 "Nheaders" //number of headers
+            FOR (i=0;i<Nheaders;i=i+1) BEGIN
+                LPF FIX_HARM_3ED INT_VAR header = i+1 power = 6 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = i+9 savingthrow = 1  enemy_ally = 1
+                    STR_VAR heal_prefix = ~EN_C1~ harm_prefix = ~EN_H1~ END               
+            END       
+            LPF ALTER_SPELL_EFFECT INT_VAR power = 5 END
+            SAY NAME1 @322
+            SAY UNIDENTIFIED_DESC @323
+            ADD_SPELL "override/MSCAUS1.SPL" 1  5 CLERIC_MASS_CAUSE     
+    
+    END
+        
+    // 3d8 +1/levl heal /dmg
+    COPY_EXISTING ~SPPR514.SPL~  ~override/MSCAUS2.SPL~
+        WRITE_LONG 0x0034 6 //spell level
+        WRITE_ASCII 0x003a ~MSCAUS2C~ #8 //spellbook icon
+        WRITE_BYTE 0x0021 0b10000000 //remove from druid spell list
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete  = 326 END
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete  = 318 END       
+        LPF ALTER_SPELL_HEADER INT_VAR projectile = 149 STR_VAR icon = ~MSCAUS2B~ END
+        READ_SHORT 0x0068 "Nheaders" //number of headers
+        FOR (i=0;i<Nheaders;i=i+1) BEGIN
+            LPF FIX_HARM_3ED INT_VAR header = i+1 power = 6 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = i+9 savingthrow = 1  enemy_ally = 1
+                STR_VAR heal_prefix = ~EN_C3~ harm_prefix = ~EN_H3~ END               
+        END       
+        LPF ALTER_SPELL_EFFECT INT_VAR power = 6 END
+		SAY NAME1 @324
+		SAY UNIDENTIFIED_DESC @325
+		ADD_SPELL "override/MSCAUS2.SPL" 1  6 CLERIC_MASS_CAUSE_MEDIUM        
+    
+    // mass cure critical wounds (5d8 + 1/lvl heal/dmg)
+    
+    COPY_EXISTING ~SPPR514.SPL~  ~override/MSCAUS3.SPL~
+        WRITE_LONG 0x0034 7 //spell level
+        WRITE_ASCII 0x003a ~MSCAUS3C~ #8 //spellbook icon
+        WRITE_BYTE 0x0021 0b10000000 //remove from druid spell list
+        LPF ALTER_SPELL_HEADER INT_VAR projectile = 149 STR_VAR icon = ~MSCAUS3B~ END
+        READ_SHORT 0x0068 "Nheaders" //number of headers
+        FOR (i=0;i<Nheaders;i=i+1) BEGIN
+            LPF FIX_HARM_3ED INT_VAR header = i+1 power = 6 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = i+9 savingthrow = 1  enemy_ally = 1
+                STR_VAR heal_prefix = ~EN_C5~ harm_prefix = ~EN_H5~ END               
+        END        
+        LPF ALTER_SPELL_EFFECT INT_VAR power = 7 END
+		SAY NAME1 @326
+		SAY UNIDENTIFIED_DESC @327
+		ADD_SPELL "override/MSCAUS3.SPL" 1  7 CLERIC_MASS_CAUSE_CRITICAL         
+        
+        
+
 	
         

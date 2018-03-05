@@ -13,20 +13,16 @@
 	OUTER_SET max_multi_class_channel_lvl=8	
 	
 	OUTER_FOR (i=1;i<=max_channel_lvl;i=i+1) BEGIN
-		COPY ~3ed/Classes/TurnUndead/DMUNDD.EFF~ ~override/EN_DMG%i%.EFF~
-			WRITE_LONG 0x0038 i //i*1d3 damage (same part will be also added with save)
-            WRITE_LONG 0x003c 3
-		COPY ~3ed/Classes/TurnUndead/HEAL.EFF~ ~override/EN_HL%i%.EFF~
-			WRITE_LONG 0x0038 i //i*1d6 healed 
-            WRITE_LONG 0x003c 6
+		COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_DMG%i%.SPL~
+            LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = i dicesize = 3 END // i *1d3 damage (same part will be also added with save)
+		COPY ~3ed/Classes/TurnUndead/EN_HL.SPL~ ~override/EN_HL%i%.SPL~
+            LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = i dicesize = 6 END // i *1d6 heal
             
         //for cleansing flames    
-		COPY ~3ed/Classes/TurnUndead/DMUNDD.EFF~ ~override/EN_DMA%i%.EFF~
-			WRITE_LONG 0x0038 i //i*1d4 damage (same part will be also added with save)
-            WRITE_LONG 0x003c 4
-		COPY ~3ed/Classes/TurnUndead/HEAL.EFF~ ~override/EN_HLA%i%.EFF~
-			WRITE_LONG 0x0038 i //i*1d8 healed
-            WRITE_LONG 0x003c 8
+		COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_DMA%i%.SPL~
+            LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = i dicesize = 4 END // i *1d4 damage (same part will be also added with save)
+		COPY ~3ed/Classes/TurnUndead/EN_HL.SPL~ ~override/EN_HLA%i%.SPL~
+            LPF ALTER_SPELL_EFFECT INT_VAR dicenumber = i dicesize = 8 END // i *1d8 heal
 	END
 	
 	

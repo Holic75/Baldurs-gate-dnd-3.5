@@ -48,7 +48,9 @@
 	COPY_EXISTING ~SPPR608.SPL~ ~override~ //heal
 		WRITE_BYTE 0x0021 0b10000000
         
-
+	//Disallow druid  to cast confusion
+	COPY_EXISTING ~SPPR709.SPL~ ~override~ 
+		WRITE_BYTE 0x0021 0b10000000
 				
 	//allow druid to cast hold monster as 4-th level spell	
 	COPY_EXISTING ~SPWI507.SPL~ ~override/DRHLDMN.SPL~

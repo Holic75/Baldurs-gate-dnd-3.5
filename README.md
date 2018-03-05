@@ -17,7 +17,7 @@
 
 
 
-# Baldurs-gate-dnd-3.5 v2.10
+# Baldurs-gate-dnd-3.5 v2.11
 This is a WeiDu mod for BG:Enhanced edition and BG2:Enhanced edition that changes 2ed ADnD rules to DnD 3.5 with some elements taken from Pathfinder.  
 It changes game mechanics (i.e. classes, spells, abilities, etc...) to that of 3.5 edition (to the extent that game engine allows).
 
@@ -35,9 +35,9 @@ Also it is strongly advised that you make a backup of your dialog.tlk file befor
 This mod was only tested with clean BG:ENHANCED EDITION 2.3 install (Non Sod) and BG 2:ENHANCED EDITION 2.3 and might not be compatible with any other mods.
 At current state it may be installed along IWD:EE but due to certain effects not supported by the engine (mostly related to opcode 326) abilities depending on character stats do not work (may be it will be fixed by Beamdog in the upcoming 2.5 patch)
 
-I also strongly suggest to use a mod Colorful Specialist Slots made by kjeron ( https://us.v-cdn.net/5019558/uploads/editor/nn/cv0dplebsnjj.rar) which forces specialist mages to 
+I also strongly suggest to use a mod Colorful Specialist Slots made by kjeron ( https://us.v-cdn.net/5019558/uploads/editor/nn/cv0dplebsnjj.rar) which forces specialist mages to
 spend 1 or 2 slots (I suggest to use 2 as per Pathfidner rules). It should be installed after DND3.5 mod.  
- 
+
 #### Due to big amount of content it is very difficult to test everything, so I would really appreciate if you could send information on the bugs and inconsistencies you found to holic.denis@gmail.com or post them on the issues page. Any critics and suggestions are also more than welcome.
 
 # Rule Changes
@@ -93,7 +93,7 @@ Number of spells per level| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 4 |6 | 8 | 10 | 
 
 #### WISDOM
 – Increases AC bonus of Monk, Kensai and Ninja (+1 per 2 points above 10).  
-– Increases number of spells per day that can be cast by Clerics, Paladins, Druids and Rangers. 
+– Increases number of spells per day that can be cast by Clerics, Paladins, Druids and Rangers.
 – Determines bonus to Detect Illusion skill (+5% per point above 10, -5% per point below).   
 – Improves Saving Throws vs. Spells (+1 per 2 points above 9, -1 per 2 points below 10).  
 – Increases Saving Throw penalties for Cleric, Druid, Paladin and Ranger spells (i.e. effective Saving Throws of spell targets are reduced by 1 per 2 points above 10).  
@@ -391,25 +391,25 @@ Lvl| Exp Points |
 9|  160000
 10| 270000
 11| 420000
-12| 600000
-13| 840000
-14|1100000
-15|1380000
-16|1680000
-17|2000000
-18|2340000
-19|2700000
-20|3080000
-21|3480000
-22|3900000
-23|4340000
-24|4800000
-25|5280000
-26|5780000
-27|6300000
-28|6840000
-29|7400000
-30|7980000
+12| 720000
+13|1030000
+14|1350000
+15|1680000
+16|2020000
+17|2370000
+18|2730000
+19|3100000
+20|3480000
+21|3870000
+22|4270000
+23|4680000
+24|5100000
+25|5530000
+26|5970000
+27|6420000
+28|6880000
+29|7350000
+30|7830000
 
 
 The new description of classes is given below.
@@ -560,7 +560,12 @@ Disadvantages:
 CLASS FEATURES:  
 – May wear helmets.  
 – May wear any armor and use any weapon and shield (excluding large shield).  
-– May use Lay On Hands ability once per day for every 2 points of Charisma above 10 to heal a target for 2 Hit Points per level of the Paladin.  
+– May use Lay On Hands ability once per day for every 2 points of Charisma above 10.  
+```
+LAY ON HANDS:The character channels positive energy to heal the touched creature of 2 Hit Points per level of the caster.
+Starting from level 6 Paladin also cures touched creature of any disease and starting from level 9 of any poison effects.
+This ability has the reverse effect on undead creatures harming them instead of healing.
+```
 – Starting from level 6 Lay On Hands ability also cures disease.  
 – Starting from level 9 Lay On Hands ability also cures poison.  
 – May cast Detect Evil once per day per level (starts at 1st level with 4 uses).  
@@ -643,8 +648,8 @@ All hostile living creatures suffer 1d6 points of magical damage per Channel Ene
 ```
 – May use the Absorb Health ability once per day per 2 points of Charisma above 10.  
 ```
-ABSORB HEALTH:
-Deals 2 points of damage per level to an enemy, healing the Blackguard the same number of Hit Points.
+ABSORB HEALTH: The character steals 2 Hit Points per level from a target creature and transfers them to <PRO_HIMHER>self.
+If applied to undead creatures this ability heals them instead.
 ```
 – May use the Poison Weapon ability once per day. Gains one use at level 1, one use at level 5, and an additional use every 5 levels thereafter.  
 ```
@@ -2100,8 +2105,11 @@ Wolf             | 15  | 18  | 14  |  6 | 2      |1d8 (piercing)    | strikes as
 Fire Salamander  | 18  | 19  | 15  |  2 |As Druid|1d6+1d8 (piercing)| strikes as +3 weapon, +1 THAC0, Fire Resistance 50%, Breathe Fireball three times per day (2d6 fire damage to target)
 Baby Wyvern      | 16  | 17  | 16  |  3 | 1      |2d8 (crushing) + 1d6 (piercing)| strikes as +2 weapon,  on hit causes 1 poison damage/second for 6 seconds (Save vs. Poison to avoid), Immunity to hold, paralysis, slow, level drain, web, entangle, and grease            
 Sword Spider     | 16  | 16  | 10  |  3 | 4      |1d4 (piercing)    | strikes as +1 weapon, Immunity to web
-Werewolf         | 19  | 16  | 15  |  1 | 2      |1d6 (piercing)    | strikes as +2 weapon, Magic Resistance: 20%
-Greater Werewolf | 21  | 20  | 25  |  -6| 3      |2d8 (slashing)    | strikes as +4 weapon, Immune to all non magical weapons, Fire Resistance 50%, Cold Resistance 50%, Electricity Resistance 50%, Acid Resistance 50%, Magic Resistance 40%, Regenerates 1 Hit Point per second
+Werewolf         | 19  | 16  | 15  |  3 | 2      |1d6 (piercing)  | strikes as +2 weapon, Magic Resistance: 20%
+Werewolf (level 8+)        | 19  | 16  | 15  |  1 | 2      |1d10 (piercing) | strikes as +2 weapon, Magic Resistance: 20%
+Greater Werewolf | 21  | 20  | 25  |  -4| 3      |2d8 (slashing)    | strikes as +4 weapon, Immune to all non magical weapons, Fire Resistance 50%, Cold Resistance 50%, Electricity Resistance 50%, Acid Resistance 50%, Magic Resistance 40%, Regenerates 1 Hit Point per second
+Greater Werewolf (level 22+) | 21  | 20  | 25  |  -6| 3      |2d10 (slashing)    | strikes as +4 weapon, Immune to all non magical weapons, Fire Resistance 50%, Cold Resistance 50%, Electricity Resistance 50%, Acid Resistance 50%, Magic Resistance 40%, Regenerates 1 Hit Point per second
+Greater Werewolf (level 29+) | 21  | 20  | 25  |  -8| 3      |2d12 (slashing)    | strikes as +4 weapon, Immune to all non magical weapons, Fire Resistance 50%, Cold Resistance 50%, Electricity Resistance 50%, Acid Resistance 50%, Magic Resistance 40%, Regenerates 1 Hit Point per second
 Large Fire Elemental | 14 | 21 | 16 | 6 | 2 | 2d6 crushing + 2d6 fire | strikes as +4 weapon, Immunity to weapons below +3, Weapon Finesse, Fire Resistance: 100%, Cold Resistance: -50%, Physical Resistance: 25%
 Large Earth Elemental | 21 | 8 | 19 | 0 | 2 | 2d10 crushing| strikes as +4 weapon, Immunity to weapons below +3, Physical Resistance: 50%
 Greater Fire Elemental | 18 | 25 | 18 | 6 | 2 | 2d8 crushing + 2d8 fire | strikes as +4 weapon, Immunity to weapons below +3, Weapon Finesse, Fire Resistance: 100%, Cold Resistance: -50%, Physical Resistance: 25%
@@ -2190,7 +2198,7 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Heal now heals up to 150 HP  
 - Divine favor now lasts 4 rounds (it is now a 5th level War Domain Spell)  
 - Sol's Searing Orb is now a ranged spell in Bg1 and Bg2 (instead creating item)  and deals 6d12 damage (double to undead) with savingthrow vs Breath Weapon for half
-- Damage of Bolt of glory against primes/elementals/undead/demons was increased to 4d12/3d8/8d12/10d12 respectivelyy
+- Damage of Bolt of Glory against primes/elementals/undead/demons was increased to 4d12/3d8/8d12/10d12 respectivelyy
 - Harm is now a close range spell instead of a weapon dealing 150 damage (75 if Save vs. Spell), but always leaves target with at least 1 HP    
 - Boon of Lathander was renamed to Boon of Deity (it is now a 6th level Glory Domain Spell)  
 - Finger of Death now deals 6d8 points of damage to the target if it succeeds on a Saving Throw vs. Death  
@@ -2198,7 +2206,9 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Regeneration now regenerates 10% HP per round and lasts 10 rounds
 - Mantle, Improved Mantle and Absolute Immunity now last 1 round per caster level, Absolute Immunity now also protects against +6 weapons
 - Energy drain now gives 2d4 negative levels
-
+- All cure wounds spells ( and Heal) now harm undead for corresponding amount of damage (with Savingthrow vs. Spell for 1/2) instead of healing them.
+- All cause wounds spells (and Harm) now heal undead for corresponding amount of Hit Points (with Savingthrow vs. Spell for 1/2) instead of harming them.
+- Effects of Holy/ Unholy word now depend on difference between caster and target level/HD (rather than raw target level/HD)
 
 ### New Spells
 
@@ -2253,6 +2263,7 @@ Area of Effect: 1 creature
 Saving Throw: 1/2   
 
 This spell is the reverse of Cure Light Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 8 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.
+Since undead are powered by negative energy, this spell cures such a creature of a like amount of damage, rather than harming it.
 
 #### Magic Weapon (Cleric)
 (Enchantment/Charm)  
@@ -2292,8 +2303,9 @@ Casting Time: 5
 Area of Effect: 1 creature  
 Saving Throw: None  
 
-By casting this spell and laying her hand upon a creature, the priest causes 14 points of wound or other injury damage to the creature's body to be healed. This healing cannot affect creatures without corporeal bodies, nor can it cure wounds of creatures not living or of extraplanar origin.
+By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest causes 14 points of wound or other injury damage to the creature's body to be healed.
 Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
+Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a savingthrow vs. Spell to take half damage.
 
 #### Cause Moderate Wounds (Cleric)
 (Necromancy)  
@@ -2307,6 +2319,7 @@ Area of Effect: 1 creature
 Saving Throw: 1/2   
 
 This spell is the reverse of Cure Moderate Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 14 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.
+Since undead are powered by negative energy, this spell cures such a creature of a like amount of damage, rather than harming it.
 
 #### Greater Magic Fang (Druid)
 (Alteration)  
@@ -2386,10 +2399,25 @@ Casting Time: 3
 Area of Effect: 1 creature   
 Saving Throw: 1/2   
 
-This spell is the reverse of Cure Medium Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 20 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.  
+This spell is the reverse of Cure Medium Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 20 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.
+Since undead are powered by negative energy, this spell cures such a creature of a like amount of damage, rather than harming it.
+
+#### Mass Cause Light Wounds (Cleric)
+(Necromancy)  
+
+Level: 5  
+Sphere: Healing  
+Range: 0  
+Duration: Instant  
+Casting Time: 5  
+Area of Effect: 30-ft. radius  
+Saving Throw: 1/2  
+
+By casting this spell, the priest deals 1d8 + 1/level points of damage to nearby enemies. A successful Save vs. Spell halves the damage.
+Since undead are powered by negative energy, this spell also cures all allied undead creatures of a like amount of damage, rather than harming them.
 
 #### Mass Cure Medium Wounds (Cleric)
-(Necromancy)
+(Necromancy)  
 
 Level: 6  
 Sphere: Healing  
@@ -2399,22 +2427,22 @@ Casting Time: 5
 Area of Effect: 30-ft. radius  
 Saving Throw: None  
 
-This is a more powerful version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 3d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.  
+This is a more powerful version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 3d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
+This spell also deals damage to all hostile undead instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a savingthrow vs. Spell to take half damage.
 
-
-#### Mass Cure Critical Wounds (Cleric)
+#### Mass Cause Medium Wounds (Cleric)
 (Necromancy)  
 
-Level: 7  
+Level: 6  
 Sphere: Healing  
 Range: 0  
-Duration: Permanent  
+Duration: Instant  
 Casting Time: 5  
 Area of Effect: 30-ft. radius  
-Saving Throw: None  
+Saving Throw: 1/2  
 
-This is an even stronger version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 5d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.  
-
+By casting this spell, the priest deals 3d8 + 1/level points of damage to nearby enemies. A successful Save vs. Spell halves the damage.
+Since undead are powered by negative energy, this spell also cures all allied undead creatures of a like amount of damage, rather than harming them.
 
 #### Vigorous Cycle (Cleric, Druid)
 (Necromancy)  
@@ -2428,6 +2456,34 @@ Area of Effect: allied creatures in 30-ft radius
 Saving Throw: None  
 
 The subjects of this spell are able to regenerate 3 Hit Points per round for the duration of the spell.  
+
+#### Mass Cure Critical Wounds (Cleric)
+(Necromancy)  
+
+Level: 7  
+Sphere: Healing  
+Range: 0  
+Duration: Permanent  
+Casting Time: 5  
+Area of Effect: 30-ft. radius  
+Saving Throw: None  
+
+This is an even stronger version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 5d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
+This spell also deals damage to all hostile undead instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a savingthrow vs. Spell to take half damage.~
+
+#### Mass Cause Critical Wounds (Cleric)
+(Necromancy)
+
+Level: 7  
+Sphere: Healing  
+Range: 0  
+Duration: Instant  
+Casting Time: 5  
+Area of Effect: 30-ft. radius  
+Saving Throw: 1/2  
+
+By casting this spell, the priest deals 5d8 + 1/level points of damage to nearby enemies. A successful Save vs. Spell halves the damage.
+Since undead are powered by negative energy, this spell also cures all allied undead creatures of a like amount of damage, rather than harming them.
 
 #### Aura of Vitality (Druid)
 (Alteration)  

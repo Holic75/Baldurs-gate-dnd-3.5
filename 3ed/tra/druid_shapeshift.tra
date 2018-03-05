@@ -133,9 +133,9 @@ Werewolf:
 	Strength: 19 
 	Dexterity: 16
 	Constitution: 15
-	Base Armor Class: 1
+	Base Armor Class: 3 (1 starting from level 8) 
 	Number of Attacks: 2
-	Attack Damage: 1d6 (piercing), strikes as +2 weapon
+	Attack Damage: 1d6 (1d10 starting from level 8) (piercing), strikes as +2 weapon
 	Special Abilities:
 		– Magic Resistance: 20%
 
@@ -145,9 +145,9 @@ Greater Werewolf:
 	Strength: 21
 	Dexterity: 20
 	Constitution: 25
-	Base Armor Class: -6
+	Base Armor Class: -4 (-6 starting from level 22, -8 starting from level 29)
 	Number of Attacks: 3 
-	Attack Damage: 2d8 (slashing), strikes as +4 weapon
+	Attack Damage: 2d8 (2d10 starting from level 22, 2d12 starting from level 29) (slashing), strikes as +4 weapon
 	Special Abilities:
 		– Immune to all non magical weapons
 		– Fire Resistance: 50%

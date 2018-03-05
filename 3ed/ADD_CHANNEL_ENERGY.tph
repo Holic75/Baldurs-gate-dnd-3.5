@@ -14,12 +14,11 @@ DEFINE_ACTION_FUNCTION ~ADD_CHANNEL_ENERGY~
 	BEGIN
 	INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
     
-    
+    //get str_ref for blindness
     COPY_EXISTING ~SPWI106.SPL~ ~override~
         LPF GET_SPELL_EFFECT_VALUES INT_VAR match_opcode = 139 RET blind_str_ref = parameter1 END 
         
-    COPY ~3ed/Classes/TurnUndead/EN_PR.EFF~ ~override/EN_PRA%id%.EFF~
-        WRITE_EVALUATED_ASCII 0x30 ~CE_A_%id%~ #8
+    
     //cleansing flames
 	COPY ~3ed/Classes/TurnUndead/CH_POS.SPL~ ~override/CE_A_%id%.SPL~
 		 WRITE_LONG 0x0008 angel_name_ref
@@ -33,18 +32,20 @@ DEFINE_ACTION_FUNCTION ~ADD_CHANNEL_ENERGY~
 			PATCH_IF (dmg<1) BEGIN
 				dmg=1
 			END
+            //heal living allies
 			SPRINT resource EVALUATE_BUFFER ~EN_HLA%dmg%~
-			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 199 parameter2 =2 duration=1 timing=0 STR_VAR resource END
+            LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=318 target=2 parameter1 = 0   parameter2 = 1  duration = 1 STR_VAR resource END //protect undead creatures from heal
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1 = 0   parameter2 = 49 duration = 1  STR_VAR resource END
             
             //protection of non enemy creatures from further effects
-            SPRINT resource EVALUATE_BUFFER ~EN_PRA%id%~
-            LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 199 parameter2 =2 duration=1 timing=0 STR_VAR resource END
+            SPRINT resource EVALUATE_BUFFER ~CE_A_%id%~
+            LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=318 target=2 parameter1 = 0 parameter2 =52 duration = 1  STR_VAR resource END
             
-            //damage
+            //damage to evil creatures
 			SPRINT resource EVALUATE_BUFFER ~EN_DMA%dmg%~
-			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 3 parameter2 =8 duration=1 timing=0 STR_VAR resource END
-			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 3 parameter2 =8 duration=1 timing=0 savingthrow=1 savebonus STR_VAR resource END
-            
+            LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1 = 0   parameter2 = 38  duration = 1 STR_VAR resource END
+            LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1 = 0   parameter2 = 38  duration = 1 savingthrow=1 savebonus STR_VAR resource END
+                        
             //blindness
             LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=74 target=2 duration=12 timing=0 savingthrow=1 savebonus END
             LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=215 target=2 duration=3 parameter1 = 1 timing=0 savingthrow=1 savebonus STR_VAR resource = ~SPH1HI01~ END
@@ -82,13 +83,17 @@ DEFINE_ACTION_FUNCTION ~ADD_CHANNEL_ENERGY~
 			PATCH_IF (dmg<1) BEGIN
 				dmg=1
 			END
+            //heal non-undead allies
 			SPRINT resource EVALUATE_BUFFER ~EN_HL%dmg%~
-			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 199 parameter2 =2 duration=1 timing=0 STR_VAR resource END
-                
+            LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=318 target=2 parameter1 = 0   parameter2 = 1  duration = 1 STR_VAR resource END //protect undead creatures from heal
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1 = 0 parameter2 = 49 duration = 1  STR_VAR resource END
             
+
+            //harm enemy undead            
 			SPRINT resource EVALUATE_BUFFER ~EN_DMG%dmg%~
-			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 4 parameter2 =3 duration=1 timing=0 STR_VAR resource END
-			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 4 parameter2 =3 duration=1 timing=0 savingthrow=1 savebonus STR_VAR resource END            
+            LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=318 target=2 parameter1 = 0   parameter2 = 2  duration = 1 STR_VAR resource END //protect non-undead creatures from harm
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1 = 0 parameter2 = 51 duration = 1  STR_VAR resource END
+            LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1 = 0 parameter2 = 51 duration = 1  savingthrow = 1 savebonus STR_VAR resource END            
 		END 
 	
 	COPY ~3ed/Classes/TurnUndead/GV_CE.SPL~ ~override/CE_P_G%id%.SPL~
@@ -114,13 +119,17 @@ DEFINE_ACTION_FUNCTION ~ADD_CHANNEL_ENERGY~
 			PATCH_IF (dmg<1) BEGIN
 				dmg=1
 			END			
+            
+            //harm non-undead enemies
 			SPRINT resource EVALUATE_BUFFER ~EN_DMG%dmg%~
-			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 200 parameter2 =2 duration=1 timing=0 STR_VAR resource END
-			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 200 parameter2 =2 duration=1 timing=0 savingthrow=1 savebonus STR_VAR resource END
+            LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=318 target=2 parameter1 = 0   parameter2 = 1  duration = 1 STR_VAR resource END //protect undead creatures from harm
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1 = 0 parameter2 = 51 duration = 1  STR_VAR resource END
+            LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1 = 0 parameter2 = 51 duration = 1  savingthrow = 1 savebonus STR_VAR resource END
             
             
 			SPRINT resource EVALUATE_BUFFER ~EN_HL%dmg%~
-			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=177 target=2 parameter1 = 4 parameter2 =3 duration=1 timing=0 STR_VAR resource END
+            LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=318 target=2 parameter1 = 0   parameter2 = 2  duration = 1 STR_VAR resource END //protect non-undead creatures from heal
+			LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1 = 0   parameter2 = 49 duration = 1  STR_VAR resource END
 		END
 
 	

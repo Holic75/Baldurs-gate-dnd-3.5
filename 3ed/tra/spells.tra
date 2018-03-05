@@ -155,9 +155,9 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: None
 
-By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest causes 14 points of wound or other injury damage to the creature's body to be healed. This healing cannot affect creatures without corporeal bodies, nor can it cure wounds of creatures not living or of extraplanar origin.
-
-Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.~
+By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest causes 14 points of wound or other injury damage to the creature's body to be healed.
+Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
+Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a savingthrow vs. Spell to take half damage.~
 //-------------------------------------------------------------------------------
 	@016=~Cure Medium Wounds
 (Necromancy)
@@ -170,7 +170,9 @@ Casting Time: 5
 Area of Effect: 1 creature
 Saving Throw: None
 
-By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 20 points of wound or other injury damage from the creature's body. This healing cannot affect creatures without corporeal bodies, nor can it cure wounds of creatures not living or of extraplanar origin. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.~
+By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 20 points of wound or other injury damage from the creature's body.
+Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
+Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a savingthrow vs. Spell to take half damage.~
 //--------------------------------------------------------------------------------------------------
 	@017=~Cure Serious Wounds
 (Necromancy)
@@ -183,7 +185,8 @@ Casting Time: 7
 Area of Effect: 1 creature
 Saving Throw: None
 
-This spell is a more potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hand upon a creature and heals 28 points of wound or other injury damage to the creature's body. This healing cannot affect noncorporeal, nonliving, or extraplanar creatures.~
+This spell is a more potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hand upon a creature and heals 28 points of wound or other injury damage to the creature's body.
+Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a savingthrow vs. Spell to take half damage.~
 //--------------------------------------------------------------------------------------------------
 	@018=~Cure Critical Wounds
 (Necromancy)
@@ -196,7 +199,8 @@ Casting Time: 8
 Area of Effect: 1 creature
 Saving Throw: None
 
-The Cure Critical Wounds spell is a very potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hands upon a creature and heals 36 points of damage from wounds or other injuries. The spell does not affect creatures without corporeal bodies, those of extraplanar origin, or those not living.~
+The Cure Critical Wounds spell is a very potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hands upon a creature and heals 36 points of damage from wounds or other injuries.
+Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a savingthrow vs. Spell to take half damage.~
 //------------------------------------------------------------------------------------------------
 	@019=~Cause Light Wounds~
 
@@ -211,7 +215,8 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-This spell is the reverse of Cure Light Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 8 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.~
+This spell is the reverse of Cure Light Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 8 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.
+Since undead are powered by negative energy, this spell cures such a creature of a like amount of damage, rather than harming it.~
 //--------------------------------------------------------------------------------------------------------------//
 	@021=~Cause Moderate Wounds~
 	@022=~Cause Moderate Wounds
@@ -225,7 +230,8 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-This spell is the reverse of Cure Moderate Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 14 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.~
+This spell is the reverse of Cure Moderate Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 14 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.
+Since undead are powered by negative energy, this spell cures such a creature of a like amount of damage, rather than harming it.~
 //---------------------------------------------------------------------------------------------------------------//
 	@023=~Cause Medium Wounds~
 	@024=~Cause Medium Wounds
@@ -239,7 +245,8 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-This spell is the reverse of Cure Medium Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 20 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.~
+This spell is the reverse of Cure Medium Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 20 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.
+Since undead are powered by negative energy, this spell cures such a creature of a like amount of damage, rather than harming it.~
 //--------------------------------------------------------------------------------------------------------------//
 	@025=~Cause Serious Wounds
 (Necromancy)
@@ -252,7 +259,8 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-This spell is the reverse of Cure Serious Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 28 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.~
+This spell is the reverse of Cure Serious Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 28 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.
+Since undead are powered by negative energy, this spell cures such a creature of a like amount of damage, rather than harming it.~
 //--------------------------------------------------------------------------------------------------
 	@026=~Cause Critical Wounds
 (Necromancy)
@@ -265,7 +273,8 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-This spell is the reverse of Cure Critical Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 36 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.~
+This spell is the reverse of Cure Critical Wounds. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell inflicts 36 points of damage upon the target. If target succeeds on a Savingthrow vs. Spell the damage is halved.
+Since undead are powered by negative energy, this spell cures such a creature of a like amount of damage, rather than harming it.~
 //--------------------------------------------------------------------------------------------------
 	@027=~Slay Living
 (Necromancy)
@@ -291,7 +300,8 @@ Casting Time: 9
 Area of Effect: 1 creature
 Saving Throw: 1/2
 
-This spell is the reverse of Heal. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell deals 150 damage (75 if target succeeds on Savingthrow vs. Spell). Harm cannot reduce the target’s hit points to less than 1. ~
+This spell is the reverse of Heal. Instead of healing the creature touched, it causes damage. On a successful touch from the priest, the spell deals 150 damage (75 if target succeeds on Savingthrow vs. Spell). Harm cannot reduce the target’s hit points to less than 1.
+Since undead are powered by negative energy, this spell cures such a creature of a like amount of damage, rather than harming it.~ 
 //--------------------------------------------------------------------------------------------------
 	@029=~Chill Touch
 (Necromancy)
@@ -646,7 +656,12 @@ The skeleton warriors can follow the caster, remain in an area and attack any cr
     //---------------------------------------------------------------------------------------------------
 	@052=~Lay On Hands
 The character channels positive energy to heal the touched creature of 2 Hit Points per level of the caster.
-Starting from level 6 Paladin also cures touched creature of any disease and starting from level 9 of any poison effects.~
+Starting from level 6 Paladin also cures touched creature of any disease and starting from level 9 of any poison effects.
+This ability has the reverse effect on undead creatures harming them instead of healing.~
+
+	@0521=~Absorb Health
+The character steals 2 Hit Points per level from a target creature and transfers them to <PRO_HIMHER>self.
+If applied to undead creatures this ability heals them instead.~
 //-------------------------------------------------------------------------------------------------
 	@053=~Prismatic Spray
 (Conjuration/Summoning)
@@ -1068,9 +1083,11 @@ Range: 0
 Duration: Permanent
 Casting Time: 5
 Area of Effect: 30-ft. radius
-Saving Throw: None
+Saving Throw: 1/2
 
-This is a more powerful version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 3d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.~
+This is a more powerful version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 3d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
+This spell also deals damage to all hostile undead instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a savingthrow vs. Spell to take half damage.~
+
 
 //-----------------------------------------------------------------------------------------------------------------
 
@@ -1085,9 +1102,10 @@ Range: 0
 Duration: Permanent
 Casting Time: 5
 Area of Effect: 30-ft. radius
-Saving Throw: None
+Saving Throw: 1/2
 
-This is an even stronger version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 5d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.~
+This is an even stronger version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 5d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
+This spell also deals damage to all hostile undead instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a savingthrow vs. Spell to take half damage.~
 
 //-----------------------------------------------------------------------------------------------------------------
     @301 =~Mantle
@@ -1276,10 +1294,130 @@ Range: Touch
 Duration: Permanent
 Casting Time: 9
 Area of Effect: 1 creature
+Saving Throw: 1/2
+
+The very potent Heal spell enables the priest to wipe away disease and injury in the creature who receives the benefits of the spell. It completely cures all disease and blindness in the recipient and heals up to 150 points of damage suffered due to wounds or injury. It also dispels a Feeblemind spell and cures those mental disorders caused by spells or injury to the brain. Naturally, the effects can be negated by later wounds, injuries, and diseases.
+Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a savingthrow vs. Spell to take half damage.~
+//----------------------------------------------------------------------------------
+	@317 = ~Holy Word
+(Conjuration/Summoning)
+
+Level: 7
+Sphere: Combat
+Range: 0
+Duration: Special
+Casting Time: 1
+Area of Effect: 30-ft. radius
 Saving Throw: None
 
-The very potent Heal spell enables the priest to wipe away disease and injury in the creature who receives the benefits of the spell. It completely cures all disease and blindness in the recipient and heals up to 150 points of damage suffered due to wounds or injury. It also dispels a Feeblemind spell and cures those mental disorders caused by spells or injury to the brain. Naturally, the effects can be negated by later wounds, injuries, and diseases.~
-//----------------------------------------------------------------------------------
+Uttering a Holy Word spell creates magic of tremendous power. The priest acts as a bridge between <PRO_HISHER> god and the Prime Material Plane, causing a small explosion centered on the priest and reaching up to a 30-ft. radius. It affects only evil creatures and undead of any alignment that are caught in the area of effect. The effects vary depending on the target's Hit Dice:
+
+Hit Dice / Levels  —  Effects of Holy Word
+up to caster level - 10 —  Death
+up to caster level - 5  —  Stunned for 1 turn
+up to caster level - 1  —  Slowed for 1 turn 
+any                     —  Deafened for 1 turn with a 50% chance of spell failure
+
+There is no Saving Throw. The effects are cumulative and instantaneous and last for the duration of the spell or until dispelled. Note that priests of good alignment may not cast this spell.~
+
+	@318=~Unholy Word
+(Conjuration/Summoning)
+
+Level: 7
+Sphere: Combat
+Range: 0
+Duration: Special
+Casting Time: 1
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+Uttering an Unholy Word spell creates magic of tremendous power. The priest acts as a bridge between <PRO_HISHER> god and the Prime Material Plane, causing a small explosion centered on the priest and reaching up to a 30-ft. radius. It affects only creatures of any good alignment that are caught in the area of effect. The effects vary depending on the target's Hit Dice:
+
+Hit Dice / Levels  —  Effects of Unholy Word
+up to caster level - 10 —  Death
+up to caster level - 5  —  Stunned for 1 turn
+up to caster level - 1  —  Slowed for 1 turn 
+any                     —  Deafened for 1 turn with a 50% chance of spell failure
+
+There is no Saving Throw. The effects are cumulative and instantaneous and last for the duration of the spell or until dispelled. Note that priests of good alignment may not cast this spell.~
+//--------------------------------------------------------------------
+
+    @320 = ~Cure Light Wounds
+(Necromancy)
+
+Level: 1
+Sphere: Healing
+Range: Touch
+Duration: Permanent
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: 1/2
+
+By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest causes 8 points of wound or other injury damage to the creature's body to be healed. This healing cannot affect creatures without corporeal bodies, nor can it cure wounds of creatures not living or of extraplanar origin.
+Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
+Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a savingthrow vs. Spell to take half damage.~
+
+//-------------------------------------------------
+//  
+    @321 = ~Mass Cure
+(Necromancy)
+
+Level: 5
+Sphere: Healing
+Range: 0
+Duration: Permanent
+Casting Time: 5
+Area of Effect: 30-ft. radius
+Saving Throw: None
+
+When casting this spell, the priest must picture the faces of <PRO_HISHER> fellow party members clearly and focus on the unity of the group. Upon completion, all party members within a 30-ft. radius of the caster are healed 1d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
+This spell also deals damage to all hostile undead instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a savingthrow vs. Spell to take half damage.~
+
+    @322 = ~Mass Cause Light Wounds~
+    @323 = ~Mass Cause Light Wounds
+(Necromancy)
+
+Level: 5
+Sphere: Healing
+Range: 0
+Duration: Instant
+Casting Time: 5
+Area of Effect: 30-ft. radius
+Saving Throw: 1/2
+
+By casting this spell, the priest deals 1d8 + 1/level points of damage to nearby enemies. A successful Save vs. Spell halves the damage.
+Since undead are powered by negative energy, this spell also cures all allied undead creatures of a like amount of damage, rather than harming them.~
+//-----------------------------------------------------------------------------------
+    @324 = ~Mass Cause Medium Wounds~
+    @325 = ~Mass Cause Medium Wounds
+(Necromancy)
+
+Level: 6
+Sphere: Healing
+Range: 0
+Duration: Instant
+Casting Time: 5
+Area of Effect: 30-ft. radius
+Saving Throw: 1/2
+
+By casting this spell, the priest deals 3d8 + 1/level points of damage to nearby enemies. A successful Save vs. Spell halves the damage.
+Since undead are powered by negative energy, this spell also cures all allied undead creatures of a like amount of damage, rather than harming them.~
+//-----------------------------------------------------------------------------------
+    @326 = ~Mass Cause Critical Wounds~
+    @327 = ~Mass Cause Critical Wounds
+(Necromancy)
+
+Level: 7
+Sphere: Healing
+Range: 0
+Duration: Instant
+Casting Time: 5
+Area of Effect: 30-ft. radius
+Saving Throw: 1/2
+
+By casting this spell, the priest deals 5d8 + 1/level points of damage to nearby enemies. A successful Save vs. Spell halves the damage.
+Since undead are powered by negative energy, this spell also cures all allied undead creatures of a like amount of damage, rather than harming them.~
+//------------------------------------------------------------------------
 	@1000 =~vs. None~
 	@1001 =~vs. Spell~
 	@1002 =~vs. Breath Weapon~

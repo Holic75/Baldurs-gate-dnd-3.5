@@ -32,12 +32,11 @@
 		SAY NAME1 @011
 		SAY UNIDENTIFIED_DESC @012
         
-    COPY_EXISTING ~SPPR514.SPL~ ~override~ //get "healed" strref
-        LPF GET_SPELL_EFFECT_VALUES INT_VAR header =  1 match_opcode = 139 RET healed_strref = parameter1 END
-	
+        
 	COPY ~3ed/BardSongs/Songs/BARD7.SPL~ ~override~ //soothing performance
-		FOR (i=0;i<=20;i=i+1) BEGIN
-            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 139 parameter1 = healed_strref END
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 139 END
+    COPY_EXISTING ~BARD7.SPL~ ~override~
+		FOR (i=0;i<=20;i=i+1) BEGIN         
 			LPF ADD_SPELL_HEADER  INT_VAR insert_point=i+2 copy_header=1 END
 			LPF ALTER_SPELL_HEADER  INT_VAR header=i+2 min_level = i+10 END
 			LPF ALTER_SPELL_EFFECT INT_VAR header=i+2 match_opcode = 17 parameter1 = i+10 END

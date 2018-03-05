@@ -1,0 +1,42 @@
+DEFINE_PATCH_FUNCTION ~FIX_HARM_3ED~
+	INT_VAR
+        heal_amount = 14
+        resist_dispel_heal = 2
+        resist_dispel_harm = 1
+        savingthrow = 0
+        power = 0 
+        target = 2
+        header  = 0
+        enemy_ally = 0
+    STR_VAR
+        heal_prefix = ~EN_CU~
+        harm_prefix = ~EN_HR~
+	BEGIN
+		SET damage_amount = heal_amount/2
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 12 END
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 139 END
+        //heal
+        SPRINT resource EVALUATE_BUFFER ~%heal_prefix%%heal_amount%~
+        PATCH_IF (enemy_ally) BEGIN
+            LPF ADD_SPELL_EFFECT INT_VAR header power target resist_dispel = resist_dispel_heal opcode = 318 parameter1 = 0 parameter2 = 51  duration = 1 STR_VAR resource END
+        END     
+        LPF ADD_SPELL_EFFECT INT_VAR header power target resist_dispel = resist_dispel_heal opcode = 326 power = 1 parameter1 = 0 parameter2 = 1  duration = 1 STR_VAR resource END
+        
+        //damage
+        PATCH_IF (savingthrow) BEGIN
+            SPRINT resource EVALUATE_BUFFER ~%harm_prefix%%damage_amount%~
+            PATCH_IF (enemy_ally) BEGIN
+                LPF ADD_SPELL_EFFECT INT_VAR header power target resist_dispel = resist_dispel_heal opcode = 318 parameter1 = 0 parameter2 = 49  duration = 1 STR_VAR resource END
+            END            
+            LPF ADD_SPELL_EFFECT INT_VAR header power target resist_dispel_harm opcode = 326 power = 1 parameter1 = 0 parameter2 = 2  duration = 1 STR_VAR resource END
+            LPF ADD_SPELL_EFFECT INT_VAR header power target resist_dispel_harm opcode = 326 power = 1 parameter1 = 0 parameter2 = 2  duration = 1 savingthrow STR_VAR resource  END		
+        END ELSE BEGIN
+            SPRINT resource EVALUATE_BUFFER ~%harm_prefix%%heal_amount%~
+            PATCH_IF (enemy_ally) BEGIN
+                LPF ADD_SPELL_EFFECT INT_VAR header power target resist_dispel = resist_dispel_heal opcode = 318 parameter1 = 0 parameter2 = 49  duration = 1 STR_VAR resource END
+            END 
+            LPF ADD_SPELL_EFFECT INT_VAR header power target resist_dispel_harm opcode = 326 power = 1 parameter1 = 0 parameter2 = 2  duration = 1 STR_VAR resource END              
+        END
+    END		
+	
+
