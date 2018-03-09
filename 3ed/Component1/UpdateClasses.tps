@@ -597,16 +597,18 @@ END
             
             COPY_EXISTING ~%SpellName%.SPL~ ~override~   
 
-                PATCH_IF (~%Source%~ STR_EQ ~normal_form~) BEGIN      
+                //PATCH_IF (~%Source%~ STR_EQ ~normal_form~) BEGIN      
                     
-                    PHP_EACH PolymorphForms AS SpellName2 => Source2 BEGIN
-                        SPRINT resource EVALUATE_BUFFER ~%SpellName2%~
-                        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource END
-                    END 
-                    LPF ADD_SPELL_EFFECT INT_VAR opcode = 172 target = 1 duration = 1 insert_point = 0 STR_VAR resource=~PL_NFRM~ END
-                    LPF ADD_SPELL_EFFECT INT_VAR opcode = 135 target = 1 duration = 1 insert_point = 0 STR_VAR resource=~~ END
-                END
+                   // PHP_EACH PolymorphForms AS SpellName2 => Source2 BEGIN
+                   //     SPRINT resource EVALUATE_BUFFER ~%SpellName2%~
+                   //     LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource END
+                   // END 
+                   // LPF ADD_SPELL_EFFECT INT_VAR opcode = 172 target = 1 duration = 1 insert_point = 0 STR_VAR resource=~PL_NFRM~ END
+                   // LPF ADD_SPELL_EFFECT INT_VAR opcode = 135 target = 1 duration = 1 insert_point = 0 STR_VAR resource=~~ END
+                //END
                 //polymorph effects
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 172 target = 1 duration = 1 insert_point = 0 STR_VAR resource=~PL_NFRM~ END
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 135 target = 1 duration = 1 insert_point = 0 STR_VAR resource=~~ END
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 215 target = 1 duration = 3 parameter1 = 0 parameter2 = 1 insert_point = 0 STR_VAR resource = ~POLYBACK~ END
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 215 target = 1 duration = 3 parameter1 = 0 parameter2 = 1 insert_point = 0 STR_VAR resource = ~SPPOLYMP~ END
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 172 target = 1 duration = 1 timing = 1 insert_point = 0 STR_VAR resource = ~SPIN160~ END //salamander fireball
