@@ -1059,8 +1059,14 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
         LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 1 match_parameter2 = 1 parameter1  END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~FLRSTKBN~ END
-        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
-        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 insert_point = 0 STR_VAR resource = ~FLRSTKBN~ END   
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 timing = 9 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 timing = 9 insert_point = 0 STR_VAR resource = ~FLRSTKBN~ END 
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~APRBONA~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 timing = 9 insert_point = 0 STR_VAR resource = ~APRBONA~ END  
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~APRBONB~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 timing = 9 insert_point = 0 STR_VAR resource = ~APRBONB~ END     
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~APRBONC~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 timing = 9 insert_point = 0 STR_VAR resource = ~APRBONC~ END         
         
     COPY_EXISTING    ~SIMULACR.SPL~ ~override~
         //disallow using items
@@ -1073,8 +1079,14 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 1   parameter1 = 50 parameter2 = 2 target = 1 timing = 9 duration = 1 insert_point = 0 END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~FLRSTKBN~ END
-        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
-        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 insert_point = 0 STR_VAR resource = ~FLRSTKBN~ END   
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 timing = 9 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 timing = 9 insert_point = 0 STR_VAR resource = ~FLRSTKBN~ END 
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~APRBONA~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 timing = 9 insert_point = 0 STR_VAR resource = ~APRBONA~ END     
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~APRBONB~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 timing = 9 insert_point = 0 STR_VAR resource = ~APRBONB~ END        
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~APRBONC~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 timing = 9 insert_point = 0 STR_VAR resource = ~APRBONC~ END         
         
     COPY_EXISTING ~PROJIMAG.SPL~ ~override~    
         //dissalow attacks to caster

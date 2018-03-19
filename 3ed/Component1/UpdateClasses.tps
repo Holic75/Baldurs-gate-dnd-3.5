@@ -514,6 +514,7 @@ END
              LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 144 target = 1 timing = 2 parameter1 = 0 parameter2 = 4 END
              LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 144 target = 1 timing = 2 parameter1 = 0 parameter2 = 5 END
              LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 144 target = 1 timing = 2 parameter1 = 0 parameter2 = 2 END
+ 
 
 			       
 		COPY_EXISTING ~PL_NFRM.SPL~ ~override~ 
@@ -793,7 +794,13 @@ END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~FLRSTKBN~ END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
-        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 insert_point = 0 STR_VAR resource = ~FLRSTKBN~ END        
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 insert_point = 0 STR_VAR resource = ~FLRSTKBN~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 311 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~APRBONA~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 insert_point = 0 STR_VAR resource = ~APRBONA~ END 
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 311 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~APRBONB~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 insert_point = 0 STR_VAR resource = ~APRBONB~ END 
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 311 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~APRBONC~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 insert_point = 0 STR_VAR resource = ~APRBONC~ END         
     
     COPY_EXISTING ~SPSD01.SPL~ ~override~ //remove bonus from non spell saves
         LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 33 END 

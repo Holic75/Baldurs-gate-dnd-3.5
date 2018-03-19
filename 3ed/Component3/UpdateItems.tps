@@ -8,6 +8,16 @@ ACTION_IF (~%GameId%~ STR_EQ ~Bg1~) BEGIN
 		READ_LONG 0x0054 ~id_descr_strref~
 		WRITE_BYTE 0x0031 90
 		STRING_SET_EVALUATE %id_descr_strref% @1011
+        
+        
+    COPY_EXISTING ~HALB13.ITM~ ~override~  //chelsey crusher set attack to 1 make only ignore bonus class attacks
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 duration = 1 timing = 2 STR_VAR resource = ~APRBONA~ END
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target = 1 duration = 1 timing = 2 STR_VAR resource = ~APRBONA~ END 
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 duration = 1 timing = 2 STR_VAR resource = ~APRBONB~ END
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target = 1 duration = 1 timing = 2 STR_VAR resource = ~APRBONB~ END 
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 321 target = 1 duration = 1 timing = 2 STR_VAR resource = ~APRBONC~ END
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 206 target = 1 duration = 1 timing = 2 STR_VAR resource = ~APRBONC~ END 
+        LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 1 parameter2 = 1 END  //set attack to value (instead of final set)
 
 END
 

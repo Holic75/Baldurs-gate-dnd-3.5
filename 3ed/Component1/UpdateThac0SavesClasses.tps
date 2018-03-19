@@ -1,5 +1,7 @@
 	
-	COPY ~3ed/Core/THAC0/THAC0H.SPL~ ~override~ //high thaco for swashbucklers
+	
+    
+    COPY ~3ed/Core/THAC0/THAC0H.SPL~ ~override~ //high thaco for swashbucklers
 	//thaco regularization
 	OUTER_FOR (i=0;i<=20;i=i+1) BEGIN
 		COPY ~3ed/Core/THAC0/THAC0.SPL~ ~override/THAC0%i%.SPL~
@@ -35,6 +37,8 @@
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=13 parameter2=105 timing=0 duration=1 STR_VAR resource END // mage/thief
 				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=14 parameter2=105 timing=0 duration=1 STR_VAR resource END // cleric/mage
 		END
+        
+
 	//high thaco for swashbuckler
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 
 						STR_VAR clab=~CLABTH04\.2DA~ mask_file=~~
@@ -47,35 +51,58 @@
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 
 						STR_VAR clab=~\(CLABTH01\)\|\(CLABPR01\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~THAC0L~ END		
-	//
+                        
+                        
+	
 	COPY ~3ed/Core/APR~ ~override~
+    COPY_EXISTING ~APR_H.SPL~ ~override~
+    FOR (i=2;i<=3;i=i+1) BEGIN
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+        LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = 1 + 5*i END
+        SPRINT resource EVALUATE_BUFFER ~APRBON%i%~	
+        LPF ALTER_SPELL_EFFECT INT_VAR header = i STR_VAR resource END
+    END
+    
+    COPY_EXISTING ~APR_M.SPL~ ~override~
+        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+        LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 8 END
+        SPRINT resource EVALUATE_BUFFER ~APRBON2~	
+        LPF ALTER_SPELL_EFFECT INT_VAR header = 2 STR_VAR resource END
+        
+        
+     
 	//high apr
 		LAF ADD_BONUS_FEATS INT_VAR min_level=6 max_level=20 d_level=5 add_at_level1=0 
 						STR_VAR clab=~\(CLAB+.*\)\|\(OHTYR\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~APR_H~ END	
+                        
+    //create high apr clab_line
+    
+   
 	//medium apr
 		LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=20 d_level=7 add_at_level1=0 
 						STR_VAR clab=~\(CLAB+.*\)\|\(OHTYR\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~APR_M~ END	
-	//remove line from swashbuckler and add high apr bonus
+                        
+	//remove line from swashbuckler and replace it with high apr
 	COPY_EXISTING ~CLABTH04.2DA~ ~override~
 		COUNT_2DA_ROWS 20 "nrows"
 		SET nrows=nrows - 1
 		REMOVE_2DA_ROW nrows 20
-
-		
+        SET nrows = nrows - 1
+        INSERT_2DA_ROW nrows 20 ~APR_SW  ****   ****   ****   ****   ****   AP_APRBON   ****   ****   ****   ****   AP_APRBON2   ****   ****   ****   ****   AP_APRBON3   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****~	
+        		
 	//low apr
 		LAF ADD_BONUS_FEATS INT_VAR min_level=11 max_level=20 d_level=10 add_at_level1=0 
 						STR_VAR clab=~\(CLAB+.*\)\|\(OHTYR\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~APR_L~ END	
-	//remove line from battle sorceror
+	//remove line from battle sorceror and replace it with medium apr
 		COPY_EXISTING ~CLABSO01.2DA~ ~override~
 		COUNT_2DA_ROWS 20 "nrows"
 		SET nrows=nrows - 1
 		REMOVE_2DA_ROW nrows 20
-	LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=20 d_level=7 add_at_level1=0 
-						STR_VAR clab=~CLABSO01\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~APRBON~ END	
+        SET nrows = nrows - 1
+        INSERT_2DA_ROW nrows 20 ~APR_BC  ****   ****   ****   ****   ****   ****   ****   AP_APRBON   ****   ****   ****   ****   ****   ****   AP_APRBON2   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****~	
 		
 	
 	//saving throws regularization
