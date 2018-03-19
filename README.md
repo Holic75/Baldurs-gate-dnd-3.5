@@ -73,7 +73,7 @@ Note: wearing heavy armor may restrict maximum dexterity bonus to AC a character
 – Determines bonus HP that characters receives per level (+1 per 2 points above 10).  
 – For values greater than 19 gives slow HP regeneration over time.  
 – Improves Saving Throws vs. Paralysis/Poison/Death and vs. Petrification/Polymorph (+1 per 2 points above 9, -1 per 2 points below 10).  
-- Increases duration of Skald, Avenger and Barbarian Rage, Berserker Enrage and Dwarven Defender Defensive Stance.  
+– Increases duration of Skald, Avenger and Barbarian Rage, Berserker Enrage and Dwarven Defender Defensive Stance.  
 
 #### INTELLIGENCE
 – Determines number of spells per level that can be learned by Bards and Mages.  
@@ -371,6 +371,7 @@ Halflings have the following traits:
 Half-orcs have the following traits:  
 – Infravision.  
 – +2 Strength, -2 Intelligence.  
+– +1 THAC0 with straight swords and axes.  
 
 
 ## 4. Classes
@@ -412,7 +413,7 @@ Lvl| Exp Points |
 30|7830000
 
 
-The new description of classes is given below.
+New description of classes is given below.
 
 ### FIGHTER
 CLASS FEATURES:  
@@ -2597,5 +2598,5 @@ Now it is generally impossible to raise character level by more than one through
 Once the character gets enough experience points for next level he kind of stops getting any more experience until he level ups (he still gains it, but it is not reflected on the character sheet),
 once you level up, the character will get back all missing experience points within limit of next level and so on.
 
-If you character suddenly receives a lot of XP points (like through console) to raise for several levels the script might generally take few seconds to kick on and readjust XP points,
+If you character suddenly receives a lot of XP points (through console for example) to raise for several levels the script might generally take few seconds to kick on and readjust XP points,
 so please wait till it runs, and level up only after, otherwise you risk not to receive certain abilities.
