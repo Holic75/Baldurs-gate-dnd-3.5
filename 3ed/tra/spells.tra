@@ -153,7 +153,7 @@ Range: Touch
 Duration: Permanent
 Casting Time: 5
 Area of Effect: 1 creature
-Saving Throw: None
+Saving Throw: 1/2
 
 By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest causes 14 points of wound or other injury damage to the creature's body to be healed.
 Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
@@ -168,7 +168,7 @@ Range: Touch
 Duration: Permanent
 Casting Time: 5
 Area of Effect: 1 creature
-Saving Throw: None
+Saving Throw: 1/2
 
 By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest heals 20 points of wound or other injury damage from the creature's body.
 Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
@@ -183,7 +183,7 @@ Range: Touch
 Duration: Permanent
 Casting Time: 7
 Area of Effect: 1 creature
-Saving Throw: None
+Saving Throw: 1/2
 
 This spell is a more potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hand upon a creature and heals 28 points of wound or other injury damage to the creature's body.
 Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a savingthrow vs. Spell to take half damage.~
@@ -197,7 +197,7 @@ Range: Touch
 Duration: Permanent
 Casting Time: 8
 Area of Effect: 1 creature
-Saving Throw: None
+Saving Throw: 1/2
 
 The Cure Critical Wounds spell is a very potent version of the Cure Light Wounds spell. The priest lays <PRO_HISHER> hands upon a creature and heals 36 points of damage from wounds or other injuries.
 Since undead are powered by negative energy, this spell deals damage to them instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a savingthrow vs. Spell to take half damage.~
@@ -761,7 +761,7 @@ Casting Time: 7
 Area of Effect: 1 creature
 Saving Throw: None
 
-This powerful spell enables the priest to imbue one creature with the ability to regenerate. This regeneration will heal any wounds and even regenerate lost limbs. The creature affected will regain 10% of its Hit Points per second. The effect lasts for 10 round per 2 levels of the caster or until dispelled.~
+This powerful spell enables the priest to imbue one creature with the ability to regenerate. This regeneration will heal any wounds and even regenerate lost limbs. The creature affected will regain 3 Hit Points per second. The effect lasts for 10 rounds or until dispelled.~
 
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------

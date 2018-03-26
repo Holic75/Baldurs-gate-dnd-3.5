@@ -369,7 +369,7 @@ END
             
         //update description 
         COPY_EXISTING ~SPCL239.SPL~ ~override~
-            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 206 target = 3 END //protect party
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 206 target = 4 opcode = 318 parameter2 = 52 END //protect non-enemies
             READ_LONG 0x0050 ~descr_strref~
             STRING_SET_EVALUATE %descr_strref% @023
             

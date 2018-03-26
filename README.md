@@ -246,7 +246,7 @@ Iron Will (3 stars) - The character receives +2 bonus on Saving Throws vs. Spell
 Study Opponent (4 stars) - The character receives Study Opponent innate ability which can be used at will.    
 ```
 Study Opponent:
-CCharacter can spend one round studying enemy and getting insight about its weaknesses and share them to the party. The target receives a -3 penalty to AC, saving throws and THAC0 for next 10 seconds.
+Character can spend one round studying enemy and getting insight about its weaknesses and share them to the party. The target receives a -3 penalty to AC, saving throws and THAC0 for next 10 seconds.
 This is an extraordinary ability and thus is not subject to magic resistance or savingthrows, neither can be dispelled.  
 ```
 Combat Intuition (5 stars) - While wearing light or no armor the character receives +1 bonus to AC for every 2 points of Intelligence above 10.  
@@ -280,22 +280,22 @@ Premonition allows character to use his experience and mastery of combat to pred
 (7 stars) - The character can cast one more wizard spell of each level per day.
 
 ###### Empower Magic
-(1 star) - Character's spells deal 20 % more damage.  
-(2 stars) - Character's spells deal 30 % more damage.  
-(3 stars) - Character's spells deal 40 % more damage.  
-(4 stars) - Character's spells deal 50 % more damage.  
-(5 stars) - Character's spells deal 60 % more damage.  
-(6 stars) - Character's spells deal 80 % more damage.  
-(7 stars) - Character's spells deal 100 % more damage.
+(1 star) - Character's spells deal 10 % more damage.  
+(2 stars) - Character's spells deal 15 % more damage.  
+(3 stars) - Character's spells deal 20 % more damage.  
+(4 stars) - Character's spells deal 25 % more damage.  
+(5 stars) - Character's spells deal 30 % more damage.  
+(6 stars) - Character's spells deal 40 % more damage.  
+(7 stars) - Character's spells deal 50 % more damage.
 
 ###### Extend Magic
-(1 star) - Character's spells last 30% longer.  
-(2 stars) - Character's spells last 45% longer.  
-(3 stars) - Character's spells last 60% longer.  
-(4 stars) - Character's spells last 75% longer.  
-(5 stars) - Character's spells last 90% longer.  
-(6 stars) - Character's spells last 120% longer.  
-(7 stars) - Character's spells last 150% longer.
+(1 star) - Character's spells last 20% longer.  
+(2 stars) - Character's spells last 30% longer.  
+(3 stars) - Character's spells last 40% longer.  
+(4 stars) - Character's spells last 50% longer.  
+(5 stars) - Character's spells last 60% longer.  
+(6 stars) - Character's spells last 80% longer.  
+(7 stars) - Character's spells last 100% longer.
 
 ###### Endure Magic
 (1 star) - The character gains 10% resistance against Fire, Lightning, Acid, Cold and Magical damage.  
@@ -1230,7 +1230,7 @@ QUIVERING PALM: The next successful attack forces the opponent to save vs. Death
 – 14th level: Gains 3% Magic Resistance per level (starting with 42% at 14th level).  
 – 20th level: Becomes immune to non-magical weapons.  
 – Thieving abilities: Move Silently, Hide In Shadows, Find Traps (but not disarm) and Detect Illusion. Monks can distribute 10 skill points per level (20 points at level 1).  
-- Gets one bonus feat at levels 22 and 28.  
+– Gets one bonus feat at levels 22 and 28.  
 – Alignment restricted to lawful.  
 – Hit Die: d8   
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell
@@ -2189,13 +2189,13 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Cloak of fear radius was increased to 5 ft  
 - Holy Power now sets caster's THAC0 to that of a fighter of the same level, gives +1/2 APR and +2 bonus to strength  
 - Cause Serious Wounds is now a close range spell dealing 26 points of damage  (with saveigthrow vs. Spell for half)
-- Cure Serious wounds now heal 28 HP  
+- Cure Serious wounds now heals 28 HP  
 - Slay Living now deals 2d6+9 damage to target if it succeeds on Save vs. Death  
 - Flame Strike is now and AOE spell with 5 ft radius
 - Champion's Strength is now applied only to caster. It sets its THAC0 to that of a  fighter, gives + 1/2 APR and + 4 strength bonus, the duration is three times that of Holy Power  
 - Righteous Magic now gives + 1 HP per level, +2 AC, and +1 STR and 5% physical damage resistance per 3 caster levels  
 - Cause Critical Wounds is now a close range spell dealing 36 points of damage  (with savingthrow vs. Spell for half)
-- Cure Critical wounds now heal 36 HP  
+- Cure Critical wounds now heals 36 HP  
 - Heal now heals up to 150 HP  
 - Divine favor now lasts 4 rounds (it is now a 5th level War Domain Spell)  
 - Sol's Searing Orb is now a ranged spell in Bg1 and Bg2 (instead creating item)  and deals 6d12 damage (double to undead) with savingthrow vs Breath Weapon for half
@@ -2204,7 +2204,7 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Boon of Lathander was renamed to Boon of Deity (it is now a 6th level Glory Domain Spell)  
 - Finger of Death now deals 6d8 points of damage to the target if it succeeds on a Saving Throw vs. Death  
 - Damage of Chain Lightning is now fixed at 12d6
-- Regeneration now regenerates 10% HP per round and lasts 10 rounds
+- Regeneration now always lasts 10 rounds
 - Mantle, Improved Mantle and Absolute Immunity now last 1 round per caster level, Absolute Immunity now also protects against +6 weapons
 - Energy drain now gives 2d4 negative levels
 - All cure wounds spells ( and Heal) now harm undead for corresponding amount of damage (with Savingthrow vs. Spell for 1/2) instead of healing them.
@@ -2302,7 +2302,7 @@ Range: Touch
 Duration: Permanent  
 Casting Time: 5  
 Area of Effect: 1 creature  
-Saving Throw: None  
+Saving Throw: 1/2  
 
 By casting this spell and laying <PRO_HISHER> hand upon a creature, the priest causes 14 points of wound or other injury damage to the creature's body to be healed.
 Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
@@ -2426,7 +2426,7 @@ Range: 0
 Duration: Permanent  
 Casting Time: 5  
 Area of Effect: 30-ft. radius  
-Saving Throw: None  
+Saving Throw: 1/2  
 
 This is a more powerful version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 3d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
 This spell also deals damage to all hostile undead instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a savingthrow vs. Spell to take half damage.
@@ -2467,7 +2467,7 @@ Range: 0
 Duration: Permanent  
 Casting Time: 5  
 Area of Effect: 30-ft. radius  
-Saving Throw: None  
+Saving Throw: 1/2  
 
 This is an even stronger version of Mass Cure. Upon completion, all party members within a 30-ft. radius of the caster are healed 5d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
 This spell also deals damage to all hostile undead instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a savingthrow vs. Spell to take half damage.~

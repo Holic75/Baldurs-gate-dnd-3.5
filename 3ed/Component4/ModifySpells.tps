@@ -826,7 +826,7 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
         
       
         LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 60 END
-        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 98 duration_high = 60 parameter1 = 2 parameter2 = 1 END
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 98 duration_high = 60 parameter1 = 3 parameter2 = 2 END
         
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 power =7 target = 2 duration = 1 timing = 0 insert_point = 0 STR_VAR resource = ~SPPR711~ END //remove prev cast effects 
         

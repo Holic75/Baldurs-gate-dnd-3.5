@@ -203,6 +203,7 @@
         WRITE_ASCII 0x003a ~AURAVITC~ #8 //spellbook icon
         WRITE_LONG 0x0050 DescStrRef
         WRITE_LONG 0x0008 NameStrRef
+        WRITE_LONG 0x0034 7 //spell level
         LPF ALTER_SPELL_HEADER STR_VAR icon  = ~AURAVITB~ END
         
         LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 97 END

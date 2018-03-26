@@ -176,10 +176,10 @@ WITH_TRA ~%LANGUAGE%\archery.tra~ BEGIN
 
 
 //----------------------------------------------Empower magic
-	//20,30,40,50,60,80,100%
+	//10,15,20,25,30,40,50%
     OUTER_SET res = 0
 	OUTER_FOR (i=1;i<=7;i=i+1) BEGIN
-        OUTER_SET res = (i<=5) ? 10*(i+1) : 60 +20*(i - 5)
+        OUTER_SET res = (i<=5) ? 5*(i+1) : 30 +10*(i - 5)
 		COPY ~3ed/Feats/PermanentAbilities/EmpowerMagic/EMPWR.SPL~  ~override/EMPWR%i%FT.SPL~
             LPF ALTER_SPELL_EFFECT INT_VAR  parameter1=res END //spell damage bonus
             FOR (j=1;j<i;j=j+1) BEGIN
@@ -191,10 +191,10 @@ WITH_TRA ~%LANGUAGE%\archery.tra~ BEGIN
 	END
 
 //------------------------------------------------------------------Extend magic
-	// 30,45,60,75,90,120,150
+	// 20,30,40,50,60,80,100 %
 	OUTER_FOR (i=1;i<=7;i=i+1) BEGIN
 		COPY ~3ed/Feats/PermanentAbilities/ExtendMagic/EXTND.SPL~  ~override/EXTND%i%FT.SPL~
-		LPF ALTER_SPELL_EFFECT INT_VAR  parameter1=100+15*(i+1)+(i>5)*(i - 5)*15 END //spell duration
+		LPF ALTER_SPELL_EFFECT INT_VAR  parameter1=100+10*(i+1)+(i>5)*(i - 5)*20 END //spell duration
 		SPRINT resource EVALUATE_BUFFER ~EXTND%i%FT~
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource END
 		FOR (j=1;j<i;j=j+1) BEGIN
