@@ -2542,7 +2542,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Imoen - Fighter/Mage/Thief (9/ 16/ 12/ 16/ 11/ 10)
 #### Jaheira - Fighter/Druid (14/ 14/ 14/ 10/ 16/ 10) - as half-elf will receive +2 bonus to any ability score at level 1
 #### Kagain - Dwarven Defender (16/ 10/ 19/ 10/ 11/ 8)
-#### Khalid - Fighter/Thief (14/ 16/ 14/ 15/ 9/ 9) - as half-elf will receive +2 bonus to any ability score at level 1
+#### Khalid - Fighter (16/ 14/ 14/ 14/ 10/ 10) - as half-elf will receive +2 bonus to any ability score at level 1
 #### Kivan - Archer (15/ 18/ 12/ 10/ 13/ 9)
 #### Minsc - Barbarian (18/ 14/ 16/ 8/ 8/ 8)
 #### Montaron - Assassin (10/ 18/ 14/ 16/ 9/ 9)
@@ -2589,7 +2589,7 @@ To compensate for new character abilities most of the enemies were made stronger
 Certain scripts for spell casting enemies were also changed to make battles more challenging.  
 Also killing greater basiliscs in BG1 now gives only 2800 experience points (instead of 7000).
 
-Note: this changes only apply if Component [More powerful enemies] is installed.
+Note: these changes only apply if Component [More powerful enemies] is installed.
 
 ## 10. Miscellaneous
 
