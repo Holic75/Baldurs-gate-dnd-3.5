@@ -63,9 +63,9 @@
         LPF ALTER_SPELL_EFFECT INT_VAR header = i STR_VAR resource END
     END
     
-    COPY_EXISTING ~APR_M.SPL~ ~override~
+    COPY_EXISTING ~APR_M.SPL~ ~override~ //bonus attack at lvl 8(1) and 15
         LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-        LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 8 END
+        LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 15 END
         SPRINT resource EVALUATE_BUFFER ~APRBON2~	
         LPF ALTER_SPELL_EFFECT INT_VAR header = 2 STR_VAR resource END
         
