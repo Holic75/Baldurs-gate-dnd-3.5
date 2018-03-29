@@ -743,7 +743,6 @@ Disadvantages:
 ### STALKER
 Advantages:  
 – +20% to Move Silently and Hide In Shadows.  
-– May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.  
 – Racial Enemy is replaced with Improved Racial Enemy.  
 ```
 IMPROVED RACIAL ENEMY: At 1st level, a stalker may select a type of creature from among the list for which she gets +2 bonus on to hit and damage rolls as well as +2 bonus to AC and savingthrows. At every 5th level to hit bonus is increased by 1 and damage bonus is increased by 2 and stalker can select an additional racial enemy.
@@ -819,7 +818,7 @@ Advantages:
   Level 21-25: 1d10  
   Level 26+: 1d12  
 
-Disadvantages:
+Disadvantages:  
 – Alignment restricted to neutral evil, chaotic evil, and chaotic neutral.  
 – Can not Channel Energy.  
 
@@ -1147,7 +1146,7 @@ The jester is the master of the verbal put down, the hilarious joke, or the sava
 At level 5 the enemies no longer receive a bonus to their Saving Throws.
 At level 10 they receive a -2 penalty instead, which increases further to -3 at level 15, -4 at level 20, -5 at level 25 and -6 at level 30.
 ```
-Fascinate (starting from level 1)
+Fascinate (starting from level 1)  
 Dirge of Doom (starting from level 8)  
 Frightening Tune (starting from level 14)  
 Song of Requiem (starting from level 24)  
@@ -1321,7 +1320,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1 and reduces penalty to thieving skills by 10%. Max dexterity AC bonus is further increased by 1 at and skill penalties are reduced by 10% at level 4 and every 4 levels thereafter (up to a maximum of +5 increase in max AC bonus and -50% decrease of thieving skill penalty at level 16).  
 – Starting from level 5 every hit of Fighter/Thief has 10% chance to slow the target for 1d4 rounds.
 – Starting from level 10 every hit of Fighter/Thief has additional 10% chance to blind the target for 1d4 rounds.
-– Starting from level 15 every hit of Fighter/Thief has additional 10% chance to make the target Sickened for 1d4 rounds (-2 to THAC0, Damage and all Savingthorws).
+– Starting from level 15 every hit of Fighter/Thief has additional 10% chance to make the target Sickened for 1d4 rounds (-2 to THAC0, Damage and all Savingthorws).  
 – Hit Die: d8  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon and vs. Wand
 
@@ -1373,9 +1372,9 @@ CLASS FEATURES:
 – Can cast two spell per day less than trueclass druid.  
 – Gets one bonus combat feat at every 4th level up to level 20.  
 – May spontaneously convert memorized spells to summoning ones.  
-– May select one racial enemy at levels 1, 5 and every 5 levels thereafter, which grants a +4 bonus on damage rolls against the selected enemy race.  
+– May select one racial enemy at levels 1, 10, 20 and 30 which grants a +2 bonus on to hit and damage rolls against the selected enemy race. These bonuses increase by 1 at every 10th level.  
 – May call for an animal companion who fights for her side.  
-– Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage résistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.  
+– Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.  
 – Gets one bonus feat at levels 22, 25 and 28.  
 – Hit Die: d9  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
@@ -1386,8 +1385,11 @@ CLASS FEATURES:
 – May wear helmets.  
 – May use any weapon and shield (excluding large shield).  
 – May not wear armor heavier than splint mail.  
-– Bonus Feats: Cleric/Ranger gets Style Focus in Two Weapon Fighting for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12, Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.  
-– May select one racial enemy at levels 1, 5 and every 5 levels thereafter which grants a +4 bonus on damage rolls against the selected enemy race.  
+– Has Evasion passive ability.  
+```
+EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
+```
+– May select one racial enemy at levels 1, 10, 20 and 30 which grants a +2 bonus on to hit and damage rolls against the selected enemy race. These bonuses increase by 1 at every 10th level.  
 – May use the Charm Animal ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.  
 – May use the Hide In Shadows ability.  
 – Can cast two spells per day less than trueclass clerics.  
@@ -1411,7 +1413,7 @@ CLASS FEATURES:
 – Can cast three divine spells per day less than trueclass cleric.  
 – At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
-– May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).
+– May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).  
 – Versatile Spellcasting: starting from level 7 can trade one first level cleric spell slot for a second level wizard spell slot, this exchange is reversible; every two levels thereafter can trade next level cleric spell slot for a wizard spell slot one level higher.  
 – Gets one bonus feat at levels 22, 25 and 28.  
 – Hit Die: d6  
@@ -1480,7 +1482,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 ```
 SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to her sneak attack damage for next 3 seconds.
 ```
-– May use Spontaneous Battlecasting.
+– May use Spontaneous Battlecasting
 ```
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 ```
@@ -2039,7 +2041,7 @@ Stat\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 19-20 | 2 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0
 21-22 | 2 | 2 | 1 | 1 | 1 | 1 | 0 | 0 | 0
 23-24 | 2 | 2 | 2 | 1 | 1 | 1 | 1 | 0 | 0
-25    | 2 | 2 | 2 | 2 | 1(2)| 1(2) | 1 | 0
+25    | 2 | 2 | 2 | 2 | 1(2)| 1(2) | 1 | 0 | 0
 
 Note: Since priests can not cast 8th level spells, they receive another 6th and 7th level spell slots instead when corresponding stat is 25.
 
