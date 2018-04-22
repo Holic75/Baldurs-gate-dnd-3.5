@@ -138,7 +138,7 @@ OUTER_FOR (player_id=1;player_id<=6;player_id=player_id+1) BEGIN
 		
 	//update baldur bcs (global script summon giving ability)
 	OUTER_SPRINT spell_name EVALUATE_BUFFER ~GV_CMP%player_id%~
-	EXTEND_TOP ~baldur.bcs~ ~3ed/Classes/AnimalCompanion/baldur.baf~
+	EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.*\.BCS~ ~3ed/Classes/AnimalCompanion/baldur.baf~
 		EVALUATE_BUFFER	
 	
 END

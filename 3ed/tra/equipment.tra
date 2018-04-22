@@ -535,3 +535,72 @@ Weight: 1~
     @4105 =~Requires:
  6 Strength~
 
+ 
+ 
+    @5001 = ~backstab~
+    @5002 = ~sneak attack~
+    
+    @5003 = ~vs. Spell~
+    @5004 = ~vs. Breath Weapon~
+    
+    @5009 = ~Wizard Slayers~
+    @5010 = ~Hexblades~
+    
+    @5011 = ~Backstab Multiplier: +1~
+    @5012 = ~Wisdom: +4~
+    
+    @5013 = ~Caster Level: +1~
+    @5014 = ~Wisdom: +2~
+    
+    @5015 = ~THAC0: +2 bonus with the off hand~
+    @5016 = ~THAC0: +1 bonus~
+    
+    
+    
+    
+    @5101 = ~Power can corrupt even the noblest of mages, and the long-lived elves of Faerûn have seen what devastating consequences can occur when a mage loses control. This elegant longsword, its silver hilt decorated with clear blue gems, was crafted to deal with arcane spellcasters who have abused their gift. The sword assists any hunter who tracks down out-of-control mages, and has particular potency in the hands of inquisitors.
+
+STATISTICS:
+
+Equipped abilities: 
+– Save vs. Spell: +4 (Inquisitors), +2 (others)
+
+Combat abilities:
+– On a critical hit, the target is affected by Dispel Magic
+
+THAC0: +2
+Damage: 1d8+2 (slashing)
+Speed Factor: 3
+Proficiency Type: Long Sword
+Type: One-handed
+Requires:
+ 6 Strength
+
+Weight: 3~
+
+    @5102= ~The Egons were a family of well-respected Lathander worshippers that earned their fortune protecting those weaker than themselves. Though the Egon line has ended, its influence is still felt in the form of this shield, which is imbued with some of the power of the Morninglord himself.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +3
+– Charisma: +4 (Priests of Lathander and Undead Hunters), +2 (others)
+
+Requires:
+ 12 Strength
+
+Weight: 6~
+
+    @5103= ~Embroidered silver stars hide within the folds of this shimmering blue cloak. Wizards, especially those just beginning careers as adventureres, wear such items to aid them in their travels. As wizards grow in power and begin crafting their own equipment, they often gift these cloaks to apprentices.
+
+STATISTICS:
+
+Equipped abilities:
+– Charisma: +2
+- Intelligence: +2
+– Lore: +10
+
+Charge abilities:
+– Generates a random arcane scroll of level 3 or below
+
+Weight: 3~

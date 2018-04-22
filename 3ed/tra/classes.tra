@@ -1339,3 +1339,18 @@ Advantages:
 Disadvantages:
 – May not learn or cast any spells of the Abjuration school.
 – Receives a -15% penalty when scribing scrolls from other schools.~
+
+@061 = ~WILD MAGE: Wild magic is a new type of magic that is characterized by powerful and dangerous surges of unpredictable magic. Generally considered to be an unfortunate byproduct of the Time of Troubles, wild magic has recently begun to attract the attention of many a curious or scholarly wizard.
+
+Wild Mages are wizards who specialize in the study of wild magic. They have access to spells to protect themselves from wild magic and bend it to their wills. Wild magic is extremely unpredictable and should be used with caution.
+
+CLASS FEATURES:
+
+– May memorize one additional spell per level.
+– May cast the 1st-level spell Nahal's Reckless Dweomer.
+– May cast the 2nd-level spell Chaos Shield (included in spellbook for free).
+– May cast the 7th-level spell Improved Chaos Shield (included in spellbook for free).
+– Upon casting a spell, there is a 5% chance of incurring a wild surge.
+
+WILD SURGE: A wild surge generates a completely random magical effect from the spell being cast. Its effects may be either beneficial or detrimental to the Wild Mage and <PRO_HISHER> allies.
+~

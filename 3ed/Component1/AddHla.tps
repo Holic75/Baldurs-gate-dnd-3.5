@@ -28,7 +28,7 @@
             LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 318 target = 2 parameter2 = 115 parameter1 = 4 duration = 1 STR_VAR resource =~THF_EPC~ END
             
 		LAF ADD_BONUS_FEATS INT_VAR mask = 0b101011010100000000000000000000  
-						STR_VAR clab=~\(CLABTH01\)\|\(CLABTH02\)\|\(CLABTH03\)\|\(CLABTH04\)\.2DA~ caption=~THF_EPIC~ END	
+						STR_VAR clab=~\(\(CLABTH01\)\|\(CLABTH02\)\|\(CLABTH03\)\|\(CLABTH04\)\)\.2DA~ caption=~THF_EPIC~ END	
 							
 		//pure class wizard/sorcerer epic spells							
         COPY_EXISTING ~WIZ_EPC.SPL~ ~override~

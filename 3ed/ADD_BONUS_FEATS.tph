@@ -5,6 +5,7 @@ DEFINE_ACTION_FUNCTION ~ADD_BONUS_FEATS~
 		d_level=2
 		add_at_level1=0
 		mask=0
+        delay = 0
 	STR_VAR
 		clab=~~
 		mask_file=~~
@@ -20,7 +21,11 @@ DEFINE_ACTION_FUNCTION ~ADD_BONUS_FEATS~
 				LPF  ALTER_SPELL_EFFECT STR_VAR resource END
 				SPRINT resource EVALUATE_BUFFER ~%caption%~ 
 				LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=206 STR_VAR resource END //if mask protects from itself it should be changed to  caption.SPL 
-            
+                
+                PATCH_IF (delay > 0) BEGIN
+                    LPF  ALTER_SPELL_EFFECT INT_VAR match_opcode = 326 timing = 3 duration = delay END
+                END
+
             OUTER_SPRINT feat EVALUATE_BUFFER ~%caption%~
 		END  
 

@@ -76,7 +76,7 @@
 							mask_file=~~ feat_type_file=~~ caption=~ARMARCFT~ END		
 
 	LAF ADD_BONUS_FEATS INT_VAR min_level=6 max_level=12 d_level=6 add_at_level1=1 //light armor for bard, mt and fmt, chain mail for bard and fmt at lvl 6, splint mail at lvl 12
-						STR_VAR clab=~\(CLABBA+.*\)\|\(CLABTH01\)\.2DA~
+						STR_VAR clab=~\(\(CLABBA.*\)\|\(CLABTH01\)\)\.2DA~
 							mask_file=~~ feat_type_file=~~ caption=~ARMARCFT~ END	
                             
 //armored training (ftr, ftr-thief, ftr - cleric)
@@ -153,16 +153,16 @@ COPY ~3ed/Feats/FeatAttribution/SFTCRE.BCS~ ~override/HFCRE.BCS~
 		
 
 //add bonus ability points to  half-elves at lvl1
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~\(CLAB+.\)\|\(OHTYR\)\.2DA~ mask_file=~3ed/Feats/HalfElfBonus/SHFCRE.SPL~
+	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 delay = 3
+						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\)\.2DA~ mask_file=~3ed/Feats/HalfElfBonus/SHFCRE.SPL~
 						feat_type_file=~HFCRE~ caption=~HLELFBON~ END
 
 		
-//add bonus ability points to  small races  (gnome, halfling) at lvl1
+//add bonus ability points to  small races  (gnome, halfling, goblin) at lvl1
 COPY ~3ed/Feats/SmallRacesBonus/SMLRCBN.SPL~ ~override~ 	
 
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~\(CLAB+.\)\|\(OHTYR\)\.2DA~ mask_file=~3ed/Feats/SmallRacesBonus/SMLRACE.SPL~
+						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\)\.2DA~ mask_file=~3ed/Feats/SmallRacesBonus/SMLRACE.SPL~
 						feat_type_file=~SMLRCBN~ caption=~SMLRACE~ END
 
 //fighter weapon training (+1 to hit, damage at lvls 8, 16, 24)

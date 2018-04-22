@@ -61,14 +61,14 @@
 		OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line%  AP_RSTXP%i%~
 	END
 	
-	COPY_EXISTING_REGEXP GLOB ~\(CLAB+.\)\|\(OHTYR\)*\.2DA~ ~override~
+	COPY_EXISTING_REGEXP GLOB ~\(\(CLAB.*\)\|\(OHTYR\)\)\.2DA~ ~override~
 		COUNT_2DA_ROWS 20 "nrows"
 		INSERT_2DA_ROW nrows 20 ~%clab_line%~
 	 
 
 	//appending to bcs
 	OUTER_FOR (i=1;i<=6;i=i+1) BEGIN
-		EXTEND_TOP ~baldur.bcs~ ~override/LvlUp1.BAF~
+		EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.*\.BCS~ ~override/LvlUp1.BAF~
 			SPRINT object EVALUATE_BUFFER ~Player%i%~
 			SET party_size= i - 1
 			EVALUATE_BUFFER

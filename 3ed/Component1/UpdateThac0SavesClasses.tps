@@ -45,11 +45,11 @@
 						feat_type_file=~~ caption=~THAC0H~ END		
 	//medium thaco (fighter-*, ranger - clr*  and battle caster, f/m/t, f/m/c)
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 
-						STR_VAR clab=~\(CLABFI01\)\|\(CLABSO01\)\|\(CLABRN01\)\.2DA~ mask_file=~~
+						STR_VAR clab=~\(\(CLABFI01\)\|\(CLABSO01\)\|\(CLABRN01\)\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~THAC0M~ END		
 	//low thaco (cleric/mage and mage/thief)
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 
-						STR_VAR clab=~\(CLABTH01\)\|\(CLABPR01\)\.2DA~ mask_file=~~
+						STR_VAR clab=~\(\(CLABTH01\)\|\(CLABPR01\)\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~THAC0L~ END		
                         
                         
@@ -73,7 +73,7 @@
      
 	//high apr
 		LAF ADD_BONUS_FEATS INT_VAR min_level=6 max_level=20 d_level=5 add_at_level1=0 
-						STR_VAR clab=~\(CLAB+.*\)\|\(OHTYR\)\.2DA~ mask_file=~~
+						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~APR_H~ END	
                         
     //create high apr clab_line
@@ -81,7 +81,7 @@
    
 	//medium apr
 		LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=20 d_level=7 add_at_level1=0 
-						STR_VAR clab=~\(CLAB+.*\)\|\(OHTYR\)\.2DA~ mask_file=~~
+						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~APR_M~ END	
                         
 	//remove line from swashbuckler and replace it with high apr
@@ -94,7 +94,7 @@
         		
 	//low apr
 		LAF ADD_BONUS_FEATS INT_VAR min_level=11 max_level=20 d_level=10 add_at_level1=0 
-						STR_VAR clab=~\(CLAB+.*\)\|\(OHTYR\)\.2DA~ mask_file=~~
+						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~APR_L~ END	
 	//remove line from battle sorceror and replace it with medium apr
 		COPY_EXISTING ~CLABSO01.2DA~ ~override~
@@ -121,13 +121,13 @@
 	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESSH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 37  END //saving throw vs spell
 		
 	//reflex saves to barbarian and rangers
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(CLABRN+.*\)\|\(CLABFI05\)\.2DA~ mask_file=~~
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLABRN.*\)\|\(CLABFI05\)\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~SAVESWH~ END
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(CLABRN+.*\)\|\(CLABFI05\)\.2DA~ mask_file=~~
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLABRN.*\)\|\(CLABFI05\)\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~SAVESBH~ END
 	
 	//spell saves for bard, hexblade dwarven defender and paladin
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(CLABBA+.*\)\|\(CLABPA+.*\)\|\(CLABFI03\)\|\(CLABFI06\)\.2DA~ mask_file=~~
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLABBA.*\)\|\(CLABPA.*\)\|\(CLABFI03\)\|\(CLABFI06\)\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~SAVESSH~ END	
 	//fort saves for battle caster	
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~CLABSO01\.2DA~ mask_file=~~

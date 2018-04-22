@@ -122,18 +122,15 @@ END
 
 
 
-ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
-	COPY_EXISTING ~BDHELM11.ITM~ ~override~  //bard's hat
-		LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 99  opcode =6 parameter1 =2 parameter2 = 0 END
-		READ_LONG 0x0054 ~id_descr_strref~
-		STRING_SET_EVALUATE %id_descr_strref% @3002
-	COPY_EXISTING ~BDHELM16.ITM~ ~override~  //circlet of lost souls
-		LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 191  opcode =6 parameter1 =2 parameter2 = 0 END
-		READ_LONG 0x0054 ~id_descr_strref~
-		STRING_SET_EVALUATE %id_descr_strref% @3003
-END
+
 
 //only description changes
+ACTION_IF (IncludesSod) BEGIN
+
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY DescriptionChangeItems BEGIN 
+		~BDSW2H01~ => 3004 //dragon blade +3
+	END
+END
 
 ACTION_IF NOT(~%GameId%~ STR_EQ ~Iwd~) BEGIN
 
@@ -172,7 +169,71 @@ END
 COPY_EXISTING_REGEXP ~SHILLE.*\.ITM~ ~override~ 
     LPF ALTER_ITEM_HEADER INT_VAR dicesize = 6 damage_bonus = 1 END
     READ_LONG 0x0060 1 //enchantment bonus
+    
+    
+    
 
+ACTION_IF (IncludesSod) BEGIN
+    COPY_EXISTING ~bdblun07.ITM~ ~override~//backwhacker +2 change backstab to sneak attack
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = 5001  new_substring_ref = 5002 END
+       
+    COPY_EXISTING ~bdsw1h25.ITM~ ~override~//spell breaker - only effects iquisitors
+        LPF DELETE_EFFECT INT_VAR check_globals = 1 match_opcode = 177 match_parameter1 = 16386 END 
+		READ_LONG 0x0054 ~id_descr_strref~
+		STRING_SET_EVALUATE %id_descr_strref% @5101
+
+    COPY_EXISTING ~bdsw1h21.ITM~ ~override~//vexation + 2
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = 5001  new_substring_ref = 5002 END
+
+    COPY_EXISTING ~bdshld02.ITM~ ~override~//suncatcher +2 change spell saves to breath weapon saves
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = 5003  new_substring_ref = 5004 END
+    COPY_EXISTING ~bdshld02.SPL~ ~override~
+        LPF ALTER_SPELL_EFFECT_EX INT_VAR match_savingthrow = 1 savingthrow = 2 END
+        
+    COPY_EXISTING ~bdshld03.ITM~ ~override~//sheild of egons replace turn undead with charisma bonus (+2 -> +4)
+        LPF ALTER_ITEM_EFFECT INT_VAR check_globals = 1 match_opcode = 323 opcode = 6 parameter1 = 2 END
+		READ_LONG 0x0054 ~id_descr_strref~
+		STRING_SET_EVALUATE %id_descr_strref% @5102        
+    COPY_EXISTING ~bdshld03.EFF~ ~override~
+        LPF ALTER_EFF INT_VAR opcode = 6 parameter1 = 2 END
+        
+    
+    COPY_EXISTING ~bdclck06.ITM~ ~override~  //replace +1 caster level with +2 cha/int 
+        LPF ALTER_ITEM_EFFECT INT_VAR check_globals = 1 match_opcode = 191 opcode = 6 parameter1 = 2 END
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode=19 target=1 timing=2 parameter1 = 2 END
+        READ_LONG 0x0054 ~id_descr_strref~
+		STRING_SET_EVALUATE %id_descr_strref% @5103 
+     
+    COPY_EXISTING ~bdboot03.ITM~ ~override~  //replace wizardslayer with hexblade
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = 5009  new_substring_ref = 5010 END
+        
+    COPY_EXISTING ~bdbrac05.ITM~ ~override~  //replace backstab with +4 wisdom
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = 5011  new_substring_ref = 5012 END       
+    COPY_EXISTING ~BDBRAC5A.EFF~ ~override~
+        LPF ALTER_EFF INT_VAR opcode = 49 parameter1 = 4 END
+        
+    COPY_EXISTING ~bdamul07.ITM~ ~override~  //replace +1 caster level with +2 wis 
+        LPF ALTER_ITEM_EFFECT INT_VAR check_globals = 1 match_opcode = 191 opcode = 49 parameter1 = 2 END
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode=19 target=1 timing=2 parameter1 = 2 END
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = 5013  new_substring_ref = 5014 END
+        
+    COPY_EXISTING ~bdbelt02.ITM~ ~override~ //replace +2 offhand thaco with +1 overall thaco
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = 5015  new_substring_ref = 5016 END
+    COPY_EXISTING ~BDBELT02.EFF~ ~override~
+        LPF ALTER_EFF INT_VAR opcode = 278 parameter1 = 1 END
+         
+END    
+
+ACTION_IF (~%GameId%~ STR_EQ ~Bg2~ OR IncludesSod) BEGIN
+	COPY_EXISTING ~BDHELM11.ITM~ ~override~  //bard's hat
+		LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 99  opcode =6 parameter1 =2 parameter2 = 0 END
+		READ_LONG 0x0054 ~id_descr_strref~
+		STRING_SET_EVALUATE %id_descr_strref% @3002
+	COPY_EXISTING ~BDHELM16.ITM~ ~override~  //circlet of lost souls
+		LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 191  opcode =6 parameter1 =2 parameter2 = 0 END
+		READ_LONG 0x0054 ~id_descr_strref~
+		STRING_SET_EVALUATE %id_descr_strref% @3003
+END
 
 //update staff of woodlands  and potion of barkskin(proper barkskin effect)
 ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN

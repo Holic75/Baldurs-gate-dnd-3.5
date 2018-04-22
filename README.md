@@ -17,7 +17,7 @@
 
 
 
-# Baldurs-gate-dnd-3.5 v2.11
+# Baldurs-gate-dnd-3.5 v2.12
 This is a WeiDu mod for BG:Enhanced edition and BG2:Enhanced edition that changes 2ed ADnD rules to DnD 3.5 with some elements taken from Pathfinder.  
 It changes game mechanics (i.e. classes, spells, abilities, etc...) to that of 3.5 edition (to the extent that game engine allows).
 
@@ -32,11 +32,10 @@ if it is not already there (it replaces backstab with 3ed Sneak Attack).
 
 Also it is strongly advised that you make a backup of your dialog.tlk file before installing.
 
-This mod was only tested with clean BG:ENHANCED EDITION 2.3 install (Non Sod) and BG 2:ENHANCED EDITION 2.3 and might not be compatible with any other mods.
-At current state it may be installed along IWD:EE but due to certain effects not supported by the engine (mostly related to opcode 326) abilities depending on character stats do not work (may be it will be fixed by Beamdog in the upcoming 2.5 patch)
+This mod was only tested with clean BG:ENHANCED EDITION 2.3 install (or Sod with modmerge) and BG 2:ENHANCED EDITION 2.3 and might not be compatible with any other mods.
 
 I also strongly suggest to use a mod Colorful Specialist Slots made by kjeron ( https://us.v-cdn.net/5019558/uploads/editor/nn/cv0dplebsnjj.rar) which forces specialist mages to
-spend 1 or 2 slots (I suggest to use 2 as per Pathfidner rules). It should be installed after DND3.5 mod.  
+spend 1 or 2 slots only on the spells from corresponding school (I suggest to use 2 as per Pathfidner rules). It should be installed after DND3.5 mod.  
 
 #### Due to big amount of content it is very difficult to test everything, so I would really appreciate if you could send information on the bugs and inconsistencies you found to holic.denis@gmail.com or post them on the issues page. Any critics and suggestions are also more than welcome.
 
@@ -2559,6 +2558,25 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Xan - Fighter/Mage (14/ 16/ 12/ 16/ 10/ 10)
 #### Xzar - Necromancer (10/ 14/ 12/ 18/ 9/ 9)
 #### Yeslick - Cleric (14/ 10/ 16/ 10/ 16/ 12)
+
+
+### SOD
+
+#### Baeloth - Battle Caster (14/ 18/ 12/ 10/ 10/ 18)
+#### Dorn - Blackguard (18/ 10/ 13/ 8/ 13/ 15)
+#### Dynaheir - Sorcerer (12/ 14/ 14/ 10/ 9/ 17)
+#### Edwin - Conjurer (10/ 12/ 14/ 18/ 9 / 10)
+#### Jaheira - Fighter/Druid (14/ 14/ 14/ 10/ 16/ 10) - as half-elf will receive +2 bonus to any ability score at level 1
+#### Khalid - Fighter (16/ 14/ 14/ 14/ 10/ 10) - as half-elf will receive +2 bonus to any ability score at level 1
+#### Minsc - Barbarian (18/ 14/ 16/ 8/ 8/ 8)
+#### Neera - Wild Mage (9/ 16/ 12/ 17/ 9/ 11)  - as half-elf will receive +2 bonus to any ability score at level 1
+#### Rasaad - Sun Soul Monk (14/ 16/ 12/ 10/ 15/ 10)
+#### Safana - Swashbuckler (11/ 16/ 14/ 16/ 9/ 10)
+#### Viconia - Cleric/Thief (10/ 18/ 10/ 16/ 14/ 14)
+#### Corwin - Archer (15/ 16/ 14/ 10/ 13/ 9)
+#### Voghiln - Skald (14/ 14/ 14/ 13/ 9/ 15)
+#### M'Khiin - Shaman (10/ 18/ 14/ 10/ 10/ 16)
+#### Glint - Cleric (12/ 10/ 16/ 10/ 16/ 14)
 
 ### BG 2
 

@@ -105,7 +105,7 @@
 
 	//script for giving assasin spells
 	OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN
-		EXTEND_TOP ~BALDUR.BCS~ ~3ed/Classes/Assassin/Spells/ASN.baf~
+		EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.+\.BCS~ ~3ed/Classes/Assassin/Spells/ASN.baf~
 			EVALUATE_BUFFER			
 	END
 

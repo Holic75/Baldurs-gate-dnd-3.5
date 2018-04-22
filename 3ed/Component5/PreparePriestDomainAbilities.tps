@@ -24,7 +24,7 @@
      COPY_EXISTING ~FIREPR.SPL~  ~override~
          LPF DELETE_EFFECT INT_VAR check_headers = 1 match_timing = 0 END       
         
-    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~FireD~ => ~FIREPR~ END
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN ~FireD~ => ~FIREPR~ END
     
     
 //cold - 25% protection from cold
@@ -39,7 +39,7 @@
      COPY_EXISTING ~COLDPR.SPL~  ~override~
          LPF DELETE_EFFECT INT_VAR check_headers = 1 match_timing = 0 END 
          
-    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~ColdD~ => ~COLDPR~ END
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN ~ColdD~ => ~COLDPR~ END
     
 //earth - 25% protection from acid
 
@@ -52,26 +52,26 @@
      COPY_EXISTING ~ACIDPR.SPL~  ~override~
          LPF DELETE_EFFECT INT_VAR check_headers = 1 match_timing = 0 END  
          
-    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~EarthD~ => ~ACIDPR~ END
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN ~EarthD~ => ~ACIDPR~ END
     
 //time - immunity to sneak attack
-    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~TimeD~ => ~IMMSNK~ END
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN ~TimeD~ => ~IMMSNK~ END
     
 //war - free weapon focus
-    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~WarD~ => ~wftcre~ END    
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN ~WarD~ => ~wftcre~ END    
     
     
 //glory - aura of faith
 	COPY ~3ed/Feats/LimitedUseAbilities/Template/LUAFT.SPL~  ~override/GLORYFT.SPL~
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=2 timing=9 duration=1 STR_VAR resource = ~AURAFAI~ END
     
-    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~GloryD~ => ~GLORYFT~ END
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN ~GloryD~ => ~GLORYFT~ END
     
 //plant - poison weapon
 	COPY ~3ed/Feats/LimitedUseAbilities/Template/LUAFT.SPL~  ~override/PLANTFT.SPL~
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=2 timing=9 duration=1 STR_VAR resource = ~SPCL423~ END
     
-    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~PlantD~ => ~PLANTFT~ END
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN ~PlantD~ => ~PLANTFT~ END
     
 //animal- charm animal 10'
 
@@ -85,7 +85,7 @@ END
 	COPY ~3ed/Feats/LimitedUseAbilities/Template/LUAFT.SPL~  ~override/ANIMFT.SPL~
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=2 timing=9 duration=1 STR_VAR resource = ~ANIM10~ END
     
-    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~AnmlD~ => ~ANIMFT~ END
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN ~AnmlD~ => ~ANIMFT~ END
     
     
 //death - death touch
@@ -111,7 +111,7 @@ END
 	COPY ~3ed/Feats/LimitedUseAbilities/Template/LUAFT.SPL~  ~override/DTHFT.SPL~
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=2 timing=9 duration=1 STR_VAR resource = ~DTHTCH~ END
     
-    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~DeathD~ => ~DTHFT~ END
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN ~DeathD~ => ~DTHFT~ END
 
 //trickery - mirror image       
 	COPY ~3ed/Feats/LimitedUseAbilities/Template/LUAFT.SPL~  ~override/TRCKFT.SPL~
@@ -124,7 +124,7 @@ END
         LPF ADD_SPELL_EFFECT INT_VAR opcode =275 target = 2 parameter1 = 5 timing = 9 END 
         LPF ADD_SPELL_EFFECT INT_VAR opcode =276 target = 2 parameter1 = 5 timing = 9 END
         
-    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~TrickD~ => ~TRCKFT~ END
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN ~TrickD~ => ~TRCKFT~ END
 
   
 //sun - divine light
@@ -150,7 +150,7 @@ END
 	COPY ~3ed/Feats/LimitedUseAbilities/Template/LUAFT.SPL~  ~override/SUNFT.SPL~
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=2 timing=9 duration=1 STR_VAR resource = ~SUNLGT~ END
         
-    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~SunD~ => ~SUNFT~ END
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN ~SunD~ => ~SUNFT~ END
     
 
 //moon  - immunity to blindness
@@ -158,10 +158,10 @@ END
         LPF GET_SPELL_EFFECT_VALUES INT_VAR match_opcode = 139 RET BlndStrRef = parameter1 END
     COPY ~3ed/Feats/PriestDomains/BLNDPR.SPL~ ~override~
         LPF ADD_SPELL_EFFECT INT_VAR target = 2 opcode = 267 parameter1 = BlndStrRef timing = 1 duration = 1 END //protection from display string
-    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~MoonD~ => ~BLNDPR~  END
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN ~MoonD~ => ~BLNDPR~  END
 
 //protection - +1 bonus to saving throws
-    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~PrtctD~ => ~LKHRS~  END  
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN ~PrtctD~ => ~LKHRS~  END  
 
 //magic - dispelling touch 3 times/day
 WITH_TRA ~%LANGUAGE%\domain_abilities.tra~ BEGIN
@@ -175,4 +175,11 @@ END
         LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=2 timing=9 duration=1 STR_VAR resource = ~DSPTCH~ END
         LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=2 timing=9 duration=1 STR_VAR resource = ~DSPTCH~ END
         
-    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN~MagicD~ => ~MAGDOFT~ END  
+    ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN ~MagicD~ => ~MAGDOFT~ END  
+    
+//destruction - destructive smite
+	COPY ~3ed/Feats/LimitedUseAbilities/Template/LUAFT.SPL~  ~override/DESDOFT.SPL~
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=171 target=2 timing=9 duration=1 STR_VAR resource = ~SMTDST~ END
+        
+ACTION_DEFINE_ASSOCIATIVE_ARRAY DomainAbilities BEGIN ~DestrD~ => ~DESDOFT~ END          
+        

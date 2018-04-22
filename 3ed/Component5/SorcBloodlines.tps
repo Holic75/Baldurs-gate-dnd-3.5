@@ -32,6 +32,6 @@
 		LPF  ALTER_SPELL_EFFECT INT_VAR match_opcode=177 STR_VAR resource=~BDFTCRE~ END
 		
 	//apply to sorceror
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 delay = 5
 		STR_VAR clab=~CLABMA01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRES.SPL~
 		feat_type_file=~BDFTCRE~ caption=~SRBLDLN~ END

@@ -2,7 +2,7 @@
 
 BACKUP ~3ed/backup~
 AUTHOR ~holic.denis@gmail.com~
-VERSION ~v2.11~
+VERSION ~v2.12~
 
 
 ALWAYS
@@ -18,6 +18,12 @@ ALWAYS
     ELSE BEGIN
         FAIL ~Game not supported~
     END
+    
+    OUTER_SET IncludesSod = 0
+    ACTION_IF ((GAME_IS ~bgee~) AND (GAME_INCLUDES ~sod~)) BEGIN
+        OUTER_SET IncludesSod = 1
+    END
+
 END
 
 LANGUAGE
@@ -50,8 +56,7 @@ BEGIN @1
 	
 	COPY ~3ed/Core/Proficiencies/Common~ ~override~ 
     
-    ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
-    
+    ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN  
         COPY ~3ed/Core/Proficiencies/Bg2~ ~override~  //copy proficiency ui (up to 7 slots)
     END
 				
@@ -60,11 +65,7 @@ BEGIN @1
 	COPY ~3ed/Core/Xp/Common~ ~override~ //xp table		
 	COPY ~3ed/Core/Xp/%GameId%~ ~override~ //max xp (different for bg1, bg2 and iwd)
 		
-	//update descriptions
-	
-	
-	
-	
+	//update descriptions	
 	WITH_TRA ~%LANGUAGE%\classes.tra~ BEGIN	
 		INCLUDE ~3ed/Component1/SetClassesDescriptions.tps~
 	END
@@ -91,7 +92,7 @@ BEGIN @1
     //add uncanny dodge to thieves (pure and multiclass) and barbarian
     COPY ~3ed/Feats/PermanentAbilities/UncannyDodge/IMMSNK.SPL~ ~override~
     LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1
-						STR_VAR mask_file=~3ed/Feats/FeatAttribution/SFTCRNMT.SPL~ clab=~\(CLABTH+\)\|\(CLABFI05\)\|\(CLABFI06\).*\.2DA~  
+						STR_VAR mask_file=~3ed/Feats/FeatAttribution/SFTCRNMT.SPL~ clab=~\(\(CLABTH.+\)\|\(CLABFI05\)\|\(CLABFI06\)\)\.2DA~  
                                 feat_type_file = ~IMMSNK~ caption=~IMM_SNK~ END	
     
 	 //-----------------------------------------------------//
@@ -106,17 +107,33 @@ BEGIN @1
     ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
             OUTER_FOR (PlayerId=1;PlayerId<=6;PlayerId=PlayerId+1) BEGIN
                 OUTER_SET XP=89000 //original game
-                    EXTEND_TOP ~AR0602.bcs~ ~3ed/Core/Xp/Bg2/InitialXp.baf~
+                    EXTEND_TOP ~AR0602.bcs~ ~3ed/Core/Xp/Common/InitialXp.baf~
                     EVALUATE_BUFFER  
                     
                 OUTER_SET XP=500000 //blackPits
-                    EXTEND_TOP ~OH8000.bcs~ ~3ed/Core/Xp/Bg2/InitialXp.baf~
+                    EXTEND_TOP ~OH8000.bcs~ ~3ed/Core/Xp/Common/InitialXp.baf~
                     EVALUATE_BUFFER                   
             END          
     END
+    ELSE ACTION_IF (IncludesSod) BEGIN
+            OUTER_FOR (PlayerId=1;PlayerId<=6;PlayerId=PlayerId+1) BEGIN
+                OUTER_SET XP=64000 //sod game
+                    EXTEND_TOP ~BD0120.bcs~ ~3ed/Core/Xp/Common/InitialXp.baf~
+                    EVALUATE_BUFFER                                      
+            END           
+    END
     
     //allow magical armors to be used with items granting protection bonuses
-    COPY ~3ed/Core/ItemExcl/%GameId%~ ~override~
+    ACTION_IF (NOT IncludesSod) BEGIN
+        COPY ~3ed/Core/ItemExcl/%GameId%~ ~override~
+    END
+    ELSE BEGIN
+        COPY ~3ed/Core/ItemExcl/Sod~ ~override~
+    END
+    
+    //get rid of caster level fluctuation on wild mages
+    COPY ~3ed/Core/WildMagic~ ~override~
+    
 	
 ////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
@@ -440,6 +457,10 @@ BEGIN @11
 BEGIN @12	//point buy system
 	
 	//copying lua files for interface 
+    ACTION_IF (IncludesSod) BEGIN
+        OUTER_SPRINT GameId ~Sod~
+    END
+    
 	COPY ~3ed/LUA/%GameId%~ ~override~
 		
 BEGIN @13	

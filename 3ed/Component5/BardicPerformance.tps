@@ -175,26 +175,26 @@
 	
 	//script for giving bardic songs
 	OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN
-		EXTEND_TOP ~BALDUR.BCS~ ~3ed/BardSongs/BSNG.baf~
+		EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.+\.BCS~ ~3ed/BardSongs/BSNG.baf~
 			EVALUATE_BUFFER			
 	END
 	//bonus songs at level 1 
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
-						STR_VAR clab=~CLABBA+.*\.2DA~ mask_file=~~ caption=~BNSNG~ END		
+						STR_VAR clab=~CLABBA.*\.2DA~ mask_file=~~ caption=~BNSNG~ END		
 	//bards
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=20 d_level=2 add_at_level1=1 
 						STR_VAR clab=~CLABBA01\.2DA~ mask_file=~~ caption=~GVSNGA~ END	
 						
 	//bard kits
 	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=20 d_level=4 add_at_level1=1 
-						STR_VAR clab=~\(CLABBA02\)\|\(\CLABBA03\)\|\(CLABBA04\)\.2DA~ mask_file=~~ caption=~GVSNGA~ END	
+						STR_VAR clab=~\(\(CLABBA02\)\|\(\CLABBA03\)\|\(CLABBA04\)\)\.2DA~ mask_file=~~ caption=~GVSNGA~ END	
 						
 	COPY ~3ed/BardSongs/BSNG.SPL~ ~override/DSBLSNG.SPL~					
 		LPF ADD_SPELL_HEADER INT_VAR  type=1 location=4 target=5 target_count=0 range=1 speed=1 projectile=1 END
 		LPF ADD_SPELL_EFFECT INT_VAR header=1 opcode=144 target=2 parameter1=0 parameter2=10 timing=1 duration=1 END //disable bardic music button
 		
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
-						STR_VAR clab=~CLABBA+.*\.2DA~ mask_file=~~ caption=~DSBLSNG~ END
+						STR_VAR clab=~CLABBA.*\.2DA~ mask_file=~~ caption=~DSBLSNG~ END
 
     COPY ~3ed/BardSongs/BattleDance~ ~override~
     COPY_EXISTING ~BLADDNC.SPL~ ~override~

@@ -1,0 +1,15 @@
+2DA V1.0
+BADVAL
+                    VALUE      
+START_AREA          BD0120     
+START_XPOS          760        
+START_YPOS          1695       
+START_AREA_TUTORIAL TU0015     
+START_XPOS_TUTORIAL 607        
+START_YPOS_TUTORIAL 660        
+START_AREA_MP       BD0120     
+START_XPOS_MP       760        
+START_YPOS_MP       1695       
+START_XP            0      
+START_XP_CAP        1500000     
+START_MP_XP_CAP     161000     

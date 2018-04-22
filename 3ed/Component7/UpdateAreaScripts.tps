@@ -20,5 +20,5 @@
 				EVALUATE_BUFFER
 		END
 	//unsummon all companions after rest
-	EXTEND_TOP ~baldur.bcs~ ~3ed/Classes/AnimalCompanion/baldur2.baf~
+	EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.*\.BCS~ ~3ed/Classes/AnimalCompanion/baldur2.baf~
 		EVALUATE_BUFFER

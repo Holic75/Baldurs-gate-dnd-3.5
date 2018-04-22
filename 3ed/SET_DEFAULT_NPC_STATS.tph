@@ -18,6 +18,7 @@ DEFINE_ACTION_FUNCTION ~SET_DEFAULT_NPC_STATS~
         RemoveMemorizedSpells = 1
         HpTotal = 2
         InitialXp = 0
+        
     STR_VAR
         NpcName = ~~
         ScriptName=~~
@@ -39,8 +40,8 @@ DEFINE_ACTION_FUNCTION ~SET_DEFAULT_NPC_STATS~
         
        
         COPY_EXISTING_REGEXP ~%NpcName%\.CRE~ ~override~
-
             REMOVE_CRE_EFFECTS
+
             PATCH_IF (RemoveMemorizedSpells) BEGIN
                 REMOVE_MEMORIZED_SPELLS
                 

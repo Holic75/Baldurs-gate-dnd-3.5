@@ -34,6 +34,6 @@
 		LPF  ALTER_SPELL_EFFECT INT_VAR match_opcode=177 STR_VAR resource=~SWFTCRE~ END
 		
 	//apply 
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-		STR_VAR clab=~CLABDR02\.2DA~ mask_file=~~
-		feat_type_file=~~ caption=~SWFTCRE~ END
+	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 delay = 5
+		STR_VAR clab=~CLABDR02\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRED.SPL~
+		feat_type_file=~SWFTCRE~ caption=~SPWD_FT~ END

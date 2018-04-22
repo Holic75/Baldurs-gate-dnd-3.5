@@ -43,12 +43,12 @@ END
 //--------------------- paladin ----------------------------------------
 	//saving throws
 	COPY ~3ed/Classes/Paladin/PDNSVCR.SPL~ ~override~//correction for paladin saves	
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~CLABPA+.*\.2DA~  caption=~PDNSVCR~ END	//-2 to saves (corrected by chas saves application)
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 STR_VAR clab=~CLABPA+.*\.2DA~  caption=~CHASAVFT~ END // chas saves
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~CLABPA.*\.2DA~  caption=~PDNSVCR~ END	//-2 to saves (corrected by chas saves application)
+	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 STR_VAR clab=~CLABPA.*\.2DA~  caption=~CHASAVFT~ END // chas saves
 	//lay on hands		
 	COPY ~3ed/Classes/Paladin/LayOnHands~ ~override~
 	OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN //script to update number of lay on hands uses depending on charisma
-		EXTEND_TOP ~BALDUR.BCS~ ~3ed/Classes/Paladin/PALADIN.baf~
+		EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.*\.BCS~ ~3ed/Classes/Paladin/PALADIN.baf~
 			EVALUATE_BUFFER			
 	END
 
@@ -305,7 +305,7 @@ END
     END
         
     OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN
-		EXTEND_TOP ~BALDUR.BCS~ ~3ed/Classes/Hexblade/GV_HEX.baf~
+		EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.*\.BCS~ ~3ed/Classes/Hexblade/GV_HEX.baf~
 			EVALUATE_BUFFER			
 	END
 
@@ -313,7 +313,7 @@ END
 	//-------------------------------monk-------------------------
 	//(ac bonus (already in 2DA), wis ac bonus, flurry of blows)
 	COPY ~3ed/Classes/Monk~ ~override~
-    COPY_EXISTING_REGEXP GLOB ~CLABMO+.*\.2DA~ ~override~
+    COPY_EXISTING_REGEXP GLOB ~CLABMO.*\.2DA~ ~override~
 		COUNT_2DA_ROWS 20 "nrows"
 		INSERT_2DA_ROW nrows 20
 			~MNKFLRABI AP_MKFLR1FT **** **** **** AP_MKFLR2FT **** **** **** AP_MKFLR3FT **** AP_MKFLR4FT **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** ****~
@@ -470,7 +470,7 @@ END
 	
 	
 		OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN
-			EXTEND_TOP ~BALDUR.BCS~ ~override/NINJA.baf~
+			EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.*\.BCS~ ~override/NINJA.baf~
 				EVALUATE_BUFFER			
 		END
 	END
@@ -783,7 +783,7 @@ END
     
     //script for giving assasin spells
 	OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN
-		EXTEND_TOP ~BALDUR.BCS~ ~3ed/Classes/Assassin/Spells/ASN.baf~
+		EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.*\.BCS~ ~3ed/Classes/Assassin/Spells/ASN.baf~
 			EVALUATE_BUFFER			
 	END
 	// ---------------------------------------- shadowdancer special abilities (simulacrum and shadow form)
@@ -1152,7 +1152,7 @@ END
                     LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 232 STR_VAR resource = ~FVRD_HL~ END
 				
                 OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN //apply favored of spirits every time after rest
-                    EXTEND_TOP ~BALDUR.BCS~ ~override/SHAMAN.baf~
+                    EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.*\.BCS~ ~override/SHAMAN.baf~
                         EVALUATE_BUFFER			
                 END
 				

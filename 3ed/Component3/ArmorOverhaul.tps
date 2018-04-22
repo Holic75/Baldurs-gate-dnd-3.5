@@ -138,7 +138,8 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   
 	LPF UPDATE_ARMOR INT_VAR spell_failure = 40 max_dex = 12 skill_penalty = 5 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 16 END
 	
-  END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~SHARK2~) OR  (~%SOURCE_RES%~ STR_EQ ~DRAGARM~) BEGIN //sahaguin and black dragon scale => studded leather
+  END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~SHARK2~) OR  (~%SOURCE_RES%~ STR_EQ ~DRAGARM~) 
+            OR (~%SOURCE_RES%~ STR_EQ ~bdchan01~) BEGIN //sahaguin and black dragon scale and jegg leathers=> studded leather
   
 	LPF UPDATE_ARMOR INT_VAR spell_failure = 15 max_dex = 18 skill_penalty = 1 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 12 END
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~kensai~ END
@@ -148,7 +149,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	LPF UPDATE_ARMOR INT_VAR spell_failure = 50 max_dex = 10 skill_penalty = 6 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 17 END
 	WRITE_BYTE 0x0026 14 //str
 	
-  END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~SHARK~) BEGIN//sahaguin leather armor
+  END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~SHARK~) OR (~%SOURCE_RES%~ STR_EQ ~BDLEAT06~) BEGIN//sahaguin leather armor or goblin armor
   
 	LPF UPDATE_ARMOR INT_VAR spell_failure = 10 max_dex = 20 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 11 END
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~kensai~ END

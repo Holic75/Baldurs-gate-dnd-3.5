@@ -21,27 +21,27 @@
 	//adding dc and caster level adjustments
 	
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~\(CLABMA+.*\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRENS.SPL~
+						STR_VAR clab=~CLABMA.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRENS.SPL~
 						feat_type_file=~SPDCWFT~ caption=~SPDCWIZ~ END
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~\(CLABMA01\)\|\(CLABSO+.*\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRES.SPL~
+						STR_VAR clab=~\(\(CLABMA01\)\|\(CLABSO.*\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRES.SPL~
 						feat_type_file=~SPDCSFT~ caption=~SPDCSOR~ END
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~\(CLABBA+.*\)\.2DA~ mask_file=~~
+						STR_VAR clab=~CLABBA.*\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~SPDCSFT~ END
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
 						STR_VAR clab=~clabshgs\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~SPDCH~ END
 						
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~\(CLABPR+.*\)\|\(CLABDR+.*\)\|\(OHTYR\)\.2DA~ mask_file=~~
+						STR_VAR clab=~\(\(CLABPR.*\)\|\(CLABDR.*\)\|\(OHTYR\)\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~SPDCPFT~ END			
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~\(CLABSH+.*\)\.2DA~ mask_file=~~
+						STR_VAR clab=~CLABSH.*\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~SPDCHFT~ END							
 	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=4 d_level=1 add_at_level1=0 
-						STR_VAR clab=~\(CLABPA+.*\)\.2DA~ mask_file=~~
+						STR_VAR clab=~CLABPA.*\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~SPDCLFT~ END	
 	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=4 d_level=1 add_at_level1=0 
-						STR_VAR clab=~\(CLABRN+.*\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRER.SPL~
+						STR_VAR clab=~CLABRN.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRER.SPL~
 						feat_type_file=~SPDCRFT~ caption=~SPDCRNG~ END
