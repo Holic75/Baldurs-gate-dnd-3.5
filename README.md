@@ -2543,7 +2543,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Imoen - Fighter/Mage/Thief (9/ 16/ 12/ 16/ 11/ 10)
 #### Jaheira - Fighter/Druid (14/ 14/ 14/ 10/ 16/ 10) - as half-elf will receive +2 bonus to any ability score at level 1
 #### Kagain - Dwarven Defender (16/ 10/ 19/ 10/ 11/ 8)
-#### Khalid - Fighter (16/ 14/ 14/ 14/ 10/ 10) - as half-elf will receive +2 bonus to any ability score at level 1
+#### Khalid - Fighter (16/ 16/ 14/ 10/ 10/ 10) - as half-elf will receive +2 bonus to any ability score at level 1
 #### Kivan - Archer (15/ 18/ 12/ 10/ 13/ 9)
 #### Minsc - Barbarian (18/ 14/ 16/ 8/ 8/ 8)
 #### Montaron - Assassin (10/ 18/ 14/ 16/ 9/ 9)
@@ -2567,7 +2567,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Dynaheir - Sorcerer (12/ 14/ 14/ 10/ 9/ 17)
 #### Edwin - Conjurer (10/ 12/ 14/ 18/ 9 / 10)
 #### Jaheira - Fighter/Druid (14/ 14/ 14/ 10/ 16/ 10) - as half-elf will receive +2 bonus to any ability score at level 1
-#### Khalid - Fighter (16/ 14/ 14/ 14/ 10/ 10) - as half-elf will receive +2 bonus to any ability score at level 1
+#### Khalid - Fighter (16/ 16/ 14/ 10/ 10/ 10) - as half-elf will receive +2 bonus to any ability score at level 1
 #### Minsc - Barbarian (18/ 14/ 16/ 8/ 8/ 8)
 #### Neera - Wild Mage (9/ 16/ 12/ 17/ 9/ 11)  - as half-elf will receive +2 bonus to any ability score at level 1
 #### Rasaad - Sun Soul Monk (14/ 16/ 12/ 10/ 15/ 10)
@@ -2596,7 +2596,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Cernd - Shapeshifter (10/ 14/ 12/ 10/ 18/ 10)
 #### Aerie - Cleric/Mage (10/ 18/ 10/ 16/ 16/ 12)
 #### Anomen - Fighter/Cleric (15/ 14/ 14/ 10/ 15/ 10)
-#### Sarevok - Fighter (16/ 14/ 14/ 14/ 10/ 10)
+#### Sarevok - Fighter (18/ 16/ 16/ 16/ 10/ 10)
 #### Rasaad - Sun Soul Monk (14/ 16/ 12/ 10/ 15/ 10)
 #### Dorn - Blackguard (18/ 10/ 13/ 8/ 13/ 15)
 #### Neera - Wild Mage (9/ 16/ 12/ 17/ 9/ 11)  - as half-elf will receive +2 bonus to any ability score at level 1

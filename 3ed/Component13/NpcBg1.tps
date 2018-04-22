@@ -22,7 +22,7 @@ LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 18 Con = 12 Int = 14 Wis = 10 C
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 15 Dex = 10 Con = 14 Int = 9 Wis = 13 Cha = 16 
                           STR_VAR NpcName = ~AJANTI~ ScriptName = ~AJANTIS~ ClassName = ~PALADIN~  END   
 
-LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 14 Con = 14 Int = 14 Wis = 10 Cha = 10
+LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 16 Con = 14 Int = 10 Wis = 10 Cha = 10
                           STR_VAR NpcName = ~KHALID~ ScriptName = ~KHALID~ ClassName = ~FIGHTER~ END                
 
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 14 Con = 14 Int = 10 Wis = 16 Cha = 10 

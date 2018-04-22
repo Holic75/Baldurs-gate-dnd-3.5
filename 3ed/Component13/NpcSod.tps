@@ -7,7 +7,7 @@ LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 12 Dex = 14 Con = 14 Int = 10 Wis = 9 Ch
                           STR_VAR NpcName = ~DYNAHE7~ ScriptName = ~BDDYNAHE~ ClassName = ~SORCERER~  END     
                          
 
-LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 14 Con = 14 Int = 14 Wis = 10 Cha = 10 InitialXp = 64000
+LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 16 Con = 14 Int = 10 Wis = 10 Cha = 10 InitialXp = 64000
                           STR_VAR NpcName = ~KHALID7~ ScriptName = ~BDKHALID~ ClassName = ~FIGHTER~ END                
 
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 14 Con = 14 Int = 10 Wis = 16 Cha = 10 InitialXp = 64000 
