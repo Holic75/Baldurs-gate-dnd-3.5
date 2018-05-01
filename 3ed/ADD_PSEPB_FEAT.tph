@@ -17,18 +17,15 @@ DEFINE_ACTION_FUNCTION ~ADD_PSEPB_FEAT~ // persistent exclusive progressive bonu
 		END
 		
 
-		OUTER_SET k=0	
+		OUTER_SET bonus_val = min_bonus_val
 		//create bonuses
 		OUTER_FOR (i=min_val;i<=max_val;i=i+step) BEGIN
             
 				
-			COPY ~3ed/Feats/PersistentAbilities/StatExclusiveProgressiveBonus/%ability_name%/%ability_name%.SPL~  ~override\%target_name%%i%.spl~
-
-                
-                SPRINT resource EVALUATE_BUFFER ~%target_name%%i%~	
-                SET bonus_val = (min_bonus_val + k*bonus_step)
-				LPF ALTER_SPELL_EFFECT INT_VAR timing = 9 parameter1 = bonus_val power = 0 END //full cumulative bonus
-                
+			COPY ~3ed/Feats/PersistentAbilities/StatExclusiveProgressiveBonus/%ability_name%/%ability_name%.SPL~  ~override\%target_name%%i%.spl~                
+                SPRINT resource EVALUATE_BUFFER ~%target_name%%i%~	                  
+				LPF ALTER_SPELL_EFFECT_EX INT_VAR timing = 9 parameter1 = bonus_val power = 0 END //full cumulative bonus
+                                   
                 FOR (j=min_val;j<=max_val;j=j+step) BEGIN //remove all other effects
                    SPRINT resource EVALUATE_BUFFER ~%target_name%%j%~	
                    LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 insert_point = 0 STR_VAR resource END 
@@ -37,7 +34,8 @@ DEFINE_ACTION_FUNCTION ~ADD_PSEPB_FEAT~ // persistent exclusive progressive bonu
                 SPRINT resource EVALUATE_BUFFER ~%target_name%%i%~
 				LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 timing=9 duration=1 parameter1=0 parameter2=0 STR_VAR resource END //add protection from itself
                 LPF ADD_SPELL_EFFECT INT_VAR opcode=318 target=2 parameter1=i+step duration=1 parameter2=abi_g insert_point = 0 STR_VAR resource END //add protection from itself
-            OUTER_SET k=k+1
+                
+            OUTER_SET bonus_val = bonus_val + bonus_step
 								
 		END
 		
