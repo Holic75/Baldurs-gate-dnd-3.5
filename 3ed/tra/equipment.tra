@@ -604,3 +604,27 @@ Charge abilities:
 – Generates a random arcane scroll of level 3 or below
 
 Weight: 3~
+
+
+    @5104= ~This was the personal shield of Sartessa, a half-elven Ranger of the Wood of Sharp Teeth. Called to a quest by divine intervention at a young age, she traveled the long way to Luskan seeking to restore peace to the Sword Coast in troubled times. Betrayed near the end of her journey by her long time companion and forced to slay him in self-defense, she forged this shield, imbued with her grim determination to complete her quest despite knowing that alone, such attempt would likely end in death. Powerful enchantments were placed on this shield to stop it from falling into the wrong hands, and although they have faded somewhat with time, it would be foolhardy of anyone to try to wield it that does not resemble her both in spirit and body.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2, +2 vs. missiles, humanoids, male opponents, and charmed or controlled creatures
+– Aura cleansing
+– Immunity to Backstab
+– Immunity to permanent death
+– Improved critical hit chance
+
+Requires:
+ 3 Strength
+ 12 Charisma
+
+Weight: 5~
+
+
+    @6001 = ~(missile)~
+    @6002 = ~(crushing)~
+    @6003 = ~Damage type: Missile~
+    @6004 = ~Damage type: Crushing~

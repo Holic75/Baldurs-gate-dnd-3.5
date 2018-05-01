@@ -221,7 +221,10 @@ ACTION_IF (IncludesSod) BEGIN
         LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = 5015  new_substring_ref = 5016 END
     COPY_EXISTING ~BDBELT02.EFF~ ~override~
         LPF ALTER_EFF INT_VAR opcode = 278 parameter1 = 1 END
-         
+
+    COPY_EXISTING ~SHLD07P.ITM~ ~override~//sartessa vengeance description fix
+		READ_LONG 0x0054 ~id_descr_strref~
+		STRING_SET_EVALUATE %id_descr_strref% @5104          
 END    
 
 ACTION_IF (~%GameId%~ STR_EQ ~Bg2~ OR IncludesSod) BEGIN

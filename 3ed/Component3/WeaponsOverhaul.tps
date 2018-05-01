@@ -23,7 +23,7 @@
         READ_STRREF 0x0008 "unid_name"
 		READ_BYTE  0x0031 "proficiency"
 		READ_SHORT 0x0038 "stack"   // to diffirintiate between throwing melee versions
-		READ_SHORT 0x001c "category" //=28 for fist weapons, =2 -armor, 68 -robes
+		READ_SHORT 0x001c "category" //=28 for fist weapons, =2 -armor, 68 -robes, 14 - bullets
 		
 		
 		PATCH_IF (~%SOURCE_RES%~ STR_EQ ~BLAKBLAD~) BEGIN//black blade of disaster -> change proficiency bonus to 89 
@@ -277,6 +277,14 @@
         PATCH_IF (category!=ArmorCategory AND category!=ShieldsCategory) BEGIN
 			LPF SET_ITEM_USABILITY INT_VAR value = usable_by_kensai OR usable_by_fighter STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~kensai~   END			
 		END
+        
+        PATCH_IF (category == BulletsCategory) BEGIN //set bullets damage type to crushing
+            LPF ALTER_ITEM_HEADER INT_VAR header_type = 2 damage_type = 2 END
+            LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace_ref = 6001  new_substring_ref = 6002 END
+            LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace_ref = 6001  new_substring_ref = 6002 END
+            LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace_ref = 6003  new_substring_ref = 6004 END
+            LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace_ref = 6003  new_substring_ref = 6004 END
+        END
         
 	BUT_ONLY
     

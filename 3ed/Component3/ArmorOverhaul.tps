@@ -261,12 +261,12 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
     
         LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
        
-        //allow only fighters and dwarven defenders to use large shields
+        //allow only fighters, paladins and dwarven defenders to use large shields
         LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~ END
         LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~wizardslayer~ END
         LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~berserker~ END
         LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~cleric~ END
-        LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~paladin~ END
+        //LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~paladin~ END
         LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~ranger~ END
         LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_mage~ END
         LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_thief~ END

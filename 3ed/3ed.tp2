@@ -243,6 +243,7 @@ INCLUDE ~3ed/Component3/CreateArmorDexPenalty.tps~
 	OUTER_SET CrossbowsCategory = 0x001b
 	OUTER_SET ArrowsCategory = 0x0005
 	OUTER_SET QuarterstaffCategory = 0x001a
+    OUTER_SET BulletsCategory = 14
 
 WITH_TRA ~%LANGUAGE%\equipment.tra~ BEGIN
 		

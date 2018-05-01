@@ -559,7 +559,7 @@ Disadvantages:
 ### PALADIN
 CLASS FEATURES:  
 – May wear helmets.  
-– May wear any armor and use any weapon and shield (excluding large shield).  
+– May wear any armor and use any weapon and shield.  
 – May use Lay On Hands ability once per day for every 2 points of Charisma above 10.  
 ```
 LAY ON HANDS:The character channels positive energy to heal the touched creature of 2 Hit Points per level of the caster.
@@ -2152,7 +2152,8 @@ Ankheg Plate Mail      | 20% | +3 | -30%
  - AC bonus of Medium Shields was increased to +2  
  - AC bonus of Large Shields was increased to +4, but they also now give -2 THAC0 penalty       
  - Initial number of attacks per rounds for all ranged weapons was set to 1, except for slings and crossbows for which it was set to 0.5; it increases at normal character APR progression and Rapid Shot feat also gives +1 APR with ranged weapons (except throwing axes and hammers)   
- - Moonblade type was changed to longsword (do not worry, Xan can still use it)
+ - Moonblade type was changed to longsword (do not worry, Xan can still use it)  
+ - Sling bullets damage was changed from missile to crushing  
 
 ## 6. Spells
 
