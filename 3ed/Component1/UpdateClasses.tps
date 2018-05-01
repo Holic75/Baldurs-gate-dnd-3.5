@@ -433,8 +433,8 @@ END
 		COPY_EXISTING ~NinjaAbilitiesMap.2DA~ ~override~
 			COUNT_2DA_ROWS 3 n_rows
 			FOR (i=0;i<n_rows;i=i+1) BEGIN
-				READ_2DA_ENTRY %i% 1 3 ninja_spell_name //school name 
-				READ_2DA_ENTRY %i% 2 3 original_spell_name //school description 				
+				READ_2DA_ENTRY %i% 1 3 ninja_spell_name 
+				READ_2DA_ENTRY %i% 2 3 original_spell_name 				
 				DEFINE_ASSOCIATIVE_ARRAY NinjaSpells BEGIN "%ninja_spell_name%" => "%original_spell_name%" END
 			END
 		
@@ -445,10 +445,14 @@ END
 				LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_type=4 END
 				FOR (i=2;i<=30;i=i+1) BEGIN
 					LPF DELETE_SPELL_HEADER INT_VAR min_level = i header_type END
-				END
-				
-				LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 10 END //set duration to 10 seconds
+				END               
+                LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 10 END //set duration to 10 seconds
                 LPF ALTER_SPELL_HEADER INT_VAR target = 5 speed=1 END //set target to self and min speed
+                
+                PATCH_IF (~NJ_HST~ STR_EQ ~%ninja_spell_name%~) BEGIN //make haste work only on ninja
+                    LPF ALTER_SPELL_HEADER INT_VAR projectile = 1 END
+                END
+               
 		END
 			
 		COPY_EXISTING ~KIPWR.SPL~ ~override~

@@ -2,6 +2,9 @@
 	@002=~Ki Power
 
 Starting from level 1 ninja can spend one point from ki pool to become invisible for 10 seconds.
-Starting from level 3 ninja can alternatively spend one point from ki pool to create 1d4 mirror images of <PRO_HIMHER>self or become blurred (+3 AC, +1 Saving throw bonus) for 10 seconds or detect invisible creatures.
-Starting from level 5 ninja can alternatively spend one point from ki pool to become hasted for 10 seconds.
-Starting from level 7 ninja can alternatively spend one point from ki pool to make all <PRO_HISHER> attacks for next round stun opponents unless they make a Saving throw vs. Death.~
+Starting from level 4 ninja can alternatively spend one point from ki pool to create 1d4 mirror images of <PRO_HIMHER>self or become blurred (+3 AC, +1 Saving throw bonus) for 10 seconds or detect invisible creatures.
+Starting from level 7 ninja can alternatively spend one point from ki pool to become hasted for 10 seconds.
+Starting from level 10 ninja can alternatively spend one point from ki pool to make all <PRO_HISHER> attacks for next round stun opponents unless they make a Saving throw vs. Paralyze (with penalty equal to one quarter level of ninja rounded down).
+Starting from level 13 ninja can alternatively spend one point from ki pool to heal 10 Hit Points to <PRO_HIMHER>self and neutralize any poison.
+Starting from level 16 ninja can alternatively spend one point from ki pool to place <PRO_HIMHER>self under the effect of Improved Invisibility spell or use True Sight ability for 10 seconds.
+Starting from level 19 ninja can alternatively spend one point from ki pool to place <PRO_HIMHER>self under the effect of Improved Haste spell for 10 seconds.~

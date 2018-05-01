@@ -353,6 +353,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~thief~  RET usable_by_thief = result END
 	
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_ranger STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~cleric_ranger~ END
+    LPF SET_ITEM_USABILITY INT_VAR value = usable_by_ranger STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~lathander~ END
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_thief STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~cleric_thief~ END
     PATCH_IF (category!=ShieldsCategory) BEGIN //medium armor and helms for cleric/thiefs and bards
         LPF SET_ITEM_USABILITY INT_VAR value = usable_by_ranger OR usable_by_thief STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~cleric_thief~ END

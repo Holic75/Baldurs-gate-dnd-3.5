@@ -1,7 +1,8 @@
 
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 18 Dex = 14 Con = 16 Int = 8 Wis = 8 Cha = 8 InitialXp = 64000 
                           STR_VAR NpcName = ~MINSC7~ ScriptName = ~BDMINSC~ ClassName = ~FIGHTER~ KitName =~BARBARIAN~ END
-   
+COPY_EXISTING ~MINSC7.CRE~ ~override~
+REPLACE_CRE_ITEM ~CHAN05~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~ 
 
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 12 Dex = 14 Con = 14 Int = 10 Wis = 9 Cha = 17 InitialXp = 64000  
                           STR_VAR NpcName = ~DYNAHE7~ ScriptName = ~BDDYNAHE~ ClassName = ~SORCERER~  END     

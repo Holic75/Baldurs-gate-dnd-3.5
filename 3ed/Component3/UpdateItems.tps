@@ -191,7 +191,7 @@ ACTION_IF (IncludesSod) BEGIN
         LPF ALTER_SPELL_EFFECT_EX INT_VAR match_savingthrow = 1 savingthrow = 2 END
         
     COPY_EXISTING ~bdshld03.ITM~ ~override~//sheild of egons replace turn undead with charisma bonus (+2 -> +4)
-        LPF ALTER_ITEM_EFFECT INT_VAR check_globals = 1 match_opcode = 323 opcode = 6 parameter1 = 2 END
+        LPF ALTER_ITEM_EFFECT INT_VAR check_globals = 1 match_opcode = 323 new_opcode = 6 parameter1 = 2 END
 		READ_LONG 0x0054 ~id_descr_strref~
 		STRING_SET_EVALUATE %id_descr_strref% @5102        
     COPY_EXISTING ~bdshld03.EFF~ ~override~
@@ -199,7 +199,7 @@ ACTION_IF (IncludesSod) BEGIN
         
     
     COPY_EXISTING ~bdclck06.ITM~ ~override~  //replace +1 caster level with +2 cha/int 
-        LPF ALTER_ITEM_EFFECT INT_VAR check_globals = 1 match_opcode = 191 opcode = 6 parameter1 = 2 END
+        LPF ALTER_ITEM_EFFECT INT_VAR check_globals = 1 match_opcode = 191 new_opcode = 6 parameter1 = 2 END
         LPF ADD_ITEM_EQEFFECT INT_VAR opcode=19 target=1 timing=2 parameter1 = 2 END
         READ_LONG 0x0054 ~id_descr_strref~
 		STRING_SET_EVALUATE %id_descr_strref% @5103 

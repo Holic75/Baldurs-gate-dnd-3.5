@@ -51,6 +51,10 @@ BEGIN @1
 	
 	COPY ~3ed/Core/ClassRequirements/Common~ ~override~ 
 	COPY ~3ed/Core/ClassRequirements/%GameId%~ ~override~ 
+    
+    ACTION_IF (IncludesSod) BEGIN //copy script changing starting sod items
+        COPY ~3ed/Core/SodStartingEquipment~ ~override~ 
+    END
 	
 	COPY ~3ed/Core/Stats~ ~override~
 	

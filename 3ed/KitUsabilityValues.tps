@@ -2,7 +2,7 @@
 
 SET talos_byte = 0x0029   SET talos_mask = 1
 SET helm_byte = 0x0029		SET helm_mask = 2
-SET lathander_byte = 0x0029		SET latahander_mask = 4
+SET lathander_byte = 0x0029		SET lathander_mask = 4
 SET totemic_byte = 0x0029	SET totemic_mask = 8
 SET shapeshifter_byte = 0x0029	SET shapeshifter_mask = 16
 SET avenger_byte = 0x0029	SET avenger_mask = 32

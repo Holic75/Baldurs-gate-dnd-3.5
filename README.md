@@ -663,7 +663,6 @@ Each successful hit within the next 5 rounds will inject poison into the target.
 16th - Target suffers 1 poison damage per second for 24 seconds (Save vs. Death at -3 negates), and also immediately suffers 9 poison damage (no save)
 20th - Target suffers 1 poison damage per second for 24 seconds (Save vs. Death at -4 negates), and also immediately suffers 12 poison damage (no save)
 24th - Target suffers 2 poison damage per second for 24 seconds (Save vs. Death at -5 negates), and also immediately suffers 16 poison damage (no save)
-24th - Target suffers 2 poison damage per second for 24 seconds (Save vs. Death at -6 negates), and also immediately suffers 16 poison damage (no save)
 ```
 – 3rd level: May use the Aura of Despair ability once per day. Gains and additional use every 6 levels thereafter.     
 ```
@@ -796,6 +795,7 @@ All hostile creatures are blinded for 2 rounds, additionally evil creatures suff
 
 Disadvantages:  
 – Alignment restricted to lawful good, neutral good, chaotic good, and true neutral.   
+– May not wear armor heavier than splint mail.  
 – Can cast two less spells per day per level than trueclass clerics.  
 
 ### PRIEST OF HELM  
@@ -896,7 +896,7 @@ CLASS FEATURES:
 CLASS FEATURES:  
 – May not wear armor heavier than studded leather.  
 – May not equip shields larger than bucklers.  
-– May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.
+– May only use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.  
 – Immune to sneak attack.    
 – Has Evasion passive ability.  
 ```

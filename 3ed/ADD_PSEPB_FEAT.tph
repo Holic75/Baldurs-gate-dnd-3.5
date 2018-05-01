@@ -26,7 +26,8 @@ DEFINE_ACTION_FUNCTION ~ADD_PSEPB_FEAT~ // persistent exclusive progressive bonu
 
                 
                 SPRINT resource EVALUATE_BUFFER ~%target_name%%i%~	
-				LPF ALTER_SPELL_EFFECT INT_VAR timing = 9 parameter1 = min_bonus_val + k*bonus_step power = 0 END //full cumulative bonus
+                SET bonus_val = (min_bonus_val + k*bonus_step)
+				LPF ALTER_SPELL_EFFECT INT_VAR timing = 9 parameter1 = bonus_val power = 0 END //full cumulative bonus
                 
                 FOR (j=min_val;j<=max_val;j=j+step) BEGIN //remove all other effects
                    SPRINT resource EVALUATE_BUFFER ~%target_name%%j%~	
