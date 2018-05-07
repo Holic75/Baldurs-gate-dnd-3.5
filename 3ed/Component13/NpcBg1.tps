@@ -102,7 +102,8 @@ LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 12 Con = 14 Int = 18 Wis = 9 Ch
 
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 10 Int = 16 Wis = 14 Cha = 14 MoveSilently = 5 HideInShadows = 5
                           STR_VAR NpcName = ~VICONI~ ScriptName = ~VICONIA~ ClassName = ~CLERIC_THIEF~ END   
-                          
+EXTEND_BOTTOM ~bdviconc.bcs~ ~3ed/Npc/Common/ViconiaThief.baf~ //make viconia react on find traps and hide ai settings 
+                         
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 9 Dex = 16 Con = 12 Int = 16 Wis = 11 Cha = 10 Lockpick = 5 FindTraps = 5
                           STR_VAR NpcName = ~IMOEN.*~ ScriptName = ~IMOEN~ ClassName = ~FIGHTER_MAGE_THIEF~ END   
 COPY_EXISTING_REGEXP ~IMOEN+.*\.CRE~ ~override~    

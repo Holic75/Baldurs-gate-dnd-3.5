@@ -1,5 +1,12 @@
 DEFINE_PATCH_FUNCTION ~ADD_ABILITY_DEPENDENT_EFFECTS~
-
+// packs ability dependent effects in the form abil_name(header)(abil_value) into the spell
+// if n_headers == 1 assumes abil_name(abil_value) form instead
+// (abil_value = [stat_begin:stat_step:stat_end], header = [1:n_headers]
+// makes the spell apply abil_name(header)(abil_value) if header invoked by character with correponding stat 
+//(defined by stat_ge_par) is within [abil_value, abil_value+stat_step - 1]
+// sets power , target, resist_dispel to corresponding values
+// if remove_in_effect also remove all previous casts of the spell from targets 
+// (independtly of header or correspondign ability stat_val)
     INT_VAR
         n_headers = 1
         stat_ge_par = 126
@@ -17,8 +24,7 @@ DEFINE_PATCH_FUNCTION ~ADD_ABILITY_DEPENDENT_EFFECTS~
     
         SET k=0
         FOR (i=1;i<=n_headers;i=i+1) BEGIN  
-
-            
+           
             FOR (val = stat_begin;val<=stat_end;val=val+stat_step) BEGIN  
                 
                 PATCH_IF (n_headers ==1) BEGIN

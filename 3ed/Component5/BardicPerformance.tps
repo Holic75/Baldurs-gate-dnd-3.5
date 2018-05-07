@@ -135,7 +135,7 @@
 		WRITE_ASCII 0x0030 ~JSNG~ #8
 		
 	COPY ~3ed/BardSongs/BSNG.SPL~ ~override/GVSNG.SPL~
-		FOR (i=1;i<=20;i=i+1) BEGIN
+		FOR (i=1;i<=30;i=i+1) BEGIN
 			PATCH_IF (i==1 OR ((i/2) * 2 = i)) BEGIN
 				LPF ADD_SPELL_HEADER  INT_VAR  type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=1 projectile=1 END
 				READ_SHORT 0x68 n_headers //number of extended_headers
@@ -182,11 +182,11 @@
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
 						STR_VAR clab=~CLABBA.*\.2DA~ mask_file=~~ caption=~BNSNG~ END		
 	//bards
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=20 d_level=2 add_at_level1=1 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=2 add_at_level1=1 
 						STR_VAR clab=~CLABBA01\.2DA~ mask_file=~~ caption=~GVSNGA~ END	
 						
 	//bard kits
-	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=20 d_level=4 add_at_level1=1 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=30 d_level=4 add_at_level1=1 
 						STR_VAR clab=~\(\(CLABBA02\)\|\(\CLABBA03\)\|\(CLABBA04\)\)\.2DA~ mask_file=~~ caption=~GVSNGA~ END	
 						
 	COPY ~3ed/BardSongs/BSNG.SPL~ ~override/DSBLSNG.SPL~					

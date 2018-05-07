@@ -141,7 +141,7 @@ Weapon Focus (1 star) - The character receives +1 to hit bonus with specified we
 Weapon Specialization (2 stars) - The character receives +2 bonus to damage with specified weapon category.  
 Greater Weapon Focus (3 stars) - The character receives another +1 to hit bonus with specified weapon category.    
 Greater Weapon Specialization (4 stars) - The character receives another +2 bonus to damage with specified weapon category.  
-Weapon Mastery (5 stars) - The character receives another +1 to hit and +2 damage bonus as well as 1/2 attack per round with specified weapon category.  
+Weapon Mastery (5 stars) - The character receives additional 1/2 attack per round with specified weapon category.  
 Epic Weapon Focus (6 stars) - The character receives another +2 to hit bonus with specified weapon category.  
 Epic Weapon Specialization (7 stars) - The character receives another +4 bonus to damage with specified weapon category.
 
@@ -1286,15 +1286,16 @@ CLASS FEATURES:
 – Does not automatically learn all spells of a given level as Druids do. Instead, Shamans select new spells to learn at each level, which they can cast daily without memorization.  
 – Gains immediate access to a number of Shaman-specific spells, which can be cast like any other: Spirit Ward, Writhing Fog, Spiritual Clarity, Spirit Fire, Recall Spirit, Spiritual Lock, and Ether Gate.  
 – Gains use of the Detect Illusion skill with 20% points as a base and an 4 points per level, up to a maximum of 100% at level 20.  
-– May use Shamanic Dance at will.  
+– May use Summon Spirit innate ability number of times per day equal to 1 + 1 per 2 points of Charisma above 10. Gets an additional use at every even level.  
 ```
-SHAMANIC DANCE: Shamans can summon spirit allies by performing a ritualistic dance. While dancing, the Shaman takes a -4 penalty to Armor Class and cannot move, attack, cast spells, use items and special abilities, or perform any other activity. Each round while the Shaman dances, there is a 35% base chance plus 2% for each level of the Shaman that a spirit will answer the call, up to a maximum of 75% at level 20. Summoned spirits stay while Shaman is dancing + 1 round /6 levels after Shaman stops dancing (1 round at level 1). The spirits grow in power as the Shaman gains additional levels:  
-  Level 1: Minor animal spirits (snake, fox, hound), up to 2 spirits at the same time.  
-  Level 6: Major animal spirits (bear, panther, boar), up to 3 spirits at the same time.  
-  Level 12: Minor nature spirits (lesser air spirit, lesser earth spirit, lesser fire spirit), up to 4 spirits at the same time.  
-  Level 18: Major nature spirits (air spirit, earth spirit, fire spirit), up to 5 spirits at the same time.  
-  Level 24: Greater nature spirits (greater air spirit, greater earth spirit, greater fire spirit), up to 5 spirits at the same time.  
-The type of the summoned spirit is randomly determined from all the spirits available at the Shaman's level. For example, a level 12 Shaman will summon either a minor nature spirit, a major animal spirit, or a minor animal spirit, but cannot choose which one appears. Spirits will do their best to protect the Shaman but are not controlled directly.  
+SUMMON SPIRIT: The Shaman calls on a special spirit to aid <PRO_HIMHER> for 5 rounds + 1 round per 2 points of Charisma above 10.
+The spirit grow in power as the Shaman gains additional levels:
+  Level 1: Minor animal spirits (snake, fox, hound).
+  Level 6: Major animal spirits (bear, panther, boar).
+  Level 12: Minor nature spirits (lesser air spirit, lesser earth spirit, lesser fire spirit).
+  Level 18: Major nature spirits (air spirit, earth spirit, fire spirit)
+  Level 24: Greater nature spirits (greater air spirit, greater earth spirit, greater fire spirit).
+Spirit will do its best to protect the Shaman but is not controlled directly.
 ```
 – Gains access to the following epic spells: Elemental Summoning (at level 19), Aura of Flaming Death (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Greater Elemental Summoning (at level 23) and Ethereal Retribution (at level 24).  
 – Gets one bonus feat at levels 22 and 28.  

@@ -97,7 +97,7 @@
                 SPRINT resource EVALUATE_BUFFER ~FE_%i%~
                 LPF ADD_SPELL_EFFECT INT_VAR header target=2 duration=1 opcode = 321  insert_point = 0 STR_VAR resource END //remove spell effects
                 SPRINT resource EVALUATE_BUFFER ~FE_MK%i%~
-                LPF ADD_SPELL_EFFECT INT_VAR header target = 2 duration = 1 opcode  = 206  STR_VAR resource END //protection from marking                
+                LPF ADD_SPELL_EFFECT INT_VAR header target = 2 duration = 1 opcode  = 206  timing = 9 STR_VAR resource END //protection from marking                
                 
                 SPRINT resource EVALUATE_BUFFER ~FED%i_str%%k%~
                 LPF ADD_SPELL_EFFECT INT_VAR header  opcode = 177  target=2 duration=1 timing=9 parameter1=0 parameter2=2 STR_VAR resource END  //apply damage bonus to racial enemy effects

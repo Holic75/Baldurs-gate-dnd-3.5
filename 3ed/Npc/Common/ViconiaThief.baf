@@ -1,0 +1,35 @@
+IF
+	Global("BDAI_SKILL_MODE","LOCALS",1)
+	ActionListEmpty()
+	InParty(Myself)
+	!See([EVILCUTOFF])
+	!ModalState(DETECTTRAPS)
+	!ModalState(STEALTH)
+	OR(3)
+		Class(Myself,THIEF_ALL)
+		Class(Myself,MONK)
+		Class(Myself,SHAMAN)
+THEN
+	RESPONSE #100
+		FindTraps()
+END
+
+IF
+	Global("BDAI_SKILL_MODE","LOCALS",2)
+	ActionListEmpty()
+	InParty(Myself)
+	!GlobalTimerNotExpired("BD_HIDE","LOCALS")
+	!StateCheck(Myself,STATE_INVISIBLE)
+	!StateCheck(Myself,STATE_BLIND)
+	!ModalState(STEALTH)
+	!Range(NearestEnemyOf(Myself),30)
+	!ButtonDisabled(BUTTON_STEALTH)
+	OR(3)
+		Class(Myself,THIEF_ALL)
+		Class(Myself,RANGER_ALL)
+		Class(Myself,MONK)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("BD_HIDE","LOCALS",ONE_ROUND)
+		Hide()
+END

@@ -602,15 +602,6 @@ END
             
             COPY_EXISTING ~%SpellName%.SPL~ ~override~   
 
-                //PATCH_IF (~%Source%~ STR_EQ ~normal_form~) BEGIN      
-                    
-                   // PHP_EACH PolymorphForms AS SpellName2 => Source2 BEGIN
-                   //     SPRINT resource EVALUATE_BUFFER ~%SpellName2%~
-                   //     LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 STR_VAR resource END
-                   // END 
-                   // LPF ADD_SPELL_EFFECT INT_VAR opcode = 172 target = 1 duration = 1 insert_point = 0 STR_VAR resource=~PL_NFRM~ END
-                   // LPF ADD_SPELL_EFFECT INT_VAR opcode = 135 target = 1 duration = 1 insert_point = 0 STR_VAR resource=~~ END
-                //END
                 //polymorph effects
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 172 target = 1 duration = 1 insert_point = 0 STR_VAR resource=~PL_NFRM~ END
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 135 target = 1 duration = 1 insert_point = 0 STR_VAR resource=~~ END
@@ -1052,13 +1043,12 @@ END
 			WRITE_SHORT 0x0042 0	
 	END
 	  
-	 //----------------------------------------------//
-     ACTION_IF NOT (~%GameId%~ STR_EQ ~Iwd~) BEGIN
-        //shaman dance update (duration +1 additional round at lvl1, +2 at lvl 6 +3 at lvel 12 +4 at lvl 18)
-        COPY ~3ed/Classes/Shaman~ ~override~
-	 
-        //create major spirits
-	 
+	 //---------------------- shaman dance update (replace with innate summoning one spirit)------------------------//
+     ACTION_IF NOT (~%GameId%~ STR_EQ ~Iwd~) BEGIN       
+     
+        COPY ~3ed/Classes/Shaman/BDSHAM24.2DA~ ~override~ //list for 24th level summon
+        COPY ~3ed/Classes/Shaman/bdshunsu.BCS~ ~override~ //script for shaman summons
+        //create major spirits 
         //weapons
         COPY_EXISTING ~BDSHA18A.ITM~	~override\BDSHA24A.ITM~
             LPF ALTER_ITEM_EFFECT INT_VAR check_headers = 1 match_opcode = 12 dicenumber = 2 dicesize = 8 END 
@@ -1092,9 +1082,80 @@ END
             LPF ALTER_CREATURE INT_VAR MaxHp = 120 CurrentHp = 120 Strength  =23 Constitution = 10 Dexterity = 23 Level1 = 16 THAC0 = 7 LongName = StrRefC Tooltip = StrRefC
 							SaveDeath = 5 SaveWand = 7 SaveBreath = 6 SavePoly = 6 SaveSpell = 8 END
 	 
+                               
+        
+        //set duration to 5 rounds + (cha - 10)/2
+        OUTER_FOR (cha = 10;cha<=24;cha=cha+2) BEGIN
+            OUTER_SET spirit_duration = 6*(5 + (cha - 10)/2)            
+            COPY ~3ed/Classes/Shaman/SHM_DNC.SPL~ ~override/SHMD1%cha%.SPL~
+                LPF ALTER_SPELL_EFFECT INT_VAR duration_high = spirit_duration END
+            COPY ~3ed/Classes/Shaman/SHM_DNC.SPL~ ~override/SHMD2%cha%.SPL~
+                LPF ALTER_SPELL_EFFECT INT_VAR duration_high = spirit_duration STR_VAR resource = ~BDSHAM06~ END
+            COPY ~3ed/Classes/Shaman/SHM_DNC.SPL~ ~override/SHMD3%cha%.SPL~
+                LPF ALTER_SPELL_EFFECT INT_VAR duration_high = spirit_duration STR_VAR resource = ~BDSHAM12~ END
+            COPY ~3ed/Classes/Shaman/SHM_DNC.SPL~ ~override/SHMD4%cha%.SPL~
+                LPF ALTER_SPELL_EFFECT INT_VAR duration_high = spirit_duration STR_VAR resource = ~BDSHAM18~ END
+            COPY ~3ed/Classes/Shaman/SHM_DNC.SPL~ ~override/SHMD5%cha%.SPL~
+                LPF ALTER_SPELL_EFFECT INT_VAR duration_high = spirit_duration STR_VAR resource = ~BDSHAM24~ END               
+        END
+        
+        WITH_TRA ~%LANGUAGE%\shaman.tra~ BEGIN  
+            COPY ~3ed/Classes/Shaman/SHM_DNC.SPL~ ~override/SHM_DNC.SPL~ //shamanic dance inante                
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+                LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 6 END
+                
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+                LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 12 END
+                
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+                LPF ALTER_SPELL_HEADER INT_VAR header = 4 min_level = 18 END
+                
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+                LPF ALTER_SPELL_HEADER INT_VAR header = 5 min_level = 24 END
+                              
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 END
+                LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = 5 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 132 resist_dispel = 0 STR_VAR abil_name = ~SHMD~ END 
+                            
+                SAY NAME1 @005
+                SAY UNIDENTIFIED_DESC @006                                  
+        END
+        //give 1 use of ability
+        COPY ~3ed/Classes/Shaman/GV_SDNC.SPL~ ~override/GVSDNC1.SPL~
+            SPRINT resource ~SHM_DNC~
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 duration = 1 STR_VAR resource END
+            
+        COPY ~3ed/Classes/Shaman/GV_SDNC.SPL~ ~override/GV_SDNC.SPL~
+            SPRINT resource ~SHM_DNC~
+            LPF ADD_SPELL_EFFECT INT_VAR header = 1 opcode = 172 target = 2 duration = 1 STR_VAR resource END //remove
+            SPRINT resource ~GVSDNC1~
+            FOR (cha = 10; cha <= 24; cha = cha + 2) BEGIN
+                LPF ADD_SPELL_EFFECT INT_VAR header = 1 opcode = 326 target = 2 parameter1 = cha parameter2 = 132 duration = 1 STR_VAR resource END
+            END
+            SPRINT resource ~SHM_DNC~
+            //now add spell on every 2nd level
+            FOR (i  = 1; i < 30 ;i = i + 2) BEGIN
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = (i+1)/2 END
+                LPF ALTER_SPELL_HEADER INT_VAR header = (i+3)/2 min_level = i+1 END
+                LPF ADD_SPELL_EFFECT INT_VAR header = (i+3)/2 opcode = 171 target = 2 duration = 1 STR_VAR resource END
+            END
+            
+       	COPY ~3ed/Classes/Shaman/GV_SDNC.SPL~ ~override/DSBLDNC.SPL~			
+            LPF ADD_SPELL_EFFECT INT_VAR header=1 opcode=144 target=2 parameter1=0 parameter2=10 timing=1 duration=1 END //disable shamanic dance button
+            
+        //bonus uses at level 1 
+        LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
+						STR_VAR clab=~CLABSH.*\.2DA~ mask_file=~~ caption=~GV_SDNC~ END		
+        //uses at other levels
+        LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=2 add_at_level1=0 
+						STR_VAR clab=~CLABSH.*\.2DA~ mask_file=~~ caption=~GVSDNC1~ END
+        //disable dance             
+        LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
+						STR_VAR clab=~CLABSH.*\.2DA~ mask_file=~~ caption=~DSBLDNC~ END
+                        
+
+  
         //shamanic dance update
-        COPY_EXISTING ~SPSH004.SPL~ ~override~
-            //LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=363 END //remove movement rate checking
+        /*COPY_EXISTING ~SPSH004.SPL~ ~override~
             LPF ALTER_SPELL_HEADER INT_VAR header = 20 min_level=20 END
             FOR (i=21;i<=23;i=i+1) BEGIN		
                 SET d_prob = (i - 20) *2
@@ -1132,7 +1193,7 @@ END
                 END
             END
 	 
-            LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=363 END //remove movement rate checking
+            //LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=363 END //remove movement rate checking*/
 	
 	
             //favored of spirits for non bg1
@@ -1154,13 +1215,12 @@ END
                     LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 174 timing = 0 END
                     LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 50 timing = 0 END
                     LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 232 STR_VAR resource = ~FVRD_HL~ END
-				
-                OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN //apply favored of spirits every time after rest
-                    EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.*\.BCS~ ~override/SHAMAN.baf~
-                        EVALUATE_BUFFER			
-                END
-				
+							
             END
+            OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN //apply favored of spirits and shamanic dance uses every time after rest
+                EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.*\.BCS~ ~3ed/Classes/Shaman/SHAMAN.baf~
+                    EVALUATE_BUFFER			
+            END            
         END
 	 //-------------------------Berserker--------------------------
 	 COPY_EXISTING ~SPCL321D.SPL~ ~override~

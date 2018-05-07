@@ -23,7 +23,7 @@ LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 12 Con = 14 Int = 18 Wis = 9 Ch
 
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 10 Int = 16 Wis = 14 Cha = 14 MoveSilently = 5 HideInShadows = 5 InitialXp = 64000
                           STR_VAR NpcName = ~VICONI7~ ScriptName = ~BDVICONI~ ClassName = ~CLERIC_THIEF~ END   
-                          
+EXTEND_BOTTOM ~bdviconc.bcs~ ~3ed/Npc/Common/ViconiaThief.baf~ //make viconia react on find traps and hide ai settings                        
 COPY_EXISTING ~VICONI7.CRE~ ~override~
     //replace items with those of glint
     REPLACE_CRE_ITEM ~LEAT11~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~
@@ -41,7 +41,7 @@ LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 18 Dex = 10 Con = 13 Int = 8 Wis = 13 Ch
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 9 Dex = 16 Con = 12 Int = 17 Wis = 9 Cha = 11  RemoveKnownSpells = 0 InitialXp = 64000
                           STR_VAR NpcName = ~NEERA7~ ScriptName = ~BDNEERA~ ClassName = ~MAGE~ KitName = ~WILDMAGE~  END
 
-LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 18 Con = 12 Int = 10 Wis = 10 Cha = 18 InitialXp = 64000  
+LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 18 Con = 12 Int = 10 Wis = 10 Cha = 18 InitialXp = 64000  HpTotal = 10
                           STR_VAR NpcName = ~BAELOT7~ ScriptName = ~BDBAELOT~ ClassName = ~SORCERER~ KitName = ~DRAGON_DISCIPLE~  END
                           
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 14 Int = 10 Wis = 10 Cha = 16 InitialXp = 64000

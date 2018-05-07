@@ -8,6 +8,7 @@ IF
 
 	!Kit(Player%player_id%,SHAPESHIFTER)
 	!Kit(Player%player_id%,BEASTFRIEND) //avenger
+    !Class(Player%player_id%,SHAMAN)
 THEN
 	RESPONSE #100
 		ActionOverride("%script_name%",DestroySelf()) //kill existing wolf if it exists

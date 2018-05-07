@@ -4,6 +4,16 @@ IF
 	LevelGT(Player%player_id%,18)
 THEN
 	RESPONSE #100
-		ApplySpellRES("FVRD_SP",Player%player_id%)
+		ApplySpellRES("FVRD_SP",Player%player_id%) //favored of spirits
+		Continue()
+END
+
+
+IF
+	PartyRested()
+	Class(Player%player_id%,SHAMAN)
+THEN
+	RESPONSE #100
+		ActionOverride(Player%player_id%,ReallyForceSpellRes("GV_SDNC",Player%player_id%)) //shamanic dance uses
 		Continue()
 END
