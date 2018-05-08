@@ -220,11 +220,13 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
 	LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
 	
-  END ELSE PATCH_IF (category = ShieldsCategory ) BEGIN
+  END ELSE PATCH_IF (category = ShieldsCategory  AND NOT (~%SOURCE_RES%~ STR_EQ ~bdmisc10~)) BEGIN //except reed of echos in sod
 
     //update shield bonuses, allow bards (except jesters who can use only bucklers) to use all shields, dissalow everyone except fighter to use shields
     LPF SET_ITEM_USABILITY INT_VAR value = 1 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~bard~ END
+
     LPF SET_ITEM_USABILITY INT_VAR value = usable_by_thief STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~jester~ END
+
     PATCH_IF (~%unid_name%~ STR_EQ ~%MediumShieldStr%~) OR (~%unid_name%~ STR_EQ ~%AnomenShieldStr%~) BEGIN
   
         LPF GET_SPELL_EFFECT_VALUES INT_VAR header =0 match_opcode = 0 match_parameter2 = 0 RET ac_bonus = parameter1 found = found_match END

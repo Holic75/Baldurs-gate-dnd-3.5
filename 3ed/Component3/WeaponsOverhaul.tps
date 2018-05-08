@@ -17,7 +17,6 @@
 	COPY ~3ed/2HSTRBonus~ ~override~ //2h weapon bonuses
      
 
-   
 	//change description for weapons and apply protections from feats
 	COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
         READ_STRREF 0x0008 "unid_name"
@@ -65,7 +64,7 @@
 			LPF PTCH_WPN INT_VAR replace_label=2003 wpn_class_label=001 caption_label=2000 is_melee=1 is_2h=1 END	
 			LPF SET_ITEM_USABILITY INT_VAR value=usable_by_mage STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~jester~ END
 		END   
-		ELSE PATCH_IF (proficiency = 91) BEGIN //short sword ->blades
+		ELSE PATCH_IF (proficiency = 91) BEGIN //short sword ->blades           
 			WRITE_BYTE 0x0031 90
 			LPF PTCH_WPN INT_VAR replace_label=2004 wpn_class_label=021 caption_label=2000 is_melee=1 is_light=1 END
 			LPF SET_ITEM_USABILITY INT_VAR value=usable_by_mage STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~jester~ END

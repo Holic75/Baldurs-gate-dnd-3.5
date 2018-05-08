@@ -2,22 +2,23 @@
 	INCLUDE ~3ed/ADD_SMITE_EVIL_VARIATION.tph~
 
 //--------------------- kensai -----------------------------
-//replace permanent THAC0/dmg bonus with persistent (to be ale to block it with weapons)
+//replace permanent THAC0/dmg bonus with persistent (to be able to block it with weapons)
 
-OUTER_FOR (i=1;i<=7;i=i+1) BEGIN //up to +7 bonuses
+    OUTER_SET max_kensai_bonus = 7
 
-    OUTER_SPRINT resource EVALUATE_BUFFER ~KENSBN%i%~
-    COPY ~3ed/Classes/Kensai/KENSBN.SPL~ ~override/KENSBN%i%.SPL~         
-        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode =321 STR_VAR resource END
-        
-    COPY ~3ed/Classes/Kensai/KENSBN.EFF~ ~override/KENSBN%i%.EFF~
-        LPF ALTER_EFF STR_VAR resource END
-        
-    COPY ~3ed/Classes/Kensai/KENSBNA.SPL~ ~override/KENSBNA%i%.SPL~
-        LPF ALTER_SPELL_EFFECT STR_VAR resource END
-        
-END
+    OUTER_FOR (i=1;i<=max_kensai_bonus;i=i+1) BEGIN
 
+        OUTER_SPRINT resource EVALUATE_BUFFER ~KENSBN%i%~
+        COPY ~3ed/Classes/Kensai/KENSBN.SPL~ ~override/KENSBN%i%.SPL~         
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode =321 STR_VAR resource END
+            
+        COPY ~3ed/Classes/Kensai/KENSBN.EFF~ ~override/KENSBN%i%.EFF~
+            LPF ALTER_EFF STR_VAR resource END
+            
+        COPY ~3ed/Classes/Kensai/KENSBNA.SPL~ ~override/KENSBNA%i%.SPL~
+            LPF ALTER_SPELL_EFFECT STR_VAR resource END
+            
+    END
 
     //kensai bonuses regularization
     OUTER_FOR (i=89;i<=98;i=i+1) BEGIN     
@@ -26,7 +27,7 @@ END
          
 		 COPY ~3ed\Classes\Kensai\KENSR.SPL~ ~override\KENSR%i%.SPL~    
             LPF ADD_SPELL_EFFECT INT_VAR opcode =321 target =2 duration =1 STR_VAR resource END //remove protections and add them again
-            FOR (j=1;j<=7;j=j+1) BEGIN
+            FOR (j=1;j<=max_kensai_bonus;j=j+1) BEGIN
                 SPRINT resource EVALUATE_BUFFER ~KENSBN%j%~
                 LPF ADD_SPELL_EFFECT INT_VAR opcode =321 target =2 duration =1 STR_VAR resource END
                 LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target =2 duration =1 STR_VAR resource END
@@ -1067,20 +1068,49 @@ END
             OUTER_SET StrRefDisplay = RESOLVE_STR_REF(@004)
         END
 	
+        COPY_EXISTING ~BDSHA01A.CRE~ ~override~
+            LPF ALTER_CREATURE INT_VAR THAC0 = 17  AC = 5 END    
+        COPY_EXISTING ~BDSHA01B.CRE~ ~override~
+            LPF ALTER_CREATURE INT_VAR THAC0 = 17  AC = 5 END 
+        COPY_EXISTING ~BDSHA01C.CRE~ ~override~
+            LPF ALTER_CREATURE INT_VAR THAC0 = 17  AC = 4 END 
+            
+        COPY_EXISTING ~BDSHA06A.CRE~ ~override~
+            LPF ALTER_CREATURE INT_VAR THAC0 = 13  AC = 3 END    
+        COPY_EXISTING ~BDSHA06B.CRE~ ~override~
+            LPF ALTER_CREATURE INT_VAR THAC0 = 13  AC = 2 END 
+        COPY_EXISTING ~BDSHA06C.CRE~ ~override~
+            LPF ALTER_CREATURE INT_VAR THAC0 = 13  AC = 3 END 
+            
+        COPY_EXISTING ~BDSHA12A.CRE~ ~override~
+            LPF ALTER_CREATURE INT_VAR THAC0 = 9  AC = 2 END    
+        COPY_EXISTING ~BDSHA12B.CRE~ ~override~
+            LPF ALTER_CREATURE INT_VAR THAC0 = 9  AC = 2 END 
+        COPY_EXISTING ~BDSHA12C.CRE~ ~override~
+            LPF ALTER_CREATURE INT_VAR THAC0 = 9  AC = 2 END     
+
+        COPY_EXISTING ~BDSHA18A.CRE~ ~override~
+            LPF ALTER_CREATURE INT_VAR THAC0 = 5  AC = 0 END    
+        COPY_EXISTING ~BDSHA18B.CRE~ ~override~
+            LPF ALTER_CREATURE INT_VAR THAC0 = 5  AC = 0 END 
+        COPY_EXISTING ~BDSHA18C.CRE~ ~override~
+            LPF ALTER_CREATURE INT_VAR THAC0 = 5  AC = 0 END              
+            
+        OUTER_SET AcEffective = 0 - 2                    
         COPY_EXISTING ~BDSHA18A.CRE~	~override\BDSHA24A.CRE~
             REPLACE_CRE_ITEM ~BDSHA24A~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~
-            LPF ALTER_CREATURE INT_VAR MaxHp = 120 CurrentHp = 120 Strength  =19 Constitution = 19 Dexterity = 19 Level1 = 16 THAC0 = 7 LongName = StrRefA Tooltip = StrRefA
-							SaveDeath = 5 SaveWand = 7 SaveBreath = 6 SavePoly = 6 SaveSpell = 8 END
+            LPF ALTER_CREATURE INT_VAR MaxHp = 120 CurrentHp = 120 Strength  =19 Constitution = 19 Dexterity = 19 Level1 = 16 THAC0 = 1 LongName = StrRefA Tooltip = StrRefA
+							SaveDeath = 5 SaveWand = 7 SaveBreath = 6 SavePoly = 6 SaveSpell = 8 AcEffective END
 		
         COPY_EXISTING ~BDSHA18B.CRE~	~override\BDSHA24B.CRE~
             REPLACE_CRE_ITEM ~BDSHA24B~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~
-            LPF ALTER_CREATURE INT_VAR MaxHp = 120 CurrentHp = 120 Strength  =20 Constitution = 16 Dexterity = 23 Level1 = 16 THAC0 = 7 LongName = StrRefB Tooltip = StrRefB
-							SaveDeath = 5 SaveWand = 7 SaveBreath = 6 SavePoly = 6 SaveSpell = 8 END
+            LPF ALTER_CREATURE INT_VAR MaxHp = 120 CurrentHp = 120 Strength  =20 Constitution = 16 Dexterity = 23 Level1 = 16 THAC0 = 1 LongName = StrRefB Tooltip = StrRefB
+							SaveDeath = 5 SaveWand = 7 SaveBreath = 6 SavePoly = 6 SaveSpell = 8 AcEffective END
 									
         COPY_EXISTING ~BDSHA18C.CRE~	~override\BDSHA24C.CRE~
             REPLACE_CRE_ITEM ~BDSHA24C~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~	
-            LPF ALTER_CREATURE INT_VAR MaxHp = 120 CurrentHp = 120 Strength  =23 Constitution = 10 Dexterity = 23 Level1 = 16 THAC0 = 7 LongName = StrRefC Tooltip = StrRefC
-							SaveDeath = 5 SaveWand = 7 SaveBreath = 6 SavePoly = 6 SaveSpell = 8 END
+            LPF ALTER_CREATURE INT_VAR MaxHp = 120 CurrentHp = 120 Strength  =23 Constitution = 10 Dexterity = 23 Level1 = 16 THAC0 = 1 LongName = StrRefC Tooltip = StrRefC
+							SaveDeath = 5 SaveWand = 7 SaveBreath = 6 SavePoly = 6 SaveSpell = 8 AcEffective END
 	 
                                
         

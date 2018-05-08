@@ -259,7 +259,8 @@ WITH_TRA ~%LANGUAGE%\equipment.tra~ BEGIN
 	INCLUDE ~3ed/Component3/ArmorOverhaul.tps~
 
 END
-	
+
+
 WITH_TRA ~%LANGUAGE%\equipment.tra~ BEGIN
 
 
