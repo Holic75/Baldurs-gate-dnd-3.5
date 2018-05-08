@@ -213,8 +213,7 @@ ACTION_IF (IncludesSod) BEGIN
         LPF ALTER_EFF INT_VAR opcode = 49 parameter1 = 4 END
         
     COPY_EXISTING ~bdamul07.ITM~ ~override~  //replace +1 caster level with +2 wis 
-        LPF ALTER_ITEM_EFFECT INT_VAR check_globals = 1 match_opcode = 191 opcode = 49 parameter1 = 2 END
-        LPF ADD_ITEM_EQEFFECT INT_VAR opcode=19 target=1 timing=2 parameter1 = 2 END
+        LPF ALTER_ITEM_EFFECT INT_VAR check_globals = 1 match_opcode = 191 new_opcode = 49 parameter1 = 2 parameter2 = 0 END
         LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = 5013  new_substring_ref = 5014 END
         
     COPY_EXISTING ~bdbelt02.ITM~ ~override~ //replace +2 offhand thaco with +1 overall thaco

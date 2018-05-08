@@ -145,8 +145,8 @@ Weight: 5~
 	@102 = ~3 attacks per round~
 	@103 = ~Sets attacks per round to 5~
 	
-	@105 = ~1.5 attacks per round~
-	@106 = ~2.5 attacks per round~
+	@105 = ~1\.5 attacks per round~
+	@106 = ~2\.5 attacks per round~
 
 	@108 = ~Sets attacks per round to 4~
 	
@@ -294,7 +294,7 @@ Weight: 3~
 
 //------------------------------------------------------
     @1012=~– Barkskin: Armor Class set to 3~
-    @1013=~– Barkskin:  +3 AC bonus~
+    @1013=~– Barkskin: \+3 AC bonus~
 //------------------------------------------------------
     @1014=~Armor Class: 3~
     @1015=~Armor Class bonus: 3~
@@ -540,20 +540,20 @@ Weight: 1~
     @5001 = ~backstab~
     @5002 = ~sneak attack~
     
-    @5003 = ~vs. Spell~
-    @5004 = ~vs. Breath Weapon~
+    @5003 = ~vs\. Spell~
+    @5004 = ~vs\. Breath Weapon~
     
     @5009 = ~Wizard Slayers~
     @5010 = ~Hexblades~
     
-    @5011 = ~Backstab Multiplier: +1~
-    @5012 = ~Wisdom: +4~
+    @5011 = ~Backstab Multiplier: \+1~
+    @5012 = ~Wisdom: \+4~
     
-    @5013 = ~Caster Level: +1~
-    @5014 = ~Wisdom: +2~
+    @5013 = ~Caster Level: \+1~
+    @5014 = ~Wisdom: \+2~
     
-    @5015 = ~THAC0: +2 bonus with the off hand~
-    @5016 = ~THAC0: +1 bonus~
+    @5015 = ~THAC0: \+2 bonus with the off hand~
+    @5016 = ~THAC0: \+1 bonus~
     
     
     

@@ -17,12 +17,19 @@ DEFINE_PATCH_FUNCTION ~REPLACE_SUBSTRING~
 		READ_STRREF strref_offset "string_to_modify"
 		PATCH_IF (((~%string_to_modify%~ STRING_CONTAINS_REGEXP ~%substring_to_replace%~) == 0) 
 				AND ((~%string_to_modify%~ STRING_CONTAINS_REGEXP ~%new_substring%~) OR always_replace) AND erg_strref>0) BEGIN
-			INNER_PATCH_SAVE new_string ~%string_to_modify%~ BEGIN
-				REPLACE_TEXTUALLY ~%substring_to_replace%~ ~%new_substring%~
+            //remove regexp \         
+ 			INNER_PATCH_SAVE new_substring_no_regexp ~%new_substring%~ BEGIN
                 REPLACE_TEXTUALLY ~\~ ~~ //remove special regexp symbols
+			END	    
+     
+            //replace strings
+			INNER_PATCH_SAVE new_string ~%string_to_modify%~ BEGIN
+				REPLACE_TEXTUALLY ~%substring_to_replace%~ ~%new_substring_no_regexp%~
 			END	
+
+            
 			INNER_ACTION BEGIN
-				ACTION_IF ((~%string_to_modify%~ STRING_CONTAINS_REGEXP ~%new_substring%~)) BEGIN
+				ACTION_IF ((~%new_string%~ STRING_CONTAINS_REGEXP ~%new_substring%~) == 0) BEGIN
 					STRING_SET_EVALUATE %erg_strref% ~%new_string%~
 				END
 			END
