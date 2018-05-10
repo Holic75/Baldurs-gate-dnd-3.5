@@ -42,8 +42,8 @@ OUTER_FOR (player_id=1;player_id<=6;player_id=player_id+1) BEGIN
 		WRITE_LONG  0x000c name_ref  //tooltip
 		WRITE_SHORT 0x0024 3+i*(3+2+(1+i/4)/2)+i/2 //Current Hp
 		WRITE_SHORT 0x0026 3+i*(3+2+(1+i/4)/2)+i/2//Max Hp
-		WRITE_SHORT 0x0046 (7 - i / 2 )//Natural AC
-		WRITE_SHORT 0x0048 (7 - i / 2 )//Effective AC
+		WRITE_SHORT 0x0046 (5 - lvl_i / 2 )//Natural AC
+		WRITE_SHORT 0x0048 (5 - lvl_i / 2 )//Effective AC
 		WRITE_BYTE  0x0052 (20 - (3 * lvl_i) / 4)//THAC0
 		//APR
 		PATCH_IF (i<8) BEGIN

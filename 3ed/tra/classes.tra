@@ -1145,7 +1145,7 @@ When using flurry of blows, a monk may attack only with unarmed strikes, with da
 – At level 4, unarmed attacks are treated as a +1 magical weapon, monk also receives +1 bonus on unarmed to hit rolls. The enchantment and to hit bonus improve to +2 at level 8, +3 at level 12, +4 at level 16,  +5 at level 20 and +6 at level 28.
 – Gains +1 AC bonus at level 5 and every five levels thereafter.
 – Gains +1 AC bonus per 2 points of Wisdom above 10.
-– May use the Stunning Blow ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
+– May use the Stunning Blow ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.
 
 STUNNING BLOW: All successful attacks within the next round force the victim to save vs. Paralyze (with penalty equal to one quarter of monk level rounded down) or be stunned. This special ability automatically modifies normal attacks; no targeting needs to be done.
 
@@ -1176,10 +1176,10 @@ Advantages:
 
 FROZEN FIST: When this ability is activated, the Dark Moon Monk's fists are wreathed in a frosty shell. For 1 turn, the Dark Moon Monk's unarmed attacks deal an additional 2 points of cold damage on each successful hit.
 
-– 1st level: May cast Blindness once per day.
-– 3rd level: May cast Blur once per day.
-– 7th level: May cast Vampiric Touch once per day.
-– 11th level: May cast Mirror Image once per day.
+– 1st level: May cast Blindness once per day, gains an additional use at level 11.
+– 3rd level: May cast Blur once per day, gains an additional use at level 13.
+– 7th level: May cast Vampiric Touch once per day, gains an additional use at level 17.
+– 11th level: May cast Mirror Image once per day, gains an additional use at level 21.
 
 Disadvantages:
 – Alignment restricted to lawful evil.
@@ -1207,7 +1207,8 @@ GREATER SUN: The Sun Soul Monk wreathes <PRO_HIMHER>self in flames that act as a
 
 SUN SOULBEAM: The character emits a dazzling burst of light that strikes at all hostile creatures within a 30-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the character's current THAC0 (+3 to hit vs. undead). Struck creatures suffer 1d4 points of fire damage per monk level, unless they save vs. Spell for half with penalty equal to one fourth of monk level rounded down. In addition, all targets must save vs. Spell or be blinded for 2 hours.
 
-– 15th level: Gains an additional use of Sun Soulray.
+– 15th level: Gains additional uses of Sun Soulray and Flaming fists.
+- 25th level: Gains an additional use of Flaming Fists.
 
 Disadvantages:
 – Alignment restricted to lawful good.

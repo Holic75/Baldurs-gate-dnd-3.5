@@ -92,7 +92,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~ELFCHAN~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN12~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN13~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN14~) 
 					OR (~%SOURCE_RES%~ STR_EQ ~CHAN15~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN10~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN16~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN17~) 
 					OR (~%SOURCE_RES%~ STR_EQ ~CHAN14~) OR (~%SOURCE_RES%~ STR_EQ ~DWCHAN01~) OR (~%SOURCE_RES%~ STR_EQ ~DWCHAN02~) OR (~%SOURCE_RES%~ STR_EQ ~CLOLTH~) 
-                    OR (~%SOURCE_RES%~ STR_EQ ~CHAN19~)
+                    OR (~%SOURCE_RES%~ STR_EQ ~CHAN19~) OR (~%SOURCE_RES%~ STR_EQ ~bdchanel~)
 					BEGIN //elven chain  (allow stalker, beastmaster)
 	
 	update_unid_string = 1 
