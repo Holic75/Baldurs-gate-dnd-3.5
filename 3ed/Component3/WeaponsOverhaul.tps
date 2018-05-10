@@ -79,9 +79,17 @@
 			LPF PTCH_WPN INT_VAR replace_label=2005 wpn_class_label=021 caption_label=2000 is_melee=0 END			
 		END
 		ELSE PATCH_IF (proficiency = 92) BEGIN //axes and throwing axes (same) ->axes
-			WRITE_BYTE 0x0031 91
-			LPF PTCH_WPN INT_VAR replace_label=2006 wpn_class_label=023 caption_label=2000 is_melee=1 END	
-			LPF SET_ITEM_USABILITY INT_VAR value=usable_by_mage STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~jester~ END
+			WRITE_BYTE 0x0031 91			         
+            //update damage for 2-handed axes from iwd
+            READ_BYTE 0x0018 flags1
+            PATCH_IF (flags1 BAND 0b10) BEGIN
+                LPF PTCH_WPN INT_VAR replace_label=2006 wpn_class_label=023 caption_label=2000 is_melee=1 is_2h = 1 END	
+                LPF UPDATE_WEAPON_DMG INT_VAR match_dice_number = 1 match_dice_size = 10 target_dice_number = 1 target_dice_size = 12 END             
+            END
+            ELSE BEGIN
+                LPF PTCH_WPN INT_VAR replace_label=2006 wpn_class_label=023 caption_label=2000 is_melee=1 END	
+            END
+            LPF SET_ITEM_USABILITY INT_VAR value=usable_by_mage STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~jester~ END
 		END     
 		ELSE PATCH_IF (proficiency = 95) BEGIN //scimitar/wakizahshi/ninjato ->curved swords
 			WRITE_BYTE 0x0031 92

@@ -37,23 +37,23 @@
             LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 318 target = 2 parameter2 = 105 parameter1 = 13 duration = 1 STR_VAR resource =~WIZ_EPC~ END //thief_mage
             
 		LAF ADD_BONUS_FEATS INT_VAR min_level=21 max_level=24 d_level=1 add_at_level1=0
-						STR_VAR clab=~CLABMA+.*\.2DA~  caption=~WIZ_EPIC~ END	
+						STR_VAR clab=~CLABMA.+\.2DA~  caption=~WIZ_EPIC~ END	
 						
 		 //pure class cleric epic spells
         COPY_EXISTING ~CLR_EPC.SPL~ ~override~
             LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 318 target = 2 parameter2 = 115 parameter1 = 3 duration = 1 STR_VAR resource =~CLR_EPC~ END 
             
 		LAF ADD_BONUS_FEATS INT_VAR min_level=19 max_level=24 d_level=1 add_at_level1=0
-						STR_VAR clab=~CLABPR+.*\.2DA~  caption=~CLR_EPIC~ END	
+						STR_VAR clab=~\(\(CLABPR.+\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  caption=~CLR_EPIC~ END	
 						
 		//pure class druid epic spells
         COPY_EXISTING ~DRD_EPC.SPL~ ~override~
             LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 318 target = 2 parameter2 = 115 parameter1 = 11 duration = 1 STR_VAR resource =~DRD_EPC~ END 
             
 		LAF ADD_BONUS_FEATS INT_VAR mask = 0b111111000100000000000000
-						STR_VAR clab=~\(CLABDR+.*\)\|\(OHTYR\)\.2DA~ caption=~DRD_EPIC~ END	
+						STR_VAR clab=~\(CLABDR.+\)\.2DA~ caption=~DRD_EPIC~ END	
 						
 						
 		 //epic shaman spells
 		LAF ADD_BONUS_FEATS INT_VAR min_level=19 max_level=24 d_level=1 add_at_level1=0
-						STR_VAR clab=~CLABSH+.*\.2DA~   caption=~SHM_EPC~  END	
+						STR_VAR clab=~CLABSH.+\.2DA~   caption=~SHM_EPC~  END	

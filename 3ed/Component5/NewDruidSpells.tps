@@ -123,9 +123,16 @@
 		SAY UNIDENTIFIED_DESC @212	
 		ADD_SPELL "override/rgspc02.spl" 1  2 DRUID_LESSER_SUMMONING_2
         
-    COPY_EXISTING ~wolfsu.cre~ ~override/rgwolfsu.cre~
-        LPF ALTER_CREATURE INT_VAR Level1 = 3 CurrentHp = 18 MaxHp = 18 THAC0 = 18 APR = 1 END 
-        REPLACE_CRE_ITEM ~P1-6~ #0 #0 #0 ~IDENTIFIED~ ~weapon1~
+    ACTION_IF NOT (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+        COPY_EXISTING ~wolfsu.cre~ ~override/rgwolfsu.cre~
+            LPF ALTER_CREATURE INT_VAR Level1 = 3 CurrentHp = 18 MaxHp = 18 THAC0 = 18 APR = 1 END 
+            REPLACE_CRE_ITEM ~P1-6~ #0 #0 #0 ~IDENTIFIED~ ~weapon1~
+    END
+    ELSE BEGIN
+        COPY_EXISTING ~AS1wolf.cre~ ~override/rgwolfsu.cre~
+            LPF ALTER_CREATURE INT_VAR Level1 = 3 CurrentHp = 18 MaxHp = 18 THAC0 = 18 APR = 1 END 
+            REPLACE_CRE_ITEM ~P1-6~ #0 #0 #0 ~IDENTIFIED~ ~weapon1~       
+    END
         
 	//Lesser animal summoning 3
 	COPY ~3ed/Spells/AnimalSum3~ ~override~

@@ -13,3 +13,24 @@ All successful ranged attacks within the next 10 seconds have the following cumu
   12th Level: -2 penalty to target's Strength score.
   16th Level: +4 bonus to damage roll.~
 //-------------------------------------------------------------------------------------------------------------------------------//
+    @004 = ~Arrow +3~
+    @005 = ~These enchanted missiles far surpass the craftsmanship of any arrow, magical or otherwise, you have ever seen. 
+
+STATISTICS:
+
+THAC0: +3
+Damage: 1d6 (missile)
+Launcher: Bow
+
+Weight: 0~
+
+    @006 = ~Arrow +4~
+    @007 = ~These enchanted missiles far surpass the craftsmanship of any arrow, magical or otherwise, you have ever seen. 
+
+STATISTICS:
+
+THAC0: +4
+Damage: 1d6 (missile)
+Launcher: Bow
+
+Weight: 0~

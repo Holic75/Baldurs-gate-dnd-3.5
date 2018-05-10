@@ -13128,7 +13128,7 @@ menu
 		text style "button"
 		action "
 			chargen.ExtraAbilitiesMod=0
-			RollPointBuy(80);
+			RollPointBuy(80)
 			--createCharScreen:OnAbilityReRollButtonClick()
 		"
 	}

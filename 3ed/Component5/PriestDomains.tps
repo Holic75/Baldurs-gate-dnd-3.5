@@ -34,4 +34,4 @@
         
         //add domains as bonus feat to clerics at lvl1
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 delay = 5
-						STR_VAR clab=~\(\(CLABPR.*\)\|\(OHTYR\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRCC.SPL~ feat_type_file=~DFTCRE~ caption=~CDOM_FT~ END
+						STR_VAR clab=~\(\(CLABPR.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRCC.SPL~ feat_type_file=~DFTCRE~ caption=~CDOM_FT~ END

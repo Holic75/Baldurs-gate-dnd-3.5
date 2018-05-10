@@ -132,5 +132,5 @@
 						
 //add bonus feat to humans at lvl1
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 delay = 3
-						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREH.SPL~ feat_type_file=~SFTCRE~ caption=~HUMBONFT~ END
+						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREH.SPL~ feat_type_file=~SFTCRE~ caption=~HUMBONFT~ END
                         

@@ -1,11 +1,20 @@
 DEFINE_PATCH_FUNCTION ~DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST~
 
+	INT_VAR
+		level_to_keep = 1
+        
+        
 BEGIN
-  
+
   READ_SHORT 0x0068 Nheaders
   SET header_type = 0 - 1
-  FOR (i=255;i>1;i=i - 1) BEGIN 
-        LPF DELETE_SPELL_HEADER INT_VAR header_type min_level = i END
+  
+  FOR (i=255;i>0;i=i - 1) BEGIN 
+        PATCH_IF (i != level_to_keep) BEGIN
+            LPF DELETE_SPELL_HEADER INT_VAR header_type min_level = i END
+        END
   END
+  
+  LPF ALTER_SPELL_HEADER INT_VAR min_level = 1 END
   
 END// end of function

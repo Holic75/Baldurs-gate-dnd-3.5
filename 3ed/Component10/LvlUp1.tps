@@ -61,7 +61,7 @@
 		OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line%  AP_RSTXP%i%~
 	END
 	
-	COPY_EXISTING_REGEXP GLOB ~\(\(CLAB.*\)\|\(OHTYR\)\)\.2DA~ ~override~
+	COPY_EXISTING_REGEXP GLOB ~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ ~override~
 		COUNT_2DA_ROWS 20 "nrows"
 		INSERT_2DA_ROW nrows 20 ~%clab_line%~
 	 

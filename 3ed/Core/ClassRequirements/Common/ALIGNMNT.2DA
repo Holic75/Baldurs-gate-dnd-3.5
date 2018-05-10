@@ -60,6 +60,6 @@ DARK_MOON           0                   0                   1                   
 SUN_SOUL            1                   0                   0                   0                   0                   0                   0                   0                   0
 SHAMAN              0                   0                   0                   1                   1                   1                   0                   0                   0
 OHTYR               1                   1                   0                   1                   0                   0                   0                   0                   0
-OHTEMPUS            1                   1                   0                   1                   0                   0                   0                   0                   0
+OHTEMPUS            0                   0                   0                   0                   1                   0                   1                   1                   1
 THIEF_BASE          0                   1                   1                   1                   1                   1                   1                   1                   1
 GRIZZLY_BEAR        1                   1                   0                   1                   0                   0                   0                   0                   0

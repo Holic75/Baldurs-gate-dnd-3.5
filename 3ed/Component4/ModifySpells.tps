@@ -195,7 +195,7 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 
 
         //mass cause light
-        COPY_EXISTING ~SPPR525.SPL~ ~override~
+        COPY_EXISTING ~SPPR523.SPL~ ~override~
             WRITE_LONG 0x001e 0            //allow everyone to cast it (for iwd)    
             WRITE_LONG 0x0018 0 //no hostile since it targets directly undead
             READ_SHORT 0x0068 "Nheaders" //number of headers

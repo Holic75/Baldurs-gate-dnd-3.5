@@ -28,11 +28,12 @@ In C:\Users\UserName\Documents\Baldur's Gate (II) - Enhanced Edition folder find
 ```
 SetPrivateProfileString('Game Options','3E Thief Sneak Attack','1')
 ```
-if it is not already there (it replaces backstab with 3ed Sneak Attack).
+if it is not already there (it replaces backstab with 3ed Sneak Attack for Baldurs gate 1 and 2, for IWD it can be changed through the game menu).
 
 Also it is strongly advised that you make a backup of your dialog.tlk file before installing.
 
-This mod was only tested with clean BG:ENHANCED EDITION 2.3 install (or Sod with modmerge) and BG 2:ENHANCED EDITION 2.3 and might not be compatible with any other mods.
+This mod was only tested with clean BG:ENHANCED EDITION 2.3 install (or Sod with modmerge), BG 2:ENHANCED EDITION 2.3 and might not be compatible with any other mods.
+It also seems to install and work with Icewind Dale ENHANCED EDITION 2.5 but no extensive testing was done.
 
 I also strongly suggest to use a mod Colorful Specialist Slots made by kjeron ( https://us.v-cdn.net/5019558/uploads/editor/nn/cv0dplebsnjj.rar) which forces specialist mages to
 spend 1 or 2 slots only on the spells from corresponding school (I suggest to use 2 as per Pathfidner rules). It should be installed after DND3.5 mod.  
@@ -828,6 +829,16 @@ Advantages:
 Disadvantages:  
 – Alignment restricted to lawful good, neutral good, or lawful neutral.  
 – Can not Channel Energy.  
+
+### PRIEST OF TEMPUS  (IWD only)
+Advantages:  
+– May cast Chaos of Battle once per day starting from level 1. Gains one use at level 5 and every 5 levels thereafter.  
+```
+CHAOS OF BATTLE: Chaos of Battle applies bonuses to all allies and penalties to all enemies within a 30-ft. radius of the caster. The spell lasts for 3 rounds + 1 round per 2 points of caster Charisma above 10 and will randomly affect the targets' Armor Class, Hit Points, THAC0, saves, or luck. The magnitude of the effect starts at 1 (5 for Hit Points) at level 1 and will improve by 1 (5 for Hit Points) every 6 levels of the caster.
+```
+Disadvantages:  
+– May not channel energy.  
+– Alignment restricted to chaotic good, chaotic neutral, chaotic evil, or true neutral.  
 
 ### DRUID
 CLASS FEATURES:  
@@ -2149,11 +2160,11 @@ Ankheg Plate Mail      | 20% | +3 | -30%
  - Strength requirements for Composite Longbows were reduced to 14, they also receive 0.5 damage bonus from strength  
  - Damage of Bastard Swords was changed to 1d10  
  - Damage of Two-Handed Swords was changed to 2d6  
- - Damage of Halberds was changed to 1d12  
+ - Damage of Halberds and 2-handed axes was changed to 1d12  
  - Damage of Spears was changed to 1d8  
  - AC bonus of Medium Shields was increased to +2  
  - AC bonus of Large Shields was increased to +4, but they also now give -2 THAC0 penalty       
- - Initial number of attacks per rounds for all ranged weapons was set to 1, except for slings and crossbows for which it was set to 0.5; it increases at normal character APR progression and Rapid Shot feat also gives +1 APR with ranged weapons (except throwing axes and hammers)   
+ - Initial number of attacks per round for all ranged weapons was set to 1, except for slings and crossbows for which it was set to 0.5; and darts for which it was set to 2; it increases at normal character APR progression and Rapid Shot feat also gives +1 APR with ranged weapons (except throwing axes and hammers)   
  - Moonblade type was changed to longsword (do not worry, Xan can still use it)  
  - Sling bullets damage was changed from missile to crushing  
 

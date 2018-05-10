@@ -73,7 +73,7 @@
      
 	//high apr
 		LAF ADD_BONUS_FEATS INT_VAR min_level=6 max_level=20 d_level=5 add_at_level1=0 
-						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\)\.2DA~ mask_file=~~
+						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~APR_H~ END	
                         
     //create high apr clab_line
@@ -81,7 +81,7 @@
    
 	//medium apr
 		LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=20 d_level=7 add_at_level1=0 
-						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\)\.2DA~ mask_file=~~
+						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~APR_M~ END	
                         
 	//remove line from swashbuckler and replace it with high apr
@@ -94,7 +94,7 @@
         		
 	//low apr
 		LAF ADD_BONUS_FEATS INT_VAR min_level=11 max_level=20 d_level=10 add_at_level1=0 
-						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\)\.2DA~ mask_file=~~
+						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~APR_L~ END	
 	//remove line from battle sorceror and replace it with medium apr
 		COPY_EXISTING ~CLABSO01.2DA~ ~override~

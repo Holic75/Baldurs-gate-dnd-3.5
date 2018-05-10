@@ -5,9 +5,9 @@
 	//saving throw bonuses based on stats
 	COPY ~3ed/Core/Savingthrows~ ~override~	
 	
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLAB.+\)\|\(OHTYR\)\)\.2DA~  caption=~DEXSAVFT~ END	
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLAB.+\)\|\(OHTYR\)\)\.2DA~  caption=~CONSAVFT~ END	
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLAB.+\)\|\(OHTYR\)\)\.2DA~  caption=~WISSAVFT~ END	
+	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLAB.+\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  caption=~DEXSAVFT~ END	
+	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLAB.+\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  caption=~CONSAVFT~ END	
+	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLAB.+\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  caption=~WISSAVFT~ END	
 	
 	//--------------------------------------------------------------------------------------------------------------------------------------------//	
 	//bonus spells per level based on stats	

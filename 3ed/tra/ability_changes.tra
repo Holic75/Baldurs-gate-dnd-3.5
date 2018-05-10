@@ -61,3 +61,8 @@ At 17th level, the character is no longer subject to fatigue effects after Defen
 
     @008 =~Defensive Spin    
 During the next 4 rounds, the character is rooted to the spot and gains a +1 bonus to Armor Class per 2 levels, up to a maximum of +10.~
+
+//-------------------------------------
+    @009 =~Chaos of Battle
+
+Chaos of Battle applies bonuses to all allies and penalties to all enemies within a 30-ft. radius of the caster. The spell lasts 3 round + 1 round per 2 points of caster Charisma above 10 and will randomly affect the targets' Armor Class, Hit Points, THAC0, saves, or luck. The magnitude of the effect starts at 1 (5 for Hit Points) at level 1 and will improve by 1 (5 for Hit Points) every 6 levels of the caster.~

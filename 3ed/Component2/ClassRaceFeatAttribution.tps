@@ -162,7 +162,7 @@ COPY ~3ed/Feats/FeatAttribution/SFTCRE.BCS~ ~override/HFCRE.BCS~
 COPY ~3ed/Feats/SmallRacesBonus/SMLRCBN.SPL~ ~override~ 	
 
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\)\.2DA~ mask_file=~3ed/Feats/SmallRacesBonus/SMLRACE.SPL~
+						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~3ed/Feats/SmallRacesBonus/SMLRACE.SPL~
 						feat_type_file=~SMLRCBN~ caption=~SMLRACE~ END
 
 //fighter weapon training (+1 to hit, damage at lvls 8, 16, 24)

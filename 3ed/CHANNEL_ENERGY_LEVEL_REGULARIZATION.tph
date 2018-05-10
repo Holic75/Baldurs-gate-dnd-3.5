@@ -66,7 +66,7 @@ DEFINE_ACTION_FUNCTION ~CHANNEL_ENERGY_LEVEL_REGULARIZATION~
 		COUNT_2DA_ROWS 20 "nrows"	
 		INSERT_2DA_ROW nrows 20 ~%clab_line%~
   
-	COPY_EXISTING_REGEXP GLOB ~\(\(CLABPA03\)\|\(CLABPR02\)\|\(OHTYR\)\)\.2DA~  ~override~ // no ce for inquisitor, priest of talos, priest of tyr
+	COPY_EXISTING_REGEXP GLOB ~\(\(CLABPA03\)\|\(CLABPR02\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  ~override~ // no ce for inquisitor, priest of talos, priest of tyr, priest of tempus
 		COUNT_2DA_ROWS 20 "nrows"	
 		INSERT_2DA_ROW nrows 20 ~%clab_line0%~
 		

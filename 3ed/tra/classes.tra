@@ -1357,3 +1357,14 @@ CLASS FEATURES:
 
 WILD SURGE: A wild surge generates a completely random magical effect from the spell being cast. Its effects may be either beneficial or detrimental to the Wild Mage and <PRO_HISHER> allies.
 ~
+//------------------------------------------------------------------------------------------------
+@062 = ~PRIEST OF TEMPUS: Tempus, also known as the Lord of Battles or the Foehammer, is random in his favors, yet his chaotic nature favors all sides equally. Lord Tempus may be on an army's side one day and against them the next; such is the nature of war. Tempuran clergy can be found on both sides of a conflict, as none can ever truly know whom the war god will favor.
+
+Advantages:
+- May cast Chaos of Battle once per day starting from level 1. Gains one use at level 5 and every 5 levels thereafter.
+
+CHAOS OF BATTLE: Chaos of Battle applies bonuses to all allies and penalties to all enemies within a 30-ft. radius of the caster. The spell lasts for 3 rounds + 1 round per 2 points of caster Charisma above 10 and will randomly affect the targets' Armor Class, Hit Points, THAC0, saves, or luck. The magnitude of the effect starts at 1 (5 for Hit Points) at level 1 and will improve by 1 (5 for Hit Points) every 6 levels of the caster.
+
+Disadvantages:
+- May not channel energy.
+– Alignment restricted to chaotic good, chaotic neutral, chaotic evil, or true neutral.~
