@@ -30,8 +30,8 @@
 //	COPY_EXISTING ~F_DBONFT.SPL~ ~override~
 //		LPF  ALTER_SPELL_EFFECT INT_VAR duration  =1 timing =3  END
 	
-// ftr/mage (5,10,15,20, 22, 25 ,28)
-	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000100001000010000 delay = 2  
+// ftr/mage (4, 8, 12, 16, 20, 22, 25 ,28)
+	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010001000100010001000 delay = 2  
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFM.SPL~ feat_type_file=~SFTCRE~ caption=~F_MBONFT~ END
 // ftr/mage/thief (8, 14, 20, 22, 25 ,28)
 	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000010000010000000 delay = 2  
