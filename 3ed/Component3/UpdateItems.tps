@@ -223,7 +223,10 @@ ACTION_IF (IncludesSod) BEGIN
 
     COPY_EXISTING ~SHLD07P.ITM~ ~override~//sartessa vengeance description fix
 		READ_LONG 0x0054 ~id_descr_strref~
-		STRING_SET_EVALUATE %id_descr_strref% @5104          
+		STRING_SET_EVALUATE %id_descr_strref% @5104         
+
+    COPY_EXISTING ~bdbrd01.ITM~ ~override~ //remove 13 wis requirement from The Forest Queen's Benediction
+        WRITE_BYTE 0x002e 0
 END    
 
 ACTION_IF (~%GameId%~ STR_EQ ~Bg2~ OR IncludesSod) BEGIN

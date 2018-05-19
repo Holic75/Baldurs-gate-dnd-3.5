@@ -28,9 +28,9 @@ Wolf:
 	Number of Attacks: 2
 	Attack Damage: 1d8 (piercing), strikes as +1 weapon
 	Special Abilities:
-		– Cold Resistance: 100%
+		– Cold Resistance: 50%
 		– Electrical Resistance: 50%
-		– Magic Cold Resistance: 100%
+		– Magic Cold Resistance: 50%
 		
 Starting from level 8 <PRO_HESHE> can alternatively shapeshift into the following forms:
 
@@ -445,4 +445,264 @@ Special Abilities:
  - Attacks as if with +3 weapon.~
  
 	
+    
+	@200=~Shapeshift: Wild shape
+
+At 5th level druid gains ability to shapeshift into one of the following forms:
+
+Black Bear:
+	Strength: 16
+	Dexterity: 12
+	Constitution :18
+	Base Armor Class: 7
+	Number of Attacks 3
+	Attack Damage: 1d4+1 (piercing), strikes as +1 weapon
+	
+Brown Bear:
+	Strength: 18
+	Dexterity: 12
+	Constitution :16
+	Base Armor Class: 7
+	Number of Attacks 3
+	Attack Damage: 1d6 (piercing), strikes as +1 weapon	
+
+Wolf:
+	Strength: 15
+	Dexterity: 18
+	Constitution: 14
+	Base Armor Class: 6
+	Number of Attacks: 2
+	Attack Damage: 1d8 (piercing), strikes as +1 weapon
+	Special Abilities:
+		– Cold Resistance: 50%
+		– Electrical Resistance: 50%
+		– Magic Cold Resistance: 50%
+		
+Starting from level 8 <PRO_HESHE> can alternatively shapeshift into the following forms:
+
+Fire Salamander:
+	Strength: 18 
+	Dexterity: 19
+	Constitution: 15
+	Base Armor Class: 2 
+	Number of Attacks: same as druid 
+	Attack Damage: 1d6 + 1d8 (piercing), strikes as +3 weapon
+	Special Abilities: 
+		– THAC0: +1
+		– Fire Resistance: 50%
+		– Breathe Fireball three times per day (2d6 fire damage to target)
+	
+Baby Wyvern:
+	Strength: 16
+	Dexterity: 17
+	Constitution: 16
+	Base Armor Class: 3
+	Number of Attacks: 1
+	Attack Damage: 2d8 (crushing) + 1d6 (piercing), on hit it causes 1 poison damage/second for 6 seconds (Save vs. Poison to avoid)
+	Hits as though using a +2 weapon
+	Special Abilities:
+		– Immunity to hold, paralysis, slow, level drain, web, entangle, and grease
+		
+		
+Sword Spider:
+	Strength: 16
+	Dexterity: 16
+	Constitution: 10
+	Base Armor Class: 3
+	Number of Attacks: 4
+	Attack Damage: 1d4 (piercing), strikes as +1 weapon
+	Special Abilities:
+		– Immunity to web
+
+Starting from level 11 Druid can alternatively shapeshift into the following forms:
+
+Polar Bear:
+	Strength: 20
+	Dexterity: 10
+	Constitution :19
+	Base Armor Class: 4
+	Number of Attacks 3
+	Attack Damage: 1d10 (piercing), strikes as +3 weapon
+    Special Abilities:
+        – Cold Resistance: 75%
+        – Fire Resistance: -25%
+	
+Boring Beetle:
+	Strength: 18
+	Dexterity: 7
+	Constitution :16
+	Base Armor Class: -2
+	Number of Attacks 1
+	Attack Damage: 5d4 (crushing), strikes as +3 weapon	
+    Special Abilities:
+        – Slashing Resistance: 50%
+        – Piercing Resistance: 50%
+        – Missile Resistance: 50%
+        
+Winter Wolf:
+	Strength: 18
+	Dexterity: 13
+	Constitution: 18
+	Base Armor Class: 2
+	Number of Attacks: 2
+	Melee Attack Damage: 1d6 (piercing) + 1d6 (cold), strikes as +3 weapon
+    Ranged Attack Damage: 2d6 (cold, save vs. Breath Weapon for half), strikes as +3 weapon
+    Special Abilities:
+        – Cold Resistance: 75%
+        – Fire Resistance: -25%
+		
+       
+Starting from level 16 Druid can alternatively shapeshift into large elemental forms:
+
+Large Fire Elemental:
+	Strength: 14
+	Dexterity: 21
+	Constitution: 16
+	Base Armor Class: 6
+	Number of Attacks: 2
+	Attack Damage: 2d6 (crushing) + 2d6 fire, strikes as +4 weapon
+	Special Abilities:
+		– Immunity to weapons below +3
+		– Weapon Finesse
+		– Fire Resistance: 100%
+		– Cold Resistance: -50%
+		– Physical Resistance: 25%
+		
+Large Earth Elemental:
+	Strength: 21
+	Dexterity: 8
+	Constitution: 19
+	Base Armor Class: 0
+	Number of Attacks: 2
+	Attack Damage: 2d10 (crushing), strikes as +4 weapon
+	Special Abilities:
+		– Immunity to weapons below +3
+		– Physical Resistance: 50%
+        
+Large Water Elemental:
+	Strength: 20
+	Dexterity: 14
+	Constitution: 19
+	Base Armor Class: 1
+	Number of Attacks: 2
+	Attack Damage: 2d8 (crushing), strikes as +4 weapon
+	Special Abilities:
+		– Immunity to weapons below +3
+		– Physical Resistance: 50%
+		– Cold Resistance: -25%
+		– Acid Resistance: 75%
+		– Electrical Resistance: -75%
+		
+Finally, at level 20  <PRO_HESHE>	can take forms of greater elementals instead:
+
+Greater Fire Elemental:
+	Strength: 18
+	Dexterity: 25
+	Constitution: 18
+	Base Armor Class: 6
+	Number of Attacks: 2
+	Attack Damage: 2d8 (crushing) + 2d8 fire, strikes as +4 weapon
+	Special Abilities:
+		– Immunity to weapons below +3
+		– Weapon Finesse
+		– Fire Resistance: 100%
+		– Cold Resistance: -50%
+		– Physical Resistance: 25%
+		
+Greater Earth Elemental:
+	Strength: 25
+	Dexterity: 8
+	Constitution: 21
+	Base Armor Class: 0
+	Number of Attacks: 2
+	Attack Damage: 2d12 (crushing), strikes as +4 weapon
+	Special Abilities:
+		– Immunity to weapons below +3
+		– Physical Resistance: 50%
+        
+        
+Greater Water Elemental:
+	Strength: 24
+	Dexterity: 18
+	Constitution: 21
+	Base Armor Class: 1
+	Number of Attacks: 2
+	Attack Damage: 2d10 (crushing), strikes as +4 weapon
+	Special Abilities:
+		– Immunity to weapons below +3
+		– Physical Resistance: 50%
+		– Cold Resistance: -25%
+		– Acid Resistance: 75%
+		– Electrical Resistance: -75%~
+        
+@31 = ~Polar Bear Shape~
+@32 = ~Boring Beetle Shape~
+@33 = ~Winter Wolf Shape~
+@34 = ~Large Water Elemental Form~
+@35 = ~Greater Water Elemental Form~
+
+
+@131 = ~Polar Bear:
+	Strength: 20
+	Dexterity: 10
+	Constitution :19
+	Base Armor Class: 4
+	Number of Attacks 3
+	Attack Damage: 1d10 (piercing), strikes as +3 weapon
+    Special Abilities:
+        – Cold Resistance: 75%
+        – Fire Resistance: -25%~
+	
+@132 = ~Boring Beatle:
+	Strength: 18
+	Dexterity: 7
+	Constitution :16
+	Base Armor Class: -2
+	Number of Attacks 1
+	Attack Damage: 5d4 (crushing), strikes as +3 weapon	
+    Special Abilities:
+        – Slashing Resistance: 50%
+        – Piercing Resistance: 50%
+        – Missile Resistance: 50%~
+        
+@133 = ~Winter Wolf:
+	Strength: 18
+	Dexterity: 13
+	Constitution: 18
+	Base Armor Class: 2
+	Number of Attacks: 2
+	Melee Attack Damage: 1d6 (piercing) + 1d6 (cold), strikes as +3 weapon
+    Ranged Attack Damage: 2d6 (cold, save vs. Breath Weapon for half), strikes as +3 weapon
+    Special Abilities:
+        – Cold Resistance: 75%
+        – Fire Resistance: -25%~
+
+@134 = ~Large Water Elemental:
+	Strength: 20
+	Dexterity: 14
+	Constitution: 19
+	Base Armor Class: 1
+	Number of Attacks: 2
+	Attack Damage: 2d8 (crushing), strikes as +4 weapon
+	Special Abilities:
+		– Immunity to weapons below +3
+		– Physical Resistance: 50%
+		– Cold Resistance: -25%
+		– Acid Resistance: 75%
+		– Electrical Resistance: -75%~
+        
+@135 = ~Greater Water Elemental:
+	Strength: 24
+	Dexterity: 18
+	Constitution: 21
+	Base Armor Class: 1
+	Number of Attacks: 2
+	Attack Damage: 2d10 (crushing), strikes as +4 weapon
+	Special Abilities:
+		– Immunity to weapons below +3
+		– Physical Resistance: 50%
+		– Cold Resistance: -25%
+		– Acid Resistance: 75%
+		– Electrical Resistance: -75%~
+        
 	

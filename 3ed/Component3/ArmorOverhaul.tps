@@ -28,11 +28,14 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
  
   
   //unique armors
-  PATCH_IF ((~%SOURCE_RES%~ STR_EQ ~PLAT06~) OR (~%SOURCE_RES%~ STR_EQ ~KING~)) BEGIN //ankheg or ice king plate mail -> chain mail (allow beastmaster)
+  PATCH_IF ((~%SOURCE_RES%~ STR_EQ ~PLAT06~) OR (~%SOURCE_RES%~ STR_EQ ~KING~) OR (~%SOURCE_RES%~ STR_EQ ~bdplat04~)) BEGIN 
+  //ankheg, rhino beetle or ice king plate mail -> chain mail (allow beastmaster)
 	WRITE_SHORT 0x0026 8 //str req to 8 
 	LPF UPDATE_ARMOR INT_VAR is_light = 0 spell_failure = 20 max_dex = 16 skill_penalty = 3  string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 14 END	
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~beastmaster~ END
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~ END
+    LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~druid~ END
+    LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~ranger~ END
 	
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~CHAN17~) BEGIN //ashen scales +2 -> chain mail (allow bard)
   
@@ -161,7 +164,6 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~NPARM~) BEGIN//jan's lether armor (remove requirements)
   
-	//LPF UPDATE_ARMOR INT_VAR spell_failure = 10 max_dex = 20 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 11 update_unidstring = 0 END
 	WRITE_BYTE 0x002c 0 //dex
 	SAY IDENTIFIED_DESC @1002
 	SAY UNIDENTIFIED_DESC @1002
@@ -182,7 +184,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	LPF UPDATE_ARMOR INT_VAR spell_failure = 15 max_dex = 18 skill_penalty = 1 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 12 END
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_fighter STR_VAR  values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~kensai~ END
 				
-  END ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~%HideArmorStr%~) BEGIN //Hide Armor
+  END ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~%HideArmorStr%~) BEGIN //Hide Armor 
   
 	PATCH_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
 		LPF UPDATE_ARMOR INT_VAR spell_failure = 20 max_dex = 16 skill_penalty = 2 keep_old_string = 0 clear_thief_penalty = 1 string_to_replace_ref_match = 131 string_to_replace_ref = 10 new_string_to_add_ref = 132 END

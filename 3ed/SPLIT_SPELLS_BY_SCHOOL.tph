@@ -53,9 +53,7 @@ DEFINE_ACTION_FUNCTION ~SPLIT_SPELLS_BY_SCHOOL~
 							COUNT_2DA_ROWS 1 n_rows
 							INSERT_2DA_ROW %n_rows% 1 ~%spell_name%~
 					END
-				END
-			
-			
+				END			
 			END
 			
 			

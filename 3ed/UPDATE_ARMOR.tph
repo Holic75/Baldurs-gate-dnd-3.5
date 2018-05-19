@@ -132,7 +132,7 @@ DEFINE_PATCH_FUNCTION ~UPDATE_ARMOR~
         
         READ_STRREF 0x000c ArmorName ELSE ~~
         FOR (k = 1;k <= 6; k=k+1) BEGIN       
-           SET current_enchantment = (~%ArmorName%~ STRING_CONTAINS_REGEXP ~+%k%~) ? current_enchantment : k
+           SET current_enchantment = (~%ArmorName%~ STRING_CONTAINS_REGEXP ~\+%k%~) ? current_enchantment : k
         END
         PATCH_IF (current_enchantment == 0 ) BEGIN
             READ_LONG 0x0060 current_enchantment

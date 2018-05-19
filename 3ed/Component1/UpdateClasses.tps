@@ -483,12 +483,23 @@
 	//------------------------------Druid shapeshifts and other polymorph forms and charm animal update-----------------------------------------		
 	WITH_TRA ~%LANGUAGE%\druid_shapeshift.tra~ BEGIN   
 		//shapeshifts that can use items
-		COPY ~3ed/Classes/Druid/Polymorph2DA~ ~override~ //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		COPY ~3ed/Classes/Druid/Polymorph2DA~ ~override~ 
 		COPY ~3ed/Classes/Druid/Forms~ ~override~
         COPY ~3ed/Classes/Druid/Misc~ ~override~
+        COPY ~3ed/Classes/Druid/Icons~ ~override~
+        
 		COPY_EXISTING ~DRDPOLY.SPL~ ~override~ //standard shapeshift
 			SAY NAME1 @001
-			SAY UNIDENTIFIED_DESC @002
+            PATCH_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN //add polar bear, winter wolf, boring beatle and water elementals
+                SAY UNIDENTIFIED_DESC @200
+                LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~DRDPL3~ resource = ~DRDPL31~ END
+                LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~DRDPL4~ resource = ~DRDPL41~ END
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 insert_point = 2 END
+                LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 11 END
+                LPF ALTER_SPELL_EFFECT_EX INT_VAR header = 3 STR_VAR resource = ~DRDPL2A~ END
+            END ELSE BEGIN
+                SAY UNIDENTIFIED_DESC @002
+            END
 		
         ACTION_DEFINE_ASSOCIATIVE_ARRAY PolymorphForms BEGIN ~PL_WRWF~ => ~druid~ END
 		COPY_EXISTING ~PL_WRWF.SPL~ ~override~ //werewolf
@@ -507,6 +518,11 @@
 			~PL_SALA~ => 012
 			~PL_WYVN~ => 013
 			~PL_SPDR~ => 014
+            ~PL_BRPO~ => 031
+            ~PL_BORB~ => 032
+            ~PL_WOLW~ => 033
+            ~PL_WATL~ => 034
+            ~PL_WATH~ => 035
 		END
 		
 		
@@ -602,7 +618,6 @@
         ACTION_PHP_EACH PolymorphForms AS SpellName => Source BEGIN
             
             COPY_EXISTING ~%SpellName%.SPL~ ~override~   
-
                 //polymorph effects
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 172 target = 1 duration = 1 insert_point = 0 STR_VAR resource=~PL_NFRM~ END
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 135 target = 1 duration = 1 insert_point = 0 STR_VAR resource=~~ END
@@ -638,8 +653,7 @@
             LPF DELETE_EFFECT INT_VAR match_opcode = 171  STR_VAR match_resource ~PL_NFRM~ END
             
         //fix shapechange
-        COPY_EXISTING ~SPWI916.SPL~ ~override~
-           
+        COPY_EXISTING ~SPWI916.SPL~ ~override~        
             LPF DELETE_EFFECT INT_VAR match_opcode = 171  STR_VAR match_resource~SPIN151~ END
             LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~SPIN151~ resource = ~PL_NFRM~ END
             LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~SPIN152~ resource = ~PL_MIND~ END
@@ -673,8 +687,8 @@
                                         RET need_change = found_match my_target=target my_power = power my_savingthrow = savingthrow my_savebonus = savebonus END
             
             PATCH_IF (need_change) BEGIN
-                LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 duration = 1 power = 0 timing = 0 insert_point = 0 target = my_target power = my_power savingthrow = my_savingthrow savebonus = my_savebonus
-                                     STR_VAR resource = ~PL_NFRM~ END
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 duration = 1 power = 0 timing = 0 insert_point = 0 target = my_target 
+                    power = my_power savingthrow = my_savingthrow savebonus = my_savebonus STR_VAR resource = ~PL_NFRM~ END
                 LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~SPIN151~ resource = ~PL_NFRM~ END
                 LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~SPIN152~ resource = ~PL_MIND~ END
                 LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~SPIN153~ resource = ~PL_GOLI~ END
@@ -1288,10 +1302,11 @@ END
                LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode=12 parameter2 = 0 parameter1 = 15 timing = 4 duration = brsrk_duration resist_dispel = 2 END //damage after berserk 
                LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 parameter1 = HpDmgStrRef target = 1 duration = 1 insert_point = 0 END //string about hp_damage
               
-            COPY_EXISTING ~BRSR4%con%.SPL~  ~override/BRSR5%con%.SPL~
-               LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 146 END //remove fatigue
+            //COPY_EXISTING ~BRSR4%con%.SPL~  ~override/BRSR5%con%.SPL~
+            //   LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 146 END //remove fatigue
 
-            COPY_EXISTING ~BRSR5%con%.SPL~ ~override/LBRSR%con%.SPL~
+            //COPY_EXISTING ~BRSR5%con%.SPL~ ~override/LBRSR%con%.SPL~
+            COPY_EXISTING ~BRSR4%con%.SPL~ ~override/LBRSR%con%.SPL~
                LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 duration = 2400 target =1 STR_VAR resource = ~SPCL321~ END //fatigue	
                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 73 parameter1 = 15 END //damage
 			   LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 278 parameter1 = 5 END //thac0
@@ -1319,10 +1334,10 @@ END
             LPF ADD_SPELL_HEADER INT_VAR copy_header = 3 END
             LPF ALTER_SPELL_HEADER INT_VAR header = 4 min_level = 18 END	
         
-            LPF ADD_SPELL_HEADER INT_VAR copy_header = 4 END
-            LPF ALTER_SPELL_HEADER INT_VAR header = 5 min_level = 20 END
+            //LPF ADD_SPELL_HEADER INT_VAR copy_header = 4 END
+            //LPF ALTER_SPELL_HEADER INT_VAR header = 5 min_level = 20 END
             LPF DELETE_EFFECT INT_VAR check_headers = 1 END
-            LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = 5 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 126 STR_VAR abil_name = ~BRSR~ END 
+            LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = 4 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 126 STR_VAR abil_name = ~BRSR~ END 
             
             READ_LONG 0x0050 ~descr_strref~
             STRING_SET_EVALUATE %descr_strref% @004	

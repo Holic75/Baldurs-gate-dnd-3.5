@@ -52,10 +52,11 @@
 – Move Silently: -20%
 – Hide In Shadows: -20%~
 
-	@133=~– Open Locks: -10%
-– Find Traps: -10%
-– Pick Pockets: -10%
-– Move Silently: -20%~
+	@133=~– Open Locks: -10%.*
+– Find Traps: -10%.*
+– Pick Pockets: -10%.*
+– Move Silently: -20%.*~
+
 
 	@132=~– Max Dexterity AC Bonus: 3
 – Arcane Spell Casting Failure: 20%

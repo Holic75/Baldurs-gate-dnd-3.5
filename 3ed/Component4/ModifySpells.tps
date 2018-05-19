@@ -136,6 +136,8 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
             LPF FIX_HEAL_3ED INT_VAR header = i+1 power = 5 target = 2 resist_dispel_heal = 2 resist_dispel_harm = 1 heal_amount = i+9 savingthrow = 1  enemy_ally = 1
                 STR_VAR heal_prefix = ~EN_C1~ harm_prefix = ~EN_H1~ END               
         END
+        READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @321	  
 		
 	//update harm spells
 	ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN

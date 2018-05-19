@@ -376,7 +376,7 @@ Half-orcs have the following traits:
 
 ## 4. Classes
 
-All the classes were changed to better correspond to the DND 3.5 Edition counterparts (or Pathfinder ones), some of the kits were completely replaced or removed. Dual-classing was disabled (instead humans can now choose any multi-class) since with the feat system it becomes utterly unfair (dual-class characters would gain twice the number of feats). The experience progression of multi-classes were changed so that with same amount of experience they will have the same level as single classes (i.e. a for example with 160 000 experience a single class Fighter will reach level 9, same as Fighter/Mage will reach level 9/9), although the abilities they get were changed so that instead of being almost a direct sum of 2 single classes they now correspond more to Pathfinder approach for  hybrid classes which gain a mix of certain traits of both parent classes as well receiving some unique abilities.
+All the classes were changed to better correspond to the DND 3.5 Edition counterparts (or Pathfinder ones), some of the kits were completely replaced or removed. Dual-classing was disabled (instead humans can now choose any multi-class) since with the feat system it becomes utterly unfair (dual-class characters would gain twice the number of feats). The experience progression of multi-classes were changed so that with same amount of experience they will have the same level as single classes (i.e. a for example with 160 000 experience a single class Fighter will reach level 9, same as Fighter/Mage will reach level 9/9), although the abilities they get were changed so that instead of being almost a direct sum of 2 single classes they now correspond more to Pathfinder approach for  hybrid classes which gain a mix of certain traits of both parent classes as well as receiving some unique abilities.
 The number of experience points needed to reach new levels was also changed as follows:
 
 Lvl| Exp Points |
@@ -451,16 +451,16 @@ At 16th level the attack and damage rolls bonus increases to +5 and physical dam
 – 16th level: Supreme Power Attack:  Power attack damage bonus is further increased to +6 (+9 for two-handed weapons).  
 – 18th level: Immortal Berserker: The hit points of enraged Berserker can not be reduced below 1, but at the end of Rage Berserker receives 15 points of damage which can kill her if she has fewer hit points.   
 Note: although her hit points can not be reduced below 1, Berserker can still be killed by spells like Slay Living, Disintegrate and others.  
-– 20th level: Tireless Berserk: Berserker is no longer winded after Rage.  
 – 20th level: Last Berserk: Berserker gains one use per day of special form of Rage called Last Berserk. It has the same effect as normal Rage and Berserker also receives +10 damage bonus on damage rolls (to a total of +15). However it can not be prolonged and after it ends Berserker can no longer use Rage for next 8 hours.    
 – Gets one bonus feat at levels 22, 25 and 28.
 
 Disadvantages:  
 – Becomes winded after berserking: -2 penalty to Armor Class, to-hit rolls, and damage rolls.  
 – Can not use ranged weapons.  
+- Does not get Hardiness and Resist Magic abilities.  
 – Does not get bonus feats like trueclass fighters do.  
 – May only put one star in any weapon she can use.  
-– May not wear armor heavier than splint mail and use larrge shield.  
+– May not wear armor heavier than splint mail and use large shield.  
 – Alignment restricted to any non-lawful.  
 
 ### HEXBLADE (replaces WIZARDSLAYER)
@@ -493,10 +493,12 @@ AURA OF UNLUCK:
 When this ability is activated, all enemies within 30 feet of the Hexblade suffer -1 penalty to luck. This penalty increases to -2 at level 16, -3 at level 20 and finally up to -4 at level 24.
 The effect lasts for 3 rounds + 1 round per 2 points of Hexblades's Charisma above 10.
 ```
+– High Savingthrows vs. Spell  
 
 Disadvantages:  
 – May not be of good alignment.  
 – Does not get bonus feats like trueclass fighters do.  
+- Does not get Hardiness and Resist Magic abilities.  
 – May only put one star in any weapon she can use.  
 – May use only light armor and medium armor, may not use large shield.  
 
@@ -515,28 +517,33 @@ Disadvantages:
 – May only wear light armor.  
 – May not use shields.  
 – Does not get bonus feats like trueclass fighters do.  
+- Does not get Hardiness and Resist Magic abilities.  
 – May only put one star in any weapon category she can use.  
 – Alignment restricted to any non-chaotic.  
 
 ### BARBARIAN
-CLASS FEATURES:  
-– May not wear armor heavier than splint mail and use large shield.  
-– May only get 1 star with any weapon class.  
+Advantages:  
 – Moves 2 points faster than other characters.  
 – Immune to sneak attack.  
-– Gets one bonus feat at level 5, 10, 15, 20, 22, 28.  
 – May use the Rage ability once per day. Gains one use at level 1, then at level 4 and an additional use every 4 levels thereafter.  
 ```
-RAGE: The character is enraged  which grants her a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class, and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
-The enraged state lasts 3 rounds + 1 round per 2 points of newly modified Constitution above 10.
-At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
+RAGE: The enraged status provides a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+It lasts for 3 rounds + 1 round per 2 points of newly modified Constitution above 10. At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
 ```
-– 7th level: Gains 5% resistance to crushing, slashing, piercing, and missile damage. An additional 5% is gained every 3 levels thereafter.  
+– Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 7 and every 3 levels thereafter to a maximum of 40% at level 28.  
 – 11th level: Greater Rage: Barbarian’s Rage bonuses to Strength and Constitution during rage each increase to +6, and morale bonus on saves  vs. Spell increases to +6. The penalty to AC remains at -2.  
 – 17th level: Tireless Rage: Barbarian is no longer fatigued after the rage ends.  
-– 20th level: Mighty Rage: Barbarian’s Rage bonuses to Strength and Constitution during rage each increase to +8, and morale bonus on saves  vs. Spell increases to +4. The penalty to AC remains at -2.   
+– 20th level: Mighty Rage: Barbarian’s Rage bonuses to Strength and Constitution during rage each increase to +8, and morale bonus on saves  vs. Spell increases to +4. The penalty to AC remains at -2.  
 – Hit Die: d12  
-– High THAC0/APR progression, High Savingthrows vs. Death , vs. Polymorph, vs. Breath Weapon and vs. Wand
+– High Savingthrows vs. Breath Weapon and vs. Wand  
+
+Disadvantages:  
+– May not wear armor heavier than splint mail.  
+- May not use large shields.  
+– Gets bonus feats only at levels 5, 10, 15, 20, 22 and 28.    
+- Does not get Hardiness and Resist Magic abilities.  
+- Can not use Hardiness and Resist Magic abilities.  
+– May only put one star in any weapon she can use.     
 
 ### DWARVEN DEFENDER
 Advantages:  
@@ -548,13 +555,14 @@ At the end of the Defensive Stance, the character becomes fatigued (-2 penalty t
 At 10th level, Dwarven Defender’s bonuses to Strength, Constitution and AC each increase to +4, and bonus on saves increases to +2.
 At 17th level, the character is no longer subject to fatigue effects after Defensive Stance.
 ```
-– Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 3 and every 5 levels thereafter to a maximum of 30% at level 28.  
-– Gets one bonus feat at level 5 and every 5 levels thereafter.  
+– Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 3 and every 3 levels thereafter to a maximum of 50% at level 28.
+– High Savingthrows vs. Spell   
 – Hit Die: d12  
 
 Disadvantages:  
 – Race restricted to dwarf.  
-– Does not get bonus feats like trueclass fighters do.  
+– Gets bonus feats only at levels 5, 10, 15, 20, 22 and 28.  
+- Does not get Hardiness and Resist Magic abilities.  
 – May only put one star in any weapon she can use.  
 
 ### PALADIN
@@ -851,9 +859,10 @@ CLASS FEATURES:
 – May call for an animal companion who fights for her side.  
 – 5th level: Gains Shapeshift ability which allows to transform  into a wolf, black bear, or brown bear once per day, gains additional uses at levels 6, 7, 10, and every 4 levels thereafter. While shapechanged druid can not use any weapons or shields but continues to benefit from bonuses from all the other equipment.  
 – 8th level: While using Shapeshift ability a Druid can alternatively transform into fire salamander, sword spider or baby wyvern.  
+– 11th level (IWD only): While using Shapeshift ability a Druid can alternatively transform into polar bear, boring beetle or winter wolf.  
 – 15th level: Becomes immune to poison.  
-– 16th level: While using Shapeshift ability a Druid can alternatively take form of large fire or earth elementals.    
-– 20th level: While using Shapeshift ability a Druid can alternatively take form of greater fire or earth elementals.  
+– 16th level: While using Shapeshift ability a Druid can alternatively take form of large fire, earth  or water (IWD only) elementals.    
+– 20th level: While using Shapeshift ability a Druid can alternatively take form of greater fire, earth  or water (IWD only) elementals.  
 – 21th level: May call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.  
 – Gains access to the following epic spells: Elemental Summoning (at level 19), Aura of Flaming Death (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Greater Elemental Summoning (at level 23) and Nature's Avatar (at level 24).  
 – Gets one bonus feat at levels 22 and 28.  
@@ -899,6 +908,7 @@ CLASS FEATURES:
 – May only use the following weapons: dagger, quarterstaff, dart, sling, crossbow.  
 – Receives one bonus magic Feat at level 5, 10, 15, 20, 22 and 28.  
 – May cast arcane spells.  
+- Acquires 2 scrolls with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Gains access to the following epic spells: Comet (at level 21), Energy Blades (at level 22), Dragon's Breath (at level 23) and Summon Planetar (at level 24).  
 – Hit Die: d4  
 – Low THAC0/APR progression, High Savingthrows vs. Spell
@@ -1042,6 +1052,7 @@ CLASS FEATURES:
 – Increased Lore score.  
 – May cast arcane spells up to level 6.  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, and finally at level 12 Armored Arcana: Splint Mail Casting.  
+- Acquires one scroll with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Bardic Performance: a bard is trained to perform to create magical effects on those around her. Bard can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each even level a bard can use bardic performance one more time per day.  
 – Medium THAC0/APR progression, High Savingthrows vs. Breath Weapon vs. Wand, and vs. Spell
 
@@ -1186,7 +1197,7 @@ Advantages:
 – May use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.    
 – At first level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.  
 – Hit Die: d6  
-– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
+– Medium THAC0/APR progression, High Savingthrows vs. Death and vs. Polymorph  
 
 Disadvantages:  
 – Does not gain access to epic spells.  
@@ -1363,6 +1374,7 @@ CLASS FEATURES:
 – Gets one bonus feat at every 4th level up to level 20.  
 – Gets one bonus feat at levels 22, 25 and 28.  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.  
+- Acquires one scroll with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Can use Spontaneous Battlecasting.  
 ```
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
@@ -1426,6 +1438,7 @@ CLASS FEATURES:
 – At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).  
+- Acquires 2 scrolls with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Versatile Spellcasting: starting from level 7 can trade one first level cleric spell slot for a second level wizard spell slot, this exchange is reversible; every two levels thereafter can trade next level cleric spell slot for a wizard spell slot one level higher.  
 – Gets one bonus feat at levels 22, 25 and 28.  
 – Hit Die: d6  
@@ -1468,6 +1481,7 @@ CLASS FEATURES:
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.  
 – Starting from level 8 can cast spells in complete silence (as being always under constant effect of Vocalize).
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
+- Acquires one scroll with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Gets one bonus feat at levels 10, 20, 22, 25 and 28.  
 – Hit Die: d5  
 – Low THAC0/APR progression, High Savingthrows vs. Breath Weapon, vs. Wand and vs. Spell  
@@ -1490,6 +1504,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May distribute 10 skill points per level among thieving skills (20 points at level 1).  
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.   
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
+- Acquires one scroll with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – May use Spontaneous Spell Channeling
 ```
 SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to her sneak attack damage for next 3 seconds.
@@ -1513,6 +1528,7 @@ CLASS FEATURES:
 – Cannot cast arcane spells of 8th and 9th levels.  
 – Can cast three divine spells less per day than trueclass cleric.  
 – Cannot cast divine spells of 6th and 7th levels.    
+- Acquires one scroll with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Versatile Spellcasting: starting from level 7 can trade one first level cleric spell slot for a second level wizard spell slot, this exchange is reversible; every three levels thereafter can trade next level cleric spell slot for a wizard spell slot one level higher.  
 – Gets one bonus feat at levels 10, 20, 22, 25 and 28.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels thereafter).  
@@ -2116,19 +2132,24 @@ Shape | STR | DEX | CON | Base AC| APR |Damage | Special Abilities |
 ---   | --- | --- | --- | ---    | --- |---    | ---   
 Black Bear       | 16  | 12  | 18  |  7 | 3      |1d4 + 1 (piercing)| strikes as +1 weapon
 Brown Bear       | 18  | 12  | 16  |  7 | 3      |1d6 (piercing)    | strikes as +1 weapon
-Wolf             | 15  | 18  | 14  |  6 | 2      |1d8 (piercing)    | strikes as +1 weapon, Cold Resistance 100%, Electrical Resistance 50%
+Wolf             | 15  | 18  | 14  |  6 | 2      |1d8 (piercing)    | strikes as +1 weapon, Cold Resistance 50%, Electrical Resistance 50%
 Fire Salamander  | 18  | 19  | 15  |  2 |As Druid|1d6+1d8 (piercing)| strikes as +3 weapon, +1 THAC0, Fire Resistance 50%, Breathe Fireball three times per day (2d6 fire damage to target)
 Baby Wyvern      | 16  | 17  | 16  |  3 | 1      |2d8 (crushing) + 1d6 (piercing)| strikes as +2 weapon,  on hit causes 1 poison damage/second for 6 seconds (Save vs. Poison to avoid), Immunity to hold, paralysis, slow, level drain, web, entangle, and grease            
 Sword Spider     | 16  | 16  | 10  |  3 | 4      |1d4 (piercing)    | strikes as +1 weapon, Immunity to web
+Polar Bear       | 20  | 10  | 19  |  4 | 3      |1d10 (piercing)    | strikes as +3 weapon, Cold Resistance: 75%, Fire Resistance: -25%
+Boring Beetle    | 18  |  7  | 16  | -2 | 1      |5d4 (crushing)    | strikes as +3 weapon, Slashing Resistance: 50%, Piercing Resistance: 50%, Missile Resistance: 50%
+Winter Wolf      | 18  | 13  | 18  |  2 | 2      |Melee: 1d6 (piercing) + 1d6(cold), Ranged: 2d6 (cold, save vs. Breath Weapon for half)    | strikes as +3 weapon, Cold Resistance: 75%, Fire Resistance -25%
 Werewolf         | 19  | 16  | 15  |  3 | 2      |1d6 (piercing)  | strikes as +2 weapon, Magic Resistance: 20%
 Werewolf (level 8+)        | 19  | 16  | 15  |  1 | 2      |1d10 (piercing) | strikes as +2 weapon, Magic Resistance: 20%
 Greater Werewolf | 21  | 20  | 25  |  -4| 3      |2d8 (slashing)    | strikes as +4 weapon, Immune to all non magical weapons, Fire Resistance 50%, Cold Resistance 50%, Electricity Resistance 50%, Acid Resistance 50%, Magic Resistance 40%, Regenerates 1 Hit Point per second
 Greater Werewolf (level 22+) | 21  | 20  | 25  |  -6| 3      |2d10 (slashing)    | strikes as +4 weapon, Immune to all non magical weapons, Fire Resistance 50%, Cold Resistance 50%, Electricity Resistance 50%, Acid Resistance 50%, Magic Resistance 40%, Regenerates 1 Hit Point per second
 Greater Werewolf (level 29+) | 21  | 20  | 25  |  -8| 3      |2d12 (slashing)    | strikes as +4 weapon, Immune to all non magical weapons, Fire Resistance 50%, Cold Resistance 50%, Electricity Resistance 50%, Acid Resistance 50%, Magic Resistance 40%, Regenerates 1 Hit Point per second
-Large Fire Elemental | 14 | 21 | 16 | 6 | 2 | 2d6 crushing + 2d6 fire | strikes as +4 weapon, Immunity to weapons below +3, Weapon Finesse, Fire Resistance: 100%, Cold Resistance: -50%, Physical Resistance: 25%
-Large Earth Elemental | 21 | 8 | 19 | 0 | 2 | 2d10 crushing| strikes as +4 weapon, Immunity to weapons below +3, Physical Resistance: 50%
-Greater Fire Elemental | 18 | 25 | 18 | 6 | 2 | 2d8 crushing + 2d8 fire | strikes as +4 weapon, Immunity to weapons below +3, Weapon Finesse, Fire Resistance: 100%, Cold Resistance: -50%, Physical Resistance: 25%
-Greater Earth Elemental | 25 | 8 | 21 | 0 | 2 | 2d12 crushing| strikes as +4 weapon, Immunity to weapons below +3, Physical Resistance: 50%
+Large Fire Elemental | 14 | 21 | 16 | 6 | 2 | 2d6 (crushing) + 2d6 (fire) | strikes as +4 weapon, Immunity to weapons below +3, Weapon Finesse, Fire Resistance: 100%, Cold Resistance: -50%, Physical Resistance: 25%
+Large Earth Elemental | 21 | 8 | 19 | 0 | 2 | 2d10 (crushing)| strikes as +4 weapon, Immunity to weapons below +3, Physical Resistance: 50%
+Large Water Elemental | 20 | 14 | 19 | 1 | 2 | 2d8 (crushing)| strikes as +4 weapon, Immunity to weapons below +3, Physical Resistance: 50%, Cold Resistance: -25%, Acid Resistance: 75%, Electrical Resistance -75%
+Greater Fire Elemental | 18 | 25 | 18 | 6 | 2 | 2d8 (crushing) + 2d8 (fire) | strikes as +4 weapon, Immunity to weapons below +3, Weapon Finesse, Fire Resistance: 100%, Cold Resistance: -50%, Physical Resistance: 25%
+Greater Earth Elemental | 25 | 8 | 21 | 0 | 2 | 2d12 (crushing)| strikes as +4 weapon, Immunity to weapons below +3, Physical Resistance: 50%
+Greater Water Elemental | 24 | 18 | 21 | 1 | 2 | 2d10 (crushing)| strikes as +4 weapon, Immunity to weapons below +3, Physical Resistance: 50%, Cold Resistance: -25%, Acid Resistance: 75%, Electrical Resistance -75%
 
 
 

@@ -486,6 +486,12 @@ BEGIN @14
     INCLUDE ~3ed/Component14/Rest8.tps~
 
 
-
+BEGIN @15
+    INCLUDE ~3ed/ADD_BONUS_FEATS.tph~
+    INCLUDE ~3ed/GET_SPELL_EFFECT_VALUES.tph~
+    
+    WITH_TRA ~%LANGUAGE%\spells.tra~ BEGIN   
+        INCLUDE ~3ed/Component15/MageNewSpells.tps~ //allow arcane casters who learn spells to aquire 1-2 scrolls per level
+    END
 	
 

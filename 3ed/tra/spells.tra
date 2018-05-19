@@ -1368,7 +1368,7 @@ Range: 0
 Duration: Permanent
 Casting Time: 5
 Area of Effect: 30-ft. radius
-Saving Throw: None
+Saving Throw: 1/2
 
 When casting this spell, the priest must picture the faces of <PRO_HISHER> fellow party members clearly and focus on the unity of the group. Upon completion, all party members within a 30-ft. radius of the caster are healed 1d8 + 1/level Hit Points. Curing is permanent only insofar as the creature does not sustain further damage; caused wounds will heal—or can be cured—just as any normal injury.
 This spell also deals damage to all hostile undead instead of curing their wounds. An undead creature can apply spell resistance, and can attempt a savingthrow vs. Spell to take half damage.~
@@ -1496,3 +1496,6 @@ Starting from level 13 Hexblade gets access to the following spells: Improved In
 	@500004=~Choose another bloodline.~
 	@500005=~Choose this school.~
 	@500006=~Choose another school.~
+    
+    @600001=~Pick this spell.~
+    @600002=~Pick another spell.~

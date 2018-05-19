@@ -172,13 +172,26 @@ COPY_EXISTING ~CLASTEXT.2DA~ ~Override~
 		READ_2DA_ENTRY i 2 9 lower_string
 		READ_2DA_ENTRY i 4 9 descr_string
 		READ_2DA_ENTRY i 3 9 mixed_string
+        READ_2DA_ENTRY i 8 9 class_ids
 
 		
 		PATCH_SILENT
 		PATCH_TRY		//try to set kit description
 			SET StrRef =  $ClassKitDescriptions(~%class_string%~)	
-			INNER_ACTION BEGIN
-				STRING_SET_EVALUATE %descr_string% (AT "StrRef")			
+            LOOKUP_IDS_SYMBOL_OF_INT base_class_string ~class~ ~%class_ids%~
+			INNER_ACTION BEGIN             
+                OUTER_SPRINT kit_descr (AT "StrRef")
+                OUTER_SET StrRefClass =  $ClassOnlyDescriptions(~%base_class_string%~)	
+                OUTER_SPRINT class_descr (AT "StrRefClass")
+                //add description of base class to the bottom of kit description
+                OUTER_SPRINT kit_descr EVALUATE_BUFFER ~%kit_descr%
+
+
+Base Class Description
+
+                
+%class_descr%~                
+				STRING_SET_EVALUATE %descr_string% ~%kit_descr%~			
 			END			
 		WITH		
 			DEFAULT
