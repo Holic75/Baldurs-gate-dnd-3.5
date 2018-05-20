@@ -4,6 +4,7 @@ IF
 THEN
 	RESPONSE #100
 		ChangeClass(Myself,NO_CLASS)
+        SetGlobal("BD_JOINXP35","LOCALS",0)
 		Continue()
 END
 

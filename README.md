@@ -422,7 +422,7 @@ CLASS FEATURES:
 – May get seven stars in any weapon category.  
 – Gets one bonus feat at level 1 and at every even level.  
 – At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 at level 4 and every 4 levels thereafter (up to a maximum of +5 at level 16).  
-– At 9th level receives +1 to hit and damage bonus with all weapon categories, this bonus is increased to +2 at level 17 and +3 at level 25.     
+– At 8th level receives +1 to hit and damage bonus with all weapon categories, this bonus is increased to +2 at level 18 and +3 at level 24.     
 – Can use Hardiness once per day starting from level 21, gains an additional use at level 26.
 ```
 HARDINESS:
@@ -507,6 +507,11 @@ Advantages:
 – Gains +1 bonus to AC for every 2 points of Wisdom above 10.  
 –  Signature Weapon Category: At level 1 Kensai chooses one weapon category which becomes his Signature Weapon Category. At level 1 Kensai gets for free Weapon Focus with this category, at level 4 - Weapon Specialization, at level 8 - Greater Weapon Focus, at level 12 - Greater Weapon Specialization, at level 16 - Weapon Mastery, at level 21 - Epic Weapon Focus, at level 24 - Epic Weapon Specialization.  
 – +1 to hit and damage rolls with Signature weapon category every 4 levels (starting from level 4).  
+– Immune to sneak attack.  
+– Has Evasion passive ability.  
+```
+EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
+```
 – May use the Kai ability once per day. Gains one use at level 1 then at level 5 and an additional use every 5 levels thereafter.  
 ```
 KAI: All successful attacks within the next 10 seconds deal maximum damage.
@@ -923,7 +928,7 @@ CLASS FEATURES:
 ```
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
 ```
-– Receives Bonus Feats at levels 10, 13, 16 and 19.  
+– Receives one Bonus Feats at levels 10, 13, 16, 19, 22, 25 and 28.  
 – May distribute 20 points per level (30 at level 1) in thieving abilities: Open Locks, Pick Pockets, Find Traps, Move Silently, Hide In Shadows, Detect Illusion, Set Traps.  
 – Starts with base scores of 10% in Open Locks, 5% in Find Traps, 15% in Pick Pockets, 10% in Move Silently, and 5% in Hide in Shadows.  
 – May Sneak attack for increased damage: 1d6 at level 1 + 1d6 every 2 levels thereafter.  
@@ -986,9 +991,13 @@ Disadvantages:
 
 ### SWASHBUCKLER
 Advantages:  
+– Hit Die: d8  
+– May get up yo seven stars in any weapon category.  
 – +1 bonus to Armor Class at 1st level, plus an additional +1 bonus every 5 levels.  
-– THAC0 and APR progression of a FIGHTER.  
+– High THAC0/APR progression.  
+– Receives one Bonus Feat at levels 4, 8, 12, 16, 20, 22, 25 and 28.  
 – At first level receives for free Combat Prowess(1):Weapon Finesse and Tactics(1):Insightful Strike feats.  
+– At 8th level receives +1 to hit and damage bonus with all weapon categories, this bonus is increased to +2 at level 18 and +3 at level 24.   
 – At 11th level Swashbuckler receives +1 bonus to all savingthrows.  
 – At 14th level each critical hit of Swashbuckler reduces target's Strength by 2 points for 5 rounds (cumulatively).  
 – At 19th level each critical hit of Swashbuckler additionally reduces target's Constitution by 2 points for 5 rounds (cumulatively).  
@@ -1002,7 +1011,7 @@ Advantages:
 – May use the Poison Weapon ability. Gains one use at level 1, then at level 5 and an additional use every 5 levels thereafter.  
 – Gains +1 AC bonus at level 5 and every five levels thereafter.  
 – Gains +1 AC bonus per 2 points of Wisdom above 10.  
-– Ninja gains a pool of  ki points equal to 1/2 of her level +1 per 2 points of Wisdom above 10. These points can be spent to use different ki powers and are replenished after rest.  
+– Ninja gains a pool of ki points equal to 1/2 of her level +1 per 2 points of Wisdom above 10. These points can be spent to use different ki powers and are replenished after rest.  
 	Starting from level 1 ninja can spend one point from ki pool to become invisible for 10 seconds.  
 	Starting from level 4 ninja can alternatively spend one point from ki pool to create 1d4 mirror images of herself or become blurred (+3 AC, +1 Saving throw bonus) for 10 seconds or detect invisible creatures.  
 	Starting from level 7 ninja can alternatively spend one point from ki pool to become hasted for 10 seconds.  

@@ -50,7 +50,7 @@ COPY ~3ed/MagicFang/GMFANG.spl~ ~override~
 SET Color = 256*57+126*256*256+230*256*256*256 
 
 FOR (i=1;i<=maxlvl;i+=1) BEGIN
-	LPF ADD_SPELL_HEADER  INT_VAR  type=1 location=2 target=1 target_count=0 range=1 required_level=i speed=6 projectile=1  STR_VAR icon=~RGMFANGB~ END
+	LPF ADD_SPELL_HEADER  INT_VAR  type=1 location=2 target=1 target_count=0 range=1 required_level=i speed=6 projectile=1  STR_VAR icon=~RGMFNGGB~ END
 	LPF ADD_SPELL_EFFECT  INT_VAR  header = i power=3 opcode=345 target = 2 resist_dispel = 1 power=1 parameter1=1+i/5 duration = 60*i  END   // updating enchantment bonus and duration
 	LPF ADD_SPELL_EFFECT  INT_VAR  header = i power=3 opcode=278 target = 2 esist_dispel = 1 power=1 parameter1=1+i/5 duration = 60*i  END   // updating THAC0 bonus  and duration
 	LPF ADD_SPELL_EFFECT  INT_VAR  header = i power=3 opcode=73  target = 2 resist_dispel = 1 power=1 parameter1=1+i/5 duration = 60*i  END   // updating damage bonus and duration	

@@ -107,8 +107,7 @@
 	
 	//saving throws regularization
 	COPY ~3ed/Core/THAC0/THAC0H.SPL~ ~override/SAVESDH.SPL~ //high thaco for swashbucklers
-		FOR (i=1;i<=30;i=i+1) BEGIN
-        
+		FOR (i=1;i<=30;i=i+1) BEGIN       
             SET save_val = (12 - i/2)
             PATCH_IF (save_val<6) BEGIN
                 SET save_val = 2
@@ -117,13 +116,13 @@
 		END
 	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESWH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 34  END //saving throw vs wand
 	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESPH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 35  END //saving throw vs polymorph
-	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESBH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 36  END //saving throw vs  breath
+	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESBH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 36  END //saving throw vs breath
 	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESSH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 37  END //saving throw vs spell
 		
-	//reflex saves to barbarian and rangers
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLABRN.*\)\|\(CLABFI05\)\)\.2DA~ mask_file=~~
+	//reflex saves to kensai,barbarian and rangers
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLABRN.*\)\|\(CLABFI0[4-5]\)\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~SAVESWH~ END
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLABRN.*\)\|\(CLABFI05\)\)\.2DA~ mask_file=~~
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLABRN.*\)\|\(CLABFI0[4-5]\)\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~SAVESBH~ END
 	
 	//spell saves for bard, hexblade dwarven defender and paladin

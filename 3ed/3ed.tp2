@@ -94,10 +94,10 @@ BEGIN @1
 	INCLUDE ~3ed/Component1/DiminishSpellCastingClasses.tps~
     
     
-    //add uncanny dodge to thieves (pure and multiclass) and barbarian
+    //add uncanny dodge to thieves (pure and multiclass) and kensai, barbarian and dwarven defender
     COPY ~3ed/Feats/PermanentAbilities/UncannyDodge/IMMSNK.SPL~ ~override~
     LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1
-						STR_VAR mask_file=~3ed/Feats/FeatAttribution/SFTCRNMT.SPL~ clab=~\(\(CLABTH.+\)\|\(CLABFI05\)\|\(CLABFI06\)\)\.2DA~  
+						STR_VAR mask_file=~3ed/Feats/FeatAttribution/SFTCRNMT.SPL~ clab=~\(\(CLABTH.+\)\|\(CLABFI0[4-6]\)\)\.2DA~  
                                 feat_type_file = ~IMMSNK~ caption=~IMM_SNK~ END	
     
 	 //-----------------------------------------------------//
@@ -122,7 +122,7 @@ BEGIN @1
     END
     ELSE ACTION_IF (IncludesSod) BEGIN
             OUTER_FOR (PlayerId=1;PlayerId<=6;PlayerId=PlayerId+1) BEGIN
-                OUTER_SET XP=64000 //sod game
+                OUTER_SET XP=130000 //sod game
                     EXTEND_TOP ~BD0120.bcs~ ~3ed/Core/Xp/Common/InitialXp.baf~
                     EVALUATE_BUFFER                                      
             END           

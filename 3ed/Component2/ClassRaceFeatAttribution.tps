@@ -166,8 +166,10 @@ COPY ~3ed/Feats/SmallRacesBonus/SMLRCBN.SPL~ ~override~
 						feat_type_file=~SMLRCBN~ caption=~SMLRACE~ END
 
 //fighter weapon training (+1 to hit, damage at lvls 8, 16, 24)
-	LAF ADD_BONUS_FEATS INT_VAR min_level=9 max_level=25 d_level=8 add_at_level1=0 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=25 d_level=8 add_at_level1=0 
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREF.SPL~
 						feat_type_file=~SPCL141~ caption=~WPNTRN~ END
-
+//same for swashbuckler
+	LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=25 d_level=8 add_at_level1=0  
+						STR_VAR clab=~CLABTH04\.2DA~ caption=~SPCL141~  END
 		

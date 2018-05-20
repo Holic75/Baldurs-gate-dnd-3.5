@@ -9,7 +9,7 @@ CLASS FEATURES:
 – May get seven stars in any weapon category.
 – Gets one bonus feat at level 1 and at every even level.
 – At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 at level 4 and every 4 levels thereafter (up to a maximum of +5 at level 16).
-– At 9th level receives +1 to hit and damage bonus with all weapon categories, this bonus is increased to +2 at level 17 and +3 at level 25. 
+– At 8th level receives +1 to hit and damage bonus with all weapon categories, this bonus is increased by +1 every 8 levels thereafter. 
 - Can use Hardiness once per day starting from level 21, gains an additional use at level 26.
 
 HARDINESS:
@@ -253,10 +253,16 @@ Advantages:
 – Gains +1 bonus to AC for every 2 points of Wisdom above 10.
 – Signature Weapon Category: At level 1 Kensai chooses one weapon category which becomes his Signature Weapon Category. At level 1 Kensai gets for free Weapon Focus with this category, at level 4 - Weapon Specialization, at level 8 - Improved Weapon Focus, at level 12 - Improved Weapon Specialization, at level 16 - Weapon Mastery, at level 21 - Epic Weapon Focus, at level 24 - Epic Weapon Specialization.
 – +1 to hit and damage rolls with Signature weapon category every 4 levels (starting from level 4).
+– Immune to sneak attack.
+– Has Evasion passive ability.
+
+EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
+
 – May use the Kai ability once per day. Gains one use at level 1 then at level 5 and an additional use every 5 levels thereafter.
 
 KAI: All successful attacks within the next 10 seconds deal maximum damage.
 
+– High Savingthrows vs. Breath Weapon and vs. Wand 
 – Gets one bonus feat at levels 22 and 28.
 
 Disadvantages:
@@ -304,6 +310,7 @@ At 10th level, Dwarven Defender’s bonuses to Strength, Constitution and AC eac
 At 17th level, the character is no longer subject to fatigue effects after Defensive Stance.
 
 – Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 3 and every 3 levels thereafter to a maximum of 50% at level 30.
+– High Savingthrows vs. Spell 
 – Hit Die: d12
 
 Disadvantages:
@@ -875,14 +882,19 @@ Disadvantages:
 @040=~SWASHBUCKLER: This rogue is part acrobat, part swords<PRO_MANWOMAN>, and part wit: the epitome of charm and grace.
 
 Advantages:
-– +1 bonus to Armor Class at 1st level, plus an additional +1 bonus every 5 levels.
+– +1 bonus to Armor Class at 1st level, plus an additional +1 bonus at every 5th level.
 – High THAC0/APR progression.
+– Hit Die: d8
+– May get up to Epic Weapon Specialization (7 stars) in any weapon they can use.
+– Receives Bonus Feat at levels 4, 8, 12, 16, 20, 22, 25 and 28.
+– At 8th level receives +1 to hit and damage bonus with all weapon categories, this bonus is increased by +1 every 8 levels thereafter. 
 – At first level receives for free Combat Prowess(1):Weapon Finesse and Tactics(1):Insightful Strike feats.
 – At 11th level Swashbuckler receives +1 bonus to all savingthrows.
 – At 14th level each critical hit of Swashbuckler reduces target's Strength by 2 points for 10 rounds (cumulatively).
 – At 19th level each critical hit of Swashbuckler additionally reduces target's Constitution by 2 points for 10 rounds (cumulatively).
 
 Disadvantages:
+– Do not receive Bonus Feats at level 10 and every 3 levels thereafter as trueclass thieves do.
 – May not use Sneak attack.
 – May only distribute 15 skill points per level among thieving skills (25 points at level 1).~
 

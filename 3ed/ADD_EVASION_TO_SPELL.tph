@@ -85,6 +85,10 @@ DEFINE_PATCH_FUNCTION ~ADD_EVASION_TO_SPELL~
 				LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent = 1
 						opcode=177  parameter2=5 parameter1=20 dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //monks
 						STR_VAR insert resource=~IMMDMG~ END
+                       
+				LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent = 1
+						opcode=177  parameter2=5 parameter1=20 dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //monks
+						STR_VAR insert resource=~IMMDMG~ END
                         
                         
                 LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent =1
@@ -101,7 +105,11 @@ DEFINE_PATCH_FUNCTION ~ADD_EVASION_TO_SPELL~
                         
                 LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent =1
 						opcode=177  parameter2=5 parameter1=18  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //c/r
-						STR_VAR insert resource=~IMMDMG~ END                        
+						STR_VAR insert resource=~IMMDMG~ END        
+
+                LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent =1
+						opcode=177  parameter2=9 parameter1=16387  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //kensai
+						STR_VAR insert resource=~IMMDMG~ END    
 									
 											
 				//remove protection from protection from effect unconditionally at the end of spell

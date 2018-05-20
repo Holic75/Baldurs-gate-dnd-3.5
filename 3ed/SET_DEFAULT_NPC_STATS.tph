@@ -79,11 +79,14 @@ DEFINE_ACTION_FUNCTION ~SET_DEFAULT_NPC_STATS~
         EXTEND_BOTTOM ~%ScriptName%.bcs~ ~3ed/Npc/Common/InitialXpJoin.baf~
             EVALUATE_BUFFER                               
 
+        OUTER_SET MAX_LVL = 30
         COPY_EXISTING ~XPLEVEL.2DA~ ~override~
             COUNT_2DA_ROWS 20 "nrows"
-            FOR (lvl=1; lvl<=20;lvl=lvl+1) BEGIN
+            FOR (lvl=1; lvl<=MAX_LVL;lvl=lvl+1) BEGIN
+            
+                SET next_lvl = (lvl<MAX_LVL) ? lvl+1 : lvl
                 READ_2DA_ENTRY 1 lvl 20 xp1
-                READ_2DA_ENTRY 1 lvl+1 20 xp2
+                READ_2DA_ENTRY 1 next_lvl 20 xp2
                 SET xp = (xp1 + xp2) / 2
                 
                 PATCH_IF (xp>InitialXp) BEGIN

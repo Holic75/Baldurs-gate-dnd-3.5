@@ -106,7 +106,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
     
     string_to_replace_ref_match = 8
     
-    PATCH_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
+    PATCH_IF (~%GameId%~ STR_EQ ~Bg2~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN13~) BEGIN
         string_to_replace_ref_match = 81
     END
 	LPF UPDATE_ARMOR INT_VAR spell_failure = 0 max_dex = 18 skill_penalty = 1 is_light = 1 clear_thief_penalty = 1 string_to_replace_ref_match string_to_replace_ref = 10 new_string_to_add_ref = 141 update_unid_string END
