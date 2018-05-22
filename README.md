@@ -457,7 +457,7 @@ Note: although her hit points can not be reduced below 1, Berserker can still be
 Disadvantages:  
 – Becomes winded after berserking: -2 penalty to Armor Class, to-hit rolls, and damage rolls.  
 – Can not use ranged weapons.  
-- Does not get Hardiness and Resist Magic abilities.  
+– Does not get Hardiness and Resist Magic abilities.  
 – Does not get bonus feats like trueclass fighters do.  
 – May only put one star in any weapon she can use.  
 – May not wear armor heavier than splint mail and use large shield.  
@@ -498,7 +498,7 @@ The effect lasts for 3 rounds + 1 round per 2 points of Hexblades's Charisma abo
 Disadvantages:  
 – May not be of good alignment.  
 – Does not get bonus feats like trueclass fighters do.  
-- Does not get Hardiness and Resist Magic abilities.  
+– Does not get Hardiness and Resist Magic abilities.  
 – May only put one star in any weapon she can use.  
 – May use only light armor and medium armor, may not use large shield.  
 
@@ -522,7 +522,7 @@ Disadvantages:
 – May only wear light armor.  
 – May not use shields.  
 – Does not get bonus feats like trueclass fighters do.  
-- Does not get Hardiness and Resist Magic abilities.  
+– Does not get Hardiness and Resist Magic abilities.  
 – May only put one star in any weapon category she can use.  
 – Alignment restricted to any non-chaotic.  
 
@@ -544,10 +544,10 @@ It lasts for 3 rounds + 1 round per 2 points of newly modified Constitution abov
 
 Disadvantages:  
 – May not wear armor heavier than splint mail.  
-- May not use large shields.  
+– May not use large shields.  
 – Gets bonus feats only at levels 5, 10, 15, 20, 22 and 28.    
-- Does not get Hardiness and Resist Magic abilities.  
-- Can not use Hardiness and Resist Magic abilities.  
+– Does not get Hardiness and Resist Magic abilities.  
+– Can not use Hardiness and Resist Magic abilities.  
 – May only put one star in any weapon she can use.     
 
 ### DWARVEN DEFENDER
@@ -567,7 +567,7 @@ At 17th level, the character is no longer subject to fatigue effects after Defen
 Disadvantages:  
 – Race restricted to dwarf.  
 – Gets bonus feats only at levels 5, 10, 15, 20, 22 and 28.  
-- Does not get Hardiness and Resist Magic abilities.  
+– Does not get Hardiness and Resist Magic abilities.  
 – May only put one star in any weapon she can use.  
 
 ### PALADIN
@@ -1513,7 +1513,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May distribute 10 skill points per level among thieving skills (20 points at level 1).  
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.   
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
-- Acquires one scroll with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
+– Acquires one scroll with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – May use Spontaneous Spell Channeling
 ```
 SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to her sneak attack damage for next 3 seconds.
@@ -1537,7 +1537,7 @@ CLASS FEATURES:
 – Cannot cast arcane spells of 8th and 9th levels.  
 – Can cast three divine spells less per day than trueclass cleric.  
 – Cannot cast divine spells of 6th and 7th levels.    
-- Acquires one scroll with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
+– Acquires one scroll with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Versatile Spellcasting: starting from level 7 can trade one first level cleric spell slot for a second level wizard spell slot, this exchange is reversible; every three levels thereafter can trade next level cleric spell slot for a wizard spell slot one level higher.  
 – Gets one bonus feat at levels 10, 20, 22, 25 and 28.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels thereafter).  
@@ -2255,6 +2255,7 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - All cure wounds spells ( and Heal) now harm undead for corresponding amount of damage (with Savingthrow vs. Spell for 1/2) instead of healing them.
 - All cause wounds spells (and Harm) now heal undead for corresponding amount of Hit Points (with Savingthrow vs. Spell for 1/2) instead of harming them.
 - Effects of Holy/ Unholy word now depend on difference between caster and target level/HD (rather than raw target level/HD)
+- Project Image now has only 50% of caster level
 
 ### New Spells
 
