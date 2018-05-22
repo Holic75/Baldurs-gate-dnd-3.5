@@ -4,7 +4,7 @@
 	
 	//priest domain
 	OUTER_SET k=1
-    OUTER_SPRINT Domain2DAFolder  ~%Domains2DA%~
+    OUTER_SPRINT Domain2DAFolder  ~Domains2DA~
     
     ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
         OUTER_SPRINT Domain2DAFolder ~Domains2DAIwd~
