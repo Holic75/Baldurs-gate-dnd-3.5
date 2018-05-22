@@ -3,10 +3,12 @@
 	
 	@1 = ~Leather Armor~
 	@2 = ~Studded Leather Armor~
+    @21 = ~Studded Leather~
 	@3 = ~Hide Armor~
 	@4 = ~Chain Mail~
 	@5 = ~Splint Mail~
 	@6 = ~Plate Mail~
+    @61 = ~Plate Mail Armor~
 	@7 = ~Full Plate Armor~
     @71 = ~Full Plate Mail~
 	
@@ -126,6 +128,7 @@
 ~
 @51 = ~Medium Shield~
 @52 = ~Large Shield~
+@62 = ~Rhino Beetle Shield~
 @53 = ~Delryn Family Shield~
 @54 = ~Yoshimo's Ninja-To +1~
 @55 = ~This blade, although only lightly enchanted, has achieved a semblance of awareness, enough so that it allows only the thief known as Yoshimo to wield it. Any other than he cannot use this flawless ninjatō in battle.
@@ -141,6 +144,12 @@ Requires:
  6 Strength
 
 Weight: 5~
+
+@56 = ~– Open Locks: -25%
+– Find Traps: -25%
+– Pick Pockets: -25%
+– Move Silently: -25%
+– Hide In Shadows: -25%~
 
 	@101 = ~2 attacks per round~
 	@102 = ~3 attacks per round~
@@ -623,6 +632,18 @@ Requires:
  12 Charisma
 
 Weight: 5~
+
+    @5105 = ~Charge abilities:
+– Undead Ward once per day
+  Undead are affected as if turned by a 5th-level priest
+  Range: 0
+  Duration: 1 turn
+  Area of Effect: 10-ft\. radius~
+  
+  @5106 = ~– Charisma: \+2~
+    
+    
+    
 
 
     @6001 = ~(missile)~

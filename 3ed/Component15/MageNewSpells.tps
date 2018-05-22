@@ -159,7 +159,7 @@ END~~~~~
 		feat_type_file=~MSFTCRE~ caption=~MSSL_FT~ END
     //one more time for pure mages and cleric mages   
     LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=0 delay = 6
-		STR_VAR clab=~CLABMA.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRCMM.SPL~
+		STR_VAR clab=~CLABMA.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREMF.SPL~
 		feat_type_file=~MSFTCRE~ caption=~MSSL2FT~ END
 			
 			

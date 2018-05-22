@@ -185,7 +185,7 @@ Advantages:
 – May use Rage ability once per day. Gains one use at level 1, level 4 and every 4 levels thereafter.
 
 RAGE: The enraged state lasts for 3 rounds + 1 round per 2 points of Constitution above 10. While enraged, a Berserker gains a bonus of +2 to <PRO_HISHER> attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
-At 8th the attack and damage rolls bonus increases to +3 and physical damage resistance bonus to 20%.
+At 8th level the attack and damage rolls bonus increases to +3 and physical damage resistance bonus to 20%.
 At 16th level the attack and damage rolls bonus increases to +5 and physical damage resistance bonus to 30%.
 
 – 8th level: Endless Berserk: Berserker can prolong <PRO_HISHER> rage if the combat lasts too long, while enraged <PRO_HESHE> can spend an extra use of <PRO_HISHER> Rage to prolong it for a new full duration, <PRO_HESHE> does not feel the tiring effects until the end of this new Rage, <PRO_HESHE> can continue to prolong the Rage as long as <PRO_HESHE> has Rages.
@@ -304,7 +304,7 @@ Advantages:
 – Immune to sneak attack.
 – May use Defensive Stance once per day. Gains one use at level 1, one use at level 4, and an additional use every 4 levels thereafter.
 
-DEFENSIVE STANCE: When <PRO_HESHE> adopts a defensive stance, a Dwarven Defender gains phenomenal strength and durability, but can move only at 50% of its speed. Dwarven Defender gains +2 to Strength, +2 to Constitution, a +1 bonus on all savingthrows, and a +2 dodge to AC. A defensive stance lasts for a number of rounds equal to 3 + 1 per 2 points of the character’s (newly improved) Constitution above 10.    
+DEFENSIVE STANCE: When <PRO_HESHE> adopts a defensive stance, a Dwarven Defender gains phenomenal strength and durability, but can move only at 50% of its speed. Dwarven Defender gains +2 to Strength, +2 to Constitution, a +1 bonus on all savingthrows, and a +2 bonus to AC. A defensive stance lasts for a number of rounds equal to 3 + 1 per 2 points of the character’s (newly improved) Constitution above 10.    
 At the end of the Defensive Stance, the character becomes fatigued (-2 penalty to Strength) for the duration of 5 rounds.
 At 10th level, Dwarven Defender’s bonuses to Strength, Constitution and AC each increase to +4, and bonus on saves increases to +2. 
 At 17th level, the character is no longer subject to fatigue effects after Defensive Stance.
@@ -796,7 +796,7 @@ CLASS FEATURES:
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.
 – Starting from level 8 can cast spells in complete silence (as being always under constant effect of Vocalize).
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.
-- Acquires one scroll with any arcane spell up to maximum level <PRO_HESHE> can cast at every level up starting from level 2.
+- Acquires two scrolls with any arcane spell up to maximum level <PRO_HESHE> can cast at every level up starting from level 2.
 – Gets one bonus feat at levels 10, 20, 22, 25 and 28.
 – Hit Die: d5
 – Low THAC0/APR progression, High Savingthrows vs. Breath Weapon, vs. Wand and vs. Spell

@@ -301,6 +301,11 @@ WITH_TRA ~%LANGUAGE%\Spells.tra~ BEGIN
 	INCLUDE ~3ed/Component4/UpdateSavesAndEvasion.tps~ //change spells of saves, items (mostly spell to something)
 	
 	INCLUDE ~3ed/Component4/UpdateScrollDescriptions.tps~ //map scroll descriptions to that of corresponding spells
+    
+    //remove undead ward from iwd and make blindness first lvl spell again
+    ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+       COPY ~3ed/Spells/HideSpell/Iwd~ ~override~
+    END
 	
 END
 	

@@ -1264,7 +1264,8 @@ END
             //berserker rage update
             COPY_EXISTING ~SPCL321.SPL~ ~override/BRSR1%con%.SPL~
                 WRITE_LONG 0x0008 0
-                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 18 END //removehp bonus
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 18 END //remove max hp bonus
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 17 END //remove current hp bonus
                 LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 12 END //remove damage
                 LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 321 STR_VAR match_resource = ~SPCL321~ END //remove effects removal (will be in external spl)
                 LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 139 END //remove damage string

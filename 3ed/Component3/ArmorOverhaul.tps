@@ -1,16 +1,20 @@
 	OUTER_SPRINT LeatherArmorStr @1
 	OUTER_SPRINT StuddedLeatherArmorStr @2
+    OUTER_SPRINT StuddedLeatherArmorStr2 @21
 	OUTER_SPRINT HideArmorStr @3
 	OUTER_SPRINT ChainMailStr @4
 	OUTER_SPRINT SplintMailStr @5
 	OUTER_SPRINT PlateMailStr @6
+    OUTER_SPRINT PlateMailStr2 @61
 	OUTER_SPRINT FullPlateStr @7
     OUTER_SPRINT FullPlateMailStr @71	
     
     OUTER_SPRINT MediumShieldStr @51
     OUTER_SPRINT LargeShieldStr @52
+    OUTER_SPRINT RhinoShieldStr @62
     OUTER_SPRINT AnomenShieldStr @53
     OUTER_SPRINT AcShieldStr @50
+    OUTER_SPRINT AcShieldStr2 @501
     OUTER_SPRINT THAC0ShieldStr @500
 	
 COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
@@ -95,7 +99,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~ELFCHAN~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN12~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN13~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN14~) 
 					OR (~%SOURCE_RES%~ STR_EQ ~CHAN15~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN10~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN16~) OR (~%SOURCE_RES%~ STR_EQ ~CHAN17~) 
 					OR (~%SOURCE_RES%~ STR_EQ ~CHAN14~) OR (~%SOURCE_RES%~ STR_EQ ~DWCHAN01~) OR (~%SOURCE_RES%~ STR_EQ ~DWCHAN02~) OR (~%SOURCE_RES%~ STR_EQ ~CLOLTH~) 
-                    OR (~%SOURCE_RES%~ STR_EQ ~CHAN19~) OR (~%SOURCE_RES%~ STR_EQ ~bdchanel~)
+                    OR (~%SOURCE_RES%~ STR_EQ ~CHAN19~) OR (~%SOURCE_RES%~ STR_EQ ~bdchanel~) OR (~%SOURCE_RES%~ STR_EQ ~KAYCHAI~)
 					BEGIN //elven chain  (allow stalker, beastmaster)
 	
 	update_unid_string = 1 
@@ -179,8 +183,8 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 	LPF UPDATE_ARMOR INT_VAR spell_failure = 10 max_dex = 20 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 11 END
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_fighter STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~kensai~ END
 		
-  END  ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~%StuddedLeatherArmorStr%~) BEGIN //Studded Leather Armor
-  
+  END  ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~%StuddedLeatherArmorStr%~) OR (~%unid_name%~ STRING_EQUAL ~%StuddedLeatherArmorStr2%~) BEGIN 
+    //Studded Leather Armor 
 	LPF UPDATE_ARMOR INT_VAR spell_failure = 15 max_dex = 18 skill_penalty = 1 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 12 END
 	LPF SET_ITEM_USABILITY INT_VAR value = usable_by_fighter STR_VAR  values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~kensai~ END
 				
@@ -201,7 +205,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   
 	LPF UPDATE_ARMOR INT_VAR spell_failure = 30 max_dex = 14 skill_penalty = 4 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 15 END
 	
-  END  ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~%PlateMailStr%~) BEGIN //Plate Mail
+  END  ELSE  PATCH_IF (~%unid_name%~ STRING_EQUAL ~%PlateMailStr%~) OR (~%unid_name%~ STRING_EQUAL ~%PlateMailStr2%~)BEGIN //Plate Mail
   
 	LPF UPDATE_ARMOR INT_VAR spell_failure = 40 max_dex = 12 skill_penalty = 5 is_light = 0 string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 16 END
   	
@@ -240,11 +244,13 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
     
         SET NewAcBonus = ac_bonus + 1    
         LPF ALTER_EFFECT INT_VAR  check_headers = 0 match_opcode = 0 match_parameter2 = 0 parameter1 = NewAcBonus  END   
+        
         SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%%ac_bonus%~
-        SPRINT new_substring EVALUATE_BUFFER ~%AcShieldStr%%NewAcBonus%~
-    
+        SPRINT new_substring EVALUATE_BUFFER ~%AcShieldStr%%NewAcBonus%~   
         LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
-    END  ELSE PATCH_IF (~%unid_name%~ STR_EQ ~%LargeShieldStr%~) BEGIN
+        
+
+    END  ELSE PATCH_IF (~%unid_name%~ STR_EQ ~%LargeShieldStr%~) OR ((~%unid_name%~ STRING_CONTAINS_REGEXP ~%RhinoShieldStr%~)==0) BEGIN
   
         LPF GET_SPELL_EFFECT_VALUES INT_VAR header =0 match_opcode = 0 match_parameter2 = 0 RET ac_bonus = parameter1 found = found_match END
           
@@ -263,7 +269,11 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
         SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%%ac_bonus%~
         SPRINT new_substring EVALUATE_BUFFER ~%THAC0ShieldStr%%AcShieldStr%%NewAcBonus%~
     
-        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
+        PATCH_IF (~%SOURCE_RES%~ STR_EQ ~ORRSHLD~) BEGIN //orrick rhino shield in iwd has description stored in unid
+            LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
+        END ELSE BEGIN
+            LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
+        END
        
         //allow only fighters, paladins and dwarven defenders to use large shields
         LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~ END

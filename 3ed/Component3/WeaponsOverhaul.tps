@@ -163,7 +163,7 @@
 		ELSE PATCH_IF (proficiency = 105) BEGIN //shortbow -> bows
 			WRITE_BYTE 0x0031 97
 			PATCH_IF ((~%SOURCE_FILE%~ STR_EQ ~SBOWEBU.ITM~) ) BEGIN
-				LPF ALTER_ITEM_EFFECT INT_VAR check_globals=1 match_opcode=1 parameter1=7 END  //short bow of equilibrium 
+				LPF ALTER_ITEM_EFFECT INT_VAR check_globals=1 match_opcode=1 parameter1=2 END  //short bow of equilibrium 
 				LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = APR3_ref new_substring_ref = APR2_ref END
 			END
 			ELSE PATCH_IF ((~%SOURCE_FILE%~ STR_EQ ~BOW14.ITM~) ) BEGIN //tuigan bow

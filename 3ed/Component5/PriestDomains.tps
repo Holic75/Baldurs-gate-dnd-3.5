@@ -4,7 +4,12 @@
 	
 	//priest domain
 	OUTER_SET k=1
-	COPY ~3ed/Feats/PriestDomains/Domains2DA~ ~override~
+    OUTER_SPRINT Domain2DAFolder  ~%Domains2DA%~
+    
+    ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+        OUTER_SPRINT Domain2DAFolder ~Domains2DAIwd~
+    END
+	COPY ~3ed/Feats/PriestDomains/%Domain2DAFolder%~ ~override~
 		DEFINE_ASSOCIATIVE_ARRAY domain_list BEGIN "%k%" => "%SOURCE_RES%" END
 		SET k=k+1
 

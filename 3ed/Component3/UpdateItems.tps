@@ -293,7 +293,7 @@ ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
         LPF REPLACE_SUBSTRING INT_VAR  strref_offset=0x0054   substring_to_replace_ref = 501 new_substring_ref = 50 END
         
 //yoshimo's katana -> yoshimo's wakizhashi
-COPY_EXISTING ~NPSW02.ITM~ ~override~ 
+    COPY_EXISTING ~NPSW02.ITM~ ~override~ 
         LPF UPDATE_WEAPON_DMG INT_VAR match_dice_number = 1 match_dice_size = 10 target_dice_number = 1 target_dice_size = 8 END 
         LPF SET_ITEM_USABILITY  STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~assassin~ END
         LPF SET_ITEM_USABILITY  STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~swashbuckler~ END
@@ -304,4 +304,18 @@ COPY_EXISTING ~NPSW02.ITM~ ~override~
 		READ_LONG 0x0054 ~id_descr_strref~
         STRING_SET_EVALUATE %id_name_strref% @54
 		STRING_SET_EVALUATE %id_descr_strref% @55
+END
+
+ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+
+    COPY_EXISTING ~REVENAN.ITM~ ~override~//revenant shield remove undead ward and give +2 cha
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode=6 target=1 timing=2 parameter1 = 2 END
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = 5105  new_substring_ref = 5106 END   
+        LPF DELETE_ITEM_HEADER INT_VAR header_type = 3 END 
+        
+//correct description of shield of deflection
+    COPY_EXISTING ~SHLD07.ITM~ ~override~
+        LPF REPLACE_SUBSTRING INT_VAR  strref_offset=0x0054   substring_to_replace_ref = 501 new_substring_ref = 50 END
+        
+
 END

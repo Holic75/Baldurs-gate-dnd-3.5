@@ -437,7 +437,7 @@ This ability allows the warrior to temporarily tap a great inner strength and fi
 – High THAC0/APR progression, High Savingthrows vs. Death and vs. Polymorph
 
 ### BERSERKER
-Advantages:
+Advantages:  
 – Hit Die: d12  
 – Bonus Feats: at level 1 Berserker receives Warfare (1):Power Attack, at level 4 she receives Warfare (2):Cleave and finally at level 8 - Warfare (3):Great Fortitude.    
 – May use Rage ability once per day. Gains one use at level 1, additional uses at level 4 and every 4 levels thereafter.
@@ -662,7 +662,7 @@ All hostile living creatures suffer 1d6 points of magical damage per Channel Ene
 ```
 – May use the Absorb Health ability once per day per 2 points of Charisma above 10.  
 ```
-ABSORB HEALTH: The character steals 2 Hit Points per level from a target creature and transfers them to <PRO_HIMHER>self.
+ABSORB HEALTH: The character steals 2 Hit Points per level from a target creature and transfers them to herself.
 If applied to undead creatures this ability heals them instead.
 ```
 – May use the Poison Weapon ability once per day. Gains one use at level 1, one use at level 5, and an additional use every 5 levels thereafter.  
@@ -1490,7 +1490,7 @@ CLASS FEATURES:
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.  
 – Starting from level 8 can cast spells in complete silence (as being always under constant effect of Vocalize).
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
-- Acquires one scroll with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
+- Acquires two scrolls with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Gets one bonus feat at levels 10, 20, 22, 25 and 28.  
 – Hit Die: d5  
 – Low THAC0/APR progression, High Savingthrows vs. Breath Weapon, vs. Wand and vs. Spell  

@@ -926,7 +926,7 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
         
         
     // make energy drain drain 2d4 levels 
-    COPY_EXISTING ~SPWI914.SPL~ ~override~    
+    COPY_EXISTING_REGEXP GLOB ~\(\(SPWI914\)\|\(SPPR739\)\)\.SPL~ ~override~    
         LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 216 probability1 = 5 END //2 
         LPF CLONE_EFFECT INT_VAR match_opcode = 216 probability2 = 6 probability1 = 18  multi_match = 1 parameter1 = 3 END //3
         LPF CLONE_EFFECT INT_VAR match_opcode = 216 probability2 = 19 probability1 = 38  multi_match = 1 parameter1 = 4 END //4
@@ -934,8 +934,8 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
         LPF CLONE_EFFECT INT_VAR match_opcode = 216 probability2 = 65 probability1 = 83  multi_match = 1 parameter1 = 6 END //6
         LPF CLONE_EFFECT INT_VAR match_opcode = 216 probability2 = 84 probability1 = 95  multi_match = 1 parameter1 = 7 END //7
         LPF CLONE_EFFECT INT_VAR match_opcode = 216 probability2 = 96 probability1 = 100  multi_match = 1 parameter1 = 8 END //8    
-        READ_LONG 0x0050 ~descr_strref~
-		STRING_SET_EVALUATE %descr_strref% @304
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset = 0x0050  substring_to_replace_ref = 304 new_substring_ref = 3041 END
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 139 END  //remove string about 2 levels
     
     
     
@@ -1055,10 +1055,17 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 		END
 
     COPY_EXISTING ~MISLEAD.SPL~ ~override~    
+        //disallow using items
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 6 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 8 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 9 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 10 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 11 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 12 target = 1 timing = 9 duration = 1 insert_point = 0 END
         //dissalow attacks to caster
-        LPF ADD_SPELL_EFFECT INT_VAR opcode = 1 target = 1 timing = 9 duration = 1 END
         SET parameter1 = 0 - 150994945 
-        LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 1 match_parameter2 = 1 parameter1  END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 1 target = 1 timing = 9 duration = 1 parameter2 = 0 parameter1 END
+
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~FLRSTKBN~ END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 timing = 9 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
@@ -1078,7 +1085,43 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 10 target = 1 timing = 9 duration = 1 insert_point = 0 END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 11 target = 1 timing = 9 duration = 1 insert_point = 0 END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 12 target = 1 timing = 9 duration = 1 insert_point = 0 END
-        LPF ADD_SPELL_EFFECT INT_VAR opcode = 1   parameter1 = 50 parameter2 = 2 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 1   parameter1 = 50 parameter2 = 2 target = 1 timing = 9 duration = 1 insert_point = 0 END    //apr to 50%
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~APRBONB~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 timing = 9 insert_point = 0 STR_VAR resource = ~APRBONB~ END        
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~APRBONC~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 timing = 9 insert_point = 0 STR_VAR resource = ~APRBONC~ END         
+    
+//fix project image level to 50%
+//first prepare corresponding level drain
+    COPY ~3ed/Spells/ProjectImage/LVL_DR.SPL~ ~override/LVL_DR5.SPL~
+        FOR (i = 2; i<=30; i = i+1) BEGIN
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+            LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = i END
+            LPF ALTER_SPELL_EFFECT INT_VAR header = i parameter1 = (i/2) END
+        END
+
+    COPY_EXISTING ~PROJIMAG.SPL~ ~override~    
+        //disallow using items and thieving abilities
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 0 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 1 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 6 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 8 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 9 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 10 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 11 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 144   parameter2 = 12 target = 1 timing = 9 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 146 target = 1 timing = 9 duration = 1 parameter2 = 1 STR_VAR resource = ~LVL_DR5~  END //set level to 50%
+        //protect from restoration
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 1 timing = 9 STR_VAR resource = ~SPPR417~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 1 timing = 9 STR_VAR resource = ~SPPR713~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 1 timing = 9 STR_VAR resource = ~SPWISH07~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 1 timing = 9 STR_VAR resource = ~SPWISH46~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 1 duration = 1 timing = 9 parameter2 = 224 END
+        
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 1 target = 1 timing = 9 duration = 1 parameter2 = 1 parameter1 = 0 END
+        SET parameter1 = 0 - 150994945 
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 1 target = 1 timing = 9 duration = 1 parameter2 = 0 parameter1 END
+        
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~FLRSTKBN~ END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 timing = 9 insert_point = 0 STR_VAR resource = ~RPDSHTBN~ END
@@ -1089,14 +1132,12 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 timing = 9 insert_point = 0 STR_VAR resource = ~APRBONB~ END        
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 1 duration = 1 insert_point = 0 STR_VAR resource = ~APRBONC~ END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 1 duration = 7 timing = 9 insert_point = 0 STR_VAR resource = ~APRBONC~ END         
+    
+    //update description 
+    COPY_EXISTING ~SPWI703.SPL~ ~override~ 
+		READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @330
         
-    COPY_EXISTING ~PROJIMAG.SPL~ ~override~    
-        //dissalow attacks to caster
-        LPF ADD_SPELL_EFFECT INT_VAR opcode = 1 target = 1 timing = 9 duration = 1 END
-        SET parameter1 = 0 - 150994945 
-        LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 1 match_parameter2 = 1 parameter1  END           
-
-
     //change protection from the elements to SET resistances
     COPY_EXISTING ~SPWI702.SPL~ ~override~
         LPF ALTER_SPELL_EFFECT_EX INT_VAR match_parameter1 = 75 parameter2 = 1 END
@@ -1130,4 +1171,13 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 		LPF DELETE_EFFECT STR_VAR match_opcode = 578 END
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @318
+    
+    
+    //make blindness level 1 spell in iwd agains
+    ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+        COPY_EXISTING ~SPWI106.SPL~ ~override~
+            LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_level = 1 END
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @331   
+    END
     

@@ -1147,18 +1147,8 @@ Saving Throw: None
 When the spell is cast, it confers complete invulnerability to all weapons. This spell is incredibly powerful and useful in the thick of combat. It is important to note that this spell does not work in combination with Protection From Magical Weapons. This spell lasts for the duration or until dispelled.~
 
 
-    @304=~Energy Drain
-(Necromancy) 
-
-Level: 9
-Range: Touch
-Duration: Permanent
-Casting Time: 3
-Area of Effect: 1 creature
-Saving Throw: None 
-
-The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining <PRO_HIMHER> of 2d4 levels of experience. The target of this spell loses levels, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell.~
-
+    @304=~2 levels of experience~
+    @3041 = ~2d4 levels of experience~
 
     @305 = ~Contagion
 (Necromancy)
@@ -1417,6 +1407,30 @@ Saving Throw: 1/2
 
 By casting this spell, the priest deals 5d8 + 1/level points of damage to nearby enemies. A successful Save vs. Spell halves the damage.
 Since undead are powered by negative energy, this spell also cures all allied undead creatures of a like amount of damage, rather than harming them.~
+
+    @330 = ~Project Image
+(Illusion/Phantasm)
+
+Level: 7
+Range: 0
+Duration: 1 round/level
+Casting Time: 1
+Area of Effect: The caster
+Saving Throw: None
+
+When this spell is cast, an illusionary copy of the caster steps out of <PRO_HISHER> body. This copy has 60% of the caster's level and has all the spells and abilities that the caster would have at that level. It also has 60% of the caster's Hit Points; however, it may not make any physical attacks. As long as the image is in existence, the original caster is rooted to the ground and only <PRO_HISHER> projected image may move around; if the image is destroyed, the spell ends and the original caster can move again. Also, if during this time the caster takes any damage, the image will disappear and the caster can move around again. Otherwise, the image will remain for the duration of the spell, or until affected by a Dispel Magic or anything that reveals illusions, such as True Sight.~
+
+    @331 = ~Blindness
+(Illusion/Phantasm)
+
+Level: 1
+Range: Visual range of the caster
+Duration: 8 hours
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell blinds its target. A Save vs. Death is allowed and, if successful, there are no harmful effects. If a victim is blinded, <PRO_HESHE> receives a -4 penalty to <PRO_HISHER> attack rolls and Armor Class. Blind creatures are immune to gaze attacks.~
 //------------------------------------------------------------------------
 	@1000 =~vs. None~
 	@1001 =~vs. Spell~
