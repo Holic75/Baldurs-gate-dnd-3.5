@@ -56,7 +56,7 @@ CLASS FEATURES:
 – May wear helmets.
 – May wear any armor and use any weapon and shield (excluding large shield).
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
-– Can cast two spell per day less than trueclass cleric.
+– Can cast two spells per day less than trueclass cleric.
 – Gets one bonus combat feat at every 4th level up to level 20.
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels thereafter).
 – Can use Spontaneous Battlecasting.
@@ -469,7 +469,7 @@ CLASS FEATURES:
 
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
 
-– Bonus Feats: Ranger gets Style Focus in Two Weapon Fighting for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12, Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.
+– Gets one bonus combat style feat at levels 2, 6, 10, 14, 18, 22 and 26. This feat can be chosen from either Sword and Shield Combat, Single-Weapon Combat, Two-Weapon Combat, Archery, Combat Prowess, Warfare or Tactics trees.
 – May select one racial enemy at levels 1, 5 and every 5 levels thereafter which grants a +2 bonus on to hit and damage rolls against the selected enemy race. These bonuses increase by 1 at every 5th level.
 – May use the Charm Animal ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.
 – May use the Hide In Shadows and Move Silently skills (15% at level 1, +5% at every next level).
@@ -507,11 +507,12 @@ All hostile undead creatures suffer 1d6 points of magical damage per Channel Ene
 
 
 – Eventually can cast low level druidic spells (same as trueclass ranger).
+– Gets one bonus combat style feat at levels 2, 9, 16 and 23. This feat can be chosen from either Sword and Shield Combat, Single-Weapon Combat, Two-Weapon Combat, Archery, Combat Prowess, Warfare or Tactics trees.
 – May call for an animal companion who fights for <PRO_HISHER> side.
 – Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.
 – At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
 – Alignment restricted to good.
-– Gets one bonus feat at levels 22 and 28.
+– Gets one bonus feat at level 28.
 – Hit Die: d9
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell
 ~
@@ -530,7 +531,7 @@ CALLED SHOT: All successful ranged attacks within the next 10 seconds have the f
  16th level: +4 bonus to damage roll.
 
 Disadvantages:
-– Does not gain Bonus Feats in Two Weapon Fighting Style.
+– Does not gain bonus combat style feats.
 – May only wear light armor.
 – May not use the Charm Animal ability.~
 //---------------------------------------------------------------------------------------------------//
@@ -543,7 +544,7 @@ Advantages:
 – Hit Die: d12.
 
 Disadvantages:
-– Does not gain Bonus Feats in Two Weapon Fighting Style.
+– Does not gain bonus combat style feats.
 – May use only weapons available to druids as well as axes, longbows and shortbows.
 – May only wear armor a druid can.~
 //---------------------------------------------------------------------------------------------------//
@@ -563,7 +564,7 @@ SMITE RACIAL ENEMY: For 10 seconds Stalker receives +1 bonus to <PRO_HISHER> att
 – Gets one more bonus feat at level 22.
 
 Disadvantages:
-– Does not gain Bonus Feats in Two Weapon Fighting Style.
+– Does not gain bonus combat style feats.
 – May only wear light armor.
 – May not use the Charm Animal ability.~
 //---------------------------------------------------------------------------------------------------//

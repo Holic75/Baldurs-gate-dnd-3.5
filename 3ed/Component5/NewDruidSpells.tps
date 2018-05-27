@@ -36,6 +36,12 @@
 	//remove bless from druid spell list
 	COPY_EXISTING ~SPPR101.SPL~ ~override~ 
 		WRITE_BYTE 0x0021 0b10000000
+    
+    ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+        //remove bless from druid spell list
+        COPY_EXISTING ~SPPR112.SPL~ ~override~ 
+            WRITE_BYTE 0x0021 0b10000000
+    END
 				
 	//disallow druid to cast defensive harmony
 	COPY_EXISTING ~SPPR406.SPL~ ~override~ 

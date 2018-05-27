@@ -1431,6 +1431,19 @@ Area of Effect: 1 creature
 Saving Throw: Neg.
 
 This spell blinds its target. A Save vs. Death is allowed and, if successful, there are no harmful effects. If a victim is blinded, <PRO_HESHE> receives a -4 penalty to <PRO_HISHER> attack rolls and Armor Class. Blind creatures are immune to gaze attacks.~
+
+    @332= ~Poison
+(Necromancy)
+
+Level: 4
+Sphere: Healing
+Range: Touch
+Duration: 20 seconds
+Casting Time: 7
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell grants the caster the ability to touch a creature and instantly poison it unless it makes a successful Save vs. Poison. The poison deals 1 point of damage per 6 levels of the caster per second over 20 seconds and then dissipates from the target's body. Poison can only be cast by evil-aligned characters.~
 //------------------------------------------------------------------------
 	@1000 =~vs. None~
 	@1001 =~vs. Spell~
@@ -1513,3 +1526,19 @@ Starting from level 13 Hexblade gets access to the following spells: Improved In
     
     @600001=~Pick this spell.~
     @600002=~Pick another spell.~
+    
+    
+    
+    @700000=~Duration: 1 min/level~   
+    @700100=~Duration: 5 rounds/level~     
+    @700001=~Duration: 6 rounds~
+    @700002=~Duration: 1 turn~
+    @700003=~Duration: 2 rounds/level~
+    @700004=~Duration: 3 rounds \+ 1 round/level~
+    @700005=~Duration: 1 round/level~
+    @700006=~Duration: 3 turns~
+    @700007=~Duration: 3 rounds/level~
+
+    
+    
+    

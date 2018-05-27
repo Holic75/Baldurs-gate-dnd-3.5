@@ -469,22 +469,18 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 		END
 		
 		
-	ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
-		COPY_EXISTING ~SPPR215.spl~ ~override~
-		LPF ALTER_SPELL_EFFECT INT_VAR opcode = 255 parameter1 = 3 END //create 3 berries
-	END
-	ELSE BEGIN
+
 	
-		//Goodberry spell- change spell description
-		COPY_EXISTING ~SPPR207.spl~ ~override~
-			READ_LONG 0x0050 ~descr_strref~
-			STRING_SET_EVALUATE %descr_strref% @039	//change description
-		//Berry item - change 1 hp to 3 and description
-		COPY_EXISTING ~GBERRY.itm~ ~override~	
-			LPF ALTER_EFFECT INT_VAR match_opcode=17 parameter1=3 END
-			READ_LONG 0x0050 ~descr_strref~
-			STRING_SET_EVALUATE %descr_strref% @0391
-	END
+    //Goodberry spell- change spell description
+    COPY_EXISTING ~SPPR207.spl~ ~override~
+        READ_LONG 0x0050 ~descr_strref~
+        STRING_SET_EVALUATE %descr_strref% @039	//change description
+    //Berry item - change 1 hp to 3 and description
+    COPY_EXISTING ~GBERRY.itm~ ~override~	
+        LPF ALTER_EFFECT INT_VAR match_opcode=17 parameter1=3 END
+        READ_LONG 0x0050 ~descr_strref~
+        STRING_SET_EVALUATE %descr_strref% @0391
+
 	
 //altering flame blade to give bonus damage instead of creating weapon
 	COPY ~3ed/Spells/FlameWeapon/FLMWPN.eff~ ~override~ 
@@ -584,10 +580,10 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 		LPF ALTER_SPELL_HEADER INT_VAR target=1 END
 		LPF ALTER_SPELL_EFFECT INT_VAR target=2 END
 		SPRINT substring_to_replace @441
-		SPRINT new_substring@442
+		SPRINT new_substring @442
 		LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
 		SPRINT substring_to_replace @443
-		SPRINT new_substring@444		
+		SPRINT new_substring @444		
 		LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
 		
 	ACTION_IF NOT (~%GameId%~ STR_EQ ~Iwd~) BEGIN
@@ -1173,11 +1169,22 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 		STRING_SET_EVALUATE %descr_strref% @318
     
     
-    //make blindness level 1 spell in iwd agains
+    //make blindness level 1 spell in iwd again, and make poison deal 1 dmg per 6 levels 
     ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
         COPY_EXISTING ~SPWI106.SPL~ ~override~
             LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_level = 1 END
             READ_LONG 0x0050 ~descr_strref~
             STRING_SET_EVALUATE %descr_strref% @331   
+        COPY_EXISTING ~SPPR411.SPL~ ~override~
+            FOR (i=2;i<=3;i=i+1) BEGIN
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+                LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = i*6 END 
+                LPF ALTER_SPELL_EFFECT INT_VAR header = i match_opcode = 25 parameter1 = i END
+            END
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @332   
     END
+    
+    
+   
     

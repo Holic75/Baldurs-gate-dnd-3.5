@@ -18,7 +18,7 @@
 						STR_VAR clab=~CLABRN02\.2DA~
 							mask_file=~~ feat_type_file=~~ caption=~ARCHFT~ END	
 //2 weapon fighting for ranger
-    COPY ~3ed/Feats/FeatAttribution/SFTCRE_E.SPL~ ~override/TWFFT.SPL~
+/*    COPY ~3ed/Feats/FeatAttribution/SFTCRE_E.SPL~ ~override/TWFFT.SPL~
 		FOR (i=1;i<=7;i=i+1) BEGIN
 			SET lvl=4*(i - 1)
 			PATCH_IF (lvl==0) BEGIN
@@ -34,7 +34,7 @@
 		END		
 	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=16 d_level=4 add_at_level1=1 
 						STR_VAR clab=~CLABRN01\.2DA~
-							mask_file=~~ feat_type_file=~~ caption=~TWFFT~ END	
+							mask_file=~~ feat_type_file=~~ caption=~TWFFT~ END	*/
 //armored arcana (ftr/mage, f/m/c, lvl1 - 6 bard lvl1 -mage/thief ;  f/m/t; battle caster )
     COPY ~3ed/Feats/FeatAttribution/SFTCRE_E.SPL~ ~override/ARMARCFT.SPL~
 		FOR (i=1;i<=5;i=i+1) BEGIN

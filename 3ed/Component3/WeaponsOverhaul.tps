@@ -84,7 +84,9 @@
             READ_BYTE 0x0018 flags1
             PATCH_IF (flags1 BAND 0b10) BEGIN
                 LPF PTCH_WPN INT_VAR replace_label=2006 wpn_class_label=023 caption_label=2000 is_melee=1 is_2h = 1 END	
-                LPF UPDATE_WEAPON_DMG INT_VAR match_dice_number = 1 match_dice_size = 10 target_dice_number = 1 target_dice_size = 12 END             
+                LPF UPDATE_WEAPON_DMG INT_VAR match_dice_number = 1 match_dice_size = 10 target_dice_number = 1 target_dice_size = 12 END
+                LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace=~1d10~  new_substring=~1d12~ END
+                LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace=~1d10~  new_substring=~1d12~ END
             END
             ELSE BEGIN
                 LPF PTCH_WPN INT_VAR replace_label=2006 wpn_class_label=023 caption_label=2000 is_melee=1 END	

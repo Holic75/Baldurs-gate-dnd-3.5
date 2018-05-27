@@ -12,6 +12,7 @@
         ~fftcre~ => 3 //fighter feats 011
 		~mftcre~ => 4 //mage feats 100
 		~sftcre~ => 7 //all feats 111
+        ~tftcre~ => 2 //style feats 010
 	END
 	
 	ACTION_PHP_EACH FtcreArray AS sftcre_name =>FtcreFeatType BEGIN 

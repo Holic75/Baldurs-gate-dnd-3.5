@@ -20,7 +20,7 @@ Touched creature dies if fails Savingthrow vs. Death with penalty equal to one f
     @005=~Divine Light~
     @006=~Divine Light
 
-The character emits a dazzling burst of light that strikes at all undead creatures within a 30-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the character's current THAC0 +3. Struck creatures suffer 1d4 points of fire damage per caster level.~
+The character emits a dazzling burst of light that strikes at all undead creatures within a 30-ft. radius. The spell does not automatically hit all targets, but makes a melee attack using the character's current THAC0 +3. Struck creatures suffer 1d6 points of fire damage per caster level.~
 
 //-----------------------------------
   

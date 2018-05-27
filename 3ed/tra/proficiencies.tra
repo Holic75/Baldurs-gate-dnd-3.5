@@ -359,6 +359,7 @@ At level 1 character can put at most one star into any proficiency. Second star 
     
     @10001 = ~Select Favored Weapon Category. 
 At level 1 priest of War domain  gets for free Weapon Focus with this category.~
+    @10002 = ~Select new combat style feat.~
     @10003 = ~Select new combat feat.~
     @10004 = ~Select new magic feat.~
     @10007 = ~Select new feat.~    

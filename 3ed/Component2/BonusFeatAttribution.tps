@@ -92,10 +92,17 @@
 //feats to cleric - thief (10,20,22,25,28)
 	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000000001000000000 delay = 2  
 						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRECT.SPL~ feat_type_file=~SFTCRE~ caption=~CTEPCFT~ END 
+//style feats to ranger
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=26 d_level=4 add_at_level1=0 delay = 2 
+						STR_VAR clab=~CLABRN01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRER.SPL~ feat_type_file=~TFTCRE~ caption=~RNGSTFT~ END
+//style feats to cleric-ranger
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=23 d_level=7 add_at_level1=0 delay = 2 
+						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRERC.SPL~ feat_type_file=~TFTCRE~ caption=~RNCSTFT~ END  
                         
 //epic feats to cleric - ranger
-	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=1 delay = 2 //replacement feat at level 1 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=28 max_level=28 d_level=6 add_at_level1=1 delay = 2 //replacement feat at level 1 
 						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRERC.SPL~ feat_type_file=~SFTCRE~ caption=~RCEPCFT~ END
+                        
 
  /*   COPY_EXISTING ~RCEPCFT.SPL~ ~override~ //delay to 5 seconds
 		LPF  ALTER_SPELL_EFFECT INT_VAR duration  = 5 timing = 3  END */

@@ -2,7 +2,7 @@
 
 BACKUP ~3ed/backup~
 AUTHOR ~holic.denis@gmail.com~
-VERSION ~v2.12~
+VERSION ~v2.13~
 
 
 ALWAYS
@@ -298,6 +298,7 @@ WITH_TRA ~%LANGUAGE%\Spells.tra~ BEGIN
 	
 	INCLUDE ~3ed/Component4/ModifyDispelMagic.tps~ //modify dispel magic
 	INCLUDE ~3ed/Component4/ModifySpells.tps~ //modify rest of the spells
+    INCLUDE ~3ed/Component4/UpdateSpellDuration.tps~ //modify duration of certain spells
 	INCLUDE ~3ed/Component4/UpdateSavesAndEvasion.tps~ //change spells of saves, items (mostly spell to something)
 	
 	INCLUDE ~3ed/Component4/UpdateScrollDescriptions.tps~ //map scroll descriptions to that of corresponding spells

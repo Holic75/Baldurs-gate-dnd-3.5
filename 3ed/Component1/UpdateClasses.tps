@@ -1256,9 +1256,9 @@ END
         LPF GET_SPELL_EFFECT_VALUES INT_VAR match_opcode = 139 RET HpDmgStrRef = parameter1 END
      
      OUTER_SET StrRefProt = RESOLVE_STR_REF(@003)
-	 
+	 OUTER_SET StrRefWarn = RESOLVE_STR_REF(@005)
 	 WITH_TRA ~%LANGUAGE%\berserker.tra~ BEGIN  
-             
+        
         OUTER_FOR (con = 10;con<=24;con=con+2) BEGIN
             OUTER_SET brsrk_duration = 6*(3 + (con - 10)/2)
             //berserker rage update
@@ -1288,7 +1288,10 @@ END
                 LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 89 parameter1 = 20 END
                 LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 73 parameter1 = 3 END //damage
                 LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 278 parameter1 = 3 END //thac0
-       					       
+                //display string that rage ends one round before       					       
+                SET warning_time = brsrk_duration - 6
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 330 parameter1 = StrRefWarn parameter2 = 0 target = 1 duration = warning_time timing = 3 END 
+                
             COPY_EXISTING ~BRSR2%con%.SPL~  ~override/BRSR3%con%.SPL~	
                 //resistances
                 LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 86 parameter1 = 30 END 

@@ -212,12 +212,12 @@ Elegant Strike (5 stars) - With unarmed strikes, short swords, daggers, long swo
 Whirlwind Attack (6 stars) - The character receives Whirlwind Attack innate ability.
 ```
 Whirlwind Attack:
-This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10, but one's THAC0 and damage suffer a 4 point penalty. The Whirlwind Attack lasts for one round. Can be used once every 5 minutes.
+This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10, but one's THAC0 and damage suffer a 4 point penalty. The Whirlwind Attack lasts for one round. Can be used once every 2 minutes.
 ```  
 Greater Whirlwind Attack (7 stars) - The character receives Greater Whirlwind Attack innate ability.
 ```
 Greater Whirlwind Attack:
-This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10. The Greater Whirlwind Attack lasts for one round. Can be used once every 5 minutes.
+This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10. The Greater Whirlwind Attack lasts for one round. Can be used once every 2 minutes.
 ```  
 
 ###### Warfare
@@ -309,10 +309,10 @@ Premonition allows character to use his experience and mastery of combat to pred
 ###### Quicken magic
 (1 star) - Spell casting time for all spells is reduced by 1.   
 (2 stars) - Spell casting time for all spells is further reduced by 1.  
-(3 stars) - Spell casting time for all spells is further reduced by 1.
+(3 stars) - Spell casting time for all spells is further reduced by 1.  
 (4 stars) - Spell casting time for all spells is further reduced by 1.  
 (5 stars) - Spell casting time for all spells is further reduced by 1.  
-(6 stars) - The character receives Improved Alacrity innate ability which can be used once per day.
+(6 stars) - The character receives Improved Alacrity innate ability which can be used once per day.  
 ```
 Improved Alacrity:
 Improved Alacrity essentially erases the pause between casting spells. When cast, the wizard can begin casting a new spell the instant she is finished casting her current spell. The effect lasts for 2 rounds.
@@ -560,7 +560,7 @@ At the end of the Defensive Stance, the character becomes fatigued (-2 penalty t
 At 10th level, Dwarven Defender’s bonuses to Strength, Constitution and AC each increase to +4, and bonus on saves increases to +2.
 At 17th level, the character is no longer subject to fatigue effects after Defensive Stance.
 ```
-– Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 3 and every 3 levels thereafter to a maximum of 50% at level 28.
+– Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 3 and every 3 levels thereafter to a maximum of 50% at level 30.  
 – High Savingthrows vs. Spell   
 – Hit Die: d12  
 
@@ -710,7 +710,7 @@ CLASS FEATURES:
 ```
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
 ```
-– Bonus Feats: Ranger gets Style Focus in Two Weapon Fighting for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12, Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.  
+– Gets one bonus combat style feat at levels 2, 6, 10, 14, 18, 22 and 26. This feat can be chosen from either Sword and Shield Combat, Single-Weapon Combat, Two-Weapon Combat, Archery, Combat Prowess, Warfare or Tactics trees.  
 – May select one racial enemy at levels 1, 5 and every 5 levels thereafter which grants a +2 bonus on to hit and damage rolls against the selected enemy race. These bonuses increase by 1 at every 5th level.  
 – May use the Charm Animal ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.  
 – May use the Hide In Shadows and Move Silently skills (15% at level 1, +5% at every next level).   
@@ -736,7 +736,7 @@ CALLED SHOT: All successful ranged attacks within the next 10 seconds have the f
  16th level: +4 bonus to damage roll.
 ```
 Disadvantages:  
-– Do not gain Bonus Feats in Two Weapon Fighting Style.  
+– Do not gain combat style bonus feats.  
 – May only wear light armor.  
 – May not use the Charm Animal ability.  
 
@@ -748,7 +748,7 @@ Advantages:
 – Hit Die: d12.  
 
 Disadvantages:  
-– Does not gain Bonus Feats in Two Weapon Fighting Style.  
+– Does not gain bonus combat style feats.  
 – May use only weapons available to druids as well as axes, longbows and shortbows.  
 – May only wear armor a druid can.  
 
@@ -767,7 +767,7 @@ SMITE RACIAL ENEMY: For 10 seconds Stalker receives +1 bonus to her attack roll 
 – Gains additional bonus feat at level 22.  
 
 Disadvantages:  
-– Do not gain Bonus Feats in Two Weapon Fighting Style.  
+– Does not gain bonus combat style feats.    
 – May only wear light armor.  
 – May not use the Charm Animal ability.  
 
@@ -913,7 +913,7 @@ CLASS FEATURES:
 – May only use the following weapons: dagger, quarterstaff, dart, sling, crossbow.  
 – Receives one bonus magic Feat at level 5, 10, 15, 20, 22 and 28.  
 – May cast arcane spells.  
-- Acquires 2 scrolls with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
+– Acquires 2 scrolls with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Gains access to the following epic spells: Comet (at level 21), Energy Blades (at level 22), Dragon's Breath (at level 23) and Summon Planetar (at level 24).  
 – Hit Die: d4  
 – Low THAC0/APR progression, High Savingthrows vs. Spell
@@ -1012,9 +1012,9 @@ Advantages:
 – Gains +1 AC bonus at level 5 and every five levels thereafter.  
 – Gains +1 AC bonus per 2 points of Wisdom above 10.  
 – Ninja gains a pool of ki points equal to 1/2 of her level +1 per 2 points of Wisdom above 10. These points can be spent to use different ki powers and are replenished after rest.  
-	Starting from level 1 ninja can spend one point from ki pool to become invisible for 10 seconds.  
-	Starting from level 4 ninja can alternatively spend one point from ki pool to create 1d4 mirror images of herself or become blurred (+3 AC, +1 Saving throw bonus) for 10 seconds or detect invisible creatures.  
-	Starting from level 7 ninja can alternatively spend one point from ki pool to become hasted for 10 seconds.  
+  Starting from level 1 ninja can spend one point from ki pool to become invisible for 10 seconds.  
+  Starting from level 4 ninja can alternatively spend one point from ki pool to create 1d4 mirror images of herself or become blurred (+3 AC, +1 Saving throw bonus) for 10 seconds or detect invisible creatures.  
+  Starting from level 7 ninja can alternatively spend one point from ki pool to become hasted for 10 seconds.  
   Starting from level 10 ninja can alternatively spend one point from ki pool to make all her attacks for next round stun opponents unless they make a Saving throw vs. Paralyze (with penalty equal to one quarter level of ninja rounded down).  
   Starting from level 13 ninja can alternatively spend one point from ki pool to heal 10 Hit Points to herself and neutralize any poison.  
   Starting from level 16 ninja can alternatively spend one point from ki pool to place herself under the effect of Improved Invisibility spell or use True Sight ability for 10 seconds.  
@@ -1418,6 +1418,7 @@ CLASS FEATURES:
 – May wear helmets.  
 – May use any weapon and shield (excluding large shield).  
 – May not wear armor heavier than splint mail.  
+– Gets one bonus combat style feat at levels 2, 9, 16 and 23. This feat can be chosen from either Sword and Shield Combat, Single-Weapon Combat, Two-Weapon Combat, Archery, Combat Prowess, Warfare or Tactics trees.  
 – Has Evasion passive ability.  
 ```
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
@@ -1603,7 +1604,7 @@ Lvl| High | Medium | Low |
 
 ### Sneak Attack Progression per level (number of d6 dices)
 
-Lvl| Thief, Ninja | Assassin | Shadowdancer | Jester, Stalker, Multiclass Thieves|
+Lvl| Thief, Ninja | Assassin | Shadowdancer | Jester, Multiclass Thieves|
 ---| --- | --- | --- | ---
 1  |  1  |  1  |  1  |  0
 2  |  1  |  1  |  1  |  0
@@ -2094,7 +2095,7 @@ Death            | Horror (2), Hold Undead (3), Control Undead (7)              
 Destruction      | Melf's Acid Arrow (2), Cloudkill (5), Disintegrate (6)                              |Destructive Smite 1/day
 Elemental (Earth)| Conjure Lesser Earth Elemental (5), Stoneskin (6), Protection From The Elements (7) |50% acid resistance
 Elemental (Fire) | Burning Hands (1), Fireball (3), Delayed Blast Fireball (7)                         |50% fire resistance
-Glory            | Exaltation (3), Boon of Diety (6), Mordenkainen's Sword (7)                         |Aura of Faith 1/day
+Glory            | Exaltation(Bg1, Bg2)/Emotion:Courage(Iwd) (3), Boon of Diety (6), Mordenkainen's Sword (7)                         |Aura of Faith 1/day
 Moon             | Blindness (1), Blur (2), Vampiric Touch (3)                                         |Immunity to blindness
 Protection       | Shield (1), Minor Globe of Invulnerability (4), Protection From Magical Weapons (6) |+1 to all Savingthrows
 Sun              | Fireshield (Red) (4), Sunfire (5), Prismatic Spray (7)                              |Divine Light 1/day
@@ -2114,13 +2115,13 @@ If the caster harms—or attempts to harm—the charmed animal by some overt act
 Touched creature dies if fails Savingthrow vs. Death with penalty equal to one fourth caster level rounded down.
 
 #### Destructive Smite
-For 10 seconds character receives +1 bonus to her attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage with every hit.
+For 10 seconds character receives +1 bonus to her attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level with every hit.
 
 #### Dispelling Touch
 You remove magical effects from a creature by touching it with the probability equal to 60% + 2% per caster level.
 
 #### Divine Light
-The character emits a dazzling burst of light that strikes at all undead creatures within a 30-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the character's current THAC0 +3. Struck creatures suffer 1d4 points of fire damage per caster level.  
+The character emits a dazzling burst of light that strikes at all undead creatures within a 30-ft. radius. The spell does not automatically hit all targets, but makes a melee attack using the character's current THAC0 +3. Struck creatures suffer 1d6 points of fire damage per caster level.  
 
 
 ### Sorcerer bloodline spells
@@ -2212,20 +2213,20 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Burning hands is now and area effect spell (15 ft cone)  
 - The saving throw penalties against Spook now no longer increase with caster level  
 - If creatures under effect of Sleep are being attacked, they wake up  
-- Shocking Grasp now acts as close range spell (instead of weapon) dealing 1d6 electrical damage per level
+- Shocking Grasp now acts as close range spell (instead of weapon) dealing 1d6 electrical damage per level  
 - Ghoul touch now acts as close range spell (instead of weapon)  
 - Horror duration was reduced to 3 rounds  
 - Dispel Magic and Remove Magic spells now  dispel with probability equal to 30% + 1% per level (twice for Inquisitors)  
 - Animate Dead now summons two skeletons instead of one  
-- Enchanted Weapon now gives + 1 enchantment bonus / 4 caster levels  and also provides corresponding bonuses to THAC0 and damage (depending on original weapon enchantment), clerics can also cast it  
+- Enchanted Weapon now gives + 1 enchantment bonus / 4 caster levels  and also provides corresponding bonuses to THAC0 and damage (depending on original weapon enchantment), clerics can also cast it   
 - Tenser's Transformation now sets THAC0 to that of a fighter of equal level gives +1 APR, +2 To Hit and Damage bonus and doubles caster's HP  
 - Magical Stone now creates one magical sling bullet per priest level (+1 THAC0, 1d6+1 damage or 2d6+2 against undead)  
-- Bless is now a cleric only spell
-- Shillelagh duration was increased to 5 rounds/level, shillelagh damage was increased to 2d6
+- Bless is now a cleric only spell  
+- Shillelagh duration was increased to 5 rounds/level, shillelagh damage was increased to 2d6  
 - Barkskin now gives +3 bonus to AC (+4 at level 7, +5 at level 13) which is cumulative with everything else and +1 bonus to saving throws (except vs. Spell)    
 - Flame Blade spell was removed, it is now replaced with druid only Flame Weapon spell which makes target deal +1d6 fire damage bonus on every attack for the duration of the spell  
 - Goodberries now heal 3 HP each when eaten  
-- Spiritual Hammer is now a throwing weapon with +1 enchantment, THAC0 and Damage bonus per 3 caster levels (up to +5 at lvl 15)  
+- Spiritual Hammer is now a throwing weapon with +1 enchantment, THAC0 and Damage bonus per 3 caster levels (up to +5 at lvl 15)    
 - Draw Upon Holy Might now gives 1+1/per 5 caster level bonus to STR, DEX and CON (up to +5 at level 20)  
 - Aid's +1 THACO bonus is now cumulative with bless, also bonus HP are increased to +5 +1/caster level (up to 15)  
 - Seeking sword now gives only +1 APR (instead of 2) and is now 3rd level War Domain Spell  
@@ -2233,29 +2234,32 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Call Lightning can be now cast indoors and deals 1d6 points of electrical damage per caster level up to 10d6  
 - Cloak of fear radius was increased to 5 ft  
 - Holy Power now sets caster's THAC0 to that of a fighter of the same level, gives +1/2 APR and +2 bonus to strength  
-- Cause Serious Wounds is now a close range spell dealing 26 points of damage  (with saveigthrow vs. Spell for half)
+- Cause Serious Wounds is now a close range spell dealing 26 points of damage  (with saveigthrow vs. Spell for half)  
 - Cure Serious wounds now heals 28 HP  
 - Slay Living now deals 2d6+9 damage to target if it succeeds on Save vs. Death  
-- Flame Strike is now and AOE spell with 5 ft radius
+- Flame Strike is now and AOE spell with 5 ft radius  
 - Champion's Strength is now applied only to caster. It sets its THAC0 to that of a  fighter, gives + 1/2 APR and + 4 strength bonus, the duration is three times that of Holy Power  
 - Righteous Magic now gives + 1 HP per level, +2 AC, and +1 STR and 5% physical damage resistance per 3 caster levels  
-- Cause Critical Wounds is now a close range spell dealing 36 points of damage  (with savingthrow vs. Spell for half)
+- Cause Critical Wounds is now a close range spell dealing 36 points of damage  (with savingthrow vs. Spell for half)  
 - Cure Critical wounds now heals 36 HP  
 - Heal now heals up to 150 HP  
 - Divine favor now lasts 4 rounds (it is now a 5th level War Domain Spell)  
-- Sol's Searing Orb is now a ranged spell in Bg1 and Bg2 (instead creating item)  and deals 6d12 damage (double to undead) with savingthrow vs Breath Weapon for half
-- Damage of Bolt of Glory against primes/elementals/undead/demons was increased to 4d12/3d8/8d12/10d12 respectivelyy
-- Harm is now a close range spell instead of a weapon dealing 150 damage (75 if Save vs. Spell), but always leaves target with at least 1 HP    
+- Sol's Searing Orb is now a ranged spell in Bg1 and Bg2 (instead creating item)  and deals 6d12 damage (double to undead) with savingthrow vs Breath Weapon for half  
+- Damage of Bolt of Glory against primes/elementals/undead/demons was increased to 4d12/3d8/8d12/10d12 respectively  
+- Harm is now a close range spell instead of a weapon, dealing 150 damage (75 if Save vs. Spell), but always leaves target with at least 1 HP    
 - Boon of Lathander was renamed to Boon of Deity (it is now a 6th level Glory Domain Spell)  
 - Finger of Death now deals 6d8 points of damage to the target if it succeeds on a Saving Throw vs. Death  
-- Damage of Chain Lightning is now fixed at 12d6
-- Regeneration now always lasts 10 rounds
-- Mantle, Improved Mantle and Absolute Immunity now last 1 round per caster level, Absolute Immunity now also protects against +6 weapons
-- Energy drain now gives 2d4 negative levels
-- All cure wounds spells ( and Heal) now harm undead for corresponding amount of damage (with Savingthrow vs. Spell for 1/2) instead of healing them.
-- All cause wounds spells (and Harm) now heal undead for corresponding amount of Hit Points (with Savingthrow vs. Spell for 1/2) instead of harming them.
-- Effects of Holy/ Unholy word now depend on difference between caster and target level/HD (rather than raw target level/HD)
-- Project Image now has only 50% of caster level
+- Damage of Chain Lightning is now fixed at 12d6  
+- Regeneration now always lasts 10 rounds  
+- Mantle, Improved Mantle and Absolute Immunity now last 1 round per caster level, Absolute Immunity now also protects against +6 weapons  
+- Energy drain now gives 2d4 negative levels  
+- All cure wounds spells ( and Heal) now harm undead for corresponding amount of damage (with Savingthrow vs. Spell for 1/2) instead of healing them  
+- All cause wounds spells (and Harm) now heal undead for corresponding amount of Hit Points (with Savingthrow vs. Spell for 1/2) instead of harming them    
+- Effects of Holy/ Unholy word now depend on difference between caster and target level/HD (rather than raw target level/HD)  
+- Project Image now has only 50% of caster level  
+- Duration of Bless, Protection from Evil, Armor of Faith, Barkskin, Resist Fire/Cold, Ghost Armor and Spirit Armor was changed to 1 min/level  
+- Duration of Blur was changed to 5 rounds/level  
+- Iwd Poison spell now deals 1 poison damage per 6 levels of the caster per second.
 
 ### New Spells
 
@@ -2561,7 +2565,7 @@ The affected animal gains a +10 on attack rolls and damage rolls and 4 temporary
 
 
 Additionally Druids gain access to the following spells: Burning Hands (as 1st level spell), Sleep (as 1st level spell),
- Flame Strike (as 4th level spell), Hold Monster (as 4th level spell), Ice Storm (as 4th levels spell), Chain Lightning (as 6th level spell),
+ Flame Strike (as 4th level spell), Hold Monster (as 4th level spell), Ice Storm (as 4th level spell), Chain Lightning (as 6th level spell),
  False Dawn (as 6th level spell), Sunray (as 7th level spell), Regeneration (as 7th level spell).  
 
 ## 7. Racial Enemies
@@ -2630,7 +2634,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Edwin - Conjurer (10/ 12/ 14/ 18/ 9 / 10)
 #### Viconia - Cleric/Thief (10/ 18/ 10/ 16/ 14/ 14)
 #### Imoen - Fighter/Mage/Thief (9/ 16/ 12/ 16/ 11/ 10)  
-#### Yoshimo - Fighter/Thief (14/ 16/ 14/ 14/ 10/ 10)
+#### Yoshimo - Thief (10/ 18/ 12/ 14/ 10/ 10)
 #### Valygar - Stalker (16/ 16/ 12/ 10/ 13/ 9)
 #### Nalia - Bard (12/ 15/ 12/ 13/ 9/ 16)
 #### Mazzy - Kensai (12/ 18/ 14/ 10/ 14/ 10)
