@@ -184,16 +184,16 @@ Advantages:
 – Bonus Feats: at level 1 Berserker receives for free Warfare (1):Power Attack, at level 4 <PRO_HESHE> receives Warfare (2):Cleave and finally Warfare (3):Great Fortitude at level 8.
 – May use Rage ability once per day. Gains one use at level 1, level 4 and every 4 levels thereafter.
 
-RAGE: The enraged state lasts for 3 rounds + 1 round per 2 points of Constitution above 10. While enraged, a Berserker gains a bonus of +2 to <PRO_HISHER> attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
-At 8th level the attack and damage rolls bonus increases to +3 and physical damage resistance bonus to 20%.
-At 16th level the attack and damage rolls bonus increases to +5 and physical damage resistance bonus to 30%.
+RAGE: The enraged state lasts for 3 rounds + 1 round per 2 points of Constitution above 10. While enraged, a Berserker gains a bonus of +3 to <PRO_HISHER> attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
+At 10th level the attack and damage rolls bonus increases to +5 and physical damage resistance bonus to 20%.
+At 19th level the attack and damage rolls bonus increases to +7 and physical damage resistance bonus to 30%.
 
 – 8th level: Endless Berserk: Berserker can prolong <PRO_HISHER> rage if the combat lasts too long, while enraged <PRO_HESHE> can spend an extra use of <PRO_HISHER> Rage to prolong it for a new full duration, <PRO_HESHE> does not feel the tiring effects until the end of this new Rage, <PRO_HESHE> can continue to prolong the Rage as long as <PRO_HESHE> has Rages.
-– 12th level: Improved Power Attack: Power attack damage bonus is increased to +5.
-– 16th level: Supreme Power Attack:  Power attack damage bonus is further increased to +6.
+– 12th level: Improved Power Attack: Power attack damage bonus is increased to +5 (+7 with 2-handed weapons).
+– 16th level: Supreme Power Attack:  Power attack damage bonus is further increased to +6 (+9 with 2-handed weapons).
 – 18th level: Immortal Berserker: The hit points of enraged Berserker can not be reduced below 1, but at the end of Rage Berserker receives 15 points of damage which can kill <PRO_HIMHER> if <PRO_HESHE> has fewer hit points.
 Note: although <PRO_HISHER> hit points can not be reduced below 1, Berserker can still be killed by spells like Slay Living, Disintegrate and others.
-– 20th level: Last Berserk: Berserker gains one use per day of special form of Rage called Last Berserk. It has the same effect as normal Rage and Berserker also receives +10 damage bonus on damage rolls (to a total of +15). However it can not be prolonged and after it ends Berserker can no longer use Rage for next 8 hours.
+– 20th level: Last Berserk: Berserker gains one use per day of special form of Rage called Last Berserk. It has the same effect as normal Rage but damage bonus is increased to +15. However it can not be prolonged and after it ends Berserker can no longer use Rage for next 8 hours.
 – Gets one bonus feat at levels 22, 25 and 28.
 
 Disadvantages:
@@ -293,7 +293,7 @@ It lasts for 3 rounds + 1 round per 2 points of newly modified Constitution abov
 Disadvantages:
 – May not wear armor heavier than splint mail.
 - May not use large shields.
-– Gets bonus feats only at levels 5, 10, 15, 20, 22 and 28.
+– Gets bonus feats only at levels 4, 8, 12, 16, 20, 22 and 28.
 - Can not use Hardiness and Resist Magic abilities.
 – May only put one star in any weapon <PRO_HESHE> can use.
 ~
@@ -315,7 +315,7 @@ At 17th level, the character is no longer subject to fatigue effects after Defen
 
 Disadvantages:
 – Race restricted to dwarf.
-– Gets bonus feats only at levels 5, 10, 15, 20, 22 and 28.
+– Gets bonus feats only at levels 4, 8, 12, 16, 20, 22 and 28.
 – Does not get Hardiness and Resist Magic abilities.  
 – May only put one star in any weapon <PRO_HESHE> can use.~
 //---------------------------------------------------------------------------------------------------------------------------//
@@ -469,7 +469,7 @@ CLASS FEATURES:
 
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
 
-– Gets one bonus combat style feat at levels 2, 6, 10, 14, 18, 22 and 26. This feat can be chosen from either Sword and Shield Combat, Single-Weapon Combat, Two-Weapon Combat, Archery, Combat Prowess, Warfare or Tactics trees.
+– Gets one bonus weapon style feat at levels 2, 6, 10, 14, 18, 22 and 26.
 – May select one racial enemy at levels 1, 5 and every 5 levels thereafter which grants a +2 bonus on to hit and damage rolls against the selected enemy race. These bonuses increase by 1 at every 5th level.
 – May use the Charm Animal ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.
 – May use the Hide In Shadows and Move Silently skills (15% at level 1, +5% at every next level).
@@ -507,7 +507,7 @@ All hostile undead creatures suffer 1d6 points of magical damage per Channel Ene
 
 
 – Eventually can cast low level druidic spells (same as trueclass ranger).
-– Gets one bonus combat style feat at levels 2, 9, 16 and 23. This feat can be chosen from either Sword and Shield Combat, Single-Weapon Combat, Two-Weapon Combat, Archery, Combat Prowess, Warfare or Tactics trees.
+– Gets one bonus weapon style feat at levels 2, 9, 16 and 23.
 – May call for an animal companion who fights for <PRO_HISHER> side.
 – Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.
 – At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
@@ -531,7 +531,7 @@ CALLED SHOT: All successful ranged attacks within the next 10 seconds have the f
  16th level: +4 bonus to damage roll.
 
 Disadvantages:
-– Does not gain bonus combat style feats.
+– Does not gain bonus weapon style feats.
 – May only wear light armor.
 – May not use the Charm Animal ability.~
 //---------------------------------------------------------------------------------------------------//
@@ -544,7 +544,7 @@ Advantages:
 – Hit Die: d12.
 
 Disadvantages:
-– Does not gain bonus combat style feats.
+– Does not gain bonus weapon style feats.
 – May use only weapons available to druids as well as axes, longbows and shortbows.
 – May only wear armor a druid can.~
 //---------------------------------------------------------------------------------------------------//
@@ -564,7 +564,7 @@ SMITE RACIAL ENEMY: For 10 seconds Stalker receives +1 bonus to <PRO_HISHER> att
 – Gets one more bonus feat at level 22.
 
 Disadvantages:
-– Does not gain bonus combat style feats.
+– Does not gain bonus weapon style feats.
 – May only wear light armor.
 – May not use the Charm Animal ability.~
 //---------------------------------------------------------------------------------------------------//

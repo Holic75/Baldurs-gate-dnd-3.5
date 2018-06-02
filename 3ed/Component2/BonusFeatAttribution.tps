@@ -4,16 +4,20 @@
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=2 add_at_level1=1 delay = 2 
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREF.SPL~ feat_type_file=~FFTCRE~ caption=~FTRBONFT~ END
 						
-//add bonus feats to barbarian, wizardslayer and dwarven defender every 5 levels starting from lvl5
+//add bonus feats to wizardslayer (hexblade) every 5 levels starting from lvl5
 	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1000001010000100001000010000 delay = 2
-						STR_VAR clab=~\(\(CLABFI03\)\|\(CLABFI05\)\|\(CLABFI06\)\)\.2DA~ feat_type_file=~FFTCRE~ caption=~FTRBONFT~ END
+						STR_VAR clab=~CLABFI03\.2DA~ caption=~FTRBONFT~ END
+
+//add bonus feats to barbarian and dwarven defender every 4 levels starting from lvl5
+	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1000001010001000100010001000 delay = 2
+						STR_VAR clab=~\(\(CLABFI05\)\|\(CLABFI06\)\)\.2DA~ caption=~FTRBONFT~ END
 						
 //add bonus feats to berzerker
 	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=3 add_at_level1=0 delay = 2
-						STR_VAR clab=~CLABFI02\.2DA~ feat_type_file=~FFTCRE~ caption=~FTREPCFT~ END
+						STR_VAR clab=~CLABFI02\.2DA~ caption=~FTRBONFT~ END
 //add bonus feats to  kensai
 	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=0 delay = 2 
-						STR_VAR clab=~CLABFI04\.2DA~ feat_type_file=~FFTCRE~ caption=~FTREPCFT~ END
+						STR_VAR clab=~CLABFI04\.2DA~ caption=~FTRBONFT~ END
 
 //add bonus feats to ftr/cleric at level 4, 8, 12, 16, 20
 	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=20 d_level=4 add_at_level1=0 delay = 2

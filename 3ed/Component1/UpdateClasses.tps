@@ -1277,31 +1277,35 @@ END
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 87 parameter1 = 10 target = 1 duration = brsrk_duration insert_point = 0 END 
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 88 parameter1 = 10 target = 1 duration = brsrk_duration insert_point = 0 END 
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 89 parameter1 = 10 target = 1 duration = brsrk_duration insert_point = 0 END
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 73 parameter1 = 3 END //damage
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 278 parameter1 = 3 END //thac0
 
                 
             COPY_EXISTING ~BRSR1%con%.SPL~  ~override/BRSR2%con%.SPL~	
                 LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 206 END //remove protection from spell
-                //resistances
-                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 86 parameter1 = 20 END 
-                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 87 parameter1 = 20 END 
-                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 88 parameter1 = 20 END 
-                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 89 parameter1 = 20 END
-                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 73 parameter1 = 3 END //damage
-                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 278 parameter1 = 3 END //thac0
                 //display string that rage ends one round before       					       
                 SET warning_time = brsrk_duration - 6
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 330 parameter1 = StrRefWarn parameter2 = 0 target = 1 duration = warning_time timing = 3 END 
                 
             COPY_EXISTING ~BRSR2%con%.SPL~  ~override/BRSR3%con%.SPL~	
                 //resistances
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 86 parameter1 = 20 END 
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 87 parameter1 = 20 END 
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 88 parameter1 = 20 END 
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 89 parameter1 = 20 END
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 73 parameter1 = 5 END //damage
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 278 parameter1 = 5 END //thac0              
+                
+            COPY_EXISTING ~BRSR3%con%.SPL~  ~override/BRSR4%con%.SPL~	
+                //resistances
                 LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 86 parameter1 = 30 END 
                 LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 87 parameter1 = 30 END 
                 LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 88 parameter1 = 30 END 
                 LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 89 parameter1 = 30 END
-                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 73 parameter1 = 5 END //damage
-                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 278 parameter1 = 5 END //thac0
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 73 parameter1 = 7 END //damage
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 278 parameter1 = 7 END //thac0
                 
-            COPY_EXISTING ~BRSR3%con%.SPL~  ~override/BRSR4%con%.SPL~
+            COPY_EXISTING ~BRSR4%con%.SPL~  ~override/BRSR5%con%.SPL~
                LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode=208 parameter1 = 1 timing = 0 duration = (brsrk_duration - 1) END //min hp to 1 
                LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode=12 parameter2 = 0 parameter1 = 15 timing = 4 duration = brsrk_duration resist_dispel = 2 END //damage after berserk 
                LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 parameter1 = HpDmgStrRef target = 1 duration = 1 insert_point = 0 END //string about hp_damage
@@ -1310,10 +1314,10 @@ END
             //   LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 146 END //remove fatigue
 
             //COPY_EXISTING ~BRSR5%con%.SPL~ ~override/LBRSR%con%.SPL~
-            COPY_EXISTING ~BRSR4%con%.SPL~ ~override/LBRSR%con%.SPL~
+            COPY_EXISTING ~BRSR5%con%.SPL~ ~override/LBRSR%con%.SPL~
                LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 duration = 2400 target =1 STR_VAR resource = ~SPCL321~ END //fatigue	
                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 73 parameter1 = 15 END //damage
-			   LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 278 parameter1 = 5 END //thac0
+			   LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 278 parameter1 = 7 END //thac0
               
         END
         
@@ -1328,20 +1332,22 @@ END
             END 
              
         COPY_EXISTING ~SPCL321.SPL~ ~override/SPCL321.SPL~
-            
             LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-            LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 8 END
-        
+            LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 9 END
+            
             LPF ADD_SPELL_HEADER INT_VAR copy_header = 2 END
-            LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 16 END
+            LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 10 END
         
             LPF ADD_SPELL_HEADER INT_VAR copy_header = 3 END
-            LPF ALTER_SPELL_HEADER INT_VAR header = 4 min_level = 18 END	
+            LPF ALTER_SPELL_HEADER INT_VAR header = 4 min_level = 19 END
+        
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 4 END
+            LPF ALTER_SPELL_HEADER INT_VAR header = 5 min_level = 18 END	
         
             //LPF ADD_SPELL_HEADER INT_VAR copy_header = 4 END
             //LPF ALTER_SPELL_HEADER INT_VAR header = 5 min_level = 20 END
             LPF DELETE_EFFECT INT_VAR check_headers = 1 END
-            LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = 4 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 126 STR_VAR abil_name = ~BRSR~ END 
+            LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = 5 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 126 STR_VAR abil_name = ~BRSR~ END 
             
             READ_LONG 0x0050 ~descr_strref~
             STRING_SET_EVALUATE %descr_strref% @004	

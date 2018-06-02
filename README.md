@@ -17,7 +17,7 @@
 
 
 
-# Baldurs-gate-dnd-3.5 v2.12
+# Baldurs-gate-dnd-3.5 v2.13
 This is a WeiDu mod for BG:Enhanced edition and BG2:Enhanced edition that changes 2ed ADnD rules to DnD 3.5 with some elements taken from Pathfinder.  
 It changes game mechanics (i.e. classes, spells, abilities, etc...) to that of 3.5 edition (to the extent that game engine allows).
 
@@ -442,16 +442,16 @@ Advantages:
 – Bonus Feats: at level 1 Berserker receives Warfare (1):Power Attack, at level 4 she receives Warfare (2):Cleave and finally at level 8 - Warfare (3):Great Fortitude.    
 – May use Rage ability once per day. Gains one use at level 1, additional uses at level 4 and every 4 levels thereafter.
 ```
-RAGE: The enraged state lasts for 3 rounds + 1 per 2 points of Berserker's Constitution above 10. While enraged, a Berserker gains a bonus of +2 to her attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to her Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
-At 8th the attack and damage rolls bonus increases to +3 and physical damage resistance bonus to 20%.
-At 16th level the attack and damage rolls bonus increases to +5 and physical damage resistance bonus to 30%.
+RAGE: The enraged state lasts for 3 rounds + 1 per 2 points of Berserker's Constitution above 10. While enraged, a Berserker gains a bonus of +3 to her attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to her Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
+At 10th the attack and damage rolls bonus increases to +5 and physical damage resistance bonus to 20%.
+At 19th level the attack and damage rolls bonus increases to +7 and physical damage resistance bonus to 30%.
 ```
 – 8th level: Endless Berserk: Berserker can prolong her rage if the combat lasts too long, while enraged she can spend an extra use of her Rage to prolong it for a new full duration, she does not feel the tiring effects until the end of this new Rage, she can continue to prolong the Rage as long as she has Rages.  
 – 12th level: Improved Power Attack: Power attack damage bonus is increased to +5 (+7 for two-handed weapons).  
 – 16th level: Supreme Power Attack:  Power attack damage bonus is further increased to +6 (+9 for two-handed weapons).  
 – 18th level: Immortal Berserker: The hit points of enraged Berserker can not be reduced below 1, but at the end of Rage Berserker receives 15 points of damage which can kill her if she has fewer hit points.   
 Note: although her hit points can not be reduced below 1, Berserker can still be killed by spells like Slay Living, Disintegrate and others.  
-– 20th level: Last Berserk: Berserker gains one use per day of special form of Rage called Last Berserk. It has the same effect as normal Rage and Berserker also receives +10 damage bonus on damage rolls (to a total of +15). However it can not be prolonged and after it ends Berserker can no longer use Rage for next 8 hours.    
+– 20th level: Last Berserk: Berserker gains one use per day of special form of Rage called Last Berserk. It has the same effect as normal Rage but the damage bonus is increased to +15. However it can not be prolonged and after it ends Berserker can no longer use Rage for next 8 hours.    
 – Gets one bonus feat at levels 22, 25 and 28.
 
 Disadvantages:  
@@ -545,7 +545,7 @@ It lasts for 3 rounds + 1 round per 2 points of newly modified Constitution abov
 Disadvantages:  
 – May not wear armor heavier than splint mail.  
 – May not use large shields.  
-– Gets bonus feats only at levels 5, 10, 15, 20, 22 and 28.    
+– Gets bonus feats only at levels 4, 8, 12, 16, 20, 22 and 28.    
 – Does not get Hardiness and Resist Magic abilities.  
 – Can not use Hardiness and Resist Magic abilities.  
 – May only put one star in any weapon she can use.     
@@ -566,7 +566,7 @@ At 17th level, the character is no longer subject to fatigue effects after Defen
 
 Disadvantages:  
 – Race restricted to dwarf.  
-– Gets bonus feats only at levels 5, 10, 15, 20, 22 and 28.  
+– Gets bonus feats only at levels 4, 8, 12, 16, 20, 22 and 28.  
 – Does not get Hardiness and Resist Magic abilities.  
 – May only put one star in any weapon she can use.  
 
@@ -710,7 +710,7 @@ CLASS FEATURES:
 ```
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
 ```
-– Gets one bonus combat style feat at levels 2, 6, 10, 14, 18, 22 and 26. This feat can be chosen from either Sword and Shield Combat, Single-Weapon Combat, Two-Weapon Combat, Archery, Combat Prowess, Warfare or Tactics trees.  
+– Gets one bonus combat style feat at levels 2, 6, 10, 14, 18, 22 and 26.    
 – May select one racial enemy at levels 1, 5 and every 5 levels thereafter which grants a +2 bonus on to hit and damage rolls against the selected enemy race. These bonuses increase by 1 at every 5th level.  
 – May use the Charm Animal ability once per day. Gains one use at level 1 and an additional use every 2 levels thereafter.  
 – May use the Hide In Shadows and Move Silently skills (15% at level 1, +5% at every next level).   
@@ -736,7 +736,7 @@ CALLED SHOT: All successful ranged attacks within the next 10 seconds have the f
  16th level: +4 bonus to damage roll.
 ```
 Disadvantages:  
-– Do not gain combat style bonus feats.  
+– Does not gain weapon style bonus feats.  
 – May only wear light armor.  
 – May not use the Charm Animal ability.  
 
@@ -767,7 +767,7 @@ SMITE RACIAL ENEMY: For 10 seconds Stalker receives +1 bonus to her attack roll 
 – Gains additional bonus feat at level 22.  
 
 Disadvantages:  
-– Does not gain bonus combat style feats.    
+– Does not gain bonus weapon style feats.    
 – May only wear light armor.  
 – May not use the Charm Animal ability.  
 
@@ -1418,7 +1418,7 @@ CLASS FEATURES:
 – May wear helmets.  
 – May use any weapon and shield (excluding large shield).  
 – May not wear armor heavier than splint mail.  
-– Gets one bonus combat style feat at levels 2, 9, 16 and 23. This feat can be chosen from either Sword and Shield Combat, Single-Weapon Combat, Two-Weapon Combat, Archery, Combat Prowess, Warfare or Tactics trees.  
+– Gets one bonus combat style feat at levels 2, 9, 16 and 23.    
 – Has Evasion passive ability.  
 ```
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
@@ -1822,57 +1822,33 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 
 Note: Specialist Mages can cast one spell more per level per day.
 
-### Cleric/Mage arcane spell slots per day
+### Cleric/Mage (arcane, divine) spell slots per day
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 --- | --- | --- | --- |--- |--- |--- |--- |--- |---
 1 |0|0|0|0|0|0|0|0|0
-2 |1|0|0|0|0|0|0|0|0
-3 |1|0|0|0|0|0|0|0|0
-4 |1|1|0|0|0|0|0|0|0
-5 |1|1|0|0|0|0|0|0|0
-6 |1|1|1|0|0|0|0|0|0
-7 |2|1|1|0|0|0|0|0|0
-8 |2|1|1|1|0|0|0|0|0
-9 |2|2|1|1|0|0|0|0|0
-10|2|2|1|1|1|0|0|0|0
-11|2|2|2|1|1|0|0|0|0
-12|2|2|2|1|1|1|0|0|0
-13|2|2|2|2|1|1|0|0|0
-14|2|2|2|2|1|1|1|0|0
-15|2|2|2|2|2|1|1|0|0
-16|2|2|2|2|2|1|1|1|0
-17|2|2|2|2|2|2|1|1|0
-18|2|2|2|2|2|2|1|1|1
-19|2|2|2|2|2|2|2|1|1
-20|2|2|2|2|2|2|2|2|2
+2 |1, 1|0|0|0|0|0|0|0|0
+3 |1, 1|0|0|0|0|0|0|0|0
+4 |1, 1|1, 1|0|0|0|0|0|0|0
+5 |1, 1|1, 1|0|0|0|0|0|0|0
+6 |1, 1|1, 1|1, 1|0|0|0|0|0|0
+7 |2, 2|1, 1|1, 1|0|0|0|0|0|0
+8 |2, 2|1, 1|1, 1|1, 1|0|0|0|0|0
+9 |2, 2|2, 2|1, 1|1, 1|0|0|0|0|0
+10|2, 2|2, 2|1, 1|1, 1|1, 1|0|0|0|0
+11|2, 2|2, 2|2, 2|1, 1|1, 1|0|0|0|0
+12|2, 2|2, 2|2, 2|1, 1|1, 1|1, 1|0|0|0
+13|2, 2|2, 2|2, 2|2, 2|1, 1|1, 1|0|0|0
+14|2, 2|2, 2|2, 2|2, 2|1, 1|1, 1|1, 1|0|0
+15|2, 2|2, 2|2, 2|2, 2|2, 2|1, 1|1, 1|0|0
+16|2, 3|2, 2|2, 2|2, 2|2, 2|1, 1|1, 1|1|0
+17|2, 3|2, 2|2, 2|2, 2|2, 2|2, 2|1, 1|1|0
+18|2, 3|2, 3|2, 3|2, 3|2, 2|2, 2|1, 1|1|1
+19|2, 3|2, 3|2, 3|2, 3|2, 3|2, 2|2, 2|1|2
+20|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2|3
 
 Note: Specialist Mages can cast one spell more per level per day.
 
-### Cleric/Mage divine spell slots per day
-
-Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
---- | --- | --- | --- |--- |--- |--- |---
-1 |0|0|0|0|0|0|0
-2 |1|0|0|0|0|0|0
-3 |1|0|0|0|0|0|0
-4 |1|1|0|0|0|0|0
-5 |1|1|0|0|0|0|0
-6 |1|1|1|0|0|0|0
-7 |2|1|1|0|0|0|0
-8 |2|1|1|1|0|0|0
-9 |2|2|1|1|0|0|0
-10|2|2|1|1|1|0|0
-11|2|2|2|1|1|0|0
-12|2|2|2|1|1|1|0
-13|2|2|2|2|1|1|0
-14|2|2|2|2|1|1|1
-15|2|2|2|2|2|1|1
-16|3|2|2|2|2|1|1
-17|3|2|2|2|2|2|1
-18|3|3|3|3|2|2|1
-19|3|3|3|3|3|2|2
-20|3|3|3|3|3|3|3
 
 ### Fighter/Mage/Thief spell slots per day
 
@@ -1904,63 +1880,36 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 
 Note: Specialist Mages can cast one spell more per level per day.
 
-### Fighter/Mage/Cleric arcane spell slots per day
+### Fighter/Mage/Cleric (arcane, divine) spell slots per day
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 --- | --- | --- | --- |--- |--- |--- |---
 1 |0|0|0|0|0|0|0
-2 |1|0|0|0|0|0|0
-3 |1|0|0|0|0|0|0
-4 |1|0|0|0|0|0|0
-5 |1|1|0|0|0|0|0
-6 |1|1|0|0|0|0|0
-7 |2|1|0|0|0|0|0
-8 |2|1|1|0|0|0|0
-9 |2|1|1|0|0|0|0
-10|2|2|1|0|0|0|0
-11|2|2|1|1|0|0|0
-12|2|2|1|1|0|0|0
-13|2|2|2|1|0|0|0
-14|2|2|2|1|1|0|0
-15|2|2|2|1|1|0|0
-16|2|2|2|2|1|0|0
-17|2|2|2|2|1|1|0
-18|2|2|2|2|1|1|0
-19|2|2|2|2|2|1|0
-20|2|2|2|2|2|2|1
-21|2|2|2|2|2|2|1
-22|2|2|2|2|2|2|1
-23|2|2|2|2|2|2|2
+2 |1, 1|0|0|0|0|0|0
+3 |1, 1|0|0|0|0|0|0
+4 |1, 1|0|0|0|0|0|0
+5 |1, 1|1, 1|0|0|0|0|0
+6 |1, 1|1, 1|0|0|0|0|0
+7 |2, 2|1, 1|0|0|0|0|0
+8 |2, 2|1, 1|1, 1|0|0|0|0
+9 |2, 2|1, 1|1, 1|0|0|0|0
+10|2, 2|2, 2|1, 1|0|0|0|0
+11|2, 3|2, 2|1, 1|1, 1|0|0|0
+12|2, 3|2, 2|1, 1|1, 1|0|0|0
+13|2, 3|2, 3|2, 2|1, 1|0|0|0
+14|2, 3|2, 3|2, 2|1, 1|1, 1|0|0
+15|2, 3|2, 3|2, 2|1, 1|1, 1|0|0
+16|2, 3|2, 3|2, 2|2, 2|1, 1|0|0
+17|2, 3|2, 3|2, 3|2, 2|1, 1|1|0
+18|2, 3|2, 3|2, 3|2, 2|1, 1|1|0
+19|2, 3|2, 3|2, 3|2, 2|2, 2|1|0
+20|2, 3|2, 3|2, 3|2, 3|2, 2|2|1
+21|2, 3|2, 3|2, 3|2, 3|2, 2|2|1
+22|2, 3|2, 3|2, 3|2, 3|2, 2|2|2
+23|2, 3|2, 3|2, 3|2, 3|2, 3|2|3
 
 Note: Specialist Mages can cast one spell more per level per day.
 
-### Fighter/Mage/Cleric divine spell slots per day
-
-Lvl\Spell level | 1 | 2 | 3 | 4 | 5 |
---- | --- | --- | --- |--- |---
-1 |0|0|0|0|0
-2 |1|0|0|0|0
-3 |1|0|0|0|0
-4 |1|0|0|0|0
-5 |1|1|0|0|0
-6 |1|1|0|0|0
-7 |2|1|0|0|0
-8 |2|1|1|0|0
-9 |2|1|1|0|0
-10|2|2|1|0|0
-11|3|2|1|1|0
-12|3|2|1|1|0
-13|3|2|2|1|0
-14|3|3|2|1|1
-15|3|3|2|1|1
-16|3|3|2|2|1
-17|3|3|3|2|1
-18|3|3|3|2|1
-19|3|3|3|2|2
-20|3|3|3|3|2
-21|3|3|3|3|2
-22|3|3|3|3|2
-23|3|3|3|3|3
 
 
 ### Sorcerer spell slots per day
@@ -2095,7 +2044,7 @@ Death            | Horror (2), Hold Undead (3), Control Undead (7)              
 Destruction      | Melf's Acid Arrow (2), Cloudkill (5), Disintegrate (6)                              |Destructive Smite 1/day
 Elemental (Earth)| Conjure Lesser Earth Elemental (5), Stoneskin (6), Protection From The Elements (7) |50% acid resistance
 Elemental (Fire) | Burning Hands (1), Fireball (3), Delayed Blast Fireball (7)                         |50% fire resistance
-Glory            | Exaltation(Bg1, Bg2)/Emotion:Courage(Iwd) (3), Boon of Diety (6), Mordenkainen's Sword (7)                         |Aura of Faith 1/day
+Glory            | Exaltation (3, Bg1, Bg2)/Emotion:Courage( 3, Iwd) , Boon of Diety (6), Mordenkainen's Sword (7)                         |Aura of Faith 1/day
 Moon             | Blindness (1), Blur (2), Vampiric Touch (3)                                         |Immunity to blindness
 Protection       | Shield (1), Minor Globe of Invulnerability (4), Protection From Magical Weapons (6) |+1 to all Savingthrows
 Sun              | Fireshield (Red) (4), Sunfire (5), Prismatic Spray (7)                              |Divine Light 1/day
@@ -2103,7 +2052,7 @@ Time             | Slow (3), Haste (4), Hold Monster (5)                        
 Trickery         | Grease (1), Confusion (4), Shadow Door (5)                                          |Mirror Image 1/day, +5% bonus to all thieving skills
 War              | Seeking Sword (3), Divine Favor (5), Tenser's Transformation (6)                    |Free weapon focus
 Magic            | Identify (1), Spell Immunity (5), Limited Wish (7)                                  |Dispelling Touch 3/day
-
+Plant            | Entangle (1), Barkskin (2), Poison (4, Bg1, Bg2), Mold Touch (3, Iwd)               |Poison Weapon 1/day
 
 #### Charm Animal, 10' Radius
 This spell affects all animals in 10-ft radius around the caster. The animals are allowed a Saving Throw vs. Spell to negate the effect with penalty equal to one fourth caster level rounded down.  
@@ -2243,7 +2192,7 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Cause Critical Wounds is now a close range spell dealing 36 points of damage  (with savingthrow vs. Spell for half)  
 - Cure Critical wounds now heals 36 HP  
 - Heal now heals up to 150 HP  
-- Divine favor now lasts 4 rounds (it is now a 5th level War Domain Spell)  
+- Divine favor now lasts 10 rounds (it is now a 5th level War Domain Spell)  
 - Sol's Searing Orb is now a ranged spell in Bg1 and Bg2 (instead creating item)  and deals 6d12 damage (double to undead) with savingthrow vs Breath Weapon for half  
 - Damage of Bolt of Glory against primes/elementals/undead/demons was increased to 4d12/3d8/8d12/10d12 respectively  
 - Harm is now a close range spell instead of a weapon, dealing 150 damage (75 if Save vs. Spell), but always leaves target with at least 1 HP    
@@ -2253,12 +2202,13 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Regeneration now always lasts 10 rounds  
 - Mantle, Improved Mantle and Absolute Immunity now last 1 round per caster level, Absolute Immunity now also protects against +6 weapons  
 - Energy drain now gives 2d4 negative levels  
-- All cure wounds spells ( and Heal) now harm undead for corresponding amount of damage (with Savingthrow vs. Spell for 1/2) instead of healing them  
+- All cure wounds spells (and Heal) now harm undead for corresponding amount of damage (with Savingthrow vs. Spell for 1/2) instead of healing them  
 - All cause wounds spells (and Harm) now heal undead for corresponding amount of Hit Points (with Savingthrow vs. Spell for 1/2) instead of harming them    
 - Effects of Holy/ Unholy word now depend on difference between caster and target level/HD (rather than raw target level/HD)  
 - Project Image now has only 50% of caster level  
 - Duration of Bless, Protection from Evil, Armor of Faith, Barkskin, Resist Fire/Cold, Ghost Armor and Spirit Armor was changed to 1 min/level  
-- Duration of Blur was changed to 5 rounds/level  
+- Duration of Blur and Aid was changed to 5 rounds/level  
+- Duration of Luck was changed to 1 round/level
 - Iwd Poison spell now deals 1 poison damage per 6 levels of the caster per second.
 
 ### New Spells
@@ -2404,7 +2354,7 @@ Focusing divine power like a ray of the sun, priest projects a blast of light fr
 Level: 3  
 Sphere: Necromantic   
 Range: 0   
-Duration: 3 rounds + 1 round/level   
+Duration: 5 rouns/level   
 Casting Time: 5   
 Area of Effect: 30-ft. radius  
 Saving Throw: None   
@@ -2569,7 +2519,7 @@ Additionally Druids gain access to the following spells: Burning Hands (as 1st l
  False Dawn (as 6th level spell), Sunray (as 7th level spell), Regeneration (as 7th level spell).  
 
 ## 7. Racial Enemies
-Now racial enemy can be chosen at level 1 and every 5th level.   
+Now racial enemies can be chosen at level 1 and, depending on class) at every 5th or 10th level, the corresponding bonuses grow with level and also vary by class.   
 Additionally following races were added to the selection: Humans, Elves, Half-elves, Gnomes, Dwarves, Halflings, Half-orcs.
 
 ## 8. NPC
@@ -2654,7 +2604,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 
 ## 9. Difficulty
 
-To compensate for new character abilities most of the enemies were made stronger, they got +50% HP and bonuses to AC, THAC0 and APR.   
+To compensate for new character abilities most of the enemies were made stronger, they got bonuses to AC, savingthrows, THAC0 and APR.   
 Certain scripts for spell casting enemies were also changed to make battles more challenging.  
 Also killing greater basiliscs in BG1 now gives only 2800 experience points (instead of 7000).
 

@@ -844,12 +844,12 @@ This spell lasts 1 round per level of the caster. It gives the caster a +1 bonus
 Level: 5
 Sphere: War
 Range: 0
-Duration: 4 rounds
+Duration: 10 rounds
 Casting Time: 1
 Area of Effect: Caster
 Saving Throw: None
 
-This spell grants the caster a +1 bonus to hit and damage rolls for every 3 levels of the caster. The spell lasts for 4 rounds.~
+This spell grants the caster a +1 bonus to hit and damage rolls for every 3 levels of the caster for 10 rounds.~
 //--------------------------------------------------------------------------------------------------
 	@105=~Seeking Sword
 (Invocation)
@@ -926,7 +926,7 @@ Focusing divine power like a ray of the sun, priest projects a blast of light fr
 Level: 3
 Sphere: Necromantic
 Range: 0
-Duration: 3 rounds + 1 round/level
+Duration: 5 rounds/level
 Casting Time: 5
 Area of Effect: 30-ft. radius
 Saving Throw: None
@@ -1538,6 +1538,20 @@ Starting from level 13 Hexblade gets access to the following spells: Improved In
     @700005=~Duration: 1 round/level~
     @700006=~Duration: 3 turns~
     @700007=~Duration: 3 rounds/level~
+    @700008=~Duration: 4 rounds \+ 1 round/level~
+    @700009=~Duration: 3 rounds~
+    
+    @700010=~Luck
+(Enchantment/Charm)
+
+Level: 2
+Range: 15 ft.
+Duration: 1 round/level
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+The recipient gains extraordinary luck for the duration of the spell, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
 
     
     

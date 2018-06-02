@@ -15,10 +15,10 @@
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %spell_name% @102
 		STRING_SET_EVALUATE %descr_strref% @103
-	//make divine favor into cleric spell
+	//make divine favor into cleric spell (duration to 10 rounds)
 	COPY_EXISTING ~ohtyr2.SPL~ ~override~
 		LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_level=5 spell_type=2 END
-        LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 4*6 END
+        LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 10*6 END 
 		READ_LONG 0x0050 ~descr_strref~
         WRITE_ASCII 0x003a ~OHTYR2C~ //set icon (it is somehow not set in bg2)
 		STRING_SET_EVALUATE %descr_strref% @104	
@@ -77,14 +77,16 @@
 	COPY_EXISTING ~SPPR201.SPL~ ~override/MASSAID.SPL~
 		SAY NAME1 @111
 		SAY UNIDENTIFIED_DESC @112
+        READ_SHORT 0x0068 "Nheaders" //number of headers
 		WRITE_BYTE 0x0034 3 //spell level
-		FOR (i=1;i<=20;i=i+1) BEGIN
-			SET hp_bonus=i
+		FOR (i=1;i<=Nheaders;i=i+1) BEGIN
+			SET hp_bonus=i+2
 			PATCH_IF (hp_bonus>15) BEGIN
 				SET hp_bonus=15
 			END
 			SET hp_bonus=hp_bonus+5
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=18  parameter1=hp_bonus header=i END //hp
+            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 30*(i+2) header=i END
 		END
 		LPF ALTER_SPELL_EFFECT INT_VAR power=3 END //update power
 		LPF ALTER_SPELL_HEADER INT_VAR projectile=158 target=5 STR_VAR icon=~MASSAIDB~ END //30 ft radius around caster, icon

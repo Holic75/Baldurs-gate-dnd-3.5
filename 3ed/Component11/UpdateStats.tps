@@ -8,8 +8,8 @@
 		SET AC_BONUS=2+level/5
 		SET APR_BONUS=0
 		SET HP_BONUS=150 //in percent
-        SET SAVE_BONUS = level/6
-        SET SAVE_BONUS = (SAVE_BONUS>5) ? 5 : SAVE_BONUS
+        SET SAVE_BONUS = level/10
+        SET SAVE_BONUS = (SAVE_BONUS>3) ? 3 : SAVE_BONUS
 		
 		PATCH_IF (allegience=0 OR allegience>5) BEGIN //if not summoned
 			PATCH_IF (level>5 AND level<=10) BEGIN
@@ -29,8 +29,8 @@
 			LPF ADD_CRE_EFFECT INT_VAR opcode=0 timing=1 parameter1=AC_BONUS duration=1 END
 			LPF ADD_CRE_EFFECT INT_VAR opcode=278 timing=1 parameter1=THAC0_BONUS duration=1 END
 			LPF ADD_CRE_EFFECT INT_VAR opcode=1 timing=1 parameter1=APR_BONUS duration=1 END
-			LPF ADD_CRE_EFFECT INT_VAR opcode=18 timing=1 parameter1=HP_BONUS parameter2=2 duration=1 END
-			LPF ADD_CRE_EFFECT INT_VAR opcode=17 timing=1 parameter1=HP_BONUS parameter2=2 duration=1 END
+			//LPF ADD_CRE_EFFECT INT_VAR opcode=18 timing=1 parameter1=HP_BONUS parameter2=2 duration=1 END 
+			//LPF ADD_CRE_EFFECT INT_VAR opcode=17 timing=1 parameter1=HP_BONUS parameter2=2 duration=1 END
             LPF ADD_CRE_EFFECT INT_VAR opcode=325 timing=1 parameter1=SAVE_BONUS parameter2=0 duration=1 END
 		END
 		

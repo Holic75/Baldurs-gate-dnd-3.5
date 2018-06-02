@@ -8,11 +8,12 @@
 	
 	//name => feat_type
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY FtcreArray BEGIN
-		~wftcre~ => 1 //weapons 001
-        ~fftcre~ => 3 //fighter feats 011
-		~mftcre~ => 4 //mage feats 100
-		~sftcre~ => 7 //all feats 111
-        ~tftcre~ => 2 //style feats 010
+		~wftcre~ => 1 //weapons 0001
+        ~fftcre~ => 7 //fighter feats 0111
+		~mftcre~ => 8 //mage feats 1000
+		~sftcre~ => 15 //all feats 1111
+        ~tftcre~ => 2 //style feats 0010
+                      // 4 - combat feats 0100
 	END
 	
 	ACTION_PHP_EACH FtcreArray AS sftcre_name =>FtcreFeatType BEGIN 
@@ -34,15 +35,15 @@
 		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~96~      ~1~       ~033~     ~034~		~003~            ~010~  //crossobows
 		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~97~      ~1~       ~035~     ~036~		~003~            ~010~  //bows
 		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~98~      ~1~       ~037~     ~038~		~003~            ~010~  //missile weapons
-		~WPFNSFT~  ~DODGEFT~  ~LTNGRXFT~ ~FLRSTKFT~ ~ELTSTKFT~ ~WHIRLNFT~ ~WHIRLGFT~   ~99~      ~2~       ~161~     ~162~      ~163~            ~170~  //combat prowess
-		~PWRATKFT~ ~CLEAV1FT~ ~GRTFTDFT~ ~CLEAV2FT~ ~TOUGHSFT~ ~EPCSTNFT~ ~EPCSLAFT~   ~100~     ~2~       ~181~     ~182~      ~183~            ~190~  //warfare
-		~INSTKFT~  ~CMBEXPFT~ ~IRONWLFT~ ~STUDOPFT~ ~CMBINTFT~ ~EPCCRTFT~ ~EPCEVSFT~   ~101~     ~2~       ~201~     ~202~      ~203~            ~210~  //tactics	
-		~PRSLT1FT~ ~PRSLT2FT~ ~PRSLT3FT~ ~PRSLT4FT~ ~PRSLT5FT~ ~PRSLT6FT~ ~PRSLT7FT~   ~102~     ~4~       ~221~     ~222~      ~223~            ~230~  //bonus priest spells	 
-		~WZSLT1FT~ ~WZSLT2FT~ ~WZSLT3FT~ ~WZSLT4FT~ ~WZSLT5FT~ ~WZSLT6FT~ ~WZSLT7FT~   ~103~     ~4~       ~241~     ~242~      ~243~            ~250~  //bonus wizard spells	
-		~EMPWR1FT~ ~EMPWR2FT~ ~EMPWR3FT~ ~EMPWR4FT~ ~EMPWR5FT~ ~EMPWR6FT~ ~EMPWR7FT~   ~104~     ~4~       ~261~     ~262~      ~263~            ~270~  //empower magic		   
-		~EXTND1FT~ ~EXTND2FT~ ~EXTND3FT~ ~EXTND4FT~ ~EXTND5FT~ ~EXTND6FT~ ~EXTND7FT~   ~105~     ~4~       ~281~     ~282~      ~283~            ~290~  //extend magic		
-		~MGPTN1FT~ ~MGPTN2FT~ ~MGPTN3FT~ ~MGPTN4FT~ ~MGPTN5FT~ ~MGPTN6FT~ ~MGPTN7FT~   ~106~     ~4~       ~301~     ~302~      ~303~            ~310~  //protection from magic	
-		~QUICK1FT~ ~QUICK2FT~ ~QUICK3FT~ ~QUICK4FT~ ~QUICK5FT~ ~QUICK6FT~ ~QUICK7FT~   ~107~     ~4~       ~321~     ~322~      ~323~            ~330~  //quicken magic				
+		~WPFNSFT~  ~DODGEFT~  ~LTNGRXFT~ ~FLRSTKFT~ ~ELTSTKFT~ ~WHIRLNFT~ ~WHIRLGFT~   ~99~      ~4~       ~161~     ~162~      ~163~            ~170~  //combat prowess
+		~PWRATKFT~ ~CLEAV1FT~ ~GRTFTDFT~ ~CLEAV2FT~ ~TOUGHSFT~ ~EPCSTNFT~ ~EPCSLAFT~   ~100~     ~4~       ~181~     ~182~      ~183~            ~190~  //warfare
+		~INSTKFT~  ~CMBEXPFT~ ~IRONWLFT~ ~STUDOPFT~ ~CMBINTFT~ ~EPCCRTFT~ ~EPCEVSFT~   ~101~     ~4~       ~201~     ~202~      ~203~            ~210~  //tactics	
+		~PRSLT1FT~ ~PRSLT2FT~ ~PRSLT3FT~ ~PRSLT4FT~ ~PRSLT5FT~ ~PRSLT6FT~ ~PRSLT7FT~   ~102~     ~8~       ~221~     ~222~      ~223~            ~230~  //bonus priest spells	 
+		~WZSLT1FT~ ~WZSLT2FT~ ~WZSLT3FT~ ~WZSLT4FT~ ~WZSLT5FT~ ~WZSLT6FT~ ~WZSLT7FT~   ~103~     ~8~       ~241~     ~242~      ~243~            ~250~  //bonus wizard spells	
+		~EMPWR1FT~ ~EMPWR2FT~ ~EMPWR3FT~ ~EMPWR4FT~ ~EMPWR5FT~ ~EMPWR6FT~ ~EMPWR7FT~   ~104~     ~8~       ~261~     ~262~      ~263~            ~270~  //empower magic		   
+		~EXTND1FT~ ~EXTND2FT~ ~EXTND3FT~ ~EXTND4FT~ ~EXTND5FT~ ~EXTND6FT~ ~EXTND7FT~   ~105~     ~8~       ~281~     ~282~      ~283~            ~290~  //extend magic		
+		~MGPTN1FT~ ~MGPTN2FT~ ~MGPTN3FT~ ~MGPTN4FT~ ~MGPTN5FT~ ~MGPTN6FT~ ~MGPTN7FT~   ~106~     ~8~       ~301~     ~302~      ~303~            ~310~  //protection from magic	
+		~QUICK1FT~ ~QUICK2FT~ ~QUICK3FT~ ~QUICK4FT~ ~QUICK5FT~ ~QUICK6FT~ ~QUICK7FT~   ~107~     ~8~       ~321~     ~322~      ~323~            ~330~  //quicken magic				
 		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~111~     ~2~       ~101~     ~102~      ~103~            ~110~  //2h weapons    
 		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~112~     ~2~	   ~121~     ~122~      ~103~            ~123~  //sword and shield
 		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~113~     ~2~	   ~131~     ~132~      ~103~            ~133~  //single weapon
@@ -176,7 +177,7 @@ COPY ~3ed/Classes/Kensai/kenscre.d~  ~override/kenscre.d~
 		END
 		
     END
-	OUTER_SPRINT kens_string @10010
+	OUTER_SPRINT kens_string @10100
 
       
 	COPY_EXISTING ~kenscre.d~  ~override/kenscre.d~

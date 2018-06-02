@@ -38,9 +38,9 @@
     ACTION_CLEAR_ARRAY exclude_spells
     OUTER_SET k=0
     COPY_EXISTING ~hidespl.2DA~ ~override~
-        COUNT_2DA_ROWS 4 n_rows
+        COUNT_2DA_ROWS 3 n_rows
         FOR (i=0;i<n_rows;i=i+1) BEGIN				
-            READ_2DA_ENTRY %i% 0 4 spl_file //spell name without spl extension
+            READ_2DA_ENTRY %i% 0 3 spl_file //spell name without spl extension
             PATCH_IF NOT (~%spl_file%~ STRING_MATCHES_REGEXP ~SPWI[1-9].+~) BEGIN
                 DEFINE_ASSOCIATIVE_ARRAY exclude_spells BEGIN  "%k%" => "%spl_file%" END
                 k=k+1
@@ -66,7 +66,8 @@
 
         END
         
-        
+
+            
     ACTION_CLEAR_ARRAY KitMasks
     //create spell lists
     ACTION_DEFINE_ASSOCIATIVE_ARRAY  KitMasks  BEGIN
