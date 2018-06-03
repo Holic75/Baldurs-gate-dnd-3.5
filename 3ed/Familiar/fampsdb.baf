@@ -1,0 +1,12 @@
+IF
+    Global("fampsd","GLOBAL",1)
+	Global("fampsdb%lvl%","GLOBAL",0)
+    !LevelLT(FamiliarSummoner,%lvl%)
+THEN
+	RESPONSE #100
+		SetGlobal("fampsdb%lvl%","GLOBAL",1)
+        ChangeStat(Familiar,SAVEVSPOLY,1,ADD)
+        ChangeStat(Familiar,SAVEVSDEATH,1,ADD)
+        ActionOverride(Familiar, AddSpecialAbility("SPWI201"))
+        Continue()
+END

@@ -443,7 +443,7 @@ Casting Time: 9
 Area of Effect: Visual range of the caster
 Saving Throw: 1/2
 
-The caster is able to call down 1 bolt per round per caster level (capped at 10 bolts). Each bolt causes 1d6 points of electrical damage per caster level up to 10d6. Thus, a 5th-level caster calls down five 5d8 bolts. The caster only chooses the first target of the spell, but subsequent bolts will only strike <PRO_HISHER> enemies.~
+The caster is able to call down 1 bolt per round per caster level (capped at 10 bolts). Each bolt causes 1d6 points of electrical damage per caster level up to 10d6. Thus, a 5th-level caster calls down five 5d6 bolts. The caster only chooses the first target of the spell, but subsequent bolts will only strike <PRO_HISHER> enemies.~
 //-----------------------------------------------------------------------------------------------------------------------
 	@039=~Goodberry
 (Alteration, Evocation)

@@ -1,0 +1,17 @@
+IF
+    Global("fampsd","GLOBAL",1)
+	Global("fampsda%lvl%","GLOBAL",0)
+    !LevelLT(FamiliarSummoner,%lvl%)
+THEN
+	RESPONSE #100
+		SetGlobal("fampsda%lvl%","GLOBAL",1)
+        ChangeStat(Familiar,THAC0,1,ADD)
+        ChangeStat(Familiar,ARMORCLASS,1,ADD)
+        ChangeStat(Familiar,MAXHITPOINTS,2,ADD)
+        ChangeStat(Familiar,RESISTMAGIC,3,ADD)
+        ChangeStat(Familiar,LEVEL,1,ADD)
+        ChangeStat(Familiar,SAVEVSWANDS,1,ADD)
+        ChangeStat(Familiar,SAVEVSBREATH,1,ADD)
+        ChangeStat(Familiar,SAVEVSSPELL,1,ADD)
+        Continue()
+END

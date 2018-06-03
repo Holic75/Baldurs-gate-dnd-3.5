@@ -1183,7 +1183,11 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
             END
             READ_LONG 0x0050 ~descr_strref~
             STRING_SET_EVALUATE %descr_strref% @332   
+    //also change scroll
+        COPY_EXISTING ~SCRL71.ITM~ ~override~
+            LPF ALTER_ITEM_EFFECT INT_VAR check_headers = 1 STR_VAR resource = ~SPWI106~ END
     END
+    
     
     
    
