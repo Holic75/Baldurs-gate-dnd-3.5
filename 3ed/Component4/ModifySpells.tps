@@ -272,27 +272,24 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 		STRING_SET_EVALUATE %descr_strref% @029
 		
 		
-	ACTION_IF NOT (~%GameId%~ STR_EQ ~Iwd~) BEGIN
-	//ghoul touch
-	
-		COPY_EXISTING ~GHOULT.ITM~ ~override~
-			LPF GET_SPELL_EFFECT_VALUES INT_VAR match_opcode = 139 RET GhoulStrRef = parameter1 END //str ref for 'paralyze'
-		COPY_EXISTING ~SPWI218.SPL~ ~override~ 
-			SET Color = 87*256+54*256*256+0*256*256*256 
-			LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 0 - 1 END
-			LPF ALTER_SPELL_HEADER INT_VAR speed = 2 target = 1 END	
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 50 target = 2 power = 2 parameter1 = Color parameter2 = 25*256*256 timing = 0 resist_dispel = 4  duration =2 savingthrow = 4 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 142 target = 2 power = 2 parameter2 = 13 timing = 0 resist_dispel = 1  duration =30 savingthrow = 4 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 power = 2 parameter1 = GhoulStrRef timing = 1 resist_dispel = 1  savingthrow = 4 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 141 target = 2 power = 2 parameter2 = 1 timing = 1 resist_dispel = 1  savingthrow = 4 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 141 target = 2 power = 2 parameter2 = 1 timing = 1 resist_dispel = 1  savingthrow = 4 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 109 target = 2 power = 2 parameter2 = 2 timing = 0 resist_dispel = 1  duration = 30 savingthrow = 4 END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 174 target = 2 power = 2 parameter2 = 2 timing = 1 resist_dispel = 1  savingthrow = 4 STR_VAR resource = ~EFF_P11~ END
-			LPF ADD_SPELL_EFFECT INT_VAR opcode = 174 target = 2 power = 2 parameter2 = 2 timing = 4 resist_dispel = 1  duration = 30 savingthrow = 4 STR_VAR resource = ~EFF_E05~ END
-			
-			READ_LONG 0x0050 ~descr_strref~
-			STRING_SET_EVALUATE %descr_strref% @030
-	END
+	//ghoul touch	
+    COPY_EXISTING ~GHOULT.ITM~ ~override~
+        LPF GET_SPELL_EFFECT_VALUES INT_VAR match_opcode = 139 RET GhoulStrRef = parameter1 END //str ref for 'paralyze'
+    COPY_EXISTING ~SPWI218.SPL~ ~override~ 
+        SET Color = 87*256+54*256*256+0*256*256*256 
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 0 - 1 END
+        LPF ALTER_SPELL_HEADER INT_VAR speed = 2 target = 1 END	
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 50 target = 2 power = 2 parameter1 = Color parameter2 = 25*256*256 timing = 0 resist_dispel = 4  duration =2 savingthrow = 4 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 142 target = 2 power = 2 parameter2 = 13 timing = 0 resist_dispel = 1  duration =30 savingthrow = 4 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 target = 2 power = 2 parameter1 = GhoulStrRef timing = 1 resist_dispel = 1  savingthrow = 4 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 141 target = 2 power = 2 parameter2 = 1 timing = 1 resist_dispel = 1  savingthrow = 4 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 141 target = 2 power = 2 parameter2 = 1 timing = 1 resist_dispel = 1  savingthrow = 4 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 109 target = 2 power = 2 parameter2 = 2 timing = 0 resist_dispel = 1  duration = 30 savingthrow = 4 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 174 target = 2 power = 2 parameter2 = 2 timing = 1 resist_dispel = 1  savingthrow = 4 STR_VAR resource = ~EFF_P11~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 174 target = 2 power = 2 parameter2 = 2 timing = 4 resist_dispel = 1  duration = 30 savingthrow = 4 STR_VAR resource = ~EFF_E05~ END
+        
+        READ_LONG 0x0050 ~descr_strref~
+        STRING_SET_EVALUATE %descr_strref% @030
 
 	//shocking grasp
 	COPY_EXISTING ~SPWI115.SPL~ ~override~ 
@@ -313,7 +310,7 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 	
 	//chain lightning to 12d6 damage 
 	ACTION_IF NOT (~%GameId%~ STR_EQ ~Iwd~) BEGIN
-	COPY_EXISTING_REGEXP ~\(SPDR601.SPL\)\|\(SPWI615.SPL\)~ ~override~
+        COPY_EXISTING_REGEXP ~\(SPDR601.SPL\)\|\(SPWI615.SPL\)~ ~override~
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 12 dicenumber = 6 END
 	
 		READ_LONG 0x0050 ~descr_strref~
