@@ -444,19 +444,27 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 		STRING_SET_EVALUATE %descr_strref% @037
 		
 		
-	//Call Lightning (allow to cast indoors reduce dmg to 1d6 per level up to 10d6)
+	//Call Lightning (allow to cast indoors reduce dmg to 1d6 (2 x 1d3) per level up to 10d6 for bg and 1d4 (up to 10d4) for iwd)
 	COPY_EXISTING ~SPPR302.spl~ ~override~
 		READ_BYTE 0x0019  outdoor_flag//outdoors flag in bit 5
 		WRITE_BYTE 0x0019 (outdoor_flag BAND 0b11011111)
 		READ_SHORT 0x68 n_headers
-		FOR (i=11;i<=n_headers;i=i+1) BEGIN
+		FOR (i=11;i<=30;i=i+1) BEGIN
 			LPF DELETE_SPELL_HEADER INT_VAR header_type=1 min_level=i END
 		END
-		
-		FOR (i=5;i<=10;i=i+1) BEGIN
-			SET k=i - 4
-			LPF ALTER_SPELL_EFFECT INT_VAR header=k match_opcode=12 dicenumber=(i/2) dicesize=6 parameter1=2*(i - 2*(i/2)) END
-		END
+		     
+        PATCH_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+            FOR (i=5;i<=10;i=i+1) BEGIN
+                SET k=i - 4
+                LPF ALTER_SPELL_EFFECT INT_VAR header=k match_opcode=12 dicenumber=i dicesize=4  END
+            END           
+        END
+        ELSE BEGIN
+            FOR (i=5;i<=10;i=i+1) BEGIN
+                SET k=i - 4
+                LPF ALTER_SPELL_EFFECT INT_VAR header=k match_opcode=12 dicenumber=i dicesize=3  parameter1 = 0 END
+            END
+        END
 				
 		READ_LONG 0x0050 ~descr_strref~
 		ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
@@ -527,22 +535,25 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 	//make flame strike aoe spell with 1d8 damage level
 	COPY_EXISTING ~SPPR503.SPL~ ~override~
 		READ_SHORT 0x68 n_headers
+            FOR (i = n_headers; i<=20;i=i+1) BEGIN
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+            END
 		PATCH_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
-			
-		END ELSE BEGIN
+            FOR (i = 1; i<=20;i=i+1) BEGIN
+                LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = i END
+                LPF ALTER_SPELL_EFFECT INT_VAR header = i match_opcode=12 dicesize = 8 dicenumber = i END
+            END				
+		END 
+        ELSE BEGIN
 			LPF ALTER_SPELL_HEADER INT_VAR projectile=215 target=4 END
-			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=215 parameter2=2 END				
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=215 parameter2=2 END	
+           
+            FOR (i = 1; i<=20;i=i+1) BEGIN
+                LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = i END
+                LPF ALTER_SPELL_EFFECT INT_VAR header = i match_opcode=12 parameter1=2*(i - 2*(i/2)) dicesize = 8 dicenumber = (i/2) END
+            END			
 		END
-		
-		FOR (i = n_headers; i<=20;i=i+1) BEGIN
-			LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-		END
-		
-		FOR (i = 1; i<=20;i=i+1) BEGIN
-			LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = i END
-			LPF ALTER_SPELL_EFFECT INT_VAR header = i match_opcode=12 parameter1=2*(i - 2*(i/2)) dicesize = 8 dicenumber = (i/2) END
-		END
-		
+				
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @042	//change description
 		
@@ -872,13 +883,15 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 		STRING_SET_EVALUATE %descr_strref% @057
     END  */
     
-    //add half damage at failed saves on reflex to glyph of warding    
-    COPY_EXISTING ~SPPR304.SPL~ ~override~
-        SET savingthrow = 1 << 24
-        LPF CLONE_EFFECT INT_VAR match_opcode = 12 savingthrow END 
-        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 12 dicesize = 2 END
-        READ_LONG 0x0050 ~descr_strref~
-		STRING_SET_EVALUATE %descr_strref% @063
+    ACTION_IF NOT (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+        //add half damage at failed saves on reflex to glyph of warding    
+        COPY_EXISTING ~SPPR304.SPL~ ~override~
+            SET savingthrow = 1 << 24
+            LPF CLONE_EFFECT INT_VAR match_opcode = 12 savingthrow END 
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 12 dicesize = 2 END
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @063
+    END
     
     //modify some high level wizard spells
     
@@ -993,8 +1006,8 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
             LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
             LPF ALTER_SPELL_HEADER INT_VAR header = i  min_level = i END
         END
-        LPF ADD_SPELL_EFFECT INT_VAR target = 2 ocpode = 345 power = 4 special = 3 resist_dispel = 3 END
-        
+        LPF ADD_SPELL_EFFECT INT_VAR target = 2 opcode = 345 power = 4 special = 3 resist_dispel = 3 END
+        LPF ADD_SPELL_EFFECT INT_VAR target = 2 opcode = 142 power = 4 special = 3 resist_dispel = 3 parameter2 = 188 END
     END
     
     COPY_EXISTING ~SPWI417.SPL~  ~override~
@@ -1004,16 +1017,15 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
         
             SET max_ench = i/4
             SET max_ench = max_ench<1 ? 1 : max_ench
-            SET max_ench = max_ench>5 ? 5 : max_ench
-            
+            SET max_ench = max_ench>5 ? 5 : max_ench        
             FOR (k=1;k<=max_ench;k=k+1) BEGIN
                 SPRINT resource EVALUATE_BUFFER ~ENC_WPD%k%~
                 LPF ADD_SPELL_EFFECT INT_VAR header = i target = 2 opcode = 272 power = 4 resist_dispel = 3 duration = i*30 parameter1 = 1 STR_VAR resource END
                 SPRINT resource EVALUATE_BUFFER ~ENC_WPA%k%~
                 LPF ADD_SPELL_EFFECT INT_VAR header = i target = 2 opcode = 272 power = 4 resist_dispel = 3 duration = i*30 parameter1 = 1 STR_VAR resource END
-                LPF ALTER_SPELL_EFFECT INT_VAR header = i match_opcode = 345 parameter1 = k STR_VAR resource END
             END
-                       
+            LPF ALTER_SPELL_EFFECT INT_VAR header = i match_opcode = 142 duration = i*30 END
+            LPF ALTER_SPELL_EFFECT INT_VAR header = i match_opcode = 345 duration = i*30 parameter1 = max_ench END           
         END
         READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @307

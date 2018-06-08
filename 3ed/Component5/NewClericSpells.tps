@@ -86,7 +86,6 @@
 			END
 			SET hp_bonus=hp_bonus+5
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=18  parameter1=hp_bonus header=i END //hp
-            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 30*(i+2) header=i END
 		END
 		LPF ALTER_SPELL_EFFECT INT_VAR power=3 END //update power
 		LPF ALTER_SPELL_HEADER INT_VAR projectile=158 target=5 STR_VAR icon=~MASSAIDB~ END //30 ft radius around caster, icon
@@ -104,9 +103,11 @@
 	COPY_EXISTING ~SPPR402.SPL~ ~override~ // animal summoning 1
 		READ_BYTE 0x0021 ~cleric_usability~
 		WRITE_BYTE 0x0021 (cleric_usability BOR 0b01000000)
-	COPY_EXISTING ~SPPR411.SPL~ ~override~ // poison
-		READ_BYTE 0x0021 ~cleric_usability~
-		WRITE_BYTE 0x0021 (cleric_usability BOR 0b01000000)
+    ACTION_IF NOT (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+        COPY_EXISTING ~SPPR411.SPL~ ~override~ // poison
+            READ_BYTE 0x0021 ~cleric_usability~
+            WRITE_BYTE 0x0021 (cleric_usability BOR 0b01000000)
+    END
 	COPY_EXISTING ~SPPR501.SPL~ ~override~ // animal summoning 2
 		READ_BYTE 0x0021 ~cleric_usability~
 		WRITE_BYTE 0x0021 (cleric_usability BOR 0b01000000)
