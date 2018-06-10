@@ -590,7 +590,7 @@ All allied living creatures are healed for 1d6 hit points per Channel Energy Lev
 All hostile undead creatures suffer 1d6 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
 ```
 – May cast priest spells starting at level 4.  
-– May use Smite Evil ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.  
+– May use Smite Evil ability. Gains one use per day at level 1, level 4 and every 4 levels thereafter.  
 ```
 SMITE EVIL: For 10 seconds Paladin receives +1 bonus to her attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level against evil creatures.
 ```
@@ -643,7 +643,7 @@ Disadvantages:
 Advantages:  
 – +3 bonus to hit and damage rolls against undead creatures.  
 – Immune to hold and level drain.  
-– May use Smite Undead ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.  
+– May use Smite Undead ability. Gains one use per day at level 1, level 4 and every 4 levels thereafter.  
 ```
 SMITE UNDEAD: For 10 seconds Undead Hunter receives +1 bonus to her attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level against undead creatures.
 ```
@@ -689,7 +689,7 @@ Targets all enemies within 30 ft. with effects that improve based on the caster'
 There is no Saving Throw against this ability.
 ```
 
-– May use Smite Good ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.  
+– May use Smite Good ability. Gains one use per day at level 1, level 4 and every 4 levels thereafter.  
 ```
 SMITE GOOD: For 10 seconds Blackguard receives +1 bonus to her attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level against good creatures.
 ```
@@ -759,7 +759,7 @@ Advantages:
 ```
 IMPROVED RACIAL ENEMY: At 1st level, a stalker may select a type of creature from among the list for which she gets +2 bonus on to hit and damage rolls as well as +2 bonus to AC and savingthrows. At every 5th level to hit bonus is increased by 1 and damage bonus is increased by 2 and stalker can select an additional racial enemy.
 ```
-– May use Smite Racial Enemy ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.  
+– May use Smite Racial Enemy ability. Gains one use per day at level 1, level 4 and every 4 levels thereafter.  
 ```
 SMITE RACIAL ENEMY: For 10 seconds Stalker receives +1 bonus to her attack roll per 2 points of Wisdom above 10 and deals 1 extra point of damage per level against racial enemies.
 ```
@@ -833,19 +833,19 @@ Advantages:
 
 Disadvantages:  
 – Alignment restricted to neutral evil, chaotic evil, and chaotic neutral.  
-– Can not Channel Energy.  
+– May not channel energy.  
 
 ### PRIEST OF TYR
 Advantages:  
-– May use Smite Evil ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.  
+– May use Smite Evil ability. Gains one use per day at level 1, level 4 and every 4 levels thereafter.  
 
 Disadvantages:  
 – Alignment restricted to lawful good, neutral good, or lawful neutral.  
-– Can not Channel Energy.  
+– May not channel energy.  
 
 ### PRIEST OF TEMPUS  (IWD only)
 Advantages:  
-– May cast Chaos of Battle once per day starting from level 1. Gains one use at level 5 and every 5 levels thereafter.  
+– May cast Chaos of Battle once per day starting from level 1. Gains an additional use at level 4 and every 4 levels thereafter.  
 ```
 CHAOS OF BATTLE: Chaos of Battle applies bonuses to all allies and penalties to all enemies within a 30-ft. radius of the caster. The spell lasts for 3 rounds + 1 round per 2 points of caster Charisma above 10 and will randomly affect the targets' Armor Class, Hit Points, THAC0, saves, or luck. The magnitude of the effect starts at 1 (5 for Hit Points) at level 1 and will improve by 1 (5 for Hit Points) every 6 levels of the caster.
 ```

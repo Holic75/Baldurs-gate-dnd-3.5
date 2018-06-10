@@ -71,10 +71,13 @@
             
 	//allow druid to cast ice storm as 4-th level spell
 	COPY_EXISTING ~SPWI404.SPL~ ~override/DRDIST.SPL~
-		WRITE_BYTE 0x0021 (0b01000000)	//dissalow cleric casting it 
-		WRITE_BYTE 0x001F (0b00000000)  //clear invoker flag	
-		WRITE_SHORT 0x001c 2// priest spell
-		SAY UNIDENTIFIED_DESC @205 //description
+        LPF CONVERT_ARCANE_SPELL_TO_DIVINE INT_VAR allow_cleric = 0 END
+        PATCH_IF NOT (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+            SAY UNIDENTIFIED_DESC @205 
+        END
+        ELSE BEGIN
+            SAY UNIDENTIFIED_DESC @2051 
+        END
 		ADD_SPELL "override/DRDIST.spl" 1  4 DRUID_ICE_STORM	
 			DEFINE_ASSOCIATIVE_ARRAY extended_spell_list BEGIN  "%DEST_RES%" => "SPWI404" END
 			

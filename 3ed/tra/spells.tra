@@ -1000,6 +1000,19 @@ Area of Effect: 30-ft. radius
 Saving Throw: None
 
 When this spell is cast, great hail stones pound down for four rounds in a 60-ft. diameter area and inflict 2d8 points of cold damage to any creatures within the area of effect. Also, anyone that remains within the area of effect takes 2d8 cold damage each round for 4 rounds.~
+
+	@2051=~Ice Storm
+(Evocation)
+
+Level: 4
+Sphere: Elemental (Cold)
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 4
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+When this spell is cast, shards of ice smash down on all creatures in the area of effect, doing 3d10 points of cold damage.~
 //----------------------------------------------------------------------------------------------------
 	@206=~Sleep
 (Enchantment/Charm)
@@ -1515,6 +1528,7 @@ Starting from level 13 Hexblade gets access to the following spells: Improved In
     @20003 = ~attacks to 9~
     @20004 = ~attacks to 8~
     
+
     
     //bonus spells
     @500001=~Choose this domain.~
@@ -1554,5 +1568,8 @@ Saving Throw: None
 The recipient gains extraordinary luck for the duration of the spell, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
 
     
+    
+    
+
     
     

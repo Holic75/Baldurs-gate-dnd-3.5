@@ -78,13 +78,26 @@
 						LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END							
 				END
 		END
-		
+	
+
 	COPY_EXISTING_REGEXP GLOB ~.+\.spl~ ~override~
 		LPF ADD_EVASION_TO_SPELL INT_VAR END
-		
+        	
 	COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~  //add evasion to items
-		LPF ADD_EVASION_TO_SPELL INT_VAR target_save_type = 10 END //breath and wand saves 
-		
+		LPF ADD_EVASION_TO_SPELL INT_VAR target_save_type = 10 END //breath and wand saves
+        
+    ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN    //remove iwd built in evasion
+        COPY_EXISTING_REGEXP GLOB ~.+\.spl~ ~override~    
+            LPF GET_SPELL_EFFECT_VALUES INT_VAR match_opcode = 324 match_parameter2 = 63 RET found = found_match END
+            PATCH_IF (found) BEGIN
+                LPF DELETE_EFFECT INT_VAR match_opcode = 324 match_parameter2 = 63 check_headers = 1 END 
+            END
+        COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~  //add evasion to items
+            LPF GET_SPELL_EFFECT_VALUES INT_VAR match_opcode = 324 match_parameter2 = 63 RET found = found_match END
+            PATCH_IF (found) BEGIN
+                LPF DELETE_EFFECT INT_VAR match_opcode = 324 match_parameter2 = 63 check_headers = 1 END
+            END
+    END            
 		
 	//change description of specific spells 
 	COPY_EXISTING ~SPWI714.SPL~ ~override~ //prismatic spray

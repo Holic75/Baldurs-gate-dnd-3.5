@@ -708,23 +708,28 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 		
 	//make animate dead call 2 skeletons per cast
 	COPY_EXISTING_REGEXP GLOB ~\(SPCL106.SPL\)\|\(SPPR301.SPL\)\|\(SPWI501.SPL\)~ ~override~ 
-		PATCH_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+		PATCH_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN           
 			LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
 			LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
 			LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
 			FOR (i=2;i<=4;i=i+1) BEGIN
-				LPF ALTER_SPELL_HEADER INT_VAR min_level = 7 + (i - 2)*4 END
+				LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = 7 + (i - 2)*4 END
 			END
-			LPF ALTER_SPELL_EFFECT INT_VAR header = 1 opcode =177 parameter1= 0 parameter2 = 2 dicesize =0 dicenumber =0 STR_VAR resource ~SPANDE01~ END
-			LPF ALTER_SPELL_EFFECT INT_VAR header = 2 opcode =177 parameter1= 0 parameter2 = 2 dicesize =0 dicenumber =0 STR_VAR resource ~SPANDE07~ END
-			LPF ALTER_SPELL_EFFECT INT_VAR header = 3 opcode =177 parameter1= 0 parameter2 = 2 dicesize =0 dicenumber =0 STR_VAR resource ~SPANDE11~ END
-			LPF ALTER_SPELL_EFFECT INT_VAR header = 4 opcode =177 parameter1= 0 parameter2 = 2 dicesize =0 dicenumber =0 STR_VAR resource ~SPANDE15~ END
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 END //delete all normal effects
+			LPF ADD_SPELL_EFFECT INT_VAR target =1 duration = 2400 header = 1 opcode =177 parameter1= 0 parameter2 = 2 dicesize =0 dicenumber =0 resist_dispel = 3 STR_VAR resource = ~SPANDE01~ END
+			LPF ADD_SPELL_EFFECT INT_VAR target =1 duration = 2400 header = 2 opcode =177 parameter1= 0 parameter2 = 2 dicesize =0 dicenumber =0 resist_dispel = 3 STR_VAR resource = ~SPANDE07~ END
+			LPF ADD_SPELL_EFFECT INT_VAR target =1 duration = 2400 header = 3 opcode =177 parameter1= 0 parameter2 = 2 dicesize =0 dicenumber =0 resist_dispel = 3 STR_VAR resource = ~SPANDE11~ END
+			LPF ADD_SPELL_EFFECT INT_VAR target =1 duration = 2400 header = 4 opcode =177 parameter1= 0 parameter2 = 2 dicesize =0 dicenumber =0 resist_dispel = 3 STR_VAR resource = ~SPANDL15~ END
 		END
 		LPF CLONE_EFFECT INT_VAR check_globals=0 END
+
+    COPY_EXISTING ~SPWI501.SPL~ ~override~
+        READ_LONG 0x0050 ~descr_strref~
+        STRING_SET_EVALUATE %descr_strref% @051
         
-        COPY_EXISTING ~SPPR301.SPL~ ~override~
-		READ_LONG 0x0050 ~descr_strref~
-		STRING_SET_EVALUATE %descr_strref% @0511
+    COPY_EXISTING ~SPPR301.SPL~ ~override~
+        READ_LONG 0x0050 ~descr_strref~
+        STRING_SET_EVALUATE %descr_strref% @0511
        
 
 	//make absorb health a melee spell

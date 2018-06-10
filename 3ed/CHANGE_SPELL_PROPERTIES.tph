@@ -2,16 +2,17 @@ DEFINE_PATCH_FUNCTION ~CHANGE_SPELL_PROPERTIES~
 	INT_VAR
 		spell_level=100 // 100 -do not change
 		spell_type=100 //1-wizard, 2-cleric, 4 - innate, 100 - do not change
-
 	BEGIN
 		
 		PATCH_IF (spell_level!=100) BEGIN
 			WRITE_LONG 0x0034 spell_level //spell level	
-			LPF ALTER_SPELL_EFFECT INT_VAR power=spell_level END 
+			LPF ALTER_SPELL_EFFECT INT_VAR power=spell_level END
+            
 		END
 		PATCH_IF (spell_type!=100) BEGIN
 			WRITE_SHORT 0x001c spell_type// spell_type
 			LPF ALTER_SPELL_HEADER INT_VAR location=2+2*(spell_type>2) END 
+            
 		END
 		
     END		

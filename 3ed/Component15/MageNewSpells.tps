@@ -50,7 +50,7 @@
         
     //create a map of spell to scroll    
     ACTION_CLEAR_ARRAY SpellScrollMap
-    COPY_EXISTING_REGEXP GLOB ~SCRL.*\.ITM~ ~override~
+    COPY_EXISTING_REGEXP GLOB ~SC.*\.ITM~ ~override~
     	READ_SHORT 0x001c "category"
 		PATCH_IF (category = 11) BEGIN //scrolls
 			LPF GET_SPELL_EFFECT_VALUES INT_VAR match_opcode = 147 RET spell_name = resource found = found_match END

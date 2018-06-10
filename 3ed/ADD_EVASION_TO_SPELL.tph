@@ -6,6 +6,7 @@ DEFINE_PATCH_FUNCTION ~ADD_EVASION_TO_SPELL~
 		
 		SET evasion = 0
 		SET opcode_mark = 1024
+        SET opcode_mark_remove = 1025
 		
 				
  		READ_LONG 0x64 header_block_offset //beginning of extended_headers table
@@ -67,60 +68,66 @@ DEFINE_PATCH_FUNCTION ~ADD_EVASION_TO_SPELL~
 
 		
 		PATCH_IF (evasion) BEGIN
+            SPRINT insert  ~first~
+
 			//remove protection from protection from effect with similar saves
-				SPRINT insert  ~first~
-				LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark  silent = 1
-									opcode=337  parameter2=101 parameter1=12 dicenumber =0 dicesize =0 special = 0 STR_VAR insert END
-									
-						
-				//add protection from damage effect just before to classes that have evasion
-				LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent =1
-						opcode=177  parameter2=5 parameter1=4  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //thiefs
-						STR_VAR insert resource=~IMMDMG~ END
-			
-				LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark silent = 1
-						opcode=177 parameter2=5 parameter1=12  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //rangers
-						STR_VAR insert resource=~IMMDMG~ END
-						
-				LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent = 1
-						opcode=177  parameter2=5 parameter1=20 dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //monks
-						STR_VAR insert resource=~IMMDMG~ END
-                       
-				LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent = 1
-						opcode=177  parameter2=5 parameter1=20 dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //monks
-						STR_VAR insert resource=~IMMDMG~ END
-                        
-                        
-                LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent =1
-						opcode=177  parameter2=5 parameter1=10  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //f/m/t
-						STR_VAR insert resource=~IMMDMG~ END
-                
-                LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent =1
-						opcode=177  parameter2=5 parameter1=15  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //c/t
-						STR_VAR insert resource=~IMMDMG~ END
-                        
-                LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent =1
-						opcode=177  parameter2=5 parameter1=9  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //f/t
-						STR_VAR insert resource=~IMMDMG~ END
-                        
-                LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent =1
-						opcode=177  parameter2=5 parameter1=18  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //c/r
-						STR_VAR insert resource=~IMMDMG~ END        
+            LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark  silent = 1
+                                opcode=337  parameter2=101 parameter1=12 dicenumber =0 dicesize =0 special = 0 STR_VAR insert END
+                                
+                    
+            //add protection from damage effect just before to classes that have evasion
+            LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent =1
+                    opcode=177  parameter2=5 parameter1=4  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //thiefs
+                    STR_VAR insert resource=~IMMDMG~ END
+        
+            LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark silent = 1
+                    opcode=177 parameter2=5 parameter1=12  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //rangers
+                    STR_VAR insert resource=~IMMDMG~ END
+                    
+            LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent = 1
+                    opcode=177  parameter2=5 parameter1=20 dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //monks
+                    STR_VAR insert resource=~IMMDMG~ END
+                   
+            LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent = 1
+                    opcode=177  parameter2=5 parameter1=20 dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //monks
+                    STR_VAR insert resource=~IMMDMG~ END
+                    
+                    
+            LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent =1
+                    opcode=177  parameter2=5 parameter1=10  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //f/m/t
+                    STR_VAR insert resource=~IMMDMG~ END
+            
+            LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent =1
+                    opcode=177  parameter2=5 parameter1=15  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //c/t
+                    STR_VAR insert resource=~IMMDMG~ END
+                    
+            LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent =1
+                    opcode=177  parameter2=5 parameter1=9  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //f/t
+                    STR_VAR insert resource=~IMMDMG~ END
+                    
+            LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent =1
+                    opcode=177  parameter2=5 parameter1=18  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //c/r
+                    STR_VAR insert resource=~IMMDMG~ END        
 
-                LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent =1
-						opcode=177  parameter2=9 parameter1=16387  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //kensai
-						STR_VAR insert resource=~IMMDMG~ END    
-									
-											
-				//remove protection from protection from effect unconditionally at the end of spell
-				SPRINT insert  ~last~
-				LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark  silent = 1
-									opcode=337  parameter2=101 parameter1=12 dicenumber =0 dicesize =0 special = 0
-									savingthrow =ignore_mirror savebonus = 0 
-									STR_VAR insert END
-						
+            LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark   silent =1
+                    opcode=177  parameter2=9 parameter1=16387  dicenumber =0 dicesize =0 special = 0 savingthrow =ignore_mirror savebonus = 0 //kensai
+                    STR_VAR insert resource=~IMMDMG~ END    
+                                
+            // clone initial effect removing itself in the beginning (place it on the top, will remove the copy later)           
+            LPF CLONE_EFFECT INT_VAR match_opcode = 321  silent = 1 match_duration = 0 match_timing = 0 opcode = opcode_mark_remove STR_VAR insert END
 
-				LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = opcode_mark opcode = opcode_damage END
+            //remove protection from protection from effect unconditionally at the end of spell
+            SPRINT insert  ~last~
+            LPF CLONE_EFFECT INT_VAR match_opcode = opcode_mark  silent = 1
+                                opcode=337  parameter2=101 parameter1=12 dicenumber =0 dicesize =0 special = 0
+                                savingthrow =ignore_mirror savebonus = 0 
+                                STR_VAR insert END
+                    
+
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = opcode_mark opcode = opcode_damage END
+            // delete initial remove effect (leaving only its clone on the very top)
+            LPF DELETE_EFFECT INT_VAR match_opcode = 321 match_duration = 0 match_timing = 0 check_headers = 1 END
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = opcode_mark_remove opcode = 321 END
 		END
     END		
 	

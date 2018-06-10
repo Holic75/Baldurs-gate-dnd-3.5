@@ -342,7 +342,7 @@ All allied living creatures are healed for 1d6 hit points per Channel Energy Lev
 All hostile undead creatures suffer 1d6 points of magical damage per Channel Energy Level of the caster unless they make a save vs. spell with a penalty equal to one fourth of the caster level rounded down. In which case they receive only half damage.
 
 – May cast priest spells starting at level 4.
-– May use Smite Evil ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.
+– May use Smite Evil ability. Gains one use per day at level 1, level 4 and every 4 levels thereafter.
 
 SMITE EVIL: For 10 seconds Paladin receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level against evil creatures.
 
@@ -383,7 +383,7 @@ Advantages:
 – Immune to hold and charm.
 – Each successful hit bestows a 25% cumulative chance of spell failure on the target.
 – Magic Resistance: 25% +2% per level to a maximum of 85% at level 30.
-– May use Smite Mage ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.
+– May use Smite Mage ability. Gains one use per day at level 1, level 4 and every 4 levels thereafter.
 
 SMITE MAGE: For 10 seconds Inquisitor receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level against arcane magic users.
 
@@ -400,7 +400,7 @@ Disadvantages:
 Advantages:
 – +3 bonus to hit and damage rolls against undead creatures.
 – Immune to hold and level drain.
-– May use Smite Undead ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.
+– May use Smite Undead ability. Gains one use per day at level 1, level 4 and every 4 levels thereafter.
 
 SMITE UNDEAD: For 10 seconds Undead Hunter receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level against undead creatures.
 
@@ -447,7 +447,7 @@ When this ability is activated, all enemies within 30 feet of the Blackguard suf
   15th Level: - All enemies suffer a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class; enemies with 8 or fewer Hit Dice are panicked as well.
   21st Level: - All enemies suffer a -4 penalty to hit and damage rolls and a -4 penalty to Armor Class; enemies with 18 or fewer Hit Dice are panicked as well.
 
-– May use Smite Good ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.
+– May use Smite Good ability. Gains one use per day at level 1, level 4 and every 4 levels thereafter.
 
 SMITE GOOD: For 10 seconds Blackguard receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Charisma above 10 and deals 1 extra point of damage per level against good creatures.
 
@@ -556,7 +556,7 @@ Advantages:
 
 IMPROVED RACIAL ENEMY: At 1st level, a stalker may select a type of creature from among the list for which <PRO_HESHE> gets +2 bonus on to hit and damage rolls as well as +2 bonus to AC and savingthrows. At every 5th level to hit bonus is increased by 1 and damage bonus is increased by 2 and stalker can select an additional racial enemy.
 
-– May use Smite Racial Enemy ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.
+– May use Smite Racial Enemy ability. Gains one use per day at level 1, level 4 and every 4 levels thereafter.
 
 SMITE RACIAL ENEMY: For 10 seconds Stalker receives +1 bonus to <PRO_HISHER> attack roll per 2 points of Wisdom above 10 and deals 1 extra point of damage per level against racial enemies.
 
@@ -699,7 +699,7 @@ Disadvantages:
 @029=~PRIEST OF TYR: Tyr is the deity of law and justice and is primarily concerned with the punishment of wrongdoers and the general furthering of law and good in the world. The belief in justice through (benevolent) force, or at least armed vigilance, is the reason for Tyr's existence. Tyr holds great prominence in the pantheon due to his position as leader of the Triad, a trio of lawful good gods that are collectively devoted to the concepts of courage, justice, perseverance, relief of suffering, duty, obedience, honor, and to some extent, righteous martyrdom.
 
 Advantages:
-– May use Smite Evil ability. Gains one use per day at level 1, level 5 and every 5 levels thereafter.
+– May use Smite Evil ability. Gains one use per day at level 1, level 4 and every 4 levels thereafter.
 
 Disadvantages:
 – Alignment restricted to lawful good, neutral good, or lawful neutral.
@@ -1384,7 +1384,7 @@ WILD SURGE: A wild surge generates a completely random magical effect from the s
 @062 = ~PRIEST OF TEMPUS: Tempus, also known as the Lord of Battles or the Foehammer, is random in his favors, yet his chaotic nature favors all sides equally. Lord Tempus may be on an army's side one day and against them the next; such is the nature of war. Tempuran clergy can be found on both sides of a conflict, as none can ever truly know whom the war god will favor.
 
 Advantages:
-– May cast Chaos of Battle once per day starting from level 1. Gains one use at level 5 and every 5 levels thereafter.
+– May cast Chaos of Battle once per day starting from level 1. Gains an additional use at level 4 and every 4 levels thereafter.
 
 CHAOS OF BATTLE: Chaos of Battle applies bonuses to all allies and penalties to all enemies within a 30-ft. radius of the caster. The spell lasts for 3 rounds + 1 round per 2 points of caster Charisma above 10 and will randomly affect the targets' Armor Class, Hit Points, THAC0, saves, or luck. The magnitude of the effect starts at 1 (5 for Hit Points) at level 1 and will improve by 1 (5 for Hit Points) every 6 levels of the caster.
 

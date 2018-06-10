@@ -1,0 +1,31 @@
+DEFINE_PATCH_FUNCTION ~CONVERT_ARCANE_SPELL_TO_DIVINE~
+    
+    INT_VAR
+        spell_level = 100
+        alignment_mask = 0b000000 //CEG{N..}L{..N} - set corresponding bit to 1 to exclude corresponding alignement priest from casting this spell
+        allow_cleric = 1
+        allow_druid = 1
+       
+    BEGIN
+        LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_type=2 spell_level replace_level_in_description = 1 END 
+        
+		WRITE_BYTE 0x001E (alignment_mask)
+        // clear wizard flags2
+        READ_BYTE  0x001F flag2
+        WRITE_BYTE 0x001F (flag2 BAND 0b11000000)
+        
+        READ_BYTE 0x0021 flag4
+        SET flag4 = flag4 BAND 0b00111111
+        
+        PATCH_IF (NOT allow_cleric) BEGIN
+            SET flag4 = flag4 BAND (0b01000000)
+        END
+        
+        PATCH_IF (NOT allow_druid) BEGIN
+            SET flag4 = flag4 BAND (0b10000000)
+        END
+        
+        WRITE_BYTE 0x0021 flag4
+   
+    END
+    

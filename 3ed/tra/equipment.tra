@@ -642,6 +642,20 @@ Weight: 5~
   
   @5106 = ~– Charisma: \+2~
     
+  @5107 = ~The wizard Epp the Foolhardy crafted this blade for his trusted companion, Farl Greenbog. Farl was a smart ranger who had dedicated his life to eradicating trolls from the northern reaches of Faerûn. With Epp to help him, Farl was very successful at driving the beasts south. Farl was killed when a group of troll shamans caught him by surprise. Epp responded to Farl's cries for help only moments too late. The wizard avenged his friend's death but only reclaimed this sword from the deep pits of the marsh.
+
+STATISTICS:
+
+THAC0: +1, +4 vs. trolls
+Damage: 2d4+1, +4 vs. trolls
+Damage bonus: +1d4 fire
+Speed Factor: 6
+Weapon Class: Straight Swords
+Type: One-handed
+Requires:
+ 11 Strength
+
+Weight: 8~  
     
     
 

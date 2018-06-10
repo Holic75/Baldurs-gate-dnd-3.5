@@ -154,7 +154,7 @@
 				LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = APR2_ref new_substring_ref = APR15_ref END
 			END
 			ELSE PATCH_IF (~%SOURCE_FILE%~ STR_EQ ~UHXBW5A.ITM~) OR (~%SOURCE_FILE%~ STR_EQ ~ULXBW5A.ITM~) BEGIN //replace 3 apr with 2 apr (repeating xbow)
-				LPF ALTER_ITEM_EFFECT INT_VAR check_globals=1 match_opcode=1 parameter1=2 END  //fix apr (xbow of speed)
+				LPF ALTER_ITEM_EFFECT INT_VAR check_globals=1 match_opcode=1 parameter1=2 END  
 				LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = APR3_ref new_substring_ref = APR2_ref END
 			END
 			ELSE BEGIN
@@ -182,7 +182,7 @@
 		ELSE PATCH_IF (proficiency = 104) BEGIN //longbow -> bows
 			WRITE_BYTE 0x0031 97
 			PATCH_IF ((~%SOURCE_FILE%~ STR_EQ ~BOWMESS.ITM~) ) BEGIN
-				LPF ALTER_ITEM_EFFECT INT_VAR check_globals=1 match_opcode=1 parameter1=7 END  //messenger of sseth
+				LPF ALTER_ITEM_EFFECT INT_VAR check_globals=1 match_opcode=1 parameter1=2 END  //messenger of sseth
 				LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 substring_to_replace_ref = APR3_ref new_substring_ref = APR2_ref END
 			END
 			ELSE BEGIN
