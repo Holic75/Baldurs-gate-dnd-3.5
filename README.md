@@ -1418,7 +1418,7 @@ CLASS FEATURES:
 – May wear helmets.  
 – May use any weapon and shield (excluding large shield).  
 – May not wear armor heavier than splint mail.  
-– Gets one bonus combat style feat at levels 2, 9, 16 and 23.    
+– Gets one bonus combat style feat at levels 2, 10, 18 and 26.    
 – Has Evasion passive ability.  
 ```
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
