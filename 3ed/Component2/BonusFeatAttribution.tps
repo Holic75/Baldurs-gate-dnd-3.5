@@ -100,7 +100,7 @@
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=26 d_level=4 add_at_level1=0 delay = 2 
 						STR_VAR clab=~CLABRN01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRER.SPL~ feat_type_file=~TFTCRE~ caption=~RNGSTFT~ END
 //style feats to cleric-ranger
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=23 d_level=7 add_at_level1=0 delay = 2 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=26 d_level=8 add_at_level1=0 delay = 2 
 						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRERC.SPL~ feat_type_file=~TFTCRE~ caption=~RNCSTFT~ END  
                         
 //epic feats to cleric - ranger
