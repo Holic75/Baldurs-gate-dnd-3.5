@@ -1458,6 +1458,20 @@ Saving Throw: Neg.
 
 This spell grants the caster the ability to touch a creature and instantly poison it unless it makes a successful Save vs. Poison. The poison deals 1 point of damage per 6 levels of the caster per second over 20 seconds and then dissipates from the target's body. Poison can only be cast by evil-aligned characters.~
 //------------------------------------------------------------------------
+
+    @333 = ~Symbol, Hopelessness
+(Conjuration/Summoning)
+
+Level: 7
+Sphere: Guardian
+Range: Visual range of the caster
+Duration: 2 turns
+Casting Time: 3
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+Symbol, Hopelessness is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until an opponent comes too close, at which point it will explode, causing all enemies within the area of effect to make a Save vs. Spell with a -2 penalty or lie on the ground, overwhelmed by dejection and surrender. If they are attacked the spell effect ends. This spell nullifies Emotion, Hope within the area of effect at the time of casting.~
+//------------------------------------------------------------------------
 	@1000 =~vs. None~
 	@1001 =~vs. Spell~
 	@1002 =~vs. Breath Weapon~

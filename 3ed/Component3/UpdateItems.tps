@@ -317,6 +317,10 @@ ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
     COPY_EXISTING ~SHLD07.ITM~ ~override~
         LPF REPLACE_SUBSTRING INT_VAR  strref_offset=0x0054   substring_to_replace_ref = 501 new_substring_ref = 50 END
         
+//correct description of shield of the hand
+    COPY_EXISTING ~SHSHLD.ITM~ ~override~
+        LPF REPLACE_SUBSTRING INT_VAR  strref_offset=0x0054   substring_to_replace_ref = 501 new_substring_ref = 50 END
+        
 //troll slayer damage correction
     COPY_EXISTING ~ZZG7TS.ITM~ ~override~
         LPF ALTER_ITEM_HEADER INT_VAR dicenumber = 2 END

@@ -4,15 +4,22 @@
 	
 	ACTION_IF NOT (~%GameId%~ STR_EQ ~Iwd~) BEGIN
         COPY_EXISTING ~SPWI411.SPL~ ~override~ 
-            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=39 parameter2=0 END
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=45 new_opcode = 39 parameter2=0 END 
             READ_LONG 0x0050 ~descr_strref~
             STRING_SET_EVALUATE %descr_strref% @314
     END
     ELSE BEGIN //replace stun with sleep effect
         COPY_EXISTING ~SPWI411.SPL~ ~override~ 
-            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=45 opcode = 39 parameter2=0 END   
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=45 new_opcode = 39 parameter2=0 END  
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 139 match_parameter1 = 1280 END             
             READ_LONG 0x0050 ~descr_strref~
-            STRING_SET_EVALUATE %descr_strref% @315	    
+            STRING_SET_EVALUATE %descr_strref% @315	   
+        //same for symbol of hopelessness
+        COPY_EXISTING ~SPPR716.SPL~ ~override~ 
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=45 new_opcode = 39 parameter2=0 END  
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 139 match_parameter1 = 1280 END             
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @333	   
     END
     
 		//change finger of death to make 8d6 damage in case of failure independent of level
@@ -1201,6 +1208,36 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
         COPY_EXISTING ~SCRL71.ITM~ ~override~
             LPF ALTER_ITEM_EFFECT INT_VAR check_headers = 1 STR_VAR resource = ~SPWI106~ END
     END
+    
+    
+    //mirror image fix (replace spell with casts on self of 1-30 lvl spell)
+    /* ~SPWI212.SPL~ ~override/SPMI212.SPL~
+        WRITE_LONG 0x0050 0
+        WRITE_LONG 0x0008 0
+        
+    COPY_EXISTING ~SPWI212.SPL~ ~override~
+        READ_SHORT 0x68 n_headers
+        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 119 END
+        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 174 END
+        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 215 END
+        LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 66 END
+        
+        FOR (i=1;i<=n_headers;i=i+1) BEGIN
+            LPF ALTER_SPELL_EFFECT INT_VAR header = i match_opcode = 139 new_opcode = 146 parameter1 = (i+2) parameter2 = 2 duration = 1
+                                   STR_VAR resource = ~SPMI212~ END  
+            //reset arcane caster spell level while spell is being cast
+            LPF ADD_SPELL_EFFECT INT_VAR header = i opcode = 191 target = 1 power = 2 duration = 1 insert_point = 0 END
+        END*/
+        
+    COPY_EXISTING ~SPWI212.SPL~ ~override~
+        //reset caster spell level while spell is being cast
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 191 target = 1 power = 2 duration = 1 insert_point = 0 END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 191 target = 1 power = 2 duration = 1 insert_point = 0 parameter2 = 1 END
+
+                
+        
+        
+    
     
     
     
