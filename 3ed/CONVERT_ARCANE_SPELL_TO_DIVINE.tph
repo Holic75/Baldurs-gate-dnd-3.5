@@ -12,17 +12,17 @@ DEFINE_PATCH_FUNCTION ~CONVERT_ARCANE_SPELL_TO_DIVINE~
 		WRITE_BYTE 0x001E (alignment_mask)
         // clear wizard flags2
         READ_BYTE  0x001F flag2
-        WRITE_BYTE 0x001F (flag2 BAND 0b11000000)
+        WRITE_BYTE 0x001F (flag2 BAND 0b0011111111)
         
         READ_BYTE 0x0021 flag4
-        SET flag4 = flag4 BAND 0b00111111
+        SET flag4 = flag4 BAND 0b11000000
         
         PATCH_IF (NOT allow_cleric) BEGIN
-            SET flag4 = flag4 BAND (0b01000000)
+            SET flag4 = flag4 BOR (0b01000000)
         END
         
         PATCH_IF (NOT allow_druid) BEGIN
-            SET flag4 = flag4 BAND (0b10000000)
+            SET flag4 = flag4 BOR (0b10000000)
         END
         
         WRITE_BYTE 0x0021 flag4

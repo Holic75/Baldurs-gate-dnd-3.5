@@ -14,7 +14,7 @@
              LPF REGULARIZE_SPELL_SAVES INT_VAR ignore_pwr = 0 RET update_descr = updated END
              
              PATCH_IF (update_descr) BEGIN
-                FOR (substring_to_remove_ref = 10001; substring_to_remove_ref<=10007;substring_to_remove_ref+=1) BEGIN
+                FOR (substring_to_remove_ref = 10001; substring_to_remove_ref<=10008;substring_to_remove_ref+=1) BEGIN
                     LPF REMOVE_SUBSTRING INT_VAR strref_offset = 0x0050 substring_to_remove_ref END
                 END
             END

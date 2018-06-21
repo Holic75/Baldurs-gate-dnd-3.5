@@ -1534,6 +1534,7 @@ Starting from level 13 Hexblade gets access to the following spells: Improved In
     @10005 = ~ with a \+[1-9] bonus~
     @10006 = ~ with \+[1-9] bonus~
     @10007 = ~ at \+[1-9]~
+    @10008 = ~ with -[0-9] penalties~
     
     
     //corrections for spells with items

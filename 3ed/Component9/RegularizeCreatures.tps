@@ -101,7 +101,8 @@
         READ_BYTE 0x0058 CurrentSpell
         
         READ_BYTE 0x0234 Level
-              
+           
+        PATCH_SILENT           
         PATCH_TRY		//try to update stats
             SET lvl_saves = Level<=20 ? Level : 20
 			SET TargetStr =  $ClassStr(~%class_name%~)
@@ -127,9 +128,9 @@
             WRITE_BYTE 0x0058 (CurrentSpell  > TargetWill) ? TargetWill : CurrentSpell
 	
 		WITH		
-			DEFAULT
-					
+			DEFAULT			
 		END
+        PATCH_VERBOSE
     
         PATCH_IF (race_id == race_dragon_id) BEGIN //remove backstab immunity from dragons
             LPF DELETE_EFFECT INT_VAR match_opcode = 292 END           

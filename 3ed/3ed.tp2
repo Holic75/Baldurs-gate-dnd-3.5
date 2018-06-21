@@ -2,7 +2,7 @@
 
 BACKUP ~3ed/backup~
 AUTHOR ~holic.denis@gmail.com~
-VERSION ~v2.13~
+VERSION ~v2.14~
 
 
 ALWAYS
@@ -108,8 +108,11 @@ BEGIN @1
 	//------------------------------xp regularization for multi classes	
 	INCLUDE ~3ed/Component1/MultiClassXp.tps~
     
-    //initial xp regularization
+  
     ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
+            EXTEND_TOP ~OH8000.bcs~ ~3ed/Core/BgBpStart/start.baf~ //30 seconds pause to properly give feats to everyone
+                
+            //initial xp regularization                
             OUTER_FOR (PlayerId=1;PlayerId<=6;PlayerId=PlayerId+1) BEGIN
                 OUTER_SET XP=89000 //original game
                     EXTEND_TOP ~AR0602.bcs~ ~3ed/Core/Xp/Common/InitialXp.baf~
@@ -120,12 +123,16 @@ BEGIN @1
                     EVALUATE_BUFFER                   
             END          
     END
-    ELSE ACTION_IF (IncludesSod) BEGIN
+    ELSE ACTION_IF (~%GameId%~ STR_EQ ~Bg1~) BEGIN
+        EXTEND_TOP ~OH9310.bcs~ ~3ed/Core/BgBpStart/start.baf~ //30 seconds pause to properly give feats to everyone
+        
+        ACTION_IF (IncludesSod) BEGIN
             OUTER_FOR (PlayerId=1;PlayerId<=6;PlayerId=PlayerId+1) BEGIN
                 OUTER_SET XP=130000 //sod game
                     EXTEND_TOP ~BD0120.bcs~ ~3ed/Core/Xp/Common/InitialXp.baf~
                     EVALUATE_BUFFER                                      
             END           
+        END
     END
     
     //allow magical armors to be used with items granting protection bonuses
