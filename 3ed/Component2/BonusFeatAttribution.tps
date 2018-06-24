@@ -50,22 +50,14 @@
 	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=30 d_level=3 add_at_level1=1 delay = 2 
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFT.SPL~ feat_type_file=~FFTCRE~ caption=~F_TBONFT~ END	
 					
-//add bonus feats to thief and shadowdancer (lvl 10,13,16,19,22,25,28 )
-	LAF ADD_BONUS_FEATS INT_VAR min_level=10 max_level=30 d_level=3 add_at_level1=0 delay = 2 
-						STR_VAR clab=~\(\(CLABTH01\)\|\(CLABTH05\)\)\.2DA~
+//add bonus feats to ninja, assasin and shadowdancer (lvl 8,16,22,28 )
+	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1000001000001000000010000000 delay = 2 
+						STR_VAR clab=~\(\(CLABTH02\)\|\(CLABTH05\)\|\(CLABTH03\)\)\.2DA~
 							mask_file=~3ed/Feats/FeatAttribution/SFTCRET.SPL~ feat_type_file=~FFTCRE~ caption=~THFBONFT~ END	
-//add bonus feats to swashbuckler (lvl 4,8,12,16,20,22, 25 ,28 )
+//add bonus feats to thief and swashbuckler (lvl 4,8,12,16,20,22, 25 ,28 )
 	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010001000100010001000 delay = 2 
-						STR_VAR clab=~CLABTH04\.2DA~ caption=~THFBONFT~ END	
-                            
-//add bonus feats to assassin
-	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=0 delay = 2 
-						STR_VAR clab=~CLABTH02\.2DA~ caption=~THFBONFT~ END
-							
-//add bonus feats to ninja
-	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1000001001000000001000000000 delay = 2  
-						STR_VAR clab=~CLABTH03\.2DA~ caption=~THFBONFT~  END	
- 				
+						STR_VAR clab=~\(\(CLABTH04\)\|\(CLABTH01\)\)\.2DA~ caption=~THFBONFT~ END	
+                        
 //same for mage thief (10,20,22, 25, 28)
 	LAF ADD_BONUS_FEATS INT_VAR mask = 0b1001001010000000001000000000 delay = 2 
 						STR_VAR clab=~CLABMA.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREMT.SPL~ feat_type_file=~SFTCRE~ caption=~M_TBONFT~ END
@@ -107,10 +99,7 @@
 	LAF ADD_BONUS_FEATS INT_VAR min_level=28 max_level=28 d_level=6 add_at_level1=1 delay = 2 //replacement feat at level 1 
 						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRERC.SPL~ feat_type_file=~SFTCRE~ caption=~RCEPCFT~ END
                         
-
- /*   COPY_EXISTING ~RCEPCFT.SPL~ ~override~ //delay to 5 seconds
-		LPF  ALTER_SPELL_EFFECT INT_VAR duration  = 5 timing = 3  END */
-        
+       
 //epic feats to druid
 	LAF ADD_BONUS_FEATS INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=0 delay = 2 
 						STR_VAR clab=~CLABDR+.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRED.SPL~ feat_type_file=~SFTCRE~ caption=~DEPCCFT~ END

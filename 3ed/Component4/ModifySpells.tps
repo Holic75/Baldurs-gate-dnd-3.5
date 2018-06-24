@@ -1190,12 +1190,18 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 		STRING_SET_EVALUATE %descr_strref% @318
     
     
-    //make blindness level 1 spell in iwd again, and make poison deal 1 dmg per 6 levels 
+    
     ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+        //make blindness level 1 spell in iwd again
         COPY_EXISTING ~SPWI106.SPL~ ~override~
             LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_level = 1 END
             READ_LONG 0x0050 ~descr_strref~
-            STRING_SET_EVALUATE %descr_strref% @331   
+            STRING_SET_EVALUATE %descr_strref% @331
+    //also change scroll
+        COPY_EXISTING ~SCRL71.ITM~ ~override~
+            LPF ALTER_ITEM_EFFECT INT_VAR check_headers = 1 STR_VAR resource = ~SPWI106~ END
+            
+        //make poison deal 1 dmg per 6 levels 
         COPY_EXISTING ~SPPR411.SPL~ ~override~
             FOR (i=2;i<=3;i=i+1) BEGIN
                 LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
@@ -1203,10 +1209,13 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
                 LPF ALTER_SPELL_EFFECT INT_VAR header = i match_opcode = 25 parameter1 = i END
             END
             READ_LONG 0x0050 ~descr_strref~
-            STRING_SET_EVALUATE %descr_strref% @332   
-    //also change scroll
-        COPY_EXISTING ~SCRL71.ITM~ ~override~
-            LPF ALTER_ITEM_EFFECT INT_VAR check_headers = 1 STR_VAR resource = ~SPWI106~ END
+            STRING_SET_EVALUATE %descr_strref% @332 
+
+        //make otiluk freezing sphere deal half damage on reflex save
+        COPY_EXISTING ~SPWI628.SPL~ ~override~
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 12 special = 256 END
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @334
     END
     
     

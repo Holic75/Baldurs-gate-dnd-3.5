@@ -656,6 +656,22 @@ Requires:
  11 Strength
 
 Weight: 8~  
+
+    @5108=~This well-crafted helmet has a short history. A priestess of Lathander named Iraeni of Suzail had it constructed for the champion of her church, a warrior named Beldan Miller. Beldan employed the helm frequently, as Iraeni was often attacked by agents of Myrkul. After twenty years of serving Lathander, Iraeni decided to step down from her office, as did Beldan. They were married shortly after. Beldan gave the helm to an errant paladin of Lathander, who is believed to have died fighting a lich near the Battle of the Bones.
+
+STATISTICS:
+
+Equipped abilities:
+– Armor Class: +2
+– Does not protect against critical hits
+
+Charge abilities:
+– Cure Moderate Wounds once per day
+– Neutralize Poison once per day
+– Remove Paralysis once per day
+
+
+Weight: 2~
     
     
 

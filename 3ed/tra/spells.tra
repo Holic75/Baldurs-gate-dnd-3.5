@@ -1471,6 +1471,18 @@ Area of Effect: 15-ft. radius
 Saving Throw: Neg.
 
 Symbol, Hopelessness is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until an opponent comes too close, at which point it will explode, causing all enemies within the area of effect to make a Save vs. Spell with a -2 penalty or lie on the ground, overwhelmed by dejection and surrender. If they are attacked the spell effect ends. This spell nullifies Emotion, Hope within the area of effect at the time of casting.~
+
+    @334 = ~Otiluke's Freezing Sphere
+(Evocation)
+
+Level: 6
+Range: Visual range of the caster
+Duration: Instant
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: 1/2
+
+This spell fires an orb of cold at a creature that inflicts 1d4+2 points of cold damage per level of the caster. If the target makes its Save vs. Breath Weapon, however, they have partially dodged the orb and receive only half the damage.~
 //------------------------------------------------------------------------
 	@1000 =~vs. None~
 	@1001 =~vs. Spell~

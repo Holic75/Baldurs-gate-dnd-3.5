@@ -450,8 +450,9 @@
                 LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 10 END //set duration to 10 seconds
                 LPF ALTER_SPELL_HEADER INT_VAR target = 5 speed=1 END //set target to self and min speed
                 
-                PATCH_IF (~NJ_HST~ STR_EQ ~%ninja_spell_name%~) BEGIN //make haste work only on ninja
+                PATCH_IF (~NJ_HST~ STR_EQ ~%ninja_spell_name%~) BEGIN //make haste work only on ninja and remove fatigue
                     LPF ALTER_SPELL_HEADER INT_VAR projectile = 1 END
+                    LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 93 END
                 END
                
 		END
@@ -487,6 +488,13 @@
 		COPY ~3ed/Classes/Druid/Forms~ ~override~
         COPY ~3ed/Classes/Druid/Misc~ ~override~
         COPY ~3ed/Classes/Druid/Icons~ ~override~
+        
+        
+        //winter wolf breath
+        COPY ~3ed/Classes/Druid/WinterWolfBreath~ ~override~
+        COPY_EXISTING ~WOLW_BL.SPL~ ~override~
+            SAY NAME1 @201
+            SAY UNIDENTIFIED_DESC @202
         
 		COPY_EXISTING ~DRDPOLY.SPL~ ~override~ //standard shapeshift
 			SAY NAME1 @001
@@ -624,6 +632,7 @@
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 215 target = 1 duration = 3 parameter1 = 0 parameter2 = 1 insert_point = 0 STR_VAR resource = ~POLYBACK~ END
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 215 target = 1 duration = 3 parameter1 = 0 parameter2 = 1 insert_point = 0 STR_VAR resource = ~SPPOLYMP~ END
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 172 target = 1 duration = 1 timing = 1 insert_point = 0 STR_VAR resource = ~SPIN160~ END //salamander fireball
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 172 target = 1 duration = 1 timing = 1 insert_point = 0 STR_VAR resource = ~WOLW_BL~ END //winter wolf breath
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 172 target = 1 duration = 1 timing = 1 insert_point = 0 STR_VAR resource = ~SPIN529~ END //slayer
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 172 target = 1 duration = 1 timing = 1 insert_point = 0 STR_VAR resource = ~SPIN917~ END //slayer
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 172 target = 1 duration = 1 timing = 1 insert_point = 0 STR_VAR resource = ~SPIN718~ END //slayer
@@ -703,7 +712,8 @@
                 LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~SPWI494~ resource = ~PL_OGRE~ END
                 LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~SPWI497~ resource = ~PS_BRBR~ END
                 LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~SPWI498~ resource = ~PS_BRBL~ END
-                LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~SPWI499~ resource = ~PS_WOLF~ END               
+                LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource = ~SPWI499~ resource = ~PS_WOLF~ END
+                LPF ADD_SPELL_EFFECT INT_VAR opcode = 172 target = 1 duration = 1 timing = 1 insert_point = 0 STR_VAR resource = ~WOLW_BL~ END //remove winter wolf breath
             END
         
         BUT_ONLY
@@ -939,18 +949,19 @@ WITH_TRA ~%LANGUAGE%\fighter_thief.tra~ BEGIN
         END    
         LPF ADD_SPELL_EFFECT INT_VAR target = 2 opcode = 139 parameter1 = SickenedStrRef duration = 1 END
     
-    COPY_EXISTING ~F_T_DRH.SPL~ ~override~
-        LPF ADD_SPELL_EFFECT INT_VAR target = 2 opcode = 326  duration = 1  STR_VAR resource = ~F_T_DR1~ probability1  = 10 END 
-        
-        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-        LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 10 END
-        LPF ADD_SPELL_EFFECT INT_VAR target = 2 header = 2 opcode = 326  duration = 1  probability2 = 11 probability1 = 20 STR_VAR resource = ~F_T_DR2~ END 
-        
-        LPF ADD_SPELL_HEADER INT_VAR copy_header = 2 END
-        LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 15 END
-        LPF ADD_SPELL_EFFECT INT_VAR target = 2 header = 3 opcode = 326  duration = 1  probability2 = 21 probability1 = 30 STR_VAR resource = ~F_T_DR3~ END 
-        
-        
+    COPY_EXISTING ~F_T_DRH.SPL~ ~override~       
+        FOR (i=2;i<=30;i=i+1) BEGIN
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+            LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = i END
+            LPF ADD_SPELL_EFFECT INT_VAR header = i target = 2 opcode = 326  duration = 1  probability1  = 5+i STR_VAR resource = ~F_T_DR1~  END 
+            PATCH_IF (i>=10) BEGIN
+                LPF ADD_SPELL_EFFECT INT_VAR header = i target = 2 opcode = 326  duration = 1  probability2 = 31 probability1 = 35+i STR_VAR resource = ~F_T_DR2~ END
+            END
+            PATCH_IF (i>=15) BEGIN
+                LPF ADD_SPELL_EFFECT INT_VAR header = i target = 2 opcode = 326  duration = 1  probability2 = 61 probability1 = 65+i STR_VAR resource = ~F_T_DR3~ END            
+            END
+        END
+                        
     LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=5 d_level=1 add_at_level1=0 
             STR_VAR clab=~CLABTH01\.2DA~  mask_file=~3ed/Feats/FeatAttribution/SFTCREFT.SPL~ feat_type_file = ~F_T_DRT~ caption=~DRT_CMB~ END
 END

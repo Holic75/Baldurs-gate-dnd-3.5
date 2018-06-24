@@ -327,5 +327,10 @@ ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
 		READ_LONG 0x0054 ~id_descr_strref~
         STRING_SET_EVALUATE %id_descr_strref% @5107
         
+//helm of lathander description correction
+    COPY_EXISTING ~HELMLA.ITM~ ~override~
+		READ_LONG 0x0054 ~id_descr_strref~
+        STRING_SET_EVALUATE %id_descr_strref% @5108
+        
 
 END

@@ -928,7 +928,7 @@ CLASS FEATURES:
 ```
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
 ```
-– Receives one Bonus Feats at levels 10, 13, 16, 19, 22, 25 and 28.  
+– Receives one bonus feat at levels 4, 8, 12, 16, 20, 22, 25 and 28.  
 – May distribute 20 points per level (30 at level 1) in thieving abilities: Open Locks, Pick Pockets, Find Traps, Move Silently, Hide In Shadows, Detect Illusion, Set Traps.  
 – Starts with base scores of 10% in Open Locks, 5% in Find Traps, 15% in Pick Pockets, 10% in Move Silently, and 5% in Hide in Shadows.  
 – May Sneak attack for increased damage: 1d6 at level 1 + 1d6 every 2 levels thereafter.  
@@ -984,9 +984,8 @@ Second level spells: starting from level 7 Assassin gets access to the following
 Third level spells: starting from level 10 Assassin gets access to the following spells: Vampiric Touch, Non-Detection, Hold Person, Detect Illusions.	  
 Fourth level spells: starting from level 13 Assassin gets access to the following spells: Improved Invisibility, Free Action, Poison, Cloak of Fear.  
 ```
-– Gets one bonus feat at levels 22 and 28.  
 Disadvantages:  
-– Do not receive Bonus Feats as trueclass thieves do.  
+– Does not receive bonus feats at levels 4, 12, 20 and 25 as trueclass thieves do.   
 – May only distribute 10 skill points per level among thieving skills (20 points at level 1)  
 
 ### SWASHBUCKLER
@@ -1023,7 +1022,7 @@ Advantages:
 Disadvantages:  
 – May not wear any armor or use shields.   
 – May only distribute 15 skill points per level among thieving skills (25 points at level 1).  
-– Do not gain bonus feats at levels 16, 19 and 25 as trueclass thieves do.  
+– Does not receive bonus feats at levels 4, 12, 20 and 25 as trueclass thieves do.   
 
 ### SHADOWDANCER
 Advantages:  
@@ -1049,6 +1048,7 @@ Disadvantages:
 – Alignment restricted to any non-lawful.  
 – Worse Sneak attack progression: 1d6 at level 1 + 1d6 every 3 levels thereafter.  
 – May only distribute 15 skill points per level (25 at level 1) among thieving skills.  
+– Does not receive bonus feats at levels 4, 12, 20 and 25 as trueclass thieves do.  
 – May not use the Set Snare ability.  
 
 ### BARD
@@ -1350,9 +1350,9 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – Gets one bonus feat at level 1 and every 3 levels thereafter.  
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.  
 – At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1 and reduces penalty to thieving skills by 10%. Max dexterity AC bonus is further increased by 1 at and skill penalties are reduced by 10% at level 4 and every 4 levels thereafter (up to a maximum of +5 increase in max AC bonus and -50% decrease of thieving skill penalty at level 16).  
-– Starting from level 5 every hit of Fighter/Thief has 10% chance to slow the target for 1d4 rounds.
-– Starting from level 10 every hit of Fighter/Thief has additional 10% chance to blind the target for 1d4 rounds.
-– Starting from level 15 every hit of Fighter/Thief has additional 10% chance to make the target Sickened for 1d4 rounds (-2 to THAC0, Damage and all Savingthorws).  
+– Starting from level 5 every hit of Fighter/Thief has 5% + 1% per level chance to slow the target for 1d4 rounds.
+– Starting from level 10 every hit of Fighter/Thief has additional 5% + 1% per level chance to blind the target for 1d4 rounds.
+– Starting from level 15 every hit of Fighter/Thief has additional 5% + 1% per level chance to make the target Sickened for 1d4 rounds (-2 to THAC0, Damage and all Savingthorws).  
 – Hit Die: d8  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon and vs. Wand
 
@@ -2097,7 +2097,7 @@ Baby Wyvern      | 16  | 17  | 16  |  3 | 1      |2d8 (crushing) + 1d6 (piercing
 Sword Spider     | 16  | 16  | 10  |  3 | 4      |1d4 (piercing)    | strikes as +1 weapon, Immunity to web
 Polar Bear       | 20  | 10  | 19  |  4 | 3      |1d10 (piercing)    | strikes as +3 weapon, Cold Resistance: 75%, Fire Resistance: -25%
 Boring Beetle    | 18  |  7  | 16  | -2 | 1      |5d4 (crushing)    | strikes as +3 weapon, Slashing Resistance: 50%, Piercing Resistance: 50%, Missile Resistance: 50%
-Winter Wolf      | 18  | 13  | 18  |  2 | 2      |Melee: 1d6 (piercing) + 1d6(cold), Ranged: 2d6 (cold, save vs. Breath Weapon for half)    | strikes as +3 weapon, Cold Resistance: 75%, Fire Resistance -25%
+Winter Wolf      | 18  | 13  | 18  |  2 | 2      |Melee: 1d6 (piercing) + 1d6(cold)   | strikes as +3 weapon, Cold Resistance: 75%, Fire Resistance -25%, Winter Wolf Breath three times per day (6d6 cold damage to target, save vs. Breath Weapon at -4 for half)  
 Werewolf         | 19  | 16  | 15  |  3 | 2      |1d6 (piercing)  | strikes as +2 weapon, Magic Resistance: 20%
 Werewolf (level 8+)        | 19  | 16  | 15  |  1 | 2      |1d10 (piercing) | strikes as +2 weapon, Magic Resistance: 20%
 Greater Werewolf | 21  | 20  | 25  |  -4| 3      |2d8 (slashing)    | strikes as +4 weapon, Immune to all non magical weapons, Fire Resistance 50%, Cold Resistance 50%, Electricity Resistance 50%, Acid Resistance 50%, Magic Resistance 40%, Regenerates 1 Hit Point per second

@@ -546,8 +546,8 @@ Winter Wolf:
 	Base Armor Class: 2
 	Number of Attacks: 2
 	Melee Attack Damage: 1d6 (piercing) + 1d6 (cold), strikes as +3 weapon
-    Ranged Attack Damage: 2d6 (cold, save vs. Breath Weapon for half), strikes as +3 weapon
     Special Abilities:
+        - Winter Wolf Breath three times per day (6d6 cold damage to target, save vs. Breath Weapon at -4 for half)
         – Cold Resistance: 75%
         – Fire Resistance: -25%
 		
@@ -672,8 +672,8 @@ Greater Water Elemental:
 	Base Armor Class: 2
 	Number of Attacks: 2
 	Melee Attack Damage: 1d6 (piercing) + 1d6 (cold), strikes as +3 weapon
-    Ranged Attack Damage: 2d6 (cold, save vs. Breath Weapon for half), strikes as +3 weapon
     Special Abilities:
+        - Winter Wolf Breath three times per day (6d6 cold damage to target, save vs. Breath Weapon at -4 for half)
         – Cold Resistance: 75%
         – Fire Resistance: -25%~
 
@@ -706,3 +706,8 @@ Greater Water Elemental:
 		– Electrical Resistance: -75%~
         
 	
+@201 = ~Winter Wolf Breath~
+
+@202 = ~Winter Wolf Breath
+
+Deals 6d6 cold damage to target unless it succeeds on Savingthrow vs. Breath Weapon at -4 penalty, in which case the damage is halved.~

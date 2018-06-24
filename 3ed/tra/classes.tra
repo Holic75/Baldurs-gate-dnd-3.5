@@ -34,9 +34,9 @@ CLASS FEATURES:
 – May wear any armor and use any weapon and shield (excluding large shield).
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
 – Immune to sneak attack.
-– Starting from level 5 every hit of Fighter/Thief has 10% chance to slow the target for 1d4 rounds.
-– Starting from level 10 every hit of Fighter/Thief has additional 10% chance to blind the target for 1d4 rounds.
-– Starting from level 15 every hit of Fighter/Thief has additional 10% chance to make the target Sickened for 1d4 rounds (-2 to THAC0, Damage and all Savingthorws).
+– Starting from level 5 every hit of Fighter/Thief has 5% + 1% per level chance to slow the target for 1d4 rounds.
+– Starting from level 10 every hit of Fighter/Thief has additional 5% + 1% per level chance to blind the target for 1d4 rounds.
+– Starting from level 15 every hit of Fighter/Thief has additional 5% + 1% per level chance to make the target Sickened for 1d4 rounds (-2 to THAC0, Damage and all Savingthorws).
 – Has Evasion passive ability.
 
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
@@ -80,7 +80,6 @@ CLASS FEATURES:
 – May wear any armor and use any weapon and shield (excluding large shield).
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.
 – Cannot cast spells of 8th and 9th levels.
-– Gets one bonus feat at every 4th level up to level 20.
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.
 - Acquires one scroll with any arcane spell up to maximum level <PRO_HESHE> can cast at every level up starting from level 2.
 – Can use Spontaneous Battlecasting.
@@ -92,7 +91,7 @@ SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice 
 RESIST MAGIC:
 
 This ability allows the warrior to temporarily tap a great inner strength and fight off the effects of malevolent magic. For 4 rounds, the warrior's Magic Resistance is set to 50%. This is not cumulative with other forms of Magic Resistance, so if the warrior already has 50% Magic Resistance or greater, the ability is useless.
-– Gets one bonus feat at levels 22, 25 and 28.
+– Gets one bonus feat at levels 4, 8, 12, 16, 20, 22, 25 and 28.
 – Hit Die: d7
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -816,7 +815,7 @@ CLASS FEATURES:
 
 EVASION: this passive ability allows the target of an area attack to leap or twist out of the way. If subjected to an attack that allows a Savingthrow vs. Breath Weapon or vs. Wand for half damage, a character with evasion takes no damage on a successful save.
 
-– Receives Bonus Feats at level 10 and every 3 levels thereafter.
+– Receives Bonus Feats at levels 4, 8, 12, 16, 20, 22, 25 and 28.
 – May distribute 20 points per level (30 at level 1) in thieving abilities: Open Locks, Pick Pockets, Find Traps, Move Silently, Hide In Shadows, Detect Illusion, Set Traps.
 – Starts with base scores of 10% in Open Locks, 5% in Find Traps, 15% in Pick Pockets, 10% in Move Silently, and 5% in Hide in Shadows.
 – May Sneak attack for increased damage: 1d6 at level 1 + 1d6 every 2 levels thereafter.
@@ -875,9 +874,8 @@ Second level spells: starting from level 7 Assassin gets access to the following
 Third level spells: starting from level 10 Assassin gets access to the following spells: Vampiric Touch, Non-Detection, Hold Person, Detect Illusions.
 Fourth level spells: starting from level 13 Assassin gets access to the following spells: Improved Invisibility, Free Action, Poison, Cloak of Fear.
 
-– Gets one bonus feat at levels 22 and 28.
 Disadvantages:
-– Do not receive Bonus Feats as trueclass thieves do.
+– Does not receive bonus feats at levels 4, 12, 20 and 25.
 – May only distribute 10 skill points per level among thieving skills (20 points at level 1).~
 //--------------------------------------------------------------------------------------------------//
 @040=~SWASHBUCKLER: This rogue is part acrobat, part swords<PRO_MANWOMAN>, and part wit: the epitome of charm and grace.
@@ -887,7 +885,6 @@ Advantages:
 – High THAC0/APR progression.
 – Hit Die: d8
 – May get up to Epic Weapon Specialization (7 stars) in any weapon they can use.
-– Receives Bonus Feat at levels 4, 8, 12, 16, 20, 22, 25 and 28.
 – At 8th level receives +1 to hit and damage bonus with all weapon categories, this bonus is increased by +1 every 8 levels thereafter. 
 – At first level receives for free Combat Prowess(1):Weapon Finesse and Tactics(1):Insightful Strike feats.
 – At 11th level Swashbuckler receives +1 bonus to all savingthrows.
@@ -895,7 +892,6 @@ Advantages:
 – At 19th level each critical hit of Swashbuckler additionally reduces target's Constitution by 2 points for 10 rounds (cumulatively).
 
 Disadvantages:
-– Do not receive Bonus Feats at level 10 and every 3 levels thereafter as trueclass thieves do.
 – May not use Sneak attack.
 – May only distribute 15 skill points per level among thieving skills (25 points at level 1).~
 
@@ -920,7 +916,7 @@ Advantages:
 Disadvantages:
 – May not wear any armor or use shields.
 – May only distribute 15 skill points per level among thieving skills (25 points at level 1).
-– Do not gain bonus feats at levels 13, 16 and 25 as trueclass thieves do.~
+– Does not receive Bonus Feats at levels 4, 12, 20 and 25.~
 
 	@0410001=~ninja~
 	@0410002=~Ninja~
@@ -948,6 +944,7 @@ Disadvantages:
 – Alignment restricted to any non-lawful.
 – Worse Sneak attack progression: 1d6 at level 1 + 1d6 every 3 levels thereafter.
 – May only distribute 15 skill points per level (25 at level 1) among thieving skills.
+– Do not receive Bonus Feats at levels 4, 12, 20 and 25.
 – May not use the Set Snare ability.~
 //---------------------------------------------------------------------------------------------------//
 @043=~BARD: The Bard is a rogue, but <PRO_HESHE> is very different from the Thief. The Bard's strength is <PRO_HISHER> pleasant and charming personality. With it and <PRO_HISHER> wits, <PRO_HESHE> makes <PRO_HISHER> way through the world. A Bard is a talented musician and a walking storehouse of gossip, tall tales, and lore; <PRO_HESHE> learns a little bit about everything that crosses <PRO_HISHER> path and is a jack-of-all-trades but master of none. While many Bards are scoundrels, their stories and songs are welcome almost everywhere.
