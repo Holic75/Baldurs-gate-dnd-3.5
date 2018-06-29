@@ -308,6 +308,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   END ELSE PATCH_IF (category = ArmorCategory AND usable_by_mage) BEGIN//robes (category from armor to cloak and robes)
   
 	WRITE_SHORT 0x001c RobesCategory
+    category  = RobesCategory
   END
   
   READ_SHORT 0x0026 min_str
@@ -384,9 +385,9 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 
     
     //allow jesters only to wear light armors
-    PATCH_IF (category=ArmorCategory) BEGIN
-        
-        LPF SET_ITEM_USABILITY INT_VAR value = (usable_by_bard AND usable_by_thief) STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~jester~ END
+    PATCH_IF (category=ArmorCategory) BEGIN        
+        LPF SET_ITEM_USABILITY INT_VAR value = (usable_by_bard AND usable_by_thief)  
+                                    STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~jester~ END
     END
 	//disallow ninjas to use armor (same as monks)
 	PATCH_IF (NOT usable_by_monk) BEGIN

@@ -1,6 +1,6 @@
 
-        OUTER_SET ThiefStrRef = RESOLVE_STR_REF (~Thief~)
-COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
+    OUTER_SET ThiefStrRef = RESOLVE_STR_REF (~Thief~)
+    COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 
     	LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~kensai~  RET usable_by_kensai = result END
 		LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~thief~  RET usable_by_thief = result END
