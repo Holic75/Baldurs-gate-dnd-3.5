@@ -17,7 +17,7 @@
 
 
 
-# Baldurs-gate-dnd-3.5 v2.14
+# Baldurs-gate-dnd-3.5 v2.15
 This is a WeiDu mod for BG:Enhanced edition and BG2:Enhanced edition that changes 2ed ADnD rules to DnD 3.5 with some elements taken from Pathfinder.  
 It changes game mechanics (i.e. classes, spells, abilities, etc...) to that of 3.5 edition (to the extent that game engine allows).
 
@@ -243,10 +243,10 @@ Insightful Strike (1 star) - With unarmed strikes, short swords, daggers, long s
 NOTE: This damage bonus is not multiplied by 1.5 for two-handed weapons, although if character got additional 0.5 strength bonus from Strength score, it is retained (i.e. if Strength is 14 and Intelligence is 16, the character will get +3 damage bonus from Intelligence and +1 (0.5*2) from Strength to a total of +4 with two-handed weapons).  
 Combat Expertise (2 stars) - The character receives Combat Expertise modal ability. While activated all attacks with melee weapons suffer -3 penalty to THAC0 but character receives +3 bonus to AC, character also suffers additional 15% spell casting failure. Can be used only with melee weapon equipped.  
 Iron Will (3 stars) - The character receives +2 bonus on Saving Throws vs. Spells.  
-Study Opponent (4 stars) - The character receives Study Opponent innate ability which can be used at will.    
+Study Opponent (4 stars) - The character receives Study Opponent innate ability which can be used 5 times per day.    
 ```
 Study Opponent:
-Character can spend one round studying enemy and getting insight about its weaknesses and share them to the party. The target receives a -3 penalty to AC, saving throws and THAC0 for next 10 seconds.
+Character can spend one round studying enemy and getting insight about its weaknesses and share them to the party. The target receives a -3 penalty to AC, saving throws and THAC0 for next 10 rounds.
 This is an extraordinary ability and thus is not subject to magic resistance or savingthrows, neither can be dispelled.  
 ```
 Combat Intuition (5 stars) - While wearing light or no armor the character receives +1 bonus to AC for every 2 points of Intelligence above 10.  
@@ -421,7 +421,7 @@ CLASS FEATURES:
 – May wear any armor and use any weapon and shield (including large shield).  
 – May get seven stars in any weapon category.  
 – Gets one bonus feat at level 1 and at every even level.  
-– At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 at level 4 and every 4 levels thereafter (up to a maximum of +5 at level 16).  
+– At 4th level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 every 4 levels thereafter (up to a maximum of +4 at level 16).  
 – At 8th level receives +1 to hit and damage bonus with all weapon categories, this bonus is increased to +2 at level 18 and +3 at level 24.     
 – Can use Hardiness once per day starting from level 21, gains an additional use at level 26.
 ```
@@ -725,7 +725,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 
 ### ARCHER
 Advantages:  
-– Bonus Feats: Archer gets Style Focus in Archery for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12 Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.  
+– Bonus Feats: Archer gets Style Focus in Archery for free at level 2, Style Specialization at level 6, Greater Style Focus at level 10, Greater Style Specialization at level 14 Style Mastery at level 18, Improved Style Mastery at level 22 and Epic Style Mastery at level 26.  
 – Once per day can create 40 arrows (starts with normal arrows at level 1, which become +1 at level 5, +2 at levle 10, +3 at level 15 and +4 at level 20).  
 – May use the Called Shot ability once per day. Gains one use at level 4 and an additional use every 2 levels thereafter.  
 ```
@@ -757,7 +757,7 @@ Advantages:
 – +20% to Move Silently and Hide In Shadows.  
 – Racial Enemy is replaced with Improved Racial Enemy.  
 ```
-IMPROVED RACIAL ENEMY: At 1st level, a stalker may select a type of creature from among the list for which she gets +2 bonus on to hit and damage rolls as well as +2 bonus to AC and savingthrows. At every 5th level to hit bonus is increased by 1 and damage bonus is increased by 2 and stalker can select an additional racial enemy.
+IMPROVED RACIAL ENEMY: At 1st level, a stalker may select a type of creature from among the list for which she gets +2 bonus on to hit and damage rolls as well as +2 bonus to AC and savingthrows. At every 5th level to hit and damager bonuses are increased by 2 and stalker can select an additional improved racial enemy.
 ```
 – May use Smite Racial Enemy ability. Gains one use per day at level 1, level 4 and every 4 levels thereafter.  
 ```
@@ -1349,7 +1349,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May distribute 15 skill points per level among thieving skills (25 points at level 1).  
 – Gets one bonus feat at level 1 and every 3 levels thereafter.  
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.  
-– At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1 and reduces penalty to thieving skills by 10%. Max dexterity AC bonus is further increased by 1 at and skill penalties are reduced by 10% at level 4 and every 4 levels thereafter (up to a maximum of +5 increase in max AC bonus and -50% decrease of thieving skill penalty at level 16).  
+– At 4th level gets Armor Training which increases max dexterity AC bonus from any armor by 1 and reduces penalty to thieving skills by 10%. Max dexterity AC bonus is further increased by 1 at and skill penalties are reduced by 10% every 4 levels thereafter (up to a maximum of +4 increase in max AC bonus and -40% decrease of thieving skill penalty at level 16).  
 – Starting from level 5 every hit of Fighter/Thief has 5% + 1% per level chance to slow the target for 1d4 rounds.
 – Starting from level 10 every hit of Fighter/Thief has additional 5% + 1% per level chance to blind the target for 1d4 rounds.
 – Starting from level 15 every hit of Fighter/Thief has additional 5% + 1% per level chance to make the target Sickened for 1d4 rounds (-2 to THAC0, Damage and all Savingthorws).  
@@ -1362,7 +1362,7 @@ CLASS FEATURES:
 – May wear any armor and use any weapon and shield (excluding large shield).  
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.  
 – Can cast two spell per day less than trueclass cleric.  
-– At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 at level 4 and every 4 levels thereafter (up to a maximum of +5 at level 16).  
+– At 4th level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 every 4 levels thereafter (up to a maximum of +4 at level 16).  
 – Gets one bonus combat feat at every 4th level up to level 20.  
 – Gets one bonus feat at levels 22, 25 and 28.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
@@ -2354,7 +2354,7 @@ Focusing divine power like a ray of the sun, priest projects a blast of light fr
 Level: 3  
 Sphere: Necromantic   
 Range: 0   
-Duration: 5 rouns/level   
+Duration: 5 rounds/level   
 Casting Time: 5   
 Area of Effect: 30-ft. radius  
 Saving Throw: None   
@@ -2511,7 +2511,7 @@ Area of Effect: 1 creature
 Saving Throw: None  
 
 With a touch, druid gifts an animal ally with nature's strength, resilience, and speed.  
-The affected animal gains a +10 on attack rolls and damage rolls and 4 temporary hit points per caster level, plus one additional attack per round.
+The affected animal gains a +10 bonus on attack and damage rolls and 4 temporary bonus hit points per caster level, plus one additional attack per round for the duration of the spell.
 
 
 Additionally Druids gain access to the following spells: Burning Hands (as 1st level spell), Sleep (as 1st level spell),

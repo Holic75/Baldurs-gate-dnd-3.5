@@ -8,7 +8,7 @@ CLASS FEATURES:
 – May wear any armor and use any weapon and shield (including large shield).
 – May get seven stars in any weapon category.
 – Gets one bonus feat at level 1 and at every even level.
-– At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 at level 4 and every 4 levels thereafter (up to a maximum of +5 at level 16).
+– At 4th level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 every 4 levels thereafter (up to a maximum of +4 at level 16).
 – At 8th level receives +1 to hit and damage bonus with all weapon categories, this bonus is increased by +1 every 8 levels thereafter. 
 – Can use Hardiness once per day starting from level 21, gains an additional use at level 26.
 
@@ -44,7 +44,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May distribute 15 skill points per level among thieving skills (25 points at level 1).
 – Gets one bonus feat at level 1 and every 3 levels thereafter.
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.
-– At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1 and reduces penalty to thieving skills by 10%. Max dexterity AC bonus is further increased by 1 at and skill penalties are reduced by another 10% at level 4 and every 4 levels thereafter (up to a maximum of +5 increase in max AC bonus and -50% decrease of thieving skill penalty at level 16).
+– At 4th level gets Armor Training which increases max dexterity AC bonus from any armor by 1 and reduces penalty to thieving skills by 10%. Max dexterity AC bonus is further increased by 1 at and skill penalties are reduced by another 10% every 4 levels thereafter (up to a maximum of +4 increase in max AC bonus and -40% decrease of thieving skill penalty at level 16).
 – Hit Die: d8
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon and vs. Wand
 ~
@@ -64,7 +64,7 @@ CLASS FEATURES:
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 
 – At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
-– At 1st level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 at level 4 and every 4 levels thereafter (up to a maximum of +5 at level 16).
+– At 4th level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 every 4 levels thereafter (up to a maximum of +4 at level 16).
 – Gets one bonus feat at levels 22, 25 and 28.
 – Hit Die: d9
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
@@ -519,7 +519,7 @@ All hostile undead creatures suffer 1d6 points of magical damage per Channel Ene
 @020=~ARCHER: The Archer is the epitome of skill with the bow—the ultimate marks<PRO_MANWOMAN>, able to make almost any shot, no matter how difficult. To become so skilled with the bow, the Archer has had to sacrifice some of <PRO_HISHER> proficiency with melee weapons and armor.
 
 Advantages:
-– Bonus Feats: Archer gets Style Focus in Archery for free at level 1, Style Specialization at level 4, Greater Style Focus at level 8, Greater Style Specialization at level 12 Style Mastery at level 16, Improved Style Mastery at level 21 and Epic Style Mastery at level 24.
+– Bonus Feats: Archer gets Style Focus in Archery for free at level 2, Style Specialization at level 6, Greater Style Focus at level 10, Greater Style Specialization at level 14 Style Mastery at level 18, Improved Style Mastery at level 22 and Epic Style Mastery at level 26.
 – Once per day can create 40 arrows (starts with normal arrows at level 1, which become +1 at level 5, +2 at level 10, +3 at level 15 and +4 at level 20).
 – May use the Called Shot ability once per day. Gains one use at level 4 and an additional use every 2 levels thereafter.
 
@@ -539,7 +539,7 @@ Disadvantages:
 Advantages:
 – +15% to Move Silently and Hide In Shadows.
 – Has a telepathic link with his animal companion which allows them to fight as one. When fighting close to each other Beast master and <PRO_HISHER> animal companion get +1 To Hit, Damage, AC and Saving Throws. These bonuses increase to +2 at level 6,  +3 at level 12 and +4 at level 18, +5 at level 24 and +6 at level 30.
-– Gets one more bonus feat at level 22.
+– Gets one bonus feat at level 22.
 – Hit Die: d12.
 
 Disadvantages:
@@ -553,7 +553,7 @@ Advantages:
 – +20% to Move Silently and Hide In Shadows.
 – Racial Enemy is replaced with Improved Racial Enemy.
 
-IMPROVED RACIAL ENEMY: At 1st level, a stalker may select a type of creature from among the list for which <PRO_HESHE> gets +2 bonus on to hit and damage rolls as well as +2 bonus to AC and savingthrows. At every 5th level to hit bonus is increased by 1 and damage bonus is increased by 2 and stalker can select an additional racial enemy.
+IMPROVED RACIAL ENEMY: At 1st level, a stalker may select a type of creature from among the list for which <PRO_HESHE> gets +2 bonus on to hit and damage rolls as well as +2 bonus to AC and savingthrows. At every 5th level to hit and damage bonuses are increased by 2 and stalker can select an additional improved racial enemy.
 
 – May use Smite Racial Enemy ability. Gains one use per day at level 1, level 4 and every 4 levels thereafter.
 

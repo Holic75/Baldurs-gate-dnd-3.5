@@ -176,11 +176,11 @@ This ability allows the warrior to vanquish foes with a single blow.  For the ne
 
 	@211=~The character receives Combat Expertise modal ability. While activated all attacks with melee weapons suffer -3 penalty to THAC0 but character receives +3 bonus to AC. The character also suffers additional 15% spellcasting failure. This ability can only be used with melee weapon equipped.~
 	@212=~The character receives +2 bonus on Saving Throws vs. Spells.~
-	@213=~The character receives Study Opponent innate ability which can be used at will.
+	@213=~The character receives Study Opponent innate ability which can be used 5 times per day.
 
 Study Opponent:
 
-Character can spend one round studying enemy and getting insight about its weaknesses and share them to the party. The target receives a -3 penalty to AC, saving throws and THAC0 for next 10 seconds.
+Character can spend one round studying enemy and getting insight about its weaknesses and share them to the party. The target receives a -3 penalty to AC, saving throws and THAC0 for next 10 rounds.
 This is an extraordinary ability and thus is not subject to magic resistance or savingthrows, neither can be dispelled.~
 	@214=~While wearing light or no armor, the character receives +1 bonus to AC for every 2 points of Intelligence above 10.~
 	@215=~The character receives Critical Strike innate ability.

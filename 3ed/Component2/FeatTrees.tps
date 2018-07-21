@@ -114,7 +114,7 @@ WITH_TRA ~%LANGUAGE%\tactics.tra~ BEGIN
 	
 	//4 - Study Oponent (-3 AC, thac0 and saves to one enemy)
 	OUTER_SPRINT game_name @003  OUTER_SPRINT game_description @004
-	LAF ADD_LUA_FEAT INT_VAR n_uses=1 STR_VAR ability_name=~STUDOP~ game_name game_description  END 
+	LAF ADD_LUA_FEAT INT_VAR n_uses=5 STR_VAR ability_name=~STUDOP~ game_name game_description  END 
 	
 	//5 - combat intuition (int bonus to ac with light armor)
 	LAF ADD_PSB_FEAT INT_VAR min_val=12 max_val=25 step=2 par1=128 STR_VAR ability_name=~CMBINT~ END 

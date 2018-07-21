@@ -119,9 +119,8 @@ DEFINE_PATCH_FUNCTION ~PTCH_WPN~
             
             //suppress enchantment bonuses
             PATCH_IF (category == 28 OR (proficiency>=89 AND proficiency<=98)) BEGIN
-            
-                READ_LONG 0x0060 current_enchantment               
-                SET current_enchantment = current_enchantment > 5 ? 5 : current_enchantment
+                
+                LPF GET_ITEM_ENCHANTMENT RET current_enchantment = enchantment END
                 
                 PATCH_IF (~%SOURCE_RES%~ STR_EQ ~BLUN12~) BEGIN //mace of disruption +1
                     SET current_enchantment = 1
@@ -131,16 +130,16 @@ DEFINE_PATCH_FUNCTION ~PTCH_WPN~
                     SET current_enchantment = 2
                 END
            
-                FOR (k = 1; k<=current_enchantment;k = k + 1) BEGIN
-                    //attack bonus
+                //attack bonus
+                FOR (k = 1; k<=current_enchantment;k = k + 1) BEGIN                  
                     SPRINT resource EVALUATE_BUFFER ~ENC_WPA%k%~
                     LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource END
                     LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource END        
                 END  
 
+                //damage bonus only for melee weapons
                 SET current_enchantment = is_melee ? current_enchantment : 5
                 FOR (k = 1; k<=current_enchantment;k = k + 1) BEGIN
-                    //damage bonus
                     SPRINT resource EVALUATE_BUFFER ~ENC_WPD%k%~
                     LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource END
                     LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource END        

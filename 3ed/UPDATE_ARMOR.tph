@@ -126,17 +126,10 @@ DEFINE_PATCH_FUNCTION ~UPDATE_ARMOR~
 		END
         
         
-          //suppress effects of magic vestment for magical armor       
-          //determine armor enchantment 
-        SET  current_enchantment = 0
-        
-        READ_STRREF 0x000c ArmorName ELSE ~~
-        FOR (k = 1;k <= 6; k=k+1) BEGIN       
-           SET current_enchantment = (~%ArmorName%~ STRING_CONTAINS_REGEXP ~\+%k%~) ? current_enchantment : k
-        END
-        PATCH_IF (current_enchantment == 0 ) BEGIN
-            READ_LONG 0x0060 current_enchantment
-        END       
+        //suppress effects of magic vestment for magical armor       
+        //determine armor enchantment
+        LPF GET_ITEM_ENCHANTMENT RET current_enchantment = enchantment END
+    
         PATCH_IF (~%SOURCE_RES%~ STR_EQ ~LEAT08~) BEGIN //shadow armor
             current_enchantment = 3
         END
@@ -153,7 +146,6 @@ DEFINE_PATCH_FUNCTION ~UPDATE_ARMOR~
             current_enchantment = 1
         END
         
-        SET current_enchantment =  current_enchantment > 5 ? 5 : current_enchantment
         
         FOR (k = 1; k<=current_enchantment;k = k + 1) BEGIN
             SPRINT resource EVALUATE_BUFFER ~MAG_VST%k%~

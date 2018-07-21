@@ -332,5 +332,7 @@ ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
 		READ_LONG 0x0054 ~id_descr_strref~
         STRING_SET_EVALUATE %id_descr_strref% @5108
         
-
+    //fix fighter/cleric flag on gauntlets of elven might
+    COPY_EXISTING ~GAUNTEM.ITM~ ~override~
+         LPF SET_ITEM_USABILITY INT_VAR value = 1 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_cleric~   END
 END

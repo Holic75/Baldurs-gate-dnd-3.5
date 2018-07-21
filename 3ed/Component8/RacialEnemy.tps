@@ -160,7 +160,7 @@
                 
                 SPRINT resource EVALUATE_BUFFER ~FED%i_str%%k2%~
                 LPF ADD_SPELL_EFFECT INT_VAR header  opcode = 177  target=2 duration=1 timing=9 parameter1=0 parameter2=2 STR_VAR resource END  //apply damage bonus to racial enemy effects
-                SPRINT resource EVALUATE_BUFFER ~FET%i_str%%k1%~
+                SPRINT resource EVALUATE_BUFFER ~FET%i_str%%k2%~
                 LPF ADD_SPELL_EFFECT INT_VAR header opcode = 177 target=2 duration=1 timing=9 parameter1=0 parameter2=2 STR_VAR resource END  //apply thac0 bonus bonus to racial enemy effect
                 SPRINT resource EVALUATE_BUFFER ~FEI_PR%i%~
                 LPF ADD_SPELL_EFFECT INT_VAR header target=2 duration=1 timing=9 opcode = 321  STR_VAR resource END //remove protection from marking 
