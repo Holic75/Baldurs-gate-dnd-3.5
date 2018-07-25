@@ -2602,6 +2602,16 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Wilson - Grizzly Bear (18/ 10/ 18/ 8/ 8/ 8)
 #### Hexxat - Shadowdancer (16/ 20/ 12/ 18/ 12/ 14)
 
+Note: If you do not like class/stat choices for NPC you can generally easily change it by editing the following files:
+
+3ed\Component13\NpcBg1.tps  for Baldur's Gate 1  
+3ed\Component13\NpcBg2.tps  for Baldur's Gate 2  
+3ed\Component13\NpcSod.tps  for SOD    
+
+PRIOR to mod installation. It should be relatively straightforward but if you have questions do not hesitate to ask.
+It is not advised to change NPC classes by editing savegame files with the help of NearInfinity or Shadow Keeper since it might break certain scripts.
+
+
 ## 9. Difficulty
 
 To compensate for new character abilities most of the enemies were made stronger, they got bonuses to AC, savingthrows, THAC0 and APR.   
@@ -2619,3 +2629,6 @@ once you level up, the character will get back all missing experience points wit
 
 If you character suddenly receives a lot of XP points (through console for example) to raise for several levels the script might generally take few seconds to kick on and readjust XP points,
 so please wait till it runs, and level up only after, otherwise you risk not to receive certain abilities.
+
+
+Also different class or feat bonuses/penalties related to equipped weapons/armor generally do not take effect immediately on item equipment but approximately 1 second after.
