@@ -10,8 +10,8 @@
 		 caption=~F_CSPL~ 2DAfile=~3ed/SpellProgression/F_CSPELLS.2DA~ END
          
          
-    //priest of lathander and helm  spells
-	LAF DIMINISH_SPELL_CASTING STR_VAR clab=~CLABPR0[3-4]\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREC.SPL~ 
+    //priest of lathander, tyr and helm  spells
+	LAF DIMINISH_SPELL_CASTING STR_VAR clab=~\(\(CLABPR0[3-4]\)\|\(OHTYR\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREC.SPL~ 
 		 caption=~K_CSPL~ 2DAfile=~3ed/SpellProgression/F_CSPELLS.2DA~ END
          
          

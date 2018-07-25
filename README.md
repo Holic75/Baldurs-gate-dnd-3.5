@@ -823,6 +823,7 @@ Disadvantages:
 
 ### PRIEST OF TALOS
 Advantages:  
+– Gets for free Empower Magic (1): 10% at level 1, Empower Magic (2): 15% at level 4 and finally Empower Magic (3): 20% at level 8.  
 – Deals additional electrical damage on every successful hit (double on critical hits):  
   Level 1-5: 1d2  
   Level 6-10: 1d4  
@@ -841,10 +842,16 @@ Advantages:
 
 Disadvantages:  
 – Alignment restricted to lawful good, neutral good, or lawful neutral.  
-– May not channel energy.  
+– Can cast two less spells per day per level than trueclass clerics.  
 
-### PRIEST OF TEMPUS  (IWD only)
+### PRIEST OF TEMPUS  (IWD and BG2 only)
 Advantages:  
+– Can use Rage ability (starts with one use at level 1 then get another one at level 5 and every 5 levels thereafter), though Priest of Tempus never gets benefits of Greater or Mighty Rage.  
+```
+RAGE: The character is enraged  which grants her a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class, and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+The enraged state lasts 3 rounds + 1 round per 2 points of newly modified Constitution above 10.
+At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
+```
 – May cast Chaos of Battle once per day starting from level 1. Gains an additional use at level 4 and every 4 levels thereafter.  
 ```
 CHAOS OF BATTLE: Chaos of Battle applies bonuses to all allies and penalties to all enemies within a 30-ft. radius of the caster. The spell lasts for 3 rounds + 1 round per 2 points of caster Charisma above 10 and will randomly affect the targets' Armor Class, Hit Points, THAC0, saves, or luck. The magnitude of the effect starts at 1 (5 for Hit Points) at level 1 and will improve by 1 (5 for Hit Points) every 6 levels of the caster.

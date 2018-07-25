@@ -10,6 +10,18 @@
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=26 d_level=4 add_at_level1=0 
 						STR_VAR clab=~CLABRN02\.2DA~
 							mask_file=~~ feat_type_file=~~ caption=~ARCHFT~ END	
+//priest of talos empower  magic (1, 4, 8)
+    COPY ~3ed/Feats/FeatAttribution/SFTCRE_E.SPL~ ~override/TALOSFT.SPL~
+		FOR (i=1;i<=3;i=i+1) BEGIN
+            SET lvl = (i == 1) ? 1 : 4*(i - 1)            
+			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=lvl speed=0 END
+				SPRINT resource EVALUATE_BUFFER ~SFT104_%i%~
+				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=3 parameter2=105 timing=0 duration=1 STR_VAR resource END // cleric
+		END	
+
+	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=8 d_level=4 add_at_level1=1 
+						STR_VAR clab=~CLABPR02\.2DA~
+							mask_file=~~ feat_type_file=~~ caption=~TALOSFT~ END	                            
 
 //armored arcana (ftr/mage, f/m/c, lvl1 - 6 bard lvl1 -mage/thief ;  f/m/t; battle caster )
     COPY ~3ed/Feats/FeatAttribution/SFTCRE_E.SPL~ ~override/ARMARCFT.SPL~

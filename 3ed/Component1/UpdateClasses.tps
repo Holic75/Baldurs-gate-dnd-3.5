@@ -980,7 +980,11 @@ WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN
         OUTER_SET rage_duration = 6*(3 + (con + 4 - 10)/2)
         COPY_EXISTING ~SPCL152.SPL~ ~override/BRBR1%con%.SPL~
             WRITE_LONG 0x0008 0
+            
             LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 321 STR_VAR match_resource = ~SPCL152~ END 
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=145 target=1 parameter2=0 timing=0 resist_dispel=2 duration=rage_duration END //disable wizard spells
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=145 target=1 parameter2=1 timing=0 resist_dispel=2 duration=rage_duration END //disable cleric spells
+            
             LPF ADD_SPELL_EFFECT INT_VAR opcode=146 target=1 parameter1=1 parameter2=1 timing=4 resist_dispel=2 duration=rage_duration STR_VAR resource=~BRBFTG~ END  
             LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=1 duration=(rage_duration - 1) resist_dispel=2 STR_VAR resource=~BRBRGE~ END //forbid using rage again
             
@@ -1460,7 +1464,7 @@ END
     END
     
     //-----------------------------priest of tempus chaos of battle (cha dependent duration) update-----------------------------------------
-    ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+    ACTION_IF (~%GameId%~ STR_EQ ~Iwd~ OR ~%GameId%~ STR_EQ ~Bg2~) BEGIN
     
         OUTER_SET n_spell_headers = 0
         OUTER_FOR (i=1;i<=25;i=i+6) BEGIN

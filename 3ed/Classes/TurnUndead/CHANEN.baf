@@ -11,7 +11,6 @@ IF
 		
 	!Kit(Player%player_id%,INQUISITOR)
 	!Kit(Player%player_id%,GODTALOS)
-    !Kit(Player%player_id%,OHTYR)
     !Kit(Player%player_id%,OHTEMPUS)
 	OR(2)
 		!Class(Player%player_id%,PALADIN)

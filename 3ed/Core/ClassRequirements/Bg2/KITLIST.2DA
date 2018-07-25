@@ -42,4 +42,5 @@
 38               LATHANDER_X      25197            25170            25223            CLABPR04         49               0x04000000       0                0x00000000
 39               GRIZZLY_BEAR     16119            16119            86479            CLABBEAR         60               0xFFFFFFFF       2                0x00004027
 40               OHTYR            103137           93785            93786            OHTYR            61               0x00004000       3                0x00004028
-41               THIEF_BASE        7202             1082             9561            CLABTH01         62               0x00004000       4                0x00004029
+41               OHTEMPUS         103221           103222           103223           OHTEMPUS         62               0x00004000       3                0x00004029
+42               THIEF_BASE        7202             1082             9561            CLABTH01         63               0x00004000       4                0x0000402A
