@@ -422,7 +422,7 @@ CLASS FEATURES:
 – May get seven stars in any weapon category.  
 – Gets one bonus feat at level 1 and at every even level.  
 – At 4th level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 every 4 levels thereafter (up to a maximum of +4 at level 16).  
-– At 8th level receives +1 to hit and damage bonus with all weapon categories, this bonus is increased to +2 at level 18 and +3 at level 24.     
+– At 8th level receives +1 to hit and damage bonus with all weapon categories, this bonus is increased to +2 at level 16 and +3 at level 24.     
 – Can use Hardiness once per day starting from level 21, gains an additional use at level 26.
 ```
 HARDINESS:

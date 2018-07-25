@@ -76,7 +76,9 @@
                                                                        par14 = 160 par24 = 105 //tanari      
                                                                        par15 = 147 par25 = 104 //genie 
                                                                        par16 = 166 par26 = 105 //rakshasa
-                                                                       par17 = 126 par26 = 105 //ogre mage
+                                                                       par17 = 126 par27 = 105 //ogre mage
+                                                                       par18 = 141 par28 = 104 //imp
+                                                                       par19 = 139 par29 = 104 //mephit
                                                                        STR_VAR SmiteName=~SMTMAG~  END //smite mage
 	
     LAF ADD_SMITE_EVIL_VARIATION INT_VAR name_ref = 009 descr_ref =010 par1 = 0 par2 =0 STR_VAR SmiteName=~SMTDST~ END //destructive smite

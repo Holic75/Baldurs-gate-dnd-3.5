@@ -27,6 +27,12 @@ DEFINE_ACTION_FUNCTION ~ADD_SMITE_EVIL_VARIATION~
         
         par17 = 0 - 1
         par27 = 0 - 1
+        
+        par18 = 0 - 1
+        par28 = 0 - 1
+        
+        par19 = 0 - 1
+        par29 = 0 - 1
 	STR_VAR
 		SmiteName = ~~
 	BEGIN
@@ -81,6 +87,14 @@ DEFINE_ACTION_FUNCTION ~ADD_SMITE_EVIL_VARIATION~
             
             PATCH_IF (par17>0 AND par27>0) BEGIN
                 LPF CLONE_EFFECT INT_VAR match_opcode=326 match_parameter1 = par1 match_parameter2=par2  parameter1 = par17 parameter2 = par27 END
+            END
+            
+            PATCH_IF (par18>0 AND par28>0) BEGIN
+                LPF CLONE_EFFECT INT_VAR match_opcode=326 match_parameter1 = par1 match_parameter2=par2  parameter1 = par18 parameter2 = par28 END
+            END
+            
+            PATCH_IF (par19>0 AND par29>0) BEGIN
+                LPF CLONE_EFFECT INT_VAR match_opcode=326 match_parameter1 = par1 match_parameter2=par2  parameter1 = par19 parameter2 = par29 END
             END
         
         
