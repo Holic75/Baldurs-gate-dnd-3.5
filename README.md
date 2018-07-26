@@ -32,7 +32,7 @@ if it is not already there (it replaces backstab with 3ed Sneak Attack for Baldu
 
 Also it is strongly advised that you make a backup of your dialog.tlk file before installing.
 
-This mod was only tested with clean BG:ENHANCED EDITION 2.3 install (or Sod with modmerge), BG 2:ENHANCED EDITION 2.3 and might not be compatible with any other mods.
+This mod was only tested with clean BG:ENHANCED EDITION 2.3 install (or Sod with modmerge), BG 2:ENHANCED EDITION 2.5 and might not be compatible with any other mods.
 It also seems to install and work with Icewind Dale ENHANCED EDITION 2.5 but no extensive testing was done.
 
 I also strongly suggest to use a mod Colorful Specialist Slots made by kjeron ( https://us.v-cdn.net/5019558/uploads/editor/nn/cv0dplebsnjj.rar) which forces specialist mages to
