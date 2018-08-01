@@ -40,7 +40,7 @@
 36               DARK_MOON        37259            37261            37260            CLABMO02         57               0x00004000       20               0x00004024
 37               SUN_SOUL         37262            37264            37263            CLABMO03         58               0x00004000       20               0x00004025
 38               LATHANDER_X      37168            37170            37169            CLABPR00         49               0x04000000       0                0x00000000
-39               GRIZZLY_BEAR     37307            37307            37308            CLABBEAR         60               0xFFFFFFFF       2                0x00004027
-40               OHTYR            40681            40681            40682            OHTYR            61               0x00004000       3                0x00004028
-41               OHTEMPUS         40774            40775            40776            OHTEMPUS         62               0x00004000       3                0x00004029
+39               GRIZZLY_BEAR     37307            37307            37308            CLABBEAR         62               0xFFFFFFFF       2                0x00004027
+40               OHTYR            40681            40681            40682            OHTYR            60               0x00004000       3                0x00004028
+41               OHTEMPUS         40774            40775            40776            OHTEMPUS         61               0x00004000       3                0x00004029
 42               THIEF_BASE       37219            37221             37220           CLABTH01         63               0x00004000       4                0x0000402A

@@ -1,3 +1,4 @@
+SPWI110 identify
 SPWI103 burning_hands
 SPWI116 sleep
 SPWI202 detect_eveil
@@ -5,7 +6,9 @@ SPWI208 know_alignment
 SPWI326 dispel_magic
 SPWI319 protection_from_fire
 SPWI404 ice_storm
+SPWI410 minor sequencer
 SPWI507 hold_monster
 SPWI609 true_sight
 SPWI615 chain_lightning
 SPWI620 conjure_fire_elemental
+SPWI720 spell sequencer

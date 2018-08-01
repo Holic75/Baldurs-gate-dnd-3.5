@@ -26,10 +26,13 @@
 		SAY UNIDENTIFIED_DESC @4
         
      OUTER_FOR (i=0;i<8;i=i+1) BEGIN
-        COPY ~3ed/SpontaneousCasting/HealHarm/spharm0.spl~ ~override/spharm%i%.spl~
+        COPY ~3ed/SpontaneousCasting/HealHarm/spharm0.spl~ ~override/spharm%i%.spl~          
+            SPRINT resource EVALUATE_BUFFER ~spharm%i%~
             PATCH_IF (i>0) BEGIN
-                SPRINT resource EVALUATE_BUFFER ~spharm%i%~
                 LPF ADD_SPELL_EFFECT INT_VAR opcode =318 target = 1 parameter2 = 131 parameter1 = 10+2*i insert_point = 0 STR_VAR resource END
+            END
+            PATCH_IF (i<7) BEGIN
+                LPF ADD_SPELL_EFFECT INT_VAR opcode =318 target = 1 parameter2 = 130 parameter1 = 12+2*i insert_point = 0 STR_VAR resource END          
             END
      END
 	

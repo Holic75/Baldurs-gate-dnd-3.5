@@ -2058,7 +2058,7 @@ Sun              | Fireshield (Red) (4), Sunfire (5), Prismatic Spray (7)       
 Time             | Slow (3), Haste (4), Hold Monster (5)                                               |Immunity to sneak attacks
 Trickery         | Grease (1), Confusion (4), Shadow Door (5)                                          |Mirror Image 1/day, +5% bonus to all thieving skills
 War              | Seeking Sword (3), Divine Favor (5), Tenser's Transformation (6)                    |Free weapon focus
-Magic            | Identify (1), Spell Immunity (5), Limited Wish (7)                                  |Dispelling Touch 3/day
+Magic            | Minor Spell Turning (3), Spell Immunity (5), Limited Wish (7)                                  |Dispelling Touch 3/day
 Plant            | Entangle (1), Barkskin (2), Poison (4, Bg1, Bg2), Mold Touch (3, Iwd)               |Poison Weapon 1/day
 
 #### Charm Animal, 10' Radius
