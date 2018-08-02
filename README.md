@@ -1774,7 +1774,7 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 
 Note: Specialist Mages may cast one more spell per level per day
 
-### Fighter/Cleric, Fighter/Druid, Cleric/Ranger, Cleric/Thief, Priest of Lathander and Priest of Helm spell slots per day
+### Fighter/Cleric, Fighter/Druid, Cleric/Ranger, Cleric/Thief, Priest of Lathander, Priest of Tyr and Priest of Helm spell slots per day
 
 Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 --- | --- | --- | --- |--- |--- |--- |---
