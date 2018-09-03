@@ -2035,7 +2035,7 @@ Stat\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 19-20 | 2 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 0
 21-22 | 2 | 2 | 1 | 1 | 1 | 1 | 0 | 0 | 0
 23-24 | 2 | 2 | 2 | 1 | 1 | 1 | 1 | 0 | 0
-25    | 2 | 2 | 2 | 2 | 1(2)| 1(2) | 1 | 0 | 0
+25    | 2 | 2 | 2 | 2 | 1 | 1(2) | 1(2) | 1 | 0
 
 Note: Since priests can not cast 8th level spells, they receive another 6th and 7th level spell slots instead when corresponding stat is 25.
 
