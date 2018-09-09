@@ -1464,49 +1464,47 @@ END
     END
     
     //-----------------------------priest of tempus chaos of battle (cha dependent duration) update-----------------------------------------
-    ACTION_IF (~%GameId%~ STR_EQ ~Iwd~ OR ~%GameId%~ STR_EQ ~Bg2~) BEGIN
-    
-        OUTER_SET n_spell_headers = 0
-        OUTER_FOR (i=1;i<=25;i=i+6) BEGIN
-            OUTER_SET n_spell_headers = n_spell_headers + 1 
-            COPY_EXISTING ~ohtmps2D.SPL~ ~override/temD%n_spell_headers%.SPL~
-                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 321 END
-                LPF ALTER_SPELL_HEADER INT_VAR target = 5 range = 0 END
-                LPF DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST INT_VAR level_to_keep = i END 
-            COPY_EXISTING ~ohtmps2E.SPL~ ~override/temE%n_spell_headers%.SPL~
-                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 321 END
-                LPF ALTER_SPELL_HEADER INT_VAR target = 5 range = 0 END
-                LPF DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST INT_VAR level_to_keep = i END                     
-        END
-    
-        OUTER_FOR (i=1;i<=n_spell_headers;i=i+1) BEGIN
-            OUTER_FOR (cha = 10;cha<=24;cha=cha+2) BEGIN    
-                OUTER_SET chaos_duration = 6*(3 + (cha - 10)/2)
-                COPY_EXISTING ~temD%i%.SPL~ ~override/temD%i%%cha%.SPL~                 
-                    LPF ALTER_SPELL_EFFECT INT_VAR power = 0 duration_high=chaos_duration END
-                    
-                COPY_EXISTING ~temE%i%.SPL~ ~override/temE%i%%cha%.SPL~
-                    LPF ALTER_SPELL_EFFECT INT_VAR power = 0 duration_high=chaos_duration END           
-            END
-        END
-     
-        COPY_EXISTING ~ohtmps2D.SPL~ ~override/ohtmps2D.SPL~
+   
+    OUTER_SET n_spell_headers = 0
+    OUTER_FOR (i=1;i<=25;i=i+6) BEGIN
+        OUTER_SET n_spell_headers = n_spell_headers + 1 
+        COPY_EXISTING ~ohtmps2D.SPL~ ~override/temD%n_spell_headers%.SPL~
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 321 END
             LPF ALTER_SPELL_HEADER INT_VAR target = 5 range = 0 END
-            LPF DELETE_EFFECT INT_VAR check_headers = 1 END
-            LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = n_spell_headers stat_begin = 10 stat_step = 2 stat_end = 24 
-                stat_ge_par = 132 resist_dispel = 3 remove_in_effect = 1 STR_VAR abil_name = ~temD~ END 
-            
-        COPY_EXISTING ~ohtmps2E.SPL~ ~override/ohtmps2E.SPL~
+            LPF DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST INT_VAR level_to_keep = i END 
+        COPY_EXISTING ~ohtmps2E.SPL~ ~override/temE%n_spell_headers%.SPL~
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 321 END
             LPF ALTER_SPELL_HEADER INT_VAR target = 5 range = 0 END
-            LPF DELETE_EFFECT INT_VAR check_headers = 1 END
-            LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = n_spell_headers stat_begin = 10 stat_step = 2 stat_end = 24
-                stat_ge_par = 132 resist_dispel = 3 remove_in_effect = 1 STR_VAR abil_name = ~temE~ END 
-            
-        WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN 
-            COPY_EXISTING ~ohtmps2.SPL~ ~override~
-                READ_LONG 0x0050 ~descr_strref~
-                STRING_SET_EVALUATE %descr_strref% @009	
+            LPF DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST INT_VAR level_to_keep = i END                     
+    END
+
+    OUTER_FOR (i=1;i<=n_spell_headers;i=i+1) BEGIN
+        OUTER_FOR (cha = 10;cha<=24;cha=cha+2) BEGIN    
+            OUTER_SET chaos_duration = 6*(3 + (cha - 10)/2)
+            COPY_EXISTING ~temD%i%.SPL~ ~override/temD%i%%cha%.SPL~                 
+                LPF ALTER_SPELL_EFFECT INT_VAR power = 0 duration_high=chaos_duration END
+                
+            COPY_EXISTING ~temE%i%.SPL~ ~override/temE%i%%cha%.SPL~
+                LPF ALTER_SPELL_EFFECT INT_VAR power = 0 duration_high=chaos_duration END           
         END
+    END
+ 
+    COPY_EXISTING ~ohtmps2D.SPL~ ~override/ohtmps2D.SPL~
+        LPF ALTER_SPELL_HEADER INT_VAR target = 5 range = 0 END
+        LPF DELETE_EFFECT INT_VAR check_headers = 1 END
+        LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = n_spell_headers stat_begin = 10 stat_step = 2 stat_end = 24 
+            stat_ge_par = 132 resist_dispel = 3 remove_in_effect = 1 STR_VAR abil_name = ~temD~ END 
+        
+    COPY_EXISTING ~ohtmps2E.SPL~ ~override/ohtmps2E.SPL~
+        LPF ALTER_SPELL_HEADER INT_VAR target = 5 range = 0 END
+        LPF DELETE_EFFECT INT_VAR check_headers = 1 END
+        LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = n_spell_headers stat_begin = 10 stat_step = 2 stat_end = 24
+            stat_ge_par = 132 resist_dispel = 3 remove_in_effect = 1 STR_VAR abil_name = ~temE~ END 
+        
+    WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN 
+        COPY_EXISTING ~ohtmps2.SPL~ ~override~
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @009	
     END
 
 

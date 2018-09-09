@@ -1,10 +1,5 @@
 
-    //append thief_base
-    OUTER_SPRINT THIEF_BASE_STR  ~$ $ THIEF_BASE~
-    OUTER_FOR (i=0;i<=50;i=i+1) BEGIN
-        OUTER_SPRINT THIEF_BASE_STR EVALUATE_BUFFER ~%THIEF_BASE% 0~
-    END
-        
+    //append thief_base    
     APPEND_COL  ~WEAPPROF.2DA~ 
     ~$ $ THIEF_BASE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
       

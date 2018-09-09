@@ -1047,7 +1047,8 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
     COPY_EXISTING ~SPPR110.SPL~ ~override~
         READ_SHORT 0x0068 "Nheaders" //number of headers
         FOR (i=1;i<=Nheaders;i=i+1) BEGIN
-            LPF ALTER_SPELL_EFFECT INT_VAR duration = i*30 END
+            LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high = i*30 match_opcode = 174 END // end sound (iwd only)
+            LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high = i*30 match_opcode = 111 END //weapon duration
         END
         WRITE_BYTE 0x0021 (0b01000000)	//dissalow cleric casting it 
         READ_LONG 0x0050 ~descr_strref~

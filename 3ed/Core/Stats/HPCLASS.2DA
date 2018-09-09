@@ -9,7 +9,7 @@ DWARVEN_DEFENDER    HPBARB
 RANGER              HPWAR
 FERALAN             HPWAR
 STALKER             HPWAR
-BEAST_MASTER        HPBARB
+BEASTMASTER         HPDD
 PALADIN             HPWAR
 CAVALIER            HPWAR
 INQUISITOR          HPWAR
@@ -44,7 +44,7 @@ BLADE               HPROG
 JESTER              HPROG
 SKALD               HPPRS
 SORCERER            HPWIZ
-DRAGON_DISCIPLE     HPDD
+DRAGON_DISCIPLE     HPROG
 MONK                HPMONK
 DARK_MOON           HPMONK
 SUN_SOUL            HPMONK
