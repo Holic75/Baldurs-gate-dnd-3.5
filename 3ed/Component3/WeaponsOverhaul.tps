@@ -26,14 +26,13 @@
 		
 		
 		PATCH_IF (~%SOURCE_RES%~ STR_EQ ~BLAKBLAD~) BEGIN//black blade of disaster -> change proficiency bonus to 89 
-		
 			LPF ALTER_ITEM_EFFECT INT_VAR check_globals=1 match_opcode = 233 parameter2 = 89 END
-		END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~SHAKTI1~) BEGIN //transform short sword
-		
+		END ELSE PATCH_IF (~%SOURCE_RES%~ STR_EQ ~SHAKTI1~) BEGIN //transform short sword	
 			LPF ALTER_ITEM_EFFECT INT_VAR check_globals=1 match_opcode = 233 parameter2 = 90 END
-
-		END
+        END
 		
+        
+
 		LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~thief~  RET usable_by_thief = result END
 		LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter~  RET usable_by_fighter = result END  
 		LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~druid~  RET usable_by_druid = result END 
@@ -228,7 +227,6 @@
 
 		
 		PATCH_IF (category = BoltsCategory OR category = CrossbowsCategory) BEGIN//bolts, crossbows for mages and thiefs
-  
 			LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~thief~ END
 			LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~mage~ END
 			LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~mage_thief~ END
