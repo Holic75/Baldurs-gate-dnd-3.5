@@ -17,7 +17,7 @@
 
 
 
-# Baldurs-gate-dnd-3.5 v2.15.3
+# Baldurs-gate-dnd-3.5 v2.15.4
 This is a WeiDu mod for BG:Enhanced edition and BG2:Enhanced edition that changes 2ed ADnD rules to DnD 3.5 with some elements taken from Pathfinder.  
 It changes game mechanics (i.e. classes, spells, abilities, etc...) to that of 3.5 edition (to the extent that game engine allows).
 
@@ -32,7 +32,7 @@ if it is not already there (it replaces backstab with 3ed Sneak Attack for Baldu
 
 Also it is strongly advised that you make a backup of your dialog.tlk file before installing.
 
-This mod was only tested with clean BG:ENHANCED EDITION 2.5 install (or Sod with modmerge), BG 2:ENHANCED EDITION 2.5 and might not be compatible with any other mods.
+This mod is only expected to work with english versions BG:ENHANCED EDITION 2.5 (or Sod with modmerge), BG 2:ENHANCED EDITION 2.5 and might not be compatible with any other mods.
 It also works with Icewind Dale ENHANCED EDITION 2.5.
 
 I also strongly suggest to use a mod Colorful Specialist Slots made by kjeron ( https://us.v-cdn.net/5019558/uploads/editor/nn/cv0dplebsnjj.rar) which forces specialist mages to
