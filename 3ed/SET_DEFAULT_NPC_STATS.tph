@@ -100,6 +100,11 @@ DEFINE_ACTION_FUNCTION ~SET_DEFAULT_NPC_STATS~
             
         EXTEND_BOTTOM ~%ScriptName%.bcs~ ~3ed/Npc/Common/InitialXpLast.baf~
             EVALUATE_BUFFER    
+            
+        SET HP = HpTotal
+        EXTEND_BOTTOM ~%ScriptName%.bcs~ ~3ed/Npc/Common/RegularizeHp.baf~
+            EVALUATE_BUFFER    
+        
              
              
         

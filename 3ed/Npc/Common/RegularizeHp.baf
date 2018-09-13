@@ -1,0 +1,10 @@
+IF 
+	!Global("HP_FIXED","LOCALS",1)
+    Level(Myself,1)
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		SetGlobal("HP_FIXED","LOCALS",1)
+        ChangeStat(Myself,MAXHITPOINTS,-%HP%,ADD)
+		SetInterrupt(TRUE)
+END

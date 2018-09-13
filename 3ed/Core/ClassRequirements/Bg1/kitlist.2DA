@@ -33,7 +33,7 @@
 29               TRANSMUTER       25326            12788            24297            CLABMA04         28               0x00002000       1                0x00002000
 30               WILDMAGE         25327            24282            24283            CLABMA01         52               0x80000000       1                0x80000000
 31               BARBARIAN        25328            24229            24235            CLABFI05         51               0x40000000       2                0x40000000
-32               Blackguard       28604            28605            28606            CLABPA06         53               0x00000021       6                0x00004020
+32               Blackguard       28604            28605            28606            CLABPA06         53               0x00004000       6                0x00004020
 33               SHADOWDANCER     31970            31971            31972            CLABTH05         54               0x00004000       4                0x00004021
 34               DWARVEN_DEFENDER 31973            31974            31975            CLABFI06         55               0x00004000       2                0x00004022
 35               DRAGON_DISCIPLE  31976            31977            31978            CLABSO01         56               0x00004000       19               0x00004023
