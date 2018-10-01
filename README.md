@@ -844,7 +844,7 @@ Disadvantages:
 – Alignment restricted to lawful good, neutral good, or lawful neutral.  
 – Can cast two less spells per day per level than trueclass clerics.  
 
-### PRIEST OF TEMPUS  (IWD and BG2 only)
+### PRIEST OF TEMPUS
 Advantages:  
 – Can use Rage ability (starts with one use at level 1 then get another one at level 5 and every 5 levels thereafter), though Priest of Tempus never gets benefits of Greater or Mighty Rage.  
 ```
@@ -1556,7 +1556,7 @@ SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice 
 ```
 – At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – Hit Die: d7  
-– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph vs. Breath Weapon, vs. Wand and vs. Spell  
+– Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell  
 NOTE: Gnomes can choose this class, but become Fighter/Illusionist/Clerics by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.
 
 ### Saving throw progression per level
@@ -2154,6 +2154,7 @@ Ankheg Plate Mail      | 20% | +3 | -30%
  - Initial number of attacks per round for all ranged weapons was set to 1, except for slings and crossbows for which it was set to 0.5; and darts for which it was set to 2; it increases at normal character APR progression and Rapid Shot feat also gives +1 APR with ranged weapons (except throwing axes and hammers)   
  - Moonblade type was changed to longsword (do not worry, Xan can still use it)  
  - Sling bullets damage was changed from missile to crushing  
+ - Ankheg Plate Mail AC bonus was lowered to that of regular Plate Mail
 
 ## 6. Spells
 

@@ -336,3 +336,15 @@ ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
     COPY_EXISTING ~GAUNTEM.ITM~ ~override~
          LPF SET_ITEM_USABILITY INT_VAR value = 1 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_cleric~   END
 END
+
+
+ACTION_IF (~%GameId%~ STR_EQ ~Bg1~ OR ~%GameId%~ STR_EQ ~Bg2~) BEGIN
+    //reduce ankheg plate mail armor to that of normal palte
+    COPY_EXISTING ~PLAT06.ITM~ ~override~
+        LPF REPLACE_SUBSTRING INT_VAR  strref_offset=0x0054   substring_to_replace_ref = 3011 new_substring_ref = 3012 END  
+        LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 0 match_parameter2 = 16 parameter1 = 3 END  //3 AC
+        LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 0 match_parameter2 = 8 parameter1 = 3 END  //0 vs slashing
+        LPF DELETE_EFFECT INT_VAR check_globals = 1 match_opcode = 0 match_parameter2 = 4 END 
+        LPF DELETE_EFFECT INT_VAR check_globals = 1 match_opcode = 0 match_parameter2 = 1 END 
+        LPF DELETE_EFFECT INT_VAR check_globals = 1 match_opcode = 0 match_parameter2 = 2 END
+END
