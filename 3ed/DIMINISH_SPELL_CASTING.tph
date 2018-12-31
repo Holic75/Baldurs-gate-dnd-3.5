@@ -55,8 +55,12 @@ DEFINE_ACTION_FUNCTION ~DIMINISH_SPELL_CASTING~
            
             COPY ~%spl_file%~ ~override/%caption%%lvl%.SPL~
                 LPF ALTER_EFFECT INT_VAR match_parameter1 = 0 - 1 parameter2=spells_0 timing = 1 END		
-                LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 parameter2=spells_1 timing =  1 END	
+                LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 parameter2=spells_1 timing =  1 END
                 LPF DELETE_EFFECT INT_VAR match_parameter2 = 0 END //remove empty effects
+             
+            COPY ~%caption%%lvl%.SPL~ ~override~
+                SPRINT resource EVALUATE_BUFFER ~%caption%%lvl%~
+                LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource END // add protection from subsequent applies
 
                           
 			COPY_EXISTING ~%caption%.SPL~ ~override~ 

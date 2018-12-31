@@ -178,20 +178,27 @@
 		EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.+\.BCS~ ~3ed/BardSongs/BSNG.baf~
 			EVALUATE_BUFFER			
 	END
+    
+    COPY_EXISTING ~BNSNG.SPL~ ~override/BNSNGX.SPL~
+        LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 timing=9 STR_VAR resource = ~BNSNGX~ END
+        
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 20 STR_VAR input_name = ~GVSNGA~ output_name = ~GVSNGX~ END
+    
 	//bonus songs at level 1 
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
-						STR_VAR clab=~CLABBA.*\.2DA~ mask_file=~~ caption=~BNSNG~ END		
+						STR_VAR clab=~CLABBA.*\.2DA~ mask_file=~~ caption=~BNSNGX~ END		
 	//bards
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=2 add_at_level1=1 
-						STR_VAR clab=~CLABBA01\.2DA~ mask_file=~~ caption=~GVSNGA~ END	
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=2 add_at_level1=1 indexed = 1
+						STR_VAR clab=~CLABBA01\.2DA~ mask_file=~~ caption=~GVSNGX~ END	
 						
 	//bard kits
-	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=30 d_level=4 add_at_level1=1 
-						STR_VAR clab=~\(\(CLABBA02\)\|\(\CLABBA03\)\|\(CLABBA04\)\)\.2DA~ mask_file=~~ caption=~GVSNGA~ END	
+	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=30 d_level=4 add_at_level1=1 indexed = 1
+						STR_VAR clab=~\(\(CLABBA02\)\|\(\CLABBA03\)\|\(CLABBA04\)\)\.2DA~ mask_file=~~ caption=~GVSNGX~ END	
 						
 	COPY ~3ed/BardSongs/BSNG.SPL~ ~override/DSBLSNG.SPL~					
 		LPF ADD_SPELL_HEADER INT_VAR  type=1 location=4 target=5 target_count=0 range=1 speed=1 projectile=1 END
 		LPF ADD_SPELL_EFFECT INT_VAR header=1 opcode=144 target=2 parameter1=0 parameter2=10 timing=1 duration=1 END //disable bardic music button
+        LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 timing=9 STR_VAR resource = ~DSBLSNG~ END
 		
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
 						STR_VAR clab=~CLABBA.*\.2DA~ mask_file=~~ caption=~DSBLSNG~ END

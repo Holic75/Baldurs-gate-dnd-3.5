@@ -1,0 +1,323 @@
+
+OUTER_SPRINT UI_REPLACE ~~~~~chargen.CurrentPointCost = {
+	1, --1
+	1, --2
+	1, --3
+	1, --4
+	1, --5
+	1, --6
+	1, --7
+	1, --8
+	1, --9
+	1, --10
+	1, --11
+	1, --12
+	1, --13
+	1, --14
+	2, --15
+	2, --16
+	3, --17
+	3, --18
+	4, --19
+	4, --20
+	5, --21
+	5 --22
+}
+
+chargen.AbilityModifiers = {
+	0,
+	0,
+	0,
+	0,
+	0,
+	0
+}
+
+chargen.BaseAbilityValue=10
+chargen.ExtraAbilitiesMod=0
+chargen.StoreExtraAbilitiesMod=0
+
+function GetAbilityValue(i)
+
+	local sep
+	sep=string.find(chargen.ability[i].roll,"/")
+	if (sep==nil) then
+		return tonumber(chargen.ability[i].roll)
+	else
+		return 18
+	end
+
+end
+
+
+function RollPointBuy(total_roll)
+
+	chargen.ExtraAbilitiesMod=0 --initialize modifier for ExtraAbilities
+	while chargen.totalRoll ~= total_roll do
+		createCharScreen:OnAbilityReRollButtonClick()
+	end
+
+	-- Reduce all Ability scores to minimum
+	local oldPoints
+	for i = 1,6 do
+		oldPoints = chargen.extraAbilityPoints + 1
+		while oldPoints ~= chargen.extraAbilityPoints do
+			oldPoints = chargen.extraAbilityPoints
+			createCharScreen:OnAbilityPlusMinusButtonClick(i,false)
+		end
+	end
+
+	--Determine Maximum Ability Values
+
+	for i = 1,6 do
+		oldPoints = chargen.extraAbilityPoints + 1
+		while (oldPoints ~= chargen.extraAbilityPoints) do
+				oldPoints = chargen.extraAbilityPoints
+				createCharScreen:OnAbilityPlusMinusButtonClick(i,true)
+		end
+		chargen.AbilityModifiers[i]=GetAbilityValue(i)-18
+		oldPoints = chargen.extraAbilityPoints + 1
+		while (oldPoints ~= chargen.extraAbilityPoints) do
+				oldPoints = chargen.extraAbilityPoints
+				createCharScreen:OnAbilityPlusMinusButtonClick(i,false)
+		end
+	end
+
+
+	-- Put abilities to base value
+	for i = 1,6 do
+		while (GetAbilityValue(i)<chargen.BaseAbilityValue+chargen.AbilityModifiers[i]) do
+			createCharScreen:OnAbilityPlusMinusButtonClick(i,true)
+		end
+	end
+end
+
+function TryToIncreaseAbility(i)
+    local old_roll
+	local new_roll
+
+	old_roll=GetAbilityValue(i)
+	createCharScreen:OnAbilityPlusMinusButtonClick(i, true)
+	new_roll=GetAbilityValue(i)
+	if (old_roll~=new_roll)	then
+		new_roll=new_roll-chargen.AbilityModifiers[i]
+		if (chargen.CurrentPointCost[new_roll]>chargen.extraAbilityPoints-chargen.ExtraAbilitiesMod+1) then
+			createCharScreen:OnAbilityPlusMinusButtonClick(i, false) -- put it back to previous value
+		else
+			chargen.ExtraAbilitiesMod=chargen.ExtraAbilitiesMod-1+chargen.CurrentPointCost[new_roll]
+		end
+	end
+end
+
+function TryToDecreaseAbility(i)
+    local old_roll
+	local new_roll
+
+	old_roll=GetAbilityValue(i)
+	createCharScreen:OnAbilityPlusMinusButtonClick(i, false)
+	new_roll=GetAbilityValue(i)
+	if (old_roll~=new_roll)	then
+		old_roll=old_roll-chargen.AbilityModifiers[i]
+		chargen.ExtraAbilitiesMod=chargen.ExtraAbilitiesMod+1-chargen.CurrentPointCost[old_roll]
+	end
+end
+
+`
+menu
+{
+	name 'CHARGEN_ABILITIES'
+	align center center
+	ignoreesc
+	onopen "ticksPassed = 0; ticksStarting = 0; RollPointBuy(80);"
+	label
+	{
+		area 0 0 1024 768
+		mosaic 'GUICGB'
+		enabled "CurrentlyInGame()"
+	}
+	label
+	{
+		area 0 156 1024 612
+		mosaic GUISMDB
+	}
+	label
+	{
+		area 20 174 496 48
+		text "ABILITIES_TITLE"
+		text style "title"
+	}
+	list
+	{
+		column
+		{
+			width 60
+			label
+			{
+				area 0 0 290 55
+				text lua "t(chargen.ability[rowNumber].name)"
+				text style "normal"
+				align right center
+
+			}
+		}
+		column
+		{
+			width 22
+			label
+			{
+				area 10 0 90 55
+				text lua "chargen.ability[rowNumber].roll"
+				text style "normal"
+				align center center
+			}
+		}
+		column
+		{
+			width 9
+			label
+			{
+				area 0 6 45 42
+				bam GUIOSW
+				frame lua "currentCellCheck(3)"
+				sequence 0
+			}
+		}
+		column
+		{
+			width 16
+			label
+			{
+				area 0 6 45 42
+				bam GUIOSW
+				frame lua "currentCellCheck(4)"
+				sequence 1
+
+			}
+		}
+		action
+		"
+			if ticksStarting < 10 then
+				if cellNumber == 3  then
+					TryToIncreaseAbility(currentChargenAbility)
+				elseif cellNumber == 4 then
+					TryToDecreaseAbility(currentChargenAbility)
+				end
+			end
+			cellNumber = nil
+			ticksPassed = 0
+			ticksStarting = 0
+		"
+		actionUpdate "
+			ticksStarting = ticksStarting + 1
+			if ticksStarting > 10 then
+				ticksPassed = ticksPassed + 1
+				if ticksPassed > 7 then
+					if cellNumber == 3 then
+						TryToIncreaseAbility(currentChargenAbility)
+					elseif cellNumber == 4 then
+						TryToDecreaseAbility(currentChargenAbility)
+					end
+					ticksPassed = 0
+				end
+			end
+		"
+
+		rowheight 54
+		hidehighlight
+		area 32 254 492 326
+		table "chargen.ability"
+		var currentChargenAbility
+	}
+	label
+	{
+		area 152 580 186 42
+		text "TOTAL_ROLL_NORMAL"
+		text style "normal"
+		text align right center
+	}
+	label
+	{
+		area 356 580 50 42
+		text lua "chargen.totalRoll"
+		text style "normal"
+		text align center center
+	}
+	label
+	{
+		area 434 580 94 42
+		text lua "chargen.extraAbilityPoints - chargen.ExtraAbilitiesMod"
+		text style "normal"
+		text align center center
+	}
+
+
+	text
+	{
+		area 582 192 404 406
+		text lua "abilityOrGeneralHelp()"
+		text style "normal"
+		scrollbar	'GUISCRC'
+	}
+
+	button
+	{
+		area 368 628 142 40
+		bam GUIOSTSM
+		sequence 0
+		text "REROLL_BUTTON"
+		text style "button"
+        clickable lua "false"
+		action " chargen.ExtraAbilitiesMod = 0; RollPointBuy(80);
+					  --createCharScreen:OnAbilityReRollButtonClick()"
+	}
+	button
+	{
+		area 60 628 142 40
+		bam GUIOSTSM
+		sequence 0
+		text "STORE_BUTTON"
+		text style "button"
+		action "chargen.StoreExtraAbilitiesMod=chargen.ExtraAbilitiesMod
+					  createCharScreen:OnAbilityStoreButtonClick()"
+	}
+	button
+	{
+		area 214 628 142 40
+		bam GUIOSTSM
+		sequence 0
+		text "RECALL_BUTTON"
+		text style "button"
+		clickable lua "createCharScreen:IsAbilityRecallButtonClickable()"
+		action "chargen.ExtraAbilitiesMod=chargen.StoreExtraAbilitiesMod
+					createCharScreen:OnAbilityRecallButtonClick()"
+	}
+
+	button
+	{
+		on '8'
+		action "createCharScreen:OnCheatyMcCheaterson()"
+
+
+	}
+
+	button
+	{
+		on escape
+		area 194 718 232 44
+		bam GUIOSTUL
+		text "BACK_BUTTON"
+		text style "button"
+		action "Infinity_PopMenu(); createCharScreen:OnCancelButtonClick()"
+	}
+	button
+	{
+		on return
+		area 438 718 206 44
+		bam GUIOSTUM
+		text "DONE_BUTTON"
+		text style "button"
+		clickable lua "createCharScreen:IsDoneButtonClickable()"
+		action "Infinity_PopMenu(); createCharScreen:OnDoneButtonClick()"
+	}
+
+}~~~~~

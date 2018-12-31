@@ -35,7 +35,8 @@
 	COPY ~3ed/Feats/FeatAttribution/FEATCRE.EFF~ ~override/DFTCRE.EFF~
 		WRITE_ASCII 0x0030 ~DFTCRE~ #8//creature name
 	COPY ~3ed/Feats/FeatAttribution/FEATCRE.SPL~ ~override/DFTCRE.SPL~	
-		LPF  ALTER_SPELL_EFFECT INT_VAR match_opcode=177 STR_VAR resource=~DFTCRE~ END
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=177 STR_VAR resource=~DFTCRE~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 timing=9 STR_VAR resource = ~DFTCRE~ END
         
         //add domains as bonus feat to clerics at lvl1
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 delay = 5

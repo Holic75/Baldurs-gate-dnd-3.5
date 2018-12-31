@@ -368,10 +368,20 @@ END
         SAY 0x0050 @8
         
     COPY ~3ed/Classes/FavoredEnemy/FE_GIVE.SPL~ ~override/FE_DCREG.SPL~
-        LPF  ALTER_SPELL_EFFECT  STR_VAR resource=~FE_DCRE~ END
+        LPF ALTER_SPELL_EFFECT  STR_VAR resource=~FE_DCRE~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 timing=9 STR_VAR resource = ~FE_DCREG~ END
+        
+    COPY_EXISTING ~FEM_PR.SPL~ ~override/FEM_PR.SPL~
+        LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 timing=9 STR_VAR resource = ~FEM_PR~ END
+    COPY_EXISTING ~FEI_PR.SPL~ ~override/FEI_PR.SPL~
+        LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 timing=9 STR_VAR resource = ~FEI_PR~ END 
+    COPY_EXISTING ~FE_PR.SPL~ ~override/FE_PR.SPL~
+        LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 timing=9 STR_VAR resource = ~FE_PR~ END
         
         
-        
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 8 STR_VAR input_name = ~FECRE~ output_name = ~FECRE~ END
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 8 STR_VAR input_name = ~FEICRE~ output_name = ~FEICRE~ END
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 8 STR_VAR input_name = ~FEMCRE~ output_name = ~FEMCRE~ END
         
         
 	COPY ~3ed\Classes\FavoredEnemy\HATERACE.2DA~ ~override~ // description for ranger favored enemies at character generation - we leave just one entry
@@ -386,44 +396,31 @@ END
 	
 
 //racial enemies to rangers (except stlaker)
-	LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=30 d_level=5 add_at_level1=1 delay = 4 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=30 d_level=5 add_at_level1=1 delay = 4 indexed = 1
 						STR_VAR clab=~\(\(CLABRN01\)\|\(CLABRN02\)\|\(CLABRN04\)\)\.2DA~ 
-                        mask_file=~3ed/Feats/FeatAttribution/SFTCRER.SPL~ feat_type_file=~FECRE~ caption=~FECRER~ END
-//set delay to 2 seconds (to avoid hangup on 1st level character creation and apply protections)
-/*	COPY_EXISTING ~FECRER.SPL~ ~override~
-		LPF  ALTER_SPELL_EFFECT INT_VAR duration  = 2 timing = 3  END */
+                        mask_file=~3ed/Feats/FeatAttribution/SFTCRER.SPL~ feat_type_file=~FECRE~ caption=~FE_RN~ END
+
     
     LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
 						STR_VAR clab=~\(\(CLABRN01\)\|\(CLABRN02\)\|\(CLABRN04\)\|\(CLABRN03\)\)\.2DA~ caption=~FE_DCREG~ END    
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
 						STR_VAR clab=~\(\(CLABRN01\)\|\(CLABRN02\)\|\(CLABRN04\)\)\.2DA~ 
                         mask_file=~3ed/Feats/FeatAttribution/SFTCRER.SPL~ feat_type_file=~FE_PR~
-                        caption=~FE_PRR~ END  
+                        caption=~FE_PRRN~ END  
         
 //improved racial enemies for stalkers
-	LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=30 d_level=5 add_at_level1=1 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=30 d_level=5 add_at_level1=1 indexed = 1
 						STR_VAR clab=~CLABRN03\.2DA~ caption=~FEICRE~ END
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
 						STR_VAR clab=~CLABRN03\.2DA~ caption=~FEI_PR~ END                         
-                        
-//set delay to 2 seconds (to avoid hangup on 1st level character creation and apply protections)
-//	COPY_EXISTING ~FEICRE.SPL~ ~override~
-//		LPF  ALTER_SPELL_EFFECT INT_VAR duration  = 2 timing = 3  END
-        
+                           
 //racial enemies to fighter druids and cleric rangers
-	LAF ADD_BONUS_FEATS INT_VAR min_level=10 max_level=30 d_level=10 add_at_level1=1 delay = 4 
-						STR_VAR clab=~CLABDR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFD.SPL~ feat_type_file=~FEMCRE~ caption=~FECREFD~ END
+	LAF ADD_BONUS_FEATS INT_VAR min_level=10 max_level=30 d_level=10 add_at_level1=1 delay = 4  indexed = 1
+						STR_VAR clab=~CLABDR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFD.SPL~ feat_type_file=~FEMCRE~ caption=~FE_FD~ END
 
-	LAF ADD_BONUS_FEATS INT_VAR min_level=10 max_level=30 d_level=10 add_at_level1=1 delay = 4 
-						STR_VAR clab=~CLABRN01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRERC.SPL~ feat_type_file=~FEMCRE~ caption=~FECRERC~ END                        
-                        
-//set delay to 2 seconds (to avoid hangup on 1st level character creation and apply protections)
-/*	COPY_EXISTING ~FECREFD.SPL~ ~override~
-		LPF  ALTER_SPELL_EFFECT INT_VAR duration  = 2 timing = 3  END
-        
-	COPY_EXISTING ~FECRERC.SPL~ ~override~
-		LPF  ALTER_SPELL_EFFECT INT_VAR duration  = 2 timing = 3  END */
-        
+	LAF ADD_BONUS_FEATS INT_VAR min_level=10 max_level=30 d_level=10 add_at_level1=1 delay = 4 indexed = 1
+						STR_VAR clab=~CLABRN01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRERC.SPL~ feat_type_file=~FEMCRE~ caption=~FE_RC~ END                        
+                               
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
 						STR_VAR clab=~CLABDR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFD.SPL~ feat_type_file=~FE_DCREG~ caption=~FE_DTFD~ END
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 

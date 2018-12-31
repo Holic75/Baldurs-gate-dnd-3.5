@@ -55,8 +55,8 @@ WITH_TRA ~%LANGUAGE%\warfare.tra~ BEGIN
 	LAF ADD_ACT_FEAT STR_VAR ability_name=~PWRATI~ game_name game_description  ability_name2 = ~PW2ATI~ END //improved power attack (+5 dmg, -3 thaco)
 	//add removal of standard power attack
 		COPY_EXISTING ~PWRATIFT.SPL~ ~override~
-		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource=~PWRATKBN~ END
-        LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource=~PW2ATKBN~ END
+		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 STR_VAR resource=~PWRATKBN~ END
+        LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 STR_VAR resource=~PW2ATKBN~ END
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATK1~ END
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATK1~ END
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATK0~ END
@@ -65,8 +65,8 @@ WITH_TRA ~%LANGUAGE%\warfare.tra~ BEGIN
 	LAF ADD_ACT_FEAT STR_VAR ability_name=~PWRATS~ game_name game_description  ability_name2 = ~PW2ATS~ END //supreme power attack (+6 dmg, -3 thaco)
 	//add removal of standard power attack
 		COPY_EXISTING ~PWRATSFT.SPL~ ~override~
-		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource=~PWRATIBN~ END 
-        LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource=~PW2ATIBN~ END
+		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 STR_VAR resource=~PWRATIBN~ END 
+        LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 STR_VAR resource=~PW2ATIBN~ END
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATI1~ END
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATI1~ END
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~PWRATI0~ END	
@@ -245,5 +245,7 @@ WITH_TRA ~%LANGUAGE%\archery.tra~ BEGIN
 	//1 - 5 allows to cast in armors
 	OUTER_FOR (i=1;i<=5;i=i+1) BEGIN
 		COPY ~3ed/Feats/PermanentAbilities/ArmoredCaster/ARCST%i%FT.SPL~  ~override~
+	        SPRINT resource EVALUATE_BUFFER ~ARCST%i%FT~
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 timing=9 STR_VAR resource END        
 	END
 	

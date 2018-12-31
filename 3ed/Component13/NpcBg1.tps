@@ -14,7 +14,7 @@ LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 12 Dex = 14 Con = 14 Int = 10 Wis = 9 Ch
 
                           
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 10 Con = 16 Int = 10 Wis = 16 Cha = 12  
-                          STR_VAR NpcName = ~YESLIC~ ScriptName = ~YESLICK~ ClassName = ~CLERIC~  END 
+                          STR_VAR NpcName = ~YESLIC~ ScriptName = ~YESLICK~ ClassName = ~FIGHTER_CLERIC~  END 
                          
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 18 Con = 12 Int = 14 Wis = 10 Cha = 10  Lockpick = 4 FindTraps = 4
                           STR_VAR NpcName = ~CORAN~ ScriptName = ~CORAN~ ClassName = ~FIGHTER_THIEF~ END     
@@ -39,11 +39,8 @@ LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 14 Con = 14 Int = 10 Wis = 16 C
                           STR_VAR NpcName = ~FALDOR~ ScriptName = ~FALDORN~ ClassName = ~DRUID~ KitName = ~BEASTFRIEND~ END 
         
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 15 Dex = 14 Con = 14 Int = 10 Wis = 15 Cha = 10  
-                          STR_VAR NpcName = ~BRANWE~ ScriptName = ~BRANWEN~ ClassName = ~FIGHTER_CLERIC~ END    
-COPY_EXISTING ~BRANWE.CRE~ ~override~
-    //return spiritual hammer
-    ADD_KNOWN_SPELL ~SPIN113~ #0 ~innate~
-    ADD_MEMORIZED_SPELL ~SPIN113~ #0 ~innate~ (3)
+                          STR_VAR NpcName = ~BRANWE~ ScriptName = ~BRANWEN~ ClassName = ~CLERIC~ KitName = ~OHTEMPUS~ END    
+
 
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 8 Dex = 10 Con = 16 Int = 16 Wis = 16 Cha = 10
                           STR_VAR NpcName = ~QUAYLE~ ScriptName = ~QUAYLE~ ClassName = ~CLERIC_MAGE~ KitName = ~MAGESCHOOL_ILLUSIONIST~ END    
@@ -100,7 +97,7 @@ LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 14 Con = 10 Int = 10 Wis = 10 C
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 12 Con = 14 Int = 18 Wis = 9 Cha = 10 RemoveKnownSpells = 0
                           STR_VAR NpcName = ~EDWIN~ ScriptName = ~EDWIN~ ClassName = ~MAGE~ KitName = ~MAGESCHOOL_CONJURER~ END
 
-LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 10 Int = 16 Wis = 14 Cha = 14 MoveSilently = 5 HideInShadows = 5
+LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 10 Int = 16 Wis = 14 Cha = 14 MoveSilently = 5 HideInShadows = 5 HpTotal = 15
                           STR_VAR NpcName = ~VICONI~ ScriptName = ~VICONIA~ ClassName = ~CLERIC_THIEF~ END   
 EXTEND_BOTTOM ~bdviconc.bcs~ ~3ed/Npc/Common/ViconiaThief.baf~ //make viconia react on find traps and hide ai settings 
                          

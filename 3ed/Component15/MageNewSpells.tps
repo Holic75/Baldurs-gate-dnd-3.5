@@ -154,15 +154,17 @@ END~~~~~
 		WRITE_ASCII 0x0030 ~MSFTCRE~ #8//creature name
 	COPY ~3ed/Feats/FeatAttribution/FEATCRE.SPL~ ~override/MSFTCRE.SPL~	
 		LPF  ALTER_SPELL_EFFECT INT_VAR match_opcode=177 STR_VAR resource=~MSFTCRE~ END
+        
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 40 STR_VAR input_name = ~MSFTCRE~ output_name = ~MSFTC~ END
 		
 	//apply to all arcane casters who learn spells
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=0 delay = 5
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=0 delay = 5 indexed = 1
 		STR_VAR clab=~\(\(CLABMA.*\)\|\(CLABBA.*\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRENS.SPL~
-		feat_type_file=~MSFTCRE~ caption=~MSSL_FT~ END
+		feat_type_file=~MSFTC~ caption=~MS_FT~ END
     //one more time for pure mages and cleric mages   
-    LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=0 delay = 6
+    LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=0 delay = 6 indexed = 1 index_start = 20
 		STR_VAR clab=~CLABMA.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREMF.SPL~
-		feat_type_file=~MSFTCRE~ caption=~MSSL2FT~ END
+		feat_type_file=~MSFTC~ caption=~MS2FT~ END
 			
 			
        

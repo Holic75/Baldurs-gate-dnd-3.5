@@ -53,7 +53,7 @@ LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 16 Con = 16 Int = 16 Wis = 9 Ch
 COPY_EXISTING_REGEXP ~JAN[0-9]+.*\.CRE~ ~override~ //put innate for creating ammo back
     ADD_MEMORIZED_SPELL ~SPIN829~ #0 ~innate~
     
-LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 16 Con = 12 Int = 14 Wis = 10 Cha = 14  RemoveKnownSpells = 0 
+LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 16 Con = 12 Int = 14 Wis = 10 Cha = 14  RemoveKnownSpells = 0 HpTotal = 50 //set initial hp to 50 in order to avoid killing himself during planar attack
                           STR_VAR NpcName = ~HAER.*~ ScriptName = ~HAERDALI~ ClassName = ~BARD~ KitName = ~BLADE~ END  
 
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 14 Con = 12 Int = 10 Wis = 18 Cha = 10  

@@ -8,7 +8,7 @@ DEFINE_ACTION_FUNCTION ~CREATE_MINOR_SPELLCASTING~
         LabelStart = 1200
     STR_VAR
         SpellmapFile = ~3ed/Classes/Assassin/Spells/SPELLMAP.2DA~
-        SpellPrefix = ~ASN~
+        SpellPrefix = ~ASN~ //3 characters max
         clab = ~CLABTH02\.2DA~
         
     BEGIN
@@ -120,26 +120,33 @@ DEFINE_ACTION_FUNCTION ~CREATE_MINOR_SPELLCASTING~
             END
 			
 
-
+    OUTER_FOR (i = 1; i<=4; i=i+1) BEGIN
+        OUTER_SPRINT input_name EVALUATE_BUFFER ~GV%SpellPrefix%%i%~
+        OUTER_SPRINT output_name EVALUATE_BUFFER ~GV%SpellPrefix%%i%~
+        LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 9 STR_VAR input_name output_name END
+        COPY_EXISTING ~BN%SpellPrefix%%i%.SPL~ ~override/BN%SpellPrefix%%i%A.SPL~
+            SPRINT resource EVALUATE_BUFFER ~BN%SpellPrefix%%i%A.SPL~
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 timing=9 STR_VAR resource END
+    END
 
 	//give spells at lvl ups
     OUTER_SPRINT caption EVALUATE_BUFFER ~GV%SpellPrefix%1~
-	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=16 d_level=4 add_at_level1=0 STR_VAR clab mask_file=~~ caption END	
-    OUTER_SPRINT caption EVALUATE_BUFFER ~BN%SpellPrefix%1~
-	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=4 d_level=4 add_at_level1=0  STR_VAR clab mask_file=~~ caption END
+	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=16 d_level=4 add_at_level1=0 indexed = 1 STR_VAR clab mask_file=~~ caption END	
+    OUTER_SPRINT caption EVALUATE_BUFFER ~BN%SpellPrefix%1A~
+	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=4 d_level=4 add_at_level1=0 STR_VAR clab mask_file=~~ caption END
 						
     OUTER_SPRINT caption EVALUATE_BUFFER ~GV%SpellPrefix%2~                    
-	LAF ADD_BONUS_FEATS INT_VAR min_level=7 max_level=19 d_level=4 add_at_level1=0 STR_VAR clab mask_file=~~ caption END	
-    OUTER_SPRINT caption EVALUATE_BUFFER ~BN%SpellPrefix%2~                    
+	LAF ADD_BONUS_FEATS INT_VAR min_level=7 max_level=19 d_level=4 add_at_level1=0 indexed = 1 STR_VAR clab mask_file=~~ caption END	
+    OUTER_SPRINT caption EVALUATE_BUFFER ~BN%SpellPrefix%2A~                    
 	LAF ADD_BONUS_FEATS INT_VAR min_level=7 max_level=7 d_level=4 add_at_level1=0 STR_VAR clab mask_file=~~ caption END
 	
     OUTER_SPRINT caption EVALUATE_BUFFER ~GV%SpellPrefix%3~    
-	LAF ADD_BONUS_FEATS INT_VAR min_level=10 max_level=18 d_level=4 add_at_level1=0 STR_VAR clab mask_file=~~ caption END	
-    OUTER_SPRINT caption EVALUATE_BUFFER ~BN%SpellPrefix%3~                    
+	LAF ADD_BONUS_FEATS INT_VAR min_level=10 max_level=18 d_level=4 add_at_level1=0 indexed = 1 STR_VAR clab mask_file=~~ caption END	
+    OUTER_SPRINT caption EVALUATE_BUFFER ~BN%SpellPrefix%3A~                    
 	LAF ADD_BONUS_FEATS INT_VAR min_level=10 max_level=10 d_level=4 add_at_level1=0 STR_VAR clab mask_file=~~ caption END
 	
     OUTER_SPRINT caption EVALUATE_BUFFER ~GV%SpellPrefix%4~    
-	LAF ADD_BONUS_FEATS INT_VAR mask=0b10010001000000000000 STR_VAR clab mask_file=~~ caption END
-    OUTER_SPRINT caption EVALUATE_BUFFER ~BN%SpellPrefix%4~                    
+	LAF ADD_BONUS_FEATS INT_VAR mask=0b10010001000000000000 STR_VAR indexed clab mask_file=~~ caption END
+    OUTER_SPRINT caption EVALUATE_BUFFER ~BN%SpellPrefix%4A~                    
 	LAF ADD_BONUS_FEATS INT_VAR min_level=13 max_level=13 d_level=4 add_at_level1=0 STR_VAR clab mask_file=~~ caption END	
 END

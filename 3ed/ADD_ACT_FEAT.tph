@@ -101,5 +101,8 @@ DEFINE_ACTION_FUNCTION ~ADD_ACT_FEAT~ //activated ability bonus feat
 		COPY ~3ed/Feats/ActivatedAbilities/Template/ACTMODFT.SPL~ ~override\%ability_name%FT.SPL~
             SPRINT resource EVALUATE_BUFFER ~%ability_name%1~
             LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=171  STR_VAR resource END //add activation button
+            SPRINT resource EVALUATE_BUFFER ~%ability_name%FT~
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 timing=9 STR_VAR resource END 
+
 		
 	END

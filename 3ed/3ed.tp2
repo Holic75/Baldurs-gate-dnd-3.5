@@ -2,7 +2,7 @@
 
 BACKUP ~3ed/backup~
 AUTHOR ~holic.denis@gmail.com~
-VERSION ~v2.15.5~
+VERSION ~v2.16~
 
 
 ALWAYS
@@ -46,6 +46,7 @@ BEGIN @1
     INCLUDE ~3ed/UPDATE_SPELL_SAVES.tph~
     INCLUDE ~3ed/ADD_ABILITY_DEPENDENT_EFFECTS.tph~
     INCLUDE ~3ed/DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST.tph~
+    INCLUDE ~3ed/CREATE_SPL_COPIES_WITH_PROTECTION.tph~
 
 	
 	COPY ~3ed/Core/Clab~ ~override~ 
@@ -60,11 +61,7 @@ BEGIN @1
 	COPY ~3ed/Core/Stats~ ~override~
 	
 	COPY ~3ed/Core/Proficiencies/Common~ ~override~ 
-    
-    ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN  
-        COPY ~3ed/Core/Proficiencies/Bg2~ ~override~  //copy proficiency ui (up to 7 slots)
-    END
-				
+    				
 	COPY ~3ed/Core/ThiefSkill~ ~override~ 
 	
 	COPY ~3ed/Core/Xp/Common~ ~override~ //xp table		
@@ -98,7 +95,9 @@ BEGIN @1
     COPY ~3ed/Feats/PermanentAbilities/UncannyDodge/IMMSNK.SPL~ ~override~
     LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1
 						STR_VAR mask_file=~3ed/Feats/FeatAttribution/SFTCRNMT.SPL~ clab=~\(\(CLABTH.+\)\|\(CLABFI0[4-6]\)\)\.2DA~  
-                                feat_type_file = ~IMMSNK~ caption=~IMM_SNK~ END	
+                                feat_type_file = ~IMMSNK~ caption=~IMM_SNK~ END
+    COPY_EXISTING ~IMM_SNK.SPL~ ~override~
+        LPF ADD_SPELL_EFFECT INT_VAR  opcode = 206 target = 2 duration = 1 timing = 9 STR_VAR resource = ~IMM_SNK~ END //protection from subsequent applies
     
 	 //-----------------------------------------------------//
 
@@ -173,6 +172,9 @@ INCLUDE ~3ed/CHANGE_SPELL_PROPERTIES.tph~
 INCLUDE ~3ed/ADD_BONUS_FEATS.tph~
 INCLUDE ~3ed/ALTER_SPELL_EFFECT_EX.tph~
 INCLUDE ~3ed/GET_SPELL_EFFECT_VALUES.tph~
+INCLUDE ~3ed/CREATE_SPL_COPIES_WITH_PROTECTION.tph~
+
+    INCLUDE ~3ed/Component2/ProficiencyUI.tps~
 
 	
 	INCLUDE ~3ed/Component2/SetMaxProficiencyValues.tps~ // fill weapprof entries from the map 
@@ -189,7 +191,7 @@ INCLUDE ~3ed/GET_SPELL_EFFECT_VALUES.tph~
 
 
 WITH_TRA ~%LANGUAGE%\proficiencies.tra~ BEGIN	
-// -------------------------------Creating feat giving creatures (all, fighter-general, mage and kensai), feat cheking creature ---------------------------------
+// -------------------------------Creating feat giving creatures (all, fighter-general, mage and kensai), feat checking creature ---------------------------------
 	INCLUDE ~3ed/Component2/FeatAttribution.tps~
 
 //-------------------------------------------bonus feats attribution---------------------------------------------------			
@@ -355,6 +357,7 @@ INCLUDE ~3ed/REGULARIZE_SPELL_SAVES.tph~
 INCLUDE ~3ed/DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST.tph~
 INCLUDE ~3ed/FIX_HARM_3ED.tph~
 INCLUDE ~3ed/FIX_HEAL_3ED.tph~
+INCLUDE ~3ed/CREATE_SPL_COPIES_WITH_PROTECTION.tph~
 
 WITH_TRA ~%LANGUAGE%\Spells.tra~ BEGIN
 	
@@ -379,7 +382,7 @@ WITH_TRA ~%LANGUAGE%\Spells.tra~ BEGIN
                                   STR_VAR  SpellmapFile = ~3ed/Classes/Assassin/Spells/SPELLMAP.2DA~ SpellPrefix = ~ASN~  clab = ~CLABTH02\.2DA~ END
                                   
                                   
-	COPY ~3ed/Classes/Hexblade/Spells/SpellList~ ~override~ //spel list for assasin   
+	COPY ~3ed/Classes/Hexblade/Spells/SpellList~ ~override~ //spel list for hexblade  
     LAF CREATE_MINOR_SPELLCASTING INT_VAR par1 = 132 LabelStart = 1210  
                                   STR_VAR  SpellmapFile = ~3ed/Classes/Hexblade/Spells/SPELLMAP.2DA~ SpellPrefix = ~HXB~  clab = ~CLABFI03\.2DA~ END
 
@@ -450,6 +453,7 @@ BEGIN @8
     INCLUDE ~3ed/ADD_BONUS_FEATS.tph~
     INCLUDE ~3ed/UPDATE_TLK_ENTRIES.tph~
     INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
+    INCLUDE ~3ed/CREATE_SPL_COPIES_WITH_PROTECTION.tph~
 
     
     WITH_TRA ~%LANGUAGE%\racial_enemies.tra~ BEGIN
@@ -471,22 +475,18 @@ BEGIN @10
 //////////////////////////////////////////////////////////////////////////////////////////////
 //	more powerful monsters
 BEGIN @11
-
     INCLUDE ~3ed/Component11/UpdateScripts.tps~
     INCLUDE ~3ed/Component11/UpdateStats.tps~
 
-	
-BEGIN @12	//point buy system
-	
-	//copying lua files for interface 
-    ACTION_IF (IncludesSod) BEGIN
-        OUTER_SPRINT GameId ~Sod~
-    END
+/////////////////////////////////////////////////////////////////////////////////////////////////
+/// point buy
+BEGIN @12
+	INCLUDE ~3ed/Component12/PointBuy.tps~
+
     
-	COPY ~3ed/LUA/%GameId%~ ~override~
-		
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//// update npc stats and set their lvl to 0
 BEGIN @13	
-	//update npc stats and set their lvl to 0
     INCLUDE ~3ed/ALTER_CREATURE.tph~
     INCLUDE ~3ed/SET_DEFAULT_NPC_STATS.tph~
    	
@@ -494,19 +494,20 @@ BEGIN @13
          INCLUDE ~3ed/Component13/UpdateNpc.tps~
     END
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////
+//// //rest once in 8 hours
 BEGIN @14	
-	//rest once in 8 hours
-
     INCLUDE ~3ed/Component14/Rest8.tps~
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////
+//allow arcane casters who learn spells to aquire 1-2 scrolls per level
 BEGIN @15
     INCLUDE ~3ed/ADD_BONUS_FEATS.tph~
     INCLUDE ~3ed/GET_SPELL_EFFECT_VALUES.tph~
+    INCLUDE ~3ed/CREATE_SPL_COPIES_WITH_PROTECTION.tph~
     
     WITH_TRA ~%LANGUAGE%\spells.tra~ BEGIN   
-        INCLUDE ~3ed/Component15/MageNewSpells.tps~ //allow arcane casters who learn spells to aquire 1-2 scrolls per level
+        INCLUDE ~3ed/Component15/MageNewSpells.tps~ 
     END
 	
 

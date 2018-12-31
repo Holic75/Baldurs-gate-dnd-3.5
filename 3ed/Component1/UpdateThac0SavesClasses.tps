@@ -39,18 +39,21 @@
 		END
         
 
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 30 STR_VAR input_name = ~THAC0H~ output_name = ~THACH~ END
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 30 STR_VAR input_name = ~THAC0M~ output_name = ~THACM~ END
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 30 STR_VAR input_name = ~THAC0L~ output_name = ~THACL~ END
 	//high thaco for swashbuckler
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 indexed = 1
 						STR_VAR clab=~CLABTH04\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~THAC0H~ END		
+						feat_type_file=~~ caption=~THACH~ END		
 	//medium thaco (fighter-*, ranger - clr*  and battle caster, f/m/t, f/m/c)
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 indexed = 1
 						STR_VAR clab=~\(\(CLABFI01\)\|\(CLABSO01\)\|\(CLABRN01\)\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~THAC0M~ END		
+						feat_type_file=~~ caption=~THACM~ END		
 	//low thaco (cleric/mage and mage/thief)
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 indexed = 1
 						STR_VAR clab=~\(\(CLABTH01\)\|\(CLABPR01\)\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~THAC0L~ END		
+						feat_type_file=~~ caption=~THACL~ END		
                         
                         
 	
@@ -69,18 +72,19 @@
         SPRINT resource EVALUATE_BUFFER ~APRBON2~	
         LPF ALTER_SPELL_EFFECT INT_VAR header = 2 STR_VAR resource END
         
-        
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 3 STR_VAR input_name = ~APR_H~ output_name = ~APR_H~ END
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 2 STR_VAR input_name = ~APR_M~ output_name = ~APR_M~ END 
      
 	//high apr
-		LAF ADD_BONUS_FEATS INT_VAR min_level=6 max_level=20 d_level=5 add_at_level1=0 
-						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~APR_H~ END	
+    LAF ADD_BONUS_FEATS INT_VAR min_level=6 max_level=20 d_level=5 add_at_level1=0 indexed = 1
+                    STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~~
+                    feat_type_file=~~ caption=~APR_H~ END	
                         
     //create high apr clab_line
     
    
 	//medium apr
-		LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=20 d_level=7 add_at_level1=0 
+		LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=20 d_level=7 add_at_level1=0 indexed = 1
 						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~~
 						feat_type_file=~~ caption=~APR_M~ END	
                         
@@ -118,18 +122,24 @@
 	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESPH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 35  END //saving throw vs polymorph
 	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESBH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 36  END //saving throw vs breath
 	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESSH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 37  END //saving throw vs spell
+    
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 30 STR_VAR input_name = ~SAVESWH~ output_name = ~SAVWH~ END
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 30 STR_VAR input_name = ~SAVESPH~ output_name = ~SAVPH~ END
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 30 STR_VAR input_name = ~SAVESBH~ output_name = ~SAVBH~ END
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 30 STR_VAR input_name = ~SAVESSH~ output_name = ~SAVSH~ END
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 30 STR_VAR input_name = ~SAVESDH~ output_name = ~SAVDH~ END
 		
 	//reflex saves to kensai,barbarian and rangers
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLABRN.*\)\|\(CLABFI0[4-5]\)\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~SAVESWH~ END
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLABRN.*\)\|\(CLABFI0[4-5]\)\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~SAVESBH~ END
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 indexed = 1 STR_VAR clab=~\(\(CLABRN.*\)\|\(CLABFI0[4-5]\)\)\.2DA~ mask_file=~~
+						feat_type_file=~~ caption=~SAVWH~ END
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 indexed = 1 STR_VAR clab=~\(\(CLABRN.*\)\|\(CLABFI0[4-5]\)\)\.2DA~ mask_file=~~
+						feat_type_file=~~ caption=~SAVBH~ END
 	
 	//spell saves for bard, hexblade dwarven defender and paladin
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLABBA.*\)\|\(CLABPA.*\)\|\(CLABFI03\)\|\(CLABFI06\)\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~SAVESSH~ END	
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 indexed = 1 STR_VAR clab=~\(\(CLABBA.*\)\|\(CLABPA.*\)\|\(CLABFI03\)\|\(CLABFI06\)\)\.2DA~ mask_file=~~
+						feat_type_file=~~ caption=~SAVSH~ END	
 	//fort saves for battle caster	
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~CLABSO01\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~SAVESDH~ END	
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~CLABSO01\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~SAVESPH~ END	
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 indexed = 1 STR_VAR clab=~CLABSO01\.2DA~ mask_file=~~
+						feat_type_file=~~ caption=~SAVDH~ END	
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 indexed = 1 STR_VAR clab=~CLABSO01\.2DA~ mask_file=~~
+						feat_type_file=~~ caption=~SAVPH~ END	

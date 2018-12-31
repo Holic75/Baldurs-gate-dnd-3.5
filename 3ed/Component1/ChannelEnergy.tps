@@ -66,16 +66,22 @@
 	//first attribution of abilities
 	COPY ~3ed/Feats/FeatAttribution/SFTCREC.SPL~ ~override/CE_C1.SPL~
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END//cleric
+        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~CE_C1~ END
 	COPY ~3ed/Feats/FeatAttribution/SFTCREFC.SPL~ ~override/CE_FC1.SPL~
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //fighter cleric
+        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~CE_FC1~ END
 	COPY ~3ed/Feats/FeatAttribution/SFTCRECT.SPL~ ~override/CE_CT1.SPL~
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //cleric thief
+        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~CE_CT1~ END
 	COPY ~3ed/Feats/FeatAttribution/SFTCRECM.SPL~ ~override/CE_CM1.SPL~
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //cleric mage
+        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~CE_CM1~ END
 	COPY ~3ed/Feats/FeatAttribution/SFTCRFMC.SPL~ ~override/CE_FMC1.SPL~
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //fighter_cleric mage
+        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~CE_FMC1~ END
 	COPY ~3ed/Feats/FeatAttribution/SFTCRERC.SPL~ ~override/CE_RC1.SPL~
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //cleric_ranger
+        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~CE_RC1~ END
         
 		
 	//script for giving channel abilities	
@@ -84,4 +90,4 @@
 			EVALUATE_BUFFER			
 	END
 	
-	LAF CHANNEL_ENERGY_LEVEL_REGULARIZATION INT_VAR max_channel_lvl END //regularize channel energy level visualization in spreadheet
+	LAF CHANNEL_ENERGY_LEVEL_REGULARIZATION INT_VAR max_channel_lvl END //regularize channel energy level visualization in spreadsheet

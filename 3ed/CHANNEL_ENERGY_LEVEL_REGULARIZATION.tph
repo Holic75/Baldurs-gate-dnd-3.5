@@ -18,6 +18,11 @@ DEFINE_ACTION_FUNCTION ~CHANNEL_ENERGY_LEVEL_REGULARIZATION~
             LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 duration = 1 target = 2 insert_point = 0 STR_VAR resource END
         END
         LPF ADD_SPELL_EFFECT INT_VAR opcode=144 target=2 parameter1=0 parameter2=6 timing=1 duration=1 END //disable turn undead button
+        
+        FOR (j = 0; j <= i; j = j + 1) BEGIN
+            SPRINT resource EVALUATE_BUFFER ~CE_LVL%j%~
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 duration = 1 timing = 9 STR_VAR resource END //protection from subsequent applies
+        END
 	END
 	
 	COPY ~3ed/Classes/TurnUndead/CE_LVL.SPL~ ~override~

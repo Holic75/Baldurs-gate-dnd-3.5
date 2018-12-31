@@ -1,27 +1,12 @@
 //-------------------------------------------------class-specific bonus feats---------------------------------------------					
 //archery feats tree for archer
-    COPY ~3ed/Feats/FeatAttribution/SFTCRE_E.SPL~ ~override/ARCHFT.SPL~
-		FOR (i=1;i<=7;i=i+1) BEGIN
-			SET lvl= 2 + 4*(i - 1)
-			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=lvl speed=0 END
-				SPRINT resource EVALUATE_BUFFER ~SFT115_%i%~
-				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=12 parameter2=105 timing=0 duration=1 STR_VAR resource END // ranger
-		END		
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=26 d_level=4 add_at_level1=0 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=26 d_level=4 add_at_level1=0 indexed = 1
 						STR_VAR clab=~CLABRN02\.2DA~
-							mask_file=~~ feat_type_file=~~ caption=~ARCHFT~ END	
+							mask_file=~~ feat_type_file=~~ caption=~SFT115_~ END	
 //priest of talos empower  magic (1, 4, 8)
-    COPY ~3ed/Feats/FeatAttribution/SFTCRE_E.SPL~ ~override/TALOSFT.SPL~
-		FOR (i=1;i<=3;i=i+1) BEGIN
-            SET lvl = (i == 1) ? 1 : 4*(i - 1)            
-			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=lvl speed=0 END
-				SPRINT resource EVALUATE_BUFFER ~SFT104_%i%~
-				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=3 parameter2=105 timing=0 duration=1 STR_VAR resource END // cleric
-		END	
-
-	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=8 d_level=4 add_at_level1=1 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=8 d_level=4 add_at_level1=1 indexed = 1
 						STR_VAR clab=~CLABPR02\.2DA~
-							mask_file=~~ feat_type_file=~~ caption=~TALOSFT~ END	                            
+							mask_file=~~ feat_type_file=~~ caption=~SFT104_~ END	                            
 
 //armored arcana (ftr/mage, f/m/c, lvl1 - 6 bard lvl1 -mage/thief ;  f/m/t; battle caster )
     COPY ~3ed/Feats/FeatAttribution/SFTCRE_E.SPL~ ~override/ARMARCFT.SPL~
@@ -51,21 +36,15 @@
                 END               
                 
 		END
-                        
-         
-        
+                              
 	LAF ADD_BONUS_FEATS INT_VAR min_level=4 max_level=16 d_level=4 add_at_level1=1 
-						STR_VAR clab=~CLABFI01\.2DA~
-							mask_file=~~ feat_type_file=~~ caption=~ARMARCFT~ END	
-                            
-                            
+						STR_VAR clab=~CLABFI01\.2DA~  mask_file=~~ feat_type_file=~~ caption=~ARMARCFT~ END	
+                                                       
 	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=1 d_level=5 add_at_level1=1 //light armor for sorcerer
-						STR_VAR clab=~CLABSO01\.2DA~
-							mask_file=~~ feat_type_file=~~ caption=~ARMARCFT~ END		
+						STR_VAR clab=~CLABSO01\.2DA~ mask_file=~~ feat_type_file=~~ caption=~ARMARCFT~ END		
 
 	LAF ADD_BONUS_FEATS INT_VAR min_level=6 max_level=12 d_level=6 add_at_level1=1 //light armor for bard, mt and fmt, chain mail for bard and fmt at lvl 6, splint mail at lvl 12
-						STR_VAR clab=~\(\(CLABBA.*\)\|\(CLABTH01\)\)\.2DA~
-							mask_file=~~ feat_type_file=~~ caption=~ARMARCFT~ END	
+						STR_VAR clab=~\(\(CLABBA.*\)\|\(CLABTH01\)\)\.2DA~  mask_file=~~ feat_type_file=~~ caption=~ARMARCFT~ END	
                             
 //armored training (ftr, ftr-thief, ftr - cleric)
     OUTER_FOR (k=1;k<=5;k=k+1) BEGIN
@@ -74,6 +53,8 @@
            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 9 duration = 1 STR_VAR resource END //dex ac penalty
            SPRINT resource EVALUATE_BUFFER ~ARMSKL%k%~
            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 9 duration = 1 STR_VAR resource END //skill penalty
+           SPRINT resource EVALUATE_BUFFER ~ARMTR%k%~
+           LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 timing=9 STR_VAR resource END            
     END
     
     //armored training at levels (4,8,12,16)
@@ -119,22 +100,23 @@
 							mask_file=~~ feat_type_file=~~ caption=~FCM_VSFT~ END	
         
 //----------------------------------------------------------race specific bonus feats
-COPY ~3ed/Feats/HalfElfBonus/HFSTRBN.SPL~ ~override~ 
-COPY ~3ed/Feats/HalfElfBonus/HFCONBN.SPL~ ~override~ 
-COPY ~3ed/Feats/HalfElfBonus/HFDEXBN.SPL~ ~override~ 
-COPY ~3ed/Feats/HalfElfBonus/HFINTBN.SPL~ ~override~ 
-COPY ~3ed/Feats/HalfElfBonus/HFWISBN.SPL~ ~override~ 
-COPY ~3ed/Feats/HalfElfBonus/HFCHABN.SPL~ ~override~ 
+    COPY ~3ed/Feats/HalfElfBonus/HFSTRBN.SPL~ ~override~ 
+    COPY ~3ed/Feats/HalfElfBonus/HFCONBN.SPL~ ~override~ 
+    COPY ~3ed/Feats/HalfElfBonus/HFDEXBN.SPL~ ~override~ 
+    COPY ~3ed/Feats/HalfElfBonus/HFINTBN.SPL~ ~override~ 
+    COPY ~3ed/Feats/HalfElfBonus/HFWISBN.SPL~ ~override~ 
+    COPY ~3ed/Feats/HalfElfBonus/HFCHABN.SPL~ ~override~ 
 
-COMPILE ~3ed/Feats/HalfElfBonus/hfcre.d~  
-COPY ~3ed/Feats/FeatAttribution/SFTCRE.BCS~ ~override/HFCRE.BCS~
+    COMPILE ~3ed/Feats/HalfElfBonus/hfcre.d~  
+    COPY ~3ed/Feats/FeatAttribution/SFTCRE.BCS~ ~override/HFCRE.BCS~
 	COPY ~3ed/Feats/FeatAttribution/FEATCRE.CRE~ ~override/HFCRE.CRE~
 		WRITE_ASCII 0x248 ~HFCRE~ #8//override script
 		WRITE_ASCII 0x02cc ~hfcre~ #8//dialog
 	COPY ~3ed/Feats/FeatAttribution/FEATCRE.EFF~ ~override/HFCRE.EFF~
 		WRITE_ASCII 0x0030 ~HFCRE~ #8//creature name
 	COPY ~3ed/Feats/FeatAttribution/FEATCRE.SPL~ ~override/HFCRE.SPL~	
-		LPF  ALTER_SPELL_EFFECT INT_VAR match_opcode=177 STR_VAR resource=~HFCRE~ END
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=177 STR_VAR resource=~HFCRE~ END
+        LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 timing=9 STR_VAR resource = ~HFCRE~ END 
 		
 
 //add bonus ability points to  half-elves at lvl1
@@ -144,17 +126,20 @@ COPY ~3ed/Feats/FeatAttribution/SFTCRE.BCS~ ~override/HFCRE.BCS~
 
 		
 //add bonus ability points to  small races  (gnome, halfling, goblin) at lvl1
-COPY ~3ed/Feats/SmallRacesBonus/SMLRCBN.SPL~ ~override~ 	
-
+    COPY ~3ed/Feats/SmallRacesBonus/SMLRCBN.SPL~ ~override~ 	
+    LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 timing=9 STR_VAR resource = ~SMLRCBN~ END
+    
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
 						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~3ed/Feats/SmallRacesBonus/SMLRACE.SPL~
 						feat_type_file=~SMLRCBN~ caption=~SMLRACE~ END
 
+    COPY_EXISTING ~SPCL141.SPL~ ~override/WPNTRN.SPL~
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 3 STR_VAR input_name = ~WPNTRN~ output_name = ~WPNTRN~ END
 //fighter weapon training (+1 to hit, damage at lvls 8, 16, 24)
-	LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=25 d_level=8 add_at_level1=0 
+	LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=25 d_level=8 add_at_level1=0 indexed = 1
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREF.SPL~
-						feat_type_file=~SPCL141~ caption=~WPNTRN~ END
+						feat_type_file=~WPNTRN~ caption=~WPTRFT~ END
 //same for swashbuckler
-	LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=25 d_level=8 add_at_level1=0  
-						STR_VAR clab=~CLABTH04\.2DA~ caption=~SPCL141~  END
+	LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=25 d_level=8 add_at_level1=0  indexed =  1
+						STR_VAR clab=~CLABTH04\.2DA~ caption=~WPNTRN~  END
 		

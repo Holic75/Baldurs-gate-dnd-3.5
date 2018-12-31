@@ -94,5 +94,7 @@ DEFINE_ACTION_FUNCTION ~ADD_PSBP_FEAT~ //ability bonus/penalty feat
 			
 			SPRINT resource EVALUATE_BUFFER ~%ability_name%RP~
 			LPF ADD_SPELL_EFFECT INT_VAR opcode=272  target = 2 parameter1 = 1 parameter2 = 3 timing = 9 duration = 1 STR_VAR resource END //check removing every n seconds	
-		
+            
+            SPRINT resource EVALUATE_BUFFER ~%ability_name%FT~
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 timing=9 STR_VAR resource END 
 	END

@@ -17,6 +17,8 @@
             
         COPY ~3ed/Classes/Kensai/KENSBNA.SPL~ ~override/KENSBNA%i%.SPL~
             LPF ALTER_SPELL_EFFECT STR_VAR resource END
+            SPRINT resource EVALUATE_BUFFER ~KENSBNA%i%~
+            LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource END // add protection from subsequent applies
             
     END
 
@@ -43,8 +45,10 @@
     
 //--------------------- paladin ----------------------------------------
 	//saving throws
-	COPY ~3ed/Classes/Paladin/PDNSVCR.SPL~ ~override~//correction for paladin saves	
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 STR_VAR clab=~CLABPA.*\.2DA~  caption=~PDNSVCR~ END	//-2 to saves (corrected by chas saves application)
+    COPY ~3ed/Classes/Paladin/PDNSVCR.SPL~ ~override~
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 40 STR_VAR input_name = ~PDNSVCR~ output_name = ~PDNSV~ END
+   
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 indexed = 1 STR_VAR clab=~CLABPA.*\.2DA~  caption=~PDNSV~ END	//-2 to saves (corrected by chas saves application)
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 STR_VAR clab=~CLABPA.*\.2DA~  caption=~CHASAVFT~ END // chas saves
 	//lay on hands		
 	COPY ~3ed/Classes/Paladin/LayOnHands~ ~override~
@@ -55,10 +59,15 @@
 
 		
 	COPY_EXISTING ~GVABSHLT.SPL~ ~override~
-		LPF ALTER_SPELL_EFFECT STR_VAR resource = ~SPCL211~ END // lay on hands   !!!!!!!!!!!!!!!!! same for all games
+		LPF ALTER_SPELL_EFFECT STR_VAR resource = ~SPCL211~ END // absorb health   !!!!!!!!!!!!!!!!! same for all games
 	
 	COPY_EXISTING ~GVLAYHDS.SPL~ ~override~
-		LPF ALTER_SPELL_EFFECT STR_VAR resource = ~SPCL102~ END //absorb health   !!!!!!!!!!!!!!!!! same for all games
+		LPF ALTER_SPELL_EFFECT STR_VAR resource = ~SPCL102~ END //lay on hands   !!!!!!!!!!!!!!!!! same for all games
+        
+    //make second copy of gvlayhnds for lvl 1 characters
+    COPY_EXISTING ~LAYHND1.SPL~ ~override/LAYHND2.SPL~
+        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~LAYHND2~ END // add protection from subsequent applies
+    
 	//smite evil
 	LAF ADD_SMITE_EVIL_BASE INT_VAR max_lvl=30 END
 	
@@ -208,9 +217,7 @@
             LPF DELETE_EFFECT INT_VAR check_headers = 1 END
             LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR target =2 remove_in_effect = 1 n_headers = 4 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 132 resist_dispel = 1 STR_VAR abil_name = ~AURU~ END
             LPF ALTER_SPELL_HEADER INT_VAR projectile = 1  END                
-            
-            
-    
+                          
         //hexblade curse
         COPY_EXISTING ~SPPR113.SPL~ ~override/HEXCR.SPL~
             LPF DELETE_EFFECT INT_VAR match_opcode = 321 END
@@ -296,9 +303,7 @@
                     LPF ALTER_SPELL_HEADER INT_VAR header = i+1 min_level = 1 + 4*i END
                     LPF ADD_SPELL_EFFECT INT_VAR header = i+1 opcode = 326 target = 2  duration = 1 STR_VAR resource = ~GV_HEX1~ END
                 END
-                
-                
-
+                              
         //swift spell
         COPY ~3ed/Classes/Hexblade/SWIFTCST.SPL~ ~override~
             LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 6 END
@@ -311,6 +316,11 @@
 		EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.*\.BCS~ ~3ed/Classes/Hexblade/GV_HEX.baf~
 			EVALUATE_BUFFER			
 	END
+    
+    COPY_EXISTING ~GV_HEXA.SPL~ ~override/GV_HEXB.SPL~
+        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~GV_HEXB~ END // add protection from subsequent applies
+
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 7 STR_VAR input_name = ~GV_HEX1~ output_name = ~GV_HEXX~ END
 
             
 	//-------------------------------monk-------------------------
@@ -482,7 +492,12 @@
 				EVALUATE_BUFFER			
 		END
 	END
-	
+    
+    COPY_EXISTING ~GV_KIPW.SPL~ ~override/GV_KIPW2.SPL~
+        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~GV_KIPW2~ END // add protection from subsequent applies
+	    
+    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 14 STR_VAR input_name = ~NJ_KIPW~ output_name = ~NJ_KI~ END
+
 	//------------------------------Druid shapeshifts and other polymorph forms and charm animal update-----------------------------------------		
 	WITH_TRA ~%LANGUAGE%\druid_shapeshift.tra~ BEGIN   
 		//shapeshifts that can use items
@@ -491,7 +506,7 @@
         COPY ~3ed/Classes/Druid/Misc~ ~override~
         COPY ~3ed/Classes/Druid/Icons~ ~override~
         
-        
+        LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 9 STR_VAR input_name = ~DRDPOLY1~ output_name = ~DRDPLY~ END
         //winter wolf breath
         COPY ~3ed/Classes/Druid/WinterWolfBreath~ ~override~
         COPY_EXISTING ~WOLW_BL.SPL~ ~override~
@@ -759,7 +774,10 @@
                 LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 321 target = 2 duration = 1 STR_VAR resource END
             END
             SPRINT clab_line EVALUATE_BUFFER ~%clab_line%    AP_TLWPA%i%    ****    ****    ****    ****~
-        
+            FOR (j = 1 ; j <= i; j = j + 1) BEGIN
+                SPRINT resource EVALUATE_BUFFER ~TLWPA%j%~
+                LPF ADD_SPELL_EFFECT INT_VAR  opcode = 206 target = 2 duration = 1 timing = 9 STR_VAR resource END //protection from subsequent applies
+            END
     END
     OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line%    ****    ****    ****    ****    ****    ****    ****    ****    ****    ****~
     
@@ -964,6 +982,9 @@ WITH_TRA ~%LANGUAGE%\fighter_thief.tra~ BEGIN
             END
         END
                         
+    COPY_EXISTING ~F_T_DRT.SPL~ ~override~
+        LPF ADD_SPELL_EFFECT INT_VAR  opcode = 206 target = 2 duration = 1 timing = 9 STR_VAR resource = ~F_T_DRT~ END //protection from subsequent applies
+        
     LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=5 d_level=1 add_at_level1=0 
             STR_VAR clab=~CLABTH01\.2DA~  mask_file=~3ed/Feats/FeatAttribution/SFTCREFT.SPL~ feat_type_file = ~F_T_DRT~ caption=~DRT_CMB~ END
 END
@@ -1224,12 +1245,14 @@ END
     COPY ~3ed/Classes/Shaman/GV_SDNC.SPL~ ~override/DSBLDNC.SPL~			
         LPF ADD_SPELL_EFFECT INT_VAR header=1 opcode=144 target=2 parameter1=0 parameter2=10 timing=1 duration=1 END //disable shamanic dance button
         
+    COPY_EXISTING ~GV_SDNC.SPL~ ~override/GV_SDNCX.SPL~
+         LPF ADD_SPELL_EFFECT INT_VAR  opcode = 206 target = 2 duration = 1 timing = 9 STR_VAR resource = ~GV_SDNCX~ END //protection from subsequent applies
     //bonus uses at level 1 
     LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
-                    STR_VAR clab=~CLABSH.*\.2DA~ mask_file=~~ caption=~GV_SDNC~ END		
+                    STR_VAR clab=~CLABSH.*\.2DA~ mask_file=~~ caption=~GV_SDNCX~ END		
     //uses at other levels
     LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=2 add_at_level1=0 
-                    STR_VAR clab=~CLABSH.*\.2DA~ mask_file=~~ caption=~GVSDNC1~ END
+                    STR_VAR clab=~CLABSH.*\.2DA~ mask_file=~~ caption=~SHM_DNC~ prefix = ~GA~ END
     //disable dance             
     LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
                     STR_VAR clab=~CLABSH.*\.2DA~ mask_file=~~ caption=~DSBLDNC~ END
@@ -1449,7 +1472,10 @@ END
      
     
     LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=8 d_level=1 add_at_level1=0 
-        STR_VAR mask_file=~3ed/Feats/FeatAttribution/SFTCREMT.SPL~ clab=~CLABTH01\.2DA~ feat_type_file = ~MT_VOC~ caption=~VOC_MT~ END	
+        STR_VAR mask_file=~3ed/Feats/FeatAttribution/SFTCREMT.SPL~ clab=~CLABTH01\.2DA~ feat_type_file = ~MT_VOC~ caption=~VOC_MT~ END
+
+    COPY_EXISTING ~VOC_MT.SPL~ ~override~
+         LPF ADD_SPELL_EFFECT INT_VAR  opcode = 206 target = 2 duration = 1 timing = 9 STR_VAR resource = ~VOC_MT~ END //protection from subsequent applies
         
         
     //---------------------------------------blade defensive spin update to give +1 ac per 2 levels-------------
