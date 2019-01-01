@@ -846,7 +846,7 @@ Disadvantages:
 
 ### PRIEST OF TEMPUS
 Advantages:  
-– Can use Rage ability (starts with one use at level 1 then get another one at level 5 and every 5 levels thereafter), though Priest of Tempus never gets benefits of Greater or Mighty Rage.  
+– Can use Rage ability (starts with one use at level 1 then gets another one at level 5 and every 5 levels thereafter), though Priest of Tempus never gets benefits of Greater or Mighty Rage.  
 ```
 RAGE: The character is enraged  which grants her a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class, and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
 The enraged state lasts 3 rounds + 1 round per 2 points of newly modified Constitution above 10.
@@ -885,7 +885,7 @@ CLASS FEATURES:
 ### AVENGER
 Advantages:  
 – Moves 2 points faster than other characters.  
-– Can use Rage ability (starts with one use at level 1 then get another one at level 5 and every 5 levels thereafter), though Avenger never gets benefits of Greater or Mighty Rage.  
+– Can use Rage ability (starts with one use at level 1 then gets another one at level 5 and every 5 levels thereafter), though Avenger never gets benefits of Greater or Mighty Rage.  
 ```
 RAGE: The character is enraged  which grants her a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class, and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
 The enraged state lasts 3 rounds + 1 round per 2 points of newly modified Constitution above 10.
@@ -2539,7 +2539,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Ajantis - Paladin (15/ 10/ 14/ 9/ 13/ 16)
 #### Alora - Thief (10 /20/ 10/ 14/ 9 / 9)
 #### Baeloth - Battle Caster (14/ 18/ 12/ 10/ 10/ 18)
-#### Branwen - Fighter/Cleric (15/ 14/ 14/ 10/ 15/ 10)
+#### Branwen - Priest of Tempus (15/ 10/ 14/ 10/ 16/ 12)
 #### Coran - Fighter/Thief (14/ 18/ 12/ 14/ 10/ 10)
 #### Dorn - Blackguard (18/ 10/ 13/ 8/ 13/ 15)
 #### Dynaheir - Sorcerer (12/ 14/ 14/ 10/ 9/ 17)
@@ -2564,7 +2564,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Viconia - Cleric/Thief (10/ 18/ 10/ 16/ 14/ 14)
 #### Xan - Fighter/Mage (14/ 16/ 12/ 16/ 10/ 10)
 #### Xzar - Necromancer (10/ 14/ 12/ 18/ 9/ 9)
-#### Yeslick - Cleric (14/ 10/ 16/ 10/ 16/ 12)
+#### Yeslick - Fighter-Cleric (16/ 12/ 16/ 10/ 14/ 10)
 
 
 ### SOD

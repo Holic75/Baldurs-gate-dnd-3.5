@@ -16,6 +16,7 @@ DEFINE_ACTION_FUNCTION ~ADD_BONUS_FEATS~
         prefix = ~AP~
 	BEGIN
         OUTER_SET index = index_start
+        OUTER_SET ncols = 40
         OUTER_SPRINT feat EVALUATE_BUFFER ~%feat_type_file%~
         
         ACTION_IF NOT (~%mask_file%~ STRING_EQUAL ~~) BEGIN
@@ -86,7 +87,7 @@ DEFINE_ACTION_FUNCTION ~ADD_BONUS_FEATS~
                     OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line% ****     ~
                 END
                             
-                SET k=k*2
+                OUTER_SET k=k*2
             END            
         END
         

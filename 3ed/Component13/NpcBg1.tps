@@ -13,7 +13,7 @@ LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 12 Dex = 14 Con = 14 Int = 10 Wis = 9 Ch
                           STR_VAR NpcName = ~DYNAHE~ ScriptName = ~DYNAHEIR~ ClassName = ~SORCERER~  END     
 
                           
-LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 10 Con = 16 Int = 10 Wis = 16 Cha = 12  
+LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 12 Con = 16 Int = 10 Wis = 14 Cha = 10  
                           STR_VAR NpcName = ~YESLIC~ ScriptName = ~YESLICK~ ClassName = ~FIGHTER_CLERIC~  END 
                          
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 18 Con = 12 Int = 14 Wis = 10 Cha = 10  Lockpick = 4 FindTraps = 4
@@ -38,7 +38,7 @@ LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 11 Dex = 16 Con = 14 Int = 16 Wis = 9 Ch
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 14 Con = 14 Int = 10 Wis = 16 Cha = 10
                           STR_VAR NpcName = ~FALDOR~ ScriptName = ~FALDORN~ ClassName = ~DRUID~ KitName = ~BEASTFRIEND~ END 
         
-LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 15 Dex = 14 Con = 14 Int = 10 Wis = 15 Cha = 10  
+LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 15 Dex = 10 Con = 14 Int = 10 Wis = 16 Cha = 12  
                           STR_VAR NpcName = ~BRANWE~ ScriptName = ~BRANWEN~ ClassName = ~CLERIC~ KitName = ~OHTEMPUS~ END    
 
 

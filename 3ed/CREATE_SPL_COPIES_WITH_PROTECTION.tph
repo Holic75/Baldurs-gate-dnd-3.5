@@ -10,7 +10,7 @@ DEFINE_ACTION_FUNCTION ~CREATE_SPL_COPIES_WITH_PROTECTION~
         OUTER_FOR (i = index_start; i<=index_end; i=i+1) BEGIN
             OUTER_SPRINT resource EVALUATE_BUFFER ~%output_name%%i%~
             COPY_EXISTING ~%input_name%.SPL~ ~override/%output_name%.SPL~
-                IF (add_protection) BEGIN
+                PATCH_IF (add_protection) BEGIN
                     LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource END // add protection from subsequent applies
                 END
         END

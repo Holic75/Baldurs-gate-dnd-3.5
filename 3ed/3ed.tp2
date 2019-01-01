@@ -47,6 +47,7 @@ BEGIN @1
     INCLUDE ~3ed/ADD_ABILITY_DEPENDENT_EFFECTS.tph~
     INCLUDE ~3ed/DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST.tph~
     INCLUDE ~3ed/CREATE_SPL_COPIES_WITH_PROTECTION.tph~
+    INCLUDE ~3ed/ADD_PSEPB_FEAT.tph~// persistent exclusive progressive bonus feat
 
 	
 	COPY ~3ed/Core/Clab~ ~override~ 
@@ -145,6 +146,9 @@ BEGIN @1
     //get rid of caster level fluctuation on wild mages
     COPY ~3ed/Core/WildMagic~ ~override~
     
+    //--------------------------------------------------high level hp bonus fix-------------------
+    INCLUDE ~3ed/Component1/HighLvlHpFix.tps~
+    
 	
 ////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
@@ -199,6 +203,8 @@ WITH_TRA ~%LANGUAGE%\proficiencies.tra~ BEGIN
 
 //-------------------------------------------------class and race-specific bonus feats---------------------------------------------					
 	INCLUDE ~3ed/Component2/ClassRaceFeatAttribution.tps~
+    
+
 	
 END 		
 
