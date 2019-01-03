@@ -18,9 +18,12 @@
         COPY ~3ed/Classes/Kensai/KENSBNA.SPL~ ~override/KENSBNA%i%.SPL~
             LPF ALTER_SPELL_EFFECT STR_VAR resource END
             SPRINT resource EVALUATE_BUFFER ~KENSBNA%i%~
-            LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource END // add protection from subsequent applies
-            
+          
     END
+    
+    COPY ~3ed/Classes/FeatTables/KENSAI_FEATS.2DA~  ~override~
+        LPF ADD_FEATS_2DA   STR_VAR clab=~CLABFI04\.2DA~ caption=~KENABI~ 2DA_file = ~KENSAI_FEATS~
+                                    mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~  END
 
     //kensai bonuses regularization
     OUTER_FOR (i=89;i<=98;i=i+1) BEGIN     
@@ -46,27 +49,28 @@
 //--------------------- paladin ----------------------------------------
 	//saving throws
     COPY ~3ed/Classes/Paladin/PDNSVCR.SPL~ ~override~
-    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 40 STR_VAR input_name = ~PDNSVCR~ output_name = ~PDNSV~ END
-   
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=40 d_level=1 add_at_level1=1 indexed = 1 STR_VAR clab=~CLABPA.*\.2DA~  caption=~PDNSV~ END	//-2 to saves (corrected by chas saves application)
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 STR_VAR clab=~CLABPA.*\.2DA~  caption=~CHASAVFT~ END // chas saves
+       
+	LAF ADD_FEATS_LVL INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1  
+        STR_VAR clab=~CLABPA.*\.2DA~  mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name = ~PDNSVCR~ caption=~PSVFIX~ END	//-2 to saves (corrected by chas saves application)
+	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+        STR_VAR clab=~CLABPA.*\.2DA~  mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name = ~CHASAVFT~ caption=~PCHSVFT~ END // cha saves
+       
 	//lay on hands		
 	COPY ~3ed/Classes/Paladin/LayOnHands~ ~override~
 	OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN //script to update number of lay on hands uses depending on charisma
 		EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.*\.BCS~ ~3ed/Classes/Paladin/PALADIN.baf~
 			EVALUATE_BUFFER			
 	END
-
-		
+	
 	COPY_EXISTING ~GVABSHLT.SPL~ ~override~
 		LPF ALTER_SPELL_EFFECT STR_VAR resource = ~SPCL211~ END // absorb health   !!!!!!!!!!!!!!!!! same for all games
 	
 	COPY_EXISTING ~GVLAYHDS.SPL~ ~override~
 		LPF ALTER_SPELL_EFFECT STR_VAR resource = ~SPCL102~ END //lay on hands   !!!!!!!!!!!!!!!!! same for all games
-        
-    //make second copy of gvlayhnds for lvl 1 characters
-    COPY_EXISTING ~LAYHND1.SPL~ ~override/LAYHND2.SPL~
-        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~LAYHND2~ END // add protection from subsequent applies
+    LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1    
+        STR_VAR clab=~\(\(CLABPA01\)\|\(CLABPA02\)\|\(CLABPA06\)\.2DA~  mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ 
+            feat_name = ~LAYHND1~ caption=~PLAYHD~ END // initial lay on hands        
+
     
 	//smite evil
 	LAF ADD_SMITE_EVIL_BASE INT_VAR max_lvl=30 END
@@ -178,18 +182,21 @@
 	END
 	//-------------------------inquisitor----------------------
 	//mr bonus (25%+2/level till level 30)
-	COPY ~3ed/Classes/Inquisitor/INQMR.SPL~ ~override~
-        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 insert_point = 0 duration = 1 STR_VAR resource = ~INQMR~ END
-        FOR (i=2;i<=30;i=i+1) BEGIN
-            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-            LPF ALTER_SPELL_HEADER INT_VAR  header = i min_level = i END
+    OUTER_FOR (i = 1; i<=30; i = i + 1) BEGIN
+        COPY ~3ed/Classes/Inquisitor/INQMR.SPL~ ~override/INQMR%i%.SPL~
+            SET prev = i - 1
+            SPRINT resource ~INQMR%prev%~
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 insert_point = 0 duration = 1 STR_VAR resource END
             LPF ALTER_SPELL_EFFECT INT_VAR header = i match_opcode = 166 parameter1 = 25 + i*2 END
-        END
+    END
+    LAF ADD_FEATS_LVL INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 feat_name_indexed = 1
+        STR_VAR clab=~CLABPA03\.2DA~  mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name = ~INQMR~ caption=~IINQMR~ END 
 	
     
     //-------------------------------hexblade----------------------    
     
-    LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 STR_VAR clab=~CLABFI03\.2DA~  caption=~CHASAVFT~ END // cha spell saves
+	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+        STR_VAR clab=~CLABFI03\.2DA~  mask_file = ~3ed/Feats/FeatAttribution/SFTCREF.SPL~ feat_name = ~CHASAVFT~ caption=~HCHSVFT~ END // cha saves
     
     WITH_TRA ~%LANGUAGE%\hexblade.tra~ BEGIN
     
@@ -317,22 +324,20 @@
 			EVALUATE_BUFFER			
 	END
     
-    COPY_EXISTING ~GV_HEXA.SPL~ ~override/GV_HEXB.SPL~
-        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~GV_HEXB~ END // add protection from subsequent applies
 
-    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 7 STR_VAR input_name = ~GV_HEX1~ output_name = ~GV_HEXX~ END
-
-            
+    COPY ~3ed/Classes/FeatTables/HEXBLADE_FEATS.2DA~  ~override~
+        LPF ADD_FEATS_2DA   STR_VAR clab=~CLABFI03\.2DA~ caption=~HEXABI~ 2DA_file = ~HEXBLADE_FEATS~
+                                    mask_file=~3ed/Feats/FeatAttribution/SFTCREF.SPL~  END        
 	//-------------------------------monk-------------------------
-	//(ac bonus (already in 2DA), wis ac bonus, flurry of blows)
+	//(ac bonus, wis ac bonus, flurry of blows)
+    COPY ~3ed/Classes/FeatTables/MONK_FEATS.2DA~  ~override~
+        LPF ADD_FEATS_2DA   STR_VAR clab=~CLABMO.*\.2DA~ caption=~MACABI~ 2DA_file = ~MONK_FEATS~
+                                    mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~  END 
+    COPY ~3ed/Classes/FeatTables/MONK_FLURRY.2DA~  ~override~
+        LPF ADD_FEATS_2DA   STR_VAR clab=~CLABMO.*\.2DA~ caption=~MFLABI~ 2DA_file = ~MONK_FLURRY~
+                                    mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~  END                                    
 	COPY ~3ed/Classes/Monk~ ~override~
-    COPY_EXISTING_REGEXP GLOB ~CLABMO.*\.2DA~ ~override~
-		COUNT_2DA_ROWS 20 "nrows"
-		INSERT_2DA_ROW nrows 20
-			~MNKFLRABI AP_MKFLR1FT **** **** **** AP_MKFLR2FT **** **** **** AP_MKFLR3FT **** AP_MKFLR4FT **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** ****~
-		INSERT_2DA_ROW nrows 20
-			~WISDACABI AP_WISDACFT **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** ****~				
-	
+  
 	// fist damage/ enchantment 
 	WITH_TRA ~%LANGUAGE%\monk.tra~ BEGIN
 		
@@ -481,11 +486,12 @@
 				LPF CLONE_EFFECT INT_VAR header = (i - 1)/2 match_opcode = 326 match_parameter2 = 0  multi_match = 1 END
 			END	
 			
-		COPY_EXISTING_REGEXP GLOB ~CLABTH03\.2DA~ ~override~
-			COUNT_2DA_ROWS 20 "nrows"
-			INSERT_2DA_ROW nrows 20
-				~WISDACABI AP_WISDACFT **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** ****~				
-	
+        LPF ADD_FEATS_2DA   STR_VAR clab=~CLATH03\.2DA~ caption=~NACABI~ 2DA_file = ~MONK_FEATS~
+                                    mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~  END
+
+        LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1
+            STR_VAR clab=~CLABTH03\.2DA~  mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name = ~GV_KIPW~ caption=~NJKIABI~ END 
+       
 	
 		OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN
 			EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.*\.BCS~ ~override/NINJA.baf~
@@ -493,10 +499,6 @@
 		END
 	END
     
-    COPY_EXISTING ~GV_KIPW.SPL~ ~override/GV_KIPW2.SPL~
-        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~GV_KIPW2~ END // add protection from subsequent applies
-	    
-    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 14 STR_VAR input_name = ~NJ_KIPW~ output_name = ~NJ_KI~ END
 
 	//------------------------------Druid shapeshifts and other polymorph forms and charm animal update-----------------------------------------		
 	WITH_TRA ~%LANGUAGE%\druid_shapeshift.tra~ BEGIN   
@@ -506,7 +508,7 @@
         COPY ~3ed/Classes/Druid/Misc~ ~override~
         COPY ~3ed/Classes/Druid/Icons~ ~override~
         
-        LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 9 STR_VAR input_name = ~DRDPOLY1~ output_name = ~DRDPLY~ END
+        
         //winter wolf breath
         COPY ~3ed/Classes/Druid/WinterWolfBreath~ ~override~
         COPY_EXISTING ~WOLW_BL.SPL~ ~override~
@@ -531,7 +533,8 @@
 			SAY NAME1 @003
 			SAY UNIDENTIFIED_DESC @004
 
-		       
+		LAF ADD_FEATS_MASK INT_VAR mask = 0b100010001000100010001001110000
+            STR_VAR clab=~CLABDR0[14]\.2DA~  mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_type = ~GA~ feat_name = ~DRDPOLY~ caption=~DRDPLY~ END        
 		ACTION_DEFINE_ASSOCIATIVE_ARRAY DruidPolymorphStrings BEGIN
 			~PL_FIRL~ => 005
 			~PL_EARL~ => 006
@@ -773,18 +776,11 @@
                 SPRINT resource EVALUATE_BUFFER ~TLWPA%i_old%~
                 LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 321 target = 2 duration = 1 STR_VAR resource END
             END
-            SPRINT clab_line EVALUATE_BUFFER ~%clab_line%    AP_TLWPA%i%    ****    ****    ****    ****~
-            FOR (j = 1 ; j <= i; j = j + 1) BEGIN
-                SPRINT resource EVALUATE_BUFFER ~TLWPA%j%~
-                LPF ADD_SPELL_EFFECT INT_VAR  opcode = 206 target = 2 duration = 1 timing = 9 STR_VAR resource END //protection from subsequent applies
-            END
     END
-    OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line%    ****    ****    ****    ****    ****    ****    ****    ****    ****    ****~
     
-    
-    COPY_EXISTING ~CLABPR02.2DA~ ~override~
-        COUNT_2DA_ROWS 20 "nrows"
-        INSERT_2DA_ROW nrows 20 ~%clab_line%~
+    LAF ADD_FEATS_MASK INT_VAR mask = 0b10000100001000010000100001  feat_name_indexed = 1
+            STR_VAR clab=~CLABPR02\.2DA~  mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~  feat_name = ~TLWPA~ caption=~TALWPN~ END 
+   
         
     
     
@@ -985,8 +981,8 @@ WITH_TRA ~%LANGUAGE%\fighter_thief.tra~ BEGIN
     COPY_EXISTING ~F_T_DRT.SPL~ ~override~
         LPF ADD_SPELL_EFFECT INT_VAR  opcode = 206 target = 2 duration = 1 timing = 9 STR_VAR resource = ~F_T_DRT~ END //protection from subsequent applies
         
-    LAF ADD_BONUS_FEATS INT_VAR min_level=5 max_level=5 d_level=1 add_at_level1=0 
-            STR_VAR clab=~CLABTH01\.2DA~  mask_file=~3ed/Feats/FeatAttribution/SFTCREFT.SPL~ feat_type_file = ~F_T_DRT~ caption=~DRT_CMB~ END
+    LAF ADD_FEATS_LVL INT_VAR min_level=5 max_level=5 d_level=1 add_at_level1=0 
+            STR_VAR clab=~CLABTH01\.2DA~  mask_file=~3ed/Feats/FeatAttribution/SFTCREFT.SPL~ feat_name = ~F_T_DRT~ caption=~DRT_CMB~ END
 END
 	
 	//--------------------------------------------------//
@@ -1245,17 +1241,10 @@ END
     COPY ~3ed/Classes/Shaman/GV_SDNC.SPL~ ~override/DSBLDNC.SPL~			
         LPF ADD_SPELL_EFFECT INT_VAR header=1 opcode=144 target=2 parameter1=0 parameter2=10 timing=1 duration=1 END //disable shamanic dance button
         
-    COPY_EXISTING ~GV_SDNC.SPL~ ~override/GV_SDNCX.SPL~
-         LPF ADD_SPELL_EFFECT INT_VAR  opcode = 206 target = 2 duration = 1 timing = 9 STR_VAR resource = ~GV_SDNCX~ END //protection from subsequent applies
     //bonus uses at level 1 
-    LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
-                    STR_VAR clab=~CLABSH.*\.2DA~ mask_file=~~ caption=~GV_SDNCX~ END		
-    //uses at other levels
-    LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=2 add_at_level1=0 
-                    STR_VAR clab=~CLABSH.*\.2DA~ mask_file=~~ caption=~SHM_DNC~ prefix = ~GA~ END
-    //disable dance             
-    LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
-                    STR_VAR clab=~CLABSH.*\.2DA~ mask_file=~~ caption=~DSBLDNC~ END
+    LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
+                    STR_VAR clab=~CLABSH.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name=~GV_SDNC~ caption=~SHDNCA~ END		
+
                     
 
 
@@ -1391,7 +1380,12 @@ END
             
             READ_LONG 0x0050 ~descr_strref~
             STRING_SET_EVALUATE %descr_strref% @004	
-    END               			  		
+    END      
+
+    //bonus berserker feats
+    COPY ~3ed/Classes/FeatTables/BERSERKER_FEATS.2DA~  ~override~
+        LPF ADD_FEATS_2DA   STR_VAR clab=~CLABFI02\.2DA~ caption=~BRSRAB~ 2DA_file = ~BERSERKER_FEATS~
+                                    mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~  END     
 	 //---------------------------jester-------------------------------
 	 //mind shield
 	  COPY   ~3ed/Classes/Jester/%GameId%/JSTRIMM.SPL~  ~override~ //immunities !!!!!!!!!!!!!!!!!!!!!!	  	
@@ -1471,8 +1465,8 @@ END
         LPF ALTER_SPELL_EFFECT INT_VAR timing = 1 resist_dispel = 0 duration = 1 END
      
     
-    LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=8 d_level=1 add_at_level1=0 
-        STR_VAR mask_file=~3ed/Feats/FeatAttribution/SFTCREMT.SPL~ clab=~CLABTH01\.2DA~ feat_type_file = ~MT_VOC~ caption=~VOC_MT~ END
+    LAF ADD_FEATS_LVL INT_VAR min_level=8 max_level=8 d_level=1 add_at_level1=0 
+        STR_VAR mask_file=~3ed/Feats/FeatAttribution/SFTCREMT.SPL~ clab=~CLABTH01\.2DA~ feat_name = ~MT_VOC~ caption=~MTVOCZ~ END
 
     COPY_EXISTING ~VOC_MT.SPL~ ~override~
          LPF ADD_SPELL_EFFECT INT_VAR  opcode = 206 target = 2 duration = 1 timing = 9 STR_VAR resource = ~VOC_MT~ END //protection from subsequent applies

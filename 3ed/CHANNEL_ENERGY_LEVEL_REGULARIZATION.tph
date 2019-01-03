@@ -21,7 +21,7 @@ DEFINE_ACTION_FUNCTION ~CHANNEL_ENERGY_LEVEL_REGULARIZATION~
         
         FOR (j = 0; j <= i; j = j + 1) BEGIN
             SPRINT resource EVALUATE_BUFFER ~CE_LVL%j%~
-            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 duration = 1 timing = 9 STR_VAR resource END //protection from subsequent applies
+            LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 321 target = 2 duration = 1 timing = 0 STR_VAR resource END //remove previous applies
         END
 	END
 	
@@ -41,14 +41,7 @@ DEFINE_ACTION_FUNCTION ~CHANNEL_ENERGY_LEVEL_REGULARIZATION~
             
 			SET multi_class_level = i - (i+2)/4 + 1
             SET no_ce_lvl = i+1
-			//PATCH_IF (multi_class_level>max_multi_class_channel_lvl) BEGIN
-			//	SET multi_class_level=max_multi_class_channel_lvl
-			//END
 			
-            //SPRINT resource EVALUATE_BUFFER ~CE_LVL%no_ce_lvl%~
-			//LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=18 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric ranger (no ce)
-          
-            
 			SPRINT resource EVALUATE_BUFFER ~CE_LVL%cleric_level%~
 			LPF ADD_SPELL_EFFECT INT_VAR header=i  opcode=326 target=2 parameter1=3 parameter2=105 duration=1 timing=1 STR_VAR  resource END //cleric 
 			

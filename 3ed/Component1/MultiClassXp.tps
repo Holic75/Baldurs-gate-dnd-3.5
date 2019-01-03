@@ -9,37 +9,10 @@
 	COPY ~3ed/HybridXP/MLTXP3.SPL~ ~override~
     COPY ~3ed/HybridXP/MLTXP31.SPL~ ~override~
 	
-	//fighter/mage
+	//double multiclass
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFM.SPL~ feat_type_file=~MLTXP~ caption=~MLTXPF_M~ END
-	//fighter/cleric
+						STR_VAR clab=~\(CLABFI01\)\|\(CLABPR01\)\|\(CLABTH01\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREM2.SPL~ feat_name=~MLTXP~ caption=~XPFIX2~ END
+          
+    //triple multiclass
 	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFC.SPL~ feat_type_file=~MLTXP~ caption=~MLTXPF_C~ END
-	//fighter/thief
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFT.SPL~ feat_type_file=~MLTXP~ caption=~MLTXPF_T~ END
-	//fighter/druid
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFD.SPL~ feat_type_file=~MLTXP~ caption=~MLTXPF_D~ END
-						
-	//cleric/ranger
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRERC.SPL~ feat_type_file=~MLTXP~ caption=~MLTXPR_C~ END
-	//cleric/thief
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRECT.SPL~ feat_type_file=~MLTXP~ caption=~MLTXPC_T~ END
-	//cleric/mage
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~CLABPR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRECM.SPL~ feat_type_file=~MLTXP~ caption=~MLTXPC_M~ END
-		
-    //mage/thief
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~CLABTH01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREMT.SPL~ feat_type_file=~MLTXP~ caption=~MLTXPM_T~ END		
-	
-
-    //fighter/mage/thief
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRFMT.SPL~ feat_type_file=~MLTXP3~ caption=~MLTXPFMT~ END    
-    //fighter/mage/cleric
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRFMC.SPL~ feat_type_file=~MLTXP3~ caption=~MLTXPFMC~ END
+						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREM3.SPL~ feat_name=~MLTXP3~ caption=~XPFIX3~ END

@@ -26,7 +26,6 @@ WITH_TRA ~%LANGUAGE%\monk.tra~ BEGIN
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~MKFLR11~ END
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~MKFLR11~ END
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~MKFLR10~ END
-        LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=206 target=2 duration=1 timing=9 STR_VAR resource = ~MKFLR1FT~ END 
 
 	LAF ADD_PSL_FEAT STR_VAR ability_name=~MKFLR3~ END //flurry of blows +1 attack without penalties
 	//add removal of effect of flurry2 and ability buttons, add protection from flurry 2,1
@@ -35,18 +34,13 @@ WITH_TRA ~%LANGUAGE%\monk.tra~ BEGIN
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~MKFLR2BN~ END
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~MKFLR21~ END
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~MKFLR20~ END
-        LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=206 target=2 duration=1 timing=9 STR_VAR resource = ~MKFLR1FT~ END 
-        LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=206 target=2 duration=1 timing=9 STR_VAR resource = ~MKFLR2FT~ END 
 		
 	LAF ADD_PSL_FEAT STR_VAR ability_name=~MKFLR4~ END //flurry of blows +2 attacks without penalties
 	//add removal of effect of flurry3 feat and effect, add protection from flurry 3,2,1
 	COPY_EXISTING ~MKFLR4FT.SPL~ ~override~
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 STR_VAR resource=~MKFLR3BN~ END 
 		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 STR_VAR resource=~MKFLR3FT~ END
-        LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=206 target=2 duration=1 timing=9 STR_VAR resource = ~MKFLR1FT~ END 
-        LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=206 target=2 duration=1 timing=9 STR_VAR resource = ~MKFLR2FT~ END
-        LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=206 target=2 duration=1 timing=9 STR_VAR resource = ~MKFLR3FT~ END         
-
+      
 END
 
 

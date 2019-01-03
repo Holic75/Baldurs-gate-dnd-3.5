@@ -62,26 +62,22 @@
 	COPY ~3ed/Classes/TurnUndead/CHANGV.SPL~ ~override/CE_GV.SPL~
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_1~ END 
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=177 STR_VAR resource=~CE_AC1~ END //2 additional uses for priest of lathander
-		
+	COPY_EXISTING ~CE_GV.SPL~ ~override/CE_GV2.SPL~
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 duration = 1 timing = 9 STR_VAR resource = ~CE_GV2~ END //protection from subsequent applies
+    
 	//first attribution of abilities
 	COPY ~3ed/Feats/FeatAttribution/SFTCREC.SPL~ ~override/CE_C1.SPL~
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END//cleric
-        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~CE_C1~ END
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV2~ END//cleric
 	COPY ~3ed/Feats/FeatAttribution/SFTCREFC.SPL~ ~override/CE_FC1.SPL~
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //fighter cleric
-        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~CE_FC1~ END
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV2~ END //fighter cleric
 	COPY ~3ed/Feats/FeatAttribution/SFTCRECT.SPL~ ~override/CE_CT1.SPL~
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //cleric thief
-        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~CE_CT1~ END
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV2~ END //cleric thief
 	COPY ~3ed/Feats/FeatAttribution/SFTCRECM.SPL~ ~override/CE_CM1.SPL~
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //cleric mage
-        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~CE_CM1~ END
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV2~ END //cleric mage
 	COPY ~3ed/Feats/FeatAttribution/SFTCRFMC.SPL~ ~override/CE_FMC1.SPL~
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //fighter_cleric mage
-        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~CE_FMC1~ END
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV2~ END //fighter_cleric mage
 	COPY ~3ed/Feats/FeatAttribution/SFTCRERC.SPL~ ~override/CE_RC1.SPL~
-		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV~ END //cleric_ranger
-        LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource = ~CE_RC1~ END
+		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_GV2~ END //cleric_ranger
         
 		
 	//script for giving channel abilities	

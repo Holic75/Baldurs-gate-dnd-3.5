@@ -132,10 +132,6 @@
 			SPRINT resource EVALUATE_BUFFER ~%sftcre_name%~
 			LPF  ALTER_SPELL_EFFECT INT_VAR match_opcode=177 STR_VAR resource END
             
-        //create uniquely-named protected copies to avoid repeated feats attribution    (20 should be enough)
-        OUTER_SPRINT input_name EVALUATE_BUFFER ~%sftcre_name%~
-        OUTER_SPRINT output_name EVALUATE_BUFFER ~%sftcre_name%~
-        LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 20 STR_VAR input_name output_name END
 	END
 	
 	//create checking feat effect
@@ -199,8 +195,7 @@ COPY ~3ed/Classes/Kensai/kenscre.d~  ~override/kenscre.d~
 		WRITE_ASCII 0x0030 ~KENSCRE~ #8//creature name
 	COPY ~3ed/Feats/FeatAttribution/FEATCRE.SPL~ ~override/KENSCRE.SPL~	
 		LPF  ALTER_SPELL_EFFECT INT_VAR match_opcode=177 STR_VAR resource=~KENSCRE~ END
-	
-	LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 7 STR_VAR input_name = ~KENSCRE~ output_name = ~KENSCR~ END
-	LAF ADD_BONUS_FEATS INT_VAR indexed = 1 mask = 0b100100001000100010001001 //(1,4,8,12,16,21,24)
-				STR_VAR clab=~CLABFI04.2DA~ mask_file=~~
-					feat_type_file=~~ caption=~KENSCR~ END 	
+
+	LAF ADD_FEATS_LVL INT_VAR feat_name_indexed = 1 mask = 0b100100001000100010001001 //(1,4,8,12,16,21,24)
+				STR_VAR clab=~CLABFI04\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
+					feat_name=~KENSCRE~ caption=~KENSCR~ END 	

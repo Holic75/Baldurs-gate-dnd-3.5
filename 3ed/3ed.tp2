@@ -38,7 +38,7 @@ BEGIN @1
 	INCLUDE ~3ed/ALTER_SPELL_EFFECT_EX.tph~
     INCLUDE ~3ed/ALTER_EFF.tph~
 	INCLUDE ~3ed/ALTER_CREATURE.tph~
-	INCLUDE ~3ed/ADD_BONUS_FEATS.tph~
+	INCLUDE ~3ed/ADD_FEATS.tph~
 	INCLUDE ~3ed/UPDATE_TLK_ENTRIES.tph~
 	INCLUDE ~3ed/CHANGE_SPELL_PROPERTIES.tph~
     INCLUDE ~3ed/GET_SPELL_EFFECT_VALUES.tph~
@@ -94,11 +94,9 @@ BEGIN @1
     
     //add uncanny dodge to thieves (pure and multiclass) and kensai, barbarian and dwarven defender
     COPY ~3ed/Feats/PermanentAbilities/UncannyDodge/IMMSNK.SPL~ ~override~
-    LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1
+    LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1
 						STR_VAR mask_file=~3ed/Feats/FeatAttribution/SFTCRNMT.SPL~ clab=~\(\(CLABTH.+\)\|\(CLABFI0[4-6]\)\)\.2DA~  
-                                feat_type_file = ~IMMSNK~ caption=~IMM_SNK~ END
-    COPY_EXISTING ~IMM_SNK.SPL~ ~override~
-        LPF ADD_SPELL_EFFECT INT_VAR  opcode = 206 target = 2 duration = 1 timing = 9 STR_VAR resource = ~IMM_SNK~ END //protection from subsequent applies
+                                feat_name = ~IMMSNK~ caption=~IMM_SNK~ END
     
 	 //-----------------------------------------------------//
 
@@ -173,7 +171,7 @@ INCLUDE ~3ed/UPDATE_KENSAICRE_DLG.tph~//updating feat giving creature dialog
 INCLUDE ~3ed/REPLACE_SUBSTRING.tph~
 INCLUDE ~3ed/ALTER_EFF.tph~
 INCLUDE ~3ed/CHANGE_SPELL_PROPERTIES.tph~
-INCLUDE ~3ed/ADD_BONUS_FEATS.tph~
+INCLUDE ~3ed/ADD_FEATS.tph~
 INCLUDE ~3ed/ALTER_SPELL_EFFECT_EX.tph~
 INCLUDE ~3ed/GET_SPELL_EFFECT_VALUES.tph~
 INCLUDE ~3ed/CREATE_SPL_COPIES_WITH_PROTECTION.tph~

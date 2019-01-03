@@ -1,0 +1,246 @@
+DEFINE_ACTION_FUNCTION ~ADD_FEAT_ENTRY~
+    INT_VAR
+        lvl = 0
+        index = 0
+	STR_VAR
+		name=~~
+		caption=~~
+        ga_template = ~3ed/SpellTemplates/GA.SPL~  //template to spell with give innate ability
+        ap_template = ~3ed/SpellTemplates/AP.SPL~  //template to spell with apply effect list
+        feat_type = ~AP~ // ~GA~ or ~AP~
+        
+    BEGIN
+        OUTER_SPRINT resource EVALUATE_BUFFER ~%name%~
+        COPY_EXISTING ~%caption%.SPL~ ~override/%caption%.SPL~
+            IF (index > 1) BEGIN
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+            END  
+        ACTION_IF (~%feat_type%~ STR_EQ ~GA~)   BEGIN
+            COPY ~%ga_template%~   ~override/%caption%%index%.SPL~
+                LPF ALTER_SPELL_EFFECT  INT_VAR resource END
+        END
+        ELSE BEGIN
+            COPY ~%ap_template%~   ~override/%caption%%index%.SPL~
+                LPF ALTER_SPELL_EFFECT  INT_VAR resource END
+        END
+        OUTER_SPRINT resource   EVALUATE_BUFFER ~%caption%%index%~
+        COPY_EXISTING ~%caption%%index%.SPL~   ~override/%caption%%index%.SPL~
+            LPF ADD_SPELL_EFFECT INT_VAR opcode =206 target = 2 duration = 0 timing = 9 STR_VAR resource END // add protection from subsequent applies
+    
+        COPY_EXISTING ~%caption%.SPL~   ~override~
+            LPF ALTER_SPELL_HEADER INT_VAR header = index min_level = lvl END
+            LPF ALTER_SPELL_EFFECT INT_VAR header = index match_opcode = 326 STR_VAR resource END    
+     
+    END
+/////////////////////////////////////////////////////////////////////////////////
+DEFINE_ACTION_FUNCTION ~ADD_FEATS_2DA~
+	INT_VAR	
+        delay = 0
+	STR_VAR
+		clab=~~
+		mask_file=~~
+		2DA_file=~~
+		caption=~~
+        ga_template = ~3ed/SpellTemplates/GA.SPL~  //template to spell with give innate ability
+        ap_template = ~3ed/SpellTemplates/AP.SPL~  //template to spell with apply effect list
+	BEGIN
+        OUTER_SET use_mask = NOT (~%mask_file%~ STR_EQ ~~)   
+        ACTION_CLEAR_ARRAY 2da_feats 
+        ACTION_CLEAR_ARRAY 2da_feat_types     
+		COPY_EXISTING ~%2DA_file%.2DA~ ~override~ 
+            COUNT_2DA_ROWS 3 n_rows        
+            FOR (i=0;i<n_rows;i=i+1) BEGIN
+
+                READ_2DA_ENTRY %i% 0 3 lvl
+                READ_2DA_ENTRY %i% 1 3 type
+                READ_2DA_ENTRY %i% 2 3 name
+                DEFINE_ASSOCIATIVE_ARRAY 2da_feats BEGIN "%lvl%" => "%name%" END
+                DEFINE_ASSOCIATIVE_ARRAY 2da_feat_types BEGIN "%lvl%" => "%type%" END           
+            END
+            
+
+        COPY ~%mask_file%~ ~override/%caption%.SPL~
+            IF (delay > 0) BEGIN
+                LPF  ALTER_SPELL_EFFECT INT_VAR match_opcode = 326 timing = 3 duration = delay END
+            END
+            
+        OUTER_SPRINT clab_line  ~%caption%~
+        OUTER_SET index = 1
+        OUTER_SET n_cols
+        OUTER_FOR (lvl = 1; lvl < n_cols; lvl = i + 1) BEGIN
+            
+        SILENT
+		ACTION_TRY	
+			OUTER_SPRINT name  EVALUATE_BUFFER $2da_feats(~%lvl%~)
+            OUTER_SPRINT feat_type  EVALUATE_BUFFER $2da_feat_types(~%lvl%~)
+            ACTION_IF (use_mask) BEGIN
+                LAF ADD_FEAT_ENTRY INT_VAR lvl = 1 index STR_VAR name caption ga_template ap_template feat_type END                    
+                OUTER_SPRINT clab_line  EVALUATE_BUFFER ~%clab_line%    AP_%caption%~
+                index = index + 1
+            END
+            ELSE BEGIN
+                OUTER_SPRINT clab_line  EVALUATE_BUFFER ~%clab_line%    %feat_type%_%feat_name%~
+            END
+		
+		WITH		
+			DEFAULT
+                OUTER_SPRINT clab_line  EVALUATE_BUFFER ~%clab_line%    ****~
+		END
+        VERBOSE
+        
+        
+        COPY_EXISTING_REGEXP GLOB ~%clab%~ ~override~
+            COUNT_2DA_ROWS 20 "nrows"
+            COUNT_2DA_COLS "ncols"   
+            INSERT_2DA_ROW nrows 20 ~%clab_line%~	
+	END
+
+/////////////////////////////////////////////////////////////////////////////////
+DEFINE_ACTION_FUNCTION ~ADD_FEATS_LVL~
+	INT_VAR
+		min_level=2
+		max_level=20
+		d_level=2
+		add_at_level1=0
+        delay = 0
+        feat_name_indexed = 0
+        feat_name_index_start = 1
+	STR_VAR
+        post_index_suffix = ~~
+		clab=~~
+		mask_file=~~
+		feat_name=~~
+		caption=~~
+        ga_template = ~3ed/SpellTemplates/GA.SPL~  //template to spell with give innate ability
+        ap_template = ~3ed/SpellTemplates/AP.SPL~  //template to spell with apply effect list
+        feat_type = ~AP~ // ~GA~ or ~AP~
+	BEGIN   
+        OUTER_SET index = 1
+        OUTER_SET max_lvl = 40
+        OUTER_SET feat_name_index = feat_name_index_start
+        OUTER_SPRINT name EVALUATE_BUFFER ~%feat_name%~
+        OUTER_SPRINT clab_line EVALUATE_BUFFER ~%caption%~
+        OUTER_SET use_mask = NOT (~%mask_file%~ STR_EQ ~~) 
+        
+        ACTION_IF (use_mask) BEGIN      
+            COPY ~%mask_file%~ ~override/%caption%.SPL~
+                IF (delay > 0) BEGIN
+                    LPF  ALTER_SPELL_EFFECT INT_VAR match_opcode = 326 timing = 3 duration = delay END
+                END
+        END
+
+        ACTION_IF (add_at_level1) BEGIN
+            ACTION_IF (feat_name_indexed) BEGIN
+               OUTER_SPRINT name EVALUATE_BUFFER ~%feat_name%%feat_name_index%~               
+            END
+            ACTION_IF (use_mask) BEGIN
+                LAF ADD_FEAT_ENTRY INT_VAR lvl = 1 index STR_VAR name caption ga_template ap_template feat_type END
+                OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line%    AP_%caption%~
+                OUTER_SET index = index + 1
+            END
+            ELSE BEGIN
+                OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line%    %feat_type%_%name%%post_index_suffix%~
+            END
+            OUTER_SET feat_name_index = feat_name_index + 1
+        END ELSE BEGIN
+            OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line%    ****~
+        END
+    
+        OUTER_FOR (i=2;i<min_level;i=i+1) BEGIN
+            OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line%    ****~
+        END
+    
+        ACTION_IF (min_level == 1) BEGIN
+            OUTER_SET min_level = max_level+1
+        END
+    
+        OUTER_FOR (i=min_level;i<=max_level;i=i+1) BEGIN
+            ACTION_IF (d_level*((i - min_level)/d_level) = (i - min_level)) BEGIN
+                ACTION_IF (feat_name_indexed) BEGIN
+                    OUTER_SPRINT name EVALUATE_BUFFER ~%feat_name%%feat_name_index%%post_index_suffix%~               
+                END
+                ACTION_IF (use_mask) BEGIN
+                    LAF ADD_FEAT_ENTRY INT_VAR lvl = i index STR_VAR name caption ga_template ap_template feat_type END
+                    OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line%    AP_%caption%~
+                    OUTER_SET index = index + 1
+                END
+                ELSE BEGIN
+                    OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line%    %feat_type%_%name%~
+                END
+                OUTER_SET feat_name_index = feat_name_index + 1
+            END 
+            ELSE BEGIN
+                OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line%    ****~
+            END
+        END
+    
+        OUTER_FOR (i=max_level+1;i<=max_lvl;i=i+1) BEGIN	
+            OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line%    ****~
+        END
+         	
+        COPY_EXISTING_REGEXP GLOB ~%clab%~ ~override~
+            COUNT_2DA_ROWS 20 "nrows"
+            COUNT_2DA_COLS "ncols"		
+            INSERT_2DA_ROW nrows 20 ~%clab_line%~	
+	END
+    
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+DEFINE_ACTION_FUNCTION ~ADD_FEATS_MASK~
+	INT_VAR
+        mask = 0
+        delay = 0
+        feat_name_indexed = 0
+        feat_name_index_start = 1
+	STR_VAR
+        post_index_suffix = ~~
+		clab=~~
+		mask_file=~~
+		feat_name=~~
+		caption=~~
+        ga_template = ~3ed/SpellTemplates/GA.SPL~  //template to spell with give innate ability
+        ap_template = ~3ed/SpellTemplates/AP.SPL~  //template to spell with apply effect list
+        feat_type = ~AP~ // ~GA~ or ~AP~
+	BEGIN    
+        OUTER_SET index = 1
+        OUTER_SET max_lvl = 40
+        OUTER_SPRINT clab_line EVALUATE_BUFFER ~%caption%~
+        OUTER_SET feat_name_index = feat_name_index_start
+        OUTER_SPRINT name EVALUATE_BUFFER ~%feat_name%~
+              
+        OUTER_SET use_mask = NOT (~%mask_file%~ STR_EQ ~~) 
+        
+        ACTION_IF (use_mask) BEGIN      
+            COPY ~%mask_file%~ ~override/%caption%.SPL~
+                IF (delay > 0) BEGIN
+                    LPF  ALTER_SPELL_EFFECT INT_VAR match_opcode = 326 timing = 3 duration = delay END
+                END
+        END
+                       
+        OUTER_SET k=1
+        OUTER_FOR (i=1;i<max_lvl;i=i+1) BEGIN		
+            ACTION_IF (k BAND mask) BEGIN
+                ACTION_IF (feat_name_indexed) BEGIN
+                    OUTER_SPRINT name EVALUATE_BUFFER ~%feat_name%%feat_name_index%%post_index_suffix%~               
+                END
+                ACTION_IF (use_mask) BEGIN
+                    LAF ADD_FEAT_ENTRY INT_VAR lvl = i index STR_VAR name caption ga_template ap_template feat_type END
+                    OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line%    AP_%caption%~
+                    OUTER_SET index = index + 1
+                END
+                ELSE BEGIN
+                    OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line%    %feat_type%_%name%~
+                END
+                OUTER_SET feat_name_index = feat_name_index + 1                
+            END
+            ELSE BEGIN
+                OUTER_SPRINT clab_line EVALUATE_BUFFER ~%clab_line% ****     ~
+            END
+                        
+            OUTER_SET k=k*2
+        END 
+   	
+        COPY_EXISTING_REGEXP GLOB ~%clab%~ ~override~
+            COUNT_2DA_ROWS 20 "nrows"
+            COUNT_2DA_COLS "ncols"		
+            INSERT_2DA_ROW nrows 20 ~%clab_line%~	
+	END  

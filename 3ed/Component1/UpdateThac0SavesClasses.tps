@@ -1,145 +1,137 @@
 	
 	
     
-    COPY ~3ed/Core/THAC0/THAC0H.SPL~ ~override~ //high thaco for swashbucklers
 	//thaco regularization
 	OUTER_FOR (i=0;i<=20;i=i+1) BEGIN
 		COPY ~3ed/Core/THAC0/THAC0.SPL~ ~override/THAC0%i%.SPL~
 			LPF ALTER_SPELL_EFFECT INT_VAR parameter1=i END
 	END
 	//medium thaco
-	COPY ~3ed/Core/THAC0/THAC0M.SPL~ ~override/THAC0M.SPL~
-		FOR (i=1;i<=30;i=i+1) BEGIN
-			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=0 END
+    OUTER_FOR (i=1;i<=30;i=i+1) BEGIN
+        COPY ~3ed/Core/THAC0/THAC0M.SPL~ ~override/THAC0M%i%.SPL~
+			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=1 speed=0 END
 				SET r = 20 - (3*i/4)
                 PATCH_IF (r<5) BEGIN
                     SET r=5
                 END
 				SPRINT resource EVALUATE_BUFFER ~THAC0%r%~
-				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=8 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/cleric
-				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=16 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/druid
-				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=7 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/mage
-                LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=17 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/cleric/mage
-                LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=10 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/mage/thief
-				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=9 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/thief
-                LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=18 parameter2=105 timing=0 duration=1 STR_VAR resource END // cleric/ranger
-				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=19 parameter2=105 timing=0 duration=1 STR_VAR resource END // sorceror for battle caster
-		END
-	//low thac0
-	COPY ~3ed/Core/THAC0/THAC0M.SPL~ ~override/THAC0L.SPL~
+				LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=8 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/cleric
+				LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=16 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/druid
+				LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=7 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/mage
+                LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=17 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/cleric/mage
+                LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=10 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/mage/thief
+				LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=9 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/thief
+                LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=18 parameter2=105 timing=0 duration=1 STR_VAR resource END // cleric/ranger
+				LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=19 parameter2=105 timing=0 duration=1 STR_VAR resource END // sorceror for battle caster
+        
+        OUTER_SET high_r = 20 - i
+        ACTION_IF (high_r < 0) BEGIN
+            high_r = 0
+        END
+        COPY_EXISTING ~THAC0%high_r%.SPL~   ~override/THCAC0H%i%.SPL~
+        
+	COPY ~3ed/Core/THAC0/THAC0M.SPL~ ~override/THAC0L%i%.SPL~
 		FOR (i=1;i<=30;i=i+1) BEGIN
-			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=0 END
+			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=1 speed=0 END
 				SET r = 20 - (i/2)
                 PATCH_IF (r<10) BEGIN
                     SET r=10
                 END
 				SPRINT resource EVALUATE_BUFFER ~THAC0%r%~
-				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=13 parameter2=105 timing=0 duration=1 STR_VAR resource END // mage/thief
-				LPF ADD_SPELL_EFFECT INT_VAR header=i opcode=326 target=2 parameter1=14 parameter2=105 timing=0 duration=1 STR_VAR resource END // cleric/mage
-		END
-        
-
-    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 30 STR_VAR input_name = ~THAC0H~ output_name = ~THACH~ END
-    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 30 STR_VAR input_name = ~THAC0M~ output_name = ~THACM~ END
-    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 30 STR_VAR input_name = ~THAC0L~ output_name = ~THACL~ END
+				LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=13 parameter2=105 timing=0 duration=1 STR_VAR resource END // mage/thief
+				LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=14 parameter2=105 timing=0 duration=1 STR_VAR resource END // cleric/mage
+		END         
+	END
+                
 	//high thaco for swashbuckler
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 indexed = 1
-						STR_VAR clab=~CLABTH04\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~THACH~ END		
+	LAF ADD_FEATS_LVL INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 feat_name_indexed = 1
+						STR_VAR clab=~CLABTH04\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
+						feat_name=~THAC0H~ caption=~THACH~ END		
 	//medium thaco (fighter-*, ranger - clr*  and battle caster, f/m/t, f/m/c)
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 indexed = 1
-						STR_VAR clab=~\(\(CLABFI01\)\|\(CLABSO01\)\|\(CLABRN01\)\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~THACM~ END		
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 feat_name_indexed = 1
+						STR_VAR clab=~\(\(CLABFI01\)\|\(CLABSO01\)\|\(CLABRN01\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
+						feat_name=~THAC0M~ caption=~THACM~ END		
 	//low thaco (cleric/mage and mage/thief)
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 indexed = 1
-						STR_VAR clab=~\(\(CLABTH01\)\|\(CLABPR01\)\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~THACL~ END		
-                        
-                        
-	
+	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 feat_name_indexed = 1
+						STR_VAR clab=~\(\(CLABTH01\)\|\(CLABPR01\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
+						feat_name=~THAC0L~ caption=~THACL~ END	
+                                             	
 	COPY ~3ed/Core/APR~ ~override~
-    COPY_EXISTING ~APR_H.SPL~ ~override~
-    FOR (i=2;i<=3;i=i+1) BEGIN
-        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-        LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = 1 + 5*i END
-        SPRINT resource EVALUATE_BUFFER ~APRBON%i%~	
-        LPF ALTER_SPELL_EFFECT INT_VAR header = i STR_VAR resource END
-    END
-    
-    COPY_EXISTING ~APR_M.SPL~ ~override~ //bonus attack at lvl 8(1) and 15
-        LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-        LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 15 END
-        SPRINT resource EVALUATE_BUFFER ~APRBON2~	
-        LPF ALTER_SPELL_EFFECT INT_VAR header = 2 STR_VAR resource END
-        
-    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 3 STR_VAR input_name = ~APR_H~ output_name = ~APR_H~ END
-    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 2 STR_VAR input_name = ~APR_M~ output_name = ~APR_M~ END 
-     
+  
 	//high apr
-    LAF ADD_BONUS_FEATS INT_VAR min_level=6 max_level=20 d_level=5 add_at_level1=0 indexed = 1
-                    STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~~
-                    feat_type_file=~~ caption=~APR_H~ END	
-                        
-    //create high apr clab_line
-    
-   
-	//medium apr
-		LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=20 d_level=7 add_at_level1=0 indexed = 1
-						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~APR_M~ END	
-                        
+    LAF ADD_BONUS_FEATS INT_VAR min_level=6 max_level=20 d_level=5 add_at_level1=0 feat_name_indexed = 1
+                    STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/APR_H.SPL~
+                    feat_name=~APRBON~ caption=~APRH~ END	
+    //medium apr
+    LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=20 d_level=7 add_at_level1=0 feat_name_indexed = 1
+                STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/APR_M.SPL~
+                feat_name=~APRBON~ caption=~APRM~ END
 	//remove line from swashbuckler and replace it with high apr
 	COPY_EXISTING ~CLABTH04.2DA~ ~override~
 		COUNT_2DA_ROWS 20 "nrows"
 		SET nrows=nrows - 1
 		REMOVE_2DA_ROW nrows 20
-        SET nrows = nrows - 1
-        INSERT_2DA_ROW nrows 20 ~APR_SW  ****   ****   ****   ****   ****   AP_APRBON   ****   ****   ****   ****   AP_APRBON2   ****   ****   ****   ****   AP_APRBON3   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****~	
-        		
+    LAF ADD_BONUS_FEATS INT_VAR min_level=6 max_level=20 d_level=5 add_at_level1=0 feat_name_indexed = 1
+                    STR_VAR clab=~CLABTH04\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
+                    feat_name=~APRBON~ caption=~SWAPRH~ END        
 	//low apr
-		LAF ADD_BONUS_FEATS INT_VAR min_level=11 max_level=20 d_level=10 add_at_level1=0 
-						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~APR_L~ END	
-	//remove line from battle sorceror and replace it with medium apr
-		COPY_EXISTING ~CLABSO01.2DA~ ~override~
-		COUNT_2DA_ROWS 20 "nrows"
-		SET nrows=nrows - 1
-		REMOVE_2DA_ROW nrows 20
-        SET nrows = nrows - 1
-        INSERT_2DA_ROW nrows 20 ~APR_BC  ****   ****   ****   ****   ****   ****   ****   AP_APRBON   ****   ****   ****   ****   ****   ****   AP_APRBON2   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****   ****~	
-		
+	LAF ADD_BONUS_FEATS INT_VAR min_level=11 max_level=20 d_level=10 add_at_level1=0 
+					STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/APR_L.SPL~
+						feat_type_file=~APRBON~ caption=~APRL~ END                
+                        
+  
 	
-	//saving throws regularization
-	COPY ~3ed/Core/THAC0/THAC0H.SPL~ ~override/SAVESDH.SPL~ //high thaco for swashbucklers
-		FOR (i=1;i<=30;i=i+1) BEGIN       
-            SET save_val = (12 - i/2)
-            PATCH_IF (save_val<6) BEGIN
-                SET save_val = 2
-            END
-			LPF ALTER_SPELL_EFFECT INT_VAR header=i parameter1=save_val new_opcode = 33  END //saving throw vs death value
-		END
-	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESWH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 34  END //saving throw vs wand
-	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESPH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 35  END //saving throw vs polymorph
-	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESBH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 36  END //saving throw vs breath
-	COPY_EXISTING ~SAVESDH.SPL~  ~override/SAVESSH.SPL~ LPF ALTER_SPELL_EFFECT INT_VAR new_opcode = 37  END //saving throw vs spell
+
     
-    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 30 STR_VAR input_name = ~SAVESWH~ output_name = ~SAVWH~ END
-    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 30 STR_VAR input_name = ~SAVESPH~ output_name = ~SAVPH~ END
-    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 30 STR_VAR input_name = ~SAVESBH~ output_name = ~SAVBH~ END
-    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 30 STR_VAR input_name = ~SAVESSH~ output_name = ~SAVSH~ END
-    LAF CREATE_SPL_COPIES_WITH_PROTECTION INT_VAR index_start = 1 index_end = 30 STR_VAR input_name = ~SAVESDH~ output_name = ~SAVDH~ END
+    
+    
+    OUTER_FOR (i=1;i<=30;i=i+1) BEGIN
+        OUTER_SET save_val = (12 - i/2)
+        ACTION_IF (save_val<6) BEGIN
+                SET save_val = 2
+        END
+        OUTER_SET prev_i = 0 - 1
+        COPY ~3ed/Core/THAC0/THAC01.SPL~ ~override/SAVEDH%i%.SPL~ 
+			LPF ALTER_SPELL_EFFECT INT_VAR header=i parameter1=save_val new_opcode = 33  END //saving throw vs death value
+            SPRINT resource EVALUATE_BUFFER ~SAVEDH%prev_i%~
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 timing=0 duration=1  STR_VAR resource END //remove effects 
+        COPY ~3ed/Core/THAC0/THAC01.SPL~ ~override/SAVEWH%i%.SPL~ 
+			LPF ALTER_SPELL_EFFECT INT_VAR header=i parameter1=save_val new_opcode = 34  END //saving throw vs wand value
+            SPRINT resource EVALUATE_BUFFER ~SAVEWH%prev_i%~
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 timing=0 duration=1  STR_VAR resource END //remove effects 
+        COPY ~3ed/Core/THAC0/THAC01.SPL~ ~override/SAVEPH%i%.SPL~ 
+            SPRINT resource EVALUATE_BUFFER ~SAVEPH%prev_i%~
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 timing=0 duration=1  STR_VAR resource END //remove effects 
+			LPF ALTER_SPELL_EFFECT INT_VAR header=i parameter1=save_val new_opcode = 35  END //saving throw vs polymorph value
+        COPY ~3ed/Core/THAC0/THAC01.SPL~ ~override/SAVEBH%i%.SPL~ 
+            SPRINT resource EVALUATE_BUFFER ~SAVEBH%prev_i%~
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 timing=0 duration=1  STR_VAR resource END //remove effects 
+			LPF ALTER_SPELL_EFFECT INT_VAR header=i parameter1=save_val new_opcode = 36  END //saving throw vs breath value
+        COPY ~3ed/Core/THAC0/THAC01.SPL~ ~override/SAVESH%i%.SPL~ 
+            SPRINT resource EVALUATE_BUFFER ~SAVESH%prev_i%~
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 timing=0 duration=1  STR_VAR resource END //remove effects 
+			LPF ALTER_SPELL_EFFECT INT_VAR header=i parameter1=save_val new_opcode = 37  END //saving throw vs spell value
+            
+	END
+
 		
 	//reflex saves to kensai,barbarian and rangers
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 indexed = 1 STR_VAR clab=~\(\(CLABRN.*\)\|\(CLABFI0[4-5]\)\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~SAVWH~ END
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 indexed = 1 STR_VAR clab=~\(\(CLABRN.*\)\|\(CLABFI0[4-5]\)\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~SAVBH~ END
+	LAF ADD_FEATS_LVL INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 feat_name_indexed = 1 
+                        STR_VAR clab=~\(\(CLABRN.*\)\|\(CLABFI0[4-5]\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
+						feat_name=~SAVEWH~ caption=~SAVWHA~ END
+	LAF ADD_FEATS_LVL INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 feat_name_indexed = 1 
+                        STR_VAR clab=~\(\(CLABRN.*\)\|\(CLABFI0[4-5]\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
+						feat_name=~SAVEBH~ caption=~SAVBHA~ END
 	
 	//spell saves for bard, hexblade dwarven defender and paladin
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 indexed = 1 STR_VAR clab=~\(\(CLABBA.*\)\|\(CLABPA.*\)\|\(CLABFI03\)\|\(CLABFI06\)\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~SAVSH~ END	
+	LAF ADD_FEATS_LVL INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 feat_name_indexed = 1 
+                        STR_VAR clab=~\(\(CLABBA.*\)\|\(CLABPA.*\)\|\(CLABFI03\)\|\(CLABFI06\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
+						feat_name=~SAVESH~ caption=~SAVSHA~ END	
 	//fort saves for battle caster	
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 indexed = 1 STR_VAR clab=~CLABSO01\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~SAVDH~ END	
-	LAF ADD_BONUS_FEATS INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 indexed = 1 STR_VAR clab=~CLABSO01\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~SAVPH~ END	
+	LAF ADD_FEATS_LVL INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 feat_name_indexed = 1 
+                        STR_VAR clab=~CLABSO01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
+						feat_name=~SAVEDH~ caption=~SAVDH~ END	
+                        
+	LAF ADD_FEATS_LVL INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 feat_name_indexed = 1 
+                        STR_VAR clab=~CLABSO01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
+						feat_name=~SAVEPH~ caption=~SAVPH~ END	

@@ -5,9 +5,12 @@
 	//saving throw bonuses based on stats
 	COPY ~3ed/Core/Savingthrows~ ~override~	
 	
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLAB.+\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  caption=~DEXSAVFT~ END	
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLAB.+\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  caption=~CONSAVFT~ END	
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 STR_VAR clab=~\(\(CLAB.+\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  caption=~WISSAVFT~ END	
+	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~\(\(CLAB.+\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  feat_name=~DEXSAVFT~ caption = ~DEXSAVA~ END	
+	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~\(\(CLAB.+\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  feat_name=~CONSAVFT~ caption = ~CONSAVA~ END	
+	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~\(\(CLAB.+\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  feat_name=~WISSAVFT~ caption = ~WISSAVA~ END	
 	
 	//--------------------------------------------------------------------------------------------------------------------------------------------//	
 	//bonus spells per level based on stats	
@@ -24,3 +27,16 @@
 	COPY ~3ed/Core/BonusSpells/SPLBON1.SPL~ ~override/SPLMAGMD.SPL~ //bonus wizard spells with mask
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target = 2 duration=1 parameter1=19 parameter2 =115 STR_VAR resource=~SPLINWMD~ END//for non sorcerors
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target = 2 duration=1 parameter1=19 parameter2 =105 STR_VAR resource=~SPLCHWMD~ END//for sorcerers
+        
+        
+    LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~\(\(CLABPR.+\)\|\(CLABDR.+\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  feat_name=~SPLWIPMD~ caption = ~SPWIPA~ END	
+    LAF ADD_FEATS_LVL INT_VAR min_level=4 max_level=4 d_level=1 add_at_level1=0 
+        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~\(\(CLABPA.+\)\|\(CLABRN.+\)\)\.2DA~  feat_name=~SPLWIPMD~ caption = ~SPWIRA~ END	
+	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~CLABMA.+\.2DA~  feat_name=~SPLMAGMD~ caption = ~SPMAGA~ END	
+	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~CLABBA.+\.2DA~  feat_name=~SPLCHWMD~ caption = ~SPCHWA~ END
+    LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~CLABSH.+\.2DA~  feat_name=~SPLCHPMD~ caption = ~SPCHPA~ END
+    

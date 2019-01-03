@@ -42,6 +42,8 @@ DEFINE_ACTION_FUNCTION ~ADD_BONUS_SPELLS~
 		
 		
 	COPY ~%folder_name%SPLBONMD.SPL~  ~override\%game_name%MD.SPL~
+    	SPRINT resource EVALUATE_BUFFER ~%game_name%MD~	
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 timing=0 duration=1 parameter1=0 parameter2=0 STR_VAR resource END //remove previous applies if any
 		SPRINT resource EVALUATE_BUFFER ~%game_name%1~		
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 timing=1 duration=1 STR_VAR resource END //initial apply			
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=272 target=2 timing=9 duration=1 parameter1=5 parameter2=3 STR_VAR resource END //subsequent applies		
@@ -49,6 +51,5 @@ DEFINE_ACTION_FUNCTION ~ADD_BONUS_SPELLS~
 		SPRINT resource EVALUATE_BUFFER ~%game_name%0~		
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=272 target=2 timing=9 duration=1 parameter1=5 parameter2=3 STR_VAR resource END //subsequent removes
 		
-		SPRINT resource EVALUATE_BUFFER ~%game_name%MD~	
-		LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 timing=9 duration=1 parameter1=0 parameter2=0 STR_VAR resource END //add protection from itself		
+		
 	END
