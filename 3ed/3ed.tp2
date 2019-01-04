@@ -342,7 +342,7 @@ INCLUDE ~3ed/INCREMENT_SPELL_DC.tph~
 INCLUDE ~3ed/CREATE_PSEUDO_SPELL_SELECTION.tph~
 
 
-INCLUDE ~3ed/ADD_BONUS_FEATS.tph~
+INCLUDE ~3ed/ADD_FEATS.tph~
 INCLUDE ~3ed/ADD_SPELL_PROGRESSIVE_SAVES.tph~
 INCLUDE ~3ed/ADD_PSEPB_FEAT.tph~
 
@@ -422,6 +422,7 @@ END
 BEGIN @6
 	INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
 	INCLUDE ~3ed/UPDATE_SP_CASTING_LEVEL.tph~
+    INCLUDE ~3ed/ADD_FEATS.tph~
 	
 	OUTER_SET cure_level=241
 	OUTER_SET summ_level=242
@@ -435,6 +436,9 @@ BEGIN @6
         INCLUDE ~3ed/Component6/UpdateSpells.tps~
     
     END
+    
+    LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
+                    STR_VAR clab=~\(\(CLABPR.*\)\|\(CLABDR0[1-3]\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name=~GSPCAST~ caption = ~SPNTCST~ END
 	
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Animal Companion
@@ -454,7 +458,7 @@ BEGIN @7
 //////////////////////////////////////////////////////////////////////////////////////////////////
 //////Ranger Favored Enemies
 BEGIN @8
-    INCLUDE ~3ed/ADD_BONUS_FEATS.tph~
+    INCLUDE ~3ed/ADD_FEATS.tph~
     INCLUDE ~3ed/UPDATE_TLK_ENTRIES.tph~
     INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
     INCLUDE ~3ed/CREATE_SPL_COPIES_WITH_PROTECTION.tph~
@@ -506,7 +510,7 @@ BEGIN @14
 ///////////////////////////////////////////////////////////////////////////////////////////////
 //allow arcane casters who learn spells to aquire 1-2 scrolls per level
 BEGIN @15
-    INCLUDE ~3ed/ADD_BONUS_FEATS.tph~
+    INCLUDE ~3ed/ADD_FEATS.tph~
     INCLUDE ~3ed/GET_SPELL_EFFECT_VALUES.tph~
     INCLUDE ~3ed/CREATE_SPL_COPIES_WITH_PROTECTION.tph~
     

@@ -39,5 +39,5 @@
         LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 timing=9 STR_VAR resource = ~DFTCRE~ END
         
         //add domains as bonus feat to clerics at lvl1
-	LAF ADD_BONUS_FEATS INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 delay = 5
-						STR_VAR clab=~\(\(CLABPR.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRCC.SPL~ feat_type_file=~DFTCRE~ caption=~CDOM_FT~ END
+	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 delay = 5
+						STR_VAR clab=~\(\(CLABPR.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRCC.SPL~ feat_name=~DFTCRE~ caption=~CDOM_FT~ END

@@ -80,8 +80,17 @@
 						feat_name=~SMLRCBN~ caption=~SMLRC~ END
 
 //fighter and swashbuckler weapon training (+1 to hit, damage at lvls 8, 16, 24)
-	LAF ADD_BONUS_FEATS INT_VAR min_level=8 max_level=25 d_level=8 add_at_level1=0 indexed = 1
+	LAF ADD_FEATS_LVL INT_VAR min_level=8 max_level=25 d_level=8 add_at_level1=0 indexed = 1
 						STR_VAR clab=~\(\(CLABFI01\)\|\(CLABTH04\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/F_THF.SPL~
 						feat_name=~SPCL141~ caption=~WPTRFT~ END
 
-		
+
+
+//bonus feats for swashbuckler (weapon finesse and insightfull strike)
+	LAF ADD_FEATS_LVL INT_VAR min_level=8 max_level=1 d_level=8 add_at_level1=1
+						STR_VAR clab=~CLABTH04\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
+						feat_name=~SFT99_1~ caption=~SWBFT1~ END
+	LAF ADD_FEATS_LVL INT_VAR min_level=8 max_level=1 d_level=8 add_at_level1=1
+						STR_VAR clab=~CLABTH04\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
+						feat_name=~SFT101_1~ caption=~SWBFT2~ END
+                        

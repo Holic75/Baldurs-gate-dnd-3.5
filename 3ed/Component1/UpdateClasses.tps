@@ -1,6 +1,7 @@
 	INCLUDE ~3ed/ADD_SMITE_EVIL_BASE.tph~
 	INCLUDE ~3ed/ADD_SMITE_EVIL_VARIATION.tph~
-
+//---------------------ranger twf fix-----------------------
+ COPY ~3ed/Classes/Ranger~ ~override~
 //--------------------- kensai -----------------------------
 //replace permanent THAC0/dmg bonus with persistent (to be able to block it with weapons)
 

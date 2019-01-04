@@ -6,12 +6,17 @@
 	COPY ~3ed/Core/Savingthrows~ ~override~	
 	
 	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~\(\(CLAB.+\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  feat_name=~DEXSAVFT~ caption = ~DEXSAVA~ END	
+        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~\(\(CLAB.+\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  feat_name=~DEXSAVFT~ caption = ~ADEXSAV~ END	
 	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~\(\(CLAB.+\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  feat_name=~CONSAVFT~ caption = ~CONSAVA~ END	
+        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~\(\(CLAB.+\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  feat_name=~CONSAVFT~ caption = ~ACONSAV~ END	
 	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~\(\(CLAB.+\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  feat_name=~WISSAVFT~ caption = ~WISSAVA~ END	
-	
+        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~\(\(CLAB.+\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~  feat_name=~WISSAVFT~ caption = ~AWISSAV~ END	
+
+    //skill bonuses
+	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~\(\(CLABTH.+\)\|\(CLABMO.+\)\)\.2DA~  feat_name=~INTSKFT~ caption = ~AINTSK~ END	        
+	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
+        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~\(\(CLABTH.+\)\|\(CLABSH.+\)\|\(CLABMO.+\)\)\.2DA~  feat_name=~WISSKFT~ caption = ~AWISSK~ END
 	//--------------------------------------------------------------------------------------------------------------------------------------------//	
 	//bonus spells per level based on stats	
 	COPY ~3ed/Core/SpellsPerLvl~ ~override~
