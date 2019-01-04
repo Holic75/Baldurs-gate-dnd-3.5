@@ -2167,20 +2167,20 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 
 - Shield now gives +4 AC bonus which is cumulative with armor, but not with shields  
 - Chill Touch now acts as close range spell (instead of weapon) and deals 1d8 points of cold damage and bestows -2 penalty to THAC0  
-- Burning hands is now and area effect spell (15 ft cone)  
+- Burning hands is now an area effect spell (15 ft cone)  
 - The saving throw penalties against Spook now no longer increase with caster level  
 - If creatures under effect of Sleep are being attacked, they wake up  
-- Shocking Grasp now acts as close range spell (instead of weapon) dealing 1d6 electrical damage per level  
+- Shocking Grasp now acts as close range spell (instead of weapon) dealing 1d6 electrical damage per level (max 5d6) 
 - Ghoul touch now acts as close range spell (instead of weapon)  
 - Horror duration was reduced to 3 rounds  
 - Dispel Magic and Remove Magic spells now  dispel with probability equal to 30% + 1% per level (twice for Inquisitors)  
 - Animate Dead now summons two skeletons instead of one  
 - Enchanted Weapon now gives + 1 enchantment bonus / 4 caster levels  and also provides corresponding bonuses to THAC0 and damage (depending on original weapon enchantment), clerics can also cast it   
-- Tenser's Transformation now sets THAC0 to that of a fighter of equal level gives +1 APR, +2 To Hit and Damage bonus and doubles caster's HP  
+- Tenser's Transformation now sets THAC0 to that of a fighter of equal level, gives +1 APR, +2 To Hit and Damage bonus and doubles caster's HP  
 - Magical Stone now creates one magical sling bullet per priest level (+1 THAC0, 1d6+1 damage or 2d6+2 against undead)  
 - Bless is now a cleric only spell  
 - Shillelagh duration was increased to 5 rounds/level, shillelagh damage was increased to 2d6  
-- Barkskin now gives +3 bonus to AC (+4 at level 7, +5 at level 13) which is cumulative with everything else and +1 bonus to saving throws (except vs. Spell)    
+- Barkskin now gives +3 bonus to AC (+4 at level 7, +5 at level 13) which is cumulative with everything else, and +1 bonus to saving throws (except vs. Spell)    
 - Flame Blade spell was removed, it is now replaced with druid only Flame Weapon spell which makes target deal +1d6 fire damage bonus on every attack for the duration of the spell  
 - Goodberries now heal 3 HP each when eaten  
 - Spiritual Hammer is now a throwing weapon with +1 enchantment, THAC0 and Damage bonus per 3 caster levels (up to +5 at lvl 15)    
@@ -2191,7 +2191,7 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Call Lightning can be now cast indoors and deals 1d6 points of electrical damage per caster level up to 10d6  
 - Cloak of fear radius was increased to 5 ft  
 - Holy Power now sets caster's THAC0 to that of a fighter of the same level, gives +1/2 APR and +2 bonus to strength  
-- Cause Serious Wounds is now a close range spell dealing 26 points of damage  (with saveigthrow vs. Spell for half)  
+- Cause Serious Wounds is now a close range spell dealing 28 points of damage  (with saveigthrow vs. Spell for half)  
 - Cure Serious wounds now heals 28 HP  
 - Slay Living now deals 2d6+9 damage to target if it succeeds on Save vs. Death  
 - Flame Strike is now and AOE spell with 5 ft radius  
@@ -2527,7 +2527,7 @@ Additionally Druids gain access to the following spells: Burning Hands (as 1st l
  False Dawn (as 6th level spell), Sunray (as 7th level spell), Regeneration (as 7th level spell).  
 
 ## 7. Racial Enemies
-Now racial enemies can be chosen at level 1 and, depending on class) at every 5th or 10th level, the corresponding bonuses grow with level and also vary by class.   
+Now racial enemies can be chosen at level 1 and (depending on class) at every 5th or 10th level, corresponding bonuses grow with level and also vary by class.   
 Additionally following races were added to the selection: Humans, Elves, Half-elves, Gnomes, Dwarves, Halflings, Half-orcs.
 
 ## 8. NPC

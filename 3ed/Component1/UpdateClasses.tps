@@ -23,7 +23,7 @@
     END
     
     COPY ~3ed/Classes/FeatTables/KENSAI_FEATS.2DA~  ~override~
-        LPF ADD_FEATS_2DA   STR_VAR clab=~CLABFI04\.2DA~ caption=~KENABI~ 2DA_file = ~KENSAI_FEATS~
+        LAF ADD_FEATS_2DA   STR_VAR clab=~CLABFI04\.2DA~ caption=~KENABI~ 2DA_file = ~KENSAI_FEATS~
                                     mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~  END
 
     //kensai bonuses regularization
@@ -69,7 +69,7 @@
 	COPY_EXISTING ~GVLAYHDS.SPL~ ~override~
 		LPF ALTER_SPELL_EFFECT STR_VAR resource = ~SPCL102~ END //lay on hands   !!!!!!!!!!!!!!!!! same for all games
     LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1    
-        STR_VAR clab=~\(\(CLABPA01\)\|\(CLABPA02\)\|\(CLABPA06\)\.2DA~  mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ 
+        STR_VAR clab=~\(\(CLABPA01\)\|\(CLABPA02\)\|\(CLABPA06\)\)\.2DA~  mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ 
             feat_name = ~LAYHND1~ caption=~PLAYHD~ END // initial lay on hands        
 
     
@@ -188,7 +188,7 @@
             SET prev = i - 1
             SPRINT resource ~INQMR%prev%~
             LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 insert_point = 0 duration = 1 STR_VAR resource END
-            LPF ALTER_SPELL_EFFECT INT_VAR header = i match_opcode = 166 parameter1 = 25 + i*2 END
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 166 parameter1 = 25 + i*2 END
     END
     LAF ADD_FEATS_LVL INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 feat_name_indexed = 1
         STR_VAR clab=~CLABPA03\.2DA~  mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name = ~INQMR~ caption=~IINQMR~ END 
@@ -327,15 +327,15 @@
     
 
     COPY ~3ed/Classes/FeatTables/HEXBLADE_FEATS.2DA~  ~override~
-        LPF ADD_FEATS_2DA   STR_VAR clab=~CLABFI03\.2DA~ caption=~HEXABI~ 2DA_file = ~HEXBLADE_FEATS~
+        LAF ADD_FEATS_2DA   STR_VAR clab=~CLABFI03\.2DA~ caption=~HEXABI~ 2DA_file = ~HEXBLADE_FEATS~
                                     mask_file=~3ed/Feats/FeatAttribution/SFTCREF.SPL~  END        
 	//-------------------------------monk-------------------------
 	//(ac bonus, wis ac bonus, flurry of blows)
     COPY ~3ed/Classes/FeatTables/MONK_FEATS.2DA~  ~override~
-        LPF ADD_FEATS_2DA   STR_VAR clab=~CLABMO.*\.2DA~ caption=~MACABI~ 2DA_file = ~MONK_FEATS~
+        LAF ADD_FEATS_2DA   STR_VAR clab=~CLABMO.*\.2DA~ caption=~MACABI~ 2DA_file = ~MONK_FEATS~
                                     mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~  END 
     COPY ~3ed/Classes/FeatTables/MONK_FLURRY.2DA~  ~override~
-        LPF ADD_FEATS_2DA   STR_VAR clab=~CLABMO.*\.2DA~ caption=~MFLABI~ 2DA_file = ~MONK_FLURRY~
+        LAF ADD_FEATS_2DA   STR_VAR clab=~CLABMO.*\.2DA~ caption=~MFLABI~ 2DA_file = ~MONK_FLURRY~
                                     mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~  END                                    
 	COPY ~3ed/Classes/Monk~ ~override~
   
@@ -487,7 +487,7 @@
 				LPF CLONE_EFFECT INT_VAR header = (i - 1)/2 match_opcode = 326 match_parameter2 = 0  multi_match = 1 END
 			END	
 			
-        LPF ADD_FEATS_2DA   STR_VAR clab=~CLATH03\.2DA~ caption=~NACABI~ 2DA_file = ~MONK_FEATS~
+        LAF ADD_FEATS_2DA   STR_VAR clab=~CLABTH03\.2DA~ caption=~NACABI~ 2DA_file = ~MONK_FEATS~
                                     mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~  END
 
         LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1
@@ -1385,7 +1385,7 @@ END
 
     //bonus berserker feats
     COPY ~3ed/Classes/FeatTables/BERSERKER_FEATS.2DA~  ~override~
-        LPF ADD_FEATS_2DA   STR_VAR clab=~CLABFI02\.2DA~ caption=~BRSRAB~ 2DA_file = ~BERSERKER_FEATS~
+        LAF ADD_FEATS_2DA   STR_VAR clab=~CLABFI02\.2DA~ caption=~BRSRAB~ 2DA_file = ~BERSERKER_FEATS~
                                     mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~  END     
 	 //---------------------------jester-------------------------------
 	 //mind shield
@@ -1468,9 +1468,6 @@ END
     
     LAF ADD_FEATS_LVL INT_VAR min_level=8 max_level=8 d_level=1 add_at_level1=0 
         STR_VAR mask_file=~3ed/Feats/FeatAttribution/SFTCREMT.SPL~ clab=~CLABTH01\.2DA~ feat_name = ~MT_VOC~ caption=~MTVOCZ~ END
-
-    COPY_EXISTING ~VOC_MT.SPL~ ~override~
-         LPF ADD_SPELL_EFFECT INT_VAR  opcode = 206 target = 2 duration = 1 timing = 9 STR_VAR resource = ~VOC_MT~ END //protection from subsequent applies
         
         
     //---------------------------------------blade defensive spin update to give +1 ac per 2 levels-------------

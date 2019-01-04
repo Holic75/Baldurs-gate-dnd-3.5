@@ -11,7 +11,7 @@
 
                               
 	LAF ADD_FEATS_LVL INT_VAR min_level=4 max_level=16 d_level=4 add_at_level1=1 feat_name_indexed = 1 //f-m
-						STR_VAR clab=~CLABFI01\.2DA~  mask_file=~3ed/Feats/SmallRacesBonus/FM_FMC.SPL~ feat_name=~ARCST~ 
+						STR_VAR clab=~CLABFI01\.2DA~  mask_file=~3ed/Feats/FeatAttribution/FM_FMC.SPL~ feat_name=~ARCST~ 
                                 post_index_suffix =~FT~ caption=~ARCS1~ END
                                 
 	LAF ADD_FEATS_LVL INT_VAR min_level=6 max_level=12 d_level=6 add_at_level1=1 feat_name_indexed = 1  //bard/fmt
@@ -19,7 +19,7 @@
                                 post_index_suffix =~FT~ caption=~ARCS2~ END                                
                                                        
 	LAF ADD_FEATS_LVL INT_VAR min_level=2 max_level=1 d_level=5 add_at_level1=1 //light armor for sorcerer and mt
-						STR_VAR clab=~\((\CLABSO01\)\|\(CLABTH01\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SORC_MT.SPL~ feat_name=~ARCST1FT~ 
+						STR_VAR clab=~\(\(\CLABSO01\)\|\(CLABTH01\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SORC_MT.SPL~ feat_name=~ARCST1FT~ 
                                 caption=~ARCS3~ END		
 
 	

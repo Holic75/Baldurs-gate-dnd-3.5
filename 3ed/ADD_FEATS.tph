@@ -12,16 +12,16 @@ DEFINE_ACTION_FUNCTION ~ADD_FEAT_ENTRY~
     BEGIN
         OUTER_SPRINT resource EVALUATE_BUFFER ~%name%~
         COPY_EXISTING ~%caption%.SPL~ ~override/%caption%.SPL~
-            IF (index > 1) BEGIN
+            PATCH_IF (index > 1) BEGIN
                 LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
             END  
         ACTION_IF (~%feat_type%~ STR_EQ ~GA~)   BEGIN
             COPY ~%ga_template%~   ~override/%caption%%index%.SPL~
-                LPF ALTER_SPELL_EFFECT  INT_VAR resource END
+                LPF ALTER_SPELL_EFFECT  STR_VAR resource END
         END
         ELSE BEGIN
             COPY ~%ap_template%~   ~override/%caption%%index%.SPL~
-                LPF ALTER_SPELL_EFFECT  INT_VAR resource END
+                LPF ALTER_SPELL_EFFECT  STR_VAR resource END
         END
         OUTER_SPRINT resource   EVALUATE_BUFFER ~%caption%%index%~
         COPY_EXISTING ~%caption%%index%.SPL~   ~override/%caption%%index%.SPL~
@@ -46,7 +46,8 @@ DEFINE_ACTION_FUNCTION ~ADD_FEATS_2DA~
 	BEGIN
         OUTER_SET use_mask = NOT (~%mask_file%~ STR_EQ ~~)   
         ACTION_CLEAR_ARRAY 2da_feats 
-        ACTION_CLEAR_ARRAY 2da_feat_types     
+        ACTION_CLEAR_ARRAY 2da_feat_types
+        ACTION_CLEAR_ARRAY 2da_check        
 		COPY_EXISTING ~%2DA_file%.2DA~ ~override~ 
             COUNT_2DA_ROWS 3 n_rows        
             FOR (i=0;i<n_rows;i=i+1) BEGIN
@@ -55,38 +56,40 @@ DEFINE_ACTION_FUNCTION ~ADD_FEATS_2DA~
                 READ_2DA_ENTRY %i% 1 3 type
                 READ_2DA_ENTRY %i% 2 3 name
                 DEFINE_ASSOCIATIVE_ARRAY 2da_feats BEGIN "%lvl%" => "%name%" END
-                DEFINE_ASSOCIATIVE_ARRAY 2da_feat_types BEGIN "%lvl%" => "%type%" END           
+                DEFINE_ASSOCIATIVE_ARRAY 2da_feat_types BEGIN "%lvl%" => "%type%" END
+                DEFINE_ASSOCIATIVE_ARRAY 2da_check BEGIN "%lvl%" => ~1~ END                     
             END
             
 
         COPY ~%mask_file%~ ~override/%caption%.SPL~
-            IF (delay > 0) BEGIN
+            PATCH_IF (delay > 0) BEGIN
                 LPF  ALTER_SPELL_EFFECT INT_VAR match_opcode = 326 timing = 3 duration = delay END
             END
             
         OUTER_SPRINT clab_line  ~%caption%~
         OUTER_SET index = 1
-        OUTER_SET n_cols
-        OUTER_FOR (lvl = 1; lvl < n_cols; lvl = i + 1) BEGIN
+        OUTER_SET n_cols = 40
+        OUTER_FOR (i = 1; i < n_cols; i = i + 1) BEGIN    
+            SILENT
+            ACTION_TRY	
+                OUTER_SPRINT name  EVALUATE_BUFFER $2da_feats(~%i%~)
+                OUTER_SPRINT feat_type  EVALUATE_BUFFER $2da_feat_types(~%i%~)
+                OUTER_SET check = $2da_check(~%i%~)
+                ACTION_IF (use_mask) BEGIN
+                    LAF ADD_FEAT_ENTRY INT_VAR lvl = i index STR_VAR name caption ga_template ap_template feat_type END                    
+                    OUTER_SPRINT clab_line  EVALUATE_BUFFER ~%clab_line%    AP_%caption%~
+                    OUTER_SET index = index + 1
+                END
+                ELSE BEGIN
+                    OUTER_SPRINT clab_line  EVALUATE_BUFFER ~%clab_line%    %feat_type%_%feat_name%~
+                END
             
-        SILENT
-		ACTION_TRY	
-			OUTER_SPRINT name  EVALUATE_BUFFER $2da_feats(~%lvl%~)
-            OUTER_SPRINT feat_type  EVALUATE_BUFFER $2da_feat_types(~%lvl%~)
-            ACTION_IF (use_mask) BEGIN
-                LAF ADD_FEAT_ENTRY INT_VAR lvl = 1 index STR_VAR name caption ga_template ap_template feat_type END                    
-                OUTER_SPRINT clab_line  EVALUATE_BUFFER ~%clab_line%    AP_%caption%~
-                index = index + 1
+            WITH		
+                DEFAULT
+                    OUTER_SPRINT clab_line  EVALUATE_BUFFER ~%clab_line%    ****~
             END
-            ELSE BEGIN
-                OUTER_SPRINT clab_line  EVALUATE_BUFFER ~%clab_line%    %feat_type%_%feat_name%~
-            END
-		
-		WITH		
-			DEFAULT
-                OUTER_SPRINT clab_line  EVALUATE_BUFFER ~%clab_line%    ****~
-		END
-        VERBOSE
+            VERBOSE
+        END
         
         
         COPY_EXISTING_REGEXP GLOB ~%clab%~ ~override~
@@ -124,7 +127,7 @@ DEFINE_ACTION_FUNCTION ~ADD_FEATS_LVL~
         
         ACTION_IF (use_mask) BEGIN      
             COPY ~%mask_file%~ ~override/%caption%.SPL~
-                IF (delay > 0) BEGIN
+                PATCH_IF (delay > 0) BEGIN
                     LPF  ALTER_SPELL_EFFECT INT_VAR match_opcode = 326 timing = 3 duration = delay END
                 END
         END
@@ -211,7 +214,7 @@ DEFINE_ACTION_FUNCTION ~ADD_FEATS_MASK~
         
         ACTION_IF (use_mask) BEGIN      
             COPY ~%mask_file%~ ~override/%caption%.SPL~
-                IF (delay > 0) BEGIN
+                PATCH_IF (delay > 0) BEGIN
                     LPF  ALTER_SPELL_EFFECT INT_VAR match_opcode = 326 timing = 3 duration = delay END
                 END
         END

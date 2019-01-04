@@ -27,7 +27,7 @@ Kit(LastSummonerOf(Myself),MAGESCHOOL_ILLUSIONIST)~
 		    READ_2DA_ENTRY %i% 9 10 kit_id
 			READ_2DA_ENTRY %i% 1 10 name
 			//TO_UPPER %name%
-			DEFINE_ASSOCIATIVE_ARRAY class_kit_id BEGIN "%class_id%","%kit_id%" => "%name%" END
+			DEFINE_ASSOCIATIVE_ARRAY class_kit_id BEGIN "%name%" => "%kit_id%" END
 
 		END
 		
@@ -51,12 +51,12 @@ Kit(LastSummonerOf(Myself),MAGESCHOOL_ILLUSIONIST)~
 			SET max_prof=max_prof_string
 			PATCH_IF (max_prof>=n_stars) BEGIN
 				SET found=0
-				PHP_EACH class_kit_id AS class_kit=>name BEGIN
-					PATCH_IF (~%name%~ STR_EQ ~%class_name%~) BEGIN
+				PHP_EACH class_kit_id AS class=>kit_id BEGIN
+					PATCH_IF (~%class%~ STR_EQ ~%class_name%~) BEGIN
 						PATCH_IF  NOT (~ILLUSIONIST~ STRING_EQUAL ~%class_name%~) BEGIN
-							SET kit_id = class_kit_1
+							SET kit_ids = kit_id
 							SPRINT condition_kit ~%condition_kit%
-Kit(LastSummonerOf(Myself),%kit_id%)~
+Kit(LastSummonerOf(Myself),%kit_ids%)~
 							SET n_kit=n_kit+1
 						END
 						ELSE BEGIN

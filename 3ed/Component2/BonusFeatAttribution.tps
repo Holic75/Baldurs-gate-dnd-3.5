@@ -116,7 +116,7 @@
 
 //epic feats to monk
 	LAF ADD_FEATS_LVL INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=0 delay = 2 
-						STR_VAR clab=~CLABMO.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREALR.SPL~ feat_name=~FFTCRE~ caption=~MNKEFT~ END		
+						STR_VAR clab=~CLABMO.*\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name=~FFTCRE~ caption=~MNKEFT~ END		
 
 //epic feats to shaman
 	LAF ADD_FEATS_LVL INT_VAR min_level=22 max_level=28 d_level=6 add_at_level1=0 delay = 2

@@ -144,9 +144,9 @@
 
 	//add it to every clab file every 3 levels (and lvl1) (should be done at the very end)
 
-	LAF ADD_BONUS_FEATS INT_VAR min_level=3 max_level=40 d_level=3 add_at_level1=1 
-						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~~
-						feat_type_file=~~ caption=~CFEATCRE~ END
+	LAF ADD_FEATS_LVL INT_VAR min_level=3 max_level=40 d_level=3 add_at_level1=1 
+						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
+						feat_name=~CFEATCRE~ caption=~CHCKFT~ END
 		
 //--------------------------------------------------kensai signature weapon--------------------------------------------------------------------			 
 COPY ~3ed/Classes/Kensai/KENSCRE.BCS~ ~override~

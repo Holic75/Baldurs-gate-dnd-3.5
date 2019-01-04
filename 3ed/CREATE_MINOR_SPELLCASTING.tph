@@ -144,7 +144,7 @@ DEFINE_ACTION_FUNCTION ~CREATE_MINOR_SPELLCASTING~
     OUTER_SPRINT feat_name EVALUATE_BUFFER ~GV%SpellPrefix%3~
     OUTER_SPRINT caption EVALUATE_BUFFER ~SP%SpellPrefix%3~  
 	LAF ADD_FEATS_LVL INT_VAR min_level=10 max_level=18 d_level=4 add_at_level1=0 
-        STR_VAR clab mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name caption END END	
+        STR_VAR clab mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name caption END	
     OUTER_SPRINT feat_name EVALUATE_BUFFER ~BN%SpellPrefix%3~
     OUTER_SPRINT caption EVALUATE_BUFFER ~SPB%SpellPrefix%3~     
 	LAF ADD_FEATS_LVL INT_VAR min_level=10 max_level=10 d_level=4 add_at_level1=0 
@@ -153,7 +153,7 @@ DEFINE_ACTION_FUNCTION ~CREATE_MINOR_SPELLCASTING~
     OUTER_SPRINT feat_name EVALUATE_BUFFER ~GV%SpellPrefix%4~
     OUTER_SPRINT caption EVALUATE_BUFFER ~SP%SpellPrefix%4~   
 	LAF ADD_FEATS_MASK INT_VAR mask=0b10010001000000000000 indexed = 1 
-       STR_VAR clab mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name caption END END
+       STR_VAR clab mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name caption END
     OUTER_SPRINT feat_name EVALUATE_BUFFER ~BN%SpellPrefix%4~   
     OUTER_SPRINT caption EVALUATE_BUFFER ~SPB%SpellPrefix%4~ 
 	LAF ADD_FEATS_LVL INT_VAR min_level=13 max_level=13 d_level=4 add_at_level1=0 
