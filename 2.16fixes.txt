@@ -1,0 +1,5 @@
+- fixed bug when shaman class can not be selected in iwd
+- fixed incorrect swashbuckler THAC0 progression
+- ankheg armor now has same AC as regualar plate mail
+- clab abilities are no longer reapplied on character import
+- mod should be now more user friendly towards other ui mods (should be installed after all ui mods)

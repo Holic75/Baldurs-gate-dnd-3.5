@@ -7,7 +7,11 @@
 			LPF ALTER_SPELL_EFFECT INT_VAR parameter1=i END
 	END
 	//medium thaco
+    OUTER_SET prev_high = 0
+    OUTER_SET prev_med = 0
+    OUTER_SET prev_low = 0
     OUTER_FOR (i=1;i<=30;i=i+1) BEGIN
+ 
         COPY ~3ed/Core/THAC0/THAC0M.SPL~ ~override/THAC0M%i%.SPL~
 			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=1 speed=0 END
 				SET r = 20 - (3*i/4)
@@ -23,24 +27,38 @@
 				LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=9 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/thief
                 LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=18 parameter2=105 timing=0 duration=1 STR_VAR resource END // cleric/ranger
 				LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=19 parameter2=105 timing=0 duration=1 STR_VAR resource END // sorceror for battle caster
-        
+                PATCH_IF (i > 1) BEGIN
+                    SPRINT resource EVALUATE_BUFFER ~THAC0%prev_med%~
+                    LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode=321 target=2 timing=0 duration=1  STR_VAR resource END //remove effects
+                END
+                SET prev_med = r
         OUTER_SET high_r = 20 - i
         ACTION_IF (high_r < 0) BEGIN
             OUTER_SET high_r = 0
         END
-        COPY_EXISTING ~THAC0%high_r%.SPL~   ~override/THCAC0H%i%.SPL~
+        COPY_EXISTING ~THAC0%high_r%.SPL~   ~override/THAC0H%i%.SPL~
+            PATCH_IF (i > 1) BEGIN
+                SPRINT resource EVALUATE_BUFFER ~THAC0H%prev_high%~
+                LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode=321 target=2 timing=0 duration=1  STR_VAR resource END //remove effects
+            END
+            SET prev_high = i
         
 	COPY ~3ed/Core/THAC0/THAC0M.SPL~ ~override/THAC0L%i%.SPL~
-		FOR (i=1;i<=30;i=i+1) BEGIN
-			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=1 speed=0 END
-				SET r = 20 - (i/2)
-                PATCH_IF (r<10) BEGIN
-                    SET r=10
-                END
-				SPRINT resource EVALUATE_BUFFER ~THAC0%r%~
-				LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=13 parameter2=105 timing=0 duration=1 STR_VAR resource END // mage/thief
-				LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=14 parameter2=105 timing=0 duration=1 STR_VAR resource END // cleric/mage
-		END         
+        LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=1 speed=0 END
+            SET r = 20 - (i/2)
+            PATCH_IF (r<10) BEGIN
+                SET r=10
+            END
+            SPRINT resource EVALUATE_BUFFER ~THAC0%r%~
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=13 parameter2=105 timing=0 duration=1 STR_VAR resource END // mage/thief
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=14 parameter2=105 timing=0 duration=1 STR_VAR resource END // cleric/mage
+            PATCH_IF (i > 1) BEGIN
+                SPRINT resource EVALUATE_BUFFER ~THAC0%prev_low%~
+                LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode=321 target=2 timing=0 duration=1  STR_VAR resource END //remove effects
+            END
+            SET prev_low = r
+            
+       
 	END
                 
 	//high thaco for swashbuckler
@@ -87,10 +105,10 @@
     
     OUTER_FOR (i=1;i<=30;i=i+1) BEGIN
         OUTER_SET save_val = (12 - i/2)
-        ACTION_IF (save_val<6) BEGIN
+        ACTION_IF (save_val<2) BEGIN
                 OUTER_SET save_val = 2
         END
-        OUTER_SET prev_i = 0 - 1
+        OUTER_SET prev_i = i - 1
         COPY_EXISTING ~THAC01.SPL~ ~override/SAVEDH%i%.SPL~ 
 			LPF ALTER_SPELL_EFFECT INT_VAR parameter1=save_val new_opcode = 33  END //saving throw vs death value
             SPRINT resource EVALUATE_BUFFER ~SAVEDH%prev_i%~

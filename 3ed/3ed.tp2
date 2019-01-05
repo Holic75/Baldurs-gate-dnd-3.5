@@ -147,6 +147,11 @@ BEGIN @1
     //--------------------------------------------------high level hp bonus fix-------------------
     INCLUDE ~3ed/Component1/HighLvlHpFix.tps~
     
+    //--------------------------------------------------set 2 weapon slots to thief base
+    COPY_EXISTING ~NUMWSLOT.2DA~ ~override~
+        COUNT_2DA_ROWS 2 "nrows"	
+        INSERT_2DA_ROW nrows 2 ~THIEF_BASE    2~	
+    
 	
 ////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////
