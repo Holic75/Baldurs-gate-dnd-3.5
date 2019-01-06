@@ -54,8 +54,8 @@ DEFINE_ACTION_FUNCTION ~DIMINISH_SPELL_CASTING~
             OUTER_SET lvl = spells_2
            
             COPY ~%spl_file%~ ~override/%caption%%lvl%.SPL~
-                LPF ALTER_EFFECT INT_VAR match_parameter1 = 0 - 1 parameter2=spells_0 timing = 1 END		
-                LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 parameter2=spells_1 timing =  1 END
+                LPF ALTER_EFFECT INT_VAR match_parameter1 = 0 - 1 parameter2=spells_0 timing = 9 END		
+                LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 parameter2=spells_1 timing =  9 END
                 LPF DELETE_EFFECT INT_VAR match_parameter2 = 0 END //remove empty effects
              
             COPY_EXISTING ~%caption%%lvl%.SPL~ ~override~

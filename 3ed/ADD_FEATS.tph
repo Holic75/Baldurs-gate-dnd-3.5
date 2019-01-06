@@ -134,7 +134,7 @@ DEFINE_ACTION_FUNCTION ~ADD_FEATS_LVL~
 
         ACTION_IF (add_at_level1) BEGIN
             ACTION_IF (feat_name_indexed) BEGIN
-               OUTER_SPRINT name EVALUATE_BUFFER ~%feat_name%%feat_name_index%~               
+               OUTER_SPRINT name EVALUATE_BUFFER ~%feat_name%%feat_name_index%%post_index_suffix%~              
             END
             ACTION_IF (use_mask) BEGIN
                 LAF ADD_FEAT_ENTRY INT_VAR lvl = 1 index STR_VAR name caption ga_template ap_template feat_type END

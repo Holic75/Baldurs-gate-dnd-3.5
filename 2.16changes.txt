@@ -6,3 +6,5 @@
 - added Quiet Death ability to assassin on lvl 10 (30s invisibility upon slayin target)
 - Assasins now also have high saves vs Death and Polymorph
 - fixed missing Aura of Despair on lvl 3 and 9 for Blackguard
+- Rest every 8 hours is not applied in Blackpits
+- Spell progression mod abilities are now permanent instead of permanent until death

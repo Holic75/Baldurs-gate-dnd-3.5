@@ -396,13 +396,17 @@
         //monk stunning blow and quivering palm
         //create header placeholders
         OUTER_FOR (i=1;i<=7;i=i+1) BEGIN
+            OUTER_SET lvl = 4*i
+            ACTION_IF (i == 1) BEGIN
+                OUTER_SET lvl = 1
+            END
             COPY_EXISTING ~SPCL811.SPL~ ~override~ //stunning blow
                 LPF ADD_SPELL_HEADER INT_VAR copy_header = 1  END 
-                LPF ALTER_SPELL_HEADER INT_VAR header = i min_level =  4*i END
+                LPF ALTER_SPELL_HEADER INT_VAR header = i min_level =  lvl END
                 
             COPY_EXISTING ~SPCL820.SPL~ ~override~ //quivering palm
                 LPF ADD_SPELL_HEADER INT_VAR copy_header = 1  END 
-                LPF ALTER_SPELL_HEADER INT_VAR header = i + 1 min_level =  4*i END
+                LPF ALTER_SPELL_HEADER INT_VAR header = i + 1 min_level =  lvl END
 
         END
         

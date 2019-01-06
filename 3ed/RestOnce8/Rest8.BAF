@@ -1,5 +1,6 @@
 IF
 	PartyRested()
+    !Global("BP_STARTED","GLOBAL",1)
 THEN
 	RESPONSE #100
 		ApplySpellRES("DIS_REST",Player1)  

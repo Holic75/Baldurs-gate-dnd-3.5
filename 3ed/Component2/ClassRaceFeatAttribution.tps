@@ -9,7 +9,7 @@
 							mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name=~SFT104_~ caption=~TALSFT~ END	                            
 
 
-                              
+
 	LAF ADD_FEATS_LVL INT_VAR min_level=4 max_level=16 d_level=4 add_at_level1=1 feat_name_indexed = 1 //f-m
 						STR_VAR clab=~CLABFI01\.2DA~  mask_file=~3ed/Feats/FeatAttribution/FM_FMC.SPL~ feat_name=~ARCST~ 
                                 post_index_suffix =~FT~ caption=~ARCS1~ END

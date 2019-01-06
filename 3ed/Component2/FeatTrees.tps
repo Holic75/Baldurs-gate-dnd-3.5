@@ -241,8 +241,6 @@ WITH_TRA ~%LANGUAGE%\archery.tra~ BEGIN
 //------------------------------------------------------------armored caster
 	//1 - 5 allows to cast in armors
 	OUTER_FOR (i=1;i<=5;i=i+1) BEGIN
-		COPY ~3ed/Feats/PermanentAbilities/ArmoredCaster/ARCST%i%FT.SPL~  ~override~
-	        SPRINT resource EVALUATE_BUFFER ~ARCST%i%FT~
-            LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=2 duration=1 timing=9 STR_VAR resource END        
+		COPY ~3ed/Feats/PermanentAbilities/ArmoredCaster/ARCST%i%FT.SPL~  ~override~       
 	END
 	
