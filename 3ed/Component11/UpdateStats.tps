@@ -1,10 +1,10 @@
 	//make monsters more powerful
-	//+1 thaco +1/3 levels, +2 ac +1/5 levels, (100+level)% hp, +1/2 APR per 5 levels
+	//+1 thaco +1/3 levels +1/6 levels, +2 ac +1/5 levels, (100+level)% hp, +1/2 APR per 5 levels
 	
 	 COPY_EXISTING_REGEXP GLOB ~.+\.CRE~ ~override~
 		READ_BYTE 0x0234 level
 		READ_BYTE 0x0270 allegience 
-		SET THAC0_BONUS=1+level/3
+		SET THAC0_BONUS=1+level/3 + level/6
 		SET AC_BONUS=2+level/5
 		SET APR_BONUS=0
 		SET HP_BONUS= 100 + level //in percent

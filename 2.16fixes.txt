@@ -1,5 +1,8 @@
-- fixed bug when shaman class can not be selected in iwd
+- fixed bug when shaman class could not be selected in iwd
 - fixed incorrect swashbuckler THAC0 progression
 - ankheg armor now has same AC as regualar plate mail
 - clab abilities are no longer reapplied on character import
 - mod should be now more user friendly towards other ui mods (should be installed after all ui mods)
+- added Quiet Death ability to assassin on lvl 10 (30s invisibility upon slayin target)
+- Assasins now also have high saves vs Death and Polymorph
+- fixed missing Aura of Despair on lvl 3 and 9 for Blackguard

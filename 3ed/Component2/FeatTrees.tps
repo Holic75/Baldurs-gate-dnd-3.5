@@ -9,16 +9,13 @@ WITH_TRA ~%LANGUAGE%\warfare.tra~ BEGIN
 	
 	//2 - cleave
 	COPY ~3ed/Feats/PermanentAbilities/Cleave~  ~override~
-	COPY_EXISTING ~CLEAV1FT.SPL~ ~override~
 	
 	//3 - Great Forititude
 	COPY ~3ed/Feats/PermanentAbilities/GreatFortitude/GRTFTDFT.SPL~  ~override~
 	
 	//4 - Greater Cleave
 	COPY ~3ed/Feats/PermanentAbilities/GreaterCleave~  ~override~
-	//COPY_EXISTING ~CLEAV2FT.SPL~ ~override~
-	//	LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 timing=9 STR_VAR resource=~CLEAV1FT~ END  //remove effects of previous cleave
-	//	LPF ADD_SPELL_EFFECT INT_VAR opcode=321 target=2 duration=1 timing=9 STR_VAR resource=~CLEAVE1~ END  //remove effects of previous cleave
+
 		
 	//5 - Toughness
 	COPY ~3ed/Feats/PermanentAbilities/Toughness/TOUGHSFT.SPL~  ~override~	

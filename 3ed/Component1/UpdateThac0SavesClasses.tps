@@ -145,11 +145,11 @@
 	LAF ADD_FEATS_LVL INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 feat_name_indexed = 1 
                         STR_VAR clab=~\(\(CLABBA.*\)\|\(CLABPA.*\)\|\(CLABFI03\)\|\(CLABFI06\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
 						feat_name=~SAVESH~ caption=~SAVSHA~ END	
-	//fort saves for battle caster	
+	//fort saves for battle caster	and assasin
 	LAF ADD_FEATS_LVL INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 feat_name_indexed = 1 
-                        STR_VAR clab=~CLABSO01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
+                        STR_VAR clab=~\(\(CLABSO01\)\|\(CLABTH02\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
 						feat_name=~SAVEDH~ caption=~SAVDH~ END	
                         
 	LAF ADD_FEATS_LVL INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 feat_name_indexed = 1 
-                        STR_VAR clab=~CLABSO01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
+                        STR_VAR clab=~\(\(CLABSO01\)\|\(CLABTH02\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
 						feat_name=~SAVEPH~ caption=~SAVPH~ END	

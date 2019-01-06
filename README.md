@@ -665,7 +665,7 @@ All hostile living creatures suffer 1d6 points of magical damage per Channel Ene
 ABSORB HEALTH: The character steals 2 Hit Points per level from a target creature and transfers them to herself.
 If applied to undead creatures this ability heals them instead.
 ```
-– May use the Poison Weapon ability once per day. Gains one use at level 1, one use at level 5, and an additional use every 5 levels thereafter.  
+– May use the Poison Weapon ability once per day. Gains one use at level 1, one use at level 6, and an additional use every 6 levels thereafter.  
 ```
 POISON WEAPON:
 Each successful hit within the next 5 rounds will inject poison into the target. Each target can only be affected once per round. The amount of poison damage depends on the character's level:
@@ -991,6 +991,8 @@ Second level spells: starting from level 7 Assassin gets access to the following
 Third level spells: starting from level 10 Assassin gets access to the following spells: Vampiric Touch, Non-Detection, Hold Person, Detect Illusions.	  
 Fourth level spells: starting from level 13 Assassin gets access to the following spells: Improved Invisibility, Free Action, Poison, Cloak of Fear.  
 ```
+- Quiet Death: starting from level 10 every time Assassin slays an enemy she becomes invisible for 30 seconds.  
+- High Savingthrows vs. Death and vs. Polymorph.  
 Disadvantages:  
 – Does not receive bonus feats at levels 4, 12, 20 and 25 as trueclass thieves do.   
 – May only distribute 10 skill points per level among thieving skills (20 points at level 1)  
@@ -1014,7 +1016,7 @@ Disadvantages:
 
 ### NINJA  (replaces BOUNTY HUNTER)
 Advantages:  
-– May use the Poison Weapon ability. Gains one use at level 1, then at level 5 and an additional use every 5 levels thereafter.  
+– May use the Poison Weapon ability. Gains one use at level 1, then at level 6 and an additional use every 6 levels thereafter.  
 – Gains +1 AC bonus at level 5 and every five levels thereafter.  
 – Gains +1 AC bonus per 2 points of Wisdom above 10.  
 – Ninja gains a pool of ki points equal to 1/2 of her level +1 per 2 points of Wisdom above 10. These points can be spent to use different ki powers and are replenished after rest.  

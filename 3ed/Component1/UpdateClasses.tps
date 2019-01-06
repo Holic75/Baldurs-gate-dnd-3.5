@@ -827,6 +827,10 @@
     END
 
 
+    //quiet death
+	COPY ~3ed/Feats/PermanentAbilities/QuietDeath~  ~override~
+    LAF ADD_FEATS_LVL INT_VAR min_level=10 max_level=10 d_level=1 add_at_level1=0 
+            STR_VAR clab=~CLABTH02\.2DA~  mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name = ~QTDTHFT~ caption=~AQTDTH~ END
     
     
     //script for giving assasin spells
