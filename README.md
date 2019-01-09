@@ -532,13 +532,13 @@ Advantages:
 – Immune to sneak attack.  
 – May use the Rage ability once per day. Gains one use at level 1, then at level 4 and an additional use every 4 levels thereafter.  
 ```
-RAGE: The enraged status provides a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+RAGE: The enraged status provides a +2 bonus to melee THAC0, +20% bonus to all melee physical damage and +4 bonus to Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
 It lasts for 3 rounds + 1 round per 2 points of newly modified Constitution above 10. At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
 ```
 – Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 7 and every 3 levels thereafter to a maximum of 40% at level 28.  
-– 11th level: Greater Rage: Barbarian’s Rage bonuses to Strength and Constitution during rage each increase to +6, and morale bonus on saves  vs. Spell increases to +6. The penalty to AC remains at -2.  
+– 11th level: Greater Rage: Barbarian’s Rage bonus to melee THAC0 increases to +3, to Constitution to +6, to all melee physical damage to + 30%, and morale bonus on saves  vs. Spell increases to +3. The penalty to AC remains at -2.  
 – 17th level: Tireless Rage: Barbarian is no longer fatigued after the rage ends.  
-– 20th level: Mighty Rage: Barbarian’s Rage bonuses to Strength and Constitution during rage each increase to +8, and morale bonus on saves  vs. Spell increases to +4. The penalty to AC remains at -2.  
+– 20th level: Mighty Rage: Barbarian’s Rage bonus to to melee THAC0 increases to +4, to Constitution to +8, to all melee physical damage to + 40%, and morale bonus on saves  vs. Spell increases to +4. The penalty to AC remains at -2.  
 – Hit Die: d12  
 – High Savingthrows vs. Breath Weapon and vs. Wand  
 
@@ -546,12 +546,13 @@ Disadvantages:
 – May not wear armor heavier than splint mail.  
 – May not use large shields.  
 – Gets bonus feats only at levels 4, 8, 12, 16, 20, 22 and 28.    
-– Does not get Hardiness and Resist Magic abilities.  
-– Can not use Hardiness and Resist Magic abilities.  
+– Does not get Hardiness and Resist Magic abilities.   
 – May only put one star in any weapon she can use.     
 
 ### DWARVEN DEFENDER
-Advantages:  
+Advantages: 
+– Immune to sneak attack.
+– Gains +1 AC bonus at level 5 and every five levels thereafter.  
 – May use Defensive Stance once per day. Gains one use at level 1, one use at level 4, and an additional use every 4 levels thereafter.  
 ```
 DEFENSIVE STANCE:
@@ -560,6 +561,7 @@ At the end of the Defensive Stance, the character becomes fatigued (-2 penalty t
 At 10th level, Dwarven Defender’s bonuses to Strength, Constitution and AC each increase to +4, and bonus on saves increases to +2.
 At 17th level, the character is no longer subject to fatigue effects after Defensive Stance.
 ```
+- Halting Blow: starting frome level 5, while in defensive stance, if Dwarven defender hits a foe with the attack, the latter will be unable to move for 10 seconds.  
 – Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 3 and every 3 levels thereafter to a maximum of 50% at level 30.  
 – High Savingthrows vs. Spell   
 – Hit Die: d12  
@@ -848,9 +850,8 @@ Disadvantages:
 Advantages:  
 – Can use Rage ability (starts with one use at level 1 then gets another one at level 5 and every 5 levels thereafter), though Priest of Tempus never gets benefits of Greater or Mighty Rage.  
 ```
-RAGE: The character is enraged  which grants her a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class, and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
-The enraged state lasts 3 rounds + 1 round per 2 points of newly modified Constitution above 10.
-At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
+RAGE: The enraged status provides a +2 bonus to melee THAC0, +20% bonus to all melee physical damage and +4 bonus to Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+It lasts for 3 rounds + 1 round per 2 points of newly modified Constitution above 10. At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
 ```
 – May cast Chaos of Battle once per day starting from level 1. Gains an additional use at level 4 and every 4 levels thereafter.  
 ```
@@ -887,9 +888,8 @@ Advantages:
 – Moves 2 points faster than other characters.  
 – Can use Rage ability (starts with one use at level 1 then gets another one at level 5 and every 5 levels thereafter), though Avenger never gets benefits of Greater or Mighty Rage.  
 ```
-RAGE: The character is enraged  which grants her a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class, and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
-The enraged state lasts 3 rounds + 1 round per 2 points of newly modified Constitution above 10.
-At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
+RAGE: The enraged status provides a +2 bonus to melee THAC0, +20% bonus to all melee physical damage and +4 bonus to Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+It lasts for 3 rounds + 1 round per 2 points of newly modified Constitution above 10. At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
 ```
 – 17th level: Tireless Rage: Avenger is no longer fatigued after the rage ends.  
 
@@ -1153,9 +1153,8 @@ Advantages:
 – Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 9 and every 5 levels thereafter to a maximum of 25% at level 29.  
 – Can use Rage (starts with one use at level 2 then gets another every 4 levels thereafter), though Skald never gets benefits of Greater or Mighty Rage.  
 ```
-RAGE: The character is enraged  which grants her a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class, and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
-The enraged state lasts 3 rounds + 1 round per 2 points of newly modified Constitution above 10.
-At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
+RAGE: The enraged status provides a +2 bonus to melee THAC0, +20% bonus to all melee physical damage and +4 bonus to Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
+It lasts for 3 rounds + 1 round per 2 points of newly modified Constitution above 10. At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
 ```
 – 17th level: Tireless Rage: Skald is no longer fatigued after the rage ends.  
 – Bardic Performance: a skald is trained to perform to create magical effects on those around her. Skald can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each fourth level a skald can use bardic performance one more time per day.  

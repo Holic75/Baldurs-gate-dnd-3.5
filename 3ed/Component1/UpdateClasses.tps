@@ -1005,9 +1005,14 @@ WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN
     OUTER_FOR (con = 10;con<=24;con=con+2) BEGIN
         OUTER_SET rage_duration = 6*(3 + (con + 4 - 10)/2)
         COPY_EXISTING ~SPCL152.SPL~ ~override/BRBR1%con%.SPL~
-            WRITE_LONG 0x0008 0
-            
+            WRITE_LONG 0x0008 0       
             LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 321 STR_VAR match_resource = ~SPCL152~ END 
+            //replace strength bonus with +% damage and thac0
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode =  44 END
+            FOR (d = 7; d<=9; d = d + 1) BEGIN
+                LPF ADD_SPELL_EFFECT INT_VAR opcode=332 target=1 parameter1 = 20 parameter2=d timing=0 resist_dispel=2 duration=rage_duration END
+            END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=284 target=1 parameter1 = 2 timing=0 resist_dispel=2 duration=rage_duration END
             LPF ADD_SPELL_EFFECT INT_VAR opcode=145 target=1 parameter2=0 timing=0 resist_dispel=2 duration=rage_duration END //disable wizard spells
             LPF ADD_SPELL_EFFECT INT_VAR opcode=145 target=1 parameter2=1 timing=0 resist_dispel=2 duration=rage_duration END //disable cleric spells
             
@@ -1020,7 +1025,8 @@ WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN
         
         COPY_EXISTING ~override/BRBR1%con%.SPL~ ~override/BRBR2%con%.SPL~
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10 parameter1 = 6 END //constitution bonus
-			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 44 parameter1 = 6 END //strength bonus
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=332 parameter1 = 30 END //+%dmg
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=284 parameter1 = 3 END //+% melee thac0
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 37 parameter1 = 3 END //saves bonus
             LPF ALTER_SPELL_EFFECT INT_VAR duration_high = rage_duration + 6 END
             LPF ALTER_SPELL_EFFECT_EX INT_VAR duration = rage_duration+5 STR_VAR match_resource=~BRBRGE~ END 
@@ -1033,7 +1039,8 @@ WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN
                          
         COPY_EXISTING ~override/BRBR3%con%.SPL~ ~override/BRBR4%con%.SPL~
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10 parameter1 = 8 END //constitution bonus
-			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 44 parameter1 = 8 END //strength bonus
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=332 parameter1 = 40 END //+%dmg
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=284 parameter1 = 4 END //+% melee thac0
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 37 parameter1 = 4 END //saves bonus
             LPF ALTER_SPELL_EFFECT INT_VAR duration_high = rage_duration + 12 END
             LPF ALTER_SPELL_EFFECT_EX INT_VAR duration = rage_duration+11 STR_VAR match_resource=~BRBRGE~ END 
@@ -1382,8 +1389,6 @@ END
             LPF ADD_SPELL_HEADER INT_VAR copy_header = 4 END
             LPF ALTER_SPELL_HEADER INT_VAR header = 5 min_level = 18 END	
         
-            //LPF ADD_SPELL_HEADER INT_VAR copy_header = 4 END
-            //LPF ALTER_SPELL_HEADER INT_VAR header = 5 min_level = 20 END
             LPF DELETE_EFFECT INT_VAR check_headers = 1 END
             LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = 5 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 126 STR_VAR abil_name = ~BRSR~ END 
             
@@ -1397,19 +1402,30 @@ END
                                     mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~  END     
 	 //---------------------------jester-------------------------------
 	 //mind shield
-	  COPY   ~3ed/Classes/Jester/%GameId%/JSTRIMM.SPL~  ~override~ //immunities !!!!!!!!!!!!!!!!!!!!!!	  	
+	COPY   ~3ed/Classes/Jester/%GameId%/JSTRIMM.SPL~  ~override~ //immunities !!!!!!!!!!!!!!!!!!!!!!	  	
 	 //--------------------------------------------//	 
 
      
-     //-------------------dwarven defender defensive stance update
-     COPY ~3ed/Classes/Barbarian/Rage/BRBFTG.spl~ ~override/DWDFTG.SPL~  //after stance fatigue
+    //-------------------dwarven defender defensive stance update and ac bonus   
+    COPY ~3ed/Classes/FeatTables/DWDEF_FEATS.2DA~  ~override~
+        LAF ADD_FEATS_2DA   STR_VAR clab=~CLABFI06\.2DA~ caption=~DDACAB~ 2DA_file = ~DWDEF_FEATS~
+                                    mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~  END
+                                    
+    COPY ~3ed/Classes/Barbarian/Rage/BRBFTG.spl~ ~override/DWDFTG.SPL~  //after stance fatigue
         LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 15 END //remove dex penalty
         LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 206 STR_VAR resource = ~SPDWD02~ END
+    
+    WITH_TRA ~%LANGUAGE%\dwarven_defender.tra~ BEGIN
+        OUTER_SET  halting_blow_strref=RESOLVE_STR_REF (@001)
+        COPY ~3ed/Classes/DwarvenDefender/HLTBLW.eff~ ~override~
+        COPY ~3ed/Classes/DwarvenDefender/HLTBLW.spl~ ~override~
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 139 parameter1 = halting_blow_strref END
+            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 10 resist_dispel = 0 END //duration to 10 seconds, no resist
+    END
         
-            
     OUTER_FOR (con = 10;con<=24;con=con+2) BEGIN
         OUTER_SET stance_duration = 6*(3 + (con - 10 + 2)/2)
-            //berserker rage update
+            //defensive stance update
             COPY_EXISTING ~SPDWD02.SPL~ ~override/DWDS1%con%.SPL~
                 WRITE_LONG 0x0008 0
                 LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 86 END 
@@ -1427,8 +1443,11 @@ END
                 LPF ALTER_SPELL_EFFECT INT_VAR duration_high=stance_duration END 
                 LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 206 duration = stance_duration  STR_VAR resource = ~SPDWD02~ END //protection from subsequent application
                 LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 146 timing = 3 duration = stance_duration+1 parameter1 = 1 parameter2 = 1 STR_VAR resource = ~DWDFTG~ END //fatigue
-                               
-            COPY_EXISTING ~DWDS1%con%.SPL~  ~override/DWDS2%con%.SPL~	
+                
+            COPY_EXISTING ~DWDS1%con%.SPL~  ~override/DWDS2%con%.SPL~
+                LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 248 duration =stance_duration STR_VAR resource = ~HLTBLW~ END
+                   
+            COPY_EXISTING ~DWDS2%con%.SPL~  ~override/DWDS3%con%.SPL~	
                 LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 0  parameter1 = 4 END //ac
                 LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 44  parameter1 = 4 END //str bonus
                 LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10  parameter1 = 4 END //con bonus
@@ -1439,9 +1458,8 @@ END
                 LPF ALTER_SPELL_EFFECT_EX INT_VAR duration_high=stance_duration+6 END 
              
                 LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 146 duration = stance_duration+7 END //fatigue
-                
-       					       
-            COPY_EXISTING ~DWDS2%con%.SPL~  ~override/DWDS3%con%.SPL~	
+                       					       
+            COPY_EXISTING ~DWDS3%con%.SPL~  ~override/DWDS4%con%.SPL~	
                 LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 146 END //remove fatigue
                                     
         END
@@ -1451,13 +1469,16 @@ END
             COPY_EXISTING ~SPDWD02.SPL~ ~override/SPDWD02.SPL~
             
                 LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-                LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 10 END
-        
+                LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 5 END
+                
                 LPF ADD_SPELL_HEADER INT_VAR copy_header = 2 END
-                LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 17 END
+                LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 10 END
+        
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 3 END
+                LPF ALTER_SPELL_HEADER INT_VAR header = 4 min_level = 17 END
         
                 LPF DELETE_EFFECT INT_VAR check_headers = 1 END
-                LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = 3 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 126 resist_dispel = 0 STR_VAR abil_name = ~DWDS~ END 
+                LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = 4 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 126 resist_dispel = 0 STR_VAR abil_name = ~DWDS~ END 
             
                 READ_LONG 0x0050 ~descr_strref~
                 STRING_SET_EVALUATE %descr_strref% @007	 

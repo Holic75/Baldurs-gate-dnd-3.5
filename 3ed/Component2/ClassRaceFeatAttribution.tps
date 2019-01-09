@@ -74,7 +74,8 @@
 						feat_name=~HFCRE~ caption=~HFABI~ END
 
 		
-//add bonus ability points to  small races  (gnome, halfling, goblin) at lvl1    
+//add bonus ability points to  small races  (gnome, halfling, goblin) at lvl1
+    COPY ~3ed/Feats/SmallRacesBonus/SMLRCBN.SPL~ ~override~
 	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
 						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~3ed/Feats/SmallRacesBonus/SMLRACE.SPL~
 						feat_name=~SMLRCBN~ caption=~SMLRC~ END

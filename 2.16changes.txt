@@ -8,3 +8,6 @@
 - fixed missing Aura of Despair on lvl 3 and 9 for Blackguard
 - Rest every 8 hours is not applied in Blackpits
 - Spell progression mod abilities are now permanent instead of permanent until death
+- Barbarian rage strength bonuses replaced with +% to melee physical damage and thac0(10% dmg, + 1 thac0 per 2 pts of strength)
+- Added permanent ac bonus to dwarven defender (+1 at every 4th level)
+- Added Halting blow to dwarven defender
