@@ -6,7 +6,7 @@ IF
 THEN
 	RESPONSE #100
 		ApplySpellRES("RMSNG",Player%player_id%) 
-		ApplySpellRES("BNSNG",Player%player_id%) 
+		ActionOverride(Player%player_id%,ReallyForceSpellRes("BNSNG",Player%player_id%))
 		//ApplySpellRES("GVSNG",Player%player_id%) 
 		ActionOverride(Player%player_id%,ReallyForceSpellRes("GVSNG",Player%player_id%))
 		Continue()

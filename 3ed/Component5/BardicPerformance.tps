@@ -175,7 +175,7 @@
 	
 	//script for giving bardic songs
 	OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN
-		EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.+\.BCS~ ~3ed/BardSongs/BSNG.baf~
+		EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.*\.BCS~ ~3ed/BardSongs/BSNG.baf~
 			EVALUATE_BUFFER			
 	END
     
