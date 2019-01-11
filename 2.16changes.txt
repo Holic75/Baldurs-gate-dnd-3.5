@@ -14,3 +14,6 @@
 - Fixed broken Senjack script
 - Fixed bug when number of bard songs did not update with charisma change
 - Gnomes can no longer choose sorcerer class
+- Avenger gets additional Rage uses at every 4th level instead of at every 5th
+- Priest of Tempus gets additional Rage uses at every 4th level instead of at every 5th
+- Priest of Tempus gets additional Chaos of Battle uses at every 6th level instead of at every 4th

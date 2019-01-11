@@ -1,7 +1,7 @@
 	@001=~Inspire Courage~
 	@002=~Inspire Courage
 
-A 1st level bard can use <PRO_HISHER> performance to inspire courage in <PRO_HISHER> allies (including <PRO_HISHER>self), bolstering them against fear and improving their combat abilities. To be affected, an ally must be able to perceive the bard’s performance. An affected ally receives a +1 bonus on attack and weapon damage rolls as well and becomes immune to fear and panic effects for 4 rounds. At 6th level, and every six levels thereafter, this bonus increases by +1, to a maximum of +6 at 30th level.~
+A 1st level bard can use <PRO_HISHER> performance to inspire courage in <PRO_HISHER> allies (including <PRO_HISHER>self), bolstering them against fear and improving their combat abilities. To be affected, an ally must be able to perceive the bard’s performance. An affected ally receives a +1 bonus on attack and weapon damage rolls and becomes immune to fear and panic effects for 4 rounds. At 6th level, and every six levels thereafter, this bonus increases by +1, to a maximum of +6 at 30th level.~
 //---------------------------------------------
 	@003=~Countersong~
 	@004=~Countersong
@@ -75,7 +75,7 @@ This epic performance drains the very life force of the bard's enemies causing t
 	@032=~Bardic Performance
 
 Inspire Courage
-A 1st level bard can use <PRO_HISHER> performance to inspire courage in <PRO_HISHER> allies (including <PRO_HISHER>self), bolstering them against fear and improving their combat abilities. To be affected, an ally must be able to perceive the bard’s performance. An affected ally receives a +1 bonus on attack and weapon damage rolls as well and becomes immune to fear and panic effects for 4 rounds. At 6th level, and every six levels thereafter, this bonus increases by +1, to a maximum of +6 at 30th level.
+A 1st level bard can use <PRO_HISHER> performance to inspire courage in <PRO_HISHER> allies (including <PRO_HISHER>self), bolstering them against fear and improving their combat abilities. To be affected, an ally must be able to perceive the bard’s performance. An affected ally receives a +1 bonus on attack and weapon damage rolls and becomes immune to fear and panic effects for 4 rounds. At 6th level, and every six levels thereafter, this bonus increases by +1, to a maximum of +6 at 30th level.
 
 Countersong
 At 1st level, a bard learns to counter magic effects that depend on sound. Any creature within 30 feet of the bard becomes Immune to the following spells: Silence 15', Command, Greater Command, Wail of Banshee.
@@ -112,7 +112,7 @@ A bard of 24th level or higher can use this epic performance to drain the very l
 	@033=~Bardic Performance
 
 Inspire Courage
-A 1st level blade or skald can use <PRO_HISHER> performance to inspire courage in <PRO_HISHER> allies (including <PRO_HISHER>self), bolstering them against fear and improving their combat abilities. To be affected, an ally must be able to perceive the bard’s performance. An affected ally receives a +1 bonus on attack and weapon damage rolls as well and becomes immune to fear and panic effects for 4 rounds. At 6th level, and every six levels thereafter, this bonus increases by +1, to a maximum of +6 at 30th level.
+A 1st level blade or skald can use <PRO_HISHER> performance to inspire courage in <PRO_HISHER> allies (including <PRO_HISHER>self), bolstering them against fear and improving their combat abilities. To be affected, an ally must be able to perceive the bard’s performance. An affected ally receives a +1 bonus on attack and weapon damage rolls and becomes immune to fear and panic effects for 4 rounds. At 6th level, and every six levels thereafter, this bonus increases by +1, to a maximum of +6 at 30th level.
 
 Inspire Greatness
 A blade or skald of 9th level or higher can use <PRO_HISHER> performance to inspire greatness in all <PRO_HISHER> allies within 30 feet, granting extra fighting capability. To inspire greatness, all of the targets must be able to see and hear the bard. A creature inspired with greatness gains 10 bonus Hit Points and a +2 bonus on attack rolls and Saving Throws vs. Death for next 4 rounds. These bonuses increase to 15 Hit Points and +3 to THAC0 and Saving Throws vs. Death at level 12. Every 6 levels thereafter the bonus Hit Points increase by +5 and THAC0 and Saving Throws vs. Death bonus increases by 1.

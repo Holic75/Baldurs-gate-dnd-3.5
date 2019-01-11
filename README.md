@@ -848,12 +848,12 @@ Disadvantages:
 
 ### PRIEST OF TEMPUS
 Advantages:  
-– Can use Rage ability (starts with one use at level 1 then gets another one at level 5 and every 5 levels thereafter), though Priest of Tempus never gets benefits of Greater or Mighty Rage.  
+– Can use Rage ability (starts with one use at level 1 then gets another one at level 4 and every 4 levels thereafter), though Priest of Tempus never gets benefits of Greater or Mighty Rage.  
 ```
 RAGE: The enraged status provides a +2 bonus to melee THAC0, +20% bonus to all melee physical damage and +4 bonus to Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
 It lasts for 3 rounds + 1 round per 2 points of newly modified Constitution above 10. At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
 ```
-– May cast Chaos of Battle once per day starting from level 1. Gains an additional use at level 4 and every 4 levels thereafter.  
+– May cast Chaos of Battle once per day starting from level 1. Gains an additional use at level 6 and every 6 levels thereafter.  
 ```
 CHAOS OF BATTLE: Chaos of Battle applies bonuses to all allies and penalties to all enemies within a 30-ft. radius of the caster. The spell lasts for 3 rounds + 1 round per 2 points of caster Charisma above 10 and will randomly affect the targets' Armor Class, Hit Points, THAC0, saves, or luck. The magnitude of the effect starts at 1 (5 for Hit Points) at level 1 and will improve by 1 (5 for Hit Points) every 6 levels of the caster.
 ```
@@ -886,7 +886,7 @@ CLASS FEATURES:
 ### AVENGER
 Advantages:  
 – Moves 2 points faster than other characters.  
-– Can use Rage ability (starts with one use at level 1 then gets another one at level 5 and every 5 levels thereafter), though Avenger never gets benefits of Greater or Mighty Rage.  
+– Can use Rage ability (starts with one use at level 1 then gets another one at level 4 and every 4 levels thereafter), though Avenger never gets benefits of Greater or Mighty Rage.  
 ```
 RAGE: The enraged status provides a +2 bonus to melee THAC0, +20% bonus to all melee physical damage and +4 bonus to Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion, and level drain spells.
 It lasts for 3 rounds + 1 round per 2 points of newly modified Constitution above 10. At the end of the rage, the character loses the rage modifiers and becomes fatigued (-2 penalty to Strength, -2 penalty to Dexterity) for the duration of 5 rounds.
@@ -1077,7 +1077,7 @@ CLASS FEATURES:
 List of Bardic Performances:  
 ```
 Inspire Courage  	
-A 1st level bard can use her performance to inspire courage in her allies (including herself), bolstering them against fear and improving their combat abilities. To be affected, an ally must be able to perceive the bard’s performance. An affected ally receives a +1 bonus on attack and weapon damage rolls as well and becomes immune to fear and panic effects for 4 rounds. At 6th level, and every six levels thereafter, this bonus increases by +1, to a maximum of +6 at 30th level.  
+A 1st level bard can use her performance to inspire courage in her allies (including herself), bolstering them against fear and improving their combat abilities. To be affected, an ally must be able to perceive the bard’s performance. An affected ally receives a +1 bonus on attack and weapon damage rolls and becomes immune to fear and panic effects for 4 rounds. At 6th level, and every six levels thereafter, this bonus increases by +1, to a maximum of +6 at 30th level.  
 ```
 ```
 Countersong  
