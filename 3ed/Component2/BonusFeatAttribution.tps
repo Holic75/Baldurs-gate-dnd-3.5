@@ -47,8 +47,7 @@
 						STR_VAR clab=~\(\(CLABTH04\)\|\(CLABTH01\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRET.SPL~ feat_name=~FFTCRE~ caption=~THFBFT~ END	
 //add bonus feats to ninja, assasin and shadowdancer (lvl 8,16,22,28 ) (reuse thief's)
 	LAF ADD_FEATS_MASK INT_VAR mask = 0b1000001000001000000010000000 delay = 2 feat_name_indexed = 1
-						STR_VAR clab=~\(\(CLABTH02\)\|\(CLABTH05\)\|\(CLABTH03\)\)\.2DA~
-							mask_file=~3ed/Feats/FeatAttribution/SFTCRET.SPL~ feat_name=~THFBFT~ caption=~THFBFT~ END	
+						STR_VAR clab=~\(\(CLABTH02\)\|\(CLABTH05\)\|\(CLABTH03\)\)\.2DA~ feat_name=~THFBFT~ caption=~THFBFT~ END	
                             
 //same for mage thief (10,20,22, 25, 28)
 	LAF ADD_FEATS_LVL INT_VAR mask = 0b1001001010000000001000000000 delay = 2 
