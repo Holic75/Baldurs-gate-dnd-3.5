@@ -1,23 +1,26 @@
 - fixed bug when shaman class could not be selected in iwd
+- fixed bug when charactes under effect of Emotion:Hopelessness in BG1 and 2 did not awake upon receiving damage
 - fixed incorrect swashbuckler THAC0 progression
 - ankheg armor now has same AC as regualar plate mail
 - clab abilities are no longer reapplied on character import
 - mod should be now more user friendly towards other ui mods (should be installed after all ui mods)
 - added Quiet Death ability to assassin on lvl 10 (30s invisibility upon slayin target)
-- Assasins now also have high saves vs Death and Polymorph
+- Assassins now also have high saves vs Death and Polymorph
 - fixed missing Aura of Despair on lvl 3 and 9 for Blackguard
 - Rest every 8 hours is not applied in Blackpits
-- Spell progression mod abilities are now permanent instead of permanent until death
+- spell progression mod abilities are now permanent instead of permanent until death
 - Barbarian rage strength bonuses replaced with +% to melee physical damage and thac0(10% dmg, + 1 thac0 per 2 pts of strength)
-- Added permanent ac bonus to dwarven defender (+1 at every 4th level)
-- Added Halting blow to dwarven defender
-- Fixed broken Senjack script
-- Fixed bug when number of bard songs did not update with charisma change
-- Gnomes can no longer choose sorcerer class
+- added permanent ac bonus to dwarven defender (+1 at every 4th level)
+- added Halting blow to dwarven defender
+- fixed broken Senjack script
+- fixed bug when number of bard songs did not update with charisma change
+- gnomes can no longer choose sorcerer class
 - Avenger gets additional Rage uses at every 4th level instead of at every 5th
 - Priest of Tempus gets additional Rage uses at every 4th level instead of at every 5th
 - Priest of Tempus gets additional Chaos of Battle uses at every 6th level instead of at every 4th
-- Added Gravity Weapon Spell to Druids and Rangers at level 1
+- added Gravity Weapon Spell to Druids and Rangers at level 1
 - Divine Favor is now 1st lvl non-domain cleric spell (capped at +3)
-- In War domain Divine Favor domain spell was replaced with Gravity Weapon spell
-- Toughness nerfed to regenerate only 2 hps per round.
+- in War domain Divine Favor domain spell was replaced with Gravity Weapon spell
+- Toughness nerfed to regenerate only 2 hps per round
+- changed duration of flame weapon to 1 minute/level
+- changed duration of Defensive Harmony to 1 round/level and make it give +4 AC in all games

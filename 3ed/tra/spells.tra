@@ -473,7 +473,7 @@ Weight: 0~
 Level: 2
 Sphere: Elemental (Fire)
 Range: Touch
-Duration: 4 rounds + 1 round/2 levels
+Duration: 1 minute/level
 Casting Time: 4
 Area of Effect: 1 Creature
 Saving Throw: None
@@ -486,7 +486,7 @@ With this spell, caster imbues  target's weapon(s) with power of fire granting i
 Level: 2
 Sphere: Elemental (Fire)
 Range: Touch
-Duration: 4 rounds + 1 round/level
+Duration: 1 minute/level
 Casting Time: 4
 Area of Effect: 1 Creature
 Saving Throw: None
@@ -1496,7 +1496,20 @@ Casting Time: 3
 Area of Effect: The caster
 Saving Throw: None
 
-Gravity weapon significantly increases the weight and density of your weapons or projectiles the instant before they strike their target and then return them to normal a few moments later. All weapons the caster is carrying while the spell is cast deal 1 additional point of damage. The bonus to damage increases to +2 at level 6 and to +3 at level 12.~
+Gravity weapon significantly increases the weight and density of your weapons or projectiles the instant before they strike their target and then return them to normal a few moments later. All weapons the caster is carrying while the spell is cast deal 1 additional point of damage. The bonus to damage increases to +2 at level 10.~
+//------------------------------------------------------------------------
+    @337 = ~Defensive Harmony
+(Enchantment/Charm)
+
+Level: 4
+Sphere: Law
+Range: 0
+Duration: 1 round/level
+Casting Time: 1
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+Defensive Harmony grants affected creatures a defensive bonus by bestowing an enchanted coordination on their attacks and defenses. This allows a group of creatures to act as a single unit for a single battle or encounter. The effect is always centered on the caster, but affects all allies within a 15-ft. radius. Those affected can move outside of this area after the spell is cast and still enjoy the benefits of the harmony. While the spell is in effect, each affected creature gains a +4 bonus to <PRO_HISHER> Armor Class for the duration of the spell.~
 //------------------------------------------------------------------------
 	@1000 =~vs. None~
 	@1001 =~vs. Spell~

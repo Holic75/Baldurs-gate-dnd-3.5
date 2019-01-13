@@ -4,7 +4,7 @@
 	
 	ACTION_IF NOT (~%GameId%~ STR_EQ ~Iwd~) BEGIN
         COPY_EXISTING ~SPWI411.SPL~ ~override~ 
-            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=45 new_opcode = 39 parameter2=0 END 
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=39 parameter2=0 END 
             READ_LONG 0x0050 ~descr_strref~
             STRING_SET_EVALUATE %descr_strref% @314
     END
@@ -497,18 +497,23 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 //altering flame blade to give bonus damage instead of creating weapon
 	COPY ~3ed/Spells/FlameWeapon/FLMWPN.eff~ ~override~ 
 	COPY_EXISTING ~SPPR206.SPL~ ~override~
-		READ_SHORT 0x68 n_headers
+        LPF DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST INT_VAR level_to_keep = 1 END
+    COPY_EXISTING ~SPPR206.SPL~ ~override~    
 		LPF ALTER_SPELL_HEADER INT_VAR target=1 END //allow to cast on living actors
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=111  new_opcode=248 target=2 STR_VAR resource = ~FLMWPN~ END //add effect on hit
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=215  target=2 END //move visual effect to targer 
-	
-		FOR (i=0;i<=n_headers;i=i+1) BEGIN
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=249 target=2 power=2 timing=0 duration=24+i*6 resist_dispel=1 header=i+1 STR_VAR resource = ~FLMWPN~ END //add effect on ranged hit
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=142 target=2 power=2 parameter2=188 timing=0 duration=24+i*6 resist_dispel=1 header=i+1  END //display weapon icon
-			LPF ADD_SPELL_EFFECT INT_VAR opcode=9 target=2 power=2 parameter1=256*255+71*256*256+41*256*256*256 parameter2=16+256*256*30 timing=0 duration=24+i*6 resist_dispel=1 header=i+1  END //major colour pulse //weapon glow
-		END
-		LPF ADD_SPELL_EFFECT INT_VAR  opcode = 321 power=2 target=2  duration=1 timing=0 resist_dispel=3 insert_point=0 STR_VAR resource=~SPPR206~ END //remove effects from previous cast
-        LPF ALTER_SPELL_EFFECT INT_VAR resist_dispel = 3 END
+ 
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=249 target=2 power=2 timing=0 duration=60 resist_dispel=1 header=i+1 STR_VAR resource = ~FLMWPN~ END //add effect on ranged hit
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=142 target=2 power=2 parameter2=188 timing=0 duration=60 resist_dispel=1 header=i+1  END //display weapon icon
+		LPF ADD_SPELL_EFFECT INT_VAR opcode=9 target=2 power=2 parameter1=256*255+71*256*256+41*256*256*256 parameter2=16+256*256*30 timing=0 duration=60 resist_dispel=1 header=i+1  END //major colour pulse //weapon glow
+
+		LPF ADD_SPELL_EFFECT INT_VAR  opcode = 321 power=2 target=2  duration=1 timing=0 resist_dispel=1 insert_point=0 STR_VAR resource=~SPPR206~ END //remove effects from previous cast
+        LPF ALTER_SPELL_EFFECT INT_VAR resist_dispel = 3 duration_high = 60 END
+        FOR (i = 2; i<=20; i = i + 1) BEGIN
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+            LPF ALTER_SPELL_HEADER INT_VAR min_level = i header = i END
+            LPF ALTER_SPELL_EFFECT INT_VAR header =i duration_high = i*60 END
+        END
 		//allow only druids to cast it 
 		READ_BYTE 0x0021 ~cleric_usability~
 		WRITE_BYTE 0x0021 (cleric_usability BOR 0b01000000)
@@ -1243,6 +1248,20 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
         //reset caster spell level while spell is being cast
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 191 target = 1 power = 2 duration = 1 insert_point = 0 END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 191 target = 1 power = 2 duration = 1 insert_point = 0 parameter2 = 1 END
+        
+        
+    //change defensive harmony to 1 round/level and make it give +4 ac in all games
+    COPY_EXISTING ~SPPR406.SPL~ ~override~
+        LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 6 END
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 0 parameter1 = 4 END
+        FOR (i = 2; i<=20; i = i + 1) BEGIN
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+            LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = i END
+            LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high = i*6 END
+        END
+        
+        READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @337	//change description
 
                 
         

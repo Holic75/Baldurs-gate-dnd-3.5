@@ -258,9 +258,9 @@
             LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END            
             LPF ALTER_SPELL_HEADER INT_VAR header = i  min_level = i END      
             LPF ALTER_SPELL_EFFECT INT_VAR header = i duration = i*60 END
-            SET dmg_bonus = 1 + i/6
-            PATCH_IF (dmg_bonus > 3) BEGIN
-                SET dmg_bonus = 3
+            SET dmg_bonus = 1 + i/10
+            PATCH_IF (dmg_bonus > 2) BEGIN
+                SET dmg_bonus = 2
             END
             LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 73 header = i parameter1 = dmg_bonus END            
         END

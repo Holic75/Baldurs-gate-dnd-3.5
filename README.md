@@ -2182,7 +2182,7 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Bless is now a cleric only spell  
 - Shillelagh duration was increased to 5 rounds/level, shillelagh damage was increased to 2d6  
 - Barkskin now gives +3 bonus to AC (+4 at level 7, +5 at level 13) which is cumulative with everything else, and +1 bonus to saving throws (except vs. Spell)    
-- Flame Blade spell was removed, it is now replaced with druid only Flame Weapon spell which makes target deal +1d6 fire damage bonus on every attack for the duration of the spell  
+- Flame Blade spell was removed, it is now replaced with druid only Flame Weapon spell which makes target deal +1d6 fire damage bonus on every attack for 1 minute/level  
 - Goodberries now heal 3 HP each when eaten  
 - Spiritual Hammer is now a throwing weapon with +1 enchantment, THAC0 and Damage bonus per 3 caster levels (up to +5 at lvl 15)    
 - Draw Upon Holy Might now gives 1+1/per 5 caster level bonus to STR, DEX and CON (up to +5 at level 20)  
@@ -2219,6 +2219,7 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Duration of Blur and Aid was changed to 5 rounds/level  
 - Duration of Luck was changed to 1 round/level
 - Iwd Poison spell now deals 1 poison damage per 6 levels of the caster per second.
+- Duration of Defensive Harmony was increased to 1 round/level and it now gives + 4 AC bonus in all games.
 
 ### New Spells
 
@@ -2272,7 +2273,7 @@ Casting Time: 3
 Area of Effect: The caster
 Saving Throw: None
 
-Gravity weapon significantly increases the weight and density of your weapons or projectiles the instant before they strike their target and then return them to normal a few moments later. All weapons the caster is carrying while the spell is cast deal 1 additional point of damage. The bonus to damage increases to +2 at level 6 and to +3 at level 12.  
+Gravity weapon significantly increases the weight and density of your weapons or projectiles the instant before they strike their target and then return them to normal a few moments later. All weapons the caster is carrying while the spell is cast deal 1 additional point of damage. The bonus to damage increases to +2 at level 10.  
 
 #### Cause Light Wounds (Cleric)
 (Necromancy)  
