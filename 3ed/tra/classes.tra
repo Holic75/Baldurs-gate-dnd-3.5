@@ -61,7 +61,7 @@ CLASS FEATURES:
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels thereafter).
 – Can use Spontaneous Battlecasting.
 
-SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 4 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 
 – At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
 – At 4th level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 every 4 levels thereafter (up to a maximum of +4 at level 16).
@@ -117,11 +117,11 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.
 – May use Spontaneous Spell Channeling
 
-SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
+SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 4 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 
 – May use Spontaneous Battlecasting.
 
-SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 4 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, and finally at level 12 Armored Arcana: Splint Mail Casting.
 – Acquires one scroll with any arcane spell up to maximum level <PRO_HESHE> can cast at every level up starting from level 2.
@@ -168,7 +168,7 @@ CLASS FEATURES:
 – Acquires one scroll with any arcane spell up to maximum level <PRO_HESHE> can cast at every level up starting from level 2.
 – Can use Spontaneous Battlecasting.
 
-SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 4 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 
 – At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
 – Hit Die: d7
@@ -643,7 +643,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).
 – May use Spontaneous Spell Channeling
 
-SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
+SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 4 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 
 – At 1st level chooses one domain that grants <PRO_HIMHER> access to additional spells and abilities, normally not available to Clerics of other domains.
 – Gets one bonus feat at levels 10, 20, 22, 25 and 28.

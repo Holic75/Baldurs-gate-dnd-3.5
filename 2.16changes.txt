@@ -17,3 +17,7 @@
 - Avenger gets additional Rage uses at every 4th level instead of at every 5th
 - Priest of Tempus gets additional Rage uses at every 4th level instead of at every 5th
 - Priest of Tempus gets additional Chaos of Battle uses at every 6th level instead of at every 4th
+- Added Gravity Weapon Spell to Druids and Rangers at level 1
+- Divine Favor is now 1st lvl non-domain cleric spell (capped at +3)
+- In War domain Divine Favor domain spell was replaced with Gravity Weapon spell
+- Toughness nerfed to regenerate only 2 hps per round.

@@ -225,7 +225,7 @@ Power Attack (1 star) - The character receives Power Attack modal ability. While
 Cleave (2 stars) - Once per round, if the character slays an enemy in melee, she gains one additional APR till end of round.  
 Great Fortitude (3 stars) - The character receives +2 bonus on Saving Throws vs. Paralysis/Poison/Death and vs. Petrification/Polymorph.  
 Greater Cleave (4 stars) - Once per round, if character hits a target she receives +1/2 additional APR till end of round.  
-Toughness (5 stars) - The character regenerates 3 Hit points per round.  
+Toughness (5 stars) - The character regenerates 2 Hit points per round.  
 Stunning Attack (6 stars) - The character receives Stunning Attack innate ability.
 ```
 Stunning Attack:
@@ -1376,7 +1376,7 @@ CLASS FEATURES:
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
 – Can use Spontaneous Battlecasting.  
 ```
-SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 4 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 ```
 – At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – Hit Die: d9  
@@ -1394,7 +1394,7 @@ CLASS FEATURES:
 - Acquires one scroll with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Can use Spontaneous Battlecasting.  
 ```
-SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 4 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 ```
 – Can use Resist Magic once per day starting from level 23, gains an additional use at level 28.
 ```
@@ -1482,7 +1482,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
 – May use Spontaneous Spell Channeling
 ```
-SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to her sneak attack damage for next 3 rounds.
+SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to her sneak attack damage for next 4 rounds.
 ```
 – At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – Gets one bonus feat at levels 10, 20, 22, 25 and 28.  
@@ -1529,7 +1529,7 @@ SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrific
 ```
 – May use Spontaneous Battlecasting
 ```
-SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 4 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 ```
 – Gets one bonus feat at levels 8, 14, 20, 22, 25 and 28.  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, and finally at level 12 Armored Arcana: Splint Mail Casting.  
@@ -1553,7 +1553,7 @@ CLASS FEATURES:
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting arcane spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.  
 – Can use Spontaneous Battlecasting.
 ```
-SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
+SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 4 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 ```
 – At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – Hit Die: d7  
@@ -2058,8 +2058,8 @@ Protection       | Shield (1), Minor Globe of Invulnerability (4), Protection Fr
 Sun              | Fireshield (Red) (4), Sunfire (5), Prismatic Spray (7)                              |Divine Light 1/day
 Time             | Slow (3), Haste (4), Hold Monster (5)                                               |Immunity to sneak attacks
 Trickery         | Grease (1), Confusion (4), Shadow Door (5)                                          |Mirror Image 1/day, +5% bonus to all thieving skills
-War              | Seeking Sword (3), Divine Favor (5), Tenser's Transformation (6)                    |Free weapon focus
-Magic            | Minor Spell Turning (3), Spell Immunity (5), Limited Wish (7)                                  |Dispelling Touch 3/day
+War              | Gravity Weapon(1), Seeking Sword (3), Tenser's Transformation (6)                   |Free weapon focus
+Magic            | Minor Spell Turning (3), Spell Immunity (5), Limited Wish (7)                       |Dispelling Touch 3/day
 Plant            | Entangle (1), Barkskin (2), Poison (4, Bg1, Bg2), Mold Touch (3, Iwd)               |Poison Weapon 1/day
 
 #### Charm Animal, 10' Radius
@@ -2201,7 +2201,7 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Cause Critical Wounds is now a close range spell dealing 36 points of damage  (with savingthrow vs. Spell for half)  
 - Cure Critical wounds now heals 36 HP  
 - Heal now heals up to 150 HP  
-- Divine favor now lasts 10 rounds (it is now a 5th level War Domain Spell)  
+- Divine favor now lasts 10 rounds and its bonus capped at +3 (it is now a 1st level cleric spell)  
 - Sol's Searing Orb is now a ranged spell in Bg1 and Bg2 (instead creating item)  and deals 6d12 damage (double to undead) with savingthrow vs Breath Weapon for half  
 - Damage of Bolt of Glory against primes/elementals/undead/demons was increased to 4d12/3d8/8d12/10d12 respectively  
 - Harm is now a close range spell instead of a weapon, dealing 150 damage (75 if Save vs. Spell), but always leaves target with at least 1 HP    
@@ -2260,6 +2260,19 @@ Area of Effect: 1 creature
 Saving Throw: None   
 
 Target creature coloring changes to match the surrounding environment, granting it +20% bonus to Hide in Shadows and Move Silently Skills for the duration of the spell.
+
+#### Gravity Weapon (Druid)
+(Alteration)
+
+Level: 1
+Sphere: Elemental (Earth)
+Range: 0
+Duration: 1 minute/level
+Casting Time: 3
+Area of Effect: The caster
+Saving Throw: None
+
+Gravity weapon significantly increases the weight and density of your weapons or projectiles the instant before they strike their target and then return them to normal a few moments later. All weapons the caster is carrying while the spell is cast deal 1 additional point of damage. The bonus to damage increases to +2 at level 6 and to +3 at level 12.  
 
 #### Cause Light Wounds (Cleric)
 (Necromancy)  

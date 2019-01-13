@@ -196,6 +196,6 @@ COPY ~3ed/Classes/Kensai/kenscre.d~  ~override/kenscre.d~
 	COPY ~3ed/Feats/FeatAttribution/FEATCRE.SPL~ ~override/KENSCRE.SPL~	
 		LPF  ALTER_SPELL_EFFECT INT_VAR match_opcode=177 STR_VAR resource=~KENSCRE~ END
 
-	LAF ADD_FEATS_LVL INT_VAR feat_name_indexed = 1 mask = 0b100100001000100010001001 //(1,4,8,12,16,21,24)
+	LAF ADD_FEATS_MASK INT_VAR mask = 0b100100001000100010001001 //(1,4,8,12,16,21,24)
 				STR_VAR clab=~CLABFI04\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
 					feat_name=~KENSCRE~ caption=~KENSCR~ END 	

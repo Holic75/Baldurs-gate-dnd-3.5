@@ -61,7 +61,7 @@ Depending on spell level spells are transformed as follows:
 Duration: 1 round
 Casting Time: Instant
 
-When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.~
+When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 4 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.~
 
 @9=~Spontaneous Battle Casting I~
 @10=~Spontaneous Battle Casting II~
@@ -80,7 +80,7 @@ When this ability is activated caster can sacrifice any  memorized spell and cha
 Duration: 1 round 
 Casting Time: Instant
 
-When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 3 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.~
+When this ability is activated caster can sacrifice any  memorized spell and channel its energy into <PRO_HISHER> weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to <PRO_HISHER> sneak attack damage for next 4 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.~
 
 @18=~Spontaneous Spell Channeling I~
 @19=~Spontaneous Spell Channeling II~

@@ -841,7 +841,7 @@ This spell lasts 1 round per level of the caster. It gives the caster a +1 bonus
 	@104=~Divine Favor
 (Conjuration)
 
-Level: 5
+Level: 1
 Sphere: War
 Range: 0
 Duration: 10 rounds
@@ -849,7 +849,7 @@ Casting Time: 1
 Area of Effect: Caster
 Saving Throw: None
 
-This spell grants the caster a +1 bonus to hit and damage rolls for every 3 levels of the caster for 10 rounds.~
+This spell grants the caster a +1 bonus to hit and damage rolls for every 3 levels of the caster (min +1, max + 3) for 10 rounds.~
 //--------------------------------------------------------------------------------------------------
 	@105=~Seeking Sword
 (Invocation)
@@ -1483,6 +1483,20 @@ Area of Effect: 1 creature
 Saving Throw: 1/2
 
 This spell fires an orb of cold at a creature that inflicts 1d4+2 points of cold damage per level of the caster. If the target makes its Save vs. Breath Weapon, however, they have partially dodged the orb and receive only half the damage.~
+//------------------------------------------------------------------------
+    @335 = ~Gravity Weapon~
+    @336 = ~Gravity Weapon
+(Alteration)
+
+Level: 1
+Sphere: Elemental (Earth)
+Range: 0
+Duration: 1 minute/level
+Casting Time: 3
+Area of Effect: The caster
+Saving Throw: None
+
+Gravity weapon significantly increases the weight and density of your weapons or projectiles the instant before they strike their target and then return them to normal a few moments later. All weapons the caster is carrying while the spell is cast deal 1 additional point of damage. The bonus to damage increases to +2 at level 6 and to +3 at level 12.~
 //------------------------------------------------------------------------
 	@1000 =~vs. None~
 	@1001 =~vs. Spell~

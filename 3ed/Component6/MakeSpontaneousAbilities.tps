@@ -62,7 +62,7 @@
 	OUTER_FOR (i=1;i<=7;i=i+1) BEGIN
 		COPY ~3ed/SpontaneousCasting/BattleCasting/BCST.SPL~ ~override/BCST%i%.SPL~
 			WRITE_LONG 0x0034 i //spell level
-			LPF ALTER_SPELL_EFFECT INT_VAR power=i END
+			LPF ALTER_SPELL_EFFECT INT_VAR power=i duration_high = 25 END
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=73 parameter1=(i+1)/2 END //damage bonus
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=278 parameter1=(i+1)/2 END //thac0
             LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=0 parameter1=i/2 END //ac
@@ -89,7 +89,7 @@
 	OUTER_FOR (i=1;i<=7;i=i+1) BEGIN
 		COPY ~3ed/SpontaneousCasting/ChannelStrike/CHSTKE.SPL~ ~override/CHSTKE%i%.SPL~
 			WRITE_LONG 0x0034 i //spell level
-			LPF ALTER_SPELL_EFFECT INT_VAR power=i END
+			LPF ALTER_SPELL_EFFECT INT_VAR power=i duration_high = 25 END
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=12 dicenumber=i END //number of 1d4 dices
 			
 		COPY ~3ed/SpontaneousCasting/ChannelStrike/CHSTK.SPL~ ~override/CHSTK%i%.SPL~

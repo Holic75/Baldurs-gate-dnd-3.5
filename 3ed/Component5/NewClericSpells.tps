@@ -15,13 +15,21 @@
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %spell_name% @102
 		STRING_SET_EVALUATE %descr_strref% @103
-	//make divine favor into cleric spell (duration to 10 rounds)
+	//make divine favor into 1st level cleric spell (duration to 10 rounds)
 	COPY_EXISTING ~ohtyr2.SPL~ ~override~
-		LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_level=5 spell_type=2 END
-        LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 10*6 END 
+		LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_level=1 spell_type=2 END
+        WRITE_BYTE 0x0021 0b10000000 //set it to cleric only
+        LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 10*6 resist_dispel = 3 target = 2 END        
 		READ_LONG 0x0050 ~descr_strref~
         WRITE_ASCII 0x003a ~OHTYR2C~ //set icon (it is somehow not set in bg2)
-		STRING_SET_EVALUATE %descr_strref% @104	
+        FOR (i = 12; i<=30; i = i + 3) BEGIN
+            LPF DELETE_SPELL_HEADER INT_VAR header_type=1 min_level=i END
+        END
+		STRING_SET_EVALUATE %descr_strref% @104
+        ADD_SPELL "override/ohtyr2.SPL" 1  1 CLERIC_DIVINE_FAVOR		
+			SPRINT resource EVALUATE_BUFFER ~%DEST_RES%~		
+			LPF ADD_SPELL_EFFECT INT_VAR  opcode = 321 power=1 target=2  duration=1 timing=0 resist_dispel=3 insert_point=0 STR_VAR resource END //remove effects from previous cast
+	        
         
 	//making seeking sword give only one additional apr and creating headers for levels 5-9 (also make lvl 3 cleric spell)
 	COPY_EXISTING ~SPCL731.SPL~ ~override~ 
@@ -154,6 +162,8 @@
 			SAY NAME1 @023
 			SAY UNIDENTIFIED_DESC @024
 			ADD_SPELL "override/rgspb03.spl" 1  3 CLERIC_CAUSE_MEDIUM_WOUNDS			
+        WRITE_BYTE 0x0021 0b10000000 //remove from druid spell list
+        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete  = 326 END
 	END
 		
 
@@ -168,8 +178,6 @@
     COPY_EXISTING ~SPPR514.SPL~  ~override/MSCURE1.SPL~
         WRITE_LONG 0x0034 6 //spell level
         WRITE_ASCII 0x003a ~MSCURE1C~ #8 //spellbook icon
-        WRITE_BYTE 0x0021 0b10000000 //remove from druid spell list
-        LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete  = 326 END
         LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete  = 318 END       
         LPF ALTER_SPELL_HEADER INT_VAR projectile = 149 STR_VAR icon = ~MSCURE1B~ END
         READ_SHORT 0x0068 "Nheaders" //number of headers

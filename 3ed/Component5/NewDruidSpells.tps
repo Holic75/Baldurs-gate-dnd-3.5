@@ -156,7 +156,7 @@
         WRITE_LONG 0x001c 20 //change power level from 14 to 20
 
         
-    //add false down to druid's spellbook
+    //add false dawn to druid's spellbook
     COPY_EXISTING ~SPPR609.SPL~ ~override~
         WRITE_BYTE 0x0021 0b00000000
         
@@ -239,8 +239,34 @@
                       
         ADD_SPELL "override/AURAVITD.SPL" 1  7 DRUID_AURA_VITALITY
         SPRINT resource EVALUATE_BUFFER ~%DEST_RES%~		
-			LPF ADD_SPELL_EFFECT INT_VAR  opcode = 321 power=7 target=2  duration=1 timing=0  insert_point=0 STR_VAR resource END //remove effects from previous cast
+			LPF ADD_SPELL_EFFECT INT_VAR  opcode = 321 power=7 target=2  duration=1 timing=0  resist_dispel = 3 insert_point=0 STR_VAR resource END //remove effects from previous cast
 
-   
+    // gravity weapon
+    COPY ~3ed/Spells/GravityWeapon/GRAVWPNC.BAM~ ~override~
+    COPY ~3ed/Spells/GravityWeapon/GRAVWPNB.BAM~ ~override~
+    COPY ~3ed/Spells/GravityWeapon/GRAVWPN.SPL~ ~override~
+    
+    SET NameStrRef = RESOLVE_STR_REF (@335)
+    SET DescStrRef = RESOLVE_STR_REF (@336)
+    COPY_EXISTING ~GRAVWPN.SPL~ ~override~
+        WRITE_ASCII 0x003a ~GRAVWPNC~ #8 //spellbook icon
+        WRITE_LONG 0x0050 DescStrRef
+        WRITE_LONG 0x0008 NameStrRef
+        LPF ALTER_SPELL_HEADER STR_VAR icon  = ~GRAVWPNB~ END
+        LPF ALTER_SPELL_EFFECT INT_VAR duration = 60 target = 2 END
+        FOR (i=2;i<=20;i=i+1) BEGIN
+            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END            
+            LPF ALTER_SPELL_HEADER INT_VAR header = i  min_level = i END      
+            LPF ALTER_SPELL_EFFECT INT_VAR header = i duration = i*60 END
+            SET dmg_bonus = 1 + i/6
+            PATCH_IF (dmg_bonus > 3) BEGIN
+                SET dmg_bonus = 3
+            END
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 73 header = i parameter1 = dmg_bonus END            
+        END
+            
+        ADD_SPELL "override/GRAVWPN.SPL" 1  1 DRUID_GRAVITY_WEAPON
+        SPRINT resource EVALUATE_BUFFER ~%DEST_RES%~		
+			LPF ADD_SPELL_EFFECT INT_VAR  opcode = 321 power=1 target=2  duration=1 timing=0  resist_dispel = 3 insert_point=0 STR_VAR resource END //remove effects from previous cast
 
     
