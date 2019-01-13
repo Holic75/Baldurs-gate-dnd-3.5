@@ -391,7 +391,7 @@ END
 	
 
 //racial enemies to rangers (except stlaker)
-	LAF ADD_FEATS_LVL INT_VAR min_level=5 max_level=30 d_level=5 add_at_level1=1 delay = 4 indexed = 1
+	LAF ADD_FEATS_LVL INT_VAR min_level=5 max_level=30 d_level=5 add_at_level1=1 delay = 4
 						STR_VAR clab=~\(\(CLABRN01\)\|\(CLABRN02\)\|\(CLABRN04\)\)\.2DA~ 
                         mask_file=~3ed/Feats/FeatAttribution/SFTCRER.SPL~ feat_name=~FECRE~ caption=~FE_RN~ END
 
@@ -405,16 +405,18 @@ END
                         caption=~FE_PRRN~ END  
         
 //improved racial enemies for stalkers
-	LAF ADD_FEATS_LVL INT_VAR min_level=5 max_level=30 d_level=5 add_at_level1=1 indexed = 1
-						STR_VAR clab=~CLABRN03\.2DA~ feat_name=~FEICRE~ caption = ~FEI_S~ END
+	LAF ADD_FEATS_LVL INT_VAR min_level=5 max_level=30 d_level=5 add_at_level1=1 delay = 4
+						STR_VAR clab=~CLABRN03\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRER.SPL~
+                        feat_name=~FEICRE~ caption = ~FEI_S~ END
 	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-						STR_VAR clab=~CLABRN03\.2DA~ feat_name=~FEI_PR~ caption = ~FEI_PRS~ END                         
+						STR_VAR clab=~CLABRN03\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRER.SPL~
+                        feat_name=~FEI_PR~ caption = ~FEI_PRS~ END                         
                            
 //racial enemies to fighter druids and cleric rangers
-	LAF ADD_FEATS_LVL INT_VAR min_level=10 max_level=30 d_level=10 add_at_level1=1 delay = 4  indexed = 1
+	LAF ADD_FEATS_LVL INT_VAR min_level=10 max_level=30 d_level=10 add_at_level1=1 delay = 4
 						STR_VAR clab=~CLABDR01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFD.SPL~ feat_name=~FEMCRE~ caption=~FE_FD~ END
 
-	LAF ADD_FEATS_LVL INT_VAR min_level=10 max_level=30 d_level=10 add_at_level1=1 delay = 4 indexed = 1
+	LAF ADD_FEATS_LVL INT_VAR min_level=10 max_level=30 d_level=10 add_at_level1=1 delay = 4
 						STR_VAR clab=~CLABRN01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRERC.SPL~ feat_name=~FEMCRE~ caption=~FE_RC~ END                        
                                
 	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
