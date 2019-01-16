@@ -5,7 +5,7 @@
     @005 = ~Summon Spirit~
     @006 = ~Summon Spirit 
     
-The Shaman calls on a special spirit to aid <PRO_HIMHER> for 5 rounds + 1 round per 2 points of Charisma above 10.
+The Shaman calls on a special spirit to aid <PRO_HIMHER> for 3 rounds + 1 round per 2 points of Charisma above 10.
 The spirits grow in power as the Shaman gains additional levels:
   Level 1: Minor animal spirits (snake, fox, hound).
   Level 6: Major animal spirits (bear, panther, boar).

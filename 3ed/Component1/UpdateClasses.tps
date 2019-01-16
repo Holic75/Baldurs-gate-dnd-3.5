@@ -43,7 +43,8 @@
          COPY ~3ed\Classes\Kensai\KENSR.EFF~ ~override\KENSR%i%.EFF~
             LPF ALTER_EFF STR_VAR resource END
             
-         COPY ~3ed\Classes\Kensai\KNSPR.SPL~ ~override\KNSPR%i%.SPL~                 
+         COPY ~3ed\Classes\Kensai\KNSPR.SPL~ ~override\KNSPR%i%.SPL~
+            LPF MAKE_ALWAYS_CASTABLE END
             LPF ALTER_SPELL_EFFECT STR_VAR resource END
     END
     
@@ -58,6 +59,11 @@
        
 	//lay on hands		
 	COPY ~3ed/Classes/Paladin/LayOnHands~ ~override~
+    COPY_EXISTING ~LAYHND0.SPL~ ~override~
+        LPF MAKE_ALWAYS_CASTABLE END
+    COPY_EXISTING ~LAYHND1.SPL~ ~override~
+        LPF MAKE_ALWAYS_CASTABLE END
+        
 	OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN //script to update number of lay on hands uses depending on charisma
 		EXTEND_TOP_REGEXP ~\(BD\)*BALDUR.*\.BCS~ ~3ed/Classes/Paladin/PALADIN.baf~
 			EVALUATE_BUFFER			
@@ -237,7 +243,8 @@
             SAY UNIDENTIFIED_DESC @004
     
         COPY ~3ed/Classes/Hexblade/GV_HEX.SPL~ ~override/GV_HEX1.SPL~ //give one ability depending on charisma
-        COPY ~3ed/Classes/Hexblade/GV_HEX.SPL~ ~override/GV_HEXA.SPL~ //gives multiple uses depnding on charisma
+        COPY ~3ed/Classes/Hexblade/GV_HEX.SPL~ ~override/GV_HEXA.SPL~ //gives multiple uses depnding on charisma   
+            LPF MAKE_ALWAYS_CASTABLE END
         
         OUTER_FOR (cha = 10;cha<=25;cha=cha+2) BEGIN
             COPY_EXISTING ~HEXCR.SPL~ ~override/HEXCR%cha%.SPL~
@@ -484,6 +491,7 @@
 			SAY UNIDENTIFIED_DESC @002
 	
 		COPY_EXISTING ~GV_KIPW.SPL~ ~override~
+            LPF MAKE_ALWAYS_CASTABLE END
 			FOR (i=3;i<30;i=i+2) BEGIN
 				SET copy_header = (i - 1)/2
 				LPF ADD_SPELL_HEADER INT_VAR  insert_point=(i + 1)/2 copy_header END
@@ -1131,7 +1139,11 @@ END
 			WRITE_SHORT 0x0042 0	
 	END
 	  
-	 //---------------------- shaman dance update (replace with innate summoning one spirit)------------------------//             
+	 //---------------------- shaman dance update (replace with innate summoning one spirit)------------------------// 
+    COPY ~3ed/Classes/Shaman/BDSHAM03.2DA~ ~override~ //list for 3rd level summon
+    COPY ~3ed/Classes/Shaman/BDSHAM09.2DA~ ~override~ //list for 9th level summon
+    COPY ~3ed/Classes/Shaman/BDSHAM15.2DA~ ~override~ //list for 15th level summon
+    COPY ~3ed/Classes/Shaman/BDSHAM21.2DA~ ~override~ //list for 21th level summon
     COPY ~3ed/Classes/Shaman/BDSHAM24.2DA~ ~override~ //list for 24th level summon
     COPY ~3ed/Classes/Shaman/bdshunsu.BCS~ ~override~ //script for shaman summons
     //create major spirits 
@@ -1153,83 +1165,89 @@ END
         OUTER_SET StrRefDisplay = RESOLVE_STR_REF(@004)
     END
 
-    COPY_EXISTING ~BDSHA01A.CRE~ ~override~
-        LPF ALTER_CREATURE INT_VAR THAC0 = 17  AC = 5 END    
-    COPY_EXISTING ~BDSHA01B.CRE~ ~override~
-        LPF ALTER_CREATURE INT_VAR THAC0 = 17  AC = 5 END 
-    COPY_EXISTING ~BDSHA01C.CRE~ ~override~
-        LPF ALTER_CREATURE INT_VAR THAC0 = 17  AC = 4 END 
+    COPY_EXISTING ~BDSHA01A.CRE~   ~override\BDSHA01A.CRE~
+        LPF ALTER_CREATURE INT_VAR THAC0 = 20 MaxHp = 8 CurrentHp = 8 Level1 = 1 END 
+    COPY_EXISTING ~BDSHA01B.CRE~   ~override\BDSHA01B.CRE~
+        LPF ALTER_CREATURE INT_VAR THAC0 = 20 MaxHp = 8 CurrentHp = 8 Level1 = 1 END
+    COPY_EXISTING ~BDSHA01C.CRE~   ~override\BDSHA01C.CRE~
+        LPF ALTER_CREATURE INT_VAR THAC0 = 20 MaxHp = 8 CurrentHp = 8 Level1 = 1 END
         
-    COPY_EXISTING ~BDSHA06A.CRE~ ~override~
-        LPF ALTER_CREATURE INT_VAR THAC0 = 13  AC = 3 END    
-    COPY_EXISTING ~BDSHA06B.CRE~ ~override~
-        LPF ALTER_CREATURE INT_VAR THAC0 = 13  AC = 2 END 
-    COPY_EXISTING ~BDSHA06C.CRE~ ~override~
-        LPF ALTER_CREATURE INT_VAR THAC0 = 13  AC = 3 END 
+    COPY_EXISTING ~BDSHA01A.CRE~   ~override\BDSHA03A.CRE~
+        LPF ALTER_CREATURE INT_VAR THAC0 = 18  AC = 5 MaxHp = 16 CurrentHp = 16 END  
+    COPY_EXISTING ~BDSHA01B.CRE~   ~override\BDSHA03B.CRE~
+        LPF ALTER_CREATURE INT_VAR THAC0 = 18  AC = 5 MaxHp = 16 CurrentHp = 16 END 
+    COPY_EXISTING ~BDSHA01C.CRE~   ~override\BDSHA03C.CRE~
+        LPF ALTER_CREATURE INT_VAR THAC0 = 18  AC = 4 MaxHp = 16 CurrentHp = 16 END 
         
-    COPY_EXISTING ~BDSHA12A.CRE~ ~override~
-        LPF ALTER_CREATURE INT_VAR THAC0 = 9  AC = 2 END    
-    COPY_EXISTING ~BDSHA12B.CRE~ ~override~
-        LPF ALTER_CREATURE INT_VAR THAC0 = 9  AC = 2 END 
-    COPY_EXISTING ~BDSHA12C.CRE~ ~override~
-        LPF ALTER_CREATURE INT_VAR THAC0 = 9  AC = 2 END     
+    COPY_EXISTING ~BDSHA06A.CRE~   ~override\BDSHA09A.CRE~
+        LPF ALTER_CREATURE INT_VAR THAC0 = 15  AC = 4 MaxHp = 48 CurrentHp = 48 Level1 = 6 END    
+    COPY_EXISTING ~BDSHA06B.CRE~   ~override\BDSHA09B.CRE~
+        LPF ALTER_CREATURE INT_VAR THAC0 = 15  AC = 4 MaxHp = 48 CurrentHp = 48 Level1 = 6 END 
+    COPY_EXISTING ~BDSHA06C.CRE~   ~override\BDSHA09C.CRE~
+        LPF ALTER_CREATURE INT_VAR THAC0 = 15  AC = 4 MaxHp = 48 CurrentHp = 48 Level1 = 6 END 
+        
+    COPY_EXISTING ~BDSHA12A.CRE~   ~override\BDSHA15A.CRE~
+        LPF ALTER_CREATURE INT_VAR THAC0 = 11  AC = 2 MaxHp = 80 CurrentHp = 80 Level1 = 10 END    
+    COPY_EXISTING ~BDSHA12B.CRE~   ~override\BDSHA15B.CRE~
+        LPF ALTER_CREATURE INT_VAR THAC0 = 11  AC = 2 MaxHp = 80 CurrentHp = 80 Level1 = 10 END 
+    COPY_EXISTING ~BDSHA12C.CRE~   ~override\BDSHA15C.CRE~
+        LPF ALTER_CREATURE INT_VAR THAC0 = 11  AC = 2 MaxHp = 80 CurrentHp = 80 Level1 = 10 END     
 
-    COPY_EXISTING ~BDSHA18A.CRE~ ~override~
-        LPF ALTER_CREATURE INT_VAR THAC0 = 5  AC = 0 END    
-    COPY_EXISTING ~BDSHA18B.CRE~ ~override~
-        LPF ALTER_CREATURE INT_VAR THAC0 = 5  AC = 0 END 
-    COPY_EXISTING ~BDSHA18C.CRE~ ~override~
-        LPF ALTER_CREATURE INT_VAR THAC0 = 5  AC = 0 END              
+    COPY_EXISTING ~BDSHA18A.CRE~   ~override\BDSHA21A.CRE~
+        LPF ALTER_CREATURE INT_VAR THAC0 = 7  AC = 0 MaxHp = 108 CurrentHp = 108 Level1 = 14 END    
+    COPY_EXISTING ~BDSHA18B.CRE~   ~override\BDSHA21B.CRE~
+        LPF ALTER_CREATURE INT_VAR THAC0 = 7  AC = 0 MaxHp = 108 CurrentHp = 108 Level1 = 14 END 
+    COPY_EXISTING ~BDSHA18C.CRE~   ~override\BDSHA21C.CRE~
+        LPF ALTER_CREATURE INT_VAR THAC0 = 7  AC = 0 MaxHp = 108 CurrentHp = 108 Level1 = 14 END              
         
     OUTER_SET AcEffective = 0 - 2                    
     COPY_EXISTING ~BDSHA18A.CRE~	~override\BDSHA24A.CRE~
         REPLACE_CRE_ITEM ~BDSHA24A~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~
-        LPF ALTER_CREATURE INT_VAR MaxHp = 120 CurrentHp = 120 Strength  =19 Constitution = 19 Dexterity = 19 Level1 = 16 THAC0 = 1 LongName = StrRefA Tooltip = StrRefA
+        LPF ALTER_CREATURE INT_VAR MaxHp = 128 CurrentHp = 128 Strength = 19 Constitution = 19 Dexterity = 19 Level1 = 16 THAC0 = 5 LongName = StrRefA Tooltip = StrRefA
                         SaveDeath = 5 SaveWand = 7 SaveBreath = 6 SavePoly = 6 SaveSpell = 8 AcEffective END
     
     COPY_EXISTING ~BDSHA18B.CRE~	~override\BDSHA24B.CRE~
         REPLACE_CRE_ITEM ~BDSHA24B~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~
-        LPF ALTER_CREATURE INT_VAR MaxHp = 120 CurrentHp = 120 Strength  =20 Constitution = 16 Dexterity = 23 Level1 = 16 THAC0 = 1 LongName = StrRefB Tooltip = StrRefB
+        LPF ALTER_CREATURE INT_VAR MaxHp = 128 CurrentHp = 128 Strength = 20 Constitution = 16 Dexterity = 23 Level1 = 16 THAC0 = 5 LongName = StrRefB Tooltip = StrRefB
                         SaveDeath = 5 SaveWand = 7 SaveBreath = 6 SavePoly = 6 SaveSpell = 8 AcEffective END
                                 
     COPY_EXISTING ~BDSHA18C.CRE~	~override\BDSHA24C.CRE~
         REPLACE_CRE_ITEM ~BDSHA24C~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON1~	
-        LPF ALTER_CREATURE INT_VAR MaxHp = 120 CurrentHp = 120 Strength  =23 Constitution = 10 Dexterity = 23 Level1 = 16 THAC0 = 1 LongName = StrRefC Tooltip = StrRefC
+        LPF ALTER_CREATURE INT_VAR MaxHp = 128 CurrentHp = 128 Strength = 23 Constitution = 10 Dexterity = 23 Level1 = 16 THAC0 = 5 LongName = StrRefC Tooltip = StrRefC
                         SaveDeath = 5 SaveWand = 7 SaveBreath = 6 SavePoly = 6 SaveSpell = 8 AcEffective END
  
                            
     
-    //set duration to 5 rounds + (cha - 10)/2
+    //set duration to 3 rounds + (cha - 10)/2
     OUTER_FOR (cha = 10;cha<=24;cha=cha+2) BEGIN
-        OUTER_SET spirit_duration = 6*(5 + (cha - 10)/2)            
+        OUTER_SET spirit_duration = 6*(3 + (cha - 10)/2)            
         COPY ~3ed/Classes/Shaman/SHM_DNC.SPL~ ~override/SHMD1%cha%.SPL~
             LPF ALTER_SPELL_EFFECT INT_VAR duration_high = spirit_duration END
         COPY ~3ed/Classes/Shaman/SHM_DNC.SPL~ ~override/SHMD2%cha%.SPL~
-            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = spirit_duration STR_VAR resource = ~BDSHAM06~ END
+            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = spirit_duration STR_VAR resource = ~BDSHAM03~ END
         COPY ~3ed/Classes/Shaman/SHM_DNC.SPL~ ~override/SHMD3%cha%.SPL~
-            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = spirit_duration STR_VAR resource = ~BDSHAM12~ END
+            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = spirit_duration STR_VAR resource = ~BDSHAM06~ END
         COPY ~3ed/Classes/Shaman/SHM_DNC.SPL~ ~override/SHMD4%cha%.SPL~
-            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = spirit_duration STR_VAR resource = ~BDSHAM18~ END
+            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = spirit_duration STR_VAR resource = ~BDSHAM09~ END
         COPY ~3ed/Classes/Shaman/SHM_DNC.SPL~ ~override/SHMD5%cha%.SPL~
-            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = spirit_duration STR_VAR resource = ~BDSHAM24~ END               
+            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = spirit_duration STR_VAR resource = ~BDSHAM12~ END
+        COPY ~3ed/Classes/Shaman/SHM_DNC.SPL~ ~override/SHMD6%cha%.SPL~
+            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = spirit_duration STR_VAR resource = ~BDSHAM15~ END  
+        COPY ~3ed/Classes/Shaman/SHM_DNC.SPL~ ~override/SHMD7%cha%.SPL~
+            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = spirit_duration STR_VAR resource = ~BDSHAM18~ END
+        COPY ~3ed/Classes/Shaman/SHM_DNC.SPL~ ~override/SHMD8%cha%.SPL~
+            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = spirit_duration STR_VAR resource = ~BDSHAM21~ END            
     END
     
     WITH_TRA ~%LANGUAGE%\shaman.tra~ BEGIN  
-        COPY ~3ed/Classes/Shaman/SHM_DNC.SPL~ ~override/SHM_DNC.SPL~ //shamanic dance inante                
-            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-            LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 6 END
-            
-            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-            LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 12 END
-            
-            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-            LPF ALTER_SPELL_HEADER INT_VAR header = 4 min_level = 18 END
-            
-            LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-            LPF ALTER_SPELL_HEADER INT_VAR header = 5 min_level = 24 END
-                          
+        COPY ~3ed/Classes/Shaman/SHM_DNC.SPL~ ~override/SHM_DNC.SPL~ //shamanic dance innante
+            FOR (i = 1; i<=7; i = i+1) BEGIN
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+                LPF ALTER_SPELL_HEADER INT_VAR header = i+1 min_level = i*3 END
+            END
+                         
             LPF DELETE_EFFECT INT_VAR check_headers = 1 END
-            LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = 5 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 132 resist_dispel = 0 STR_VAR abil_name = ~SHMD~ END 
+            LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = 8 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 132 resist_dispel = 0 STR_VAR abil_name = ~SHMD~ END 
                         
             SAY NAME1 @005
             SAY UNIDENTIFIED_DESC @006                                  
@@ -1240,6 +1258,7 @@ END
         LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 duration = 1 STR_VAR resource END
         
     COPY ~3ed/Classes/Shaman/GV_SDNC.SPL~ ~override/GV_SDNC.SPL~
+        LPF MAKE_ALWAYS_CASTABLE END
         SPRINT resource ~SHM_DNC~
         LPF ADD_SPELL_EFFECT INT_VAR header = 1 opcode = 172 target = 2 duration = 1 STR_VAR resource END //remove
         SPRINT resource ~GVSDNC1~
@@ -1273,6 +1292,7 @@ END
             LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 321 STR_VAR resource = ~FVRD_SP~ END
         
         COPY_EXISTING ~SPCL941B.SPL~ ~override/FVRD_SP.SPL~
+            LPF MAKE_ALWAYS_CASTABLE END
             LPF DELETE_EFFECT INT_VAR  match_opcode = 101 END
             LPF DELETE_EFFECT INT_VAR  match_opcode = 267 END	
             LPF ALTER_SPELL_EFFECT_EX INT_VAR  match_timing = 4 opcode = 169 END				

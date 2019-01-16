@@ -34,6 +34,7 @@ LANGUAGE
 /////////////////////////////////////////////////
 //Descriptions, core 2da files 
 BEGIN @1
+    INCLUDE ~3ed/MAKE_ALWAYS_CASTABLE.tph~
 	INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
 	INCLUDE ~3ed/ALTER_SPELL_EFFECT_EX.tph~
     INCLUDE ~3ed/ALTER_EFF.tph~
@@ -108,8 +109,6 @@ BEGIN @1
     
   
     ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
-            EXTEND_TOP ~OH8000.bcs~ ~3ed/Core/BgBpStart/start.baf~ //30 seconds pause to properly give feats to everyone
-                
             //initial xp regularization                
             OUTER_FOR (PlayerId=1;PlayerId<=6;PlayerId=PlayerId+1) BEGIN
                 OUTER_SET XP=89000 //original game
@@ -119,7 +118,8 @@ BEGIN @1
                 OUTER_SET XP=500000 //blackPits
                     EXTEND_TOP ~OH8000.bcs~ ~3ed/Core/Xp/Common/InitialXp.baf~
                     EVALUATE_BUFFER                   
-            END          
+            END      
+            EXTEND_TOP ~OH8000.bcs~ ~3ed/Core/BgBpStart/start2.baf~ //30 seconds pause to properly give feats to everyone              
     END
     ELSE ACTION_IF (~%GameId%~ STR_EQ ~Bg1~) BEGIN
         EXTEND_TOP ~OH9310.bcs~ ~3ed/Core/BgBpStart/start.baf~ //30 seconds pause to properly give feats to everyone
@@ -158,6 +158,7 @@ BEGIN @1
 
 BEGIN @2
 
+INCLUDE ~3ed/MAKE_ALWAYS_CASTABLE.tph~
 INCLUDE ~3ed/UPDATE_TLK_ENTRIES.tph~
 INCLUDE ~3ed/GET_PROFICIENCY_STRREF.tph~
 INCLUDE ~3ed/ADD_SPELL_HEADER.tph~//Persistent Stat Replacement Feats
@@ -335,6 +336,7 @@ END
 // New spells
 BEGIN @5
 
+INCLUDE ~3ed/MAKE_ALWAYS_CASTABLE.tph~
 INCLUDE ~3ed/ALTER_CREATURE.tph~
 INCLUDE ~3ed/REPLACE_SUBSTRING.tph~
 INCLUDE ~3ed/REMOVE_SUBSTRING.tph~
@@ -426,6 +428,7 @@ END
 //////Spontaneous casting
 //////
 BEGIN @6
+    INCLUDE ~3ed/MAKE_ALWAYS_CASTABLE.tph~
 	INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
 	INCLUDE ~3ed/UPDATE_SP_CASTING_LEVEL.tph~
     INCLUDE ~3ed/ADD_FEATS.tph~
@@ -451,6 +454,7 @@ BEGIN @6
 //Animal Companion
 BEGIN @7
 
+    INCLUDE ~3ed/MAKE_ALWAYS_CASTABLE.tph~
 	INCLUDE ~3ed/ADD_SPELL_HEADER.tph~
     
        
@@ -465,6 +469,7 @@ BEGIN @7
 //////////////////////////////////////////////////////////////////////////////////////////////////
 //////Ranger Favored Enemies
 BEGIN @8
+    INCLUDE ~3ed/MAKE_ALWAYS_CASTABLE.tph~
     INCLUDE ~3ed/ADD_FEATS.tph~
     INCLUDE ~3ed/UPDATE_TLK_ENTRIES.tph~
     INCLUDE ~3ed/ADD_SPELL_HEADER.tph~

@@ -144,7 +144,7 @@
 
 	//add it to every clab file every 3 levels (and lvl1) (should be done at the very end)
 
-	LAF ADD_FEATS_LVL INT_VAR min_level=3 max_level=40 d_level=3 add_at_level1=1 
+	LAF ADD_FEATS_LVL INT_VAR min_level=3 max_level=40 d_level=3 add_at_level1=1 delay = 1
 						STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
 						feat_name=~CFEATCRE~ caption=~CHCKFT~ END
 		
@@ -165,6 +165,7 @@ COPY ~3ed/Classes/Kensai/kenscre.d~  ~override/kenscre.d~
 		OUTER_SPRINT tree_desc (AT "tree_descr_ref")
 		
 		COPY ~3ed/Classes/Kensai/KENSFT.SPL~ ~override/KNSFT%proficiency_id%.SPL~  //mark chosen category
+            LPF MAKE_ALWAYS_CASTABLE END
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=233 parameter2=proficiency_id END
 			
 		LAF UPDATE_KENSAICRE_DLG INT_VAR proficiency_id STR_VAR tree_name tree_desc END
@@ -196,6 +197,6 @@ COPY ~3ed/Classes/Kensai/kenscre.d~  ~override/kenscre.d~
 	COPY ~3ed/Feats/FeatAttribution/FEATCRE.SPL~ ~override/KENSCRE.SPL~	
 		LPF  ALTER_SPELL_EFFECT INT_VAR match_opcode=177 STR_VAR resource=~KENSCRE~ END
 
-	LAF ADD_FEATS_MASK INT_VAR mask = 0b100100001000100010001001 //(1,4,8,12,16,21,24)
+	LAF ADD_FEATS_MASK INT_VAR mask = 0b100100001000100010001001 delay = 1 //(1,4,8,12,16,21,24)
 				STR_VAR clab=~CLABFI04\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
 					feat_name=~KENSCRE~ caption=~KENSCR~ END 	

@@ -10,6 +10,7 @@ DEFINE_ACTION_FUNCTION ~UPDATE_SP_CASTING_LEVEL~
 		OUTER_SET SPONT_DURATION = 6
 		
 		COPY_EXISTING ~%ability_name%.SPL~ ~override~
+            LPF MAKE_ALWAYS_CASTABLE END
 			SET caster_level_bonus=target_caster_level - 1
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=191 parameter1=caster_level_bonus END
 			//LPF ADD_SPELL_EFFECT INT_VAR opcode=101 target=1 parameter2=191 duration=SPONT_DURATION  END //add protection from further caster level changes

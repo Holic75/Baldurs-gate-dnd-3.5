@@ -1,4 +1,4 @@
-- fixed bug when shaman class could not be selected in iwd
+- fixed bug when Shaman class could not be selected in iwd
 - fixed bug when charactes under effect of Emotion:Hopelessness in BG1 and 2 did not awake upon receiving damage
 - fixed incorrect swashbuckler THAC0 progression
 - ankheg armor now has same AC as regualar plate mail
@@ -7,7 +7,7 @@
 - added Quiet Death ability to assassin on lvl 10 (30s invisibility upon slayin target)
 - Assassins now also have high saves vs Death and Polymorph
 - fixed missing Aura of Despair on lvl 3 and 9 for Blackguard
-- Rest every 8 hours is not applied in Blackpits
+- Rest every 8 hours is not applied in Blackpits 1,2
 - spell progression mod abilities are now permanent instead of permanent until death
 - Barbarian rage strength bonuses replaced with +% to melee physical damage and thac0(10% dmg, + 1 thac0 per 2 pts of strength)
 - added permanent ac bonus to dwarven defender (+1 at every 4th level)
@@ -24,3 +24,8 @@
 - Toughness nerfed to regenerate only 2 hps per round
 - changed duration of flame weapon to 1 minute/level
 - changed duration of Defensive Harmony to 1 round/level and make it give +4 AC in all games
+- shadowdancers now receives same number of bonus feats as trueclass thieves but they sneak attak damage was reduced to 1d6 at lvl1 + 1d6 every 4 levels
+- Assassins no longer receive bonus feats at lvls 8 and 16
+- spells are always successfuly learned from scrolls
+- increased duration of Negative Plane Protection to 5 rounds/level
+- Duration of Shamanic dance was reduced to 3 rounds + 1 round per 2 points of charisma above 10

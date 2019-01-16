@@ -27,6 +27,7 @@
 	
 	
 	COPY ~3ed/Classes/TurnUndead/CHANEN0.SPL~ ~override/CE_0.SPL~ //removal of channel energy during rest
+         LPF MAKE_ALWAYS_CASTABLE END
 	WITH_TRA ~%LANGUAGE%\channelenergy.tra~ BEGIN
 		OUTER_SET  pos_name_ref=RESOLVE_STR_REF (@001)
 		OUTER_SET  pos_descr_ref=RESOLVE_STR_REF (@002)
@@ -60,6 +61,7 @@
 		LPF ADD_SPELL_EFFECT INT_VAR opcode=177 target=2 parameter1=18 parameter2=5 duration=1 timing=1 STR_VAR  resource= ~CE_NM1~  END //evil cleric/ranger
 		
 	COPY ~3ed/Classes/TurnUndead/CHANGV.SPL~ ~override/CE_GV.SPL~
+        LPF MAKE_ALWAYS_CASTABLE END
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=326 STR_VAR resource=~CE_1~ END 
 		LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=177 STR_VAR resource=~CE_AC1~ END //2 additional uses for priest of lathander
 	COPY_EXISTING ~CE_GV.SPL~ ~override/CE_GV2.SPL~

@@ -878,7 +878,7 @@ Fourth level spells: starting from level 13 Assassin gets access to the followin
 - Quiet Death: starting from level 10 every time Assassin slays an enemy <PRO_HESHE> becomes invisible for 30 seconds.
 - High Savingthrows vs. Death and vs. Polymorph.
 Disadvantages:
-– Does not receive bonus feats at levels 4, 12, 20 and 25.
+– Receive bonus feats only at levels 22 and 28.
 – May only distribute 10 skill points per level among thieving skills (20 points at level 1).~
 //--------------------------------------------------------------------------------------------------//
 @040=~SWASHBUCKLER: This rogue is part acrobat, part swords<PRO_MANWOMAN>, and part wit: the epitome of charm and grace.
@@ -945,9 +945,8 @@ This ability opens a temporary gateway to a small pocket within the Plane of Sha
 
 Disadvantages:
 – Alignment restricted to any non-lawful.
-– Worse Sneak attack progression: 1d6 at level 1 + 1d6 every 3 levels thereafter.
+– Worse Sneak attack progression: 1d6 at level 1 + 1d6 every 4 levels thereafter.
 – May only distribute 15 skill points per level (25 at level 1) among thieving skills.
-– Do not receive Bonus Feats at levels 4, 12, 20 and 25.
 – May not use the Set Snare ability.~
 //---------------------------------------------------------------------------------------------------//
 @043=~BARD: The Bard is a rogue, but <PRO_HESHE> is very different from the Thief. The Bard's strength is <PRO_HISHER> pleasant and charming personality. With it and <PRO_HISHER> wits, <PRO_HESHE> makes <PRO_HISHER> way through the world. A Bard is a talented musician and a walking storehouse of gossip, tall tales, and lore; <PRO_HESHE> learns a little bit about everything that crosses <PRO_HISHER> path and is a jack-of-all-trades but master of none. While many Bards are scoundrels, their stories and songs are welcome almost everywhere.
@@ -1251,7 +1250,7 @@ CLASS FEATURES:
 – Gains use of the Detect Illusion skill with 20% points as a base and an 4 points per level, up to a maximum of 100% at level 20.
 – May use Summon Spirit innate ability number of times per day equal to 1 + 1 per 2 points of Charisma above 10. Gets an additional use at every even level.
 
-SUMMON SPIRIT: The Shaman calls on a special spirit to aid <PRO_HIMHER> for 5 rounds + 1 round per 2 points of Charisma above 10.
+SUMMON SPIRIT: The Shaman calls on a special spirit to aid <PRO_HIMHER> for 3 rounds + 1 round per 2 points of Charisma above 10.
 The spirit grow in power as the Shaman gains additional levels:
   Level 1: Minor animal spirits (snake, fox, hound).
   Level 6: Major animal spirits (bear, panther, boar).
@@ -1260,6 +1259,7 @@ The spirit grow in power as the Shaman gains additional levels:
   Level 24: Greater nature spirits (greater air spirit, greater earth spirit, greater fire spirit).
 Spirit will do its best to protect the Shaman but is not controlled directly.
 
+- Favored of Spirits: Starting from level 18 Shaman gains a contingency effect that activates Heal spell if <PRO_HISHER> hit-points drop below 10%. This ability works once per day. 
 – Gains access to the following epic spells: Elemental Summoning (at level 19), Aura of Flaming Death (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Greater Elemental Summoning (at level 23) and Ethereal Retribution (at level 24).
 – Gets one bonus feat at levels 22 and 28.
 – Alignment restricted to neutral good, true neutral, and neutral evil.

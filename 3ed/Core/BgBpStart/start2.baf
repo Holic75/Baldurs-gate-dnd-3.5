@@ -1,0 +1,23 @@
+IF
+	!Global("BP_STARTED","GLOBAL",1)
+THEN
+	RESPONSE #100
+		FadeFromColor([0.0],0)
+		Explore()
+		ActionOverride(Player1,JumpToPoint([697.458]))
+		ActionOverride(Player2,JumpToPoint([766.482]))
+		ActionOverride(Player3,JumpToPoint([592.533]))
+		ActionOverride(Player4,JumpToPoint([653.577]))
+		ActionOverride(Player5,JumpToPoint([701.596]))
+		ActionOverride(Player6,JumpToPoint([744.557]))
+		MoveViewPoint([672.468],INSTANT)
+		SetGlobal("BP_STARTED","GLOBAL",1)
+		SetGlobalTimer("BP_STARTED_TIMER","GLOBAL",FIVE_ROUNDS)
+END
+
+IF
+	!GlobalTimerExpired("BP_STARTED_TIMER","GLOBAL")
+THEN
+	RESPONSE #100
+		NoAction()
+END

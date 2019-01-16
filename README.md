@@ -77,7 +77,6 @@ Note: wearing heavy armor may restrict maximum dexterity bonus to AC a character
 
 #### INTELLIGENCE
 – Determines number of spells per level that can be learned by Bards and Mages.  
-– Determines chance to learn a spell by Bards and Mages.  
 – Determines bonus to Lore (+3 per point above 10, -3 per point below 8).  
 – Gives combat bonuses with certain feats, weapons and armors.  
 – Determines bonus to Find Traps, Open Lock and Set Traps skills (+5% per point above 10, -5% per point below).  
@@ -88,7 +87,6 @@ Note: A character with an Intelligence score of 8 or less is illiterate and cann
 
 INT | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 |
 --- | --- | --- | --- |--- |--- |--- |--- |--- |---|--- | --- | --- | --- |--- |--- |--- |--- |--- |---|--- | --- | --- | --- |--- |---
-Chance to learn spell| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 20 | 30 |40 | 50 | 60 | 70 | 80 | 90 | 95 | 99 | 99 | 99 | 99 | 99 | 99 | 99 | 99
 Number of spells per level| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 2 | 4 |6 | 8 | 10 | 12 | 14 | 16 | 18 | 20 | All | All | All | All | All | All | All
 
 #### WISDOM
@@ -994,7 +992,7 @@ Fourth level spells: starting from level 13 Assassin gets access to the followin
 - Quiet Death: starting from level 10 every time Assassin slays an enemy she becomes invisible for 30 seconds.  
 - High Savingthrows vs. Death and vs. Polymorph.  
 Disadvantages:  
-– Does not receive bonus feats at levels 4, 12, 20 and 25 as trueclass thieves do.   
+– Receives bonus feats only at levels 22 and 28.   
 – May only distribute 10 skill points per level among thieving skills (20 points at level 1)  
 
 ### SWASHBUCKLER
@@ -1055,9 +1053,8 @@ This ability opens a temporary gateway to a small pocket within the Plane of Sha
 ```
 Disadvantages:  
 – Alignment restricted to any non-lawful.  
-– Worse Sneak attack progression: 1d6 at level 1 + 1d6 every 3 levels thereafter.  
+– Worse Sneak attack progression: 1d6 at level 1 + 1d6 every 4 levels thereafter.  
 – May only distribute 15 skill points per level (25 at level 1) among thieving skills.  
-– Does not receive bonus feats at levels 4, 12, 20 and 25 as trueclass thieves do.  
 – May not use the Set Snare ability.  
 
 ### BARD
@@ -1328,7 +1325,7 @@ CLASS FEATURES:
 – Gains use of the Detect Illusion skill with 20% points as a base and an 4 points per level, up to a maximum of 100% at level 20.  
 – May use Summon Spirit innate ability number of times per day equal to 1 + 1 per 2 points of Charisma above 10. Gets an additional use at every even level.  
 ```
-SUMMON SPIRIT: The Shaman calls on a special spirit to aid <PRO_HIMHER> for 5 rounds + 1 round per 2 points of Charisma above 10.
+SUMMON SPIRIT: The Shaman calls on a special spirit to aid <PRO_HIMHER> for 3 rounds + 1 round per 2 points of Charisma above 10.
 The spirit grow in power as the Shaman gains additional levels:
   Level 1: Minor animal spirits (snake, fox, hound).
   Level 6: Major animal spirits (bear, panther, boar).
@@ -1337,6 +1334,7 @@ The spirit grow in power as the Shaman gains additional levels:
   Level 24: Greater nature spirits (greater air spirit, greater earth spirit, greater fire spirit).
 Spirit will do its best to protect the Shaman but is not controlled directly.
 ```
+- Favored of Spirits: Starting from level 18 Shaman gains a contingency effect that activates Heal spell if her hit-points drop below 10%. This ability works once per day.   
 – Gains access to the following epic spells: Elemental Summoning (at level 19), Aura of Flaming Death (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Greater Elemental Summoning (at level 23) and Ethereal Retribution (at level 24).  
 – Gets one bonus feat at levels 22 and 28.  
 – Alignment restricted to neutral good, true neutral, and neutral evil.  
@@ -1617,33 +1615,33 @@ Lvl| Thief, Ninja | Assassin | Shadowdancer | Jester, Multiclass Thieves|
 1  |  1  |  1  |  1  |  0
 2  |  1  |  1  |  1  |  0
 3  |  2  |  2  |  1  |  1
-4  |  2  |  2  |  2  |  1
+4  |  2  |  2  |  1  |  1
 5  |  3  |  3  |  2  |  1
 6  |  3  |  4  |  2  |  1
-7  |  4  |  5  |  3  |  2
-8  |  4  |  5  |  3  |  2
+7  |  4  |  5  |  2  |  2
+8  |  4  |  5  |  2  |  2
 9  |  5  |  6  |  3  |  2
-10 |  5  |  6  |  4  |  2
-11 |  6  |  7  |  4  |  3
-12 |  6  |  8  |  4  |  3
-13 |  7  |  9  |  5  |  3
-14 |  7  |  9  |  5  |  3
-15 |  8  |  10 |  5  |  4
-16 |  8  |  10 |  6  |  4
-17 |  9  |  11 |  6  |  4
-18 |  9  |  12 |  6  |  4
-19 |  10 |  13 |  7  |  5
-20 |  10 |  13 |  7  |  5
-21 |  11 |  14 |  7  |  5
-22 |  11 |  14 |  8  |  5
-23 |  12 |  15 |  8  |  6
-24 |  12 |  16 |  8  |  6
-25 |  13 |  17 |  9  |  6
-26 |  13 |  17 |  9  |  6
-27 |  14 |  18 |  9  |  7
-28 |  14 |  18 | 10  |  7
-29 |  15 |  19 | 10  |  7
-30 |  15 |  20 | 10  |  7
+10 |  5  |  6  |  3  |  2
+11 |  6  |  7  |  3  |  3
+12 |  6  |  8  |  3  |  3
+13 |  7  |  9  |  4  |  3
+14 |  7  |  9  |  4  |  3
+15 |  8  |  10 |  4  |  4
+16 |  8  |  10 |  4  |  4
+17 |  9  |  11 |  5  |  4
+18 |  9  |  12 |  5  |  4
+19 |  10 |  13 |  5  |  5
+20 |  10 |  13 |  5  |  5
+21 |  11 |  14 |  6  |  5
+22 |  11 |  14 |  6  |  5
+23 |  12 |  15 |  6  |  6
+24 |  12 |  16 |  6  |  6
+25 |  13 |  17 |  7  |  6
+26 |  13 |  17 |  7  |  6
+27 |  14 |  18 |  7  |  7
+28 |  14 |  18 |  7  |  7
+29 |  15 |  19 |  8  |  7
+30 |  15 |  20 |  8  |  7
 
 
 
@@ -2220,6 +2218,7 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Duration of Luck was changed to 1 round/level
 - Iwd Poison spell now deals 1 poison damage per 6 levels of the caster per second.
 - Duration of Defensive Harmony was increased to 1 round/level and it now gives + 4 AC bonus in all games.
+- Duration of Negative Plane Protection was increased to 5 round/level.
 
 ### New Spells
 

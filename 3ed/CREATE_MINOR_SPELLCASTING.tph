@@ -39,6 +39,7 @@ DEFINE_ACTION_FUNCTION ~CREATE_MINOR_SPELLCASTING~
 	
 	
 	COPY ~3ed/Spells/MinorSpellcasting/Templates/GIVE.SPL~ ~override/GV%SpellPrefix%.SPL~
+        LPF MAKE_ALWAYS_CASTABLE END
 		FOR (i=1;i<=20;i=i+1) BEGIN
 			LPF ADD_SPELL_HEADER  INT_VAR  type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=1 projectile=1 END
 			READ_SHORT 0x68 n_headers //number of extended_headers
@@ -91,6 +92,7 @@ DEFINE_ACTION_FUNCTION ~CREATE_MINOR_SPELLCASTING~
 		
 								
 	COPY ~3ed/Spells/MinorSpellcasting/Templates/GIVE.SPL~ ~override/BN%SpellPrefix%.SPL~
+        LPF MAKE_ALWAYS_CASTABLE END
 		//1st lvl
         SPRINT resource EVALUATE_BUFFER ~BN%SpellPrefix%1~
 		LPF ADD_SPELL_HEADER  INT_VAR  required_level=1 type=1 location=4 target=5 target_count=0 range=1 speed=1 projectile=1 END
@@ -113,6 +115,7 @@ DEFINE_ACTION_FUNCTION ~CREATE_MINOR_SPELLCASTING~
 			
 		
 	COPY ~3ed/Spells/MinorSpellcasting/Templates/CAST.SPL~ ~override/RM%SpellPrefix%.SPL~
+        LPF MAKE_ALWAYS_CASTABLE END
 		LPF ADD_SPELL_HEADER  INT_VAR  type=1 location=4 target=5 target_count=0 range=1 speed=1 projectile=1 END
             FOR (i=1;i<=4;i=i+1) BEGIN
                 SPRINT resource EVALUATE_BUFFER ~%SpellPrefix%L%i%~

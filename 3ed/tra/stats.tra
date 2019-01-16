@@ -15,7 +15,6 @@ Maximum: <MAXIMUM>~
 
 – Determines the maximum level of spell that can be cast by Bards and Mages.
 – Determines number of spells per level that can be learned by Bards and Mages.
-– Determines chance to learn a spell by Bards and Mages.
 – Determines bonus to Lore.
 – Gives combat bonuses with certain feats, weapons and armors.
 – Determines bonus to Find Traps, Open Lock and Set Traps skills (+5% per point above 10, -5% per point below).

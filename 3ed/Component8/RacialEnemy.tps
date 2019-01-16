@@ -48,7 +48,9 @@
 		END			        
     	
 	COPY  ~3ed/Classes/FavoredEnemy/FE_MRK.SPL~ ~override/FE_MRK.SPL~
+         LPF MAKE_ALWAYS_CASTABLE END
 	COPY  ~3ed/Classes/FavoredEnemy/FE_MRK.SPL~ ~override/FE_RMV.SPL~
+         LPF MAKE_ALWAYS_CASTABLE END
     
     OUTER_SET   yes_response=RESOLVE_STR_REF (@5)
 	OUTER_SET   no_response=RESOLVE_STR_REF (@6)
@@ -190,6 +192,7 @@
         
         //apply all favored enemies (it will be filtered by protection spells)
         COPY_EXISTING ~FE_APP.SPL~ ~override~
+            LPF MAKE_ALWAYS_CASTABLE END
             SPRINT resource EVALUATE_BUFFER ~FE_%i%~
             LPF ADD_SPELL_EFFECT INT_VAR target = 2 duration = 1 opcode  = 146 parameter2 = 1 STR_VAR resource END
         COPY_EXISTING ~FEI_APP.SPL~ ~override~
@@ -215,6 +218,7 @@
             LPF ADD_SPELL_EFFECT INT_VAR target = 2 duration = 1 timing = 9 opcode  = 206  STR_VAR resource END
 
        COPY ~3ed/Classes/FavoredEnemy/FE_APPLY.SPL~ ~override/FE_RM%i%.SPL~
+            LPF MAKE_ALWAYS_CASTABLE END
             SPRINT resource EVALUATE_BUFFER ~FE_PR%i%~
             LPF ADD_SPELL_EFFECT INT_VAR target = 2 duration = 1  opcode  = 321 STR_VAR resource END
             SPRINT resource EVALUATE_BUFFER ~FEI_PR%i%~

@@ -54,6 +54,7 @@ Range:~
 		OUTER_SPRINT DescriptionString EVALUATE_BUFFER ~%domain_name% domain gives priest access to the following spells:~	
 		//creating ability that would give priest a list of spells read previously and also filling description string	
 		COPY ~3ed/Feats/LimitedUseAbilities/Template/LUAFT.SPL~  ~override/%domain_file_2DA%S.SPL~
+            LPF MAKE_ALWAYS_CASTABLE END
 			SET first_spell=1
 			
 			PHP_EACH spell_list AS spl_to_add => spl_name BEGIN

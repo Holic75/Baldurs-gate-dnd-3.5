@@ -127,6 +127,7 @@ OUTER_FOR (player_id=1;player_id<=6;player_id=player_id+1) BEGIN
 	
 	//create spell giving proper animal companion and removing all other abilities
 	COPY ~3ed/Classes/AnimalCompanion/GV_CMP.spl~ ~override/GV_CMP%player_id%.spl~
+        LPF MAKE_ALWAYS_CASTABLE END
 		FOR (i=1;i<=6;i=i+1) BEGIN
 			SPRINT resource EVALUATE_BUFFER ~AN_CMP%i%~
 			LPF ADD_SPELL_EFFECT INT_VAR opcode=172 target=2 timing=0 duration=1 STR_VAR resource END

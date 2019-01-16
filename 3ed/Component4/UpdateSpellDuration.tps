@@ -110,5 +110,15 @@
             END
             LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace_ref = 700004  new_substring_ref = 700000 END 
     END
+    
+    //negative plane protection for bg1, bg2, to 5 round/level
+    ACTION_IF (NOT ~%GameId%~ STR_EQ ~Iwd~) BEGIN
+        COPY_EXISTING ~SPPR413.SPL~ ~override~      
+            FOR (i=2;i<=max_lvl;i=i+1) BEGIN
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 min_level = i END
+                LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high  = 30*i END
+            END
+            LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace_ref = 700101  new_substring_ref = 700100 END 
+    END
 
         

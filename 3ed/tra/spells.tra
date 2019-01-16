@@ -1598,7 +1598,8 @@ Starting from level 13 Hexblade gets access to the following spells: Improved In
     
     
     @700000=~Duration: 1 min/level~   
-    @700100=~Duration: 5 rounds/level~     
+    @700100=~Duration: 5 rounds/level~ 
+    @700101=~Duration: 5 rounds~     
     @700001=~Duration: 6 rounds~
     @700002=~Duration: 1 turn~
     @700003=~Duration: 2 rounds/level~
@@ -1620,10 +1621,6 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 The recipient gains extraordinary luck for the duration of the spell, receiving a +1 bonus to <PRO_HISHER> Saving Throws, attack rolls, and minimum damage/healing rolls as well as +5% to all thieving skills. Furthermore, damage dice for all effects outside a weapon's base damage is reduced by 1. For example, a 6d6 fireball will do 6d5 damage, and a flaming long sword that deals 1d8+2 slashing plus 1d3 fire damage will deal 1d8+2 slashing plus 1d2 fire damage instead.~
-
-    
-    
-    
 
     
     

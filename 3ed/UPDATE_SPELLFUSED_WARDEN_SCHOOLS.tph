@@ -34,6 +34,7 @@ DEFINE_ACTION_FUNCTION ~UPDATE_SPELLFUSED_WARDEN_SCHOOLS~
 		OUTER_SPRINT DescriptionString EVALUATE_BUFFER ~%school_name%. %school_descr% This school gives spellfused warden access to the following spells:~	
 		//creating ability that would give spellfused warden a list of spells read previously and also filling description string	
 		COPY ~3ed/Feats/LimitedUseAbilities/Template/LUAFT.SPL~  ~override/%school_file_2DA%S.SPL~
+            LPF MAKE_ALWAYS_CASTABLE END
 			SET first_spell=1
 			PHP_EACH spell_list AS spl_to_add => spl_name BEGIN
 				SPRINT resource EVALUATE_BUFFER ~%spl_to_add_0%~

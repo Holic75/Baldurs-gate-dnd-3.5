@@ -135,6 +135,7 @@
 		WRITE_ASCII 0x0030 ~JSNG~ #8
 		
 	COPY ~3ed/BardSongs/BSNG.SPL~ ~override/GVSNG.SPL~
+        LPF MAKE_ALWAYS_CASTABLE END
 		FOR (i=1;i<=30;i=i+1) BEGIN
 			PATCH_IF (i==1 OR ((i/2) * 2 = i)) BEGIN
 				LPF ADD_SPELL_HEADER  INT_VAR  type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=1 projectile=1 END
@@ -161,12 +162,14 @@
                 LPF ADD_SPELL_EFFECT INT_VAR opcode=177 power=10 target=2 timing=0 duration=1 parameter2=9 parameter1=16399 STR_VAR resource=~GVSSNG~ END //skald
 				
 	COPY ~3ed/BardSongs/BSNG.SPL~ ~override/BNSNG.SPL~
+        LPF MAKE_ALWAYS_CASTABLE END
 		LPF ADD_SPELL_HEADER  INT_VAR  type=1 location=4 target=5 target_count=0 range=1 speed=1 projectile=1 END
 		FOR (i=min_val+step;i<=max_val;i=i+step) BEGIN
 			LPF ADD_SPELL_EFFECT INT_VAR opcode=326 power=10 target=2 timing=0 duration=1 parameter2=132 parameter1=i STR_VAR resource=~GVSNGA~ END //apply effect
 		END
 	//remove song	
 	COPY ~3ed/BardSongs/BSNG.SPL~ ~override/RMSNG.SPL~
+        LPF MAKE_ALWAYS_CASTABLE END
 		LPF ADD_SPELL_HEADER  INT_VAR  type=1 location=4 target=5 target_count=0 range=1 speed=1 projectile=1 END
 			LPF ADD_SPELL_EFFECT INT_VAR opcode=172 power=10 target=2 timing=0 duration=1 STR_VAR resource=~BSNG~ END 
 			LPF ADD_SPELL_EFFECT INT_VAR opcode=172 power=10 target=2 timing=0 duration=1 STR_VAR resource=~SSNG~ END

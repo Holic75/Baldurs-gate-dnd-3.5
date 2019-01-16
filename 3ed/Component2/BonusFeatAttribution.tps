@@ -45,14 +45,18 @@
 	LAF ADD_FEATS_MASK INT_VAR min_level=4 max_level=30 d_level=3 add_at_level1=1 delay = 2
 						STR_VAR clab=~CLABFI01\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREFT.SPL~ feat_name=~FFTCRE~ caption=~F_TBFT~ END	
 					
-//add bonus feats to thief and swashbuckler (lvl 4,8,12,16,20,22, 25 ,28 )
+//add bonus feats to thief, shadowdancer and swashbuckler (lvl 4,8,12,16,20,22, 25 ,28 )
 	LAF ADD_FEATS_MASK INT_VAR mask = 0b1001001010001000100010001000 delay = 2
-						STR_VAR clab=~\(\(CLABTH04\)\|\(CLABTH01\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRET.SPL~ 
+						STR_VAR clab=~\(\(CLABTH04\)\|\(CLABTH01\)\|\(CLABTH05\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRET.SPL~ 
                                 feat_name=~FFTCRE~ caption=~THFBFT~ END	
-//add bonus feats to ninja, assasin and shadowdancer (lvl 8,16,22,28 ) (reuse thief's)
+//add bonus feats to ninja (lvl 8,16,22,28 )
 	LAF ADD_FEATS_MASK INT_VAR mask = 0b1000001000001000000010000000 delay = 2
-						STR_VAR clab=~\(\(CLABTH02\)\|\(CLABTH05\)\|\(CLABTH03\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRET.SPL~
-                                feat_name=~FFTCRE~ caption=~NINBFT~ END	
+						STR_VAR clab=~CLABTH03\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRET.SPL~
+                                feat_name=~FFTCRE~ caption=~NINBFT~ END
+//add bonus feats to asn (lvl 22,28 )
+	LAF ADD_FEATS_MASK INT_VAR mask = 0b1000001000000000000000000000 delay = 2
+						STR_VAR clab=~CLABTH02\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCRET.SPL~
+                                feat_name=~FFTCRE~ caption=~ASNEFT~ END	                                
                             
 //same for mage thief (10,20,22, 25, 28)
 	LAF ADD_FEATS_LVL INT_VAR mask = 0b1001001010000000001000000000 delay = 2 
