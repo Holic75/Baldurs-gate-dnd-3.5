@@ -5,17 +5,24 @@
 	OUTER_SPRINT ChainMailStr @4
 	OUTER_SPRINT SplintMailStr @5
 	OUTER_SPRINT PlateMailStr @6
-    OUTER_SPRINT PlateMailStr2 @61
+    OUTER_SPRINT PlateMailStr2 @601
 	OUTER_SPRINT FullPlateStr @7
     OUTER_SPRINT FullPlateMailStr @71	
     
     OUTER_SPRINT MediumShieldStr @51
+    OUTER_SPRINT SmallShieldStr @61
+    OUTER_SPRINT SmallShieldMissileStr @60
     OUTER_SPRINT LargeShieldStr @52
     OUTER_SPRINT RhinoShieldStr @62
     OUTER_SPRINT AnomenShieldStr @53
     OUTER_SPRINT AcShieldStr @50
     OUTER_SPRINT AcShieldStr2 @501
     OUTER_SPRINT THAC0ShieldStr @500
+    
+    OUTER_SPRINT SmallShieldPenaltyStr @57
+    OUTER_SPRINT MediumShieldPenaltyStr @58
+    OUTER_SPRINT TowerShieldPenaltyStr @59
+    
 	
 COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   READ_STRREF 0x0008 "unid_name"
@@ -233,12 +240,23 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
 
     LPF SET_ITEM_USABILITY INT_VAR value = usable_by_thief STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~jester~ END
 
-    PATCH_IF (~%unid_name%~ STR_EQ ~%MediumShieldStr%~) OR (~%unid_name%~ STR_EQ ~%AnomenShieldStr%~) BEGIN
+    PATCH_IF (~%unid_name%~ STR_EQ ~%SmallShieldStr%~) BEGIN
+        LPF DELETE_EFFECT INT_VAR match_opcode = 0 match_parameter2 = 2 END //remove no ac against missiles
+        SPRINT substring_to_replace EVALUATE_BUFFER ~%SmallShieldMissileStr%~
+        SPRINT new_substring EVALUATE_BUFFER ~%SmallShieldPenaltyStr%~
+       
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
+        LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
+
+	    LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~SMSSKL~  END
+        LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~SMSSPF~  END
+        
+    END ELSE PATCH_IF (~%unid_name%~ STR_EQ ~%MediumShieldStr%~) OR (~%unid_name%~ STR_EQ ~%AnomenShieldStr%~) BEGIN
   
         LPF GET_SPELL_EFFECT_VALUES INT_VAR header =0 match_opcode = 0 match_parameter2 = 0 RET ac_bonus = parameter1 found = found_match END
           
         SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%1~
-        SPRINT new_substring EVALUATE_BUFFER ~%AcShieldStr%2~
+        SPRINT new_substring EVALUATE_BUFFER ~%AcShieldStr%2%MediumShieldPenaltyStr%~
       
         LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
     
@@ -246,16 +264,18 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
         LPF ALTER_EFFECT INT_VAR  check_headers = 0 match_opcode = 0 match_parameter2 = 0 parameter1 = NewAcBonus  END   
         
         SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%%ac_bonus%~
-        SPRINT new_substring EVALUATE_BUFFER ~%AcShieldStr%%NewAcBonus%~   
+        SPRINT new_substring EVALUATE_BUFFER ~%AcShieldStr%%NewAcBonus%%MediumShieldPenaltyStr%~   
         LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
         
-
+        LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~MDSSKL~  END
+        LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~MDSSPF~  END
+        
     END  ELSE PATCH_IF (~%unid_name%~ STR_EQ ~%LargeShieldStr%~) OR ((~%unid_name%~ STRING_CONTAINS_REGEXP ~%RhinoShieldStr%~)==0) BEGIN
   
         LPF GET_SPELL_EFFECT_VALUES INT_VAR header =0 match_opcode = 0 match_parameter2 = 0 RET ac_bonus = parameter1 found = found_match END
           
         SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%1~
-        SPRINT new_substring EVALUATE_BUFFER ~%THAC0ShieldStr%%AcShieldStr%4~
+        SPRINT new_substring EVALUATE_BUFFER ~%THAC0ShieldStr%%TowerShieldPenaltyStr%%AcShieldStr%4~
       
         LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
     
@@ -267,13 +287,17 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
         LPF ALTER_SPELL_EFFECT_EX INT_VAR  header = 0 match_opcode = 278 match_parameter1 = 100 parameter1  END 
     
         SPRINT substring_to_replace EVALUATE_BUFFER ~%AcShieldStr%%ac_bonus%~
-        SPRINT new_substring EVALUATE_BUFFER ~%THAC0ShieldStr%%AcShieldStr%%NewAcBonus%~
+        SPRINT new_substring EVALUATE_BUFFER ~%THAC0ShieldStr%%TowerShieldPenaltyStr%%AcShieldStr%%NewAcBonus%~
     
         PATCH_IF (~%SOURCE_RES%~ STR_EQ ~ORRSHLD~) BEGIN //orrick rhino shield in iwd has description stored in unid
             LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace  new_substring END
         END ELSE BEGIN
             LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace  new_substring END
         END
+        
+        LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~TWSDEX~  END
+        LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~TWSSKL~  END
+        LPF ADD_ITEM_EQEFFECT INT_VAR  opcode = 272 target = 1  power = 0  parameter1 = 1   parameter2 = 0  duration=1  timing = 2  resist_dispel = 0   probability1 = 100  probability2 = 0  STR_VAR  resource = ~TWSSPF~  END
        
         //allow only fighters, paladins and dwarven defenders to use large shields
         LPF SET_ITEM_USABILITY INT_VAR value = 0 STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~ END

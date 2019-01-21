@@ -196,7 +196,7 @@
 						
 	COPY ~3ed/BardSongs/BSNG.SPL~ ~override/DSBLSNG.SPL~					
 		LPF ADD_SPELL_HEADER INT_VAR  type=1 location=4 target=5 target_count=0 range=1 speed=1 projectile=1 END
-		LPF ADD_SPELL_EFFECT INT_VAR header=1 opcode=144 target=2 parameter1=0 parameter2=10 timing=1 duration=1 END //disable bardic music button
+		LPF ADD_SPELL_EFFECT INT_VAR header=1 opcode=144 target=2 parameter1=0 parameter2=10 timing=9 duration=1 END //disable bardic music button
 		
 	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
 						STR_VAR clab=~CLABBA.*\.2DA~ mask_file=~~ feat_name=~DSBLSNG~ caption = ~DSBLSNG~ END

@@ -447,7 +447,7 @@ BEGIN @6
     END
     
     LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=4 add_at_level1=1 
-                    STR_VAR clab=~\(\(CLABPR.*\)\|\(CLABDR0[1-3]\)\|\(CLABFI01\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name=~GSPCAST~ caption = ~SPNTCST~ END
+                    STR_VAR clab=~\(\(CLABPR.*\)\|\(CLABDR0[1-3]\)\|\(OHTYR\)\|\(OHTEMPUS\)\|\(CLABFI01\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name=~GSPCAST~ caption = ~SPNTCST~ END
            
 	
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -484,6 +484,7 @@ BEGIN @8
 ////////////////////////////////////////////////////////////////////////////////////////
 //	regularize creatures
 BEGIN @9
+     INCLUDE ~3ed/Component9/CorrectCreatures.tps~
      INCLUDE ~3ed/Component9/RegularizeCreatures.tps~
 ////////////////////////////////////////////////////////////////////////////////////////
 

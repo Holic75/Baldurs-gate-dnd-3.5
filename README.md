@@ -202,10 +202,10 @@ Note: This Feat does not effect Throwing Axes.
 
 #### Other Feats
 ###### Combat Prowess
-Weapon Finesse (1 star) - With unarmed strikes, short swords, daggers, long swords, scimitars, clubs, quarterstaves and spears the character may use Dexterity value instead of Strength to determine bonus to THAC0.  
+Weapon Finesse (1 star) - With unarmed strikes, short swords, daggers, long swords, scimitars, wakizhasi, ninja-to, clubs, quarterstaves and spears the character may use Dexterity value instead of Strength to determine bonus to THAC0.  
 Dodge (2 stars) - The character receives +1 bonus to AC.  
 Lightning Reflexes (3 stars) - The character receives +2 bonus on Saving Throws vs. Rod/Staff/Wand and vs. Breath Weapon.  
-Flurry of Strikes (4 stars) - The character receives Flurry of Strikes modal ability. While activated can make one additional APR if she fights with either unarmed strikes, short swords, daggers, long swords, scimitars, clubs, quarterstaves or spears, but all attacks receive -5 penalty to THAC0.  
+Flurry of Strikes (4 stars) - The character receives Flurry of Strikes modal ability. While activated can make one additional APR if she fights with either unarmed strikes, short swords, daggers, long swords, scimitars, wakizhasi, ninja-to, clubs, quarterstaves or spears, but all attacks receive -5 penalty to THAC0.  
 Elegant Strike (5 stars) - With unarmed strikes, short swords, daggers, long swords, scimitars, clubs, quarterstaves and spears the character receives +1 bonus to damage for every 2 points of Dexterity above 10.  
 Whirlwind Attack (6 stars) - The character receives Whirlwind Attack innate ability.
 ```
@@ -237,7 +237,7 @@ This ability allows the warrior to vanquish foes with a single blow.  For the ne
 
 
 ###### Tactics
-Insightful Strike (1 star) - With unarmed strikes, short swords, daggers, long swords, scimitars, clubs, quarterstaves and spears the character may use Intelligence value instead of Strength to determine bonus to damage.  
+Insightful Strike (1 star) - With unarmed strikes, short swords, daggers, long swords, scimitars, wakizhasi, ninja-to, clubs, quarterstaves and spears the character may use Intelligence value instead of Strength to determine bonus to damage.  
 NOTE: This damage bonus is not multiplied by 1.5 for two-handed weapons, although if character got additional 0.5 strength bonus from Strength score, it is retained (i.e. if Strength is 14 and Intelligence is 16, the character will get +3 damage bonus from Intelligence and +1 (0.5*2) from Strength to a total of +4 with two-handed weapons).  
 Combat Expertise (2 stars) - The character receives Combat Expertise modal ability. While activated all attacks with melee weapons suffer -3 penalty to THAC0 but character receives +3 bonus to AC, character also suffers additional 15% spell casting failure. Can be used only with melee weapon equipped.  
 Iron Will (3 stars) - The character receives +2 bonus on Saving Throws vs. Spells.  
@@ -442,14 +442,16 @@ Advantages:
 ```
 RAGE: The enraged state lasts for 3 rounds + 1 per 2 points of Berserker's Constitution above 10. While enraged, a Berserker gains a bonus of +3 to her attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to her Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
 At 10th the attack and damage rolls bonus increases to +5 and physical damage resistance bonus to 20%.
-At 19th level the attack and damage rolls bonus increases to +7 and physical damage resistance bonus to 30%.
+At 18th level the attack and damage rolls bonus increases to +7 and physical damage resistance bonus to 30%.
 ```
 – 8th level: Endless Berserk: Berserker can prolong her rage if the combat lasts too long, while enraged she can spend an extra use of her Rage to prolong it for a new full duration, she does not feel the tiring effects until the end of this new Rage, she can continue to prolong the Rage as long as she has Rages.  
 – 12th level: Improved Power Attack: Power attack damage bonus is increased to +5 (+7 for two-handed weapons).  
 – 16th level: Supreme Power Attack:  Power attack damage bonus is further increased to +6 (+9 for two-handed weapons).  
 – 18th level: Immortal Berserker: The hit points of enraged Berserker can not be reduced below 1, but at the end of Rage Berserker receives 15 points of damage which can kill her if she has fewer hit points.   
 Note: although her hit points can not be reduced below 1, Berserker can still be killed by spells like Slay Living, Disintegrate and others.  
-– 20th level: Last Berserk: Berserker gains one use per day of special form of Rage called Last Berserk. It has the same effect as normal Rage but the damage bonus is increased to +15. However it can not be prolonged and after it ends Berserker can no longer use Rage for next 8 hours.    
+– 20th level: Last Berserk: Berserker gains one use per day of special form of Rage called Last Berserk. It has the same effect as normal Rage but damage bonus is increased to +15. 
+While in this state the hitpoints of Berserker can not be reduced below 1, but at the end of Last Berserk Berserker receives 50 points of damage which can kill her if Berserker has fewer hit points.
+Also Last Berserk can not be prolonged and after it ends Berserker can no longer use Rage for next 8 hours.  
 – Gets one bonus feat at levels 22, 25 and 28.
 
 Disadvantages:  
@@ -1061,13 +1063,13 @@ Disadvantages:
 CLASS FEATURES:  
 – May wear helmets.   
 – May not wear armor heavier than splint mail.    
-– May use nay shield (excluding large shield).  
+– May use any weapon and shield (excluding large shield).  
 – Receives one bonus Feat at levels 22 and 28.  
 – Thieving abilities: Pick Pockets (15% at level 1, +5% at every next level).  
 – Increased Lore score.  
 – May cast arcane spells up to level 6.  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, and finally at level 12 Armored Arcana: Splint Mail Casting.  
-- Acquires one scroll with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
+– Acquires one scroll with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Bardic Performance: a bard is trained to perform to create magical effects on those around her. Bard can use this ability for a number of times per day equal to 1 + 1 per 2 points of Charisma above 10. At each even level a bard can use bardic performance one more time per day.  
 – Medium THAC0/APR progression, High Savingthrows vs. Breath Weapon vs. Wand, and vs. Spell
 
@@ -1117,7 +1119,7 @@ A bard of 20th level or higher can use her performance to cause one enemy to die
 ```
 ```
 Song of Requiem
-A bard of 24th level or higher can use this epic performance drains the very life force of the bard's enemies causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds.
+A bard of 24th level or higher can use this epic performance which drains the very life force of the bard's enemies causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds.
 ```
 – Alignment restricted to any neutral.  
 – Hit Die: d6
@@ -1389,7 +1391,7 @@ CLASS FEATURES:
 – Gets one bonus feat at every 4th level up to level 20.  
 – Gets one bonus feat at levels 22, 25 and 28.  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.  
-- Acquires one scroll with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
+– Acquires one scroll with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Can use Spontaneous Battlecasting.  
 ```
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 4 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
@@ -1454,7 +1456,7 @@ CLASS FEATURES:
 – At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).  
-- Acquires 2 scrolls with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
+– Acquires 2 scrolls with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Versatile Spellcasting: starting from level 7 can trade one first level cleric spell slot for a second level wizard spell slot, this exchange is reversible; every two levels thereafter can trade next level cleric spell slot for a wizard spell slot one level higher.  
 – Gets one bonus feat at levels 22, 25 and 28.  
 – Hit Die: d6  
@@ -1497,7 +1499,7 @@ CLASS FEATURES:
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.  
 – Starting from level 8 can cast spells in complete silence (as being always under constant effect of Vocalize).
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
-- Acquires two scrolls with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
+– Acquires two scrolls with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Gets one bonus feat at levels 10, 20, 22, 25 and 28.  
 – Hit Die: d5  
 – Low THAC0/APR progression, High Savingthrows vs. Breath Weapon, vs. Wand and vs. Spell  
@@ -2138,6 +2140,10 @@ Full Plate Armor       | 50% | +0 | -60%
 Elven Chain Mail       | 0%  | +4 | -10%
 Mithral Chain Mail     | 0%  | +4 | -10%
 Ankheg Plate Mail      | 20% | +3 | -30%
+Small Shield           | 5%  | -  | -10%
+Medium Shield          | 15% | -  | -20%
+Large Shield           | 50% | +2 | -50%
+
 
 
 ### Other Changes
@@ -2153,7 +2159,9 @@ Ankheg Plate Mail      | 20% | +3 | -30%
  - Initial number of attacks per round for all ranged weapons was set to 1, except for slings and crossbows for which it was set to 0.5; and darts for which it was set to 2; it increases at normal character APR progression and Rapid Shot feat also gives +1 APR with ranged weapons (except throwing axes and hammers)   
  - Moonblade type was changed to longsword (do not worry, Xan can still use it)  
  - Sling bullets damage was changed from missile to crushing  
- - Ankheg Plate Mail AC bonus was lowered to that of regular Plate Mail
+ - Ankheg Plate Mail AC bonus was lowered to that of regular Plate Mail  
+ - Small Shields no longer have penalty to missile AC
+ 
 
 ## 6. Spells
 

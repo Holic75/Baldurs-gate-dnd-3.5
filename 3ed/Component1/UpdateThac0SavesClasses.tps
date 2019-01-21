@@ -93,9 +93,9 @@
                     STR_VAR clab=~CLABTH04\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
                     feat_name=~APRBON~ caption=~SWAPRH~ END        
 	//low apr
-	LAF ADD_FEATS_LVL INT_VAR min_level=11 max_level=20 d_level=10 add_at_level1=0 
+	LAF ADD_FEATS_LVL INT_VAR min_level=11 max_level=20 d_level=10 add_at_level1=0
 					STR_VAR clab=~\(\(CLAB.*\)\|\(OHTYR\)\|\(OHTEMPUS\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/APR_L.SPL~
-						feat_type_file=~APRBON~ caption=~APRL~ END                
+						feat_name=~APRBON1~ caption=~APRL~ END                
                         
   
 	

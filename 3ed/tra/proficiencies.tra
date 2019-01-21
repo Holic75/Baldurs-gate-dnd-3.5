@@ -118,10 +118,10 @@ Greater Hail of arrows greatly speeds up archer's ability to strike at foes with
 	@167=~Elegant Strike~
 	@168=~Whirlwind Attack~
 	@169=~Greater Whirlwind Attack~
-	@170=~With unarmed strikes, short swords, daggers, long swords, scimitars, clubs, quarterstaves and spears the character may use Dexterity value instead of Strength to determine bonus to THAC0.~
+	@170=~With unarmed strikes, short swords, daggers, long swords, scimitars, wakizhashi, ninja-to, clubs, quarterstaves and spears the character may use Dexterity value instead of Strength to determine bonus to THAC0.~
 	@171=~The character receives +1 bonus to AC.~
 	@172=~The character receives +2 bonus on Saving Throws vs. Rod/Staff/Wand and vs. Breath Weapon.~
-	@173=~The character receives Flurry of Strikes modal ability. While activated can make one additional APR if <PRO_HESHE> fights with either unarmed strikes, short swords, daggers, long swords, scimitars, clubs, quarterstaves or spears, but all attacks receive -5 penalty to THAC0.~
+	@173=~The character receives Flurry of Strikes modal ability. While activated can make one additional APR if <PRO_HESHE> fights with either unarmed strikes, short swords, daggers, long swords, scimitars, wakizhashi, ninja-to, clubs, quarterstaves or spears, but all attacks receive -5 penalty to THAC0.~
 	@174=~With unarmed strikes, short swords, daggers, long swords, scimitars, clubs, quarterstaves and spears the character receives +1 bonus to damage for every 2 points of Dexterity above 10.~
 	@175=~The character receives Whirlwind Attack innate ability.
 
@@ -171,7 +171,7 @@ This ability allows the warrior to vanquish foes with a single blow.  For the ne
 	@207=~Combat Intuition~
 	@208=~Critical Strike~
 	@209=~Premonition~
-	@210=~With unarmed strikes, short swords, daggers, long swords, scimitars, clubs, quarterstaves and spears the character may use Intelligence value instead of Strength to determine bonus to damage.
+	@210=~With unarmed strikes, short swords, daggers, long swords, scimitars, wakizhashi, ninja-to, clubs, quarterstaves and spears the character may use Intelligence value instead of Strength to determine bonus to damage.
 	NOTE: This damage bonus is not multiplied by 1.5 for two-handed weapons, although if character got additional 0.5 strength bonus from Strength score, it is retained (i.e. if Strength is 14 and Intelligence is 16, the character will get +3 damage bonus from Intelligence and +1 (0.5*2) from Strength to a total of +4 with two-handed weapons).~
 
 	@211=~The character receives Combat Expertise modal ability. While activated all attacks with melee weapons suffer -3 penalty to THAC0 but character receives +3 bonus to AC. The character also suffers additional 15% spellcasting failure. This ability can only be used with melee weapon equipped.~

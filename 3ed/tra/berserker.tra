@@ -3,7 +3,7 @@
 
 The enraged state lasts for 3 rounds + 1 round per 2 points of Constitution above 10. While enraged, a Berserker gains a bonus of +7 to <PRO_HISHER> attack rolls and +15 to <PRO_HISHER> damage rolls as well as 30% physical damage reduction, but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
 
-While in this state the hitpoints of Berserker can not be reduced below 1, but at the end of Last Berserk Berserker receives 15 points of damage which can kill <PRO_HIMHER> if <PRO_HESHE> has fewer hit points..
+While in this state the hitpoints of Berserker can not be reduced below 1, but at the end of Last Berserk Berserker receives 50 points of damage which can kill <PRO_HIMHER> if <PRO_HESHE> has fewer hit points.
 
 Last Berserk can not be prolonged and after it ends Berserker can no longer rage for next 8 hours.~
 
@@ -14,10 +14,9 @@ Last Berserk can not be prolonged and after it ends Berserker can no longer rage
 
 The enraged state lasts for 3 rounds + 1 round per 2 points of Constitution above 10. While enraged, a Berserker gains a bonus of +3 to <PRO_HISHER> attack and damage rolls as well as 10% physical damage reduction, but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
 At 10th level the attack and damage rolls bonus increases to +5 and physical damage resistance bonus to 20%.
-At 19th level the attack and damage rolls bonus increases to +7 and physical damage resistance bonus to 30%.
+At 18th level the attack and damage rolls bonus increases to +7 and physical damage resistance bonus to 30%.
 
 Starting from level 8 Berserker can prolong <PRO_HISHER> rage if the combat lasts too long, while enraged <PRO_HESHE> can spend an extra use of <PRO_HISHER> Rage to prolong it for a new full duration, <PRO_HESHE> does not feel the tiring effects until the end of this new Rage, <PRO_HESHE> can continue to prolong the Rage as long as <PRO_HESHE> has Rages.
-Starting from level 18 the hit points of enraged Berserker can not be reduced below 1, but at the end of Rage Berserker still suffers 15 points of damage which can kill <PRO_HIMHER> if <PRO_HESHE> has fewer hit points.
 
 After the effects end, the character becomes winded, suffering a -2 penalty to Armor Class, to-hit rolls, and damage rolls.~
 

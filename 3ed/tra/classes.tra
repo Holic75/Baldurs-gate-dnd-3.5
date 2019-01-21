@@ -185,14 +185,16 @@ Advantages:
 
 RAGE: The enraged state lasts for 3 rounds + 1 round per 2 points of Constitution above 10. While enraged, a Berserker gains a bonus of +3 to <PRO_HISHER> attack and damage rolls as well as 10% physical damage reduction but suffers -2 penalty to <PRO_HISHER> Armor Class, and becomes immune to charm, confusion, fear, feeblemind, hold, imprisonment, level drain, maze, stun, and sleep.
 At 10th level the attack and damage rolls bonus increases to +5 and physical damage resistance bonus to 20%.
-At 19th level the attack and damage rolls bonus increases to +7 and physical damage resistance bonus to 30%.
+At 18th level the attack and damage rolls bonus increases to +7 and physical damage resistance bonus to 30%.
 
 – 8th level: Endless Berserk: Berserker can prolong <PRO_HISHER> rage if the combat lasts too long, while enraged <PRO_HESHE> can spend an extra use of <PRO_HISHER> Rage to prolong it for a new full duration, <PRO_HESHE> does not feel the tiring effects until the end of this new Rage, <PRO_HESHE> can continue to prolong the Rage as long as <PRO_HESHE> has Rages.
 – 12th level: Improved Power Attack: Power attack damage bonus is increased to +5 (+7 with 2-handed weapons).
 – 16th level: Supreme Power Attack:  Power attack damage bonus is further increased to +6 (+9 with 2-handed weapons).
 – 18th level: Immortal Berserker: The hit points of enraged Berserker can not be reduced below 1, but at the end of Rage Berserker receives 15 points of damage which can kill <PRO_HIMHER> if <PRO_HESHE> has fewer hit points.
 Note: although <PRO_HISHER> hit points can not be reduced below 1, Berserker can still be killed by spells like Slay Living, Disintegrate and others.
-– 20th level: Last Berserk: Berserker gains one use per day of special form of Rage called Last Berserk. It has the same effect as normal Rage but damage bonus is increased to +15. However it can not be prolonged and after it ends Berserker can no longer use Rage for next 8 hours.
+– 20th level: Last Berserk: Berserker gains one use per day of special form of Rage called Last Berserk. It has the same effect as normal Rage but damage bonus is increased to +15. 
+While in this state the hitpoints of Berserker can not be reduced below 1, but at the end of Last Berserk Berserker receives 50 points of damage which can kill <PRO_HIMHER> if <PRO_HESHE> has fewer hit points.
+Also Last Berserk can not be prolonged and after it ends Berserker can no longer use Rage for next 8 hours.
 – Gets one bonus feat at levels 22, 25 and 28.
 
 Disadvantages:
@@ -955,7 +957,7 @@ CLASS FEATURES:
 
 – May wear helmets. 
 – May not wear armor heavier than splint mail.
-– May use any shield (excluding large shield).
+– May use any weapon and shield (excluding large shield).
 – Receives one bonus Feat at levels 22 and 28.
 – Thieving abilities: Pick Pockets (15% at level 1, +5% at evey next level).
 – Increased Lore score.
@@ -998,7 +1000,7 @@ Deadly Performance
 A bard of 20th level or higher can use <PRO_HISHER> performance to cause one enemy to die from joy or sorrow. To be affected, the target must be able to see and hear the bard perform and be within 30 feet. The target can make a Saving Throw vs. Spell with -4 penalty (-5 at level 25, and -6 at level 30) to negate the effect. If a creature’s Saving Throw succeeds, the target is paralyzed for 2 rounds. If a creature’s Saving Throw fails, it dies.
 
 Song of Requiem
-A bard of 24th level or higher can use this epic performance drains the very life force of the bard's enemies causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds.
+A bard of 24th level or higher can use this epic performance which drains the very life force of the bard's enemies causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds.
 – Alignment restricted to any neutral.
 – Hit Die: d6
 – Medium THAC0/APR progression, High Savingthrows vs. Breath Weapon, vs. Wand and vs. Spell
@@ -1032,7 +1034,7 @@ Inspire Heroics
 A blade of 15th level or higher can inspire tremendous heroism in all <PRO_HISHER> allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the bard. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds. These bonuses increase to +5 at level 24, and +6 at level 30.
 
 Song of Requiem
-A blade of 24th level or higher can use this epic performance drains the very life force of the bard's enemies causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds.
+A blade of 24th level or higher can use this epic performance which drains the very life force of the bard's enemies causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds.
 
 Disadvantages:
 – Smaller variety of available Bardic performance types and less uses per day.
@@ -1065,7 +1067,7 @@ Inspire Heroics
 A skald of 15th level or higher can inspire tremendous heroism in all <PRO_HISHER> allies within 30 feet. To inspire heroics, all of the targets must be able to see and hear the bard. Inspired creatures gain a +4 bonus on Saving Throws and a +4 bonus to AC. The effect lasts for 4 rounds. These bonuses increase to +5 at level 24, and +6 at level 30.
 
 Song of Requiem
-A skald of 24th level or higher can use this epic performance drains the very life force of the bard's enemies causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds.
+A skald of 24th level or higher can use this epic performance which drains the very life force of the bard's enemies causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds.
 
 Disadvantages:
 – Smaller variety of available Bardic performance types and less uses per day.~
@@ -1097,7 +1099,7 @@ Frightening Tune
 A jester of 14th level or higher can use <PRO_HISHER> performance to cause fear in <PRO_HISHER> enemies. To be affected, an enemy must be able to hear the bard perform and be within 30 feet. Each enemy within range can make a Saving Throw vs. Spell with -4 (-5 at level 24, -6 at level 30) penalty to negate the effect. If the Saving Throw fails, the target becomes panicked for next 4 rounds.
 
 Song of Requiem
-A jester of 24th level or higher can use this epic performance drains the very life force of the jester's enemies causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds.
+A jester of 24th level or higher can use this epic performance which drains the very life force of the jester's enemies causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds.
 
 Disadvantages:
 – Smaller variety of available Bardic performance types and less uses per day.

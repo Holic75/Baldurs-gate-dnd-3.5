@@ -8,7 +8,7 @@
 	@4 = ~Chain Mail~
 	@5 = ~Splint Mail~
 	@6 = ~Plate Mail~
-    @61 = ~Plate Mail Armor~
+    @601 = ~Plate Mail Armor~
 	@7 = ~Full Plate Armor~
     @71 = ~Full Plate Mail~
 	
@@ -128,7 +128,7 @@
 ~
 @51 = ~Medium Shield~
 @52 = ~Large Shield~
-@62 = ~Rhino Beetle Shield~
+
 @53 = ~Delryn Family Shield~
 @54 = ~Yoshimo's Ninja-To +1~
 @55 = ~This blade, although only lightly enchanted, has achieved a semblance of awareness, enough so that it allows only the thief known as Yoshimo to wield it. Any other than he cannot use this flawless ninjatō in battle.
@@ -150,6 +150,29 @@ Weight: 5~
 – Pick Pockets: -25%
 – Move Silently: -25%
 – Hide In Shadows: -25%~
+
+@57 = ~– Arcane Spell Casting Failure: 5%
+– Pick Pockets: -10% 
+– Move Silently: -10%
+– Hide In Shadows: -10%~
+
+@58 = ~
+– Arcane Spell Casting Failure: 15%
+– Pick Pockets: -20% 
+– Move Silently: -20%
+– Hide In Shadows: -20%
+~
+
+@59 = ~– Max Dexterity AC Bonus: 2
+– Arcane Spell Casting Failure: 50%
+– Pick Pockets: -100% 
+– Move Silently: -100%
+– Hide In Shadows: -100%
+~
+
+@60 = ~– No protection against missile attacks~
+@61 = ~Small Shield~
+@62 = ~Rhino Beetle Shield~
 
 	@101 = ~2 attacks per round~
 	@102 = ~3 attacks per round~

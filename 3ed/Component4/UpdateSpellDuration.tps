@@ -108,7 +108,8 @@
             FOR (i=1;i<=Nheaders;i=i+1) BEGIN
                 LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high  = 60*i END
             END
-            LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace_ref = 700004  new_substring_ref = 700000 END 
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @338 
     END
     
     //negative plane protection for bg1, bg2, to 5 round/level

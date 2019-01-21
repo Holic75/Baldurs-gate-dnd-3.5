@@ -152,9 +152,7 @@ DEFINE_PATCH_FUNCTION ~UPDATE_ARMOR~
             LPF ADD_ITEM_EQEFFECT INT_VAR opcode=321 target=1 duration=1 timing=2 STR_VAR resource END
             LPF ADD_ITEM_EQEFFECT INT_VAR opcode=206 target=1 duration=1 timing=2 STR_VAR resource END        
          END
-        
-
-		
+        		
     END		
 	
 

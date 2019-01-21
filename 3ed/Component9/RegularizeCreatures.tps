@@ -156,4 +156,10 @@
             LPF ADD_CRE_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 STR_VAR resource=~CRITCON~  END 
         END
 
+        //con bonus
+        FOR (l = 11; l<=Level; l = l + 1) BEGIN
+           SPRINT resource EVALUATE_BUFFER ~HP10A%l%~
+           SPRINT effsource EVALUATE_BUFFER ~HP10E%l%~
+           LPF ADD_CRE_EFFECT INT_VAR opcode=272 timing=9 parameter1=1 parameter2=3 duration=1 STR_VAR effsource  resource END
+        END
     

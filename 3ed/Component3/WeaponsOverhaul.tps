@@ -37,6 +37,7 @@
 		LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter~  RET usable_by_fighter = result END  
 		LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~druid~  RET usable_by_druid = result END 
 		LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~mage~  RET usable_by_mage = result END
+        LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~bard~  RET usable_by_bard = result END
 
 		
 		PATCH_IF (proficiency = 89 ) BEGIN //bastard swords ->straight swords
@@ -191,7 +192,7 @@
             is_2h = (~%unid_name%~ STR_EQ ~%CompositeBowStr%~)
 			LPF PTCH_WPN INT_VAR replace_label=2018 wpn_class_label=035 caption_label=2000 is_melee=0 is_2h END
 			LPF SET_ITEM_USABILITY INT_VAR value=usable_by_mage STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~jester~ END
-
+            LPF SET_ITEM_USABILITY INT_VAR value = usable_by_bard OR usable_by_fighter STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~bard~   END
 		END 
 		ELSE PATCH_IF (proficiency = 106) BEGIN //darts -> missile weapons
 			WRITE_BYTE 0x0031 98

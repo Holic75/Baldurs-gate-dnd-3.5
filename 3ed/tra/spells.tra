@@ -1511,6 +1511,19 @@ Saving Throw: None
 
 Defensive Harmony grants affected creatures a defensive bonus by bestowing an enchanted coordination on their attacks and defenses. This allows a group of creatures to act as a single unit for a single battle or encounter. The effect is always centered on the caster, but affects all allies within a 15-ft. radius. Those affected can move outside of this area after the spell is cast and still enjoy the benefits of the harmony. While the spell is in effect, each affected creature gains a +4 bonus to <PRO_HISHER> Armor Class for the duration of the spell.~
 //------------------------------------------------------------------------
+    @338 = ~Protection From Fire
+(Abjuration)
+
+Level: 3
+Sphere: Protection, Elemental (Fire) 
+Range: Touch 
+Duration: 1 min/level
+Casting Time: 6 
+Area of Effect: 1 creature 
+Saving Throw: None 
+
+When the spell is cast, it confers complete invulnerability to normal fires (torches, bonfires, oil fires, and the like) and to exposure to magical fires (fiery dragon breath, hell hound or pyrohydra breath, spells such as Burning Hands, Fireball, Fire Seeds, Fire Storm, Flame Strike, Meteor Swarm, and so on), absorbing 80% of all the damage dealt by such magical sources.~
+//------------------------------------------------------------------------
 	@1000 =~vs. None~
 	@1001 =~vs. Spell~
 	@1002 =~vs. Breath Weapon~

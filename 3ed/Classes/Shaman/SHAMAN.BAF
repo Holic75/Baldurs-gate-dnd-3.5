@@ -1,7 +1,7 @@
 IF
 	PartyRested()
 	Class(Player%player_id%,SHAMAN)
-	LevelGT(Player%player_id%,18)
+	LevelGT(Player%player_id%,17)
 THEN
 	RESPONSE #100
 		ApplySpellRES("FVRD_SP",Player%player_id%) //favored of spirits
