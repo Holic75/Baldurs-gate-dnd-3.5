@@ -205,7 +205,7 @@ Note: This Feat does not effect Throwing Axes.
 Weapon Finesse (1 star) - With unarmed strikes, short swords, daggers, long swords, scimitars, wakizhasi, ninja-to, clubs, quarterstaves and spears the character may use Dexterity value instead of Strength to determine bonus to THAC0.  
 Dodge (2 stars) - The character receives +1 bonus to AC.  
 Lightning Reflexes (3 stars) - The character receives +2 bonus on Saving Throws vs. Rod/Staff/Wand and vs. Breath Weapon.  
-Flurry of Strikes (4 stars) - The character receives Flurry of Strikes modal ability. While activated can make one additional APR if she fights with either unarmed strikes, short swords, daggers, long swords, scimitars, wakizhasi, ninja-to, clubs, quarterstaves or spears, but all attacks receive -5 penalty to THAC0.  
+Flurry of Strikes (4 stars) - The character receives Flurry of Strikes modal ability. While activated can make one additional APR if she fights with either unarmed strikes, short swords, daggers, long swords, scimitars, wakizhasi, ninja-to, clubs, quarterstaves or spears, but all attacks receive -3 penalty to THAC0.  
 Elegant Strike (5 stars) - With unarmed strikes, short swords, daggers, long swords, scimitars, clubs, quarterstaves and spears the character receives +1 bonus to damage for every 2 points of Dexterity above 10.  
 Whirlwind Attack (6 stars) - The character receives Whirlwind Attack innate ability.
 ```
@@ -2161,6 +2161,7 @@ Large Shield           | 50% | +2 | -50%
  - Sling bullets damage was changed from missile to crushing  
  - Ankheg Plate Mail AC bonus was lowered to that of regular Plate Mail  
  - Small Shields no longer have penalty to missile AC
+ - Base damage of sling bullets was reduced to 1d4
  
 
 ## 6. Spells
@@ -2203,7 +2204,7 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Slay Living now deals 2d6+9 damage to target if it succeeds on Save vs. Death  
 - Flame Strike is now and AOE spell with 5 ft radius  
 - Champion's Strength is now applied only to caster. It sets its THAC0 to that of a  fighter, gives + 1/2 APR and + 4 strength bonus, the duration is three times that of Holy Power  
-- Righteous Magic now gives + 1 HP per level, +2 AC, and +1 STR and 5% physical damage resistance per 3 caster levels  
+- Righteous Magic now gives + 1 HP per level, +2 AC, +4 STR and 5% physical damage resistance per 3 caster levels  
 - Cause Critical Wounds is now a close range spell dealing 36 points of damage  (with savingthrow vs. Spell for half)  
 - Cure Critical wounds now heals 36 HP  
 - Heal now heals up to 150 HP  
@@ -2223,10 +2224,13 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Project Image now has only 50% of caster level  
 - Duration of Bless, Protection from Evil, Armor of Faith, Barkskin, Resist Fire/Cold, Ghost Armor and Spirit Armor was changed to 1 min/level  
 - Duration of Blur and Aid was changed to 5 rounds/level  
-- Duration of Luck was changed to 1 round/level
-- Iwd Poison spell now deals 1 poison damage per 6 levels of the caster per second.
-- Duration of Defensive Harmony was increased to 1 round/level and it now gives + 4 AC bonus in all games.
-- Duration of Negative Plane Protection was increased to 5 round/level.
+- Duration of Luck was changed to 1 round/level  
+- Iwd Poison spell now deals 1 poison damage per 6 levels of the caster per second  
+- Duration of Defensive Harmony was increased to 1 round/level and it now gives + 4 AC bonus in all games  
+- Duration of Negative Plane Protection was increased to 5 round/level  
+- Most items and spells that were setting character stats to certain values not give a bonus instead  
+- Character stat bonuses from items and spells are no longer cumultive (except Righteous might STR bonus)  
+- Belt of Fortitude now gives permanent bonus to Constitution  
 
 ### New Spells
 

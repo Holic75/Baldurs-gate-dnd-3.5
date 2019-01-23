@@ -112,7 +112,7 @@ DEFINE_PATCH_FUNCTION ~ALTER_SPELL_EFFECT_EX~
 			
 			SET matched_header = 1
 			
-			PATCH_IF (i=n_headers) BEGIN //parsing global feature block
+			PATCH_IF (i==n_headers) BEGIN //parsing global feature block
 				PATCH_IF (header!=666666666 AND 0!=header) BEGIN
 					SET matched_header =0
 				END

@@ -1,0 +1,31 @@
+DEFINE_PATCH_FUNCTION ~REPLACE_SPL_STAT_BONUSES~
+
+INT_VAR
+    base_val_set = 16
+   
+BEGIN
+    DEFINE_ASSOCIATIVE_ARRAY stat_opcode BEGIN
+        ~STR~ => 44
+        ~INT~ => 19
+        ~CHA~ => 6
+        ~CON~ => 10
+        ~DEX~ => 15
+        ~WIS~ => 49
+    END
+
+    PHP_EACH stat_opcode AS stat => code BEGIN
+        FOR (val = 1; val<=10; val = val + 1) BEGIN
+                SPRINT resource EVALUATE_BUFFER ~ABN%stat%%val%~
+                LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = code match_parameter1 = val match_parameter2 = 0 
+                                          opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource END
+        END
+        FOR (val = 18; val<=25; val = val + 1) BEGIN
+            SET new_val = val - base_val_set
+            SPRINT resource EVALUATE_BUFFER ~ABN%stat%%new_val%~
+            LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = code match_parameter1 = val match_parameter2 = 1 
+                opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource END
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 check_globals = 1 match_opcode = 97 END //delete exceptional strength      
+        END
+       
+    END
+END

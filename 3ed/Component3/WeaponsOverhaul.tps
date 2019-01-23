@@ -218,7 +218,10 @@
 			WRITE_BYTE 0x0031 98
 			LPF ALTER_ITEM_EFFECT INT_VAR check_globals=1 match_opcode=1 parameter1=6 END //fix apr to 0.5
 			LPF PTCH_WPN INT_VAR replace_label=2020 wpn_class_label=037 caption_label=2000 is_melee=0 END			
-
+            //dmg to blunt
+            LPF ALTER_ITEM_HEADER INT_VAR header_type = 4 damage_type = 2 END
+            LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace_ref = 6001  new_substring_ref = 6002 END
+            LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace_ref = 6001  new_substring_ref = 6002 END
            
 		END  		
 		ELSE PATCH_IF (category == 28) BEGIN//fist weapons
@@ -286,13 +289,24 @@
 			LPF SET_ITEM_USABILITY INT_VAR value = usable_by_kensai OR usable_by_fighter STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~kensai~   END			
 		END
         
-        PATCH_IF (category == BulletsCategory) BEGIN //set bullets damage type to crushing
-            LPF ALTER_ITEM_HEADER INT_VAR header_type = 2 damage_type = 2 END
+        PATCH_IF (category == BulletsCategory) BEGIN //set bullets damage type to crushing and reduce it by one
+            LPF GET_ITEM_ENCHANTMENT RET current_enchantment = enchantment END            
+            LPF ALTER_ITEM_HEADER INT_VAR header_type = 2 damage_type = 2 damage_bonus = current_enchantment END
             LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace_ref = 6001  new_substring_ref = 6002 END
             LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace_ref = 6001  new_substring_ref = 6002 END
             LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace_ref = 6003  new_substring_ref = 6004 END
             LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 STR_VAR substring_to_replace_ref = 6003  new_substring_ref = 6004 END
+            LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0050 
+                                  STR_VAR substring_to_replace = ~1d4\+1~ new_substring = ~1d4~ always_replace = 1 END
+            SET dmg_bonus = current_enchantment + 1
+            SPRINT substring_to_replace EVALUATE_BUFFER ~1d4\+%dmg_bonus%~
+            SPRINT new_substring ~1d4\+%current_enchantment%~
+            PATCH_IF (current_enchantment == 0) BEGIN
+                 SPRINT new_substring ~1d4~
+            END
+            LPF REPLACE_SUBSTRING INT_VAR strref_offset=0x0054 STR_VAR substring_to_replace new_substring END
         END
+        
         
 	BUT_ONLY
     

@@ -49,6 +49,11 @@ BEGIN @1
     INCLUDE ~3ed/DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST.tph~
     INCLUDE ~3ed/CREATE_SPL_COPIES_WITH_PROTECTION.tph~
     INCLUDE ~3ed/ADD_PSEPB_FEAT.tph~// persistent exclusive progressive bonus feat
+    INCLUDE ~3ed/REPLACE_SUBSTRING.tph~
+    INCLUDE ~3ed/REPLACE_SPL_STAT_BONUSES.tph~
+    
+    
+    INCLUDE ~3ed/Component1/CreateStatBonusEffects.tps~
 
 	
 	COPY ~3ed/Core/Clab~ ~override~ 
@@ -150,7 +155,9 @@ BEGIN @1
     //--------------------------------------------------set 2 weapon slots to thief base
     COPY_EXISTING ~NUMWSLOT.2DA~ ~override~
         COUNT_2DA_ROWS 2 "nrows"	
-        INSERT_2DA_ROW nrows 2 ~THIEF_BASE    2~	
+        INSERT_2DA_ROW nrows 2 ~THIEF_BASE    2~
+
+
     
 	
 ////////////////////////////////////////////////////////////////////////////
@@ -231,9 +238,6 @@ INCLUDE ~3ed/ALTER_EFF.tph~
 INCLUDE ~3ed/GET_SPELL_EFFECT_VALUES.tph~
 
 
-	
-	
-	
 	 //----------------update items and robes for everyone------------------------------//						
 
 WITH_TRA ~%LANGUAGE%\equipment.tra~ BEGIN
@@ -244,9 +248,6 @@ WITH_TRA ~%LANGUAGE%\equipment.tra~ BEGIN
 	
 END
 	
-	
-
-
 //making dex penalty depending on dex value and armor dex limit
 INCLUDE ~3ed/Component3/CreateArmorDexPenalty.tps~
 
@@ -279,12 +280,6 @@ WITH_TRA ~%LANGUAGE%\equipment.tra~ BEGIN
 	INCLUDE ~3ed/Component3/ArmorOverhaul.tps~
 
 END
-
-
-WITH_TRA ~%LANGUAGE%\equipment.tra~ BEGIN
-
-
-END
 	
     INCLUDE ~3ed/Component3/TripleMultiClassUsability.tps~
     INCLUDE ~3ed/Component3/SneakAttackAllWeapons.tps~
@@ -293,6 +288,9 @@ END
    
    //replace weapon of polymorphs to provide protection from dex decrease
 	INCLUDE ~3ed/Component3/ProtectDruidPolymorphsFromArmorDexPenalty.tps~
+    
+    //replace
+    INCLUDE ~3ed/Component3/ReplaceStatBonusEffects.tps~
 
 //////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
@@ -311,6 +309,7 @@ INCLUDE ~3ed/ADD_EVASION_TO_SPELL.tph~
 INCLUDE ~3ed/FIX_HARM_3ED.tph~
 INCLUDE ~3ed/FIX_HEAL_3ED.tph~
 INCLUDE ~3ed/DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST.tph~
+INCLUDE ~3ed/REPLACE_SPL_STAT_BONUSES.tph~
 
 
 
@@ -370,6 +369,7 @@ INCLUDE ~3ed/DELETE_ALL_SPELL_HEADERS_EXCEPT_FIRST.tph~
 INCLUDE ~3ed/FIX_HARM_3ED.tph~
 INCLUDE ~3ed/FIX_HEAL_3ED.tph~
 INCLUDE ~3ed/CREATE_SPL_COPIES_WITH_PROTECTION.tph~
+INCLUDE ~3ed/REPLACE_SPL_STAT_BONUSES.tph~
 
 WITH_TRA ~%LANGUAGE%\Spells.tra~ BEGIN
 	

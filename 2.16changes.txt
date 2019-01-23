@@ -34,3 +34,9 @@
 - Small Shields no longer have penalty to missile AC but instead give 5% arcane spell casting failure and -10% to hide in shadows, move silently and pickpockets
 - Medium Shields now give 15% arcane spell casting failure and -20% to hide in shadows, move silently and pickpockets
 - Tower Shields now give 50% arcane spell casting failure and -100% to hide in shadows, move silently and pickpockets (it is all irrelevant since no thieves or arcane casters can use them), and also limit max AC dex bonus to +2
+- THAC0 penalty of Flurry of Strikes was reduced to -3
+- replaced Set stat effects on most items and spells to increment
+- items and spells incrementing character stats are no longer cumulative with each other (except Righteous Magic)
+- Strength bonus of Righteous Magic was fixed at 4 and it is cumulative with all other Strength bonuses
+- Damage of sling bullets was reduced to 1d4
+- Belt of Fortitude now gives permanent bonus to Constitution

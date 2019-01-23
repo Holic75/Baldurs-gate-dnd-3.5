@@ -348,3 +348,12 @@ ACTION_IF (~%GameId%~ STR_EQ ~Bg1~ OR ~%GameId%~ STR_EQ ~Bg2~) BEGIN
         LPF DELETE_EFFECT INT_VAR check_globals = 1 match_opcode = 0 match_parameter2 = 1 END 
         LPF DELETE_EFFECT INT_VAR check_globals = 1 match_opcode = 0 match_parameter2 = 2 END
 END
+
+//set belt of fortitude to give permanent con bonus
+ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
+     COPY_EXISTING ~BELT09.ITM~ ~override~
+        LPF ADD_ITEM_EQEFFECT INT_VAR opcode=10 target=1 timing=2 parameter1 = 18 parameter2 = 1 END
+        LPF DELETE_ITEM_HEADER INT_VAR header_type = 3 END 
+        READ_LONG 0x0054 ~id_descr_strref~
+        STRING_SET_EVALUATE %id_descr_strref% @3013
+END

@@ -383,14 +383,14 @@ When this spell is cast, an invisible barrier comes into being in front of the w
 Level: 5
 Sphere: Law
 Range: 0
-Duration: 3 rounds/level
+Duration: 1 round/level
 Casting Time: 2
 Area of Effect: Caster
 Saving Throw: None
 
-When this spells is cast, the priest effectively draws on the strength of <PRO_HISHER> god through himself becoming an ultimate fighting machine. Caster's base THAC0 becomes equal to that of a fighter of the same level and <PRO_HESHE> receive +1/2 additional attack per round. Also <PRO_HESHE> gets a +4 Strength bonus for the duration of the spell and receives all the bonuses to hit and damage rolls that this Strength confers.
+When this spells is cast, the priest effectively draws on the strength of <PRO_HISHER> god through himself becoming an ultimate fighting machine. Caster's base THAC0 becomes equal to that of a fighter of the same level and <PRO_HESHE> receive +1 additional attack per round. Also <PRO_HESHE> gets a +6 Strength bonus for the duration of the spell and receives all the bonuses to hit and damage rolls that this Strength confers.
 
-The drawback to this is that the priest must concentrate on the connection with <PRO_HISHER> god for the duration of the spell, hence losing the ability to cast any spells during this time. The effect lasts for 3 rounds for every level of the caster or until dispelled.~
+The drawback to this is that the priest must concentrate on the connection with <PRO_HISHER> god for the duration of the spell, hence losing the ability to cast any spells during this time. The effect lasts 1 round for every level of the caster or until dispelled.~
 //--------------------------------------------------------------------------------------------------------------------//
 	@036=~Holy Power
 (Evocation)
@@ -402,7 +402,7 @@ Casting Time: 6
 Area of Effect: The caster
 Saving Throw: None
 
-Through this spell, the caster imbues <PRO_HIMHER>self with the strength and skill of a Fighter of the same level. The priest's Strength score is increased by 2 —<PRO_HISHER> THAC0 becomes that of a Fighter of the same level, <PRO_HISHER> number of attacks per round increases by 1/2, and <PRO_HESHE> gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled. Priest looses the ability to cast spells while under the effect of Holy Power.~
+Through this spell, the caster imbues <PRO_HIMHER>self with the strength and skill of a Fighter of the same level. The priest's Strength score is increased by 4 —<PRO_HISHER> THAC0 becomes that of a Fighter of the same level, <PRO_HISHER> number of attacks per round increases by 1/2, and <PRO_HESHE> gains 1 temporary Hit Point per level. This will last for the duration of the spell or until dispelled. Priest looses the ability to cast spells while under the effect of Holy Power.~
 //--------------------------------------------------------------------------------------------------------------------//
 	@037=~Tenser's Transformation
 (Alteration)
@@ -504,7 +504,7 @@ Casting Time: 9
 Area of Effect: The caster
 Saving Throw: None
 
-This is a powerful combat spell that enhances the priest's physical prowess, transforming <PRO_HIMHER> into a juggernaut of destruction. The effect adds 1 temporary Hit Point per level of the caster, +2 bonus to AC, adds 1 point of Strength and 5% physical damage resistance for every 3 levels of the caster, and causes every successful hit to inflict maximum damage. The effects last for the duration of the spell or until dispelled.~
+This is a powerful combat spell that enhances the priest's physical prowess, transforming <PRO_HIMHER> into a juggernaut of destruction. The effect adds 1 temporary Hit Point per level of the caster, +2 bonus to AC, adds 4 points of Strength (size bonus) and 5% physical damage resistance for every 3 levels of the caster, and causes every successful hit to inflict maximum damage. The effects last for the duration of the spell or until dispelled.~
 //----------------------------------------------------------------------------------//
 	@042=~Flame Strike
 (Evocation)
@@ -1523,6 +1523,69 @@ Area of Effect: 1 creature
 Saving Throw: None 
 
 When the spell is cast, it confers complete invulnerability to normal fires (torches, bonfires, oil fires, and the like) and to exposure to magical fires (fiery dragon breath, hell hound or pyrohydra breath, spells such as Burning Hands, Fireball, Fire Seeds, Fire Storm, Flame Strike, Meteor Swarm, and so on), absorbing 80% of all the damage dealt by such magical sources.~
+
+    @339 = ~Strength
+(Alteration)
+
+Level: 2
+Range: 20 ft.
+Duration: 1 turn/level 
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None 
+
+Application of this spell adds 4 points to character strength.~
+
+    @340 =~Strength of One
+(Alteration)
+
+Level: 3
+Sphere: Law
+Range: 0 
+Duration: 1 turn 
+Casting Time: 3 
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+When this spell is cast, party members within the area of effect are given 4 bonus points of Strength. The spell lasts for 1 turn, whereupon everyone's Strength returns to normal.~
+
+    @341 = ~Cat's Grace
+(Alteration)
+
+Level: 2
+Range: Touch
+Duration: 1 hour/level
+Casting Time: 2
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell magically increases a target's Dexterity by 4 points.~
+
+    @342 = ~Beast Claw
+(Alteration)
+
+Level: 2
+Sphere: Combat
+Range: 0
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: The caster
+Saving Throw: None
+
+This spell transforms the caster's arms into the claws of a mighty beast, giving the caster 4 bonus to Strength and the ability to rake an opponent for 2d4 (plus Strength bonus) points of slashing damage. The caster can attack twice per round with the beast claws, with a +2 bonus to hit.~
+
+    @343 = ~Animal Rage
+(Enchantment)
+
+Level: 5
+Sphere: Combat
+Range: Touch
+Duration: 15 rounds
+Casting Time: 8
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell imbues the target creature with animal ferocity. The target creature gains 4 bonus points of Strength and Constitution, +20% movement rate, and a +2 bonus to all Saving Throws. The target loses the ability to cast spells while Animal Rage is in effect.~
 //------------------------------------------------------------------------
 	@1000 =~vs. None~
 	@1001 =~vs. Spell~

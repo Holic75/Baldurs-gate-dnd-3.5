@@ -390,21 +390,19 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 		LPF ALTER_SPELL_HEADER INT_VAR target = 5 range = 0 END //target is set to caster
     COPY_EXISTING ~SPPR507.spl~ ~override~
 		PATCH_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
-			FOR (i=1;i<12;i=i+1) BEGIN
-     
-				LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
-                
+			FOR (i=1;i<12;i=i+1) BEGIN    
+				LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END              
 				LPF ALTER_SPELL_HEADER INT_VAR header = i+1 min_level = i+9 END
 			END
 		END
 		FOR (i=1;i<=12;i+=1) BEGIN   
 			SET cstr_lvl=i+8 
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 54 target = 2  power =5 parameter1 = (20 - cstr_lvl) parameter2 = 1 resist_dispel = 3 duration =10 END // set thac0 to fighters
-			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 44 target = 2 power = 5 parameter1 = 4 parameter2 = 0 resist_dispel = 3 duration = 10 END //STR bonus	
-			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 1 target = 2 power = 5 parameter1 = 6 parameter2 = 0  resist_dispel = 3 duration = 10 END //+ 0.5 APR
+			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 44 target = 2 power = 5 parameter1 = 6 parameter2 = 0 resist_dispel = 3 duration = 10 END //STR bonus	
+			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 1 target = 2 power = 5 parameter1 = 1 parameter2 = 0  resist_dispel = 3 duration = 10 END //+ 1 APR
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 145 target = 2 power = 5 parameter1 = 0 parameter2 = 0  resist_dispel = 3 duration = 10 END // forbid casting wizard spells
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 145 target = 2 power = 5 parameter1 = 0 parameter2 = 1  resist_dispel = 3 duration = 10 END // forbid casting cleric spells
-			LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high = 18*(cstr_lvl) END
+			LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high = 6*(cstr_lvl) END
 		END
 		
 		READ_LONG 0x0050 ~descr_strref~
@@ -422,13 +420,15 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 				THAC0_BONUS = 0
 			END
 			LPF ALTER_SPELL_EFFECT INT_VAR  header = i match_opcode = 54 parameter1 = THAC0_BONUS  parameter2=1 END // thac0
-			LPF ALTER_SPELL_EFFECT INT_VAR  header = i match_opcode = 44 parameter1 = 2 parameter2 = 0 END //+2 STR bonus	
+			LPF ALTER_SPELL_EFFECT INT_VAR  header = i match_opcode = 44 parameter1 = 4 parameter2 = 0 END //+4 STR bonus	
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 1 target = 2 power = 4 parameter1 = 6 parameter2 = 0 duration = 6*(cstr_lvl) resist_dispel = 3 END // +0.5 APR
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 145 target = 2 power = 4 parameter1 = 0 parameter2 = 0 duration = 6*(cstr_lvl) resist_dispel = 3 END // forbid casting wizard spells
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 145 target = 2 power = 4 parameter1 = 0 parameter2 = 1 duration = 6*(cstr_lvl) resist_dispel = 3 END // forbid casting cleric spells
 		END
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @036
+    COPY_EXISTING ~SPPR412.spl~ ~override~    
+        LPF REPLACE_SPL_STAT_BONUSES END
 		
 		
 	//Tenser's transformation
@@ -535,15 +535,27 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 			SET cstr_lvl=i+8 
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 0 target = 1 power = 5 parameter1 = 2 parameter2 = 0 duration = 6*(cstr_lvl) resist_dispel = 3 END // +2 AC
 			//damage resistance
-			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 86 target = 1 power = 5 parameter1 = 5*(cstr_lvl/3) parameter2 = 0 duration = 6*(cstr_lvl) resist_dispel = 3 END 
-			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 87 target = 1 power = 5 parameter1 = 5*(cstr_lvl/3) parameter2 = 0 duration = 6*(cstr_lvl) resist_dispel = 3 END 
-			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 88 target = 1 power = 5 parameter1 = 5*(cstr_lvl/3) parameter2 = 0 duration = 6*(cstr_lvl) resist_dispel = 3 END 
-			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 89 target = 1 power = 5 parameter1 = 5*(cstr_lvl/3) parameter2 = 0 duration = 6*(cstr_lvl) resist_dispel = 3 END 
+			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 86 target = 1 power = 5 parameter1 = 5*(cstr_lvl/3) parameter2 = 1 duration = 6*(cstr_lvl) resist_dispel = 3 END 
+			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 87 target = 1 power = 5 parameter1 = 5*(cstr_lvl/3) parameter2 = 1 duration = 6*(cstr_lvl) resist_dispel = 3 END 
+			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 88 target = 1 power = 5 parameter1 = 5*(cstr_lvl/3) parameter2 = 1 duration = 6*(cstr_lvl) resist_dispel = 3 END 
+			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 89 target = 1 power = 5 parameter1 = 5*(cstr_lvl/3) parameter2 = 1 duration = 6*(cstr_lvl) resist_dispel = 3 END 
 		
 		END
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 44 parameter1 = 4 END
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @041
-
+    //make armor of faith set resistances instead of increment
+    COPY_EXISTING ~SPPR111.SPL~ ~override~
+        LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 27 parameter2 = 1 END
+        LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 28 parameter2 = 1 END
+        LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 29 parameter2 = 1 END
+        LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 30 parameter2 = 1 END
+        LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 31 parameter2 = 1 END
+        LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 86 parameter2 = 1 END
+        LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 87 parameter2 = 1 END        
+        LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 88 parameter2 = 1 END
+        LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 89 parameter2 = 1 END
+			
 	//make flame strike aoe spell with 1d8 damage level
 	COPY_EXISTING ~SPPR503.SPL~ ~override~
 		READ_SHORT 0x68 n_headers
@@ -618,7 +630,7 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 
 	//nerf draw upon holy might
 	COPY_EXISTING_REGEXP GLOB ~\(SPPR214.SPL\)\|\(SPIN103.SPL\)~ ~override~ 
-		READ_SHORT 0x68 n_headers
+		READ_SHORT 0x68 n_headers    
 		LPF ALTER_SPELL_HEADER INT_VAR header=2 min_level=5 END
 		LPF ALTER_SPELL_HEADER INT_VAR header=3 min_level=10 END
 		LPF ALTER_SPELL_HEADER INT_VAR header=4 min_level=15 END
@@ -626,10 +638,17 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 		FOR (i=6;i<=n_headers;i=i+1) BEGIN
 			LPF ALTER_SPELL_HEADER INT_VAR header=i min_level=40 END
 		END
+        //replace duhm effect with ability bonuses
+        LPF CLONE_EFFECT INT_VAR  check_headers = 1 match_opcode = 132 opcode = 44 STR_VAR insert = ~below~ END
+        LPF CLONE_EFFECT INT_VAR  check_headers = 1 match_opcode = 132 opcode = 15 STR_VAR insert = ~below~ END
+        LPF CLONE_EFFECT INT_VAR  check_headers = 1 match_opcode = 132 opcode = 10 STR_VAR insert = ~below~ END
+        SPRINT resource EVALUATE_BUFFER ~%SOURCE_RES%~
+        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 132 new_opcode = 321 parameter1 = 0 parameter2 = 0 duration = 1 STR_VAR resource END
+        LPF REPLACE_SPL_STAT_BONUSES END
 		LPF DELETE_SPELL_HEADER INT_VAR header_type=~-1~ min_level=40 END
 		
 		READ_LONG 0x0050 ~descr_strref~
-		STRING_SET_EVALUATE %descr_strref% @046
+		STRING_SET_EVALUATE %descr_strref% @046        
 		
 	//update spiritual hammer description (it is throwing now and gets +1 per 3 caster levels)
 	COPY_EXISTING ~SPPR213.SPL~ ~override~
@@ -1263,9 +1282,45 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
         READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @337	//change description
 
-                
+              
+    //fix str bonus for strength and strength of one
+    
+    COPY_EXISTING ~SPWI214.SPL~ ~override~
+        LPF REPLACE_SPL_STAT_BONUSES INT_VAR base_val_set = 14 END
+        READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @339	//change description
         
         
+    COPY_EXISTING ~SPPR312.SPL~ ~override~
+        LPF REPLACE_SPL_STAT_BONUSES INT_VAR base_val_set = 14 END
+        READ_LONG 0x0050 ~descr_strref~
+		STRING_SET_EVALUATE %descr_strref% @340	//change description
+        
+    //fix friends charisma bonus
+    COPY_EXISTING ~SPWI107.SPL~ ~override~
+        LPF REPLACE_SPL_STAT_BONUSES END
+        
+    //fix spells for iwd
+    ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+        //cats grace
+        COPY_EXISTING ~SPWI225.SPL~ ~override~ 
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 15 opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource = ~ABNDEX4~ END
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @341	//change description
+          
+        //beast claw
+        COPY_EXISTING ~SPPR219.SPL~ ~override~    
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @342	//change description
+        //blood rage
+        COPY_EXISTING ~SPPR422.SPL~ ~override~ 
+            LPF REPLACE_SPL_STAT_BONUSES END
+        //animal rage
+        COPY_EXISTING ~SPPR522.SPL~ ~override~
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 44 opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource = ~ABNSTR4~ END
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 18 opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource = ~ABNCON4~ END
+            LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 3 END 
+    END
     
     
     

@@ -235,7 +235,8 @@
             SET header = i - 12 
             LPF ALTER_SPELL_HEADER INT_VAR header  min_level = i END      
             LPF ALTER_SPELL_EFFECT INT_VAR header duration_high = i*6 END            
-        END 
+        END
+        LPF REPLACE_SPL_STAT_BONUSES END
                       
         ADD_SPELL "override/AURAVITD.SPL" 1  7 DRUID_AURA_VITALITY
         SPRINT resource EVALUATE_BUFFER ~%DEST_RES%~		
