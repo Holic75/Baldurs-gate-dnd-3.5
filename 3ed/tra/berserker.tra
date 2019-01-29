@@ -21,4 +21,5 @@ Starting from level 8 Berserker can prolong <PRO_HISHER> rage if the combat last
 After the effects end, the character becomes winded, suffering a -2 penalty to Armor Class, to-hit rolls, and damage rolls.~
 
     @005=~Enraged state ends in one round~
+    @006=~When the Last Berserk state ends, the character will take 50 damage.~
 //-------------------------------------------------------------------------------------------------------------------------------//

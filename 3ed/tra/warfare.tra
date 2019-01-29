@@ -7,12 +7,12 @@ Character receives +3 on damage rolls (+4 with two-handed weapons) and -3 penalt
 	@003=~Stunning Attack~
 	@004=~Stunning Attack
 	
-Stunning Attack allows the warrior to strike blows so forceful that they stun an opponent for 2 rounds if the opponent fails a Save vs. Death at a -6 penalty. The ability lasts for 2 rounds and can be used once every 2 minutes.~
+Stunning Attack allows the warrior to strike blows so forceful that they stun an opponent for 2 rounds if the opponent fails a Save vs. Death at a -6 penalty. The ability lasts for 2 rounds and can be used once in 20 rounds.~
 
 	@005=~Deathblow~
 	@006=~Deathblow
 	
-This ability allows the warrior to vanquish foes with a single blow.  For the next 2 rounds, any creature is instantly killed when struck by the warrior unless it makes a Save vs. Death  at a -4 penalty. This ability can be used once every 2 hours.~
+This ability allows the warrior to vanquish foes with a single blow.  For the next 2 rounds, any creature is instantly killed when struck by the warrior unless it makes a Save vs. Death  at a -6 penalty. This ability can be used once every 2 hours.~
 	
 	
 	@007=~Improved Power Attack~ 

@@ -931,37 +931,37 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
     
     //modify some high level wizard spells
     
-    //increase duration of mantle to 1 round/level
+    //increase duration of mantle to 1 round/2 levels
     COPY_EXISTING ~SPWI708.SPL~ ~override~
         FOR (i=2;i<=30;i=i+1) BEGIN
             LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
             LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = i END
         END
         FOR (i=1;i<=30;i=i+1) BEGIN
-            LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high = 6*i END
+            LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high = 3*i END
         END
         READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @301
-    //increase duration of improved mantle to 1 round/level    
+    //increase duration of improved mantle to 1 round/2 levels    
     COPY_EXISTING ~SPWI808.SPL~ ~override~
         FOR (i=2;i<=30;i=i+1) BEGIN
             LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
             LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = i END
         END
         FOR (i=1;i<=30;i=i+1) BEGIN
-            LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high = 6*i END
+            LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high = 3*i END
         END
         READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @302
-    //increase duration of absolute immunity to 1 round/level    
+    //increase duration of absolute immunity to 1 round/2 levels 
     COPY_EXISTING ~SPWI907.SPL~ ~override~
-        LPF ADD_SPELL_EFFECT INT_VAR opcode = 120 target = 1 parameter1 = 6 resist_dispel = 3 END //add resist to +6 weapons
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 120 target = 1 parameter1 = 6 resist_dispel = 3 duration = 32 power = 9 END //add resist to +6 weapons
         FOR (i=2;i<=30;i=i+1) BEGIN
             LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
             LPF ALTER_SPELL_HEADER INT_VAR header = i min_level = i END
         END
         FOR (i=1;i<=30;i=i+1) BEGIN
-            LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high = 6*i END
+            LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high = 3*i END
         END
         READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @303

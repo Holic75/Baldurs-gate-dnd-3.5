@@ -34,12 +34,12 @@ WITH_TRA ~%LANGUAGE%\warfare.tra~ BEGIN
 		COPY_EXISTING ~SPCL906B.EFF~ ~override~
 		LPF ALTER_EFF INT_VAR savebonus END
 	END
-	//7 - Deathblow (slay on hit with -4 penalty on save vs death - for 2 rounds once every hour)
+	//7 - Deathblow (slay on hit with -6 penalty on save vs death - for 2 rounds once every hour)
 	OUTER_SPRINT game_name @005  OUTER_SPRINT game_description @006
 	LAF ADD_LUA_FEAT INT_VAR n_uses=1 copy_icons = 0 STR_VAR ability_name=~EPCSLA~ game_name game_description  END
 	//add saving throws, remove level restriction
 	ACTION_IF !(~%GameId%~ STR_EQ ~Bg1~) BEGIN
-		OUTER_SET savebonus  = 0 - 4
+		OUTER_SET savebonus  = 0 - 6
 		OUTER_SET savingthrow  = 4 //paralyze/poison/death
 		COPY_EXISTING ~SPCL903.EFF~ ~override~
 		LPF ALTER_EFF INT_VAR savebonus savingthrow max_level = 0 END
@@ -86,16 +86,14 @@ WITH_TRA ~%LANGUAGE%\combat_prowess.tra~ BEGIN
 	//5 - elegant strike (dex bonus to damage with light weapons)
 	LAF ADD_PSB_FEAT INT_VAR min_val=12 max_val=25 step=2 par1=122 STR_VAR ability_name=~ELTSTK~ END 
 		
-	//6 - whirlwind (10 apr for 1 round, -4 to hit, -4 dmg - once every 5 minutes)
+	//6 - whirlwind (10 apr for 1 round -  once every 2 minutes)
 	OUTER_SPRINT game_name @003  OUTER_SPRINT game_description @004
-	LAF ADD_LUA_FEAT INT_VAR n_uses=1 copy_icons = 0 STR_VAR ability_name=~WHIRLN~ game_name game_description  END
-
-	//7 - greater whirlwind - no penalties
-	OUTER_SPRINT game_name @005  OUTER_SPRINT game_description @006
 	LAF ADD_LUA_FEAT INT_VAR n_uses=1 copy_icons = 0 STR_VAR ability_name=~WHIRLG~ game_name game_description  END
-		COPY_EXISTING ~WHIRLGFT.SPL~ ~override~ // remove uses and effects of normal whirlwind
-		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource=~WHIRLN~ END 
-		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~WHIRLN~ END
+
+	//7 - epic dodge - evade all attacks for one round - once in 2 minutes
+	OUTER_SPRINT game_name @005  OUTER_SPRINT game_description @006
+	LAF ADD_LUA_FEAT INT_VAR n_uses=1 copy_icons = 0 STR_VAR ability_name=~EPCDOD~ game_name game_description  END
+
 END	
 //--------------------------------------------tactics
 WITH_TRA ~%LANGUAGE%\tactics.tra~ BEGIN
@@ -116,7 +114,7 @@ WITH_TRA ~%LANGUAGE%\tactics.tra~ BEGIN
 	//5 - combat intuition (int bonus to ac with light armor)
 	LAF ADD_PSB_FEAT INT_VAR min_val=12 max_val=25 step=2 par1=128 STR_VAR ability_name=~CMBINT~ END 
 	
-	//6 - critical strike (all hits - critical for 1 round - every 5 minutes)
+	//6 - critical strike (all melee hits - critical for 1 round - every 5 minutes)
 	OUTER_SPRINT game_name @005  OUTER_SPRINT game_description @006
 	LAF ADD_LUA_FEAT INT_VAR n_uses=1 copy_icons = 0 STR_VAR ability_name=~EPCCRT~ game_name game_description  END	
 	
@@ -148,16 +146,14 @@ WITH_TRA ~%LANGUAGE%\archery.tra~ BEGIN
 	//5 - Ranged Critical (Precise shot)
 	COPY ~3ed/Feats/PermanentAbilities/RangedCritical/RNGCRTFT.SPL~  ~override~
 	
-	//6 - hail of arrows (10 apr for 1 round, -4 to hit, -4 dmg - once every 5 minutes)
-	OUTER_SPRINT game_name @005  OUTER_SPRINT game_description @006
-	LAF ADD_LUA_FEAT INT_VAR n_uses=1 copy_icons = 0 STR_VAR ability_name=~HAILAN~ game_name game_description  END
-
-	//7 - greater hail of arrows - no penalties
+	//6 - hail of arrows (10 apr for 1 round - once every 2 minutes)
 	OUTER_SPRINT game_name @005  OUTER_SPRINT game_description @006
 	LAF ADD_LUA_FEAT INT_VAR n_uses=1 copy_icons = 0 STR_VAR ability_name=~HAILAG~ game_name game_description  END
-		COPY_EXISTING ~HAILAGFT.SPL~ ~override~ // remove uses and effects of normal hail of arrows
-		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=321 target=2 duration=1 insert_point=0 STR_VAR resource=~HAILAN~ END 
-		LPF ADD_SPELL_EFFECT INT_VAR insert_point=0 opcode=172 target=2 parameter1=0 duration=1 timing=9 STR_VAR resource=~HAILAN~ END
+
+	//7 - perfect shot (all ranged hits - critical for 1 round - every 2 minutes)
+	OUTER_SPRINT game_name @007  OUTER_SPRINT game_description @008
+	LAF ADD_LUA_FEAT INT_VAR n_uses=1 copy_icons = 0 STR_VAR ability_name=~PRFSHT~ game_name game_description  END
+
  END   	
 //--------------------------------------------Protection from Magic
 	//1 - 7  5% protection/star

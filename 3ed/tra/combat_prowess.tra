@@ -7,10 +7,10 @@ Character receives one extra attack per round and -3 penalty to THAC0 while figh
 	@003=~Whirlwind Attack~
 	@004=~Whirlwind Attack
 	
-This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10, but one's THAC0 and damage suffer a 4 point penalty. The Whirlwind Attack lasts for one round. Can be used once every 2 minutes.~
+This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10. The Greater Whirlwind Attack lasts for one round. Can be used once in 10 rounds.~
 
-
-	@005=~Greater Whirlwind Attack~
-	@006=~Greater Whirlwind Attack
+	@005=~Epic Dodge~
+	@006=~Epic Dodge
 	
-This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10. The Greater Whirlwind Attack lasts for one round. Can be used once every 2 minutes.~
+This ability allows character for a short time to move with such high speed and agility that <PRO_HESHE> is able to completely avoid all attacks. The effect lasts for one round. Can be used once in 10 rounds.~
+

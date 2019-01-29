@@ -35,7 +35,7 @@
 		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~96~      ~1~       ~033~     ~034~		~003~            ~010~  //crossobows
 		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~97~      ~1~       ~035~     ~036~		~003~            ~010~  //bows
 		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~98~      ~1~       ~037~     ~038~		~003~            ~010~  //missile weapons
-		~WPFNSFT~  ~DODGEFT~  ~LTNGRXFT~ ~FLRSTKFT~ ~ELTSTKFT~ ~WHIRLNFT~ ~WHIRLGFT~   ~99~      ~4~       ~161~     ~162~      ~163~            ~170~  //combat prowess
+		~WPFNSFT~  ~DODGEFT~  ~LTNGRXFT~ ~FLRSTKFT~ ~ELTSTKFT~ ~WHIRLGFT~ ~EPCDODFT~   ~99~      ~4~       ~161~     ~162~      ~163~            ~170~  //combat prowess
 		~PWRATKFT~ ~CLEAV1FT~ ~GRTFTDFT~ ~CLEAV2FT~ ~TOUGHSFT~ ~EPCSTNFT~ ~EPCSLAFT~   ~100~     ~4~       ~181~     ~182~      ~183~            ~190~  //warfare
 		~INSTKFT~  ~CMBEXPFT~ ~IRONWLFT~ ~STUDOPFT~ ~CMBINTFT~ ~EPCCRTFT~ ~EPCEVSFT~   ~101~     ~4~       ~201~     ~202~      ~203~            ~210~  //tactics	
 		~PRSLT1FT~ ~PRSLT2FT~ ~PRSLT3FT~ ~PRSLT4FT~ ~PRSLT5FT~ ~PRSLT6FT~ ~PRSLT7FT~   ~102~     ~8~       ~221~     ~222~      ~223~            ~230~  //bonus priest spells	 
@@ -48,7 +48,7 @@
 		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~112~     ~2~	   ~121~     ~122~      ~103~            ~123~  //sword and shield
 		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~113~     ~2~	   ~131~     ~132~      ~103~            ~133~  //single weapon
 		~~		  ~~          ~~         ~~         ~~         ~~          ~~          ~114~     ~2~       ~141~     ~142~      ~103~            ~143~  //two weapon combat
-		~RPDSHTFT~ ~PBSHOTFT~ ~RPDSTIFT~ ~DEDAIMFT~ ~RNGCRTFT~ ~HAILANFT~ ~HAILAGFT~   ~115~     ~2~       ~151~     ~152~      ~103~            ~153~  //archery
+		~RPDSHTFT~ ~PBSHOTFT~ ~RPDSTIFT~ ~DEDAIMFT~ ~RNGCRTFT~ ~HAILAGFT~ ~PRFSHTFT~   ~115~     ~2~       ~151~     ~152~      ~103~            ~153~  //archery
 
 	END
 	

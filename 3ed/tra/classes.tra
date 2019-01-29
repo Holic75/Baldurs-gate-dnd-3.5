@@ -1261,7 +1261,7 @@ The spirit grow in power as the Shaman gains additional levels:
   Level 24: Greater nature spirits (greater air spirit, greater earth spirit, greater fire spirit).
 Spirit will do its best to protect the Shaman but is not controlled directly.
 
-- Favored of Spirits: Starting from level 18 Shaman gains a contingency effect that activates Heal spell if <PRO_HISHER> hit-points drop below 10%. This ability works once per day. 
+- Favored of Spirits: Starting from level 18 Shaman gains a contingency effect that activates Heal spell if <PRO_HISHER> hit-points drop below 25%. This ability works once per day. 
 – Gains access to the following epic spells: Elemental Summoning (at level 19), Aura of Flaming Death (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Greater Elemental Summoning (at level 23) and Ethereal Retribution (at level 24).
 – Gets one bonus feat at levels 22 and 28.
 – Alignment restricted to neutral good, true neutral, and neutral evil.

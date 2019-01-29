@@ -76,7 +76,7 @@
 		ELSE PATCH_IF (proficiency = 96 AND stack>1) BEGIN //throwing daggers ->missile weapons
 			WRITE_BYTE 0x0031 98
 			LPF DELETE_EFFECT INT_VAR match_opcode = 1 match_parameter1=2 match_parameter2=1 END //remove additional attacks
-			LPF PTCH_WPN INT_VAR replace_label=2005 wpn_class_label=021 caption_label=2000 is_melee=0 END			
+			LPF PTCH_WPN INT_VAR replace_label=2005 wpn_class_label=021 caption_label=2000 is_melee=1 is_light = 1 is_fist=1 END			
 		END
 		ELSE PATCH_IF (proficiency = 92) BEGIN //axes and throwing axes (same) ->axes
 			WRITE_BYTE 0x0031 91			         

@@ -223,9 +223,8 @@
         LPF ALTER_SPELL_HEADER STR_VAR icon  = ~AURAVITB~ END
         
         LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 97 END
-        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 44 parameter1 = 4 parameter2 =0 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 44 opcode = 15 END
-        LPF CLONE_EFFECT INT_VAR match_opcode = 44 opcode = 10 END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 272 multi_match = 1 STR_VAR resource = ~ABNDEX4~ END
+        LPF CLONE_EFFECT INT_VAR match_opcode = 272 multi_match = 1 STR_VAR resource = ~ABNCON4~ END
         
         LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 13*6 power = 7 END
         LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 139 parameter1 = NameStrRef END

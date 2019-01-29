@@ -191,14 +191,14 @@ Style Mastery (5 stars)  - The character inflicts critical damage on an attack r
 Improved Style Mastery (6 stars) - The character receives Hail of Arrows innate ability.
 ```
 Hail of Arrows:
-Hail of arrows greatly speeds up archer's ability to strike at foes with ranged weapons. The ability sets archer's number of attacks per round to 10, but her THAC0 and damage suffer a 4 point penalty. The Hail of Arrows lasts for one round. Can be used once every 2 minutes.
+Hail of arrows greatly speeds up archer's ability to strike at foes with ranged weapons. The ability sets archer's number of attacks per round to 10. The Hail of Arrows lasts for one round. Can be used once in 10 rounds.
 ```  
-Epic Style Mastery (7 stars) - The character receives Greater Hail of Arrows innate ability.
+Epic Style Mastery (7 stars) - The character receives Perfect Shot innate ability.
 ```
-Greater Hail of Arrows:
-Greater Hail of arrows greatly speeds up archer's ability to strike at foes with ranged weapons. The ability sets archer's number of attacks per round to 10. The Greater Hail of Arrows lasts for one round. Can be used once every 2 minutes.
+Perfect Shot:
+A high-level archer's intimate knowledge of vital spots on opponents allows her to concentrate all of the shots in one round to strike a vital area every time. With this ability, every attack roll made with ranged weapon in the next round is a natural 20, a critical hit. This ability can be used once in 10 rounds.
 ```  
-Note: This Feat does not effect Throwing Axes.
+Note: This Feat does not effect Throwing Axes or daggers.
 
 #### Other Feats
 ###### Combat Prowess
@@ -210,13 +210,14 @@ Elegant Strike (5 stars) - With unarmed strikes, short swords, daggers, long swo
 Whirlwind Attack (6 stars) - The character receives Whirlwind Attack innate ability.
 ```
 Whirlwind Attack:
-This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10, but one's THAC0 and damage suffer a 4 point penalty. The Whirlwind Attack lasts for one round. Can be used once every 2 minutes.
+This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10. The Whirlwind Attack lasts for one round. Can be used once in 10 rounds.
 ```  
-Greater Whirlwind Attack (7 stars) - The character receives Greater Whirlwind Attack innate ability.
+Epic Dodge (7 stars) - The character receives Epic Dodge innate ability.
+``` 
+Epic Dodge:	
+This ability allows character for a short time to move with such high speed and agility that she is able to completely avoid all attacks. The effect lasts for one round. Can be used once in 10 rounds.
 ```
-Greater Whirlwind Attack:
-This ability allows the warrior to unleash a flurry of super-fast blows. The ability sets one's number of attacks per round to 10. The Greater Whirlwind Attack lasts for one round. Can be used once every 2 minutes.
-```  
+  
 
 ###### Warfare
 Power Attack (1 star) - The character receives Power Attack modal ability. While activated all attacks with melee weapons are done with +3 bonus to damage (+4 for two-handed weapons) but suffer -3 penalty to hit.  
@@ -227,14 +228,13 @@ Toughness (5 stars) - The character regenerates 2 Hit points per round.
 Stunning Attack (6 stars) - The character receives Stunning Attack innate ability.
 ```
 Stunning Attack:
-Stunning Attack allows the warrior to strike blows so forceful that they stun an opponent for 2 rounds if the opponent fails a Save vs. Death at a -6 penalty. The ability lasts for 2 rounds and can be used once every 5 minutes.
+Stunning Attack allows the warrior to strike blows so forceful that they stun an opponent for 2 rounds if the opponent fails a Save vs. Death at a -6 penalty. The ability lasts for 2 rounds and can be used once in 20 rounds.
 ```  
 Deathblow (7 stars) - The character receives Deathblow innate ability.
 ```
 Deathblow:
-This ability allows the warrior to vanquish foes with a single blow.  For the next 2 rounds, any creature is instantly killed when struck by the warrior unless it makes a Save vs. Death  at a -4 penalty. This ability can be used once every 2 hours.
+This ability allows the warrior to vanquish foes with a single blow.  For the next 2 rounds, any creature is instantly killed when struck by the warrior unless it makes a Save vs. Death  at a -6 penalty. This ability can be used once every 2 hours.
 ```  
-
 
 ###### Tactics
 Insightful Strike (1 star) - With unarmed strikes, short swords, daggers, long swords, scimitars, wakizhasi, ninja-to, clubs, quarterstaves and spears the character may use Intelligence value instead of Strength to determine bonus to damage.  
@@ -251,12 +251,12 @@ Combat Intuition (5 stars) - While wearing light or no armor the character recei
 Critical Strike (6 stars) - The character receives Critical Strike innate ability.
 ```
 Critical Strike:
-A high-level warrior's intimate knowledge of vital spots on opponents allows her to concentrate all of the attacks in one round to strike a vital area every time. With this ability, every attack roll made in the next round is a natural 20, a critical hit. This ability can be used once every 2 minutes.
+A high-level warrior's intimate knowledge of vital spots on opponents allows her to concentrate all of the attacks in one round to strike a vital area every time. With this ability, every attack roll made with melee weapon in the next round is a natural 20, a critical hit. This ability can be used once in 10 rounds.
 ```
 Premonition (7 stars) - The character receives Premonition innate ability.
 ```
 Premonition:
-Premonition allows character to use his experience and mastery of combat to predict where a next blow will land and physically avoid being in that place. This ability improves Armor Class by 6 and Saving Throws by 3. Also to everyone else character seem to move so quickly that her movement rate is increased by 2 (base is 10) and normal missiles have no chance of striking her. This ability lasts for 2 rounds. Can be used once every 5 minutes.
+Premonition allows character to use her experience and mastery of combat to predict where a next blow will land and physically avoid being in that place. This ability improves Armor Class by 6 and Saving Throws by 3. Also to everyone else character seem to move so quickly that her movement rate is increased by 2 (base is 10) and normal missiles have no chance of striking her. This ability lasts for 2 rounds. Can be used once every 5 minutes.
 ```
 
 ###### Bonus Priest Spell
@@ -1336,7 +1336,7 @@ The spirit grow in power as the Shaman gains additional levels:
   Level 24: Greater nature spirits (greater air spirit, greater earth spirit, greater fire spirit).
 Spirit will do its best to protect the Shaman but is not controlled directly.
 ```
-- Favored of Spirits: Starting from level 18 Shaman gains a contingency effect that activates Heal spell if her hit-points drop below 10%. This ability works once per day.   
+- Favored of Spirits: Starting from level 18 Shaman gains a contingency effect that activates Heal spell if her hit-points drop below 25%. This ability works once per day.   
 – Gains access to the following epic spells: Elemental Summoning (at level 19), Aura of Flaming Death (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Greater Elemental Summoning (at level 23) and Ethereal Retribution (at level 24).  
 – Gets one bonus feat at levels 22 and 28.  
 – Alignment restricted to neutral good, true neutral, and neutral evil.  
@@ -2156,7 +2156,7 @@ Large Shield           | 50% | +2 | -50%
  - Damage of Spears was changed to 1d8  
  - AC bonus of Medium Shields was increased to +2  
  - AC bonus of Large Shields was increased to +4, but they also now give -2 THAC0 penalty       
- - Initial number of attacks per round for all ranged weapons was set to 1, except for slings and crossbows for which it was set to 0.5; and darts for which it was set to 2; it increases at normal character APR progression and Rapid Shot feat also gives +1 APR with ranged weapons (except throwing axes and hammers)   
+ - Initial number of attacks per round for all ranged weapons was set to 1, except for slings and crossbows for which it was set to 0.5; and darts for which it was set to 2; it increases at normal character APR progression and Rapid Shot feat also gives +1 APR with ranged weapons (except throwing axes, daggers and hammers)   
  - Moonblade type was changed to longsword (do not worry, Xan can still use it)  
  - Sling bullets damage was changed from missile to crushing  
  - Ankheg Plate Mail AC bonus was lowered to that of regular Plate Mail  
@@ -2216,7 +2216,7 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Finger of Death now deals 6d8 points of damage to the target if it succeeds on a Saving Throw vs. Death  
 - Damage of Chain Lightning is now fixed at 12d6  
 - Regeneration now always lasts 10 rounds  
-- Mantle, Improved Mantle and Absolute Immunity now last 1 round per caster level, Absolute Immunity now also protects against +6 weapons  
+- Mantle, Improved Mantle and Absolute Immunity now last 1 round per 2 caster levels, Absolute Immunity now also protects against +6 weapons  
 - Energy drain now gives 2d4 negative levels  
 - All cure wounds spells (and Heal) now harm undead for corresponding amount of damage (with Savingthrow vs. Spell for 1/2) instead of healing them  
 - All cause wounds spells (and Harm) now heal undead for corresponding amount of Hit Points (with Savingthrow vs. Spell for 1/2) instead of harming them    

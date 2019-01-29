@@ -1126,7 +1126,7 @@ This spell also deals damage to all hostile undead instead of curing their wound
 
 Level: 7
 Range: 0
-Duration: 1 round/level
+Duration: 1 round/2 levels
 Casting Time: 1
 Area of Effect: The caster
 Saving Throw: None
@@ -1139,7 +1139,7 @@ When the spell is cast, it confers complete invulnerability to all weapons of +2
 
 Level: 8
 Range: 0
-Duration: 1 round/level
+Duration: 1 round/2 levels
 Casting Time: 1
 Area of Effect: The caster
 Saving Throw: None 
@@ -1152,7 +1152,7 @@ When the spell is cast, it confers complete invulnerability to all weapons of +3
 
 Level: 9
 Range: 0
-Duration: 1 round/level
+Duration: 1 round/2 levels
 Casting Time: 1
 Area of Effect: The caster
 Saving Throw: None 

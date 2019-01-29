@@ -1020,7 +1020,9 @@ WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN
             FOR (d = 7; d<=9; d = d + 1) BEGIN
                 LPF ADD_SPELL_EFFECT INT_VAR opcode=332 target=1 parameter1 = 20 parameter2=d timing=0 resist_dispel=2 duration=rage_duration END
             END
-            LPF ADD_SPELL_EFFECT INT_VAR opcode=284 target=1 parameter1 = 2 timing=0 resist_dispel=2 duration=rage_duration END
+            SET missile_bonus = 0 - 2
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=278 target=1 parameter1 = 2 timing=0 resist_dispel=2 duration=rage_duration END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode=167 target=1 parameter1 = missile_bonus timing=0 resist_dispel=2 duration=rage_duration END
             LPF ADD_SPELL_EFFECT INT_VAR opcode=145 target=1 parameter2=0 timing=0 resist_dispel=2 duration=rage_duration END //disable wizard spells
             LPF ADD_SPELL_EFFECT INT_VAR opcode=145 target=1 parameter2=1 timing=0 resist_dispel=2 duration=rage_duration END //disable cleric spells
             
@@ -1036,7 +1038,9 @@ WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN
 			//LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10 parameter1 = 6 END //constitution bonus
             LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 272 STR_VAR resource = ~ABNCON6~ END //constitution bonus
             LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=332 parameter1 = 30 END //+%dmg
-            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=284 parameter1 = 3 END //+% melee thac0
+            SET missile_bonus = 0 - 3
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=278 parameter1 = 3 END //+ melee thac0
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=167 parameter1 = missile_bonus END //+ melee thac0
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 37 parameter1 = 3 END //saves bonus
             LPF ALTER_SPELL_EFFECT INT_VAR duration_high = rage_duration + 6 END
             LPF ALTER_SPELL_EFFECT_EX INT_VAR duration = rage_duration+5 STR_VAR match_resource=~BRBRGE~ END 
@@ -1051,7 +1055,9 @@ WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN
 			//LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10 parameter1 = 8 END //constitution bonus
             LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 272 STR_VAR resource = ~ABNCON8~ END //constitution bonus
             LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=332 parameter1 = 40 END //+%dmg
-            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=284 parameter1 = 4 END //+% melee thac0
+            SET missile_bonus = 0 - 4
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=278 parameter1 = 4 END //+ melee thac0
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=167 parameter1 = missile_bonus END //+ melee thac0
 			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 37 parameter1 = 4 END //saves bonus
             LPF ALTER_SPELL_EFFECT INT_VAR duration_high = rage_duration + 12 END
             LPF ALTER_SPELL_EFFECT_EX INT_VAR duration = rage_duration+11 STR_VAR match_resource=~BRBRGE~ END 
@@ -1300,15 +1306,16 @@ END
             LPF ALTER_SPELL_EFFECT INT_VAR target = 2 END
             LPF DELETE_EFFECT INT_VAR  check_headers = 1 match_opcode = 101 END
             LPF DELETE_EFFECT INT_VAR  check_headers = 1 match_opcode = 267 END	
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 208 END
             LPF ALTER_SPELL_EFFECT_EX INT_VAR  match_timing = 4 opcode = 169 END				
             LPF DELETE_EFFECT INT_VAR  check_headers = 1 match_opcode = 169 END
-        
+       
             LPF ALTER_SPELL_EFFECT INT_VAR  timing = 9 END
             LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 321 timing = 0 STR_VAR resource = ~FVRD_SP~ END
             LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 215 timing = 0 END
             LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 174 timing = 0 END
-            LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 50 timing = 0 END
-            LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 232 STR_VAR resource = ~FVRD_HL~ END
+            LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 50 timing = 0 END         
+            LPF ALTER_SPELL_EFFECT INT_VAR  match_opcode = 232 STR_VAR parameter2 = 3 resource = ~FVRD_HL~ END //set to 25%
                     
     END
     OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN //apply favored of spirits and shamanic dance uses every time after rest
@@ -1322,11 +1329,9 @@ END
 	//last berserk icon
 	 COPY ~3ed/Classes/Berserker/LSTBRSK.BAM~ ~override~
      
-     COPY_EXISTING ~SPCL321.SPL~ ~override/SPCL321.SPL~
-        LPF GET_SPELL_EFFECT_VALUES INT_VAR match_opcode = 139 RET HpDmgStrRef = parameter1 END
-     
 
-	 WITH_TRA ~%LANGUAGE%\berserker.tra~ BEGIN  
+	 WITH_TRA ~%LANGUAGE%\berserker.tra~ BEGIN
+        OUTER_SET HpDmgStrRef=RESOLVE_STR_REF (@006)     
         OUTER_SET StrRefProt = RESOLVE_STR_REF(@003)
         OUTER_SET StrRefWarn = RESOLVE_STR_REF(@005)   
         OUTER_FOR (con = 10;con<=24;con=con+2) BEGIN
@@ -1341,7 +1346,7 @@ END
                 LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 139 END //remove damage string
                 LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 0  parameter1 = ~-2~ END
                 LPF ALTER_SPELL_EFFECT INT_VAR duration_high=brsrk_duration END 
-                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 206 duration = brsrk_duration+1 STR_VAR match_resource = ~SPCL321~ END //fatigue
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 206 duration = brsrk_duration+1 STR_VAR match_resource = ~SPCL321~ END
                 //resistances
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 86 parameter1 = 10 target = 1 duration = brsrk_duration insert_point = 0 END 
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 87 parameter1 = 10 target = 1 duration = brsrk_duration insert_point = 0 END 
@@ -1380,7 +1385,7 @@ END
             //   LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 146 END //remove fatigue
 
             COPY_EXISTING ~BRSR4%con%.SPL~ ~override/LBRSR%con%.SPL~
-               LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 duration = 2400 target =1 STR_VAR resource = ~SPCL321~ END //fatigue	
+               LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 duration = 2400 target =1 parameter1 = StrRefProt STR_VAR resource = ~SPCL321~ END //fatigue	
                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 73 parameter1 = 15 END //damage
 			   LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 278 parameter1 = 7 END //thac0
                LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode=208 parameter1 = 1 timing = 0 duration = (brsrk_duration - 1) END //min hp to 1 
@@ -1389,13 +1394,15 @@ END
               
         END
         
-        COPY_EXISTING ~SPCL321.SPL~ ~override/LSTBRSRK.SPL~
-            LPF DELETE_EFFECT INT_VAR check_headers = 1 END 
+        COPY_EXISTING ~SPCL321.SPL~ ~override/LSTBRSK.SPL~
+            WRITE_ASCII 0x003a ~LSTBRSK~ #8 //spellbook icon
+            LPF DELETE_EFFECT INT_VAR check_headers = 1 END
+            LPF ALTER_SPELL_HEADER STR_VAR icon = ~LSTBRSK~ END
             SAY NAME1 @001
 			SAY UNIDENTIFIED_DESC @002
-            LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = 1 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 126 STR_VAR abil_name = ~LBRSR~ END
+            LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR n_headers = 1 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 126 STR_VAR abil_name = ~LBRSR~ END            
             FOR (con = 10;con<=24;con=con+2) BEGIN  
-                SPRINT resource EVALUATE_BUFFER ~BRSR%i%%con%~
+                SPRINT resource EVALUATE_BUFFER ~BRSR4%con%~
                 LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 target = 1 opcode=321 duration=1 resist_dispel = 2 STR_VAR resource END
             END 
              
