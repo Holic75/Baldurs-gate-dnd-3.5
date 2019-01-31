@@ -32,7 +32,7 @@
         END
 		
         
-
+        LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~stalker~  RET usable_by_stalker = result END
 		LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~thief~  RET usable_by_thief = result END
 		LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter~  RET usable_by_fighter = result END  
 		LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~druid~  RET usable_by_druid = result END 
@@ -274,9 +274,12 @@
 		END
   
   		
-		PATCH_IF (usable_by_druid  OR category = AxesCategory) AND usable_by_ranger BEGIN //axes	and druid weapons
+		//PATCH_IF (usable_by_druid  OR category = AxesCategory) AND usable_by_ranger BEGIN //axes	and druid weapons
+		//	LPF SET_ITEM_USABILITY  STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~beastmaster~ END
+		//END  
+        PATCH_IF (usable_by_stalker) BEGIN //silent hunter can use all equipment that stalker can
 			LPF SET_ITEM_USABILITY  STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~beastmaster~ END
-		END  
+		END 
 		
 		  //remove ranged weapons for berserker  (as kensai)
 		LPF GET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~kensai~  RET usable_by_kensai = result END

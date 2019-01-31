@@ -27,4 +27,4 @@ The character emits a dazzling burst of light that strikes at all undead creatur
     @007=~Dispelling Touch~
     @008=~Dispelling Touch
 
-You remove magical effects from a creature by touching it.~
+You remove magical effects from a creature by touching it with the probability equal to 60% + 2% per caster level.~

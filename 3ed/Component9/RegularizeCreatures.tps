@@ -101,6 +101,21 @@
         READ_BYTE 0x0058 CurrentSpell
         
         READ_BYTE 0x0234 Level
+        READ_BYTE 0x0235 Level1
+        READ_BYTE 0x0236 Level2
+        
+        //fix levels to avoid problems with spell DC
+        PATCH_IF (Level > 30) BEGIN
+            WRITE_BYTE 0x0234 30
+            Level = 30
+        END
+        PATCH_IF (Level1 > 30) BEGIN
+            WRITE_BYTE 0x0235 30
+        END
+        PATCH_IF (Level2 > 30) BEGIN
+            WRITE_BYTE 0x0236 30
+        END
+        
            
         PATCH_SILENT           
         PATCH_TRY		//try to update stats

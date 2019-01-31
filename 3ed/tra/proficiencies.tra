@@ -148,7 +148,7 @@ This ability allows character for a short time to move with such high speed and 
 	@191=~Once per round, if the character slays an enemy in melee, <PRO_HESHE> gains one additional APR till end of round.~
 	@192=~The character receives +2 bonus on Saving Throws vs. Paralysis/Poison/Death and vs. Petrification/Polymorph.~
 	@193=~The character receives an additional 1/2 APR till end of round whenever <PRO_HESHE> hits an enemy in melee (and not necessarily kills it).~
-	@194=~The character regenerates 2 Hit Points per round.~
+	@194=~The character regenerates 3 Hit Points per round.~
 	@195=~The character receives Stunning Attack innate ability.
 
 Stunning Attack:

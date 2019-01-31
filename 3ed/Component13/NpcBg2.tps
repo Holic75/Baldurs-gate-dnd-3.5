@@ -67,10 +67,11 @@ LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 18 Con = 10 Int = 16 Wis = 16 C
 COPY_EXISTING_REGEXP ~AERIE[0-9]+.*\.CRE~ ~override~       
         REMOVE_KNOWN_SPELL ~SPPR110~ ~sppr202~ ~sppr206~ //remove druid spells
 
-LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 18 Dex = 16 Con = 16 Int = 16 Wis = 10 Cha = 10
-                          STR_VAR NpcName = ~SAREVOK~ ScriptName = ~SAREV25~ ClassName = ~FIGHTER~ END    
+LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 18 Dex = 16 Con = 16 Int = 10 Wis = 10 Cha = 16
+                          STR_VAR NpcName = ~SAREVOK~ ScriptName = ~SAREV25~ ClassName = ~FIGHTER~ KitName = ~WIZARDSLAYER~ END    
 //give back on hit effect
-COPY_EXISTING ~SAREVOK.CRE~ ~override~
+COPY_EXISTING ~SAREVOK.CRE~ ~override~ //replace plate mail+1 with cahin mail + 3
+    REPLACE_CRE_ITEM ~CHAN07~ #0 #0 #0 ~IDENTIFIED~ ~ARMOR~
     LPF ADD_CRE_EFFECT INT_VAR opcode = 248 timing = 9 STR_VAR resource = ~SAREVEFF~ END 
 
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 14 Dex = 16 Con = 12 Int = 10 Wis = 15 Cha = 10  

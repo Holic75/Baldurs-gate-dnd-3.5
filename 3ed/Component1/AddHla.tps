@@ -16,3 +16,8 @@
         LAF ADD_FEATS_2DA   STR_VAR clab=~CLABSH.+\.2DA~ caption=~SHM_EP~ 2DA_file = ~SHM_EPIC~
                                     mask_file=~3ed/Feats/FeatAttribution/SFTCRESH.SPL~  END
                                     
+        LAF ADD_FEATS_2DA   STR_VAR clab=~CLABTH01\.2DA~ caption=~M_T_EP~ 2DA_file = ~MT_EPIC~
+                                    mask_file=~3ed/Feats/FeatAttribution/SFTCREMT.SPL~  END
+        LAF ADD_FEATS_2DA   STR_VAR clab=~CLABPR01\.2DA~ caption=~C_M_EP~ 2DA_file = ~CM_EPIC~
+                                    mask_file=~3ed/Feats/FeatAttribution/SFTCRECM.SPL~  END
+                                    

@@ -1,6 +1,7 @@
 IF
 	PartyRested()		
 	Kit(Player%player_id%,BOUNTYHUNTER)
+    Kit(Player%player_id%,BEASTMASTER)
 	
 THEN
 	RESPONSE #100

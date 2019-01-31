@@ -6,12 +6,13 @@ IF
 		Class(Player%player_id%,FIGHTER_DRUID)
 		Class(Player%player_id%,DRUID)
 
+    !Kit(Player%player_id%,BEASTMASTER)
 	!Kit(Player%player_id%,SHAPESHIFTER)
 	!Kit(Player%player_id%,BEASTFRIEND) //avenger
     !Class(Player%player_id%,SHAMAN)
 THEN
 	RESPONSE #100
-		ActionOverride("%script_name%",DestroySelf()) //kill existing wolf if it exists
+		ActionOverride("%script_name%",DestroySelf()) //kill existing animal companions if it exists
 		ApplySpellRES("%spell_name%", Player%player_id%) //give ability
 		Continue()
 END

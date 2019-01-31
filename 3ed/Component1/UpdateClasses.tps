@@ -453,6 +453,21 @@
 			SAY UNIDENTIFIED_DESC @021
         COPY_EXISTING ~SPCL820.SPL~ ~override~
 			SAY UNIDENTIFIED_DESC @022
+            
+        //frozen fist damage increase at every 10th level
+        OUTER_FOR (i = 1; i<=3; i = i + 1) BEGIN
+            COPY_EXISTING ~MONKCHIL.EFF~ ~override/MNKCHIL%i%.EFF~
+                LPF ALTER_EFF INT_VAR parameter1 = 2+i END
+        END
+        COPY_EXISTING ~SPDM105.SPL~ ~override~
+            FOR (i = 1; i<=3; i = i + 1) BEGIN
+                LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END
+                LPF ALTER_SPELL_HEADER INT_VAR header = i+1 min_level = i*10 END
+                SPRINT resource EVALUATE_BUFFER ~MNKCHIL%i%~
+                LPF ALTER_SPELL_EFFECT INT_VAR header = i+1 match_opcode = 248 STR_VAR resource END
+            END
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @024
         
 	END
 	//---------------------------- ninja (bounty hunter->ninja)---------------------------------------
@@ -502,8 +517,9 @@
         LAF ADD_FEATS_2DA   STR_VAR clab=~CLABTH03\.2DA~ caption=~NACABI~ 2DA_file = ~MONK_FEATS~
                                     mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~  END
 
+        //add abilities to ninja and silent hunter
         LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1
-            STR_VAR clab=~CLABTH03\.2DA~  mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name = ~GV_KIPW~ caption=~NJKIABI~ END 
+            STR_VAR clab=~\(\(CLABTH03\)\|\(CLABRN04\)\)\.2DA~  mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name = ~GV_KIPW~ caption=~NJKIABI~ END 
        
 	
 		OUTER_FOR (player_id=1;player_id<=6;player_id=player_id + 1) BEGIN
@@ -1389,7 +1405,7 @@ END
                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 73 parameter1 = 15 END //damage
 			   LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 278 parameter1 = 7 END //thac0
                LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode=208 parameter1 = 1 timing = 0 duration = (brsrk_duration - 1) END //min hp to 1 
-               LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode=12 parameter2 = 0 parameter1 = 50 timing = 4 duration = brsrk_duration resist_dispel = 2 END //damage after berserk 
+               LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode=12 parameter2 = 0 parameter1 = 71 timing = 4 duration = brsrk_duration resist_dispel = 2 END //50/0.7 damage after berserk 
                LPF ADD_SPELL_EFFECT INT_VAR opcode = 139 parameter1 = HpDmgStrRef target = 1 duration = 1 insert_point = 0 END //string about hp_damage
               
         END

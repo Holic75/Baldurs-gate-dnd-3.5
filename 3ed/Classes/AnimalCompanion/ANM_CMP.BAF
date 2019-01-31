@@ -19,6 +19,7 @@ THEN
 END
 
 IF
+    False()
 	OnCreation()
 	Kit(LastSummonerOf(Myself),BEASTMASTER)
 THEN

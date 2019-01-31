@@ -158,6 +158,7 @@ BEGIN @1
         INSERT_2DA_ROW nrows 2 ~THIEF_BASE    2~
 
 
+    // add Silent Hunter
     
 	
 ////////////////////////////////////////////////////////////////////////////
@@ -370,6 +371,7 @@ INCLUDE ~3ed/FIX_HARM_3ED.tph~
 INCLUDE ~3ed/FIX_HEAL_3ED.tph~
 INCLUDE ~3ed/CREATE_SPL_COPIES_WITH_PROTECTION.tph~
 INCLUDE ~3ed/REPLACE_SPL_STAT_BONUSES.tph~
+INCLUDE ~3ed/GET_ITEM_ENCHANTMENT.tph~
 
 WITH_TRA ~%LANGUAGE%\Spells.tra~ BEGIN
 	

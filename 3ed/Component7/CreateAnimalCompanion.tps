@@ -40,10 +40,10 @@ OUTER_FOR (player_id=1;player_id<=6;player_id=player_id+1) BEGIN
 	    SET lvl_i  = i>20 ? 20 : i
 		WRITE_LONG  0x0008 name_ref  //name
 		WRITE_LONG  0x000c name_ref  //tooltip
-		WRITE_SHORT 0x0024 3+i*(3+2+(1+i/4)/2)+i/2 //Current Hp
-		WRITE_SHORT 0x0026 3+i*(3+2+(1+i/4)/2)+i/2//Max Hp
-		WRITE_SHORT 0x0046 (5 - lvl_i / 2 )//Natural AC
-		WRITE_SHORT 0x0048 (5 - lvl_i / 2 )//Effective AC
+		WRITE_SHORT 0x0024 3+i*(3+2)+i/2 //Current Hp
+		WRITE_SHORT 0x0026 3+i*(3+2)+i/2//Max Hp
+		WRITE_SHORT 0x0046 (5 - i / 2 )//Natural AC
+		WRITE_SHORT 0x0048 (5 - i / 2 )//Effective AC
 		WRITE_BYTE  0x0052 (20 - (3 * lvl_i) / 4)//THAC0
 		//APR
 		PATCH_IF (i<8) BEGIN
@@ -67,9 +67,9 @@ OUTER_FOR (player_id=1;player_id<=6;player_id=player_id+1) BEGIN
 		WRITE_BYTE   0x0058   14 - lvl_i / 3 //Spells
 	
 		WRITE_BYTE   0x0234   i //level
-		WRITE_BYTE   0x0238   13+i/4 //Str
-		WRITE_BYTE   0x023c   15+i/4 //Dex
-		WRITE_BYTE   0x023d   15+i/4 //Con
+		WRITE_BYTE   0x0238   13+i/3 //Str
+		WRITE_BYTE   0x023c   15+i/3 //Dex
+		WRITE_BYTE   0x023d   15+i/3 //Con
 	
 		READ_LONG    0x2bc itemsoffset //weapon (damage)
 		PATCH_IF (i<4) BEGIN

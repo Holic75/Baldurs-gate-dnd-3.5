@@ -224,7 +224,7 @@ Power Attack (1 star) - The character receives Power Attack modal ability. While
 Cleave (2 stars) - Once per round, if the character slays an enemy in melee, she gains one additional APR till end of round.  
 Great Fortitude (3 stars) - The character receives +2 bonus on Saving Throws vs. Paralysis/Poison/Death and vs. Petrification/Polymorph.  
 Greater Cleave (4 stars) - Once per round, if character hits a target she receives +1/2 additional APR till end of round.  
-Toughness (5 stars) - The character regenerates 2 Hit points per round.  
+Toughness (5 stars) - The character regenerates 3 Hit points per round.  
 Stunning Attack (6 stars) - The character receives Stunning Attack innate ability.
 ```
 Stunning Attack:
@@ -452,13 +452,13 @@ Note: although her hit points can not be reduced below 1, Berserker can still be
 – 20th level: Last Berserk: Berserker gains one use per day of special form of Rage called Last Berserk. It has the same effect as normal Rage but damage bonus is increased to +15. 
 While in this state the hitpoints of Berserker can not be reduced below 1, but at the end of Last Berserk Berserker receives 50 points of damage which can kill her if Berserker has fewer hit points.
 Also Last Berserk can not be prolonged and after it ends Berserker can no longer use Rage for next 8 hours.  
-– Gets one bonus feat at levels 22, 25 and 28.
+
 
 Disadvantages:  
 – Becomes winded after berserking: -2 penalty to Armor Class, to-hit rolls, and damage rolls.  
 – Can not use ranged weapons.  
 – Does not get Hardiness and Resist Magic abilities.  
-– Does not get bonus feats like trueclass fighters do.  
+– Gets one bonus feats only at levels 23, 26 and 29. 
 – May only put one star in any weapon she can use.  
 – May not wear armor heavier than splint mail and use large shield.  
 – Alignment restricted to any non-lawful.  
@@ -481,7 +481,7 @@ Second Level Spells: Starting from level 7 Hexblade gets access to the following
 Third Level Spells: Starting from level 10 Hexblade gets access to the following spells: Vampiric Touch, Dispel Magic, Dire Charm, Detect Illusions and Slow.
 Fourth Level Spells: Starting from level 13 Hexblade gets access to the following spells: Improved Invisibility, Emotion:Hopelessness, Polymorph Other, Secret Word and Confusion.
 ```
-– Gets one bonus feat only at levels 5, 10, 15, 20, 22 and 28.  
+– Gets one bonus feat only at levels 5, 10, 15, 20, 23, 26 and 29.  
 – Starting from level 6 may use Swift Spell ability once per day. Gets additional uses at levels 8, 11, 14, 18, 23 and 30.  
 ```
 SWIFT SPELL:
@@ -516,12 +516,11 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 ```
 KAI: All successful attacks within the next 10 seconds deal maximum damage.
 ```
-– Gets one bonus feat at levels 22 and 28.  
 
 Disadvantages:  
 – May only wear light armor.  
 – May not use shields.  
-– Does not get bonus feats like trueclass fighters do.  
+– Gets one bonus feat at levels 26 and 29.   
 – Does not get Hardiness and Resist Magic abilities.  
 – May only put one star in any weapon category she can use.  
 – Alignment restricted to any non-chaotic.  
@@ -545,7 +544,7 @@ It lasts for 3 rounds + 1 round per 2 points of newly modified Constitution abov
 Disadvantages:  
 – May not wear armor heavier than splint mail.  
 – May not use large shields.  
-– Gets bonus feats only at levels 4, 8, 12, 16, 20, 22 and 28.    
+– Gets bonus feats only at levels 4, 8, 12, 16, 20, 23, 26 and 29.    
 – Does not get Hardiness and Resist Magic abilities.   
 – May only put one star in any weapon she can use.     
 
@@ -568,7 +567,7 @@ At 17th level, the character is no longer subject to fatigue effects after Defen
 
 Disadvantages:  
 – Race restricted to dwarf.  
-– Gets bonus feats only at levels 4, 8, 12, 16, 20, 22 and 28.  
+– Gets bonus feats only at levels 4, 8, 12, 16, 20, 23, 26 and 29.  
 – Does not get Hardiness and Resist Magic abilities.  
 – May only put one star in any weapon she can use.  
 
@@ -606,7 +605,7 @@ When this ability is activated, all allies within 30 feet receive beneficial eff
   21st Level: - All allies receive a +4 bonus to hit, damage rolls and Armor Class as well as immunity to fear.
 ```
 – Receives a bonus to all saving throws for every 2 points of Charisma above 9 (i.e. +1 at 11, +2 at 13, etc) and penalty for every 2 points below 10.  
-– Gets one bonus feat at levels 22 and 28.  
+– Gets one bonus feat at levels 23, 26 and 29.  
 – Alignment restricted to lawful good.  
 – Hit Die: d10  
 – High THAC0/APR progression, High Savingthrows vs. Death , vs. Polymorph and vs. Spell
@@ -719,7 +718,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May call for an animal companion who fights for her side.  
 – Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.  
 – May cast druidic spells starting at level 4.  
-– Gets one bonus feat at level 28.  
+– Gets bonus feats at levels 26 and 29.  
 – Alignment restricted to good.  
 – Hit Die: d10  
 – High THAC0/APR progression, High Savingthrows vs. Death , vs. Polymorph, vs. Breath Weapon and vs. Wand
@@ -742,17 +741,23 @@ Disadvantages:
 – May only wear light armor.  
 – May not use the Charm Animal ability.  
 
-### BEAST MASTER
+### SILENT HUNTER (replaces BEAST MASTER)
 Advantages:  
-– +15% to Move Silently and Hide In Shadows.  
-– Has a telepathic link with his animal companion which allows them to fight as one. When fighting close to each other Beast master and his animal companion get +1 To Hit, Damage, AC and Saving Throws. These bonuses increase to +2 at level 6,  +3 at level 12 and +4 at level 18, +5 at level 24 and +6 at level 30.  
-– Gains additional bonus feat at level 22.  
-– Hit Die: d12.  
+– May use the Poison Weapon ability. Gains one use at level 1, then at level 6 and an additional use every 6 levels thereafter.  
+– Silent hunter gains a pool of  ki points equal to 1/2 of her level +1 per 2 points of Wisdom above 10. These points can be spent to use different ki powers and are replenished after rest.  
+    Starting from level 1 silent hunter can spend one point from ki pool to become invisible for 10 seconds.  
+    Starting from level 4 silent hunter can alternatively spend one point from ki pool to create 1d4 mirror images of herself or become blurred (+3 AC, +1 Saving throw bonus) for 10 seconds or detect invisible creatures.  
+    Starting from level 7 silent hunter can alternatively spend one point from ki pool to become hasted for 10 seconds.  
+    Starting from level 10 silent hunter can alternatively spend one point from ki pool to make all her attacks for next round stun opponents unless they make a Saving throw vs. Paralyze (with penalty equal to one quarter level of silent hunter rounded down).  
+    Starting from level 13 silent hunter can alternatively spend one point from ki pool to heal 10 Hit Points to herself and neutralize any poison.  
+    Starting from level 16 silent hunter can alternatively spend one point from ki pool to place herself under the effect of Improved Invisibility spell or use True Sight ability for 10 seconds.  
+    Starting from level 19 silent hunter can alternatively spend one point from ki pool to place herself under the effect of Improved Haste spell for 10 seconds.  
 
+ – May be of any alignment.  
 Disadvantages:  
-– Does not gain bonus combat style feats.  
-– May use only weapons available to druids as well as axes, longbows and shortbows.  
-– May only wear armor a druid can.  
+– May only wear light armor.  
+– May not use the Charm Animal ability.  
+– May not call for animal companion.   
 
 ### STALKER
 Advantages:  
@@ -766,7 +771,6 @@ IMPROVED RACIAL ENEMY: At 1st level, a stalker may select a type of creature fro
 SMITE RACIAL ENEMY: For 10 seconds Stalker receives +1 bonus to her attack roll per 2 points of Wisdom above 10 and deals 1 extra point of damage per level against racial enemies.
 ```
 – May be of any alignment.  
-– Gains additional bonus feat at level 22.  
 
 Disadvantages:  
 – Does not gain bonus weapon style feats.    
@@ -794,7 +798,7 @@ All hostile living creatures suffer 1d6 points of magical damage per Channel Ene
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).  
 – At 1st level chooses two domains that grant her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – Gains access to the following epic spells: Globe of Blades (at level 19), Mass Raise Dead (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Implosion (at level 23) and Summon Deva (at level 24).  
-– Gets one bonus feat at levels 22, 25 and 28.  
+– Gets one bonus feat at levels 26 and 29.  
 – Hit Die: d8  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -878,7 +882,7 @@ CLASS FEATURES:
 – 20th level: While using Shapeshift ability a Druid can alternatively take form of greater fire, earth  or water (IWD only) elementals.  
 – 21th level: May call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.  
 – Gains access to the following epic spells: Elemental Summoning (at level 19), Aura of Flaming Death (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Greater Elemental Summoning (at level 23) and Nature's Avatar (at level 24).  
-– Gets one bonus feat at levels 22 and 28.  
+– Gets one bonus feat at levels 26 and 29.  
 – Alignment restricted to true neutral.  
 – Hit Die: d8  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
@@ -994,7 +998,7 @@ Fourth level spells: starting from level 13 Assassin gets access to the followin
 - Quiet Death: starting from level 10 every time Assassin slays an enemy she becomes invisible for 30 seconds.  
 - High Savingthrows vs. Death and vs. Polymorph.  
 Disadvantages:  
-– Receives bonus feats only at levels 22 and 28.   
+– Receives bonus feats only at levels 22, 25 and 28.   
 – May only distribute 10 skill points per level among thieving skills (20 points at level 1)  
 
 ### SWASHBUCKLER
@@ -1002,8 +1006,7 @@ Advantages:
 – Hit Die: d8  
 – May get up yo seven stars in any weapon category.  
 – +1 bonus to Armor Class at 1st level, plus an additional +1 bonus every 5 levels.  
-– High THAC0/APR progression.  
-– Receives one Bonus Feat at levels 4, 8, 12, 16, 20, 22, 25 and 28.  
+– High THAC0/APR progression.    
 – At first level receives for free Combat Prowess(1):Weapon Finesse and Tactics(1):Insightful Strike feats.  
 – At 8th level receives +1 to hit and damage bonus with all weapon categories, this bonus is increased to +2 at level 18 and +3 at level 24.   
 – At 11th level Swashbuckler receives +1 bonus to all savingthrows.  
@@ -1020,18 +1023,18 @@ Advantages:
 – Gains +1 AC bonus at level 5 and every five levels thereafter.  
 – Gains +1 AC bonus per 2 points of Wisdom above 10.  
 – Ninja gains a pool of ki points equal to 1/2 of her level +1 per 2 points of Wisdom above 10. These points can be spent to use different ki powers and are replenished after rest.  
-  Starting from level 1 ninja can spend one point from ki pool to become invisible for 10 seconds.  
-  Starting from level 4 ninja can alternatively spend one point from ki pool to create 1d4 mirror images of herself or become blurred (+3 AC, +1 Saving throw bonus) for 10 seconds or detect invisible creatures.  
-  Starting from level 7 ninja can alternatively spend one point from ki pool to become hasted for 10 seconds.  
-  Starting from level 10 ninja can alternatively spend one point from ki pool to make all her attacks for next round stun opponents unless they make a Saving throw vs. Paralyze (with penalty equal to one quarter level of ninja rounded down).  
-  Starting from level 13 ninja can alternatively spend one point from ki pool to heal 10 Hit Points to herself and neutralize any poison.  
-  Starting from level 16 ninja can alternatively spend one point from ki pool to place herself under the effect of Improved Invisibility spell or use True Sight ability for 10 seconds.  
-  Starting from level 19 ninja can alternatively spend one point from ki pool to place herself under the effect of Improved Haste spell for 10 seconds.  
+    Starting from level 1 ninja can spend one point from ki pool to become invisible for 10 seconds.  
+    Starting from level 4 ninja can alternatively spend one point from ki pool to create 1d4 mirror images of herself or become blurred (+3 AC, +1 Saving throw bonus) for 10 seconds or detect invisible creatures.  
+    Starting from level 7 ninja can alternatively spend one point from ki pool to become hasted for 10 seconds.  
+    Starting from level 10 ninja can alternatively spend one point from ki pool to make all her attacks for next round stun opponents unless they make a Saving throw vs. Paralyze (with penalty equal to one quarter level of ninja rounded down).  
+    Starting from level 13 ninja can alternatively spend one point from ki pool to heal 10 Hit Points to herself and neutralize any poison.  
+    Starting from level 16 ninja can alternatively spend one point from ki pool to place herself under the effect of Improved Invisibility spell or use True Sight ability for 10 seconds.  
+    Starting from level 19 ninja can alternatively spend one point from ki pool to place herself under the effect of Improved Haste spell for 10 seconds.  
 
 Disadvantages:  
 – May not wear any armor or use shields.   
 – May only distribute 15 skill points per level among thieving skills (25 points at level 1).  
-– Does not receive bonus feats at levels 4, 12, 20 and 25 as trueclass thieves do.   
+– Does not receive bonus feats at levels 4, 12 and 20 as trueclass thieves do.   
 
 ### SHADOWDANCER
 Advantages:  
@@ -1064,7 +1067,7 @@ CLASS FEATURES:
 – May wear helmets.   
 – May not wear armor heavier than splint mail.    
 – May use any weapon and shield (excluding large shield).  
-– Receives one bonus Feat at levels 22 and 28.  
+– Receives one bonus Feat at levels 26 and 29.  
 – Thieving abilities: Pick Pockets (15% at level 1, +5% at every next level).  
 – Increased Lore score.  
 – May cast arcane spells up to level 6.  
@@ -1266,7 +1269,7 @@ QUIVERING PALM: The next successful attack forces the opponent to save vs. Death
 – 14th level: Gains 3% Magic Resistance per level (starting with 42% at 14th level).  
 – 20th level: Becomes immune to non-magical weapons.  
 – Thieving abilities: Move Silently, Hide In Shadows, Find Traps (but not disarm) and Detect Illusion. Monks can distribute 10 skill points per level (20 points at level 1).  
-– Gets one bonus feat at levels 22 and 28.  
+– Gets one bonus feat at levels 26 and 29.  
 – Alignment restricted to lawful.  
 – Hit Die: d8   
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell
@@ -1276,11 +1279,11 @@ Advantages:
 – +10% to Detect Illusion.  
 – May use the Frozen Fist ability once per day. Gains one use at level 1, then at level 4 and an additional use every 4 levels thereafter.  
 ```
-FROZEN FIST: When this ability is activated, the Dark Moon Monk's fists are wreathed in a frosty shell. For 1 turn, the Dark Moon Monk's unarmed attacks deal an additional 2 points of cold damage on each successful hit.
+FROZEN FIST:   When this ability is activated, the Dark Moon Monk's fists are wreathed in a frosty shell. For 1 turn, the Dark Moon Monk's unarmed attacks deal an additional 2 points of cold damage on each successful hit. The damage increases by 1 at every 10th level (up to 5 at level 30).
 ```
-– 1st level: May cast Blindness once per day, gains an additional use at level 11.  
-– 3rd level: May cast Blur once per day, gains an additional use at level 13.  
-– 7th level: May cast Vampiric Touch once per day, gains an additional use at level 17.  
+– 1st level: May cast Blindness once per day, gains an additional use at levels 11 and 21.  
+– 3rd level: May cast Blur once per day, gains an additional use at levels 13 and 23.  
+– 7th level: May cast Vampiric Touch once per day, gains an additional use at levels 17 and 27.  
 – 11th level: May cast Mirror Image once per day, gains an additional use at level 21.  
 
 Disadvantages:  
@@ -1290,26 +1293,22 @@ Disadvantages:
 
 ### SUN SOUL MONK
 Advantages:  
-– 2nd level: May cast Sun Soulray once per day.  
+– 2nd level: May cast Sun Soulray once per day. Gains an additional use at levels 6, 10, 15, 20 and 26.  
 ```
 SUN SOULRAY: The Sun Soul Monk projects a blast of light from her open palm, dealing 1d8 fire damage for every 2 caster levels (up to a maximum of 5d8 damage) to a single target. Undead creature receive 1d8 damage per monk level instead.
 ```
-– 5th level: May cast Flaming Fists once per day.  
+– 5th level: May cast Flaming Fists once per day. Gets and additional use at levels 15 and 25.  
 ```
 FLAMING FISTS: The Sun Soul Monk channels her inner light into her unarmed attacks, turning her fists into flaming weapons that deal an additional 2d6 fire damage per hit for the next round. The duration increases to 2 rounds at level 9, 3 rounds at level 12, 4 rounds at level 15, and 5 rounds at level 25. This special ability automatically modifies normal attacks; no weapon-switching needs to be done.
-```
-– 6th level: Gains an additional use of Sun Soulray.  
-– 8th level: May cast Greater Sun once per day.  
+``` 
+– 8th level: May cast Greater Sun once per day. Gets an additional use at levels 16 and 24.  
 ```
 GREATER SUN: The Sun Soul Monk wreathes herself in flames that act as a Fireshield (Red), granting the Monk 50% Fire Resistance and protecting her from attacks made within a 5-ft. radius. An opponent that hits the Monk with any weapons or spells within this radius suffers 1d8+2 points of fire damage.
-```
-– 10th level: Gains an additional use of Sun Soulray.  
-– 13th level: May cast Soul Sunbeam once per day.  
+```  
+– 13th level:May cast Soul Sunbeam once per day. Gains an additional use at level 23.  
 ```
 SUN SOULBEAM: The character emits a dazzling burst of light that strikes at all hostile creatures within a 30-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the character's current THAC0 (+3 to hit vs. undead). Struck creatures suffer 1d4 points of fire damage per monk level, unless they save vs. Spell for half with penalty equal to one fourth of monk level rounded down. In addition, all targets must save vs. Spell or be blinded for 2 hours.
 ```
-– 15th level: Gains additional uses of Sun Soulray and Flaming Fists.    
-– 25th level: Gains an additional use of Flaming Fists.  
 
 Disadvantages:  
 – Alignment restricted to lawful good.  
@@ -1338,7 +1337,7 @@ Spirit will do its best to protect the Shaman but is not controlled directly.
 ```
 - Favored of Spirits: Starting from level 18 Shaman gains a contingency effect that activates Heal spell if her hit-points drop below 25%. This ability works once per day.   
 – Gains access to the following epic spells: Elemental Summoning (at level 19), Aura of Flaming Death (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Greater Elemental Summoning (at level 23) and Ethereal Retribution (at level 24).  
-– Gets one bonus feat at levels 22 and 28.  
+– Gets one bonus feat at levels 26 and 29.  
 – Alignment restricted to neutral good, true neutral, and neutral evil.  
 – Ineligible for any stronghold. (This affects only the Shadows of Amn campaign in Baldur's Gate II: Enhanced Edition.)  
 – Hit Die: d8  
@@ -1355,7 +1354,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 ```
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.  
 – May distribute 15 skill points per level among thieving skills (25 points at level 1).  
-– Gets one bonus feat at level 1 and every 3 levels thereafter.  
+– Gets one bonus feat at level 1 and at every 3rd level.  
 – May Sneak attack for increased damage: 1d6 at level 3 + 1d6 every 4 levels thereafter.  
 – At 4th level gets Armor Training which increases max dexterity AC bonus from any armor by 1 and reduces penalty to thieving skills by 10%. Max dexterity AC bonus is further increased by 1 at and skill penalties are reduced by 10% every 4 levels thereafter (up to a maximum of +4 increase in max AC bonus and -40% decrease of thieving skill penalty at level 16).  
 – Starting from level 5 every hit of Fighter/Thief has 5% + 1% per level chance to slow the target for 1d4 rounds.
@@ -1371,8 +1370,8 @@ CLASS FEATURES:
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.  
 – Can cast two spell per day less than trueclass cleric.  
 – At 4th level gets Armor Training which increases max dexterity AC bonus from any armor by 1. Max dexterity AC bonus is further increased by 1 every 4 levels thereafter (up to a maximum of +4 at level 16).  
-– Gets one bonus combat feat at every 4th level up to level 20.  
-– Gets one bonus feat at levels 22, 25 and 28.  
+– Gets one bonus combat feat at levels 4, 8, 12, 16, 20, 24 and 26.  
+– Gets one bonus feat at levels 22 and 28.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels).  
 – Can use Spontaneous Battlecasting.  
 ```
@@ -1388,8 +1387,7 @@ CLASS FEATURES:
 – May wear any armor and use any weapon and shield (excluding large shield).  
 – May get up to Greater Weapon Specialization (4 stars) in any weapon they can use.     
 – Cannot cast spells of 8th and 9th levels.  
-– Gets one bonus feat at every 4th level up to level 20.  
-– Gets one bonus feat at levels 22, 25 and 28.  
+– Gets one bonus feat at levels 4, 8, 12, 16, 20, 22, 24, 26 and 28.  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.  
 – Acquires one scroll with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Can use Spontaneous Battlecasting.  
@@ -1411,12 +1409,12 @@ CLASS FEATURES:
 – May wear helmets.  
 – May wear any armor a druid can and use any weapon and shield (excluding large shield).   
 – Can cast two spell per day less than trueclass druid.  
-– Gets one bonus combat feat at every 4th level up to level 20.  
+– Gets one bonus combat feat at levels 4, 8, 12, 16, 20, 24 and 26.   
 – May spontaneously convert memorized spells to summoning ones.  
 – May select one racial enemy at levels 1, 10, 20 and 30 which grants a +2 bonus on to hit and damage rolls against the selected enemy race. These bonuses increase by 1 at every 10th level.  
 – May call for an animal companion who fights for her side.  
 – Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.  
-– Gets one bonus feat at levels 22, 25 and 28.  
+– Gets one bonus feat at levels 22 and 28.  
 – Hit Die: d9  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -1441,7 +1439,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – May call for an animal companion who fights for her side.  
 – Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage résistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.  
-– Gets one bonus feat at level 28.  
+– Gets one bonus feat at levels 22, 25 and 28.  
 – Alignment restricted to good.  
 – Hit Die: d9  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell
@@ -1458,7 +1456,9 @@ CLASS FEATURES:
 – May spontaneously convert memorized spells to healing ones (Good and Neutral Clerics) or harming ones (Evil Clerics).  
 – Acquires 2 scrolls with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Versatile Spellcasting: starting from level 7 can trade one first level cleric spell slot for a second level wizard spell slot, this exchange is reversible; every two levels thereafter can trade next level cleric spell slot for a wizard spell slot one level higher.  
-– Gets one bonus feat at levels 22, 25 and 28.  
+– Gets one bonus feat at levels 26 and 29.  
+– Gains access to the following epic wizard spells: Comet (at level 22), Energy Blades (at level 24), Dragon's Breath (at level 26) and Summon Planetar (at level 28).  
+– Gains access to the following epic priest spells: Globe of Blades (at level 20), Mass Raise Dead (at level 21), Storm of Vengeance (at level 23), Implosion (at level 25) and Summon Deva (at level 27).  
 – Hit Die: d6  
 – Low THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -1485,7 +1485,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) to add number of 1d4 dice equal to level of sacrificed spell to her sneak attack damage for next 4 rounds.
 ```
 – At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
-– Gets one bonus feat at levels 10, 20, 22, 25 and 28.  
+– Gets one bonus feat at levels 10, 20, 22, 24, 26 and 28.  
 – Hit Die: d7  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell
 
@@ -1500,7 +1500,8 @@ CLASS FEATURES:
 – Starting from level 8 can cast spells in complete silence (as being always under constant effect of Vocalize).
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
 – Acquires two scrolls with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
-– Gets one bonus feat at levels 10, 20, 22, 25 and 28.  
+– Gets one bonus feat at levels 10, 20, 26 and 29. 
+– Gains access to the following epic spells: Comet (at level 22), Energy Blades (at level 24), Dragon's Breath (at level 26) and Summon Planetar (at level 28). 
 – Hit Die: d5  
 – Low THAC0/APR progression, High Savingthrows vs. Breath Weapon, vs. Wand and vs. Spell  
 NOTE: Gnomes can choose this hybrid class, but become Illusionist/Thieves by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.
@@ -1531,7 +1532,7 @@ SPONTANEOUS SPELL CHANNELING: When this ability is activated caster can sacrific
 ```
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 4 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 ```
-– Gets one bonus feat at levels 8, 14, 20, 22, 25 and 28.  
+– Gets one bonus feat at levels 8, 14, 20, 22, 24, 26 and 28.  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, and finally at level 12 Armored Arcana: Splint Mail Casting.  
 – Hit Die: d6  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph vs. Breath Weapon, vs. Wand and vs. Spell  
@@ -1548,7 +1549,7 @@ CLASS FEATURES:
 – Cannot cast divine spells of 6th and 7th levels.    
 – Acquires one scroll with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Versatile Spellcasting: starting from level 7 can trade one first level cleric spell slot for a second level wizard spell slot, this exchange is reversible; every three levels thereafter can trade next level cleric spell slot for a wizard spell slot one level higher.  
-– Gets one bonus feat at levels 10, 20, 22, 25 and 28.  
+– Gets one bonus feat at levels 10, 20, 22, 24, 26 and 28.  
 – May channel positive (good and neutral clerics) or negative (evil clerics) energy starting from level 2 number of times per day equal to 3 + 1 per 2 points of Charisma above 10. (1d6 damage/healing at level 2 plus 1d6 per 4 levels thereafter).  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting arcane spells in light armor. At level 4 receives Armored Arcana: Chain Mail Casting, at level 8 Armored Arcana: Splint Mail Casting, at level 12 Armored Arcana: Plate Mail Casting and finally at level 16 Armored Arcana: Full Plate Mail Casting.  
 – Can use Spontaneous Battlecasting.
@@ -2046,13 +2047,13 @@ Note: Since priests can not cast 8th level spells, they receive another 6th and 
 Domain           | Granted Spells                                                                      |Domain Ability
 --- | ---| ---
 Elemental (Air)  | Shocking Grasp (1), Lightning Bolt (3), Storm Shield (6)                            |50% lightning resistance
-Animal           | Animal Summoning I (4), Animal Summoning II (5), Animal Summoning III (6)           |Charm animals, 10' Radius 1/day
+Animal           | Summon Insects (3), Insect Plague (5), Conjure Animals (6)                          |Charm animals, 10' Radius 1/day
 Elemental (Cold) | Chill Touch (1), Fireshield (Blue) (4), Cone of Cold (5)                            |50% cold resistance
 Death            | Horror (2), Hold Undead (3), Control Undead (7)                                     |Death Touch 1/day
 Destruction      | Melf's Acid Arrow (2), Cloudkill (5), Disintegrate (6)                              |Destructive Smite 1/day
 Elemental (Earth)| Conjure Lesser Earth Elemental (5), Stoneskin (6), Protection From The Elements (7) |50% acid resistance
 Elemental (Fire) | Burning Hands (1), Fireball (3), Delayed Blast Fireball (7)                         |50% fire resistance
-Glory            | Exaltation (3, Bg1, Bg2)/Emotion:Courage( 3, Iwd) , Boon of Diety (6), Mordenkainen's Sword (7)                         |Aura of Faith 1/day
+Glory            | Exaltation (3, Bg1, Bg2)/Emotion:Courage (3, Iwd), Boon of Diety (6), Mordenkainen's Sword (7)  |Aura of Faith 1/day
 Moon             | Blindness (1), Blur (2), Vampiric Touch (3)                                         |Immunity to blindness
 Protection       | Shield (1), Minor Globe of Invulnerability (4), Protection From Magical Weapons (6) |+1 to all Savingthrows
 Sun              | Fireshield (Red) (4), Sunfire (5), Prismatic Spray (7)                              |Divine Light 1/day
@@ -2060,7 +2061,7 @@ Time             | Slow (3), Haste (4), Hold Monster (5)                        
 Trickery         | Grease (1), Confusion (4), Shadow Door (5)                                          |Mirror Image 1/day, +5% bonus to all thieving skills
 War              | Gravity Weapon(1), Seeking Sword (3), Tenser's Transformation (6)                   |Free weapon focus
 Magic            | Minor Spell Turning (3), Spell Immunity (5), Limited Wish (7)                       |Dispelling Touch 3/day
-Plant            | Entangle (1), Barkskin (2), Poison (4, Bg1, Bg2), Mold Touch (3, Iwd)               |Poison Weapon 1/day
+Plant            | Entangle (1), Barkskin (2), Poison (4, Bg1, Bg2)/Mold Touch (3, Iwd)                |Poison Weapon 1/day
 
 #### Charm Animal, 10' Radius
 This spell affects all animals in 10-ft radius around the caster. The animals are allowed a Saving Throw vs. Spell to negate the effect with penalty equal to one fourth caster level rounded down.  
@@ -2584,7 +2585,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Qualye - Cleric/Illusionist (8/ 10/ 16/ 16/ 16/ 10)
 #### Rasaad - Sun Soul Monk (14/ 16/ 12/ 10/ 15/ 10)
 #### Safana - Swashbuckler (11/ 16/ 14/ 16/ 9/ 10)
-#### Shar-Teel - Hexblade (16/ 14/ 10/ 10/ 10/ 16)
+#### Shar-Teel - Silent Hunter (16/ 16/ 10/ 10/ 14/ 10)
 #### Skie - Shadowdancer (10/ 18/ 10/ 16/ 8/ 10)
 #### Tiax - Fighter/Illusionist/Cleric (12/ 10/ 16/ 16/ 14/ 10)
 #### Viconia - Cleric/Thief (10/ 18/ 10/ 16/ 14/ 14)
@@ -2629,7 +2630,7 @@ Their classes and statistics were changed as follows (stats are given in the for
 #### Cernd - Shapeshifter (10/ 14/ 12/ 10/ 18/ 10)
 #### Aerie - Cleric/Mage (10/ 18/ 10/ 16/ 16/ 12)
 #### Anomen - Fighter/Cleric (15/ 14/ 14/ 10/ 15/ 10)
-#### Sarevok - Fighter (18/ 16/ 16/ 16/ 10/ 10)
+#### Sarevok - Hexblade (18/ 16/ 16/ 10/ 10/ 16)
 #### Rasaad - Sun Soul Monk (14/ 16/ 12/ 10/ 15/ 10)
 #### Dorn - Blackguard (18/ 10/ 13/ 8/ 13/ 15)
 #### Neera - Wild Mage (9/ 16/ 12/ 17/ 9/ 11)  - as half-elf will receive +2 bonus to any ability score at level 1

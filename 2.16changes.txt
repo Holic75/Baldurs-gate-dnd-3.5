@@ -21,7 +21,6 @@
 - added Gravity Weapon Spell to Druids and Rangers at level 1
 - Divine Favor is now 1st lvl non-domain cleric spell (capped at +3)
 - in War domain Divine Favor domain spell was replaced with Gravity Weapon spell
-- Toughness nerfed to regenerate only 2 hps per round
 - changed duration of flame weapon to 1 minute/level
 - changed duration of Defensive Harmony to 1 round/level and make it give +4 AC in all games
 - shadowdancers now receives same number of bonus feats as trueclass thieves but they sneak attak damage was reduced to 1d6 at lvl1 + 1d6 every 4 levels
@@ -44,3 +43,11 @@
 - removed penalties fron Hail of Arrows, replaced Greater Hail of Arrows with Perfect Shot
 - reduced duration of Mantle, Improved Mantle and Absolute Immunity to 1 round per 2 caster levels
 - reduced cooldown for most epic abilities
+- changed saving throw penalties of certain item effects to be equal to the enchantment bonus unless effect power is specified
+- replaced Beastmaster class with Silent hunter
+- changed Shar-Teel class to Silent Hunter
+- changed Sarevok class to Hexblade
+- cleric/mage and mage/thief now also receive epic spells although at a slower pace than pure clerics and mages
+- slightly increased animal companion stat progression and AC at epic levels
+- reviewed bonus feat progression at epic levels for different classes
+- replaced animal domain spells with Summon Insects, Insect Plague and Conjure Animals

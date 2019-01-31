@@ -91,8 +91,8 @@ COPY_EXISTING ~TIAX.CRE~ ~override~
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 10 Con = 19 Int = 10 Wis = 11 Cha = 8
                           STR_VAR NpcName = ~KAGAIN~ ScriptName = ~KAGAIN~ ClassName = ~FIGHTER~ KitName = ~DWARVEN_DEFENDER~  END   
 
-LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 14 Con = 10 Int = 10 Wis = 10 Cha = 16 HpTotal = 10
-                          STR_VAR NpcName = ~SHARTE~ ScriptName = ~SHARTEEL~ ClassName = ~FIGHTER~ KitName = ~WIZARDSLAYER~  END   
+LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 16 Dex = 16 Con = 10 Int = 10 Wis = 14 Cha = 10 HpTotal = 15
+                          STR_VAR NpcName = ~SHARTE~ ScriptName = ~SHARTEEL~ ClassName = ~RANGER~ KitName = ~BEASTMASTER~  END   
                           
 LAF SET_DEFAULT_NPC_STATS INT_VAR Str = 10 Dex = 12 Con = 14 Int = 18 Wis = 9 Cha = 10 RemoveKnownSpells = 0
                           STR_VAR NpcName = ~EDWIN~ ScriptName = ~EDWIN~ ClassName = ~MAGE~ KitName = ~MAGESCHOOL_CONJURER~ END

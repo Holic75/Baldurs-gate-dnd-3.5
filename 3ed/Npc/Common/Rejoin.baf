@@ -1,9 +1,10 @@
 IF
-	!Class(Myself,NO_CLASS)
+	//!Class(Myself,NO_CLASS)
 	!InParty(Myself)
+    !Global("BD_JOINXP35","LOCALS",0)
 THEN
 	RESPONSE #100
-		ChangeClass(Myself,NO_CLASS)
+		//ChangeClass(Myself,NO_CLASS)
         SetGlobal("BD_JOINXP35","LOCALS",0)
 		Continue()
 END

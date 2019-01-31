@@ -639,11 +639,13 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 			LPF ALTER_SPELL_HEADER INT_VAR header=i min_level=40 END
 		END
         //replace duhm effect with ability bonuses
-        LPF CLONE_EFFECT INT_VAR  check_headers = 1 match_opcode = 132 opcode = 44 STR_VAR insert = ~below~ END
-        LPF CLONE_EFFECT INT_VAR  check_headers = 1 match_opcode = 132 opcode = 15 STR_VAR insert = ~below~ END
-        LPF CLONE_EFFECT INT_VAR  check_headers = 1 match_opcode = 132 opcode = 10 STR_VAR insert = ~below~ END
-        SPRINT resource EVALUATE_BUFFER ~%SOURCE_RES%~
-        LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 132 new_opcode = 321 parameter1 = 0 parameter2 = 0 duration = 1 STR_VAR resource END
+        PATCH_IF (NOT ~%GameId%~ STR_EQ ~Iwd~) BEGIN
+            LPF CLONE_EFFECT INT_VAR  check_headers = 1 match_opcode = 132 opcode = 44 STR_VAR insert = ~below~ END
+            LPF CLONE_EFFECT INT_VAR  check_headers = 1 match_opcode = 132 opcode = 15 STR_VAR insert = ~below~ END
+            LPF CLONE_EFFECT INT_VAR  check_headers = 1 match_opcode = 132 opcode = 10 STR_VAR insert = ~below~ END
+            SPRINT resource EVALUATE_BUFFER ~%SOURCE_RES%~
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 132 new_opcode = 321 parameter1 = 0 parameter2 = 0 duration = 1 STR_VAR resource END
+        END
         LPF REPLACE_SPL_STAT_BONUSES END
 		LPF DELETE_SPELL_HEADER INT_VAR header_type=~-1~ min_level=40 END
 		
@@ -1304,7 +1306,7 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
     ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
         //cats grace
         COPY_EXISTING ~SPWI225.SPL~ ~override~ 
-            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 15 opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource = ~ABNDEX4~ END
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 15 new_opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource = ~ABNDEX4~ END
             READ_LONG 0x0050 ~descr_strref~
             STRING_SET_EVALUATE %descr_strref% @341	//change description
           
@@ -1317,9 +1319,11 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
             LPF REPLACE_SPL_STAT_BONUSES END
         //animal rage
         COPY_EXISTING ~SPPR522.SPL~ ~override~
-            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 44 opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource = ~ABNSTR4~ END
-            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 18 opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource = ~ABNCON4~ END
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 44 new_opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource = ~ABNSTR4~ END
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 18 new_opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource = ~ABNCON4~ END
             LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 3 END 
+            READ_LONG 0x0050 ~descr_strref~
+            STRING_SET_EVALUATE %descr_strref% @343	//change description
     END
     
     

@@ -43,7 +43,7 @@ COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
   //ankheg, rhino beetle or ice king plate mail -> chain mail (allow beastmaster)
 	WRITE_SHORT 0x0026 8 //str req to 8 
 	LPF UPDATE_ARMOR INT_VAR is_light = 0 spell_failure = 20 max_dex = 16 skill_penalty = 3  string_to_replace_ref_match = 9 string_to_replace_ref = 10 new_string_to_add_ref = 14 END	
-	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~beastmaster~ END
+	//LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~beastmaster~ END
 	LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/KitUsabilityValues.tps~  id_string = ~barbarian~ END
     LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~druid~ END
     LPF SET_ITEM_USABILITY STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~ranger~ END

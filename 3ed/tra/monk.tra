@@ -25,7 +25,10 @@ All successful attacks within the next round force the victim to Save vs. Paraly
     @022 = ~Quivering Palm
 The next successful attack forces the target to Save vs. Death (with penalty equal to one quarter of monk level rounded down) or die. This special ability automatically modifies normal attacks; no targeting needs to be done.~
 
-
     @023=~Sun Soulbeam
 
 The character emits a dazzling burst of light that strikes at all hostile creatures within a 30-ft. radius. The Sun Soulbeam does not automatically hit all targets, but makes a melee attack using the character's current THAC0 (+3 to hit vs. undead). Struck creatures suffer 1d4 points of fire damage per monk level, unless they save vs. Spell for half with penalty equal to one fourth of monk level rounded down. In addition, all targets must save vs. Spell or be blinded for 2 hours.~
+
+    @024=~Frozen Fist
+    
+When this ability is activated, the Dark Moon Monk's fists are wreathed in a frosty shell. For 1 turn, the Dark Moon Monk's unarmed attacks deal an additional 2 points of cold damage on each successful hit. The cold damage increases by 1 at every 10th level (up to 5 at level 30).~
