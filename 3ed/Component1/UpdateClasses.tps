@@ -234,6 +234,10 @@
                           
         //hexblade curse
         COPY_EXISTING ~SPPR113.SPL~ ~override/HEXCR.SPL~
+            LPF ALTER_SPELL_HEADER INT_VAR speed = 1 END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 54 opcode = 0 END //add ac penalty
+            LPF CLONE_EFFECT INT_VAR match_opcode = 54 opcode = 73 END //add dmg penalty
+            LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_type = 4 END
             LPF DELETE_EFFECT INT_VAR match_opcode = 321 END
             FOR (cha = 10;cha<=25;cha=cha+2) BEGIN
                 SPRINT resource EVALUATE_BUFFER ~HEXCR%cha%~
@@ -247,12 +251,7 @@
             LPF MAKE_ALWAYS_CASTABLE END
         
         OUTER_FOR (cha = 10;cha<=25;cha=cha+2) BEGIN
-            COPY_EXISTING ~HEXCR.SPL~ ~override/HEXCR%cha%.SPL~
-                LPF ALTER_SPELL_HEADER INT_VAR speed = 1 END   
-                LPF CHANGE_SPELL_PROPERTIES INT_VAR spell_type = 4 END 
-        
-                LPF CLONE_EFFECT INT_VAR match_opcode = 54 opcode = 73 END
-            
+            COPY_EXISTING ~HEXCR.SPL~ ~override/HEXCR%cha%.SPL~                              
                 SET base_savebonus = 0 - (cha - 10)/2
                 LPF ALTER_SPELL_EFFECT_EX INT_VAR savingthrow = 1 power = 0 savebonus = base_savebonus END
         
@@ -277,13 +276,13 @@
                     END
                     
                     LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_opcode = 54 parameter1 END
+                    LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_opcode = 0  parameter1 END
                     LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_opcode = 73 parameter1 END
                     LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_opcode = 33 parameter1 END
                     LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_opcode = 34 parameter1 END
                     LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_opcode = 35 parameter1 END
                     LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_opcode = 36 parameter1 END
-                    LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_opcode = 37 parameter1 END
-                        
+                    LPF ALTER_SPELL_EFFECT_EX INT_VAR header = i match_opcode = 37 parameter1 END                        
                 END
                 
             //giving hexblade curse
@@ -323,7 +322,13 @@
         COPY ~3ed/Classes/Hexblade/SWIFTCST.SPL~ ~override~
             LPF ALTER_SPELL_EFFECT INT_VAR duration_high = 6 END
             SAY NAME1 @005
-            SAY UNIDENTIFIED_DESC @006                  
+            SAY UNIDENTIFIED_DESC @006  
+
+        //dispelling strike 
+        COPY ~3ed/Classes/Hexblade/DispellingStrike~ ~override~
+        COPY_EXISTING ~DSPLHIT.SPL~ ~override~
+            SAY NAME1 @007
+            SAY UNIDENTIFIED_DESC @008  
          
     END
         
@@ -1044,7 +1049,7 @@ WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN
             
             LPF ADD_SPELL_EFFECT INT_VAR opcode=146 target=1 parameter1=1 parameter2=1 timing=4 resist_dispel=2 duration=rage_duration STR_VAR resource=~BRBFTG~ END  
             LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=1 duration=(rage_duration - 1) resist_dispel=2 STR_VAR resource=~BRBRGE~ END //forbid using rage again
-            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10 opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource = ~ABNCON4~ END //replace constitution bonus
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10 new_opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource = ~ABNCON4~ END //replace constitution bonus
             
         COPY_EXISTING ~override/BRBR1%con%.SPL~ ~override/SKLR1%con%.SPL~
             LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource=~BRBFTG~  resource = ~SKLDFTG~ END  

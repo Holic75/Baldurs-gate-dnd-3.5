@@ -8,6 +8,7 @@
 	COPY ~3ed/Classes/TurnUndead/CHANNEGC.BAM~ ~override~
 	COPY ~3ed/Classes/TurnUndead/CHANPOSB.BAM~ ~override~
 	COPY ~3ed/Classes/TurnUndead/CHANPOSC.BAM~ ~override~
+    COPY ~3ed/Classes/TurnUndead/DSBLTU.SPL~ ~override~
 	
 	OUTER_SET max_channel_lvl=15
 	OUTER_SET max_multi_class_channel_lvl=8	

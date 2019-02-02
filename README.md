@@ -469,7 +469,7 @@ Advantages:
 – May use Hexblade's Curse innate ability. Gets a number of uses per day equal to 1 + 1 per 2 points of Charisma above 10 at level 1. Gets one additional use per day every 4 levels thereafter.  
 ```
 HEXBLADE'S CURSE:
-Hexblade unleashes a curse upon a foe who receives a penalty of -2 to THAC0, damage and savingthrows for 1 turn if he fails the savingthrow vs. Spell with penalty equal to one fourth of Hexblade's level rounded down + 1 per 2 points of Hexblade's Charisma above 10.
+Hexblade unleashes a curse upon a foe who receives a penalty of -2 to THAC0, damage, AC and savingthrows for 1 turn if he fails the savingthrow vs. Spell with penalty equal to one fourth of Hexblade's level rounded down + 1 per 2 points of Hexblade's Charisma above 10.
 At level 7 the penalty to THAC0, damage and savingthrows increases to -4, at level 17 to -6 and finally at level 27 to - 8.
 ```
 – May summon Familiar starting from level 4.  
@@ -487,6 +487,11 @@ Fourth Level Spells: Starting from level 13 Hexblade gets access to the followin
 SWIFT SPELL:
 When this ability is activated for next round Hexblade's casting speed is increased by 5.
 ```
+– Starting from level 10 may use the Dispelling Strike ability. Gets additional uses every 5 levels thereafter.   
+```   
+DISPELLING STRIKE:
+For 10 seconds every hit of Hexblade has a 30% + 1% per Hexblade level chance to dispel all magical effects from the target.
+```
 – Starting from level 12 may use the Aura of Unluck ability once per day. Gains and additional use every 4 levels thereafter.  
  ```
 AURA OF UNLUCK:
@@ -499,7 +504,7 @@ Disadvantages:
 – May not be of good alignment.  
 – Does not get bonus feats like trueclass fighters do.  
 – Does not get Hardiness and Resist Magic abilities.  
-– May only put one star in any weapon she can use.  
+– May only put up to 4 stars in any weapon she can use.  
 – May use only light armor and medium armor, may not use large shield.  
 
 ### KENSAI
@@ -560,7 +565,7 @@ At the end of the Defensive Stance, the character becomes fatigued (-2 penalty t
 At 10th level, Dwarven Defender’s bonuses to Strength, Constitution and AC each increase to +4, and bonus on saves increases to +2.
 At 17th level, the character is no longer subject to fatigue effects after Defensive Stance.
 ```
-- Halting Blow: starting frome level 5, while in defensive stance, if Dwarven defender hits a foe with the attack, the latter will be unable to move for 10 seconds.  
+– Halting Blow: starting frome level 5, while in defensive stance, if Dwarven defender hits a foe with the attack, the latter will be unable to move for 10 seconds.  
 – Gains 5% resistance to crushing, slashing, piercing, and missile damage at level 3 and every 3 levels thereafter to a maximum of 50% at level 30.  
 – High Savingthrows vs. Spell   
 – Hit Die: d12  
@@ -995,8 +1000,8 @@ Second level spells: starting from level 7 Assassin gets access to the following
 Third level spells: starting from level 10 Assassin gets access to the following spells: Vampiric Touch, Non-Detection, Hold Person, Detect Illusions.	  
 Fourth level spells: starting from level 13 Assassin gets access to the following spells: Improved Invisibility, Free Action, Poison, Cloak of Fear.  
 ```
-- Quiet Death: starting from level 10 every time Assassin slays an enemy she becomes invisible for 30 seconds.  
-- High Savingthrows vs. Death and vs. Polymorph.  
+– Quiet Death: starting from level 10 every time Assassin slays an enemy she becomes invisible for 30 seconds.  
+– High Savingthrows vs. Death and vs. Polymorph.  
 Disadvantages:  
 – Receives bonus feats only at levels 22, 25 and 28.   
 – May only distribute 10 skill points per level among thieving skills (20 points at level 1)  
@@ -2100,24 +2105,24 @@ Shape | STR | DEX | CON | Base AC| APR |Damage | Special Abilities |
 ---   | --- | --- | --- | ---    | --- |---    | ---   
 Black Bear       | 16  | 12  | 18  |  7 | 3      |1d4 + 1 (piercing)| strikes as +1 weapon
 Brown Bear       | 18  | 12  | 16  |  7 | 3      |1d6 (piercing)    | strikes as +1 weapon
-Wolf             | 15  | 18  | 14  |  6 | 2      |1d8 (piercing)    | strikes as +1 weapon, Cold Resistance 50%, Electrical Resistance 50%
+Wolf             | 15  | 18  | 14  |  6 | 2      |1d8 (piercing)    | strikes as +1 weapon, Cold Resistance 50%, Electrical Resistance: 50%
 Fire Salamander  | 18  | 19  | 15  |  2 |As Druid|1d6+1d8 (piercing)| strikes as +3 weapon, +1 THAC0, Fire Resistance 50%, Breathe Fireball three times per day (2d6 fire damage to target)
 Baby Wyvern      | 16  | 17  | 16  |  3 | 1      |2d8 (crushing) + 1d6 (piercing)| strikes as +2 weapon,  on hit causes 1 poison damage/second for 6 seconds (Save vs. Poison to avoid), Immunity to hold, paralysis, slow, level drain, web, entangle, and grease            
 Sword Spider     | 16  | 16  | 10  |  3 | 4      |1d4 (piercing)    | strikes as +1 weapon, Immunity to web
 Polar Bear       | 20  | 10  | 19  |  4 | 3      |1d10 (piercing)    | strikes as +3 weapon, Cold Resistance: 75%, Fire Resistance: -25%
 Boring Beetle    | 18  |  7  | 16  | -2 | 1      |5d4 (crushing)    | strikes as +3 weapon, Slashing Resistance: 50%, Piercing Resistance: 50%, Missile Resistance: 50%
-Winter Wolf      | 18  | 13  | 18  |  2 | 2      |Melee: 1d6 (piercing) + 1d6(cold)   | strikes as +3 weapon, Cold Resistance: 75%, Fire Resistance -25%, Winter Wolf Breath three times per day (6d6 cold damage to target, save vs. Breath Weapon at -4 for half)  
+Winter Wolf      | 18  | 13  | 18  |  2 | 2      |1d6 (piercing) + 1d6(cold)   | strikes as +3 weapon, Cold Resistance: 75%, Fire Resistance -25%, Winter Wolf Breath three times per day (6d6 cold damage to target, save vs. Breath Weapon at -4 for half)  
 Werewolf         | 19  | 16  | 15  |  3 | 2      |1d6 (piercing)  | strikes as +2 weapon, Magic Resistance: 20%
 Werewolf (level 8+)        | 19  | 16  | 15  |  1 | 2      |1d10 (piercing) | strikes as +2 weapon, Magic Resistance: 20%
-Greater Werewolf | 21  | 20  | 25  |  -4| 3      |2d8 (slashing)    | strikes as +4 weapon, Immune to all non magical weapons, Fire Resistance 50%, Cold Resistance 50%, Electricity Resistance 50%, Acid Resistance 50%, Magic Resistance 40%, Regenerates 1 Hit Point per second
-Greater Werewolf (level 22+) | 21  | 20  | 25  |  -6| 3      |2d10 (slashing)    | strikes as +4 weapon, Immune to all non magical weapons, Fire Resistance 50%, Cold Resistance 50%, Electricity Resistance 50%, Acid Resistance 50%, Magic Resistance 40%, Regenerates 1 Hit Point per second
-Greater Werewolf (level 29+) | 21  | 20  | 25  |  -8| 3      |2d12 (slashing)    | strikes as +4 weapon, Immune to all non magical weapons, Fire Resistance 50%, Cold Resistance 50%, Electricity Resistance 50%, Acid Resistance 50%, Magic Resistance 40%, Regenerates 1 Hit Point per second
+Greater Werewolf | 21  | 20  | 25  |  -4| 3      |2d8 (slashing)    | strikes as +4 weapon, Immune to all non magical weapons, Fire Resistance: 50%, Cold Resistance: 50%, Electricity Resistance: 50%, Acid Resistance: 50%, Magic Resistance: 40%, Regenerates 1 Hit Point per second
+Greater Werewolf (level 22+) | 21  | 20  | 25  |  -6| 3      |2d10 (slashing)    | strikes as +4 weapon, Immune to all non magical weapons, Fire Resistance: 50%, Cold Resistance: 50%, Electricity Resistance: 50%, Acid Resistance: 50%, Magic Resistance: 40%, Regenerates 1 Hit Point per second
+Greater Werewolf (level 29+) | 21  | 20  | 25  |  -8| 3      |2d12 (slashing)    | strikes as +4 weapon, Immune to all non magical weapons, Fire Resistance: 50%, Cold Resistance: 50%, Electricity Resistance: 50%, Acid Resistance: 50%, Magic Resistance: 40%, Regenerates 1 Hit Point per second
 Large Fire Elemental | 14 | 21 | 16 | 6 | 2 | 2d6 (crushing) + 2d6 (fire) | strikes as +4 weapon, Immunity to weapons below +3, Weapon Finesse, Fire Resistance: 100%, Cold Resistance: -50%, Physical Resistance: 25%
 Large Earth Elemental | 21 | 8 | 19 | 0 | 2 | 2d10 (crushing)| strikes as +4 weapon, Immunity to weapons below +3, Physical Resistance: 50%
-Large Water Elemental | 20 | 14 | 19 | 1 | 2 | 2d8 (crushing)| strikes as +4 weapon, Immunity to weapons below +3, Physical Resistance: 50%, Cold Resistance: -25%, Acid Resistance: 75%, Electrical Resistance -75%
+Large Water Elemental | 20 | 14 | 19 | 1 | 2 | 2d8 (crushing)| strikes as +4 weapon, Immunity to weapons below +3, Physical Resistance: 50%, Cold Resistance: -25%, Acid Resistance: 75%, Electrical Resistance: -75%
 Greater Fire Elemental | 18 | 25 | 18 | 6 | 2 | 2d8 (crushing) + 2d8 (fire) | strikes as +4 weapon, Immunity to weapons below +3, Weapon Finesse, Fire Resistance: 100%, Cold Resistance: -50%, Physical Resistance: 25%
 Greater Earth Elemental | 25 | 8 | 21 | 0 | 2 | 2d12 (crushing)| strikes as +4 weapon, Immunity to weapons below +3, Physical Resistance: 50%
-Greater Water Elemental | 24 | 18 | 21 | 1 | 2 | 2d10 (crushing)| strikes as +4 weapon, Immunity to weapons below +3, Physical Resistance: 50%, Cold Resistance: -25%, Acid Resistance: 75%, Electrical Resistance -75%
+Greater Water Elemental | 24 | 18 | 21 | 1 | 2 | 2d10 (crushing)| strikes as +4 weapon, Immunity to weapons below +3, Physical Resistance: 50%, Cold Resistance: -25%, Acid Resistance: 75%, Electrical Resistance: -75%
 
 
 
@@ -2163,6 +2168,9 @@ Large Shield           | 50% | +2 | -50%
  - Ankheg Plate Mail AC bonus was lowered to that of regular Plate Mail  
  - Small Shields no longer have penalty to missile AC
  - Base damage of sling bullets was reduced to 1d4
+ - Most items and spells that were setting character stats to certain values now give a bonus instead  
+ - Character stat bonuses from items and spells are no longer cumultive (except Righteous might STR bonus)  
+ - Belt of Fortitude now gives permanent bonus to Constitution  
  
 
 ## 6. Spells
@@ -2229,9 +2237,7 @@ Also the spells penalties to Savingthrows were made more uniform akin to DnD 3.5
 - Iwd Poison spell now deals 1 poison damage per 6 levels of the caster per second  
 - Duration of Defensive Harmony was increased to 1 round/level and it now gives + 4 AC bonus in all games  
 - Duration of Negative Plane Protection was increased to 5 round/level  
-- Most items and spells that were setting character stats to certain values not give a bonus instead  
-- Character stat bonuses from items and spells are no longer cumultive (except Righteous might STR bonus)  
-- Belt of Fortitude now gives permanent bonus to Constitution  
+
 
 ### New Spells
 
@@ -2275,17 +2281,17 @@ Saving Throw: None
 Target creature coloring changes to match the surrounding environment, granting it +20% bonus to Hide in Shadows and Move Silently Skills for the duration of the spell.
 
 #### Gravity Weapon (Druid)
-(Alteration)
-
-Level: 1
-Sphere: Elemental (Earth)
-Range: 0
-Duration: 1 minute/level
-Casting Time: 3
-Area of Effect: The caster
-Saving Throw: None
-
-Gravity weapon significantly increases the weight and density of your weapons or projectiles the instant before they strike their target and then return them to normal a few moments later. All weapons the caster is carrying while the spell is cast deal 1 additional point of damage. The bonus to damage increases to +2 at level 10.  
+(Alteration)  
+  
+Level: 1  
+Sphere: Elemental (Earth)  
+Range: 0  
+Duration: 1 minute/level  
+Casting Time: 3  
+Area of Effect: The caster  
+Saving Throw: None  
+  
+Gravity weapon significantly increases the weight and density of caster weapons or projectiles the instant before they strike their target and then return them to normal a few moments later. All weapons the caster is carrying while the spell is cast deal 1 additional point of damage. The bonus to damage increases to +2 at level 10.  
 
 #### Cause Light Wounds (Cleric)
 (Necromancy)  

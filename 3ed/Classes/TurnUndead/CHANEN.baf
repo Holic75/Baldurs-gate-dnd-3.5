@@ -37,3 +37,20 @@ THEN
 		ApplySpellRES("CE_GV",Player%player_id%) 
 		Continue()
 END
+
+
+IF
+	OR(7)
+		Class(Player%player_id%,PALADIN)
+		Class(Player%player_id%,CLERIC)
+		Class(Player%player_id%,CLERIC_THIEF)
+		Class(Player%player_id%,FIGHTER_CLERIC)
+		Class(Player%player_id%,CLERIC_MAGE)
+        Class(Player%player_id%,CLERIC_RANGER)
+        Class(Player%player_id%,FIGHTER_MAGE_CLERIC)
+    !ButtonDisabled(BUTTON_TURNUNDEAD)
+THEN
+	RESPONSE #100
+		ApplySpellRES("DSBLTU",Player%player_id%) //disable turn undead
+		Continue()
+END

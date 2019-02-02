@@ -216,7 +216,7 @@ Advantages:
 – May use Hexblade's Curse innate ability. Gets a number of uses per day equal to 1 + 1 per 2 points of Charisma above 10 at level 1. Gets one additional use per day every 4 levels thereafter.
 
 HEXBLADE'S CURSE:
-Hexblade unleashes a curse upon a foe who receives a penalty of -2 to THAC0, damage and savingthrows for 1 turn if he fails the savingthrow vs. Spell with penalty equal to one fourth of Hexblade's level rounded down + 1 per 2 points of Hexblade's Charisma above 10.
+Hexblade unleashes a curse upon a foe who receives a penalty of -2 to THAC0, damage, AC and savingthrows for 1 turn if he fails the savingthrow vs. Spell with penalty equal to one fourth of Hexblade's level rounded down + 1 per 2 points of Hexblade's Charisma above 10.
 At level 7 the penalty to THAC0, damage and savingthrows increases to -4, at level 17 to -6 and finally at level 27 to - 8.
 
 – May summon Familiar starting from level 4.
@@ -228,12 +228,17 @@ Second Level Spells: Starting from level 7 Hexblade gets access to the following
 Third Level Spells: Starting from level 10 Hexblade gets access to the following spells: Vampiric Touch, Dispel Magic, Dire Charm, Detect Illusions and Slow.
 Fourth Level Spells: Starting from level 13 Hexblade gets access to the following spells: Improved Invisibility, Emotion: Hopelessness, Polymorph Other, Secret Word and Confusion.
 
-– Gets one bonus feat only at levels 5, 10, 15, 20, 23, 26 and 29.
+– Gets one bonus feat at levels 5, 10, 15, 20, 23, 26 and 29.
 – Starting from level 6 may use Swift Spell ability once per day. Gets additional uses at levels 8, 11, 14, 18, 23 and 30.
 
 SWIFT SPELL:
 When this ability is activated for next round Hexblade's casting speed is increased by 5.
 
+- Starting from level 10 may use the Dispelling Strike ability. Gets additional uses every 5 levels thereafter.
+    
+DISPELLING STRIKE:
+For 10 seconds every hit of Hexblade has a 30% + 1% per Hexblade level chance to dispel all magical effects from the target.
+   
 – Starting from level 12 may use the Aura of Unluck ability once per day. Gains and additional use every 4 levels thereafter.
 
 AURA OF UNLUCK:
@@ -245,7 +250,7 @@ Disadvantages:
 – May not be of good alignment.
 – Does not get bonus feats like trueclass fighters do.
 – Can not use Hardiness and Resist Magic abilities.
-– May only put one star in any weapon <PRO_HESHE> can use.
+– May only put up to 4 stars in any weapon <PRO_HESHE> can use.
 – May use only light armor and medium armor, may not use large shield.~
 //---------------------------------------------------------------------------------------------------//
 @010=~KENSAI: This class's name, which means "sword saint" in the common tongue, refers to a warrior who has been specially trained to be one with <PRO_HISHER> weapon. The kensai is deadly, fast, and trained to fight without the protection of armor. (Note: Despite its common name, a Kensai may use any melee weapon with which <PRO_HESHE> is proficient.)
@@ -733,7 +738,7 @@ CLASS FEATURES:
 – 8th level: While using Shapeshift ability a Druid can alternatively transform into fire salamander, sword spider or baby wyvern.
 – 11th level (IWD only): While using Shapeshift ability a Druid can alternatively transform into polar bear, boring beetle or winter wolf.
 – 15th level: Becomes immune to poison.
-– 16th level: While using Shapeshift ability a Druid can alternatively take form of large fire , earth  or water (IWD only) elementals.
+– 16th level: While using Shapeshift ability a Druid can alternatively take form of large fire, earth  or water (IWD only) elementals.
 – 20th level: While using Shapeshift ability a Druid can alternatively take form of greater fire, earth  or water (IWD only) elementals.
 – 21th level: May call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.
 – Gains access to the following epic spells: Elemental Summoning (at level 19), Aura of Flaming Death (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Greater Elemental Summoning (at level 23) and Nature's Avatar (at level 24).

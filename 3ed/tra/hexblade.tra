@@ -7,7 +7,7 @@ When this ability is activated, all enemies within 30 feet of the Hexblade suffe
 	@003=~Hexblade's Curse~
 	@004=~Hexblade's Curse
 
-Hexblade unleashes a curse upon a foe who receives a penalty of -2 to THAC0, damage and savingthrows for 1 turn if he fails the savingthrow vs. Spell with penalty equal to one fourth of Hexblade's level rounded down + 1 per 2 points of Hexblade's Charisma above 10.
+Hexblade unleashes a curse upon a foe who receives a penalty of -2 to THAC0, damage, AC and savingthrows for 1 turn if he fails the savingthrow vs. Spell with penalty equal to one fourth of Hexblade's level rounded down + 1 per 2 points of Hexblade's Charisma above 10.
 At level 7 the penalty to THAC0, damage and savingthrows increases to -4, at level 17 to -6 and finally at level 27 to - 8.~
 
 
@@ -15,3 +15,8 @@ At level 7 the penalty to THAC0, damage and savingthrows increases to -4, at lev
 	@006=~Swift Spell
 
 When this ability is activated for next round Hexblade's casting speed is increased by 5.~
+
+    @007=~Dispelling Strike~
+    @008=~Dispelling Strike
+    
+For 10 seconds every hit of Hexblade has a 30% + 1% per Hexblade level chance to dispel all magical effects from the target.~
