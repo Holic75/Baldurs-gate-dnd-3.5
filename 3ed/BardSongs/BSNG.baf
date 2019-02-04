@@ -1,23 +1,12 @@
 IF
 	PartyRested()
-
 	Class(Player%player_id%,BARD)
-
 THEN
 	RESPONSE #100
 		ApplySpellRES("RMSNG",Player%player_id%) 
 		ActionOverride(Player%player_id%,ReallyForceSpellRes("BNSNG",Player%player_id%))
 		//ApplySpellRES("GVSNG",Player%player_id%) 
 		ActionOverride(Player%player_id%,ReallyForceSpellRes("GVSNG",Player%player_id%))
-		Continue()
-END
-
-
-IF
-	Class(Player%player_id%,BARD)
-    !ButtonDisabled(BUTTON_BATTLESONG)
-THEN
-	RESPONSE #100
-		ApplySpellRES("DSBLSNG",Player%player_id%) //disable dance
+        ApplySpellRES("DSBLSNG",Player%player_id%) //disable song
 		Continue()
 END

@@ -2,7 +2,7 @@
 
 BACKUP ~3ed/backup~
 AUTHOR ~holic.denis@gmail.com~
-VERSION ~v2.16~
+VERSION ~v2.16.1~
 
 
 ALWAYS
@@ -214,11 +214,11 @@ WITH_TRA ~%LANGUAGE%\proficiencies.tra~ BEGIN
 	INCLUDE ~3ed/Component2/BonusFeatAttribution.tps~
 
 //-------------------------------------------------class and race-specific bonus feats---------------------------------------------					
-	INCLUDE ~3ed/Component2/ClassRaceFeatAttribution.tps~
-    
+	INCLUDE ~3ed/Component2/ClassRaceFeatAttribution.tps~    	
+END 
 
-	
-END 		
+//-------------------------------------------------epic spell slots----------------------------------------------------------------
+    INCLUDE ~3ed/Component2/CreateEpicSpellSlots.tps~		
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

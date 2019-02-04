@@ -1,0 +1,5 @@
+- fixed bug when it was impossible to save with bard, shaman, cleric or paladin being in the party
+- fixed battle caster not receiving bonus spells based on charisma
+- made ability bonuses from Barbarian Rage, Defensive Stance, Animal Rage and Blood Rage cumulative with other bonuses granted by items or spells
+- added THAC0 progression at epic levels
+- added Epic Spell slots

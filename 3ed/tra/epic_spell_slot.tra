@@ -1,0 +1,56 @@
+    @001 = ~Epic Spell Slot~
+    @002 = ~Epic Spell Slot
+    
+Caster can use epic slot to memorize a spell of any level that <PRO_HESHE> can cast.~
+
+    @003 = ~Deactivate Epic Spell Slot
+    
+Allows to undo previous epic slot selection and pick another epic spell slot.~
+
+
+    @11 = ~Wizard spell slot I~
+    @12 = ~Wizard spell slot II~
+    @13 = ~Wizard spell slot III~
+    @14 = ~Wizard spell slot IV~
+    @15 = ~Wizard spell slot V~
+    @16 = ~Wizard spell slot VI~
+    @17 = ~Wizard spell slot VII~
+    @18 = ~Wizard spell slot VIII~
+    @19 = ~Wizard spell slot IX~
+    
+    
+    @21 = ~Priest spell slot I~
+    @22 = ~Priest spell slot II~
+    @23 = ~Priest spell slot III~
+    @24 = ~Priest spell slot IV~
+    @25 = ~Priest spell slot V~
+    @26 = ~Priest spell slot VI~
+    @27 = ~Priest spell slot VII~
+    
+    
+    @31 = ~Deactivate Epic Wizard spell slot I~
+    @32 = ~Deactivate Epic Wizard spell slot II~
+    @33 = ~Deactivate Epic Wizard spell slot III~
+    @34 = ~Deactivate Epic Wizard spell slot IV~
+    @35 = ~Deactivate Epic Wizard spell slot V~
+    @36 = ~Deactivate Epic Wizard spell slot VI~
+    @37 = ~Deactivate Epic Wizard spell slot VII~
+    @38 = ~Deactivate Epic Wizard spell slot VIII~
+    @39 = ~Deactivate Epic Wizard spell slot IX~
+    
+    @41 = ~Deactivate Epic Priest spell slot I~
+    @42 = ~Deactivate Epic Priest spell slot II~
+    @43 = ~Deactivate Epic Priest spell slot III~
+    @44 = ~Deactivate Epic Priest spell slot IV~
+    @45 = ~Deactivate Epic Priest spell slot V~
+    @46 = ~Deactivate Epic Priest spell slot VI~
+    @47 = ~Deactivate Epic Priest spell slot VII~
+    
+    
+    
+    
+
+    
+    
+    
+

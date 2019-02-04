@@ -1048,16 +1048,20 @@ WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN
             LPF ADD_SPELL_EFFECT INT_VAR opcode=145 target=1 parameter2=1 timing=0 resist_dispel=2 duration=rage_duration END //disable cleric spells
             
             LPF ADD_SPELL_EFFECT INT_VAR opcode=146 target=1 parameter1=1 parameter2=1 timing=4 resist_dispel=2 duration=rage_duration STR_VAR resource=~BRBFTG~ END  
+            PATCH_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN //forbid using blood and animal rage
+                LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=1 duration=rage_duration resist_dispel=2 STR_VAR resource=~SPPR422~ END
+                LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=1 duration=rage_duration resist_dispel=2 STR_VAR resource=~SPPR522~ END
+            END
             LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=1 duration=(rage_duration - 1) resist_dispel=2 STR_VAR resource=~BRBRGE~ END //forbid using rage again
-            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10 new_opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource = ~ABNCON4~ END //replace constitution bonus
+            //LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10 new_opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource = ~ABNCON4~ END //replace constitution bonus
             
         COPY_EXISTING ~override/BRBR1%con%.SPL~ ~override/SKLR1%con%.SPL~
             LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource=~BRBFTG~  resource = ~SKLDFTG~ END  
             LPF ALTER_SPELL_EFFECT_EX STR_VAR match_resource=~BRBRGE~  resource = ~SKLDRGE~ END
         
         COPY_EXISTING ~override/BRBR1%con%.SPL~ ~override/BRBR2%con%.SPL~
-			//LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10 parameter1 = 6 END //constitution bonus
-            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 272 STR_VAR resource = ~ABNCON6~ END //constitution bonus
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10 parameter1 = 6 END //constitution bonus
+            //LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 272 STR_VAR resource = ~ABNCON6~ END //constitution bonus
             LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=332 parameter1 = 30 END //+%dmg
             SET missile_bonus = 0 - 3
             LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=278 parameter1 = 3 END //+ melee thac0
@@ -1073,8 +1077,8 @@ WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN
             LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 146 STR_VAR match_resource = ~SKLDFTG~ END //remove fatigue
                          
         COPY_EXISTING ~override/BRBR3%con%.SPL~ ~override/BRBR4%con%.SPL~
-			//LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10 parameter1 = 8 END //constitution bonus
-            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 272 STR_VAR resource = ~ABNCON8~ END //constitution bonus
+			LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10 parameter1 = 8 END //constitution bonus
+            //LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 272 STR_VAR resource = ~ABNCON8~ END //constitution bonus
             LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=332 parameter1 = 40 END //+%dmg
             SET missile_bonus = 0 - 4
             LPF ALTER_SPELL_EFFECT INT_VAR match_opcode=278 parameter1 = 4 END //+ melee thac0
@@ -1367,7 +1371,11 @@ END
                 LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 139 END //remove damage string
                 LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 0  parameter1 = ~-2~ END
                 LPF ALTER_SPELL_EFFECT INT_VAR duration_high=brsrk_duration END 
-                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 206 duration = brsrk_duration+1 STR_VAR match_resource = ~SPCL321~ END
+                LPF ALTER_SPELL_EFFECT_EX INT_VAR match_opcode = 206 duration = brsrk_duration+1 STR_VAR match_resource = ~SPCL321~ END
+                PATCH_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
+                    LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPCL321~ resource = ~SPPR422~ END
+                    LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPCL321~ resource = ~SPPR522~ END
+                END
                 //resistances
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 86 parameter1 = 10 target = 1 duration = brsrk_duration insert_point = 0 END 
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 87 parameter1 = 10 target = 1 duration = brsrk_duration insert_point = 0 END 
@@ -1378,7 +1386,7 @@ END
 
                 
             COPY_EXISTING ~BRSR1%con%.SPL~  ~override/BRSR2%con%.SPL~	
-                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 206 END //remove protection from spell
+                LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 206 STR_VAR match_resource = ~SPCL321~ END //remove protection from spell
                 //display string that rage ends one round before       					       
                 SET warning_time = brsrk_duration - 6
                 LPF ADD_SPELL_EFFECT INT_VAR opcode = 330 parameter1 = StrRefWarn parameter2 = 0 target = 1 duration = warning_time timing = 3 END 
@@ -1482,18 +1490,22 @@ END
                 LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 89 END 
                 
                 LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 0  parameter1 = 2 duration =stance_duration END //ac
-                //LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 44  parameter1 = 2 duration =stance_duration END //str bonus
-                //LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 10  parameter1 = 2 duration =stance_duration END //con bonus
+                LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 44  parameter1 = 2 duration =stance_duration END //str bonus
+                LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 10  parameter1 = 2 duration =stance_duration END //con bonus
                 
-                LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 272  parameter1 = 1 parameter2 = 3 duration =stance_duration 
-                                     STR_VAR resource = ~ABNSTR2~ END //str bonus
-               LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 272  parameter1 = 1 parameter2 = 3 duration =stance_duration 
-                                     STR_VAR resource = ~ABNCON2~ END //con bonus
+                //LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 272  parameter1 = 1 parameter2 = 3 duration =stance_duration 
+                //                     STR_VAR resource = ~ABNSTR2~ END //str bonus
+                //LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 272  parameter1 = 1 parameter2 = 3 duration =stance_duration 
+                //                     STR_VAR resource = ~ABNCON2~ END //con bonus
                 FOR (save_opcode = 33;save_opcode<=37;save_opcode = save_opcode+1) BEGIN
                    LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = save_opcode  parameter1 = 1 END //saves
                 END  
 
-                LPF ALTER_SPELL_EFFECT INT_VAR duration_high=stance_duration END 
+                LPF ALTER_SPELL_EFFECT INT_VAR duration_high=stance_duration END
+                PATCH_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN //forbid using blood and animal rage
+                    LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=1 duration = stance_duration STR_VAR resource=~SPPR422~ END
+                    LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=1 duration = stance_duration STR_VAR resource=~SPPR522~ END
+                END                
                 LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 206 duration = stance_duration  STR_VAR resource = ~SPDWD02~ END //protection from subsequent application
                 LPF ADD_SPELL_EFFECT INT_VAR target = 1 opcode = 146 timing = 3 duration = stance_duration+1 parameter1 = 1 parameter2 = 1 STR_VAR resource = ~DWDFTG~ END //fatigue
                 
@@ -1502,10 +1514,10 @@ END
                    
             COPY_EXISTING ~DWDS2%con%.SPL~  ~override/DWDS3%con%.SPL~	
                 LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 0  parameter1 = 4 END //ac
-                //LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 44  parameter1 = 4 END //str bonus
-                //LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10  parameter1 = 4 END //con bonus
-                LPF ALTER_SPELL_EFFECT STR_VAR match_resource = ~ABNSTR2~  resource = ~ABNSTR4~ END //str bonus
-                LPF ALTER_SPELL_EFFECT STR_VAR match_resource = ~ABNCON2~  resource = ~ABNCON4~ END //con bonus
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 44  parameter1 = 4 END //str bonus
+                LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10  parameter1 = 4 END //con bonus
+                //LPF ALTER_SPELL_EFFECT STR_VAR match_resource = ~ABNSTR2~  resource = ~ABNSTR4~ END //str bonus
+                //LPF ALTER_SPELL_EFFECT STR_VAR match_resource = ~ABNCON2~  resource = ~ABNCON4~ END //con bonus
                 FOR (save_opcode = 33;save_opcode<=37;save_opcode = save_opcode+1) BEGIN
                    LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = save_opcode  parameter1 = 2 END //saves
                 END                

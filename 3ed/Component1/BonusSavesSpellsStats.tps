@@ -39,7 +39,7 @@
     LAF ADD_FEATS_LVL INT_VAR min_level=4 max_level=4 d_level=1 add_at_level1=0 
         STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~\(\(CLABPA.+\)\|\(CLABRN.+\)\)\.2DA~  feat_name=~SPLWIPMD~ caption = ~SPWIRA~ END	
 	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
-        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~CLABMA.+\.2DA~  feat_name=~SPLMAGMD~ caption = ~SPMAGA~ END	
+        STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~\(\(CLABMA.+\)\|\(CLABSO01\)\)\.2DA~  feat_name=~SPLMAGMD~ caption = ~SPMAGA~ END	
 	LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 
         STR_VAR mask_file = ~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ clab=~CLABBA.+\.2DA~  feat_name=~SPLCHWMD~ caption = ~SPCHWA~ END
     LAF ADD_FEATS_LVL INT_VAR min_level=1 max_level=1 d_level=1 add_at_level1=1 

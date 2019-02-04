@@ -395,31 +395,50 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 				LPF ALTER_SPELL_HEADER INT_VAR header = i+1 min_level = i+9 END
 			END
 		END
-		FOR (i=1;i<=12;i+=1) BEGIN   
+        FOR (i=1;i<=10;i=i+1) BEGIN    
+			LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END              
+			LPF ALTER_SPELL_HEADER INT_VAR header = 12+i min_level = i+20 END
+		END
+		FOR (i=1;i<=22;i+=1) BEGIN   
 			SET cstr_lvl=i+8 
-			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 54 target = 2  power =5 parameter1 = (20 - cstr_lvl) parameter2 = 1 resist_dispel = 3 duration =10 END // set thac0 to fighters
+            SET thaco_set = (cstr_lvl <= 20) ? (20 - cstr_lvl) : 0
+            SET thaco_bonus = (cstr_lvl > 20) ? (cstr_lvl - 20)/2 : 0
+			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 54 target = 2  power =5 parameter1 = thaco_set parameter2 = 1 resist_dispel = 3 duration =10 END // set thac0 to fighters
+            PATCH_IF (thaco_bonus > 0) BEGIN
+                LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 54 target = 2  power =5 parameter1 = thaco_bonus parameter2 = 0 resist_dispel = 3 duration =10 END // go beyond 0 thac0
+            END
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 44 target = 2 power = 5 parameter1 = 6 parameter2 = 0 resist_dispel = 3 duration = 10 END //STR bonus	
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 1 target = 2 power = 5 parameter1 = 1 parameter2 = 0  resist_dispel = 3 duration = 10 END //+ 1 APR
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 145 target = 2 power = 5 parameter1 = 0 parameter2 = 0  resist_dispel = 3 duration = 10 END // forbid casting wizard spells
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 145 target = 2 power = 5 parameter1 = 0 parameter2 = 1  resist_dispel = 3 duration = 10 END // forbid casting cleric spells
 			LPF ALTER_SPELL_EFFECT INT_VAR header = i duration_high = 6*(cstr_lvl) END
-		END
-		
+		END		
 		READ_LONG 0x0050 ~descr_strref~
 		STRING_SET_EVALUATE %descr_strref% @035
+    COPY_EXISTING ~SPPR507.spl~ ~override~    
+        LPF REPLACE_SPL_STAT_BONUSES END
 
 //Holy power 
 	COPY_EXISTING ~SPPR412.spl~ ~override~
 		LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=97 END//remove exceptional strength
 		LPF ALTER_SPELL_HEADER INT_VAR target = 5 range = 0 END //target is set to caster
+	COPY_EXISTING ~SPPR412.spl~ ~override~
+        PATCH_IF (NOT ~%GameId%~ STR_EQ ~Iwd~) BEGIN
+			FOR (i=1;i<=10;i=i+1) BEGIN    
+				LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END              
+				LPF ALTER_SPELL_HEADER INT_VAR header = i+14 min_level = 20+i END
+			END
+		END        
+    COPY_EXISTING ~SPPR412.spl~ ~override~
 		READ_SHORT 0x68 n_headers
 		FOR (i=1;i<=n_headers;i+=1) BEGIN   
-			SET cstr_lvl=i+6 
-			SET THAC0_BONUS = (20 - cstr_lvl)
-			PATCH_IF (THAC0_BONUS<0) BEGIN
-				THAC0_BONUS = 0
-			END
-			LPF ALTER_SPELL_EFFECT INT_VAR  header = i match_opcode = 54 parameter1 = THAC0_BONUS  parameter2=1 END // thac0
+			SET cstr_lvl=i+6
+            SET thaco_set = (cstr_lvl <= 20) ? (20 - cstr_lvl) : 0
+            SET thaco_bonus = (cstr_lvl > 20) ? (cstr_lvl - 20)/2 : 0
+			LPF ALTER_SPELL_EFFECT INT_VAR  header = i match_opcode = 54 parameter1 = thaco_set  parameter2=1 END // thac0
+            PATCH_IF (thaco_bonus > 0) BEGIN
+                LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 54 target = 2  power =4 parameter1 = thaco_bonus parameter2 = 0 resist_dispel = 3 duration =6*(cstr_lvl) END // go beyond 0 thac0
+            END            
 			LPF ALTER_SPELL_EFFECT INT_VAR  header = i match_opcode = 44 parameter1 = 4 parameter2 = 0 END //+4 STR bonus	
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 1 target = 2 power = 4 parameter1 = 6 parameter2 = 0 duration = 6*(cstr_lvl) resist_dispel = 3 END // +0.5 APR
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 145 target = 2 power = 4 parameter1 = 0 parameter2 = 0 duration = 6*(cstr_lvl) resist_dispel = 3 END // forbid casting wizard spells
@@ -435,14 +454,21 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
 	COPY_EXISTING ~SPWI603.spl~ ~override~
 		LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=54 END//remove existing  THAC0 bonuses
 		LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=145 END //delete spell casting disable (to allow casting innates)
+    COPY_EXISTING ~SPWI603.spl~ ~override~
+        PATCH_IF (NOT ~%GameId%~ STR_EQ ~Iwd~) BEGIN
+			FOR (i=1;i<=10;i=i+1) BEGIN    
+				LPF ADD_SPELL_HEADER INT_VAR copy_header = 1 END              
+				LPF ALTER_SPELL_HEADER INT_VAR header = i+9 min_level = 20+i END
+			END
+		END
+    COPY_EXISTING ~SPWI603.spl~ ~override~
 		READ_SHORT 0x68 n_headers
 		FOR (i=1;i<=n_headers;i+=1) BEGIN   
 			SET cstr_lvl=i+11
-			SET THAC0_BONUS = (20 - cstr_lvl)
-			PATCH_IF (THAC0_BONUS<0) BEGIN
-				THAC0_BONUS = 0
-			END
-			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 54 target = 1 power = 6 parameter1 = THAC0_BONUS - 2  parameter2 = 1 duration = 6 *(cstr_lvl) resist_dispel = 3 END // thac0	
+            SET thaco_set = (cstr_lvl <= 20) ? (20 - cstr_lvl) : 0
+            SET thaco_bonus = (cstr_lvl > 20) ? (cstr_lvl - 16)/2 : 2          
+			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 54 target = 1 power = 6 parameter1 = thaco_set  parameter2 = 1 duration = 6 *(cstr_lvl) resist_dispel = 3 END // thac0	
+            LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 54 target = 1  power =6 parameter1 = thaco_bonus parameter2 = 0 resist_dispel = 3 duration =6*(cstr_lvl) END // go beyond 0 thac0
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 1 target = 1 power = 6 parameter1 = 1 parameter2 = 0 duration = 6*(cstr_lvl) resist_dispel = 3 END //+1 APR
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 145 target = 1 power = 6 parameter1 = 0 parameter2 = 0 duration = 6*(cstr_lvl) resist_dispel = 3 END // forbid casting wizard spells
 			LPF ADD_SPELL_EFFECT INT_VAR  header = i opcode = 145 target = 1 power = 6 parameter1 = 0 parameter2 = 1 duration = 6*(cstr_lvl) resist_dispel = 3 END // forbid casting cleric spells
@@ -1316,12 +1342,26 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
             STRING_SET_EVALUATE %descr_strref% @342	//change description
         //blood rage
         COPY_EXISTING ~SPPR422.SPL~ ~override~ 
-            LPF REPLACE_SPL_STAT_BONUSES END
+            //protect aginst other rages
+            LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR422~ resource = ~BRBRGE~END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR422~ resource = ~SKLDRGE~END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR422~ resource = ~SPPR522~END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR422~ resource = ~SPDWD02~END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR422~ resource = ~SPCL321~END
+            LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR422~ resource = ~LSTBRSK~END            
         //animal rage
         COPY_EXISTING ~SPPR522.SPL~ ~override~
-            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 44 new_opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource = ~ABNSTR4~ END
-            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 18 new_opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource = ~ABNCON4~ END
-            LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 3 END 
+            //protect aginst other rages
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 power = 5 duration = 90 STR_VAR resource = ~BRBRGE~END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 power = 5 duration = 90 STR_VAR resource = ~SKLDRGE~END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 power = 5 duration = 90 STR_VAR resource = ~SPPR422~END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 power = 5 duration = 90 STR_VAR resource = ~SPDWD02~END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 power = 5 duration = 90 STR_VAR resource = ~SPCL321~END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 power = 5 duration = 90 STR_VAR resource = ~LSTBRSK~END
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 44 parameter1 = 4 parameter2 = 0 END
+            LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 18 new_opcode = 10 parameter1 = 4 parameter2 = 0 END
+            
+            LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 3 END //delete berserk
             READ_LONG 0x0050 ~descr_strref~
             STRING_SET_EVALUATE %descr_strref% @343	//change description
     END

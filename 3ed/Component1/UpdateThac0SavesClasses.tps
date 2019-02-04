@@ -2,9 +2,15 @@
 	
     
 	//thaco regularization
-	OUTER_FOR (i=0;i<=20;i=i+1) BEGIN
+	OUTER_FOR (i= (0 - 5);i<=20;i=i+1) BEGIN
 		COPY ~3ed/Core/THAC0/THAC0.SPL~ ~override/THAC0%i%.SPL~
-			LPF ALTER_SPELL_EFFECT INT_VAR parameter1=i END
+            PATCH_IF (i>=0) BEGIN
+                LPF ALTER_SPELL_EFFECT_EX INT_VAR parameter1=i END
+            END
+            ELSE BEGIN//replace with bonus since base thac0 can not go below 0
+                LPF ALTER_SPELL_EFFECT_EX INT_VAR parameter1= (0 - i) parameter2 = 0 timing = 9 END
+                LPF CLONE_EFFECT INT_VAR match_opcode = 54 parameter1= 0 parameter2 = 1 timing = 1 END
+            END
 	END
 	//medium thaco
     OUTER_SET prev_high = 0
@@ -15,8 +21,11 @@
         COPY ~3ed/Core/THAC0/THAC0M.SPL~ ~override/THAC0M%i%.SPL~
 			LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=1 speed=0 END
 				SET r = 20 - (3*i/4)
-                PATCH_IF (r<5) BEGIN
-                    SET r=5
+                PATCH_IF (i<=20) BEGIN
+                    SET r = 20 - (3*i/4)
+                END
+                ELSE BEGIN
+                    SET r = 5 - (3*(i - 20)/8)
                 END
 				SPRINT resource EVALUATE_BUFFER ~THAC0%r%~
 				LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=8 parameter2=105 timing=0 duration=1 STR_VAR resource END // ftr/cleric
@@ -32,9 +41,12 @@
                     LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode=321 target=2 timing=0 duration=1  STR_VAR resource END //remove effects
                 END
                 SET prev_med = r
-        OUTER_SET high_r = 20 - i
-        ACTION_IF (high_r < 0) BEGIN
-            OUTER_SET high_r = 0
+        
+        ACTION_IF (i <= 20) BEGIN
+            OUTER_SET high_r = 20 - i
+        END
+        ELSE BEGIN
+            OUTER_SET high_r = 0 - ((i - 20)/2)
         END
         COPY_EXISTING ~THAC0%high_r%.SPL~   ~override/THAC0H%i%.SPL~
             PATCH_IF (i > 1) BEGIN
@@ -45,9 +57,12 @@
         
 	COPY ~3ed/Core/THAC0/THAC0M.SPL~ ~override/THAC0L%i%.SPL~
         LPF ADD_SPELL_HEADER INT_VAR type=1 location=4 target=5 target_count=0 range=1 required_level=1 speed=0 END
-            SET r = 20 - (i/2)
-            PATCH_IF (r<10) BEGIN
-                SET r=10
+            
+            PATCH_IF (i <= 20) BEGIN
+                SET r = 20 - (i/2)
+            END
+            ELSE BEGIN
+                SET r = 10 - ((i - 20)/4)
             END
             SPRINT resource EVALUATE_BUFFER ~THAC0%r%~
             LPF ADD_SPELL_EFFECT INT_VAR opcode=326 target=2 parameter1=13 parameter2=105 timing=0 duration=1 STR_VAR resource END // mage/thief
@@ -64,7 +79,11 @@
 	//high thaco for swashbuckler
 	LAF ADD_FEATS_LVL INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 feat_name_indexed = 1
 						STR_VAR clab=~CLABTH04\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~
-						feat_name=~THAC0H~ caption=~THACH~ END		
+						feat_name=~THAC0H~ caption=~THACH~ END	
+    //high thac0 for epic level warriors
+    LAF ADD_FEATS_LVL INT_VAR min_level=21 max_level=30 d_level=1 add_at_level1=0 feat_name_indexed = 1 feat_name_index_start = 21
+                    STR_VAR clab=~\(\(CLABFI.+\)\|\(CLABPA.+\)\|\(CLABRN.+\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/APR_H.SPL~
+                    feat_name=~THAC0H~ caption=~THACW~ END	
 	//medium thaco (fighter-*, ranger - clr*  and battle caster, f/m/t, f/m/c)
 	LAF ADD_FEATS_LVL INT_VAR min_level=2 max_level=30 d_level=1 add_at_level1=1 feat_name_indexed = 1
 						STR_VAR clab=~\(\(CLABFI01\)\|\(CLABSO01\)\|\(CLABRN01\)\)\.2DA~ mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~

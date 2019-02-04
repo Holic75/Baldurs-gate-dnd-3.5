@@ -40,7 +40,7 @@ DEFINE_ACTION_FUNCTION ~CREATE_MINOR_SPELLCASTING~
 	
 	COPY ~3ed/Spells/MinorSpellcasting/Templates/GIVE.SPL~ ~override/GV%SpellPrefix%.SPL~
         LPF MAKE_ALWAYS_CASTABLE END
-		FOR (i=1;i<=20;i=i+1) BEGIN
+		FOR (i=1;i<=30;i=i+1) BEGIN
 			LPF ADD_SPELL_HEADER  INT_VAR  type=1 location=4 target=5 target_count=0 range=1 required_level=i speed=1 projectile=1 END
 			READ_SHORT 0x68 n_headers //number of extended_headers
 			
@@ -52,21 +52,37 @@ DEFINE_ACTION_FUNCTION ~CREATE_MINOR_SPELLCASTING~
 			END	
 			
 			FOR (j=7;j<=i;j=j+4) BEGIN //2nd lvl
-                SPRINT resource EVALUATE_BUFFER ~%SpellPrefix%L2~
-				LPF ADD_SPELL_EFFECT INT_VAR header=n_headers opcode=171 power=10 target=2 timing=0 duration=1 STR_VAR resource END 				
+                PATCH_IF (j<20) BEGIN
+                    SPRINT resource EVALUATE_BUFFER ~%SpellPrefix%L2~
+                    LPF ADD_SPELL_EFFECT INT_VAR header=n_headers opcode=171 power=10 target=2 timing=0 duration=1 STR_VAR resource END 				
+                END
 			END	
 			
 			FOR (j=10;j<=i;j=j+4) BEGIN //3rd lvl
-                SPRINT resource EVALUATE_BUFFER ~%SpellPrefix%L3~
-				LPF ADD_SPELL_EFFECT INT_VAR header=n_headers opcode=171 power=10 target=2 timing=0 duration=1 STR_VAR resource END 				
+                PATCH_IF (j<20) BEGIN
+                    SPRINT resource EVALUATE_BUFFER ~%SpellPrefix%L3~
+                    LPF ADD_SPELL_EFFECT INT_VAR header=n_headers opcode=171 power=10 target=2 timing=0 duration=1 STR_VAR resource END 				
+                END
 			END	
 			
 			FOR (j=13;j<=i;j=j+4) BEGIN //4th lvl
-                SPRINT resource EVALUATE_BUFFER ~%SpellPrefix%L4~
-				LPF ADD_SPELL_EFFECT INT_VAR header=n_headers opcode=171 power=10 target=2 timing=0 duration=1 STR_VAR resource END 				
+                PATCH_IF (j<20) BEGIN
+                    SPRINT resource EVALUATE_BUFFER ~%SpellPrefix%L4~
+                    LPF ADD_SPELL_EFFECT INT_VAR header=n_headers opcode=171 power=10 target=2 timing=0 duration=1 STR_VAR resource END 				
+                END
 			END	
 			
-			PATCH_IF (i=20) BEGIN
+			PATCH_IF (i == 20) BEGIN
+                SPRINT resource EVALUATE_BUFFER ~%SpellPrefix%L4~
+				LPF ADD_SPELL_EFFECT INT_VAR header=n_headers opcode=171 power=10 target=2 timing=0 duration=1 STR_VAR resource END
+			END
+            
+            PATCH_IF (i == 24) BEGIN
+                SPRINT resource EVALUATE_BUFFER ~%SpellPrefix%L3~
+				LPF ADD_SPELL_EFFECT INT_VAR header=n_headers opcode=171 power=10 target=2 timing=0 duration=1 STR_VAR resource END
+			END
+            
+            PATCH_IF (i == 28) BEGIN
                 SPRINT resource EVALUATE_BUFFER ~%SpellPrefix%L4~
 				LPF ADD_SPELL_EFFECT INT_VAR header=n_headers opcode=171 power=10 target=2 timing=0 duration=1 STR_VAR resource END
 			END
@@ -148,7 +164,7 @@ DEFINE_ACTION_FUNCTION ~CREATE_MINOR_SPELLCASTING~
 	
     OUTER_SPRINT feat_name EVALUATE_BUFFER ~GV%SpellPrefix%3~
     OUTER_SPRINT caption EVALUATE_BUFFER ~SP%SpellPrefix%3~  
-	LAF ADD_FEATS_LVL INT_VAR min_level=10 max_level=18 d_level=4 add_at_level1=0 
+	LAF ADD_FEATS_MASK INT_VAR mask=0b100000100010001000000000
         STR_VAR clab mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name caption END	
     OUTER_SPRINT feat_name EVALUATE_BUFFER ~BN%SpellPrefix%3~
     OUTER_SPRINT caption EVALUATE_BUFFER ~SPB%SpellPrefix%3~     
@@ -157,7 +173,7 @@ DEFINE_ACTION_FUNCTION ~CREATE_MINOR_SPELLCASTING~
 	
     OUTER_SPRINT feat_name EVALUATE_BUFFER ~GV%SpellPrefix%4~
     OUTER_SPRINT caption EVALUATE_BUFFER ~SP%SpellPrefix%4~   
-	LAF ADD_FEATS_MASK INT_VAR mask=0b10010001000000000000 indexed = 1 
+	LAF ADD_FEATS_MASK INT_VAR mask=0b1000000010010001000000000000 
        STR_VAR clab mask_file=~3ed/Feats/FeatAttribution/SFTCREAL.SPL~ feat_name caption END
     OUTER_SPRINT feat_name EVALUATE_BUFFER ~BN%SpellPrefix%4~   
     OUTER_SPRINT caption EVALUATE_BUFFER ~SPB%SpellPrefix%4~ 

@@ -15,15 +15,6 @@ IF
 THEN
 	RESPONSE #100
 		ActionOverride(Player%player_id%,ReallyForceSpellRes("GV_SDNC",Player%player_id%)) //shamanic dance uses
-		Continue()
-END
-
-
-IF
-	Class(Player%player_id%,SHAMAN)
-    !ButtonDisabled(BUTTON_BATTLESONG)
-THEN
-	RESPONSE #100
-		ApplySpellRES("DSBLDNC",Player%player_id%) //disable dance
+        ApplySpellRES("DSBLDNC",Player%player_id%) //disable dance
 		Continue()
 END

@@ -17,7 +17,7 @@
 
 
 
-# Baldurs-gate-dnd-3.5 v2.16
+# Baldurs-gate-dnd-3.5 v2.16.1
 This is a WeiDu mod for BG:Enhanced edition and BG2:Enhanced edition that changes 2ed ADnD rules to DnD 3.5 with some elements taken from Pathfinder.  
 It changes game mechanics (i.e. classes, spells, abilities, etc...) to that of 3.5 edition (to the extent that game engine allows).
 
@@ -804,6 +804,7 @@ All hostile living creatures suffer 1d6 points of magical damage per Channel Ene
 – At 1st level chooses two domains that grant her access to additional spells and abilities, normally not available to Clerics of other domains.  
 – Gains access to the following epic spells: Globe of Blades (at level 19), Mass Raise Dead (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Implosion (at level 23) and Summon Deva (at level 24).  
 – Gets one bonus feat at levels 26 and 29.  
+– Receives one Epic spell slot at level 22 and every 2 levels thereafter, which can be used to memorize a spell of any level.    
 – Hit Die: d8  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -888,6 +889,7 @@ CLASS FEATURES:
 – 21th level: May call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.  
 – Gains access to the following epic spells: Elemental Summoning (at level 19), Aura of Flaming Death (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Greater Elemental Summoning (at level 23) and Nature's Avatar (at level 24).  
 – Gets one bonus feat at levels 26 and 29.  
+– Receives one Epic spell slot at level 22 and every 2 levels thereafter, which can be used to memorize a spell of any level.   
 – Alignment restricted to true neutral.  
 – Hit Die: d8  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
@@ -931,6 +933,7 @@ CLASS FEATURES:
 – May cast arcane spells.  
 – Acquires 2 scrolls with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Gains access to the following epic spells: Comet (at level 21), Energy Blades (at level 22), Dragon's Breath (at level 23) and Summon Planetar (at level 24).  
+– Receives one Epic spell slot at level 22 and every 2 levels thereafter, which can be used to memorize a spell of any level.   
 – Hit Die: d4  
 – Low THAC0/APR progression, High Savingthrows vs. Spell
 
@@ -1129,6 +1132,7 @@ A bard of 20th level or higher can use her performance to cause one enemy to die
 Song of Requiem
 A bard of 24th level or higher can use this epic performance which drains the very life force of the bard's enemies causing them to suffer 1 point of damage per 2 levels of bard per round for next 4 rounds.
 ```
+– Receives one Epic spell slot at level 23 and every 3 levels thereafter, which can be used to memorize a spell of any level.  
 – Alignment restricted to any neutral.  
 – Hit Die: d6
 
@@ -1210,6 +1214,7 @@ CLASS FEATURES:
 – May not scribe spells into their spellbooks as Mages do. Instead, Sorcerers learn a small number of spells at each level, which they can cast daily without memorization.  
 – At 1st level chooses a bloodline which grants access to 9 spells (1 per spell level) in addition to those gained normally.  
 – Gains access to the following epic spells: Comet (at level 21), Energy Blades (at level 22), Dragon's Breath (at level 23) and Summon Planetar (at level 24).  
+– Receives one Epic spell slot at level 22 and every 2 levels thereafter, which can be used to memorize a spell of any level.  
 – Hit Die: d4  
 – Low THAC0/APR progression, High Savingthrows vs. Spell
 
@@ -1217,9 +1222,9 @@ CLASS FEATURES:
 Advantages:  
 – May wear light armor.  
 – May equip bucklers.
-– Receives one bonus Feat at level 5, 10, 15, 20, 22 and 28 (can choose any feat, not only magic ones)  
+– Receives one bonus Feat at level 5, 10, 15, 20, 22, 25 and 28 (can choose any feat, not only magic ones)  
 – May use the following weapons: long sword, short sword, katana, scimitar, dagger, club, quarterstaff, crossbow, shortbow, dart, sling.    
-– At first level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.  
+– At first level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor.    
 – Hit Die: d6  
 – Medium THAC0/APR progression, High Savingthrows vs. Death and vs. Polymorph  
 
@@ -1227,6 +1232,7 @@ Disadvantages:
 – Does not gain access to epic spells.  
 – May not choose bloodline and thus may not receive bonus bloodline spells.   
 – May cast one fewer spell per level per day.  
+– Receives Epic spell slots only at level 23 and every 3 levels thereafter.  
 
 
 ### MONK
@@ -1343,6 +1349,7 @@ Spirit will do its best to protect the Shaman but is not controlled directly.
 - Favored of Spirits: Starting from level 18 Shaman gains a contingency effect that activates Heal spell if her hit-points drop below 25%. This ability works once per day.   
 – Gains access to the following epic spells: Elemental Summoning (at level 19), Aura of Flaming Death (at level 20), Storm of Vengeance (at level 21), Energy Blades (at level 22), Greater Elemental Summoning (at level 23) and Ethereal Retribution (at level 24).  
 – Gets one bonus feat at levels 26 and 29.  
+– Receives one Epic spell slot at level 22 and every 2 levels thereafter, which can be used to memorize a spell of any level.  
 – Alignment restricted to neutral good, true neutral, and neutral evil.  
 – Ineligible for any stronghold. (This affects only the Shadows of Amn campaign in Baldur's Gate II: Enhanced Edition.)  
 – Hit Die: d8  
@@ -1383,6 +1390,7 @@ CLASS FEATURES:
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 4 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 ```
 – At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
+– Receives one Epic spell slot at level 23 and every 3 levels thereafter, which can be used to memorize a spell of any level.  
 – Hit Die: d9  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -1404,6 +1412,7 @@ SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice 
 RESIST MAGIC:
 This ability allows the warrior to temporarily tap a great inner strength and fight off the effects of malevolent magic. For 4 rounds, the warrior's Magic Resistance is set to 50%. This is not cumulative with other forms of Magic Resistance, so if the warrior already has 50% Magic Resistance or greater, the ability is useless.
 ```
+– Receives one Epic spell slot at level 23 and every 3 levels thereafter, which can be used to memorize a spell of any level.  
 – Hit Die: d7  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell  
 
@@ -1420,6 +1429,7 @@ CLASS FEATURES:
 – May call for an animal companion who fights for her side.  
 – Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage resistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.  
 – Gets one bonus feat at levels 22 and 28.  
+– Receives one Epic spell slot at level 23 and every 3 levels thereafter, which can be used to memorize a spell of any level.  
 – Hit Die: d9  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -1445,6 +1455,7 @@ EVASION: this passive ability allows the target of an area attack to leap or twi
 – May call for an animal companion who fights for her side.  
 – Starting from level 21 may call for epic animal companion who in addition receives 20% magic and elemental damage résistance, immunity to all mind-effecting spells and attacks as if with +4 weapon.  
 – Gets one bonus feat at levels 22, 25 and 28.  
+– Receives one Epic spell slot at level 23 and every 3 levels thereafter, which can be used to memorize a spell of any level.  
 – Alignment restricted to good.  
 – Hit Die: d9  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph, vs. Breath Weapon, vs. Wand and vs. Spell
@@ -1464,6 +1475,7 @@ CLASS FEATURES:
 – Gets one bonus feat at levels 26 and 29.  
 – Gains access to the following epic wizard spells: Comet (at level 22), Energy Blades (at level 24), Dragon's Breath (at level 26) and Summon Planetar (at level 28).  
 – Gains access to the following epic priest spells: Globe of Blades (at level 20), Mass Raise Dead (at level 21), Storm of Vengeance (at level 23), Implosion (at level 25) and Summon Deva (at level 27).  
+– Receives one Epic spell slot at level 22 and every 2 levels thereafter, which can be used to memorize a spell of any level.  
 – Hit Die: d6  
 – Low THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell
 
@@ -1506,7 +1518,8 @@ CLASS FEATURES:
 – May use the Set Snare ability once per day. Gains one use at levels 1, 5, 10, 15 and 20.  
 – Acquires two scrolls with any arcane spell up to maximum level she can cast at every level up starting from level 2.  
 – Gets one bonus feat at levels 10, 20, 26 and 29. 
-– Gains access to the following epic spells: Comet (at level 22), Energy Blades (at level 24), Dragon's Breath (at level 26) and Summon Planetar (at level 28). 
+– Gains access to the following epic spells: Comet (at level 22), Energy Blades (at level 24), Dragon's Breath (at level 26) and Summon Planetar (at level 28).  
+– Receives one Epic spell slot at level 22 and every 2 levels thereafter, which can be used to memorize a spell of any level.  
 – Hit Die: d5  
 – Low THAC0/APR progression, High Savingthrows vs. Breath Weapon, vs. Wand and vs. Spell  
 NOTE: Gnomes can choose this hybrid class, but become Illusionist/Thieves by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.
@@ -1539,6 +1552,7 @@ SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice 
 ```
 – Gets one bonus feat at levels 8, 14, 20, 22, 24, 26 and 28.  
 – At 1st level gets Armored Arcana: Light Armor Casting passive feat which removes chance of spell failure while casting spells in light armor. At level 6 receives Armored Arcana: Chain Mail Casting, and finally at level 12 Armored Arcana: Splint Mail Casting.  
+– Receives one Epic spell slot at level 22 and every 2 levels thereafter, which can be used to memorize a spell of any level.  
 – Hit Die: d6  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph vs. Breath Weapon, vs. Wand and vs. Spell  
 NOTE: Gnomes can choose this class, but become Fighter/Illusionist/Thieves by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.
@@ -1562,6 +1576,7 @@ CLASS FEATURES:
 SPONTANEOUS BATTLE CASTING: When this ability is activated caster can sacrifice any  memorized spell and channel its energy into her weapon(s) and armor to get +1 on to hit and damage rolls per 2 levels of sacrificed spell rounded up and +1 AC bonus per 2 levels of sacrificed spell rounded down for 4 rounds. Ability lasts for 1 round, or until the first spell is sacrificed.
 ```
 – At 1st level chooses one domain that grants her access to additional spells and abilities, normally not available to Clerics of other domains.  
+– Receives one Epic spell slot at level 22 and every 2 levels thereafter, which can be used to memorize a spell of any level.  
 – Hit Die: d7  
 – Medium THAC0/APR progression, High Savingthrows vs. Death, vs. Polymorph and vs. Spell  
 NOTE: Gnomes can choose this class, but become Fighter/Illusionist/Clerics by default. Gnomes are the only race that can combine a specialist Mage class in a hybrid class.
@@ -1615,6 +1630,16 @@ Lvl| High | Medium | Low |
 18| 2 /+1.5|  7 /+1  | 11 /+0.5
 19| 1 /+1.5|  6 /+1  | 11 /+0.5
 20| 0 /+1.5|  5 /+1  | 10 /+0.5
+21| 0 /+1.5|  5 /+1  | 10 /+0.5
+22|-1 /+1.5|  5 /+1  | 10 /+0.5
+23|-1 /+1.5|  4 /+1  | 10 /+0.5
+24|-2 /+1.5|  4 /+1  |  9 /+0.5
+25|-2 /+1.5|  4 /+1  |  9 /+0.5
+26|-3 /+1.5|  3 /+1  |  9 /+0.5
+27|-3 /+1.5|  3 /+1  |  9 /+0.5
+28|-4 /+1.5|  2 /+1  |  8 /+0.5
+29|-4 /+1.5|  2 /+1  |  8 /+0.5
+30|-5 /+1.5|  2 /+1  |  8 /+0.5
 
 ### Sneak Attack Progression per level (number of d6 dices)
 
@@ -1674,141 +1699,20 @@ Lvl\Spell level | 1 | 2 | 3 | 4 |
 18|4|3|3|2
 19|4|4|3|2
 20|4|4|3|3
+21|4|4|3|3
+22|4|4|3|3
+23|4|4|3|3
+24|4|4|4|3
+25|4|4|4|3
+26|4|4|4|3
+27|4|4|4|3
+28|4|4|4|4
+29|4|4|4|4
+30|4|4|4|4
 
 ### Bard spell slots per day
 
-Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 |
---- | --- | --- | --- |--- |--- |---
-1| 1|0|0|0|0|0
-2| 2|0|0|0|0|0
-3| 2|0|0|0|0|0
-4| 3|1|0|0|0|0
-5| 3|2|0|0|0|0
-6| 3|2|0|0|0|0
-7| 4|3|1|0|0|0
-8| 4|3|2|0|0|0
-9| 4|3|2|0|0|0
-10|4|4|3|1|0|0
-11|4|4|3|2|0|0
-12|4|4|3|2|0|0
-13|4|4|4|3|1|0
-14|4|4|4|3|2|0
-15|4|4|4|3|2|0
-16|4|4|4|4|3|1
-17|4|4|4|4|3|2
-18|4|4|4|4|3|2
-19|4|4|4|4|4|3
-20|4|4|4|4|4|4
-
-
-
-### Cleric and Druid spell slots per day
-
-Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
---- | --- | --- | --- |--- |--- |--- |---
-1| 1|0|0|0|0|0|0
-2| 2|0|0|0|0|0|0
-3| 2|1|0|0|0|0|0
-4| 3|2|0|0|0|0|0
-5| 3|2|1|0|0|0|0
-6| 3|3|2|0|0|0|0
-7| 4|3|2|1|0|0|0
-8| 4|3|3|2|0|0|0
-9| 4|4|3|2|1|0|0
-10|4|4|3|3|2|0|0
-11|5|4|4|3|2|1|0
-12|5|4|4|3|3|2|0
-13|5|5|4|4|3|2|1
-14|5|5|4|4|3|3|2
-15|5|5|5|4|4|3|3
-16|6|5|5|4|4|4|4
-17|6|5|5|5|5|5|4
-18|6|6|6|6|5|5|4
-19|6|6|6|6|6|5|5
-20|6|6|6|6|6|6|6
-
-### Mage spell slots per day
-
-Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
---- | --- | --- | --- |--- |--- |--- |--- |--- |---
-1| 1|0|0|0|0|0|0|0|0
-2| 2|0|0|0|0|0|0|0|0
-3| 2|1|0|0|0|0|0|0|0
-4| 3|2|0|0|0|0|0|0|0
-5| 3|2|1|0|0|0|0|0|0
-6| 3|3|2|0|0|0|0|0|0
-7| 4|3|2|1|0|0|0|0|0
-8| 4|3|3|2|0|0|0|0|0
-9| 4|4|3|2|1|0|0|0|0
-10|4|4|3|3|2|0|0|0|0
-11|4|4|4|3|2|1|0|0|0
-12|4|4|4|3|3|2|0|0|0
-13|4|4|4|4|3|2|1|0|0
-14|4|4|4|4|3|3|2|0|0
-15|4|4|4|4|4|3|2|1|0
-16|4|4|4|4|4|3|3|2|0
-17|4|4|4|4|4|4|3|2|1
-18|4|4|4|4|4|4|3|3|2
-19|4|4|4|4|4|4|4|3|3
-20|4|4|4|4|4|4|4|4|4
-
-Note: Specialist Mages may cast one more spell per level per day
-
-### Mage/Thief spell slots per day
-
-Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
---- | --- | --- | --- |--- |--- |--- |--- |--- |---
-1 |0|0|0|0|0|0|0|0|0
-2 |1|0|0|0|0|0|0|0|0
-3 |1|0|0|0|0|0|0|0|0
-4 |2|1|0|0|0|0|0|0|0
-5 |2|1|0|0|0|0|0|0|0
-6 |2|2|1|0|0|0|0|0|0
-7 |3|2|1|0|0|0|0|0|0
-8 |3|2|2|1|0|0|0|0|0
-9 |3|3|2|1|0|0|0|0|0
-10|3|3|2|2|1|0|0|0|0
-11|3|3|3|2|1|0|0|0|0
-12|3|3|3|2|2|1|0|0|0
-13|3|3|3|3|2|1|0|0|0
-14|3|3|3|3|2|2|1|0|0
-15|3|3|3|3|3|2|1|0|0
-16|3|3|3|3|3|2|2|1|0
-17|3|3|3|3|3|3|2|1|0
-18|3|3|3|3|3|3|2|2|1
-19|3|3|3|3|3|3|3|2|2
-20|3|3|3|3|3|3|3|3|3
-
-Note: Specialist Mages may cast one more spell per level per day
-
-### Fighter/Cleric, Fighter/Druid, Cleric/Ranger, Cleric/Thief, Priest of Lathander, Priest of Tyr and Priest of Helm spell slots per day
-
-Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
---- | --- | --- | --- |--- |--- |--- |---
-1| 0|0|0|0|0|0|0
-2| 1|0|0|0|0|0|0
-3| 1|0|0|0|0|0|0
-4| 2|1|0|0|0|0|0
-5| 2|1|0|0|0|0|0
-6| 2|2|1|0|0|0|0
-7| 2|2|1|0|0|0|0
-8| 2|2|2|1|0|0|0
-9| 2|2|2|1|0|0|0
-10|2|2|2|2|1|0|0
-11|3|2|2|2|1|0|0
-12|3|2|2|2|2|1|0
-13|3|3|2|2|2|1|0
-14|3|3|2|2|2|2|1
-15|3|3|3|2|2|2|2
-16|4|3|3|2|2|2|2
-17|4|3|3|3|3|3|2
-18|4|4|4|4|3|3|2
-19|4|4|4|4|4|3|3
-20|4|4|4|4|4|4|4
-
-### Fighter/Mage spell slots per day
-
-Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | E |
 --- | --- | --- | --- |--- |--- |--- |---
 1| 1|0|0|0|0|0|0
 2| 2|0|0|0|0|0|0
@@ -1828,130 +1732,418 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 16|4|4|4|4|3|1|0
 17|4|4|4|4|3|2|0
 18|4|4|4|4|3|2|0
-19|4|4|4|4|4|3|1
-20|4|4|4|4|4|4|2
-21|4|4|4|4|4|4|2
-22|4|4|4|4|4|4|3
-23|4|4|4|4|4|4|4
+19|4|4|4|4|4|3|0
+20|4|4|4|4|4|4|0
+21|4|4|4|4|4|4|0
+22|4|4|4|4|4|4|0
+23|4|4|4|4|4|4|1
+24|4|4|4|4|4|4|1
+25|4|4|4|4|4|4|1
+26|4|4|4|4|4|4|2
+27|4|4|4|4|4|4|2
+28|4|4|4|4|4|4|2
+29|4|4|4|4|4|4|3
+30|4|4|4|4|4|4|3
+
+
+### Cleric and Druid spell slots per day
+
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | E |
+--- | --- | --- | --- |--- |--- |--- |--- |---
+1| 1|0|0|0|0|0|0|0
+2| 2|0|0|0|0|0|0|0
+3| 2|1|0|0|0|0|0|0
+4| 3|2|0|0|0|0|0|0
+5| 3|2|1|0|0|0|0|0
+6| 3|3|2|0|0|0|0|0
+7| 4|3|2|1|0|0|0|0
+8| 4|3|3|2|0|0|0|0
+9| 4|4|3|2|1|0|0|0
+10|4|4|3|3|2|0|0|0
+11|5|4|4|3|2|1|0|0
+12|5|4|4|3|3|2|0|0
+13|5|5|4|4|3|2|1|0
+14|5|5|4|4|3|3|2|0
+15|5|5|5|4|4|3|3|0
+16|6|5|5|4|4|4|4|0
+17|6|5|5|5|5|5|4|0
+18|6|6|6|6|5|5|4|0
+19|6|6|6|6|6|5|5|0
+20|6|6|6|6|6|6|6|0
+21|6|6|6|6|6|6|6|0
+22|6|6|6|6|6|6|6|1
+23|6|6|6|6|6|6|6|1
+24|6|6|6|6|6|6|6|2
+25|6|6|6|6|6|6|6|2
+26|6|6|6|6|6|6|6|3
+27|6|6|6|6|6|6|6|3
+28|6|6|6|6|6|6|6|4
+29|6|6|6|6|6|6|6|4
+30|6|6|6|6|6|6|6|5
+
+### Mage spell slots per day
+
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | E |
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |---
+1| 1|0|0|0|0|0|0|0|0|0
+2| 2|0|0|0|0|0|0|0|0|0
+3| 2|1|0|0|0|0|0|0|0|0
+4| 3|2|0|0|0|0|0|0|0|0
+5| 3|2|1|0|0|0|0|0|0|0
+6| 3|3|2|0|0|0|0|0|0|0
+7| 4|3|2|1|0|0|0|0|0|0
+8| 4|3|3|2|0|0|0|0|0|0
+9| 4|4|3|2|1|0|0|0|0|0
+10|4|4|3|3|2|0|0|0|0|0
+11|4|4|4|3|2|1|0|0|0|0
+12|4|4|4|3|3|2|0|0|0|0
+13|4|4|4|4|3|2|1|0|0|0
+14|4|4|4|4|3|3|2|0|0|0
+15|4|4|4|4|4|3|2|1|0|0
+16|4|4|4|4|4|3|3|2|0|0
+17|4|4|4|4|4|4|3|2|1|0
+18|4|4|4|4|4|4|3|3|2|0
+19|4|4|4|4|4|4|4|3|3|0
+20|4|4|4|4|4|4|4|4|4|0
+21|4|4|4|4|4|4|4|4|4|0
+22|4|4|4|4|4|4|4|4|4|1
+23|4|4|4|4|4|4|4|4|4|1
+24|4|4|4|4|4|4|4|4|4|2
+25|4|4|4|4|4|4|4|4|4|2
+26|4|4|4|4|4|4|4|4|4|3
+27|4|4|4|4|4|4|4|4|4|3
+28|4|4|4|4|4|4|4|4|4|4
+29|4|4|4|4|4|4|4|4|4|4
+30|4|4|4|4|4|4|4|4|4|5
+
+Note: Specialist Mages may cast one more spell per level per day
+
+### Mage/Thief spell slots per day
+
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | E |
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |---
+1 |0|0|0|0|0|0|0|0|0|0
+2 |1|0|0|0|0|0|0|0|0|0
+3 |1|0|0|0|0|0|0|0|0|0
+4 |2|1|0|0|0|0|0|0|0|0
+5 |2|1|0|0|0|0|0|0|0|0
+6 |2|2|1|0|0|0|0|0|0|0
+7 |3|2|1|0|0|0|0|0|0|0
+8 |3|2|2|1|0|0|0|0|0|0
+9 |3|3|2|1|0|0|0|0|0|0
+10|3|3|2|2|1|0|0|0|0|0
+11|3|3|3|2|1|0|0|0|0|0
+12|3|3|3|2|2|1|0|0|0|0
+13|3|3|3|3|2|1|0|0|0|0
+14|3|3|3|3|2|2|1|0|0|0
+15|3|3|3|3|3|2|1|0|0|0
+16|3|3|3|3|3|2|2|1|0|0
+17|3|3|3|3|3|3|2|1|0|0
+18|3|3|3|3|3|3|2|2|1|0
+19|3|3|3|3|3|3|3|2|2|0
+20|3|3|3|3|3|3|3|3|3|0
+21|3|3|3|3|3|3|3|3|3|0
+22|3|3|3|3|3|3|3|3|3|0
+23|3|3|3|3|3|3|3|3|3|1
+24|3|3|3|3|3|3|3|3|3|1
+25|3|3|3|3|3|3|3|3|3|1
+26|3|3|3|3|3|3|3|3|3|2
+27|3|3|3|3|3|3|3|3|3|2
+28|3|3|3|3|3|3|3|3|3|2
+29|3|3|3|3|3|3|3|3|3|3
+30|3|3|3|3|3|3|3|3|3|3
+
+Note: Specialist Mages may cast one more spell per level per day
+
+### Priest of Lathander, Priest of Tyr and Priest of Helm spell slots per day
+
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | E |
+--- | --- | --- | --- |--- |--- |--- |--- |---
+1| 0|0|0|0|0|0|0|0
+2| 1|0|0|0|0|0|0|0
+3| 1|0|0|0|0|0|0|0
+4| 2|1|0|0|0|0|0|0
+5| 2|1|0|0|0|0|0|0
+6| 2|2|1|0|0|0|0|0
+7| 2|2|1|0|0|0|0|0
+8| 2|2|2|1|0|0|0|0
+9| 2|2|2|1|0|0|0|0
+10|2|2|2|2|1|0|0|0
+11|3|2|2|2|1|0|0|0
+12|3|2|2|2|2|1|0|0
+13|3|3|2|2|2|1|0|0
+14|3|3|2|2|2|2|1|0
+15|3|3|3|2|2|2|2|0
+16|4|3|3|2|2|2|2|0
+17|4|3|3|3|3|3|2|0
+18|4|4|4|4|3|3|2|0
+19|4|4|4|4|4|3|3|0
+20|4|4|4|4|4|4|4|0
+21|4|4|4|4|4|4|4|0
+22|4|4|4|4|4|4|4|1
+23|4|4|4|4|4|4|4|1
+24|4|4|4|4|4|4|4|2
+25|4|4|4|4|4|4|4|2
+26|4|4|4|4|4|4|4|3
+27|4|4|4|4|4|4|4|3
+28|4|4|4|4|4|4|4|4
+29|4|4|4|4|4|4|4|4
+30|4|4|4|4|4|4|4|5
+
+### Fighter/Cleric, Fighter/Druid, Cleric/Ranger and Cleric/Thief spell slots per day
+
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | E |
+--- | --- | --- | --- |--- |--- |--- |--- |---
+1| 0|0|0|0|0|0|0|0
+2| 1|0|0|0|0|0|0|0
+3| 1|0|0|0|0|0|0|0
+4| 2|1|0|0|0|0|0|0
+5| 2|1|0|0|0|0|0|0
+6| 2|2|1|0|0|0|0|0
+7| 2|2|1|0|0|0|0|0
+8| 2|2|2|1|0|0|0|0
+9| 2|2|2|1|0|0|0|0
+10|2|2|2|2|1|0|0|0
+11|3|2|2|2|1|0|0|0
+12|3|2|2|2|2|1|0|0
+13|3|3|2|2|2|1|0|0
+14|3|3|2|2|2|2|1|0
+15|3|3|3|2|2|2|2|0
+16|4|3|3|2|2|2|2|0
+17|4|3|3|3|3|3|2|0
+18|4|4|4|4|3|3|2|0
+19|4|4|4|4|4|3|3|0
+20|4|4|4|4|4|4|4|0
+21|4|4|4|4|4|4|4|0
+22|4|4|4|4|4|4|4|0
+23|4|4|4|4|4|4|4|1
+24|4|4|4|4|4|4|4|1
+25|4|4|4|4|4|4|4|1
+26|4|4|4|4|4|4|4|2
+27|4|4|4|4|4|4|4|2
+28|4|4|4|4|4|4|4|2
+29|4|4|4|4|4|4|4|3
+30|4|4|4|4|4|4|4|3
+
+
+### Fighter/Mage spell slots per day
+
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | E |
+--- | --- | --- | --- |--- |--- |--- |--- |---
+1| 1|0|0|0|0|0|0|0
+2| 2|0|0|0|0|0|0|0
+3| 2|0|0|0|0|0|0|0
+4| 3|1|0|0|0|0|0|0
+5| 3|2|0|0|0|0|0|0
+6| 3|2|0|0|0|0|0|0
+7| 4|3|1|0|0|0|0|0
+8| 4|3|2|0|0|0|0|0
+9| 4|3|2|0|0|0|0|0
+10|4|4|3|1|0|0|0|0
+11|4|4|3|2|0|0|0|0
+12|4|4|3|2|0|0|0|0
+13|4|4|4|3|1|0|0|0
+14|4|4|4|3|2|0|0|0
+15|4|4|4|3|2|0|0|0
+16|4|4|4|4|3|1|0|0
+17|4|4|4|4|3|2|0|0
+18|4|4|4|4|3|2|0|0
+19|4|4|4|4|4|3|1|0
+20|4|4|4|4|4|4|2|0
+21|4|4|4|4|4|4|3|0
+22|4|4|4|4|4|4|4|0
+23|4|4|4|4|4|4|4|1
+24|4|4|4|4|4|4|4|1
+25|4|4|4|4|4|4|4|1
+26|4|4|4|4|4|4|4|2
+27|4|4|4|4|4|4|4|2
+28|4|4|4|4|4|4|4|2
+29|4|4|4|4|4|4|4|3
+30|4|4|4|4|4|4|4|3
 
 Note: Specialist Mages can cast one spell more per level per day.
 
 ### Cleric/Mage (arcane, divine) spell slots per day
 
-Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
---- | --- | --- | --- |--- |--- |--- |--- |--- |---
-1 |0|0|0|0|0|0|0|0|0
-2 |1, 1|0|0|0|0|0|0|0|0
-3 |1, 1|0|0|0|0|0|0|0|0
-4 |1, 1|1, 1|0|0|0|0|0|0|0
-5 |1, 1|1, 1|0|0|0|0|0|0|0
-6 |1, 1|1, 1|1, 1|0|0|0|0|0|0
-7 |2, 2|1, 1|1, 1|0|0|0|0|0|0
-8 |2, 2|1, 1|1, 1|1, 1|0|0|0|0|0
-9 |2, 2|2, 2|1, 1|1, 1|0|0|0|0|0
-10|2, 2|2, 2|1, 1|1, 1|1, 1|0|0|0|0
-11|2, 2|2, 2|2, 2|1, 1|1, 1|0|0|0|0
-12|2, 2|2, 2|2, 2|1, 1|1, 1|1, 1|0|0|0
-13|2, 2|2, 2|2, 2|2, 2|1, 1|1, 1|0|0|0
-14|2, 2|2, 2|2, 2|2, 2|1, 1|1, 1|1, 1|0|0
-15|2, 2|2, 2|2, 2|2, 2|2, 2|1, 1|1, 1|0|0
-16|2, 3|2, 2|2, 2|2, 2|2, 2|1, 1|1, 1|1|0
-17|2, 3|2, 2|2, 2|2, 2|2, 2|2, 2|1, 1|1|0
-18|2, 3|2, 3|2, 3|2, 3|2, 2|2, 2|1, 1|1|1
-19|2, 3|2, 3|2, 3|2, 3|2, 3|2, 2|2, 2|1|2
-20|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2|3
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | E |
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |---
+1 |0|0|0|0|0|0|0|0|0|0
+2 |1, 1|0|0|0|0|0|0|0|0|0
+3 |1, 1|0|0|0|0|0|0|0|0|0
+4 |1, 1|1, 1|0|0|0|0|0|0|0|0
+5 |1, 1|1, 1|0|0|0|0|0|0|0|0
+6 |1, 1|1, 1|1, 1|0|0|0|0|0|0|0
+7 |2, 2|1, 1|1, 1|0|0|0|0|0|0|0
+8 |2, 2|1, 1|1, 1|1, 1|0|0|0|0|0|0
+9 |2, 2|2, 2|1, 1|1, 1|0|0|0|0|0|0
+10|2, 2|2, 2|1, 1|1, 1|1, 1|0|0|0|0|0
+11|2, 2|2, 2|2, 2|1, 1|1, 1|0|0|0|0|0
+12|2, 2|2, 2|2, 2|1, 1|1, 1|1, 1|0|0|0|0
+13|2, 2|2, 2|2, 2|2, 2|1, 1|1, 1|0|0|0|0
+14|2, 2|2, 2|2, 2|2, 2|1, 1|1, 1|1, 1|0|0|0
+15|2, 2|2, 2|2, 2|2, 2|2, 2|1, 1|1, 1|0|0|0
+16|2, 3|2, 2|2, 2|2, 2|2, 2|1, 1|1, 1|1|0|0
+17|2, 3|2, 2|2, 2|2, 2|2, 2|2, 2|1, 1|1|0|0
+18|2, 3|2, 3|2, 3|2, 3|2, 2|2, 2|1, 1|1|1|0
+19|2, 3|2, 3|2, 3|2, 3|2, 3|2, 2|2, 2|1|2|0
+20|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|0
+21|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|0
+22|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|1
+23|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|1
+24|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|2
+25|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|2
+26|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|3
+27|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|3
+28|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|4
+29|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|4
+30|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|5
 
 Note: Specialist Mages can cast one spell more per level per day.
 
 
 ### Fighter/Mage/Thief spell slots per day
 
-Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
---- | --- | --- | --- |--- |--- |--- |---
-1 |0|0|0|0|0|0|0
-2 |1|0|0|0|0|0|0
-3 |1|0|0|0|0|0|0
-4 |2|0|0|0|0|0|0
-5 |2|1|0|0|0|0|0
-6 |2|1|0|0|0|0|0
-7 |3|2|0|0|0|0|0
-8 |3|2|1|0|0|0|0
-9 |3|2|1|0|0|0|0
-10|3|3|2|0|0|0|0
-11|3|3|2|1|0|0|0
-12|3|3|2|1|0|0|0
-13|3|3|3|2|0|0|0
-14|3|3|3|2|1|0|0
-15|3|3|3|2|1|0|0
-16|3|3|3|3|2|0|0
-17|3|3|3|3|2|1|0
-18|3|3|3|3|2|1|0
-19|3|3|3|3|3|2|0
-20|3|3|3|3|3|3|1
-21|3|3|3|3|3|3|1
-22|3|3|3|3|3|3|2
-23|3|3|3|3|3|3|3
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | E |
+--- | --- | --- | --- |--- |--- |--- |--- |---
+1 |0|0|0|0|0|0|0|0
+2 |1|0|0|0|0|0|0|0
+3 |1|0|0|0|0|0|0|0
+4 |2|0|0|0|0|0|0|0
+5 |2|1|0|0|0|0|0|0
+6 |2|1|0|0|0|0|0|0
+7 |3|2|0|0|0|0|0|0
+8 |3|2|1|0|0|0|0|0
+9 |3|2|1|0|0|0|0|0
+10|3|3|2|0|0|0|0|0
+11|3|3|2|1|0|0|0|0
+12|3|3|2|1|0|0|0|0
+13|3|3|3|2|0|0|0|0
+14|3|3|3|2|1|0|0|0
+15|3|3|3|2|1|0|0|0
+16|3|3|3|3|2|0|0|0
+17|3|3|3|3|2|1|0|0
+18|3|3|3|3|2|1|0|0
+19|3|3|3|3|3|2|0|0
+20|3|3|3|3|3|3|1|0
+21|3|3|3|3|3|3|2|0
+22|3|3|3|3|3|3|3|0
+23|3|3|3|3|3|3|3|1
+24|3|3|3|3|3|3|3|1
+25|3|3|3|3|3|3|3|1
+26|3|3|3|3|3|3|3|2
+27|3|3|3|3|3|3|3|2
+28|3|3|3|3|3|3|3|2
+29|3|3|3|3|3|3|3|3
+30|3|3|3|3|3|3|3|3
 
 Note: Specialist Mages can cast one spell more per level per day.
 
 ### Fighter/Mage/Cleric (arcane, divine) spell slots per day
 
-Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
---- | --- | --- | --- |--- |--- |--- |---
-1 |0|0|0|0|0|0|0
-2 |1, 1|0|0|0|0|0|0
-3 |1, 1|0|0|0|0|0|0
-4 |1, 1|0|0|0|0|0|0
-5 |1, 1|1, 1|0|0|0|0|0
-6 |1, 1|1, 1|0|0|0|0|0
-7 |2, 2|1, 1|0|0|0|0|0
-8 |2, 2|1, 1|1, 1|0|0|0|0
-9 |2, 2|1, 1|1, 1|0|0|0|0
-10|2, 2|2, 2|1, 1|0|0|0|0
-11|2, 3|2, 2|1, 1|1, 1|0|0|0
-12|2, 3|2, 2|1, 1|1, 1|0|0|0
-13|2, 3|2, 3|2, 2|1, 1|0|0|0
-14|2, 3|2, 3|2, 2|1, 1|1, 1|0|0
-15|2, 3|2, 3|2, 2|1, 1|1, 1|0|0
-16|2, 3|2, 3|2, 2|2, 2|1, 1|0|0
-17|2, 3|2, 3|2, 3|2, 2|1, 1|1|0
-18|2, 3|2, 3|2, 3|2, 2|1, 1|1|0
-19|2, 3|2, 3|2, 3|2, 2|2, 2|1|0
-20|2, 3|2, 3|2, 3|2, 3|2, 2|2|1
-21|2, 3|2, 3|2, 3|2, 3|2, 2|2|1
-22|2, 3|2, 3|2, 3|2, 3|2, 2|2|2
-23|2, 3|2, 3|2, 3|2, 3|2, 3|2|3
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | E |
+--- | --- | --- | --- |--- |--- |--- |--- |---
+1 |0|0|0|0|0|0|0|0
+2 |1, 1|0|0|0|0|0|0|0
+3 |1, 1|0|0|0|0|0|0|0
+4 |1, 1|0|0|0|0|0|0|0
+5 |1, 1|1, 1|0|0|0|0|0|0
+6 |1, 1|1, 1|0|0|0|0|0|0
+7 |2, 2|1, 1|0|0|0|0|0|0
+8 |2, 2|1, 1|1, 1|0|0|0|0|0
+9 |2, 2|1, 1|1, 1|0|0|0|0|0
+10|2, 2|2, 2|1, 1|0|0|0|0|0
+11|2, 3|2, 2|1, 1|1, 1|0|0|0|0
+12|2, 3|2, 2|1, 1|1, 1|0|0|0|0
+13|2, 3|2, 3|2, 2|1, 1|0|0|0|0
+14|2, 3|2, 3|2, 2|1, 1|1, 1|0|0|0
+15|2, 3|2, 3|2, 2|1, 1|1, 1|0|0|0
+16|2, 3|2, 3|2, 2|2, 2|1, 1|0|0|0
+17|2, 3|2, 3|2, 3|2, 2|1, 1|1|0|0
+18|2, 3|2, 3|2, 3|2, 2|1, 1|1|0|0
+19|2, 3|2, 3|2, 3|2, 2|2, 2|1|0|0
+20|2, 3|2, 3|2, 3|2, 3|2, 2|2|1|0
+21|2, 3|2, 3|2, 3|2, 3|2, 2|2|1|0
+22|2, 3|2, 3|2, 3|2, 3|2, 2|2|2|0
+23|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|1
+24|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|1
+25|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|1
+26|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|2
+27|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|2
+28|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|2
+29|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|3
+30|2, 3|2, 3|2, 3|2, 3|2, 3|2|2|3
 
 Note: Specialist Mages can cast one spell more per level per day.
 
-
-
 ### Sorcerer spell slots per day
 
-Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
---- | --- | --- | --- |--- |--- |--- |--- |--- |---
-1| 3|0|0|0|0|0|0|0|0
-2| 4|0|0|0|0|0|0|0|0
-3| 5|0|0|0|0|0|0|0|0
-4| 6|3|0|0|0|0|0|0|0
-5| 6|4|0|0|0|0|0|0|0
-6| 6|5|3|0|0|0|0|0|0
-7| 6|6|4|0|0|0|0|0|0
-8| 6|6|5|3|0|0|0|0|0
-9| 6|6|6|4|0|0|0|0|0
-10|6|6|6|5|3|0|0|0|0
-11|6|6|6|6|4|0|0|0|0
-12|6|6|6|6|5|3|0|0|0
-13|6|6|6|6|6|4|0|0|0
-14|6|6|6|6|6|5|3|0|0
-15|6|6|6|6|6|6|4|0|0
-16|6|6|6|6|6|6|5|3|0
-17|6|6|6|6|6|6|6|4|0
-18|6|6|6|6|6|6|6|5|3
-19|6|6|6|6|6|6|6|6|4
-20|6|6|6|6|6|6|6|6|6
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | E |
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |---
+1| 3|0|0|0|0|0|0|0|0|0
+2| 4|0|0|0|0|0|0|0|0|0
+3| 5|0|0|0|0|0|0|0|0|0
+4| 6|3|0|0|0|0|0|0|0|0
+5| 6|4|0|0|0|0|0|0|0|0
+6| 6|5|3|0|0|0|0|0|0|0
+7| 6|6|4|0|0|0|0|0|0|0
+8| 6|6|5|3|0|0|0|0|0|0
+9| 6|6|6|4|0|0|0|0|0|0
+10|6|6|6|5|3|0|0|0|0|0
+11|6|6|6|6|4|0|0|0|0|0
+12|6|6|6|6|5|3|0|0|0|0
+13|6|6|6|6|6|4|0|0|0|0
+14|6|6|6|6|6|5|3|0|0|0
+15|6|6|6|6|6|6|4|0|0|0
+16|6|6|6|6|6|6|5|3|0|0
+17|6|6|6|6|6|6|6|4|0|0
+18|6|6|6|6|6|6|6|5|3|0
+19|6|6|6|6|6|6|6|6|4|0
+20|6|6|6|6|6|6|6|6|6|0
+21|6|6|6|6|6|6|6|6|6|0
+22|6|6|6|6|6|6|6|6|6|1
+23|6|6|6|6|6|6|6|6|6|1
+24|6|6|6|6|6|6|6|6|6|2
+25|6|6|6|6|6|6|6|6|6|2
+26|6|6|6|6|6|6|6|6|6|3
+27|6|6|6|6|6|6|6|6|6|3
+28|6|6|6|6|6|6|6|6|6|4
+29|6|6|6|6|6|6|6|6|6|4
+30|6|6|6|6|6|6|6|6|6|5
 
-Note: Battle Casters can cast one spell per day per level less.
+### Battle Caster spell slots per day
+
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | E |
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |---
+1| 2|0|0|0|0|0|0|0|0|0
+2| 3|0|0|0|0|0|0|0|0|0
+3| 4|0|0|0|0|0|0|0|0|0
+4| 5|2|0|0|0|0|0|0|0|0
+5| 5|3|0|0|0|0|0|0|0|0
+6| 5|4|2|0|0|0|0|0|0|0
+7| 5|5|3|0|0|0|0|0|0|0
+8| 5|5|4|2|0|0|0|0|0|0
+9| 5|5|5|3|0|0|0|0|0|0
+10|5|5|5|4|2|0|0|0|0|0
+11|5|5|5|5|3|0|0|0|0|0
+12|5|5|5|5|4|2|0|0|0|0
+13|5|5|5|5|5|3|0|0|0|0
+14|5|5|5|5|5|4|2|0|0|0
+15|5|5|5|5|5|5|3|0|0|0
+16|5|5|5|5|5|5|4|2|0|0
+17|5|5|5|5|5|5|5|3|0|0
+18|5|5|5|5|5|5|5|4|2|0
+19|5|5|5|5|5|5|5|5|3|0
+20|5|5|5|5|5|5|5|5|5|0
+21|5|5|5|5|5|5|5|5|5|0
+22|5|5|5|5|5|5|5|5|5|0
+23|5|5|5|5|5|5|5|5|5|0
+24|5|5|5|5|5|5|5|5|5|1
+25|5|5|5|5|5|5|5|5|5|1
+26|5|5|5|5|5|5|5|5|5|2
+27|5|5|5|5|5|5|5|5|5|2
+28|5|5|5|5|5|5|5|5|5|2
+29|5|5|5|5|5|5|5|5|5|3
+30|5|5|5|5|5|5|5|5|5|3
 
 
 ### Sorcerer and Battle Caster spells known
@@ -1982,28 +2174,38 @@ Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 
 ### Shaman spell slots per day
 
-Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
---- | --- | --- | --- |--- |--- |--- |---
-1| 3|0|0|0|0|0|0
-2| 4|0|0|0|0|0|0
-3| 5|0|0|0|0|0|0
-4| 6|3|0|0|0|0|0
-5| 7|4|0|0|0|0|0
-6| 8|5|3|0|0|0|0
-7| 9|6|4|0|0|0|0
-8| 9|7|5|3|0|0|0
-9| 9|8|6|4|0|0|0
-10|9|9|7|5|3|0|0
-11|9|9|8|6|4|0|0
-12|9|9|9|7|5|3|0
-13|9|9|9|8|6|4|0
-14|9|9|9|9|7|5|3
-15|9|9|9|9|8|6|4
-16|9|9|9|9|9|7|5
-17|9|9|9|9|9|8|6
-18|9|9|9|9|9|9|7
-19|9|9|9|9|9|9|8
-20|9|9|9|9|9|9|9
+Lvl\Spell level | 1 | 2 | 3 | 4 | 5 | 6 | 7 | E |
+--- | --- | --- | --- |--- |--- |--- |--- |---
+1| 3|0|0|0|0|0|0|0
+2| 4|0|0|0|0|0|0|0
+3| 5|0|0|0|0|0|0|0
+4| 6|3|0|0|0|0|0|0
+5| 7|4|0|0|0|0|0|0
+6| 8|5|3|0|0|0|0|0
+7| 9|6|4|0|0|0|0|0
+8| 9|7|5|3|0|0|0|0
+9| 9|8|6|4|0|0|0|0
+10|9|9|7|5|3|0|0|0
+11|9|9|8|6|4|0|0|0
+12|9|9|9|7|5|3|0|0
+13|9|9|9|8|6|4|0|0
+14|9|9|9|9|7|5|3|0
+15|9|9|9|9|8|6|4|0
+16|9|9|9|9|9|7|5|0
+17|9|9|9|9|9|8|6|0
+18|9|9|9|9|9|9|7|0
+19|9|9|9|9|9|9|8|0
+20|9|9|9|9|9|9|9|0
+21|9|9|9|9|9|9|9|0
+22|9|9|9|9|9|9|9|1
+23|9|9|9|9|9|9|9|1
+24|9|9|9|9|9|9|9|2
+25|9|9|9|9|9|9|9|2
+26|9|9|9|9|9|9|9|3
+27|9|9|9|9|9|9|9|3
+28|9|9|9|9|9|9|9|4
+29|9|9|9|9|9|9|9|4
+30|9|9|9|9|9|9|9|5
 
 
 ### Shaman spells known
