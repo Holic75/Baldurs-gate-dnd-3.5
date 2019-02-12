@@ -1,0 +1,1 @@
+- blood rage no longer stacks with other forms of rage

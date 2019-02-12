@@ -1343,12 +1343,14 @@ COPY ~3ed/Classes/TurnUndead/EN_DM.SPL~ ~override/EN_HR75.SPL~
         //blood rage
         COPY_EXISTING ~SPPR422.SPL~ ~override~ 
             //protect aginst other rages
-            LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR422~ resource = ~BRBRGE~END
-            LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR422~ resource = ~SKLDRGE~END
-            LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR422~ resource = ~SPPR522~END
-            LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR422~ resource = ~SPDWD02~END
-            LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR422~ resource = ~SPCL321~END
-            LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = ~SPPR422~ resource = ~LSTBRSK~END            
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 power = 4 duration = 120 STR_VAR resource = ~BRBRGE~END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 power = 4 duration = 120 STR_VAR resource = ~SKLDRGE~END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 power = 4 duration = 120 STR_VAR resource = ~SPPR422~END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 power = 4 duration = 120 STR_VAR resource = ~SPPR522~END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 power = 4 duration = 120 STR_VAR resource = ~SPDWD02~END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 power = 4 duration = 120 STR_VAR resource = ~SPCL321~END
+            LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 power = 4 duration = 120 STR_VAR resource = ~LSTBRSK~END
+            LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete = 3 END //delete berserk            
         //animal rage
         COPY_EXISTING ~SPPR522.SPL~ ~override~
             //protect aginst other rages
