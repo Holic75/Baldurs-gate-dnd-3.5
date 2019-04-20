@@ -1,0 +1,3 @@
+- fixed not properly working blackguard aura of despair
+- fixed carsomyr to dispel with 60% chance (as per description)
+- removed immunity to kill effect of certain enemies (which prevented for example disruption weapons from working properly)

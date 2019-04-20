@@ -357,3 +357,14 @@ ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
         READ_LONG 0x0054 ~id_descr_strref~
         STRING_SET_EVALUATE %id_descr_strref% @3013
 END
+
+
+//fix carsomyr dispel (i.e set it to 60%)
+ACTION_IF (~%GameId%~ STR_EQ ~Bg2~) BEGIN
+     COPY_EXISTING ~SW2H10.ITM~ ~override~
+        LPF ALTER_ITEM_EFFECT  INT_VAR check_headers = 1 header_type = 1 match_opcode = 58 parameter1 = 0 parameter2 = 0 probability1 = 60 END //dispel
+        LPF ALTER_ITEM_EFFECT  INT_VAR check_headers = 1 header_type = 1 match_opcode = 139 probability1 = 60 END //display string
+     COPY_EXISTING ~SW2H19.ITM~ ~override~
+        LPF ALTER_ITEM_EFFECT  INT_VAR check_headers = 1 header_type = 1 match_opcode = 58 parameter1 = 0 parameter2 = 0 probability1 = 60 END //dispel
+        LPF ALTER_ITEM_EFFECT  INT_VAR check_headers = 1 header_type = 1 match_opcode = 139 probability1 = 60 END //display string
+END

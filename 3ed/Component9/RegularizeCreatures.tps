@@ -157,11 +157,11 @@
         END
         
         PATCH_IF (race_id == race_golem_id OR race_id == race_elemental_id OR general_id == undead_id OR race_id == race_slime_id) BEGIN //add immunity against poison, kill and slay
-            LPF DELETE_EFFECT INT_VAR match_opcode = 101 match_parameter2 = 13 END   //kill
+            //LPF DELETE_EFFECT INT_VAR match_opcode = 101 match_parameter2 = 13 END   //kill
             LPF DELETE_EFFECT INT_VAR match_opcode = 101 match_parameter2 = 25 END   //poison
             LPF DELETE_EFFECT INT_VAR match_opcode = 101 match_parameter2 = 55 END   //slay
             
-            LPF ADD_CRE_EFFECT INT_VAR opcode = 101 target = 1 timing = 9 parameter2 = 13  END 
+            //LPF ADD_CRE_EFFECT INT_VAR opcode = 101 target = 1 timing = 9 parameter2 = 13  END 
             LPF ADD_CRE_EFFECT INT_VAR opcode = 101 target = 1 timing = 9 parameter2 = 25  END 
             LPF ADD_CRE_EFFECT INT_VAR opcode = 101 target = 1 timing = 9 parameter2 = 55  END 
             

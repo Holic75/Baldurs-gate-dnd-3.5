@@ -123,7 +123,7 @@
                     LPF ALTER_SPELL_HEADER INT_VAR target = 5 speed = 0 STR_VAR icon = ~AURAFAIB~ END //set to caster only and update icon                              
             END
             
-            COPY_EXISTING ~SPPR103.SPL~ ~override/AURD1%cha%.SPL~ //aura of despair
+            COPY_EXISTING ~SPCL103.SPL~ ~override/AURD1%cha%.SPL~ //aura of despair
                 WRITE_LONG 0x0008 0 
                 LPF DELETE_EFFECT INT_VAR check_headers = 1 match_opcode = 321 END
                 LPF DELETE_SPELL_HEADER INT_VAR header_type = 3 min_level = 6 END
@@ -177,7 +177,7 @@
             LPF ADD_ABILITY_DEPENDENT_EFFECTS INT_VAR target =2 remove_in_effect = 1  n_headers = 4 stat_begin = 10 stat_step = 2 stat_end = 24 stat_ge_par = 132 resist_dispel = 2 STR_VAR abil_name = ~AURF~ END
             LPF ALTER_SPELL_HEADER INT_VAR target = 5 speed = 0 STR_VAR icon = ~AURAFAIB~  END
         
-        COPY_EXISTING ~SPCL103.SPL~ ~override/SPCL103.SPL~ //use remove fear as base for a spell
+        COPY_EXISTING ~SPCL103.SPL~ ~override/SPCL103.SPL~
             LPF DELETE_EFFECT INT_VAR check_headers = 1 END
             LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 9 END
             LPF ALTER_SPELL_HEADER INT_VAR header = 4 min_level = 21 END
