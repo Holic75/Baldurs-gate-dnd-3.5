@@ -1041,6 +1041,7 @@ WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN
             FOR (d = 7; d<=9; d = d + 1) BEGIN
                 LPF ADD_SPELL_EFFECT INT_VAR opcode=332 target=1 parameter1 = 20 parameter2=d timing=0 resist_dispel=2 duration=rage_duration END
             END
+            LPF ALTER_SPELL_EFFECT INT_VAR duration_high = rage_duration END
             SET missile_bonus = 0 - 2
             LPF ADD_SPELL_EFFECT INT_VAR opcode=278 target=1 parameter1 = 2 timing=0 resist_dispel=2 duration=rage_duration END
             LPF ADD_SPELL_EFFECT INT_VAR opcode=167 target=1 parameter1 = missile_bonus timing=0 resist_dispel=2 duration=rage_duration END
@@ -1053,6 +1054,7 @@ WITH_TRA ~%LANGUAGE%\ability_changes.tra~ BEGIN
                 LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=1 duration=rage_duration resist_dispel=2 STR_VAR resource=~SPPR522~ END
             END
             LPF ADD_SPELL_EFFECT INT_VAR opcode=206 target=1 duration=(rage_duration - 1) resist_dispel=2 STR_VAR resource=~BRBRGE~ END //forbid using rage again
+            
             //LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 10 new_opcode = 272 parameter1 = 1 parameter2 = 3 STR_VAR resource = ~ABNCON4~ END //replace constitution bonus
             
         COPY_EXISTING ~override/BRBR1%con%.SPL~ ~override/SKLR1%con%.SPL~
@@ -1619,6 +1621,13 @@ END
         COPY_EXISTING ~ohtmps2.SPL~ ~override~
             READ_LONG 0x0050 ~descr_strref~
             STRING_SET_EVALUATE %descr_strref% @009	
+    END
+    
+    
+    //Poison immunity for Priest of lathander in BG1 (file already exists in iwd and BG2)
+    
+    ACTION_IF (~%GameId%~ STR_EQ ~Bg1~) BEGIN
+         COPY ~3ed/Classes/Lathander/PoisonImmunity~  ~override~
     END
 
 

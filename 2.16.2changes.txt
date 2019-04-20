@@ -1,1 +1,3 @@
 - blood rage no longer stacks with other forms of rage
+- fixed bug with constitution not affecting certain barbarian rage effects duration 
+- fixed missing Priest of Lathander poison immunity in Bg1
