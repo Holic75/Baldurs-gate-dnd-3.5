@@ -303,7 +303,7 @@ Charge abilities:
   Armor Class: +4 bonus
   Immunity to Magic Missile
   Area of Effect: The wearer
-  Duration: 1 hour
+  Duration: 50 rounds
 
 Weight: 1~
 
@@ -446,7 +446,7 @@ STATISTICS:
 
 Charge abilities:
 – Shocking Grasp four times per day
-  Damage: 3d6 electrical
+  Damage: 2d6 electrical
   Range: Touch
   Area of Effect: 1 creature
 

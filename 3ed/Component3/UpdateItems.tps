@@ -23,8 +23,9 @@ END
 
 
 COPY_EXISTING ~AMUL15.ITM~ ~override~ //shield amulet 
-	LPF DELETE_ITEM_EFFECT END
-	LPF ADD_ITEM_EFFECT INT_VAR opcode =326 target = 1 power = 1 resist_dispel = 1 STR_VAR resource = ~SPWI114~ END //replace effects with shield application
+	LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete = 146 END
+COPY_EXISTING ~AMUL15.ITM~ ~override~
+	LPF ADD_ITEM_EFFECT INT_VAR opcode =146 target = 1 power = 1 parameter1 = 10 parameter2 = 2 resist_dispel = 1 STR_VAR resource = ~SPWI114~ END //replace effects with shield application
 	
 	READ_LONG 0x0054 ~id_descr_strref~
 	STRING_SET_EVALUATE %id_descr_strref% @1010
@@ -332,7 +333,7 @@ ACTION_IF (~%GameId%~ STR_EQ ~Iwd~) BEGIN
 		READ_LONG 0x0054 ~id_descr_strref~
         STRING_SET_EVALUATE %id_descr_strref% @5108
         
-    //fix fighter/cleric flag on gauntlets of elven might
+//fix fighter/cleric flag on gauntlets of elven might
     COPY_EXISTING ~GAUNTEM.ITM~ ~override~
          LPF SET_ITEM_USABILITY INT_VAR value = 1 STR_VAR values_table = ~3ed/ClassUsabilityValues.tps~  id_string = ~fighter_cleric~   END
 END

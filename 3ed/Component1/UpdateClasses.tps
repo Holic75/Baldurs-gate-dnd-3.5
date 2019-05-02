@@ -794,19 +794,20 @@
     //--------------------------Priest of talos lightning dmg ----------------------------------------------------------
     
     OUTER_SPRINT clab_line  ~ABIL_TALOS~
-    OUTER_FOR (i=2;i<=12;i=i+2) BEGIN
+    OUTER_FOR (i=1;i<=6;i=i+1) BEGIN
+        OUTER_SET dice = 2*i
         COPY ~3ed/Classes/Talos/TALWPN.EFF~ ~override/TLWPN%i%.EFF~
-            WRITE_LONG 0x003c i
+            WRITE_LONG 0x003c dice
         
         COPY ~3ed/Classes/Talos/TALWPN.SPL~ ~override/TLWPN%i%.SPL~
-            LPF ALTER_SPELL_EFFECT INT_VAR dicesize = i END
+            LPF ALTER_SPELL_EFFECT INT_VAR dicesize = dice END
             
         COPY ~3ed/Classes/Talos/TALWPA.SPL~ ~override/TLWPA%i%.SPL~    
             SPRINT resource EVALUATE_BUFFER ~TLWPN%i%~
             LPF ALTER_SPELL_EFFECT STR_VAR resource END
             
-            PATCH_IF (i>2) BEGIN
-                SET i_old  = i - 2
+            PATCH_IF (i>1) BEGIN
+                SET i_old  = i - 1
                 SPRINT resource EVALUATE_BUFFER ~TLWPA%i_old%~
                 LPF ADD_SPELL_EFFECT INT_VAR insert_point = 0 opcode = 321 target = 2 duration = 1 STR_VAR resource END
             END
