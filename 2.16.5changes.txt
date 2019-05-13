@@ -1,0 +1,1 @@
+- fixed incorrect application of ability bonuses by tomes

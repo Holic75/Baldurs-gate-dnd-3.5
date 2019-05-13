@@ -14,7 +14,8 @@ END
 COPY_EXISTING_REGEXP GLOB ~.+\.itm~ ~override~
     PHP_EACH stat_opcode AS stat => code BEGIN
         LPF GET_SPELL_EFFECT_VALUES INT_VAR match_opcode = code 
-                                   RET found = found_match val = parameter1 type = parameter2 found_timing = timing END        
+                                   RET found = found_match val = parameter1 type = parameter2 found_timing = timing END
+        SET found = found AND (found_timing != 1) AND (found_timing != 9) //exclude permanent bonuses
         PATCH_IF (found AND (~%SOURCE_RES%~ STRING_MATCHES_REGEXP ~WP_.+~)) BEGIN  //exclude new polymorph weapons
             PATCH_IF (type == 1 AND val >= 16) BEGIN //set
                 SET new_val = val - 16

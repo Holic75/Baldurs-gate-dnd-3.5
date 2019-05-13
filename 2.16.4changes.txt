@@ -1,3 +1,0 @@
-- fixed incorrect duration of shield spell cast from shield amulet
-- fixed not workin Priest of Talos lightning damage
-- fixed description of jasper ring of shocking grasp in iwd
